@@ -1,0 +1,22 @@
+name: Python CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetches all history for all branches and tags
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r ci/requirements.txt
+
+    - name: Validate Files
+      run: python ci/validate.py
+    
