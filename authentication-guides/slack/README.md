@@ -68,8 +68,11 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 
 1. In Creator Studio, create a new connector with the following configuration:
     - Base URL: `https://slack.com/api`
-    - Auth Config: `Bearer Token`
-    - Bearer Token: `{{xoxb_your_bot_access_token}}`
+    - Auth Config: `Api Key Auth`
+    - Api Key Auth Auth Type: `Header Auth`
+    - Header Auth Key: `Authorization`
+    - Header Auth Value Pattern: `Bearer %s`
+    - Api Key: `{{xoxb_your_bot_access_token}}`
 2. Define your API action for channel creation.
     
     ```python
