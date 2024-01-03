@@ -1,13 +1,13 @@
 ---
 name: Use Case Guide Request
 about: Request a new use case guide
-title: "[Use Case] USE_CASE_TITLE"
+title: "[Use Case] {{USE_CASE_TITLE}}"
 labels: 'request: use case guide'
 assignees: ''
 
 ---
 
-# Use Case Guide Request: {{TITLE OF USE CASE}}
+# Use Case Guide Request: {{USE_CASE_TITLE}}
 
 **Description of Use Case:**
 Briefly describe what the use case should do
