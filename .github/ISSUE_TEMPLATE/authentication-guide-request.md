@@ -1,7 +1,7 @@
 ---
 name: Authentication Guide Request
 about: Request a new authentication guide
-title: '[Auth Guide] {{SYSTEM_NAME}}'
+title: "[Auth Guide] {{SYSTEM_NAME}}"
 labels: 'request: authentication guide'
 assignees: ''
 
