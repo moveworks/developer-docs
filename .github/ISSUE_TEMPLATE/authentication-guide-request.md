@@ -1,13 +1,13 @@
 ---
 name: Authentication Guide Request
 about: Request a new authentication guide
-title: '[Auth Guide] {{SYSTEM NAME}}'
+title: '[Auth Guide] {{SYSTEM_NAME}}'
 labels: 'request: authentication guide'
 assignees: ''
 
 ---
 
-# Authentication Guide Request: {{SYSTEM NAME}}
+# Authentication Guide Request: {{SYSTEM_NAME}}
 
 **Link:** _Add a link to the product homepage here. There can be multiple products sold by one company, so product homepages are essential_
 
