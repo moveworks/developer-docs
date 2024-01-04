@@ -352,4 +352,4 @@ Nice! We have a working API endpoint to connect to Creator Studio.
 
 # Congratulations!
 
-You just connected your first Azure Function App to Creator Studio. [Check out this guide](https://www.notion.so/OFFICIAL-GUIDE-TEMPLATE-COPY-USE-ME-69c1fba5e5f149f3ae08c7fb83f7f755?pvs=21) to configure Azure Multi-Factor Authentication (MFA) in Creator Studio.
+You just connected your first Azure Function App to Creator Studio. [Check out this guide]() to configure Azure Multi-Factor Authentication (MFA) Reset in Creator Studio.
