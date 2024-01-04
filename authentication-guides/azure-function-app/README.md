@@ -1,8 +1,8 @@
 ---
 name: Azure Function Apps   # The name of the guide
 description: Connect Creator Studio to Azure Function Apps   # Brief description of the guide
-time_in_minutes: 30   # Time in minutes to complete the guide
-difficulty_level: Beginner  # Difficulty level: "Beginner", "Intermediate", or "Advanced"
+time_in_minutes: 60   # Time in minutes to complete the guide
+difficulty_level: Advanced  # Difficulty level: "Beginner", "Intermediate", or "Advanced"
 ---
 
 # Introduction
