@@ -25,9 +25,12 @@ Change personal structured data within a system, and inform the user if it succe
 
 ## Design time
 
-1. May collect any amount of either [text](https://developer.moveworks.com/creator-studio/paths/question-configuration/#1-free-input-question) or [multiple choice questions](https://developer.moveworks.com/creator-studio/paths/question-configuration/#2-multiple-choices-question) (less than 12 options)
-2. May [consume user's email address](https://developer.moveworks.com/creator-studio/api-configuration/#paths-access-user-email-in-api) in the Path.
-3. Must handle any validation in [automation tools](https://developer.moveworks.com/creator-studio/automation-tools). Free text will be provided.
+1. Start in the Paths workspace.
+2. Collect values from the user which need to be changed or submitted to a service.
+3. Configure and leverage [Custom Attributes](https://developer.moveworks.com/creator-studio/user-attributes-reference/) 
+4. Ensure that the values collected from user are accepted and supported by the API. 
+5. Run any additional validation in your [automation tools](https://developer.moveworks.com/creator-studio/automation-tools).
+6. Set up your generative intent & launch rules.
 
 ## Run time
 
