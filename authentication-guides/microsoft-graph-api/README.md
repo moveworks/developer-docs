@@ -1,12 +1,9 @@
-# Authentication Guide: Microsoft Graph API
-
-Last edited time: January 2, 2024 1:13 PM
-Workspace: None
-iPaaS: No iPaaS
-Technologies: Microsoft Graph
-Difficulty level: Intermediate
-Estimated time: 30 min
-Status: Pending Publishing
+---
+name: Microsoft Graph
+description: Connect Creator Studio to Microsoft Graph
+time_in_minutes: 30
+difficulty_level: Intermediate
+---
 
 # Introduction
 
