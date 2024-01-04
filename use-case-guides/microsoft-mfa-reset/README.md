@@ -1,5 +1,5 @@
 ---
-design_pattern_id: 21  # The ID of the associated design pattern
+design_pattern_id: 2  # The ID of the associated design pattern
 name: Microsoft MFA Reset  # Name of the use case
 description: Add a use case to your copilot that can reset Microsoft MFA  # Brief description of the use case
 systems: [ Azure Function Apps, Microsoft Graph API ]  # List of systems involved in the use case
