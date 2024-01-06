@@ -61,7 +61,7 @@ Access **`Create Security Group`** task (from Workday’s Universal Search) an
 
 Call the Integration Systems Security Group name **`Moveworks ISSG`**
 
-![Untitled](images/Untitled%2021.png)
+![Untitled](images/Untitled%2021-1.png)
 
 ## Step 3: Add Integration Systems User to Security Group
 
