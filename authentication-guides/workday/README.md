@@ -17,8 +17,8 @@ This guide will walk you through creating a connector within Creator Studio to m
 
 
 # Prerequisites
-- Workday account with admin privileges
-- [curl](https://curl.se/download.html) for testing the Workday connection
+- Workday account with admin privileges so we can create an API account
+- [Install Postman](https://www.postman.com/downloads/) for testing the API connection
 
 # Set up Workday
 To connect to Workday from within Creator Studio, we are going to be using [OAuth2 with the Refresh Token](https://oauth.net/2/grant-types/refresh-token/). This requires a client_id, a client_secret and a refresh_token. The following will walk you through how to set up a user and create the necessary ids so we can set up the connector within Creator Studio.
@@ -149,28 +149,40 @@ Note your  new refresh token.
 
 To test the connection, we need to first use the client_id and client_secret against the token api to get a bearer token. We then use that bearer token to run a query against the api.
 
-We will use curl to do this, if you are using a Linux or Apple computer, curl is included and can be accessed from the terminal. With Windows, you will need to [download](https://curl.se/windows/) it first.
+We will use Postman to run these queries.
 
-### Get a Bearer Token
+### Get a Bearer Token in Postman
 
-In the below snippet, replace YOUR_CLIENT_ID, YOUR_CLIENT_SECRET, YOUR_REFRESH_TOKEN and YOUR_TENANT_NAME with the values from the above steps
-```
+1. Set up your request to import into Postman with your `CLIENT_ID`, `CLIENT_SECRET` and `REFRESH_TOKEN`.
+    
+    ```bash
+    curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=refresh_token&refresh_token=YOUR_REFRESH_TOKEN" https://wd2-impl-services1.workday.com/ccx/oauth2/YOUR_TENANT_NAME/token
+    ```
+    
+2. Import this request into Postman by clicking `file` -> `import`.
+    ![Alt text](images/image.png)
 
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=refresh_token&refresh_token=YOUR_REFRESH_TOKEN" https://wd2-impl-services1.workday.com/ccx/oauth2/YOUR_TENANT_NAME/token
-```
+3. Notice that the url and properties are filled in automatically. Execute by clicking `send`
+    ![Alt text](images/image-1.png)
+    
+4. If the execution is successful, yous hould see the an access_token in the response.
 
-You should get a response back that looks similar to 
-```json
-{ "access_token": "eyJ0eXAiOiJhdCtKV1QiLCJhbGciOiJSUzUxMiJ9.eyJzdWIiOiIzZWJlNjkyNzVmMmE0MTk3OWY0M2EwNGQ1YTYxY2FiMyIsImF1ZCI6Imh0dHBzOi8vd2QyLWltcGwtc2VydmljZXMxLndvcmtkYXkuY29tL2NjeC8iLCJzY29wZSI6Im9hdXRoIiwiaXNzIjoiaHR0cHM6Ly93ZDItaW1wbC1zZXJ2aWNlczEud29ya2RheS5jb20vY2N4L2FwaS92MS9iYWluY2FwaXRhbF9nbXM0IiwiZXhwIjoxNzA0NDc0NDM4LCJpYXQiOjE3MDQ0NjAwMzgsImp0aSI6ImFuRjNaMk51TURkdlpqWnFiM055Y0ROMllXUjFhRFZ6ZEhsNloybDBjekpoWkdGbFpEVm1PVzV2ZURsb2FESjRkRE0zZDJWMFpXcG5NV0ZyZUhWaGVEbG1hM1EzT0RSa1lucGhhM2x3ZG5ONVpqbHRkM1k1YW1VNU1uZHVPV00xT1c5MExqZzBNbUV5WlRrekxUa3hZekV0TkRnNFlpMWhaRGRrTFdObU5HVmtZMkUxWVdRM1pRPT0iLCJjbGllbnRfaWQiOiJZekkzWTJVME9ETXRPVEE0TVMwMFlXTXhMVGt4T0RndE0yRmxPRGcwTjJObU5tRmgifQ.UN7cYzDio6lL4-2XuVjpofp54gB9YmPrLi4ZQF7F98DBrgcUoo3RFzp7Z2mV5a3dCVUMItsiRARN0y35CfLpvrOLrm4XHKi2h69Q1vud2UayZAbk2GWQ5b-wE3IPRvYsPlZNDhH0zND8t8EZL4U5yS_Mf4-84GrAqZrVP0_SyLYAEHkkz33LHc5df96JLn_Xva8CdgYvlGU1NKTIYItGjyXvutKfLV_9qybA-sJ8BZGkK2krDqhg20HUVD8unHV4ZO9gfzN7BtRvRZJb7-Gol-eK346sg309831xvwLSE5FiGsWYMk1srZx0fJQBI85HzVV-PBmIz5MjraaQkb30ww", "token_type": "Bearer", "refresh_token": "ee8enxymxyuom832m8rb5aoh3790lw4f44hb6wabuojlzwdlfxq52mw0tutxtvl7b6c8dhztncj5ymeeggppr6q3wiznvgxvean" }
-```
+![Alt text](images/image-2.png)
+    
+Copy the access_token string for the next step, note that some of the access_token is blurred out in the screenshot for security purposes!
 
-You will want to pull out the value for access_token to use it for the quick test.
 
 ### Test a Query
  This is a simple WQL query to get five employees (in no particular order) from Workday.
 
-Replace YOUR_TENANT_NAME and YOUR_BEARER_TOKEN in the below with the values from previous steps.
-:
+---
+****NOTE:****
+
+This query works because you gave our user access to Workday Query Language and Worker Data in [step 4](#step-4:-add-domain-security-policies-to-the-integration-systems-security-group)
+
+---
+
+1. Set up your request to import into Postman with your `TENANT_NAME` and `BEARER_TOKEN` in the below with the values from previous steps:
 
 ```
 curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENANT_NAME/data?limit=5&offset=0' \
@@ -181,7 +193,13 @@ curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENA
 }'
 ```
 
+2. Import into Postman as you did in the previous section by going to `file` -> `import` and pasting your curl command
+
+3. Confirm the values have been filled in properly by the import, if they have, you can run the command by hitting `send`
+
 The above command should return the top five employees in your Workday database. If successful, you are done with the hardest part of connecting Creator Studio to Workday! 
+
+![Alt text](images/image-3.png)
 
 Next, let's take the above and create a connector within Creator Studio so we can query directly from within Moveworks.
 
@@ -232,7 +250,11 @@ Query parameters: `limit` : `5`
 
 
 
-2. Click test, if you get the same output from your curl command, you have sucessfully created a connector into Workday and tested it! You can now call any WQL Query and Report that is available to the user you created from within Creator Studio.
+2. Click test, if you get the same output from your curl command, you have sucessfully created a connector into Workday and tested it! 
+
+# **Congratulations!**
+
+You've successfully integrated Workday's API with Creator Studio. This opens up a variety of automation and integration possibilities to Workday.
  
 
 
