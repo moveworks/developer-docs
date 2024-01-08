@@ -33,7 +33,7 @@ We are going to build a simple “Reverse Echo” API that returns the value sen
     
 3. Provide the sample payload, then click `Generate Schema`
     
-    ```bash
+    ```json
     {
     	"name": "Luke"
     }
@@ -141,7 +141,7 @@ We are going to build a simple “Reverse Echo” API that returns the value sen
     - API Key: `{{access_key}}`
 2. Add your API details. You can read more about setting up API actions from our [API configuration reference](https://developer.moveworks.com/creator-studio/api-configuration/).
     
-    ```python
+    ```bash
     curl --location '{{base_url}}/mw/ajay-merchia-vv1/reverse-echo' \
     --data ''
     ```
@@ -150,7 +150,7 @@ We are going to build a simple “Reverse Echo” API that returns the value sen
     - Method: `POST`
     - Body:
         
-        ```bash
+        ```json
         {
           "name": "{{query}}"
         }
@@ -159,7 +159,7 @@ We are going to build a simple “Reverse Echo” API that returns the value sen
     - Example Value: `Luke`
 3. Hit test & celebrate!
     
-    ```bash
+    ```json
     {
         "reversed_name": "ekuL"
     }

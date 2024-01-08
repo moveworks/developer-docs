@@ -1,0 +1,10 @@
+
+{
+    "ok": true,
+    "channel": {
+        "id": "C1234567890",
+        "name": "channel-name",
+        "is_channel": true,
+        ...
+    }
+}
