@@ -184,7 +184,7 @@ This query works because you gave our user access to Workday Query Language and 
 
 1. Set up your request to import into Postman with your `TENANT_NAME` and `BEARER_TOKEN` in the below with the values from previous steps:
 
-```
+```bash
 curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENANT_NAME/data?limit=5&offset=0' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
