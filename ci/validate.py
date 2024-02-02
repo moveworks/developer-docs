@@ -18,6 +18,11 @@ def find_markdown_files(directory_path):
     for dirpath, _, files in os.walk(directory_path):
         for file_name in files:
             if file_name.endswith(".md"):
+                if (
+                    dirpath == directory_path and file_name == "README.md"
+                ):  # Ignore TLD Readmes.
+                    continue
+
                 markdown_files.append(os.path.join(dirpath, file_name))
     return markdown_files
 
@@ -47,7 +52,6 @@ def identify_external_links(file_path):
                     invalid_links.append(link)
 
                 continue
-                
 
             # if the path refers to an absolute path, add it to invalid_links
             if link.startswith("/"):
@@ -79,6 +83,30 @@ def validate_no_outside_links(file):
     res, links = identify_external_links(file)
     if res:
         print(f"Found links to outside files in {file}: {links}")
+        sys.exit(1)
+
+
+def validate_no_broken_images(file):
+    image_link_pattern = r"!\[.*?\]\((.*?)\)"
+    base_dir = os.path.dirname(file)
+
+    with open(file, "r") as f:
+        file_content = f.read()
+
+    links = re.findall(image_link_pattern, file_content)
+
+    broken_links = []
+    for link in links:
+        decoded_link = unquote(link)  # Decoding URL-encoded spaces
+        if decoded_link.startswith('https'): # Do not check External Image Refs
+            continue
+
+        path = os.path.join(base_dir, decoded_link)  # add correct path to the file
+        if not os.path.exists(path):  # if file does not exist
+            broken_links.append(link)
+
+    if broken_links:
+        print(f"Found broken links to images in {file}: {broken_links}")
         sys.exit(1)
 
 
@@ -272,6 +300,7 @@ def main():
     for file in guide_files:
         print(f"Checking {file}...")
         validate_no_outside_links(file)
+        validate_no_broken_images(file)
         validate_file_name(file)
         if "./use-case-guides" in file:
             validate_use_case_schema(file, design_pattern_ids)

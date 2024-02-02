@@ -57,7 +57,7 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
     - Api Key: `{{your_personal_access_token}}`
 2. Define your API action for channel creation.
     
-    ```python
+    ```bash
     curl https://app.asana.com/api/1.0/users/me \
       -H "Authorization: Bearer {{YOUR_PERSONAL_ACCESS_TOKEN}}"
     ```
@@ -66,7 +66,7 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
     - Method: `GET`
 3. Test your setup in Creator Studio and look for a successful execution.
     
-    ```bash
+    ```json
     
     {
     	"data": {
