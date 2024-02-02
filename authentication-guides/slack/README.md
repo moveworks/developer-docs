@@ -75,7 +75,7 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
     - Api Key: `{{xoxb_your_bot_access_token}}`
 2. Define your API action for channel creation.
     
-    ```python
+    ```bash
     curl -X POST '{{base_url}}/conversations.create' \
     --header 'Content-Type: application/x-www-form-urlencoded' \
     --data-urlencode 'name={{channel-name}}'
@@ -91,14 +91,14 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
         | Content-Type | application/x-www-form-urlencoded |
     - Body:
         
-        ```
+        ```text
         name=channel-name
         ```
         
     
 3. Test your setup in Creator Studio and look for a successful execution.
     
-    ```bash
+    ```json
     
     {
         "ok": true,
