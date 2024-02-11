@@ -132,6 +132,7 @@ def main():
             print("----------------------------")
 
     if changes_made_anywhere:
+        print("Please ask a repository maintainer to fix your contribution.")
         sys.exit(1)
     else:
         print("All code blocks are up to date.")
