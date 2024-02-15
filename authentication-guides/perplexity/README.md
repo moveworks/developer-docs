@@ -48,7 +48,7 @@ Perplexity’s API hosts LLMs that have access to information scraped from the w
     - Header Auth Key: `Authorization`
     - Header Auth Value Pattern: `Bearer %s`
     - Api Key: `{{your_api_key}}`
-2. Define your API action for channel creation.
+2. Define your API action for chat completion.
     
     ```bash
     curl --request POST \
