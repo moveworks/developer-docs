@@ -1,5 +1,5 @@
 ---
-design_pattern_id: 9
+design_pattern_id: 10
 name: Survey Completion Notifications from ServiceNow
 description: Proactively send out CSAT surveys from ServiceNow to gather feedback and store that information back into ServiceNow.
 systems: [servicenow]
@@ -22,6 +22,8 @@ Let's get started!
 
 [This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22Moveworks%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A8046%2C%22title%22%3A%22Survey+completion+alert+from+ServiceNow%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%2C%22botName%22%3A%22Moveworks%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22In+ServiceNow%2C+when+a+ticket+is+closed%2C+a+new+record+will+be+added+to+the+asmt_assessment_instance+table.+At+that+point%2C+a+workflow+will+be+triggered+that+will+make+an+API+call+to+the+Event+API+endpoint+to+notify+the+user+via+the+Moveworks+bot+that+they+need+to+complete+a+survey+in+ServiceNow+with+a+link+to+the+Survey.%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22Hello+Gwen%2C%5Cn%5CnYou+have+a+new+CSAT+survey+to+complete.+Please+%3Ca+href%3D%5C%22https%3A%2F%2Fdeveloper.moveworks.com%2Fcreator-studio%2Fconversation-design%2Foverview%2F%5C%22%3Eclick+here%3C%2Fa%3E+to+complete+your+survey.%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build. [This design pattern](https://developer.moveworks.com/creator-studio/design-patterns/dp-9) also shows the experience.
 
+![Purple Chat Diagram](./images/purple_chat.png)
+
 ## Creator Studio Components
 
 ✨ **Triggers:** New CSAT record is created in ServiceNow
@@ -40,7 +42,7 @@ Based on the needs of this use case, we should build an Event.
 
 Since we want to integrate with Azure MFA, we should look into their Graph APIs. For this use case, we will need two API calls:
 
-![Architecture and Process Diagram - CSAT Survey [Notification Delivery Only]@2x (1).png](Use%20Case%20Tutorial%20Survey%20completion%20alert%20from%20Ser%2034a64ae2e7e344d5a1ace2c00024fcb1/Architecture_and_Process_Diagram_-_CSAT_Survey_Notification_Delivery_Only2x_(1).png)
+![Architecture and Process Diagram](./images/Architecture_and_Process_Diagram.png)
 
 In this context, given that our task primarily focuses on the delivery of automated notifications, the only required tool, in addition to the ITSM platform, is the Events workspace.
 
@@ -113,7 +115,7 @@ The importance of each step in this sequence is to ensure the seamless generatio
 
 Trigger the use case by asking for it from your Copilot.
 
-![Untitled](Use%20Case%20Tutorial%20Survey%20completion%20alert%20from%20Ser%2034a64ae2e7e344d5a1ace2c00024fcb1/Untitled.png)
+![User Experience](./images/ux_screenshot.png)
 
 Note: It could take a couple minutes before your flow shows up in your copilot. If it doesn’t show up after five minutes, follow our troubleshooting guide to further debug.
 
