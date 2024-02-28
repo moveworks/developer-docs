@@ -224,7 +224,7 @@ This is the step where the bulk of the automation and work will take place.  Luc
 
 4. Now for the final step we will send the approval message to the user.  Select new component and “Send Web Request”.  For the Web Request URL enter where EventID is the value you copied when you created the event in Creator Studio
 
-```jsx
+```text
 https://api.moveworks.ai/rest/v1/events/{{EventID}}/messages/send
 ```
 
@@ -234,7 +234,7 @@ https://api.moveworks.ai/rest/v1/events/{{EventID}}/messages/send
 
 2. Within the custom data body we will formulate the message you are going to send to the user.  One thing to note - you can reference ANY field in the issue that came back from the JSON response in the Postman call.  You’ll notice I’m referencing the creator’s email address {{creator.emailAddress}} and the issue type {{issueType.name}} so I can show the approver this info, but it is not limited to this.  See the code snipped below - we are also referencing the {{issueKey}} which allows us to dynamically build the link to the issue, as well as the {{approvers.approver.emailAddress}} so Moveworks knows who to send this message to as the approver
 
-```jsx
+```json
 {
     "message": "You have a new pending approval in JIRA.  It has been requested by {{creator.emailAddress}} and is of type \"{{issueType.name}}\".  Please view it <a href=\"https://moveworksus.atlassian.net/jira/servicedesk/projects/LEG/queues/custom/58/{{issue.key}}\">here</a>",
     "recipients": ["{{approvers.approver.emailAddress}}"]
