@@ -1,4 +1,4 @@
-# Welcome Contributors! (Moveworks employees only)
+# Welcome Contributors!
 
 Thank you for contributing! This guide will walk you through how to add new guides to the Moveworks Tutorials & Guides Library.
 
