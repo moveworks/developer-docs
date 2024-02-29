@@ -5,24 +5,6 @@ time_in_minutes: 60   # Time in minutes to complete the guide
 difficulty_level: Intermediate  # Difficulty level: "Beginner", "Intermediate", or "Advanced"
 ---
 
-# Use Case Guide: JIRA Approvals
-
-Author: @Neal Moran
-Last edited time: February 28, 2024 1:03 PM
-Workspace: Events
-iPaaS: No iPaaS
-Technologies: JIRA
-Difficulty level: Intermediate
-Estimated time: 30 mins
-Status: Pending Publishing
-
-### Subtitle
-
-<aside>
-✨ JIRA Approval Notifications
-
-</aside>
-
 # Introduction
 
 [JIRA Automation](https://www.atlassian.com/software/jira/features/automation) is a feature that allows you to build automations and workflows based on events that occur within JIRA Service Desk.
@@ -33,15 +15,13 @@ Let's get started!
 
 # Prerequisites
 
-<aside>
 🛠 **What you need before starting**
 
 - The JIRA Automation Feature enabled in JIRA Service Desk
 - Moveworks Creator Studio
-- Moveworks API Key (Provided by your Customer Success Team)
+- Moveworks Events API Key
 - Postman or an API Testing Tool
 - A Request Item in JIRA that requires an Approval
-</aside>
 
 # **Prerequisites**
 
@@ -57,17 +37,14 @@ The capability for Moveworks to receive approval notification events from JIRA b
 
 ## Conversation Design
 
-<aside>
 💡 **Guidance**
 
 - Add a purple chat mock of the use case
     - Define it in terms of ✨ triggers, 🤲 slots, 🏃‍♂️ actions, and 📚 guidelines
 - Include table with the design pattern
-</aside>
 
-[This purple chat](https://developer.moveworks.com/creator-studio/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22mocks%22%3A%5B%7B%22id%22%3A1636%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EHi%2C+can+you+please+reset+my+Azure+MFA%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EDo+you+want+to+disable+all+your+Azure+MFA+registrations%3F%3Cbr%3E%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E%3C%2Fp%3E%22%2C%22text%22%3A%22%3Cp%3E%3C%2Fp%3E%22%2C%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Yes%22%7D%2C%7B%22text%22%3A%22No%22%7D%5D%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EYes%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3EInbound+Request+to+Middleware%3A%3Cbr%3E%3Cbr%3E%7B%3Cbr%3E%5C%22email%5C%22%3A+%5C%22gwen%40moveworks.ai%5C%22%3Cbr%3E%7D%3Cbr%3E%3Cbr%3EProcess%3A%3Cbr%3E1.+Establish+a+connection+to+Azure+MFA+Services%3Cbr%3E2.+List+all+MFA+devices+for+the+user%3Cbr%3E3.+Delete+each+MFA+device%2C+this+will+clear+the+user%27s+devices.%3Cbr%3E%3Cbr%3EOutbound+Response%3A%3Cbr%3E%7B+%5C%22status%5C%22%3A+%5C%22ok%5C%22+%7D%2C+200%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+successfully+reset+your+MFA%3Cbr%3E%3C%2Fp%3E%22%7D%5D%7D%7D%5D%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%7D) shows the experience we are going to build.
 
-![purple-chat.png](Use%20Case%20Guide%20JIRA%20Approvals%20f1ce3fe611e644a99a97f00cfb719fbb/purple-chat.png)
+[This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A1557%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22Bot%22%2C%22text%22%3A%22Hi+Neal%2C%5CnYou+have+a+new+pending+approval+in+JIRA.+It+has+been+requested+by+nmoran%40moveworks.us+and+is+of+type+%5C%22Request+a+budget+allocation%5C%22.+Please+view+it+%3Ca+href%3D%5C%22www.jira.com%5C%22%3Ehere%3C%2Fa%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
 **This use case is made up of:**
 
@@ -92,7 +69,7 @@ Since most of the work is actually done in JIRA Automations, the only API call w
 ![Screenshot 2024-01-09 at 5.20.18 PM.png](Use%20Case%20Guide%20JIRA%20Approvals%20f1ce3fe611e644a99a97f00cfb719fbb/Screenshot_2024-01-09_at_5.20.18_PM.png)
 
 1. [Moveworks API](https://developer.moveworks.com/openapi/reference/#operation/sendMessageForEvent)**:** An API to send proactive events to a Moveworks user
-2. [JIRA Retrive Issue API](https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-issues/#api-rest-api-2-issue-issueidorkey-get)**:** A JIRA API to retrieve a given issue and fields
+2. [JIRA Retrieve Issue API](https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-issues/#api-rest-api-2-issue-issueidorkey-get)**:** A JIRA API to retrieve a given issue and fields
 
 Although we will only be using the Moveworks API in the actual implementation, it is important to use Postman in order to be able to view a given issue, as we will be leveraging a feature called [Smart Values](https://support.atlassian.com/cloud-automation/docs/jira-smart-values-issues/) to dynamically introspect details about the issue and approvers in order to send a comprehensive message
 
@@ -241,7 +218,7 @@ https://api.moveworks.ai/rest/v1/events/{{EventID}}/messages/send
 }
 ```
 
-1. Once this is done, the final piece is the Authorization.  Your customer success team will provide you this bearer token and you plug it in here like so.
+1. Once this is done, the final piece is the Authorization.  You can create an Event API Key [here](https://developer.moveworks.com/creator-studio/integrations/inbound/credentials-management/)
 
 ![Screenshot 2024-01-09 at 6.38.32 PM.png](Use%20Case%20Guide%20JIRA%20Approvals%20f1ce3fe611e644a99a97f00cfb719fbb/Screenshot_2024-01-09_at_6.38.32_PM.png)
 
@@ -258,10 +235,5 @@ Trigger the use case by creating the issue with approval. Here’s a quick demo.
 [https://www.loom.com/share/e2cdfc7cddd8402c8ff7226048c10bd5?sid=0e5f2dc9-3b6d-439a-bdf3-be0b275ba2c1](https://www.loom.com/share/e2cdfc7cddd8402c8ff7226048c10bd5?sid=0e5f2dc9-3b6d-439a-bdf3-be0b275ba2c1)
 
 # Congratulations!
-
-<aside>
-✅ **What did the user accomplish?** Provide a short recap of what the user created and the problem it solves.
-
-</aside>
 
 You just added JIRA Approval notifications with links to your Copilot! Say good-bye to those long waiting approvals that only get checked periodically or notified by email.
