@@ -217,7 +217,13 @@ https://api.moveworks.ai/rest/v1/events/{{EventID}}/messages/send
 
 Trigger the use case by creating the issue with approval. Here’s a quick demo.
 
-[https://www.loom.com/share/e2cdfc7cddd8402c8ff7226048c10bd5?sid=0e5f2dc9-3b6d-439a-bdf3-be0b275ba2c1](https://www.loom.com/share/e2cdfc7cddd8402c8ff7226048c10bd5?sid=0e5f2dc9-3b6d-439a-bdf3-be0b275ba2c1)
+<div>
+    <a href="https://www.loom.com/share/e2cdfc7cddd8402c8ff7226048c10bd5">
+    </a>
+    <a href="https://www.loom.com/share/e2cdfc7cddd8402c8ff7226048c10bd5">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e2cdfc7cddd8402c8ff7226048c10bd5-1709150484939-with-play.gif">
+    </a>
+  </div>
 
 # Congratulations!
 
