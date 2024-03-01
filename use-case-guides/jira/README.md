@@ -23,14 +23,6 @@ Let's get started!
 - Postman or an API Testing Tool
 - A Request Item in JIRA that requires an Approval
 
-# **Prerequisites**
-
-- The JIRA Automation Feature enabled in JIRA Service Desk
-- Moveworks Creator Studio
-- Moveworks API Key (Provided by your Customer Success Team)
-- Postman or an API Testing Tool
-- A Request Item in JIRA that requires an Approval
-
 # What are we building?
 
 The capability for Moveworks to receive approval notification events from JIRA by leveraging JIRA Automations.
