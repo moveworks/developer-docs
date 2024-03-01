@@ -7,6 +7,4 @@ difficulty_level: Beginner
 
 # Introduction
 
-This authentication guide has not yet been written, but there are some use case guides that describe how to connect the systems.
-
-Please take a look at them below.
+This authentication guide has not yet been written, but we've published use case guides that connect with Jira. You can learn from those in the interim.
