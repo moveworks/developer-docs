@@ -1,6 +1,9 @@
 ---
+design_pattern_id: 10  # The ID of the associated design pattern
 name: Jira Approvals   # The name of the guide
 description: Send Proactive Jira Approval Notifications   # Brief description of the guide
+systems: [jira]  # List of systems involved in the use case
+purple_chat_link: https://developer.moveworks.com/creator-studio/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A7525%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Hi%2C+Can+you+please+help+me+reset+my+Azure+MFA.%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22Sure%2C+do+you+want+to+proceed+with+resetting+the+MFA+as+this+cannot+be+reverted+%3F%22%2C%22cards%22%3A%5B%7B%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Yes%22%7D%2C%7B%22text%22%3A%22No%22%7D%5D%7D%5D%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22Inbound+Request+to+Middleware+%5C%22Azure+Functions%5C%22+%5Cn%5Cn%7B%5Cn+%5C%22email%5C%22+%3A+%3Cuser_email%3E%5Cn%7D%5Cn+%5CnProcess%3A%5Cn1.+Generate+Bearer+Token+for+Authentication%5Cn2.+LIST+the+existing+MFA+for+the+user%5Cn3.+Delete+the+MFA+for+the+user%5Cn%5CnOutbound+Response%3A%5Cn%7B%5Cn+++%5C%22Status%5C%22%3A+%5C%22OK+%28200%29%5C%22%5Cn%7D%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22I%27ve+successfully+reset+the+MFA+on+Azure%22%7D%5D%7D%7D%5D%7D](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A1557%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22Bot%22%2C%22text%22%3A%22Hi+Neal%2C%5CnYou+have+a+new+pending+approval+in+JIRA.+It+has+been+requested+by+nmoran%40moveworks.us+and+is+of+type+%5C%22Request+a+budget+allocation%5C%22.+Please+view+it+%3Ca+href%3D%5C%22www.jira.com%5C%22%3Ehere%3C%2Fa%3E%22%7D%5D%7D%7D%5D%7D  # URL of the linked chat
 time_in_minutes: 60   # Time in minutes to complete the guide
 difficulty_level: Intermediate  # Difficulty level: "Beginner", "Intermediate", or "Advanced"
 ---
@@ -13,9 +16,7 @@ In this tutorial, we will explore how to use Creator Studio to notify approvers 
 
 Let's get started!
 
-# Prerequisites
-
-🛠 **What you need before starting**
+# 🛠 **Prerequisites**
 
 - The JIRA Automation Feature enabled in JIRA Service Desk
 - Moveworks Creator Studio
@@ -23,26 +24,10 @@ Let's get started!
 - Postman or an API Testing Tool
 - A Request Item in JIRA that requires an Approval
 
-# **Prerequisites**
-
-- The JIRA Automation Feature enabled in JIRA Service Desk
-- Moveworks Creator Studio
-- Moveworks API Key (Provided by your Customer Success Team)
-- Postman or an API Testing Tool
-- A Request Item in JIRA that requires an Approval
 
 # What are we building?
 
-The capability for Moveworks to receive approval notification events from JIRA by leveraging JIRA Automations.
-
 ## Conversation Design
-
-💡 **Guidance**
-
-- Add a purple chat mock of the use case
-    - Define it in terms of ✨ triggers, 🤲 slots, 🏃‍♂️ actions, and 📚 guidelines
-- Include table with the design pattern
-
 
 [This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A1557%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22Bot%22%2C%22text%22%3A%22Hi+Neal%2C%5CnYou+have+a+new+pending+approval+in+JIRA.+It+has+been+requested+by+nmoran%40moveworks.us+and+is+of+type+%5C%22Request+a+budget+allocation%5C%22.+Please+view+it+%3Ca+href%3D%5C%22www.jira.com%5C%22%3Ehere%3C%2Fa%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 

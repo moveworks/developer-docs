@@ -25,8 +25,8 @@ Send an actionable alert to users with trackable deep links to measure click thr
 ## Design time
 
 1. Start in the Events workspace.
-2. Generate an [event ID](/creator-studio/conversation-design/triggers/event-triggers)
-3. Prepare a message using our [chat markup](/creator-studio/reference/markup). You can prepare your chat markup using our [message tester tool](/creator-studio/developer-tools/message-tester/)
+2. Generate an [event ID](https://developer.moveworks.com/creator-studio/conversation-design/triggers/event-triggers)
+3. Prepare a message using our [chat markup](https://developer.moveworks.com/creator-studio/reference/markup). You can prepare your chat markup using our [message tester tool](https://developer.moveworks.com/creator-studio/developer-tools/message-tester/)
 4. Send it to the user.
 
 
