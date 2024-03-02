@@ -26,7 +26,8 @@ jobs:
       id: check_changes
       run: python ci/check_readme_changes.py
       env:
-        GITHUB_SHA: ${{ github.sha }}
+        GH_SHA_MAIN_HEAD: ${{ github.sha }}
+        GH_SHA_PR_HEAD: ${{ github.event.pull_request.head.sha }}
     
     - name: Add Comment
       if: steps.check_changes.outputs.comment_message != ''
