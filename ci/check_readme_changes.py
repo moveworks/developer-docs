@@ -1,9 +1,18 @@
 import os
 import subprocess
 
-commit_id = os.getenv("GITHUB_SHA")
-print(f"Processing {commit_id}")
-changed_files = subprocess.getoutput(f"git diff --name-only HEAD~1..HEAD")
+commit_id = os.getenv("GH_SHA_PR_HEAD")
+main_head = os.getenv('GH_SHA_MAIN_HEAD')
+print(f"Processing {commit_id} (PR Head) against {main_head}")
+
+# Fetch the PR branch
+subprocess.run(
+    f"git fetch origin +refs/pull/{os.getenv('GH_PR_NUMBER')}/merge:", shell=True
+)
+# Check out the FETCH_HEAD as it represents the PR branch
+subprocess.run("git checkout FETCH_HEAD", shell=True)
+# Get the diff with the main branch
+changed_files = subprocess.getoutput(f"git diff --name-only {main_head}")
 
 print("Retrieved the following changed files")
 print(changed_files)
