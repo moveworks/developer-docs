@@ -82,7 +82,7 @@ From this link, our `list_id` is `7144e89f-7793-4faf-a3f8-d81f9255cdad`. You can
 
 1. Start in the Queries Workspace and create a new query that describes the list you're filtering as well as how you're filtering it.
 
-![Basic Info](./images/image-5.png)
+    ![Basic Info](./images/image-5.png)
 
 ### Setup the API
 
@@ -101,12 +101,14 @@ From this link, our `list_id` is `7144e89f-7793-4faf-a3f8-d81f9255cdad`. You can
 
     - Path: `/v1.0/sites/{{site_id}}/lists/{{list_id}}/items`
     - Method: `GET`
-    - Headers: (Needed if you're filtering on a non-indexed value)
+    - Headers: 
 
         | Key | Value |
         | --- | --- |
         | Prefer | HonorNonIndexedQueriesWarningMayFailRandomly |
-    
+
+You need the `Prefer` header if you're filtering on a non-indexed column, or [add the column to an index](https://support.microsoft.com/en-us/office/add-an-index-to-a-list-or-library-column-f3f00554-b7dc-44d1-a2ed-d477eac463b0).
+
     - Query parameters:
 
         | Key | Value |
@@ -114,7 +116,7 @@ From this link, our `list_id` is `7144e89f-7793-4faf-a3f8-d81f9255cdad`. You can
         | $expand | fields |
         | $filter | fields/{{FieldName}} eq '{{query}}' |
 
-        You can customize further using the [OData Standard](https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/use-odata-query-operations-in-sharepoint-rest-requests) for Sharepoint Lists.
+You can customize the filtering, sorting, and selection further using the [OData Standard](https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/use-odata-query-operations-in-sharepoint-rest-requests) for Sharepoint Lists.
 
 3. Test your setup and look for a successful execution.
 
