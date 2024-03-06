@@ -26,7 +26,7 @@ for file in changed_files.split("\n"):
         file_parts = file.split("/")
         top_directory = file_parts[0][:-1] # First directory, trimming the "s" at the end
         second_directory = file_parts[1]
-        comment_message += f"Changes to {file} can be viewed at https://developer.moveworks.com/creator-studio/resources/{top_directory}?id={second_directory}&commit_id={commit_id}\n"
+        comment_message += f"Changes to {file} can be viewed at https://developer.moveworks.com/creator-studio/resources/{top_directory}?id={second_directory}&commit_id={commit_id}; "
 
 print(f"Writing output: '{comment_message}' to {env_file}")
 with open(env_file, "a") as f:
