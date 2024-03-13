@@ -1,5 +1,5 @@
 ---
-design_pattern_id: 6
+design_pattern_id: 28
 name: Salesforce Account Lookup
 description: Lookup Account object details from Salesforce with your bot
 systems: [salesforce]
@@ -78,10 +78,10 @@ Since we want to integrate with Salesforce, we should look into their SOQL Query
         FROM
          Account
         WHERE
-         Name LIKE '{{query}}'
+         Name LIKE '%25{{query}}%25'
         ```
 
-        Use this Query to fetch all relevant details from your customer’s Salesforce account by replacing the `{{query}}` field with the name of the customer you’re trying to lookup for.
+        Use this Query to fetch all relevant details from your customer’s Salesforce account by replacing the `{{query}}` field with the name of the customer you’re trying to lookup for. The `%25` searches for the Account inside account names, instead of an exact keyword match (Example: matching `Acme` with "Acme Inc." and "Acme Semiconductors", instead of matching no results.
 
 > In the above example, we have used only Standard Salesforce objects, however, you can also use the [Custom](https://help.salesforce.com/s/articleView?id=sf.basics_object_types.htm&type=5) objects that is defined in your Salesforce instance to build the Query. Custom objects can be identified by the trailing `__c` after their name.
 You can visit [`https://workbench.developerforce.com/`](https://workbench.developerforce.com/) and explore the different fields present within the `Account` object. You can also try out different SOQL queries and use the one which you think is a best fit for the Use Case.
