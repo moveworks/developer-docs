@@ -25,7 +25,7 @@ Request information in an external system without filtering.
 ## Design time
 
 1. Start in the Queries workspace.
-2. Define a wide-reaching name & short description for your query
+2. Define a very specific name & short description that identifies the usecase
 3. Set up an [API Action](https://developer.moveworks.com/creator-studio/api-configuration/) to your query.
 4. [Label the API response](https://developer.moveworks.com/creator-studio/conversation-design/guidelines/api-labeling/). 
 5. For your trigger phrases, provide a couple of queries that you think might be asked to get this information.
@@ -34,5 +34,5 @@ Request information in an external system without filtering.
 
 ## Run time
 
-- Your copilot will provide any self-identifying information, if required
+- Your copilot will provide any self-identifying information such as name and email
 - Your copilot will only return the items you have labeled during step 4 above
