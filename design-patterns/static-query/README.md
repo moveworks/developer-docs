@@ -1,5 +1,5 @@
 ---
-id: 11
+id: 12
 name: Static Lookup
 description: Performs a lookup in a system without requiring any parameters
 workspace: queries
