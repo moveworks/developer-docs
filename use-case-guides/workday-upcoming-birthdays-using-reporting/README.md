@@ -82,9 +82,9 @@ We are going to use the *Alert - Birthdays for this week and next* report to get
     
     which should look something like this:
     
-    ```text
-    /ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next
-    ```
+    <pre>/ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next</pre>
+    
+
     
     **Note**: Don’t copy the *format* parameter on the end, we will put this in manually within Creator Studio. Your report may have other parameters as well if you have chosen one that takes inputs. Make note of these parameters and the format so you can call them in the next step.
     
