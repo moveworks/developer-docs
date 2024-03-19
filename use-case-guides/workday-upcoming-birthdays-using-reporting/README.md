@@ -1,5 +1,5 @@
 ---
-design_pattern_id: 11
+design_pattern_id: 12
 name: Workday - Retrieving upcoming birthdays using reporting
 description: Uses the Workday reporting engine to fetch any birthdays
 systems: [workday]
@@ -36,7 +36,7 @@ Let's get started!
 
 📚 **Guidelines:** Select fields to render from RaaS report
 
-Based on the needs of this use case, we should build a **Lookup items with no parameters**
+Based on the needs of this use case, we should build a [Static Query](https://developer.moveworks.com/creator-studio/resources/design-pattern?id=static-query)
 
 ## API Design
 
