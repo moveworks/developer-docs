@@ -34,5 +34,4 @@ Request information in an external system without filtering.
 
 ## Run time
 
-- Your copilot will provide any self-identifying information such as name and email
 - Your copilot will only return the items you have labeled during step 4 above
