@@ -160,9 +160,11 @@ We will use Postman to run these queries.
     ```
     
 2. Import this request into Postman by clicking `file` -> `import`.
+
     ![Alt text](images/image.png)
 
 3. Notice that the url and properties are filled in automatically. Execute by clicking `send`
+
     ![Alt text](images/image-1.png)
     
 4. If the execution is successful, yous hould see the an access_token in the response.
