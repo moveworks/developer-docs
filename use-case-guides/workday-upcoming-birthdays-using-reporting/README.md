@@ -1,7 +1,7 @@
 ---
 design_pattern_id: 12
-name: Workday - Retrieving upcoming birthdays using reporting
-description: Uses the Workday reporting engine to fetch any birthdays
+name: Lookup upcoming birthdays
+description: Uses the Workday reporting engine to fetch any upcoming birthdays
 systems: [workday]
 purple_chat_link: https://developer.moveworks.com/creator-studio/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A7525%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Can+you+tell+me+of+any+upcoming+birthdadys%3F%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3EGET+call+to+WorkDay+RaaS+report+for+upcoming+birthdays%3Cbr%3E%3Cbr%3EResponse%3A%3Cbr%3E%7B%3Cbr%3E%5Ct%5C%22Report_Entry%5C%22%3A+%5B%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-17%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Emma+Hobson%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-17%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Enrique+Vasquez%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-18%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Min-gyu+Kang+%EF%BC%88%EA%B0%95%EB%AF%BC%EA%B7%9C%EF%BC%89%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-19%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Maximilian+Schneider%5C%22%3Cbr%3E%5Ct%5Ct%7D%3Cbr%3E%5Ct%5D%3Cbr%3E%7D%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESure%2C+here+are+some+upcoming+birthdays%3A%3Cbr%3E%3Cbr%3E-+Emma+Hobson%27s+birthday+is+on+January+17th+%3Cbr%3E-+Enrique+Vasquez%27s+birthday+is+also+on+January+17th+%3Cbr%3E-+Min-gyu+Kang%27s+birthday+is+on+January+18th+%3Cbr%3E-+Maximilian+Schneider%27s+birthday+is+on+January+19th+%3Cbr%3E%3Cbr%3ELet+me+know+if+you+need+information+on+more+birthdays.%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D
 time_in_minutes: 10
@@ -82,7 +82,9 @@ We are going to use the *Alert - Birthdays for this week and next* report to get
     
     which should look something like this:
     
-    <pre>/ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next</pre>
+    '''text
+    /ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next
+    '''
     
 
     
