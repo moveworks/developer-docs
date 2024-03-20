@@ -33,7 +33,7 @@ Let's get started!
 - Guidelines
     1. None
 
-Based on the needs of this use case, we should build a Custom RAG Query**.**
+Based on the needs of this use case, we should build a **Custom RAG Query**.
 
 ## API Research
 
