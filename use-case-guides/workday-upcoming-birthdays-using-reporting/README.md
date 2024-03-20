@@ -80,11 +80,7 @@ We are going to use the *Alert - Birthdays for this week and next* report to get
     
     ![browser window showing url](images/Untitled%204.png)
     
-    which should look something like this:
-    
-    ```python
-    /ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next
-    ```
+    which should look something like this: `/ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next`
     
 
     
