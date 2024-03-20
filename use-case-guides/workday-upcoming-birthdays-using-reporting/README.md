@@ -82,9 +82,9 @@ We are going to use the *Alert - Birthdays for this week and next* report to get
     
     which should look something like this:
     
-    '''text
+    ```text
     /ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next
-    '''
+    ```
     
 
     
