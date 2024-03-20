@@ -292,10 +292,18 @@ def main():
     print(f"Scanning {len(guide_files)} files...")
 
     design_pattern_ids = []
+    design_pattern_id_map = {}
     for file in pattern_files:
         validate_design_pattern_schema(file)
         _, data = load_yaml_data(file)
-        design_pattern_ids.append(data["id"])
+        dp_id = data['id']
+        if dp_id in design_pattern_id_map:
+            print(f"Found duplicate design pattern ID in {file}: {dp_id} already in use by {design_pattern_id_map[dp_id]}")
+            sys.exit(1)
+
+        design_pattern_id_map[dp_id] = file
+
+    design_pattern_ids = design_pattern_id_map.keys()
 
     for file in guide_files:
         print(f"Checking {file}...")
