@@ -1,20 +1,9 @@
-# Authentication Guide: Coupa
-
-Last edited time: March 22, 2024 4:59 PM
-Workspace: None
-iPaaS: No iPaaS
-Technologies: Coupa
-Difficulty level: Beginner
-Estimated time: 15 mins
-Status: In progress
-Assigned To: Indrashis Paul
-
-### Subtitle
-
-<aside>
-✨ Connect Creator Studio to Coupa
-
-</aside>
+---
+name: Coupa   # The name of the guide
+description: Connect Creator Studio to Coupa   # Brief description of the guide
+time_in_minutes: 15   # Time in minutes to complete the guide
+difficulty_level: Beginner  # Difficulty level: "Beginner", "Intermediate", or "Advanced"
+---
 
 # **Introduction**
 
