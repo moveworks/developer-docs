@@ -41,12 +41,12 @@ Copy all three of them and store in a secure place. We will need these later to 
 1. Set up your request in Postman with your `Client Credentials`.
     
     ```bash
-    curl --location 'https://<INSTANCE_DOMAIN>/oauth2/token' \
+    curl --location 'https://{{INSTANCE_DOMAIN}}/oauth2/token' \
     --header 'Content-Type: application/x-www-form-urlencoded' \
     --data-urlencode 'grant_type=client_credentials' \
-    --data-urlencode 'client_id=<**Identifier**>' \
-    --data-urlencode 'client_secret=<**Secret**>' \
-    --data-urlencode 'scope=<SPACE_SEPARATED_LIST_OF_SCOPES>'
+    --data-urlencode 'client_id={{Identifier}}' \
+    --data-urlencode 'client_secret={{Secret}}' \
+    --data-urlencode 'scope={{SPACE_SEPARATED_LIST_OF_SCOPES}}'
     ```
     
 2. Import this request into Postman and execute it. You should get a successful response of your user information.
@@ -58,20 +58,20 @@ Copy all three of them and store in a secure place. We will need these later to 
 
 1. In Creator Studio, create a new connector with the following configuration:
     - **Connection Name:** Coupa Connector
-    - Base URL: `https://<INSTANCE_DOMAIN>` (For example: `https://moveworks-usa-coupalink-demo.coupacloud.com`)
+    - Base URL: `https://{{INSTANCE_DOMAIN}}` (For example: `https://moveworks-usa-coupalink-demo.coupacloud.com`)
     - Auth Config: `Oauth2`
     - Oauth2 Grant Type: `Client Credentials Grant`
-    - Client ID: `<Identifier>`
-    - Client Secret: `<Secret>`
-    - Client Credentials Grant Scope: `<SPACE_SEPARATED_LIST_OF_SCOPES>`
-    - Oauth2 Token Url: `https://<INSTANCE_DOMAIN>/oauth2/token`
+    - Client ID: `{{Identifier}}`
+    - Client Secret: `{{Secret}}`
+    - Client Credentials Grant Scope: `{{SPACE_SEPARATED_LIST_OF_SCOPES}}`
+    - Oauth2 Token Url: `https://{{INSTANCE_DOMAIN}}/oauth2/token`
     Click on `Save` to submit the credentials and your connector will be ready.
 2. Add your API details. You can read more about setting up API actions from our [API configuration reference](https://developer.moveworks.com/creator-studio/integrations/outbound/api-configuration/).
     
     ```bash
-    curl --location 'https://<INSTANCE_DOMAIN>/api/expense_reports' \
+    curl --location 'https://{{INSTANCE_DOMAIN}}/api/expense_reports' \
     --header 'Accept: application/json' \
-    --header 'Authorization: Bearer  {{generated_bearer_token}}'
+    --header 'Authorization: Bearer {{generated_bearer_token}}'
     ```
     
     - API endpoint Path: `/api/expense_reports`
@@ -87,7 +87,7 @@ Copy all three of them and store in a secure place. We will need these later to 
         
         | Key | Value |
         | --- | --- |
-        | fields | ["id","created_at","updated_at",{"created_by": ["id","login","fullname"]},"status","submitted_at","total","paid","audit-score","is_trip",{"currency": ["code","decimals"]},{"expensed_by": ["id","login","fullname","email"]},{"expense_lines": ["id","status","description","amount"]}] |
+        | limit | 1 |
 3. Test your setup in Creator Studio and look for a successful execution.
     
     ![Untitled](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%202.png)
