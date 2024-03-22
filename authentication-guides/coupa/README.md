@@ -81,6 +81,12 @@ Copy all three of them and store in a secure place. We will need these later to 
     | Key | Value |
     | --- | --- |
     | Accept | application/json |
+
+    - Query parameters:
+
+    | Key | Value |
+    | --- | --- |
+    | fields | ["id","created_at","updated_at",{"created_by": ["id","login","fullname"]},"status","submitted_at","total","paid","audit-score","is_trip",{"currency": ["code","decimals"]},{"expensed_by": ["id","login","fullname","email"]},{"expense_lines": ["id","status","description","amount"]}] |
 3. Test your setup in Creator Studio and look for a successful execution.
     
     ![Untitled](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%202.png)
