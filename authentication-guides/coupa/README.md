@@ -24,9 +24,9 @@ Coupa is a cloud-based platform that streamlines business spend management. It o
     
 2. Click **Create** and select **Client Credentials** in the **Grant type** dropdown.
 3. Complete the fields and select the scopes (access permissions) the Client needs.
-**Name:** Moveworks Client
-**Login Details** → The details of the account you are using to create the client
-**Scopes** → Select the scopes based on the requirement of your use case. For example, if you want to build a use case that requires fetching expense reports, scroll down and select the **`core.expense.read`** scope.
+    - **Name:** Moveworks Client
+    - **Login Details** → The details of the account you are using to create the client
+    - **Scopes** → Select the scopes based on the requirement of your use case. For example, if you want to build a use case that requires fetching expense reports, scroll down and select the **`core.expense.read`** scope.
     
     ![https://compass.coupa.com/Import/Integrate/Technical_Documentation/API/OAuth_Transition/01_Transition_Guide/create_client.jpg](https://compass.coupa.com/Import/Integrate/Technical_Documentation/API/OAuth_Transition/01_Transition_Guide/create_client.jpg)
     
