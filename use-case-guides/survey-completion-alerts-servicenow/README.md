@@ -121,4 +121,4 @@ Note: It could take a couple minutes before your flow shows up in your copilot. 
 
 # Congratulations!
 
-You just added Survey completion alerts to your Copilot! Check out our other guides for inspiration on what to build next.
+You just added Survey completion alerts to your Moveworks Copilot! Check out our other guides for inspiration on what to build next.
