@@ -7,7 +7,7 @@ difficulty_level: Beginner
 
 # **Introduction**
 
-ServiceNow's API provides a powerful way to automate tasks in within the ServiceNow environment, as well as query any of the miriad of tables, both offered by ServiceNow OOTB or custom. This guide will show how to create a ServiceNow service account and authenticate with ServiceNow's APIs.
+ServiceNow's API provides a powerful way to automate tasks in the ServiceNow environment, as well as query any of the myriad of tables, both offered by ServiceNow OOTB or custom. This guide will show how to create a ServiceNow service account and authenticate with ServiceNow's APIs.
 
 # **Prerequisites**
 
