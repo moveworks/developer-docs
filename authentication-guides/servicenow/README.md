@@ -95,7 +95,7 @@ Follow steps in our help site to grant the necessary roles/permissions required 
 ## Step 1: Register OAuth 2.0 API Client
 
 1. Go to the [ServiceNow Developer Portal](https://developer.servicenow.com/dev.do)
-2. Follow [Step 1](https://www.notion.so/Authentication-Tutorial-ServiceNow-v2-bf9283817e704a4385a4c5e8ffe8859e?pvs=21) of the Basic Auth step to get your `instance name`, `username`, and `password`. These will be used shortly
+2. Follow [Step 1](#step-1-get-your-developer-username-and-password) of the Basic Auth step to get your `instance name`, `username`, and `password`. These will be used shortly
 3. Navigate to **Application Registry** (System OAuth > Application Registry).
     
     ![Screenshot 2024-03-07 at 8.33.31 AM.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/Screenshot_2024-03-07_at_8.33.31_AM.png)
