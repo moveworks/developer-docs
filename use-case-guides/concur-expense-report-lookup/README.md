@@ -63,13 +63,24 @@ Since we want to integrate with Concur Expense, we should look into their [Expen
     
 
 > In the above API, we have used email address as the user identifier because during User setup in Concur the `Use Email as Username` checkbox was checked out.
-
-This is required for building this use case since we will be leveraging the User’s email address from the [User Attributes](https://developer.moveworks.com/creator-studio/reference/user-attributes/#user-attributes-reference) mapping in Creator Studio. This email address is picked up from the address that is mapped for the Chat System that the User is using it on.
-For example, if `user@example.com` is mapped in the Chat System, then the use case will only work if the same `user@example.com` was used in your Concur instance.
-> 
-> 
+> This is required for building this use case since we will be leveraging the User’s email address from the [User Attributes](https://developer.moveworks.com/creator-studio/reference/user-attributes/#user-attributes-reference) mapping in your Moveworks configuration. 
+>
 > ![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/Untitled%201.png)
 > 
+>To check which Email Address is configured for your Moveworks bot, follow the steps below in Moveworks Setup:
+>
+>1. Go over to Moveworks Setup (Gear icon at top right) -> Core Platform -> User Identity -> Ingested Users
+>![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/image.png)
+>2. Search for your name in the **Find Users** text box. Select your profile from the dropdown or click on **View Profile**.
+>![alt text](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/image2.png)
+>3. In the Profile Page, look of the `Email Address` attribute and check the value.
+>![alt text](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/image3.png)
+>
+>This value should be the same as the one setup as the login username for your Concur instance.
+>
+>If you don't have access to Moveworks Setup, you can request to get access to it by discussing with your Customer Support team or raising a request in our [Community portal](https://community.moveworks.com/moveworks-setup-83).
+
+> If the username that is setup in your Concur instance is not the same as your email address, then you would need to build a workflow to first fetch the username using the email address and then fetch the expense reports based on that username.
 
 # Steps
 
@@ -126,6 +137,11 @@ If you check the `OwnerLoginID` or `OwnerName` from the returned API response, y
 1. Since we want to capture the email ID of the User who is using the Bot, which is further used to filter the Expense Reports API, we will need to provide accurate examples when to trigger this Use Case. Creator Studio will automatically generate utterances which will trigger the Use Case to execute the API and fetch details for your expense reports.
     
     ![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/Untitled%205.png)
+    We want to provide different kinds of utterances here based on our Use Case. We want the bot to trigger the Expense Reports Use Case whenever a user asks anything related to their expense reports. Here are some examples you can use:
+    - What are my expense reports?
+    - Get me the status of my expense reports.
+    - What are the approval statuses of my expense reports?
+    - When were my expense reports created?
     
 
 ### Launch the use case
