@@ -143,6 +143,7 @@ If you check the `OwnerLoginID` or `OwnerName` from the returned API response, y
 1. Since we want to capture the email ID of the User who is using the Bot, which is further used to filter the Expense Reports API, we will need to provide accurate examples when to trigger this Use Case. Creator Studio will automatically generate utterances which will trigger the Use Case to execute the API and fetch details for your expense reports.
     
     ![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/Untitled%205.png)
+    
     We want to provide different kinds of utterances here based on our Use Case. We want the bot to trigger the Expense Reports Use Case whenever a user asks anything related to their expense reports. Here are some examples you can use:
     - What are my expense reports?
     - Get me the status of my expense reports.
