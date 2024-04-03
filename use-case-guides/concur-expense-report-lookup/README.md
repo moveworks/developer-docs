@@ -70,11 +70,17 @@ Since we want to integrate with Concur Expense, we should look into their [Expen
 >To check which Email Address is configured for your Moveworks bot, follow the steps below in Moveworks Setup:
 >
 >1. Go over to Moveworks Setup (Gear icon at top right) -> Core Platform -> User Identity -> Ingested Users
+>
 >![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/image.png)
+>
 >2. Search for your name in the **Find Users** text box. Select your profile from the dropdown or click on **View Profile**.
+>
 >![alt text](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/image2.png)
+>
 >3. In the Profile Page, look of the `Email Address` attribute and check the value.
+>
 >![alt text](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/image3.png)
+>
 >
 >This value should be the same as the one setup as the login username for your Concur instance.
 >
