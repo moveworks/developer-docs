@@ -36,7 +36,7 @@ ServiceNow provides granular table-level access to its data as part of its servi
 
 Follow steps in our help site to grant the necessary roles/permissions required to execute the API calls:
 
-[https://help.moveworks.com/docs/servicenow-access-requirements#service-account-requirements--permissions](https://help.moveworks.com/docs/servicenow-access-requirements#service-account-requirements--permissions)
+[https://docs.servicenow.com/bundle/tokyo-platform-administration/page/administer/roles/reference/r_BaseSystemRoles.html](https://docs.servicenow.com/bundle/tokyo-platform-administration/page/administer/roles/reference/r_BaseSystemRoles.html)
 
 ## **Step 3: Test with Postman (or another API client)**
 
