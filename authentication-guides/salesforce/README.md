@@ -89,6 +89,8 @@ The following will walk you through how to set up a Connected App with a Service
     2. After logging in as the service user account, click on *`View Profile` > `Settings`*
         1. Go to ***Change My Password*** and set up a new password for the account. Note down the password after saving it.
         2. Go to ***Reset My Security Token*** and click on `Reset Security Token` button. You will receive an email with the new security token. Note down the security token too.
+        
+            >Note: If you are unable to see the Reset Security Token option, follow [these steps](https://help.salesforce.com/s/articleView?id=000386179&type=1).
 
 ## **Step 2: Test with Postman**
 
