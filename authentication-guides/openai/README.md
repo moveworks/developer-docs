@@ -62,7 +62,7 @@ We will be following the [Authentication method](https://platform.openai.com/doc
     - Header Auth Key: `Authorization`
     - Header Auth Value Pattern: `Bearer %s`
     - Api Key: `{{OPENAI_API_KEY}}`
-2. Define your API action for channel creation.
+2. Define your API action for fetching OpenAI models.
     
     ```bash
     curl https://api.openai.com/v1/models \
