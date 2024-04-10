@@ -24,19 +24,19 @@ We will be following the [Authentication method](https://platform.openai.com/doc
 1. Go to the [OpenAI's Documentation](https://platform.openai.com/docs/overview) and login using the account you created.
 2. Click on `API Keys` after hovering over the left navigation bar
     
-    ![Untitled](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled.png)
+    ![OpenAI API Home Page](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled.png)
     
 3. Click on `Create new secret key` 
     
-    ![Untitled](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%201.png)
+    ![OpenAI API Keys Page](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%201.png)
     
 4. Set the name of the Secret key and the permissions based on your requirement. Then click on `Create secret key` .
     
-    ![Untitled](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%202.png)
+    ![Create New Secret Key](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%202.png)
     
 5. Copy and save the secret key in a safe and accessible place.
     
-    ![Untitled](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%203.png)
+    ![Save Secret Key](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%203.png)
     
 
 ## **Step 2: Test with Postman**
@@ -50,7 +50,7 @@ We will be following the [Authentication method](https://platform.openai.com/doc
     
 2. Import this request into Postman and execute it. You should get a successful response of your user information.
     
-    ![Untitled](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%204.png)
+    ![Postman Successful Response](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%204.png)
     
 
 ## **Step 3: Integrate with Creator Studio**
