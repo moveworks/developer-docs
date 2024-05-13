@@ -4,6 +4,7 @@ name: Power Automate Data Flattening
 description: Flattening the data using Power Automate and then triggering an API endpoint from Creator Studio and return data back to Creator Studio.
 systems: [Power Automate]
 time_in_minutes: 60
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A8711%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EGive+me+a+list+of+my+invoices%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3ESearches+Power+Automate+for+the+available+Data%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EOne+moment%2C+fetching+your+results.+This+may+take+%7E10+seconds%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3EInvoice+ID%3A+10645862%3Cbr%3EInvoice+Number%3A+15211132%3Cbr%3EInvoice+Amount%3A+179.57%3Cbr%3EApproval+Status%3A+APPROVED%3Cbr%3ESupplier+number%3A+3238292%2C%3Cbr%3ESupplier+Name%3A+PARAGON+DEVELOPMENT+SYSTEMS%3Cbr%3EInvoice+Date%3A+2024-01-30%3C%2Fp%3E%22%7D%5D%7D%5D%7D%7D%5D%7D
 difficulty_level: Intermediate
 ---
 # PowerAutomate Data Flattening Guide
