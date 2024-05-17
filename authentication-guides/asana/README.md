@@ -19,7 +19,7 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
 ## **Step 1: Create a Personal Access Token**
 
 1. Go to the [Asana developer console](https://app.asana.com/0/my-apps)
-2. Click on `Create New Token` under `Personal access tokens`. 
+2. Click on `Create New Token` under `Personal access tokens`.
     
     ![Untitled](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Untitled.png)
     
