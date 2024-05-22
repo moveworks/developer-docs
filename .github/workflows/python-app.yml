@@ -6,6 +6,7 @@ name: Developer Docs Validation
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: read-all
     outputs:
       message: '${{ steps.check_changes.outputs.comment_message }}'
     steps:
