@@ -33,7 +33,7 @@ To set up an integration with a Nexthink API, you must first create a set of API
 5. Fill up the details based on the below instructions:
     - **Name**: provide a meaningful name for the credential. Nexthink recommends using the name of the application you are configuring to call the API.
     - **Description**: enter a description to inform users what applications and services use the credentials and why.
-    - **Permissions**: select the features you want to enable the permissions for. Some permissions are related to features that may not be available to you, for example, features in technical preview or those not included in your license.
+    - **Permissions**: select the features you want to enable the permissions for. Some permissions are related to features that may not be available to you, for example, features in technical preview or those not included in your license. For most starting Creator Studio use cases, enable the permissions check for the "Remote Actions API".
         - **Remote Actions API** Select the checkbox to send API calls to trigger and query remote actions.
         - **Enrichment API** Select the checkbox to send API calls to operate the enrichment feature.
         - **Campaigns API** Select the checkbox to send API calls to trigger campaigns.
