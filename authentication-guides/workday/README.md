@@ -107,7 +107,7 @@ Run the **`Activate Pending Security Policy Changes`** task to activate permissi
 
 Universal search for **`Register API Client for Integrations`**
 
-![search box to find api client](images/Untitled_10.png)
+![search box to find api client for integrations](images/Untitled_10.png)
 
 Set the name to **Moveworks** and add the scopes required.
 
