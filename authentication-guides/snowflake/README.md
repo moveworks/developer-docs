@@ -1,17 +1,9 @@
-# Authentication Tutorial: Snowflake
-
-Last edited time: May 22, 2024 10:51 AM
-Technologies: Snowflake
-Difficulty level: Intermediate
-Status: In progress
-Assigned To: Indrashis Paul
-
-### Subtitle
-
-<aside>
-✨ Connect Creator Studio to Snowflake
-
-</aside>
+---
+name: Snowflake   # The name of the guide
+description: Connect Creator Studio to Snowflake   # Brief description of the guide
+time_in_minutes: 60   # Time in minutes to complete the guide
+difficulty_level: Advanced  # Difficulty level: "Beginner", "Intermediate", or "Advanced"
+---
 
 # **Introduction**
 
