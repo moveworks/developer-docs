@@ -27,10 +27,8 @@ For this tutorial, we are going to use the [Custom client integration](https://d
 
 ## **Step 1: Preparing Snowflake for OAuth**
 
-<aside>
-💡 Hitting `cmd + enter` while highlighting a given block in Snowflake ensures you only attempt to execute the highlighted block.
+> 💡 Hitting `cmd + enter` while highlighting a given block in Snowflake ensures you only attempt to execute the highlighted block.
 
-</aside>
 
 1. Create a Custom Client Integration in Snowflake
     1. Navigate to the Snowflake Web Interface, switch to the **`Worksheets`** tab and create a new SQL Worksheet to run the following SQL statement for creating an OAuth Security Integration using the [CREATE SECURITY INTEGRATION](https://docs.snowflake.com/en/sql-reference/sql/create-security-integration-oauth-snowflake) command:
