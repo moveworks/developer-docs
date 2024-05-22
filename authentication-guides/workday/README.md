@@ -107,7 +107,7 @@ Run the **`Activate Pending Security Policy Changes`** task to activate permissi
 
 Universal search for **`Register API Client for Integrations`**
 
-![https://developer.moveworks.com/static/3f4721c823875fbc16322fb8cc12f78c/410f3/Untitled_10.png](https://developer.moveworks.com/static/3f4721c823875fbc16322fb8cc12f78c/410f3/Untitled_10.png)
+![search box to find api client for integrations](images/Untitled_10.png)
 
 Set the name to **Moveworks** and add the scopes required.
 
@@ -129,19 +129,19 @@ From the **`View API Clients`** view, click on the **`API Clients for Integra
 
 From the related actions menu, select **`Manage Refresh Tokens for Integrations`**
 
-![https://developer.moveworks.com/static/6a2406d2a729e02c9e1f214ee8a6ea35/c6bbc/Untitled_14.png](https://developer.moveworks.com/static/6a2406d2a729e02c9e1f214ee8a6ea35/c6bbc/Untitled_14.png)
+![Manage refresh tokens page](images/Untitled_14.png)
 
 Add the ISU Account you created earlier to the API Client
 
-![https://developer.moveworks.com/static/b1bab6dffdf67d31c35640c840c0f17b/c6bbc/isu_to_client.png](https://developer.moveworks.com/static/b1bab6dffdf67d31c35640c840c0f17b/c6bbc/isu_to_client.png)
+![manage refresh tokens for integrations page](images/isu_to_client.png)
 
 Select **`Generate Refresh Token`**
 
-![https://developer.moveworks.com/static/2a3fbc8565c2adb8678d2388338278d6/c6bbc/gen_refresh_token.png](https://developer.moveworks.com/static/2a3fbc8565c2adb8678d2388338278d6/c6bbc/gen_refresh_token.png)
+![Generate a refresh token page](images/gen_refresh_token.png)
 
 Note your  new refresh token.
 
-![https://developer.moveworks.com/static/48972e313711f799a7f8172586f256ca/c6bbc/refresh_token.png](https://developer.moveworks.com/static/48972e313711f799a7f8172586f256ca/c6bbc/refresh_token.png)
+![successfully regenerated refresh token page](images/refresh_token.png)
 
 
 
@@ -160,9 +160,11 @@ We will use Postman to run these queries.
     ```
     
 2. Import this request into Postman by clicking `file` -> `import`.
+
     ![Alt text](images/image.png)
 
 3. Notice that the url and properties are filled in automatically. Execute by clicking `send`
+
     ![Alt text](images/image-1.png)
     
 4. If the execution is successful, yous hould see the an access_token in the response.
