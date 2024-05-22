@@ -27,7 +27,7 @@ GitHub provides a powerful API that allows developers to interact with GitHub se
     
     ![Untitled](Authentication%20Tutorial%20GitHub%2089effaebc900474193ba55ebb85340d6/Untitled%201.png)
     
-4. Set the Note, Expiration and the Scopes based on your use case and click on **Generate Token**
+4. Set the Note, Expiration and the Scopes based on your use case and click on **Generate Token**. By default, grant `repo:status` and `public_repo` scopes.
     
     ![Untitled](Authentication%20Tutorial%20GitHub%2089effaebc900474193ba55ebb85340d6/Untitled%202.png)
     
