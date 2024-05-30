@@ -7,7 +7,7 @@ difficulty_level: Beginner
 
 # **Introduction**
 
-Asana's API provides a robust platform to integrate and streamline tasks in your Asana workspace. This guide will demonstrate how to create an Asana Personal Access Token (PAT), authenticate with Asana's API, and test it in Creator Studio.
+Asana's API provides a robust platform to integrate and streamline tasks in your Asana workspace. This guide will demonstrate how to create an Asana Personal Access Token (PAT), authenticate with Asana's API, and test it in Creator Studio. 
 
 # **Prerequisites**
 
