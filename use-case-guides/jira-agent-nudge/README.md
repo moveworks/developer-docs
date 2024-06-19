@@ -16,29 +16,27 @@ Let's get started!
 
 # Prerequisites
 
-<aside>
-🛠  **What you need before starting**
+**What you need before starting**
 
 - Jira admin access to the desired project
 - Access to Jira Automation
 - Knowledge on Jira JQL queries
-</aside>
 
 # What are we building?
 
 ## Conversation Design
 
-[This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A2208%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GENERIC%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EHello+Tyler%21%3Cbr%3EHope+you+had+a+great+weekend.%3Cbr%3E%3Cbr%3EBelow+is+a+list+of+open+tickets+that+haven%27t+received+an+update+in+a+week+or+longer.+Please+prioritize+updating+these+tickets%2C+especially+if+they+are+customer+facing.%3Cbr%3E%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-12345%3C%2Fa%3E+%7C+I+need+access+to+Zoom%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-32352%3C%2Fa%3E+%7C+My+keyboard+isn%27t+working%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-43256%3C%2Fa%3E+%7C+VPN+keeps+disconnecting+from+my+preferred+portal%3Cbr%3E%3Cbr%3EThank+you%21%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build. (again, just include the link to the purple chat (not the picture). The picture will auto-populate)
+[This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A2208%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GENERIC%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EHello+Tyler%21%3Cbr%3EHope+you+had+a+great+weekend.%3Cbr%3E%3Cbr%3EBelow+is+a+list+of+open+tickets+that+haven%27t+received+an+update+in+a+week+or+longer.+Please+prioritize+updating+these+tickets%2C+especially+if+they+are+customer+facing.%3Cbr%3E%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-12345%3C%2Fa%3E+%7C+I+need+access+to+Zoom%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-32352%3C%2Fa%3E+%7C+My+keyboard+isn%27t+working%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-43256%3C%2Fa%3E+%7C+VPN+keeps+disconnecting+from+my+preferred+portal%3Cbr%3E%3Cbr%3EThank+you%21%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
 Because we are notifying a user of information that requires action, we will be following the [Actionable Updates](https://developer.moveworks.com/creator-studio/design-patterns/dp-10) design pattern.
 
 ## Creator Studio Components
 
-✨ **Triggers:** 
+✨ **Triggers:**
 
 1. Scheduled automation in Jira Automation
 
-🏃‍♂️ **Actions:** 
+🏃‍♂️ **Actions:**
 
 1. Provide links to open tickets that need to be updated directly to each assignee/agent
 
@@ -73,12 +71,11 @@ Follow our docs [here](https://developer.moveworks.com/creator-studio/quickstart
 ## Step 4: Build in Jira Automation
 
 1. Navigate to the Project settings for the applicable Jira Project
-2. Select `Create Rule` 
+2. Select `Create Rule`
 
 1. Replicate the following rule — note a second lookup is required in the FOR branch to pull the issues again for the agents returned in the first lookup. This is unfortunately a limitation in Jira Automation today.
-    
+
     ![Screenshot 2024-06-14 at 2.08.36 PM.png](Use%20Case%20Tutorial%20Jira%20Agent%20Nudge%2066648eda57984e2cb7a82f66c4ce19fd/Screenshot_2024-06-14_at_2.08.36_PM.png)
-    
 
 ![Screenshot 2024-06-14 at 2.09.57 PM.png](Use%20Case%20Tutorial%20Jira%20Agent%20Nudge%2066648eda57984e2cb7a82f66c4ce19fd/Screenshot_2024-06-14_at_2.09.57_PM.png)
 
@@ -93,6 +90,6 @@ The body for the POST events message is as follows:
 }
 ```
 
-# Congratulations!
+# Congratulations
 
 Now that you’ve built out a scheduled automation in Jira complete with actionable links, your agents will now know what to prioritize for the week ahead and can do so easily!
