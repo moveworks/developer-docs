@@ -6,6 +6,7 @@ systems: [jira]  # List of systems involved in the use case
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A2208%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GENERIC%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EHello+Tyler%21%3Cbr%3EHope+you+had+a+great+weekend.%3Cbr%3E%3Cbr%3EBelow+is+a+list+of+open+tickets+that+haven%27t+received+an+update+in+a+week+or+longer.+Please+prioritize+updating+these+tickets%2C+especially+if+they+are+customer+facing.%3Cbr%3E%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-12345%3C%2Fa%3E+%7C+I+need+access+to+Zoom%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-32352%3C%2Fa%3E+%7C+My+keyboard+isn%27t+working%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-43256%3C%2Fa%3E+%7C+VPN+keeps+disconnecting+from+my+preferred+portal%3Cbr%3E%3Cbr%3EThank+you%21%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D  # URL of the linked chat
 time_in_minutes: 30   # Time in minutes to complete the guide
 difficulty_level: Intermediate  # Difficulty level: "Beginner", "Intermediate", or "Advanced"
+accreditations: [tporter-moveworks, DEFAULT]
 ---
 
 # Introduction
