@@ -102,8 +102,8 @@ This strategic alignment of triggers, conditional logic, and timed actions, coup
         1. The recipient will be the approval record approver’s email
         2. Setup the message you would like to send the approver 
             
-            ```
-            Your pending approval request for request <ahref="https://{servicenow-instance}.service-now.com/nav_to.do?uri=sysapproval_approver.do?sysparm_query=sysapproval.number=RITM0123456^approver={user.sys_id}"> is due for a review.
+            ```html
+            Your pending approval request for request <a href="https://{servicenow-instance}.service-now.com/nav_to.do?uri=sysapproval_approver.do?sysparm_query=sysapproval.number=RITM0123456^approver={user.sys_id}"> is due for a review.
             <br>
             :point_right: <b>Please review your request and update as necessary</b>
             
