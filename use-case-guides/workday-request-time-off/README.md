@@ -47,12 +47,12 @@ This will take `2 weeks` for your developer and the business system manager to b
 
 1. Skim through this page, and decide if you want to engage [Professional Services](https://developer.moveworks.com/creator-studio/troubleshooting/support/#4-sign-up-for-professional-services).
 2. Share and align on the [Conversation Design](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22:%22My+Workspace%22,%22botSettings%22:%7B%7D,%22mocks%22:%5B%7B%22id%22:6521,%22title%22:%22Mock+1%22,%22transcript%22:%7B%22settings%22:%7B%22colorStyle%22:%22LIGHT%22,%22startTime%22:%2211:43+AM%22,%22defaultPerson%22:%22GWEN%22,%22editable%22:true%7D,%22messages%22:%5B%7B%22from%22:%22USER%22,%22text%22:%22%3Cp%3EI+need+to+take+time+off,+could+you+help+me+with+that?%3C/p%3E%22%7D,%7B%22from%22:%22ANNOTATION%22,%22text%22:%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C/b%3E%3Cbr%3E1.+Natural+Language%3Cbr%3E%3Cbr%3E%F0%9F%A4%B2+%3Cb%3ESlots%3C/b%3E%3Cbr%3E1.+Time+off+plan%3Cbr%3E2.+Start+time%3Cbr%3E%3Ci%3E3.+(optional):+comments,+end+date,+start+time,+end+time%3C/i%3E%3Cbr%3E%3Cbr%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+%3Cb%3EActions%3C/b%3E%3Cbr%3E1.+Query+time+off+details+for+employee%3Cbr%3E2.+Request+time+off%3Cbr%3E%3Cbr%3E%F0%9F%93%9A+%3Cb%3EGuidelines%3C/b%3E%3Cbr%3E%3Ci%3E1.+(before+this+plugin)%3C/i%3E:+Employee+looks+up+eligible+time+off+plan%3Cbr%3E2.+Employee+specifies+which+time+off+plan+and+start+date+they+want%3Cbr%3E3.+Time+off+request+is+sent%3C/p%3E%22%7D,%7B%22from%22:%22BOT%22,%22text%22:%22%3Cp%3ESounds+good,+which+time+off+plan+would+you+like+to+select?%3C/p%3E%22,%22cards%22:%5B%7B%22title%22:%22%3Cp%3E1:+Employee+Time+Off+(USA)%3C/p%3E%22%7D,%7B%22title%22:%22%3Cp%3E2:+Sick+Time+Off+(USA)%3C/p%3E%22%7D,%7B%22title%22:%22%3Cp%3E3:+Wellness+Day+(USA)%3C/p%3E%22%7D%5D%7D,%7B%22from%22:%22USER%22,%22text%22:%22%3Cp%3ELets+take+the+first+time+off+plan%3C/p%3E%22%7D,%7B%22from%22:%22BOT%22,%22text%22:%22%3Cp%3ESounds+good,+when+would+you+like+to+take+time+off?%3Cbr%3E%3Cbr%3EYou+can+also+optionally+specify:%3Cbr%3E%3Ci%3E1.+End+date%3C/i%3E%3Cbr%3E%3Ci%3E2.+Comments%3C/i%3E%3Cbr%3E%3Ci%3E3.+Start+time%3C/i%3E%3Cbr%3E%3Ci%3E4.+End+time%3C/i%3E%3C/p%3E%22%7D,%7B%22from%22:%22USER%22,%22text%22:%22%3Cp%3ELets+take+time+off+on+July+4+and+5%3C/p%3E%22%7D,%7B%22from%22:%22BOT%22,%22text%22:%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3C/b%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Position+and+Time+Off+Type%3C/b%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C/b%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C/p%3E%22%7D,%7B%22from%22:%22BOT%22,%22text%22:%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+Adam+Johnson+%F0%9F%8F%9D%3C/p%3E%22%7D%5D%7D%7D%5D%7D) experience with your Workday admin. Their alignment is important to build a useful plugin for your employees.
-    1. Optional: Ask [these discovery questions](https://www.notion.so/Plugin-Template-Request-Time-Off-in-Workday-081c4d522bf64bbead3697288dd46047?pvs=21) to customize the conversation design to better fit your teams needs. 
-3. *(optional)* Ask your Workday Engineer to share the [Access Needs](https://www.notion.so/Example-Plugin-Update-Account-Owner-in-Salesforce-204896bc10ea42448f57967a11465c77?pvs=21) and [Security Data Sheet](https://www.notion.so/Example-Plugin-Update-Account-Owner-in-Salesforce-204896bc10ea42448f57967a11465c77?pvs=21) with your security team. Security may be required to approve the access needs and security data sheet to build this use case.
+    1. Optional: Ask [these discovery questions](#discovery-questions-to-personalize-your-conversation--design-customization-options) to customize the conversation design to better fit your teams needs. 
+3. *(optional)* Ask your Workday Engineer to share the [Access Needs](#overview) with your security team. Security may be required to approve the access needs to build this use case.
     1. This step is not required if your security team has authorized Moveworks to connect with Salesforce and similar business systems
-4. *(optional)*: Ask your legal team to review Moveworks [Terms of Service](notion://www.notion.so/moveworks/Example-Plugin-Update-Account-Owner-in-Salesforce-204896bc10ea42448f57967a11465c77#TermsOfService) and [Privacy Policy](notion://www.notion.so/moveworks/Example-Plugin-Update-Account-Owner-in-Salesforce-204896bc10ea42448f57967a11465c77#PrivacyPolicy). They may be required to approve these two documents to build a Salesforce Plugin.
+4. *(optional)*: Ask your legal team to review Moveworks [Terms of Service](https://www.moveworks.com/us/en/legal/terms-conditions) and [Privacy Policy](https://www.moveworks.com/us/en/legal/privacy-policy). They may be required to approve these two documents to build a Salesforce Plugin.
     1. This step is not required if your legal team has authorized Moveworks to connect with Salesforce and similar business systems
-5. Ask your Workday Administrator and Workday System Engineer to follow the [Access Needs](https://www.notion.so/Example-Plugin-Update-Account-Owner-in-Salesforce-204896bc10ea42448f57967a11465c77?pvs=21) guide to share the required API credentials with you with required permissions and configuration.
+5. Ask your Workday Administrator and Workday System Engineer to follow the [Access Needs](#overview) guide to share the required API credentials with you with required permissions and configuration.
     1. Note: your Workday System Engineer will provide staging and production credentials for development.
 6. Capture these requirements in this [project plan template](https://docs.google.com/document/d/1CAGWrv6kvSQUSKPNA6F_k02WGzpclq7yn4V87WQa6rg/edit), so that all XFN stakeholders have a consistent experience they will be building
 7. Finally, ask your Creator Studio developer to import and build the plugin with Creator Studio. They will develop and launch first in the sandbox environment, and then in the production environment.
@@ -328,59 +328,3 @@ async def request_time_off(
 # Congratulations!
 
 You just gave your employees the ability to take time off through your Copilot 🏝️ Look at our other Workday use cases below to further improve their experience below, and get inspired on what to build next.
-
----
-
-# Complete after August 6, 2024
-
-## Step 2: Build in Creator Studio
-
-### Setup use case
-
-1. Start in the Paths Workspace and create a new path
-    1. {image of path}
-2. Title your use case: “Reset Azure MFA Device” and provide a description that is easily digestible.
-
-### Build the conversation design
-
-1. When you first create a new path, you will be given a blank pallet to start from. 
-    
-    ![Untitled](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled%201.png)
-    
-2. Clicking on the *Add a bot action* button will present you with several options, because the first thing we want to do is ask the user a question, we will choose that option.
-    
-    ![Untitled](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled%202.png)
-    
-3. Provide the question you want to ask and based on the number of options provided, the flow will be split to accommodate the choices
-    
-    ![Untitled](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled%203.png)
-    
-4. Once the branch is split, continue this process to build your conversation
-    
-    ![Untitled](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled%204.png)
-    
-    - If the user doesn’t want to reset all factors, leave the interaction blank for now. We’ll let IT decide if / how to handle partial resets.
-    - If the user is okay with resetting all factors, then add the API action to delete all factors (step 3)
-5. Execute your Azure function.
-    - Connector: Follow our [Azure Functions guide](https://www.notion.so/Authentication-Guide-Azure-Function-Apps-7503f66bf6994df5b7bb481e05e82e9f?pvs=21).
-    - Path: `/api/reset_all_devices`
-    - Body:
-        
-        ```python
-        {
-        	"email": "{{user.primary_email_address}}"
-        }
-        ```
-        
-
-### Build your generative intent & launch the use case
-
-Build a [Generative Intent](https://developer.moveworks.com/creator-studio/paths/generative-intents/) and then use our [Launch Rules](https://developer.moveworks.com/creator-studio/launch-options/) to launch your use case to your Copilot. 
-
-## Step 3: See it in action!
-
-Trigger the use case by asking for it from your Copilot. Here’s a quick demo.
-
-[Untitled](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled.qt)
-
-Note: It could take a couple minutes before your flow shows up in your copilot. If it doesn’t show up after five minutes, follow our troubleshooting guide to further debug.
