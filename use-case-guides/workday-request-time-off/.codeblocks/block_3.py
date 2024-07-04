@@ -13,15 +13,18 @@ app = FastAPI()
 def get_access_token():
     url = "https://wd2-impl-services1.workday.com/ccx/oauth2/{workday_instance_id}/token"
     headers = {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Authorization": "Basic <Your_Authorization>",  # Replace <Your_Authorization> with your actual encoded auth header value
+        "Content-Type": "application/x-www-form-urlencoded"
     }
     # REFRESH_TOKEN should be securely fetched from an environment variable or a secrets manager
     data = {
         "grant_type": "refresh_token",
         "refresh_token": "<Your_Refresh_Token>",  # Redacted for security. Replace <Your_Refresh_Token> with actual value
     }
-    response = requests.post(url, headers=headers, data=data)
+
+    # CLIENT_ID and CLIENT_SECRET should be securely fetched from an environment variable or a secrets manager
+    auth = ("<Your_Client_ID>", "<Your_Client_Secret>") # Redacted for security. Replace <Your_Client_ID> and <Your_Client_Secret> with actual value
+    
+    response = requests.post(url, headers=headers, auth=auth, data=data)
     if response.status_code != 200:
         raise HTTPException(status_code=400, detail="Failed to authenticate.")
     return response.json().get("access_token")
@@ -43,7 +46,6 @@ async def request_time_off(
         return {"error": e.detail}
 
     # These values need to be dynamically determined based on your actual use case
-    instance = "your_instance"
     workday_instance_id = "your_workday_instance_id"
     worker_id = "your_worker_id"  # This should be fetched dynamically
 
