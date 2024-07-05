@@ -11,6 +11,7 @@ app = FastAPI()
 
 # Function to get access token
 def get_access_token():
+    workday_instance_id = "your_workday_instance_id"
     url = "https://wd2-impl-services1.workday.com/ccx/oauth2/{workday_instance_id}/token"
     headers = {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -45,9 +46,9 @@ async def request_time_off(
     except HTTPException as e:
         return {"error": e.detail}
 
-    # These values need to be dynamically determined based on your actual use case
-    workday_instance_id = "your_workday_instance_id"
-    worker_id = "your_worker_id"  # This should be fetched dynamically
+    # These values need to be determined based on your actual use case and instance
+    workday_instance_id = "<Your_workday_instance_id>"
+    worker_id = "<Your_worker_id>"  # This should be fetched dynamically
 
     url_request_off = f"https://wd2-impl-services1.workday.com/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
 
