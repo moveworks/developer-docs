@@ -18,14 +18,14 @@ Let's dive in!
 
 ### **System Overview**
 
-**Depends on**: [`Workday` connector (link)](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
+**Depends on**: `Workday connector`([link](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday))
 
 **Assumptions**:
 
 1. You have synchronized your employees’ work email from your IDAM like `Okta` or `Microsoft Entra` to Moveworks using Moveworks Setup ([link](https://help.moveworks.com/docs/ingest-users))
 2. Your workday instance uses the same work email as your IDAM.
 
-**Ease of Building**
+**Ease of Building**:
 
 This is a `intermediate` difficulty use case
 
@@ -39,13 +39,13 @@ This will take `2 weeks` for your developer and the business system manager to b
 4. If payroll team does not have accurate records, they will not pay employees properly for time off.
 5. This plugin provides a convenient way for your employees to submit time off requests.
 
-**Level of Access Requested**
+**Level of Access Requested**:
 
 1. Requires access to the `Worker Data` and `Time Off` Business Objects. Elaborated in [Domain Permissions](#domain-permissions-required) section
 
 **SKU Eligibility**: `Core Copilot` SKU (all customers).
 
-### Conversation Design
+## Conversation Design
 
 [This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3Cbr%3E1.+Natural+Language%3Cbr%3E%3Cbr%3E%F0%9F%A4%B2+%3Cb%3ESlots%3C%2Fb%3E%3Cbr%3E1.+Time+off+plan%3Cbr%3E2.+Start+time%3Cbr%3E%3Ci%3E3.+%28optional%29%3A+comments%2C+end+date%2C+start+time%2C+end+time%3C%2Fi%3E%3Cbr%3E%3Cbr%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+%3Cb%3EActions%3C%2Fb%3E%3Cbr%3E1.+Query+time+off+details+for+employee%3Cbr%3E2.+Request+time+off%3Cbr%3E%3Cbr%3E%F0%9F%93%9A+%3Cb%3EGuidelines%3C%2Fb%3E%3Cbr%3E%3Ci%3E1.+%28before+this+plugin%29%3C%2Fi%3E%3A+Employee+looks+up+eligible+time+off+plan%3Cbr%3E2.+Employee+specifies+which+time+off+plan+and+start+date+they+want%3Cbr%3E3.+Time+off+request+is+sent%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3Cbr%3E%3Cbr%3EYou+can+also+optionally+specify%3A%3Cbr%3E%3Ci%3E1.+End+date%3C%2Fi%3E%3Cbr%3E%3Ci%3E2.+Comments%3C%2Fi%3E%3Cbr%3E%3Ci%3E3.+Start+time%3C%2Fi%3E%3Cbr%3E%3Ci%3E4.+End+time%3C%2Fi%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4+and+5%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Position+and+Time+Off+Type%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
@@ -89,15 +89,14 @@ We will be accessing Workday through the read-only WQL API and the read + write 
 
 | Workday Web Service | Domain Permissions Required | Description |
 | --- | --- | --- |
-| Worker Data Query (WQL) | - Get_References
-- Get_Workers
-- Get_Eligible_Time_Off_Plans
-- Get_Time_Off_Balance
-- Get_Positions | Permissions needed to retrieve worker information, including contact details, position, and time off balances. |
-| Time Off Request (ReST) | - Put_Time_Off_Request
-- Get_Workers- Get_Positions | Permissions needed to submit time off requests and retrieve worker and position information. |
+| Worker Data Query (WQL) | - Get_References<br/>- Get_Workers<br/>- Get_Eligible_Time_Off_Plans<br/>- Get_Time_Off_Balance<br/>- Get_Positions | Permissions needed to retrieve worker information, including contact details, position, and time off balances. |
+| Time Off Request (ReST) | - Put_Time_Off_Request<br/>- Get_Workers<br/>- Get_Positions | Permissions needed to submit time off requests and retrieve worker and position information. |
 
-> ℹ️ Note: You will be creating two ISUs, one in a staging environment, and one in production.
+:::info Note
+
+You will be creating two ISUs, one in a staging environment, and one in production.
+
+:::
 
 ### Step 1: Create a Connector in Creator Studio
 
@@ -204,8 +203,11 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{i
 
 ![Screenshot 2024-07-04 at 8.19.38 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.19.38_PM.png)
 
+:::success Done
 
-> ✅ Inform your Creator Studio developer that they can use your Workday connector to build their use case 🚀
+Inform your Creator Studio developer that they can now use your Workday connector to build their use case 🚀
+
+:::
 
 ### **Step 3: Build in Creator Studio**
 
@@ -252,7 +254,7 @@ We will be building this use case as a query triggered path along with an iPaaS 
 1. Assuming an employees select a time off plan that has adequate time off balance. An error message is thrown for an invalid time off 
 2. An employee could specify a time off plan that they are not eligible for
 
-### Example iPaaS Code (with Python and FastAPI)
+## Example iPaaS Code (with Python and FastAPI)
 
 ```python
 from fastapi import FastAPI, HTTPException
