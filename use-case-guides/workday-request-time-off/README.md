@@ -235,8 +235,8 @@ We will be building this use case as a query triggered path along with an iPaaS 
 
 **🏃‍♂️ Actions**
 
-1. Lookup time off type details: Calls the `/api/wql/v1/{{instance}}/data` API to query the requesting employee's workday ID, eligible time off plans, and relevant time off types through their work email address.
-2. Request time off: Calls the `/api/absenceManagement/v1/{{workday_instance_id}}/workers/{{worker_id}}/requestTimeOff` API to request time off
+1. Lookup time off type details: Executes the `/api/wql/v1/{{instance}}/data` API to query the requesting employee's workday ID, eligible time off plans, and relevant time off types through their work email address.
+2. Request time off: Executes the `/api/absenceManagement/v1/{{instance}}/workers/{{worker_id}}/requestTimeOff` API to request time off
 
 **📚 Guidelines**
 
@@ -265,6 +265,7 @@ app = FastAPI()
 
 # Function to get access token
 def get_access_token():
+    workday_instance_id = "your_workday_instance_id"
     url = "https://wd2-impl-services1.workday.com/ccx/oauth2/{workday_instance_id}/token"
     headers = {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -299,9 +300,9 @@ async def request_time_off(
     except HTTPException as e:
         return {"error": e.detail}
 
-    # These values need to be dynamically determined based on your actual use case
-    workday_instance_id = "your_workday_instance_id"
-    worker_id = "your_worker_id"  # This should be fetched dynamically
+    # These values need to be determined based on your actual use case and instance
+    workday_instance_id = "<Your_workday_instance_id>"
+    worker_id = "<Your_worker_id>"  # This should be fetched dynamically
 
     url_request_off = f"https://wd2-impl-services1.workday.com/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
 
