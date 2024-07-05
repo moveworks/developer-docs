@@ -93,7 +93,7 @@ We will be accessing Workday through the read-only WQL API and the read + write 
 | Time Off Request (ReST) | Put_Time_Off_Request, Get_Workers, Get_Positions | Permissions needed to submit time off requests and retrieve worker and position information. |
 
 
-### > ℹ️ You will be creating two ISUs, one in a staging environment, and one in production.
+> ℹ️ **You will be creating two ISUs, one in a staging environment, and one in production.**
 
 
 ### Step 1: Create a Connector in Creator Studio
@@ -202,7 +202,7 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{i
 ![Screenshot 2024-07-04 at 8.19.38 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.19.38_PM.png)
 
 
-### > ✅ Inform your Creator Studio developer that they can use your Workday connector to build their use case 🚀
+> ✅ **Inform your Creator Studio developer that they can use your Workday connector to build their use case** 🚀
 
 ### **Step 3: Build in Creator Studio**
 
