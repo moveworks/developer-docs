@@ -98,7 +98,7 @@ Use the menu item to access **`Security Group`** > **`Maintain Domain Permission
 
 ![Untitled](images/Untitled%2026.png)
 
-Add any permissions that are needed for your Moveworks bot which will be dependent on what you plan on needing access to, the permissions we typically look for are shown [here](https://help.moveworks.com/docs/workday-access-requirements#permissions). 
+Add the permissions that are needed for your Workday integration / use case. Permissions will vary per plugin guide. For example, permissions for time off and leave of absence are specified [here](https://help.moveworks.com/docs/workday-access-requirements#permissions). 
 
 Click Ok.
 
