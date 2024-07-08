@@ -64,6 +64,7 @@ Employees often need to take unplanned or planned time off, making it imperative
 1. Which time off plans should be shown to employees in a given country (that you are launching to)?
 2. Do you specify time off in days or hours for these plans?
 3. What are the required fields for managers to review time off requests (example: comments, business justification). Which are optional?
+4. Can your employees request time off requests only for themselves, or also for someone else?
 
 # For Workday Administrators
 
