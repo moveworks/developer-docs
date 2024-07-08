@@ -20,7 +20,7 @@ Let's dive in!
 
 **Depends on**: `Workday connector`([link](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday))
 
-**Assumptions**:
+**Pre-requisites**:
 
 1. You have synchronized your employees’ work email from your IDAM like `Okta` or `Microsoft Entra` to Moveworks using Moveworks Setup ([link](https://help.moveworks.com/docs/ingest-users))
 2. Your workday instance uses the same work email as your IDAM.
@@ -33,11 +33,7 @@ This will take `2 weeks` for your developer and the business system manager to b
 
 **Business Value**:
 
-1. Employees need to file time off requests promptly for accurate record keeping
-2. However, it is painful for employees to signing into your single-sign on provider, signing into workday, navigating to your employee schedule calendar, and selecting the appropriate time off plans and dates
-3. If managers don’t have accurate record of when employees are off, they can’t manage
-4. If payroll team does not have accurate records, they will not pay employees properly for time off.
-5. This plugin provides a convenient way for your employees to submit time off requests.
+Employees often need to take unplanned or planned time off, making it imperative to file time off requests efficiently. However traditional processes can discourage timely requests and affect time record accuracy, it is cumbersome for employees to sign into your single-sign on provider, sign into workday, navigating to your employee schedule calendar, and selecting the appropriate time off plans and dates. Without an accurate record of when employees plan to be off, managers can also be left in the dark, making it nearly impossible to manage team resources effectively. This can lead to understaffing or scheduling conflicts that impact both productivity and morale. Inaccurate records of employee time off directly influence payroll accuracy. If the payroll team doesn't have precise information, employees may receive incorrect payments for their time off—resulting in dissatisfaction and potential legal complications. By providing a direct and intuitive way for employees to submit time off requests through their Moveworks bot, businesses remove significant barriers to submitting these requests. This user-friendly interaction not only enhances the employee experience but also encourages adherence to formal request procedures. Employees can quickly navigate through the time-off request process without the need to log into multiple systems or navigate complex menus, making it more likely they will follow company policy and timelines for requests. 
 
 **Level of Access Requested**:
 
@@ -65,10 +61,9 @@ This will take `2 weeks` for your developer and the business system manager to b
 
 ## Discovery Questions to Personalize Your Conversation  Design *(Customization Options)*
 
-1. Which time off plans do employees in a given country have?
-2. Is approval required before you request time off?
-3. Do you specify time off required in days or hours?
-4. Would you like to notify employees once their time off requests are approved?
+1. Which time off plans should be shown to employees in a given country (that you are launching to)
+2. Do you specify time off in days or hours for these plans?
+3. What are the required fields for managers to review time off requests (example: comments, business justification). Which are optional?
 
 # For Workday Administrators
 
