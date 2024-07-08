@@ -49,19 +49,19 @@ Employees often need to take unplanned or planned time off, making it imperative
 
 1. Skim through this page, and decide if you want to engage [Professional Services](https://developer.moveworks.com/creator-studio/troubleshooting/support/#4-sign-up-for-professional-services).
 2. Share and align on the [Conversation Design](#conversation-design) experience with your Workday admin. Their alignment is important to build a useful plugin for your employees.
-    1. Optional: Ask [these discovery questions](#discovery-questions-to-personalize-your-conversation--design-customization-options) to customize the conversation design to better fit your teams needs. 
+   * Optional: Ask [these discovery questions](#discovery-questions-to-personalize-your-conversation--design-customization-options) to customize the conversation design to better fit your teams needs. 
 3. *(optional)* Ask your Workday Engineer to share the [Access Needs](#overview) with your security team. Security may be required to approve the access needs to build this use case.
-    1. This step is not required if your security team has authorized Moveworks to connect with Workday and similar business systems
+   * This step is not required if your security team has authorized Moveworks to connect with Workday and similar business systems
 4. *(optional)*: Ask your legal team to review Moveworks [Terms of Service](https://www.moveworks.com/us/en/legal/terms-conditions) and [Privacy Policy](https://www.moveworks.com/us/en/legal/privacy-policy). They may be required to approve these two documents to build a Workday Plugin.
-    1. This step is not required if your legal team has authorized Moveworks to connect with Workday and similar business systems
+   * This step is not required if your legal team has authorized Moveworks to connect with Workday and similar business systems
 5. Ask your Workday Administrator and Workday System Engineer to follow the [Access Needs](#overview) guide to share the required API credentials with you with required permissions and configuration.
-    1. Note: your Workday System Engineer will provide staging and production credentials for development.
-6. Capture these requirements in this [project plan template](https://docs.google.com/document/d/1CAGWrv6kvSQUSKPNA6F_k02WGzpclq7yn4V87WQa6rg/edit), so that all XFN stakeholders have a consistent experience they will be building
+   * Note: your Workday System Engineer will provide staging and production credentials for development.
+6. Capture these requirements in a [project plan template like this](https://docs.google.com/document/d/1CAGWrv6kvSQUSKPNA6F_k02WGzpclq7yn4V87WQa6rg/edit), so that all XFN stakeholders have a consistent experience they will be building
 7. Finally, ask your Creator Studio developer to import and build the plugin with Creator Studio. They will develop and launch first in the sandbox environment, and then in the production environment.
 
 ## Discovery Questions to Personalize Your Conversation  Design *(Customization Options)*
 
-1. Which time off plans should be shown to employees in a given country (that you are launching to)
+1. Which time off plans should be shown to employees in a given country (that you are launching to)?
 2. Do you specify time off in days or hours for these plans?
 3. What are the required fields for managers to review time off requests (example: comments, business justification). Which are optional?
 
@@ -76,7 +76,7 @@ This document provides a comprehensive step-by-step guide designed for Workday A
 We will be accessing Workday through the read-only WQL API and the read + write AbsenceManagement REST API, through a Workday Connector in Moveworks. This requires you to:
 
 1. Create a Connector in Creator Studio – [link](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
-    1. Grant the [domain permissions below](#domain-permissions-required) as part of your Integrations Security Systems Group (ISSG)
+   * Grant the [domain permissions below](#domain-permissions-required) as part of your Integrations Security Systems Group (ISSG)
 2. Test required APIs in Postman
 3. Build use case in Creator Studio
 
