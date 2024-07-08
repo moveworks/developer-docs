@@ -55,9 +55,9 @@ This will take `2 weeks` for your developer and the business system manager to b
 2. Share and align on the [Conversation Design](#conversation-design) experience with your Workday admin. Their alignment is important to build a useful plugin for your employees.
     1. Optional: Ask [these discovery questions](#discovery-questions-to-personalize-your-conversation--design-customization-options) to customize the conversation design to better fit your teams needs. 
 3. *(optional)* Ask your Workday Engineer to share the [Access Needs](#overview) with your security team. Security may be required to approve the access needs to build this use case.
-    1. This step is not required if your security team has authorized Moveworks to connect with Salesforce and similar business systems
-4. *(optional)*: Ask your legal team to review Moveworks [Terms of Service](https://www.moveworks.com/us/en/legal/terms-conditions) and [Privacy Policy](https://www.moveworks.com/us/en/legal/privacy-policy). They may be required to approve these two documents to build a Salesforce Plugin.
-    1. This step is not required if your legal team has authorized Moveworks to connect with Salesforce and similar business systems
+    1. This step is not required if your security team has authorized Moveworks to connect with Workday and similar business systems
+4. *(optional)*: Ask your legal team to review Moveworks [Terms of Service](https://www.moveworks.com/us/en/legal/terms-conditions) and [Privacy Policy](https://www.moveworks.com/us/en/legal/privacy-policy). They may be required to approve these two documents to build a Workday Plugin.
+    1. This step is not required if your legal team has authorized Moveworks to connect with Workday and similar business systems
 5. Ask your Workday Administrator and Workday System Engineer to follow the [Access Needs](#overview) guide to share the required API credentials with you with required permissions and configuration.
     1. Note: your Workday System Engineer will provide staging and production credentials for development.
 6. Capture these requirements in this [project plan template](https://docs.google.com/document/d/1CAGWrv6kvSQUSKPNA6F_k02WGzpclq7yn4V87WQa6rg/edit), so that all XFN stakeholders have a consistent experience they will be building
