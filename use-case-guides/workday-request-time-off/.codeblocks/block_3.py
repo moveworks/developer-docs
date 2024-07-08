@@ -3,7 +3,7 @@ import requests
 
 CANONICAL_TIME_OFF_PLAN_MAP = {
   "Time off (USA)": "67839087362157384953",
-  "Time off (XYZ)": "8w2394093284924538920",
+  "Wellness Days (USA)": "802394093284924538920",
   ...
 }
 
