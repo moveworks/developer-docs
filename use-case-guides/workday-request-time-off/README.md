@@ -10,9 +10,14 @@ difficulty_level: Intermediate
 
 ### Presenting the easiest way for your employees to Take Time Off 🏝️
 
-In the realm of human resources and employee management, the ability to efficiently manage time-off requests stands as a cornerstone for maintaining workforce satisfaction and operational harmony. Workday, a comprehensive cloud-based platform for human capital management (HCM), enterprise resource planning (ERP), and financial management, offers robust functionalities to streamline these processes.
+Employees often need to take unplanned or planned time off, making it important for managers to review time off requests ahead of time.
 
-Yet, the potential to further optimize time-off requests through automation remains untapped by many. Recognizing this, our focus shifts to leveraging Creator Studio to automate the submission of time-off requests within Workday. This tutorial will guide you through a seamless process culminating in the efficient submission of a time-off request in Workday directly through your Moveworks Bot.
+However traditional processes can discourage timely requests and affect time record accuracy, since it is cumbersome for employees to sign into your single-sign on provider, sign into workday, navigating to your employee schedule calendar, and selecting the appropriate time off plans and dates. Without an accurate record of when employees plan to be off, managers can also be left in the dark, making it nearly impossible to manage team resources effectively. This can lead to understaffing or scheduling conflicts that impact both productivity and morale. 
+
+Inaccurate records of employee time off directly influence payroll accuracy. If the payroll team doesn't have precise information, employees may receive incorrect payments for their time off—resulting in dissatisfaction and potential legal complications.
+
+By providing a direct and intuitive way for employees to submit time off requests through their Moveworks bot, businesses remove significant barriers to submitting these requests. This user-friendly interaction not only enhances the employee experience but also encourages adherence to formal request procedures. Employees can quickly navigate through the time-off request process without the need to log into multiple systems or navigate complex menus, making it more likely they will follow company policy and timelines for requests. 
+
 
 Let's dive in!
 
@@ -33,7 +38,12 @@ This will take `2 weeks` for your developer and the business system manager to b
 
 **Business Value**:
 
-Employees often need to take unplanned or planned time off, making it imperative to file time off requests efficiently. However traditional processes can discourage timely requests and affect time record accuracy, it is cumbersome for employees to sign into your single-sign on provider, sign into workday, navigating to your employee schedule calendar, and selecting the appropriate time off plans and dates. Without an accurate record of when employees plan to be off, managers can also be left in the dark, making it nearly impossible to manage team resources effectively. This can lead to understaffing or scheduling conflicts that impact both productivity and morale. Inaccurate records of employee time off directly influence payroll accuracy. If the payroll team doesn't have precise information, employees may receive incorrect payments for their time off—resulting in dissatisfaction and potential legal complications. By providing a direct and intuitive way for employees to submit time off requests through their Moveworks bot, businesses remove significant barriers to submitting these requests. This user-friendly interaction not only enhances the employee experience but also encourages adherence to formal request procedures. Employees can quickly navigate through the time-off request process without the need to log into multiple systems or navigate complex menus, making it more likely they will follow company policy and timelines for requests. 
+1. Employees need to file time off requests promptly for accurate record keeping
+2. However, it is painful for employees to signing into your single-sign on provider, signing into workday, navigating to your employee schedule calendar, and selecting the appropriate time off plans and dates
+3. If managers don’t have accurate record of when employees are off, they can’t manage
+4. If payroll team does not have accurate records, they will not pay employees properly for time off.
+5. This plugin provides a convenient way for your employees to submit time off requests.
+
 
 **Level of Access Requested**:
 
@@ -65,10 +75,11 @@ Employees often need to take unplanned or planned time off, making it imperative
 2. Do you specify time off in days or hours for these plans?
 3. What are the required fields for managers to review time off requests (example: comments, business justification). Which are optional?
 4. Can your employees request time off requests only for themselves, or also for someone else?
+   * Note: this guide only allows employees to request time off for themselves. See API research below to understand how you can customize API research to allow time off requests for other employees
 
 # For Workday Administrators
 
-This document provides a comprehensive step-by-step guide designed for Workday Administrators and HR Systems Engineers, detailing the procedures for creating credentials, assigning roles, and configuring workday effectively. It serves as a practical manual to ensure accurate setup and management of technical resources.
+This document provides a step-by-step guide designed for Workday Administrators and HR Systems Engineers, detailing the procedures for creating credentials, assigning roles, and configuring workday effectively. It serves as a practical manual to ensure accurate setup and management of technical resources.
 
 ## Configuration Instructions
 
@@ -253,7 +264,7 @@ import requests
 
 CANONICAL_TIME_OFF_PLAN_MAP = {
   "Time off (USA)": "67839087362157384953",
-  "Time off (XYZ)": "8w2394093284924538920",
+  "Wellness Days (USA)": "802394093284924538920",
   ...
 }
 
