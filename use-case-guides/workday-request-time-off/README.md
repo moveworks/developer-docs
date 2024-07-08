@@ -135,7 +135,7 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/wql/v1/{{instance}}/data
 --header 'Authorization: Bearer {{access_token}}' \
 --data-raw '
     {
-        "query": "SELECT workdayAccount, workdayID, email_PrimaryWorkOrPrimaryHome, position, cf_TimeOffBalanceForPTOAndVacationPlans, eligibleAndVisibleTimeOffPlansForWorkerAsOfDate, allEligibleTimeOffsForWorker FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = false, isActive = false) WHERE email_PrimaryWorkOrPrimaryHome = '{{user.email_addr}}'"
+        "query": "SELECT workdayID, fullName, email_PrimaryWorkOrPrimaryHome, position, eligibleAndVisibleTimeOffPlansForWorkerAsOfDate, allEligibleTimeOffsForWorker, cf_TimeOffBalanceForPTOAndVacationPlans FROM workerFromEmailAddress (emailAddress = 'test@workday.net')"
     }
 '
 ```
@@ -147,7 +147,7 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/wql/v1/{{instance}}/data
 Copy-paste the API cURL below to submit the time off request for a user in workday, substituting any red text with the relevant values from connector configuration and the user information from the above API. This submits a time-off request for a user correctly. Please note you need to pass the following details from API 3 as part of the request:
 
 1. The date(s) you are requesting time off for, as a JSON array, where each date follows the `YYYY-MM-DD` format.
-2. The `timeOffType_id` from API 3 - the ID within the `allEligibleTimeOffsForWorker` field
+2. The `timeOffType_id` from API 3 - which is the ID within the `allEligibleTimeOffsForWorker` field
 3. The `position_id` from API 3
 4. The `workdayId` from API 3
 
@@ -279,47 +279,61 @@ def get_access_token():
         raise HTTPException(status_code=400, detail="Failed to authenticate.")
     return response.json().get("access_token")
 
-# Endpoint to request time off
-@app.post("/request-time-off/")
-async def request_time_off(
-	email: str, 
-	totype: str,
-	start_date: str, 
-	end_date: str = None, 
-	comments: str = "", 
-	start_time: str = "", 
-	end_time: str = ""
-):
-    try:
-        access_token = get_access_token()
-    except HTTPException as e:
-        return {"error": e.detail}
-
-    # These values need to be determined based on your actual use case and instance
-    workday_instance_id = "<Your_workday_instance_id>"
-    worker_id = "<Your_worker_id>"  # This should be fetched dynamically
-
-    url_request_off = f"https://wd2-impl-services1.workday.com/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
-
+# Fetch worker ID by email
+def get_worker_id_by_email(email: str, access_token: str) -> str:
+    workday_instance_id = "<Your_Workday_Instance_ID>"
+    url = f"https://wd2-impl-services1.workday.com/ccx/api/wql/v1/{workday_instance_id}/data?offset=0&limit=1"
     headers = {
+        "Content-Type": "application/json",
         "Authorization": f"Bearer {access_token}",
-        "Content-Type": "application/json"
     }
     
-    to_type = CANONICAL_TIME_OFF_PLAN_MAP[totype]
+    payload = {
+        "query": f"SELECT workdayID FROM workerFromEmailAddress (emailAddress = '{email}')"
+    }
+    
+    response = requests.post(url, headers=headers, json=payload)
+    if response.status_code == 200:
+        data = response.json()
+        # Check if we have at least one record in the data list
+        if data['total'] > 0 and len(data['data']) > 0:
+            return data['data'][0]['workdayID']
+        else:
+            raise HTTPException(status_code=404, detail="Worker ID not found.")
+    else:
+        raise HTTPException(status_code=response.status_code, detail="Failed to fetch worker ID.")
 
+# Endpoint to request time off
+@app.post("/request-time-off/")
+async def request_time_off(email: str, totype: str, start_date: str, end_date: str = None, comments: str = "", start_time: str = "", end_time: str = ""):
+    try:
+        access_token = get_access_token()
+        worker_id = get_worker_id_by_email(email, access_token)
+    except HTTPException as e:
+        return {"error": e.detail}
+    
+    workday_instance_id = "<Your_workday_instance_id>"
+    
+    url_request_off = f"https://wd2-impl-services1.workday.com/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {access_token}",
+    }
+
+    to_type_id = CANONICAL_TIME_OFF_PLAN_MAP.get(totype, "")
+    if not to_type_id:
+        return {"error": "Invalid time-off type provided."}
+    
     payload = {
         "start_date": start_date,
         "end_date": end_date or start_date,
-        "type": to_type,
+        "type": to_type_id,
         "comments": comments,
         "start_time": start_time,
         "end_time": end_time,
-        # You need to add any other field required by the API
     }
-
+    
     response = requests.post(url_request_off, json=payload, headers=headers)
-
     if response.status_code == 200:
         return {"message": "Time off requested successfully."}
     else:
