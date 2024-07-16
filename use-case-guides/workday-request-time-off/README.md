@@ -13,12 +13,6 @@ difficulty_level: Intermediate
 Your employee deserve to take time off to recharge and be productive, and time off request surfaces in Workday don't make this process easy.
 
 By following this guide, you will have a plugin experience that lets your employees take time off with ease, and ensures your managers and payroll teams have accurate records of time off requests to process for team capacity planning.
-<!-- 
-However traditional processes can discourage timely requests and affect time record accuracy, since it is cumbersome for employees to sign into your single-sign on provider, sign into workday, navigating to your employee schedule calendar, and selecting the appropriate time off plans and dates. Without an accurate record of when employees plan to be off, managers can also be left in the dark, making it nearly impossible to manage team resources effectively. This can lead to understaffing or scheduling conflicts that impact both productivity and morale. 
-
-Inaccurate records of employee time off directly influence payroll accuracy. If the payroll team doesn't have precise information, employees may receive incorrect payments for their time off—resulting in dissatisfaction and potential legal complications.
-
-By providing a direct and intuitive way for employees to submit time off requests through their Moveworks bot, businesses remove significant barriers to submitting these requests. This user-friendly interaction not only enhances the employee experience but also encourages adherence to formal request procedures. Employees can quickly navigate through the time-off request process without the need to log into multiple systems or navigate complex menus, making it more likely they will follow company policy and timelines for requests.  -->
 
 
 Let's dive in!
@@ -29,22 +23,6 @@ Let's dive in!
 2. Your workday instance uses the same work email as your IDAM.
 3. You have reviewed the [how to implement a Creator Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide), and have allocated bandwidth for your team to build the plugin.
 
-<!-- **Ease of Building**:
-
-This is a `intermediate` difficulty use case
-
-This will take `2 weeks` for your developer and the business system manager to build, test, and launch. -->
-
-<!-- **Business Value**:
-
-1. Employees need to file time off requests promptly for accurate record keeping
-2. However, it is painful for employees to signing into your single-sign on provider, signing into workday, navigating to your employee schedule calendar, and selecting the appropriate time off plans and dates
-3. If managers don’t have accurate record of when employees are off, they can’t manage
-4. If payroll team does not have accurate records, they will not pay employees properly for time off.
-5. This plugin provides a convenient way for your employees to submit time off requests. -->
-
-
-<!-- **SKU Eligibility**: `Core Copilot` SKU (all customers). -->
 
 ## Conversation Design
 
@@ -65,9 +43,6 @@ This will take `2 weeks` for your developer and the business system manager to b
 
 
 # For Workday Administrators
-
-<!-- This document provides a step-by-step guide designed for Workday Administrators and HR Systems Engineers, detailing the procedures for creating credentials, assigning roles, and configuring workday effectively. It serves as a practical manual to ensure accurate setup and management of technical resources. -->
-
 
 **Level of Access Requested**:
 1. Configure a [Workday connector](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday) with your Workday administrator
