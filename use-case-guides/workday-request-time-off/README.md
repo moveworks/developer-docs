@@ -207,20 +207,11 @@ We will be building this use case as a query triggered path along with an iPaaS 
 1. Current Date: used in the "as of date" in the request PTO action. Could be static.
 2. Email Address: inferred from user roster profile of the employee calling this plugin
 
-<!-- **🗺️ Resolvers**
-
-1. Time Off Plan: maps an employee’s time off plans to the corresponding time off types (which is required by the request time off API) -->
 
 **🏃‍♂️ Actions**
 
 1. Lookup time off type details: Executes the `/api/wql/v1/{{instance}}/data` API to query the requesting employee's workday ID, eligible time off plans, and relevant time off types through their work email address.
 2. Request time off: Executes the `/api/absenceManagement/v1/{{instance}}/workers/{{worker_id}}/requestTimeOff` API to request time off
-
-<!-- **📚 Guidelines**
-
-1. (before this plugin): Employee looks up available time off balance for a particular date, specifies which time off plan they want to use for time off. 
-2. Employee specifies the start date for time off, and optionally the end date, comments, start / end times to their copilot
-3. The time off request is submitted to the employee's manager for approval -->
 
 **⚠️ Caveats**
 
