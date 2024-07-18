@@ -8,7 +8,7 @@ time_in_minutes: 60
 difficulty_level: Intermediate
 ---
 
-### Take Time Off with your Copilot 🏝️
+# Take Time Off with your Copilot 🏝️
 
 Your employee deserve to take time off to recharge and be productive, and time off request surfaces in Workday don't make this process easy.
 
@@ -24,7 +24,7 @@ Let's dive in!
 3. You have reviewed the [how to implement a Creator Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide), and have allocated bandwidth for your team to build the plugin.
 
 
-## Conversation Design
+# Conversation Design
 
 [This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3A+Natural+Language%3Cbr%3E%3Cbr%3E%3Cb%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+Action%3C%2Fb%3E%3A%3Cb%3E+%3C%2Fb%3EQuery+time+off+details+for+employee%3Cbr%3E%3Cbr%3E%3Ci%3ECalls+plugin+to+lookup+eligible+time+off+balances%3C%2Fi%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Fetching+%3Cb%3EWorkday+ID%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%A4%B2+Slots%3C%2Fb%3E%3A+Time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%A4%B2+Slots%3C%2Fb%3E%3A+Start+date%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EBy+default%2C+you%27re+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EDo+you+want+to+specify+other+information+like+your+time+off+%3Cb%3Eend+date%3C%2Fb%3E%2C+%3Cb%3Estart+time%3C%2Fb%3E%2C+%3Cb%3Eend+time%3C%2Fb%3E%2C+or+any+other+%3Cb%3Ecomments%3C%2Fb%3E%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ENope%2C+I%27m+ready+for+my+day+off%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%93%9A+Guidelines%3C%2Fb%3E%3A+Do+not+specify+end+date%2C+start+time%2C+end+time%3Cbr%3E%3Cbr%3E%3Cb%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+Action%3C%2Fb%3E%3A+Request+time+off%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Position+and+Time+Off+Type%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
@@ -74,11 +74,11 @@ We will be accessing Workday through the read-only WQL API and the read + write 
 
 # For Creator Studio Developers
 
-### Step 1: Create a Connector in Creator Studio
+## Step 1: Create a Connector in Creator Studio
 
 [Follow the authentication guide to create a working Workday connector in Creator Studio](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
 
-### **Step 2: Test required APIs with Postman**
+## **Step 2: Test required APIs with Postman**
 
 **Prerequisite: Install Custom Report in Workday**
 
@@ -182,7 +182,7 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{i
 
 > ✅ **Inform your Creator Studio developer that they can use your Workday connector to build their use case** 🚀
 
-### **Step 3: Build in Creator Studio**
+## **Step 3: Build in Creator Studio**
 
 We will be building this use case as a query triggered path along with an iPaaS to chain APIs 3 and 4 together in order to submit a time off request for a user. We will be following the P1: Sequential Action Chaining design pattern in your iPaaS to build this use case
 
@@ -218,7 +218,7 @@ We will be building this use case as a query triggered path along with an iPaaS 
 1. Assuming an employees select a time off plan that has adequate time off balance. An error message is thrown for an invalid time off 
 2. An employee could specify a time off plan that they are not eligible for
 
-### Example iPaaS Code (with Python and FastAPI)
+## Example iPaaS Code (with Python and FastAPI)
 
 ```python
 from fastapi import FastAPI, HTTPException
