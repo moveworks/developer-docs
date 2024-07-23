@@ -92,7 +92,7 @@ Assume the following inputs for your subsequent API calls. You may need to chang
 
 **API 1: Authentication**
 
-Copy-paste this authentication cURL into your Postman Collection for this Use case, substituting any red text with the relevant values from your Workday connector configuration. This helps ensure you are connecting to your workday via the generated access token from this API.
+Copy-paste this authentication cURL into your Postman Collection for this plugin, substituting any red text with the relevant values from your Workday connector configuration. This helps ensure you are connecting to your workday via the generated access token from this API.
 
 ```bash
 curl --location 'https://{{domain}}.workday.com/ccx/oauth2/{{instance}}/token' \
@@ -185,7 +185,7 @@ Follow the authentication guide to [create a working Workday connector in Creato
 
 ## Step 3: Build in Creator Studio
 
-We will be building this use case as a query triggered path along with an iPaaS to chain APIs 3 and 4 together in order to submit a time off request for a user.
+We will be building this plugin as a Path along with an iPaaS to chain APIs 3 and 4 together in order to submit a time off request for a user.
 
 ### Plugin Architecture Diagram
 
@@ -214,6 +214,12 @@ We will be building this use case as a query triggered path along with an iPaaS 
 2. An employee could specify a time off plan that they are not eligible for
 1. Current Date: used in the "as of date" in the request PTO action. Could be static.
 2. Email Address: we assume that a user is only requesting time off for themselves, and use the `{{user.email_addr}}` value from user roster profile of the employee calling this plugin. This would need to be changed if an employee is requesting time off on behalf of another employee.
+
+### Build Plugin in Creator Studio
+1. Create a Path in Creator Studio. You can copy the plugin details below
+    * Plugin Name: `🏝️ Request Time Off in Workday` 
+    * Plugin Description: `Plugin Template Guide for Requesting Time-Offs in Workday with your bot`
+
 
 
 ### Example iPaaS Code (with Python and FastAPI)
@@ -314,4 +320,4 @@ async def request_time_off(email: str, totype: str, start_date: str, end_date: s
 
 # Congratulations!
 
-You just gave your employees the ability to take time off through your Copilot 🏝️ Look at our other Workday use cases below to further improve their experience below, and get inspired on what to build next.
+You just gave your employees the ability to take time off through your Copilot 🏝️ Look at our other Workday plugins below to further improve their experience below, and get inspired on what to build next.
