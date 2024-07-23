@@ -10,91 +10,87 @@ difficulty_level: Intermediate
 
 # Take Time Off with your Copilot 🏝️
 
-Your employee deserve to take time off to recharge and be productive, and time off request surfaces in Workday don't make this process easy.
+Your employees deserve to take time off to recharge and be productive. Requesting time off inside Workday requires you to login and navigate through multiple screens to complete the process.
 
 By following this guide, you will have a plugin experience that lets your employees take time off with ease, and ensures your managers and payroll teams have accurate records of time off requests to process for team capacity planning.
-
 
 Let's dive in!
 
 **Pre-requisites**:
 
-1. You have synchronized your employees’ work email from your IDAM like **Okta** or **Microsoft Entra** to Moveworks using Moveworks Setup ([link](https://help.moveworks.com/docs/ingest-users))
-2. Your workday instance uses the same work email as your IDAM.
+1. You have synchronized your employees’ work email from your IDAM like **Okta** or **Microsoft Entra** to Moveworks ([using Moveworks Setup](https://help.moveworks.com/docs/ingest-users)).
+2. Your Workday instance uses the same work email as your IDAM.
 3. You have reviewed the [how to implement a Creator Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide), and have allocated bandwidth for your team to build the plugin.
 
 
 # Conversation Design
 
-[This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3A+Natural+Language%3Cbr%3E%3Cbr%3E%3Cb%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+Action%3C%2Fb%3E%3A%3Cb%3E+%3C%2Fb%3EQuery+time+off+details+for+employee%3Cbr%3E%3Cbr%3E%3Ci%3ECalls+plugin+to+lookup+eligible+time+off+balances%3C%2Fi%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Fetching+%3Cb%3EWorkday+ID%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%A4%B2+Slots%3C%2Fb%3E%3A+Time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%A4%B2+Slots%3C%2Fb%3E%3A+Start+date%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EBy+default%2C+you%27re+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EDo+you+want+to+specify+other+information+like+your+time+off+%3Cb%3Eend+date%3C%2Fb%3E%2C+%3Cb%3Estart+time%3C%2Fb%3E%2C+%3Cb%3Eend+time%3C%2Fb%3E%2C+or+any+other+%3Cb%3Ecomments%3C%2Fb%3E%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ENope%2C+I%27m+ready+for+my+day+off%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%93%9A+Guidelines%3C%2Fb%3E%3A+Do+not+specify+end+date%2C+start+time%2C+end+time%3Cbr%3E%3Cbr%3E%3Cb%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+Action%3C%2Fb%3E%3A+Request+time+off%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Position+and+Time+Off+Type%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
+[This purple chat mockup](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3A+Natural+Language%3Cbr%3E%3Cbr%3E%3Cb%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+Action%3C%2Fb%3E%3A%3Cb%3E+%3C%2Fb%3EQuery+time+off+details+for+employee%3Cbr%3E%3Cbr%3E%3Ci%3ECalls+plugin+to+lookup+eligible+time+off+balances%3C%2Fi%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Fetching+%3Cb%3EWorkday+ID%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%A4%B2+Slots%3C%2Fb%3E%3A+Time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%A4%B2+Slots%3C%2Fb%3E%3A+Start+date%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EBy+default%2C+you%27re+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EDo+you+want+to+specify+other+information+like+your+time+off+%3Cb%3Eend+date%3C%2Fb%3E%2C+%3Cb%3Estart+time%3C%2Fb%3E%2C+%3Cb%3Eend+time%3C%2Fb%3E%2C+or+any+other+%3Cb%3Ecomments%3C%2Fb%3E%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ENope%2C+I%27m+ready+for+my+day+off%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%93%9A+Guidelines%3C%2Fb%3E%3A+Do+not+specify+end+date%2C+start+time%2C+end+time%3Cbr%3E%3Cbr%3E%3Cb%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+Action%3C%2Fb%3E%3A+Request+time+off%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Position+and+Time+Off+Type%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
 ## Discovery Questions to Personalize Your Conversation  Design *(Customization Options)*
 
-1. Which time off plans should be shown to employees in a given country (that you are launching to)?
+1. Which time off plans should be shown to employees in a given team or given country (that you are launching to)?
     * This determines the expected list of time off plans that will be shown to employees in the conversation design, as well as launch rules for your plugin.
 2. Do you want your employees to request time off in Workday, or through your Moveworks copilot?
-    * You can simplify development of your plugin by linking your employees to workday to request time off [(example conversation design)](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3A+Natural+Language%3Cbr%3E%3Cbr%3E%3Cb%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+Action%3C%2Fb%3E%3A%3Cb%3E+%3C%2Fb%3EQuery+time+off+details+for+employee%3Cbr%3E%3Cbr%3E%3Ci%3ECalls+plugin+to+lookup+eligible+time+off+balances%3C%2Fi%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Fetching+%3Cb%3EWorkday+ID%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Request+Time+Off+in+Workday%22%7D%2C%7B%22text%22%3A%22Got+it%2C+thanks%21%22%7D%5D%7D%5D%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Ci%3EEmployees+log+into+workday+to+request+time+off%3C%2Fi%3E%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D), but this compromises the user experience for your employees.
-3. Do you specify time off in days or hours for these plans?
-    * This determines the what slot type will be caputured for time off requests, which affects the validation provided to employees
-4. What are the required fields for managers to review time off requests (example: comments, business justification). Which are optional?
+    * You can simplify development of your plugin by linking your employees to Workday to request time off [(example conversation design)](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3A+Natural+Language%3Cbr%3E%3Cbr%3E%3Cb%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+Action%3C%2Fb%3E%3A%3Cb%3E+%3C%2Fb%3EQuery+time+off+details+for+employee%3Cbr%3E%3Cbr%3E%3Ci%3ECalls+plugin+to+lookup+eligible+time+off+balances%3C%2Fi%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Fetching+%3Cb%3EWorkday+ID%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Request+Time+Off+in+Workday%22%7D%2C%7B%22text%22%3A%22Got+it%2C+thanks%21%22%7D%5D%7D%5D%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Ci%3EEmployees+log+into+workday+to+request+time+off%3C%2Fi%3E%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D), but this compromises the user experience for your employees.
+3. What are the required fields for managers to review time off requests (example: comments, business justification). Which are optional?
     * This affects what questions will be asked to employees by your copilot when they submit a time off request
-5. Can your employees request time off requests only for themselves, or also for someone else?
+4. Can your employees request time off requests only for themselves, or also for someone else?
    * Note: this guide only allows employees to request time off for themselves. See API research below to understand how you can customize API research to allow time off requests for other employees
-
+5. Do you want employees to be notified when their time off request is approved through the bot?
+    * Note: this guide only describes how employees can request time off. Please build a new plugin to notify employees when their time off request is approved with the [Events API](https://developer.moveworks.com/creator-studio/quickstart/events/)
 
 # For Workday Administrators
 
 **Level of Access Requested**:
-1. Configure a [Workday connector](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday) with your Workday administrator
-2. Provide access to the `Worker Data` and `Time Off` Business Objects. Elaborated in [Domain Permissions](#domain-permissions-required) section
+1. Configure an API Client for [Workday to integrate with Creator Studio](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday), configuring an Integration System User (ISU) and Integration System Security Group (ISSG) in the process. 
+2. Provide access to the `Worker Data` and `Time Off` Business Objects as part of domain security policies. Elaborated in [Domain Permissions](#domain-permissions-required) section
 
 
 ## Overview of the Configuration
 
 We will be accessing Workday through the read-only WQL API and the read + write AbsenceManagement REST API, through a Workday Connector in Moveworks. This requires you to:
 
-1. Create a Connector in Creator Studio – [link](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
-   * Grant the [domain permissions below](#domain-permissions-required) as part of your Integrations Security Systems Group (ISSG)
-2. Test required APIs in Postman
-3. Build use case in Creator Studio
+1. Integrate Workday with Creator Studio – by following [this guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday). After following this guide, you will have
+    * An API Client for Workday
+    * An Integration System User (ISU)
+    * An Integration System Security Group (ISSG)
+    * Relevant [domain security policies listed below](#domain-permissions-required) as part of your Integrations Security Systems Group (ISSG)
 
-### Domain Permissions Required
+> ℹ️ **You will be creating at least two ISUs and two ISSGs, one in a staging environment, and one in production.**
+
+
+2. Install the Custom Report below in Workday**
+
+    Use the custom report definitions below to install the columns and prompt defaults for your custom report. This sets up calculated fields for the time off request and time off balance which are required for the plugin to work.
+
+    [Worker Details Moveworks Columns.xlsx](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Worker_Details_Moveworks_Columns.xlsx)
+
+    [Worker Details Moveworks Prompt.xlsx](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Worker_Details_Moveworks_Prompt.xlsx)
+
+3. Share your Workday connector credentials with your Moveworks developer team.
+
+## Domain Permissions Required
 
 | Workday Web Service | Domain Permissions Required | Description |
 | --- | --- | --- |
 | Worker Data Query (WQL) | Get_References, Get_Workers, Get_Eligible_Time_Off_Plans, Get_Time_Off_Balance, Get_Positions | Permissions needed to retrieve worker information, including contact details, position, and time off balances. |
-| Time Off Request (ReST) | Put_Time_Off_Request, Get_Workers, Get_Positions | Permissions needed to submit time off requests and retrieve worker and position information. |
+| Time Off Request (REST) | Put_Time_Off_Request, Get_Workers, Get_Positions | Permissions needed to submit time off requests and retrieve worker and position information. |
 
 ![Domain%20Permissions](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-12%20at%2012.49.29 PM.png)
 
-
-> ℹ️ **You will be creating two ISUs, one in a staging environment, and one in production.**
-
+> ✅ **Inform your Creator Studio developer that they can use your Workday connector to build their use case** 🚀
 
 
 # For Creator Studio Developers
 
-## Step 1: Create a Connector in Creator Studio
+## Step 1: Test required APIs with Postman
 
-[Follow the authentication guide to create a working Workday connector in Creator Studio](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
-
-## **Step 2: Test required APIs with Postman**
-
-**Prerequisite: Install Custom Report in Workday**
-
-Use the custom report definitions below to install the columns and prompt defaults for your custom report
-
-[Worker Details Moveworks Columns.xlsx](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Worker_Details_Moveworks_Columns.xlsx)
-
-[Worker Details Moveworks Prompt.xlsx](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Worker_Details_Moveworks_Prompt.xlsx)
-
-**Input 1: User Slots**
-
-Assume the following inputs for your subsequent API calls
+Assume the following inputs for your subsequent API calls. You may need to change these values based on your Workday instance and user you are testing with.
 
 1. User email: `test@workday.net`
 
-**API 2: Authorization**
+**API 1: Authorization**
 
 Copy-paste this authentication cURL into your Postman Collection for this Use case, substituting any red text with the relevant values from your Workday connector configuration. This helps ensure you are connecting to your workday via the generated access token from this API.
 
@@ -108,7 +104,7 @@ curl --location 'https://{{domain}}.workday.com/ccx/oauth2/{{instance}}/token' \
 
 ![Screenshot 2024-07-04 at 8.00.56 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.00.56_PM.png)
 
-**API 3: Get Time Off Details from Workday**
+**API 2: Get Time Off Request Details from Workday**
 
 Copy-paste the API cURL below to get relevant time off details for a user in workday, substituting any red text with the relevant values from connector configuration and the email of a test user. This helps ensure you are fetching the workday id and the time off plan details for a user correctly.
 
@@ -125,14 +121,14 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/wql/v1/{{instance}}/data
 
 ![Screenshot 2024-07-04 at 8.07.14 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.07.14_PM.png)
 
-**API 4: Request Time Off in Workday**
+**API 3: Request Time Off in Workday**
 
-Copy-paste the API cURL below to submit the time off request for a user in workday, substituting any red text with the relevant values from connector configuration and the user information from the above API. This submits a time-off request for a user correctly. Please note you need to pass the following details from API 3 as part of the request:
+Copy-paste the API cURL below to submit the time off request for a user in Workday, substituting any red text with the relevant values from connector configuration and the user information from the above API. This submits a time-off request for a user correctly. Please note you need to pass the following details from API 3 as part of the request:
 
 1. The date(s) you are requesting time off for, as a JSON array, where each date follows the `YYYY-MM-DD` format.
-2. The `timeOffType_id` from API 3 - which is the ID within the `allEligibleTimeOffsForWorker` field
-3. The `position_id` from API 3
-4. The `workdayId` from API 3
+2. The `timeOffType_id` from API 2 - which is the ID within the `allEligibleTimeOffsForWorker` field
+2. The `position_id` from API 2
+4. The `workdayId` from API 2
 
 ```bash
 curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{instance}}/workers/{{worker_id}}/requestTimeOff' \
@@ -180,21 +176,26 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{i
 ![Screenshot 2024-07-04 at 8.19.38 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.19.38_PM.png)
 
 
-> ✅ **Inform your Creator Studio developer that they can use your Workday connector to build their use case** 🚀
+## Step 2: Create a Connector in Creator Studio
+Follow the authentication guide to [create a working Workday connector in Creator Studio](https://developer.moveworks.com/creator-studio/resources/authentication-guide/?id=workday#create-a-connector-and-test-in-creator-studio) with the credentials that you received from your Workday administrator.
 
-## **Step 3: Build in Creator Studio**
+![Untitled](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-23%20at%209.52.55 AM.png)
+
+## Step 3: Build in Creator Studio
 
 We will be building this use case as a query triggered path along with an iPaaS to chain APIs 3 and 4 together in order to submit a time off request for a user. We will be following the P1: Sequential Action Chaining design pattern in your iPaaS to build this use case
 
+
+
 ### Design Pattern P1: Sequential Action Chaining
 
-![Untitled](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled.png)
+![Untitled](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-23%20at%2010.04.23 AM.png)
 
-✨ **Triggers**
+**Triggers**
 
 1. Natural language input to copilot requesting to take time off
 
-**🗣️ Natural Language Slots**
+**Natural Language Slots**
 
 1. Start Date: when time off starts
 2. End Date *(optional)*: when time off ends. By default end date is the same as the start date.
@@ -202,21 +203,18 @@ We will be building this use case as a query triggered path along with an iPaaS 
 4. Start Time *(optional)*: if taking partial days off, starting time for time off can be specified.
 5. End Time *(optional)*: if taking partial days off, ending time for time off can be specified.
 
-🤲 **Inferred Slots**
+**Actions**
 
-1. Current Date: used in the "as of date" in the request PTO action. Could be static.
-2. Email Address: inferred from user roster profile of the employee calling this plugin
-
-
-**🏃‍♂️ Actions**
-
-1. Lookup time off type details: Executes the `/api/wql/v1/{{instance}}/data` API to query the requesting employee's workday ID, eligible time off plans, and relevant time off types through their work email address.
+1. Lookup time off type details: Executes the `/api/wql/v1/{{instance}}/data` API to query the requesting employee's Workday ID, eligible time off plans, and relevant time off types through their work email address.
 2. Request time off: Executes the `/api/absenceManagement/v1/{{instance}}/workers/{{worker_id}}/requestTimeOff` API to request time off
 
-**⚠️ Caveats**
+**Caveats**
 
 1. Assuming an employees select a time off plan that has adequate time off balance. An error message is thrown for an invalid time off 
 2. An employee could specify a time off plan that they are not eligible for
+1. Current Date: used in the "as of date" in the request PTO action. Could be static.
+2. Email Address: we assume that a user is only requesting time off for themselves, and use the `{{user.email_addr}}` value from user roster profile of the employee calling this plugin. This would need to be changed if an employee is requesting time off on behalf of another employee.
+
 
 ## Example iPaaS Code (with Python and FastAPI)
 
