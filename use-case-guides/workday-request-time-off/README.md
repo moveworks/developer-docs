@@ -12,7 +12,7 @@ difficulty_level: Intermediate
 
 Your employees deserve to take time off to recharge and be productive. Requesting time off inside Workday requires you to login and navigate through multiple screens to complete the process.
 
-By following this guide, you will build a conversational experience that lets your employees take time off with ease, and ensures your managers and payroll teams have accurate records of time off requests to process for team capacity planning.
+By following this guide, you will build a conversational experience that lets your employees take time off with ease, and ensures your managers and payroll teams have accurate records of time off requests.
 
 Let's dive in!
 
