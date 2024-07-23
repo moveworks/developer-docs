@@ -8,11 +8,11 @@ time_in_minutes: 60
 difficulty_level: Intermediate
 ---
 
-# Take Time Off with your Copilot 🏝️
+# Take Time Off in Workday with your Copilot 🏝️
 
 Your employees deserve to take time off to recharge and be productive. Requesting time off inside Workday requires you to login and navigate through multiple screens to complete the process.
 
-By following this guide, you will have a plugin experience that lets your employees take time off with ease, and ensures your managers and payroll teams have accurate records of time off requests to process for team capacity planning.
+By following this guide, you will build a conversational experience that lets your employees take time off with ease, and ensures your managers and payroll teams have accurate records of time off requests to process for team capacity planning.
 
 Let's dive in!
 
@@ -79,7 +79,7 @@ We will be accessing Workday through the read-only WQL API and the read + write 
 
 ![Domain%20Permissions](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-12%20at%2012.49.29 PM.png)
 
-> ✅ **Inform your Creator Studio developer that they can use your Workday connector to build their use case** 🚀
+> ✅ **Inform your Creator Studio developer that they can now use your Workday credentials to build their connector and plugin** 🚀
 
 
 # For Creator Studio Developers
@@ -88,9 +88,9 @@ We will be accessing Workday through the read-only WQL API and the read + write 
 
 Assume the following inputs for your subsequent API calls. You may need to change these values based on your Workday instance and user you are testing with.
 
-1. User email: `test@workday.net`
+* User email: `test@workday.net`
 
-**API 1: Authorization**
+**API 1: Authentication**
 
 Copy-paste this authentication cURL into your Postman Collection for this Use case, substituting any red text with the relevant values from your Workday connector configuration. This helps ensure you are connecting to your workday via the generated access token from this API.
 
@@ -106,7 +106,9 @@ curl --location 'https://{{domain}}.workday.com/ccx/oauth2/{{instance}}/token' \
 
 **API 2: Get Time Off Request Details from Workday**
 
-Copy-paste the API cURL below to get relevant time off details for a user in workday, substituting any red text with the relevant values from connector configuration and the email of a test user. This helps ensure you are fetching the workday id and the time off plan details for a user correctly.
+Copy-paste the API cURL below to get relevant time off details for a user in workday. To ensure you are fetching the workday id and the time off plan details for a user correctly, make sure you:
+1. Substitute any `{{placeholder text}}` with the relevant values from connector configuration
+2. Substitute `test@workday.net` or another test user email with `{{user.email_addr}}` so that the API can fetch the [requesting user's work email address](https://developer.moveworks.com/creator-studio/reference/user-attributes/#accessing-user-attributes).
 
 ```bash
 curl --location 'https://{{domain}}.workday.com/ccx/api/wql/v1/{{instance}}/data?limit=10&offset=0' \
@@ -183,7 +185,9 @@ Follow the authentication guide to [create a working Workday connector in Creato
 
 ## Step 3: Build in Creator Studio
 
-We will be building this use case as a query triggered path along with an iPaaS to chain APIs 3 and 4 together in order to submit a time off request for a user. We will be following the P1: Sequential Action Chaining design pattern in your iPaaS to build this use case
+We will be building this use case as a query triggered path along with an iPaaS to chain APIs 3 and 4 together in order to submit a time off request for a user.
+
+### Plugin Architecture Diagram
 
 ![Untitled](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled.png)
 
@@ -212,7 +216,7 @@ We will be building this use case as a query triggered path along with an iPaaS 
 2. Email Address: we assume that a user is only requesting time off for themselves, and use the `{{user.email_addr}}` value from user roster profile of the employee calling this plugin. This would need to be changed if an employee is requesting time off on behalf of another employee.
 
 
-## Example iPaaS Code (with Python and FastAPI)
+### Example iPaaS Code (with Python and FastAPI)
 
 ```python
 from fastapi import FastAPI, HTTPException
