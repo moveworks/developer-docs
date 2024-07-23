@@ -179,17 +179,13 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{i
 ## Step 2: Create a Connector in Creator Studio
 Follow the authentication guide to [create a working Workday connector in Creator Studio](https://developer.moveworks.com/creator-studio/resources/authentication-guide/?id=workday#create-a-connector-and-test-in-creator-studio) with the credentials that you received from your Workday administrator.
 
-![Untitled](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-23%20at%209.52.55%20AM.png)
+![Untitled](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-23%20at%2010.04.23 AM.png)
 
 ## Step 3: Build in Creator Studio
 
 We will be building this use case as a query triggered path along with an iPaaS to chain APIs 3 and 4 together in order to submit a time off request for a user. We will be following the P1: Sequential Action Chaining design pattern in your iPaaS to build this use case
 
-
-
-### Design Pattern P1: Sequential Action Chaining
-
-![Untitled](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-23%20at%2010.04.23%20AM.png)
+![Untitled](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled.png)
 
 **Triggers**
 
