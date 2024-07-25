@@ -2,7 +2,7 @@
 design_pattern_id: 10
 name: ServiceNow Approval Reminders
 description: Optimizing Workflow Efficiency with Automated Approval Reminders in ServiceNow
-systems: [servicenow]
+systems: [ServiceNow]
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22mocks%22%3A%5B%7B%22id%22%3A1636%2C%22title%22%3A%22Event+triggered+approval+reminders%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3EServiceNow+Flow+Designer%3A+Scheduled+job+that+runs+once+a+day%2Fweek%2Fmonth%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EYour+pending+approval+request+for+request+%3Ca+href%3D%5C%22https%3A%2F%2Fmoveworks.ai%5C%22%3ERITM0123456+is+due+for+a+review.%3C%2Fa%3E%3Cbr%3E%3Cbr%3E%F0%9F%91%89+%3Cb%3EPlease+review+your+request+and+update+as+necessary%3C%2Fb%3E%3Cbr%3E%3Cbr%3E%F0%9F%91%89+You+can+review+your+current+approvals+by+typing+%3Cb%3E%5C%22Show+me+my+approvals%5C%22%3C%2Fb%3E+below%3C%2Fp%3E%22%7D%5D%7D%7D%5D%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%7D
 time_in_minutes: 45
 difficulty_level: Beginner
@@ -10,9 +10,21 @@ difficulty_level: Beginner
 
 # Introduction
 
-In the modern business environment, ensuring the timely processing of requests is crucial for maintaining workflow efficiency and employee satisfaction. However, in the bustling day-to-day activities, approval requests can often be overlooked or delayed, causing bottlenecks in operations. Addressing this challenge, our use case tutorial introduces an innovative solution leveraging ServiceNow alongside Moveworks Events to automate approval reminders. By setting up daily, weekly, or monthly reminders, users are prompted about their outstanding requests, thus streamlining the approval process and enhancing overall productivity.
+n today's fast-paced business world, delayed approvals can slow down work and frustrate employees. Our tutorial shows you how to solve this problem using ServiceNow and Moveworks Events to set up automated reminders.
+You'll learn how to:
 
-This tutorial will walk you through leveraging the powerful capabilities of ServiceNow's Flow Designer to implement this solution seamlessly within your organization. Whether you're looking to minimize delays in approval processes or ensure that no request goes unnoticed, this guide provides step-by-step instructions to enhance your workflow management through effective reminder automation.
+- Create automated reminders for approval requests
+- Set up daily, weekly, or monthly reminder schedules
+- Use ServiceNow's Flow Designer to implement this solution
+
+This guide will help you:
+
+- Speed up approval processes
+- Prevent overlooked requests
+- Improve workflow efficiency
+- Increase employee satisfaction
+
+By following these steps, you'll be able to streamline your approval system.
 
 # Prerequisites
 
@@ -44,15 +56,15 @@ In our quest to automate approval reminders efficiently, the heart of our implem
 
 ![Untitled](Use%20Case%20Tutorial%20ServiceNow%20Approval%20Reminders%20a8e075be60c94c77b1e4da9ac249d5ce/Untitled.png)
 
-The operational blueprint is devised as follows:
+The architectural flow is devised as follows:
 
-1. **Trigger Creation**: The inception of an approval record serves as the trigger, marking the start of our automated reminder process.
-2. **Conditional Sequence**: Utilizing the flow logic, we introduce a “Do Until” loop. This loop will persist until a specific criterion, predefined by us, is met.
-3. **Time-bound Waiting**: A crucial step involves incorporating a wait job. This job is programmed to halt the process until a specified time interval—be it a day, a week, or a month—has elapsed.
-4. **Status Check**: Post waiting period, an "If" logic is implemented to examine if the approval record remains in the 'requested' state. This step is pivotal for determining whether a reminder needs to be dispatched.
-5. **Message Dispatch**: Concluding our procedure, if the record is indeed still pending, the flow will trigger an API call to send a tailored message to the user, serving as a reminder for the pending approval.
+1. Start when an approval record is created
+2. Begin a loop that continues until a condition is met
+3. Wait for a set time (e.g., a day, week, or month)
+4. Check if the approval is still pending
+5. If pending, send a reminder message to the user
 
-This strategic alignment of triggers, conditional logic, and timed actions, coupled with the communicative prowess of the Moveworks API, embodies our comprehensive approach to mitigating delays in the approval process through timely reminders.
+This process uses triggers, conditions, and timed actions with the Moveworks API to send timely reminders and reduce approval delays.
 
 # Steps
 
@@ -60,8 +72,7 @@ This strategic alignment of triggers, conditional logic, and timed actions, coup
 
 ### Install Moveworks SDK for ServiceNow
 
-1. Install our Moveworks API SDK For ServiceNow
-    1. Make sure to install the Flow Designer Action Update Set
+1. [Download our Moveworks Events Update Set For ServiceNow](https://developer.moveworks.com/file-hosting/servicenow/moveworks.events.1.0.0.xml)
 2. Head to the Flow Designer tool on ServiceNow’s sidebar
 
 ![Untitled](Use%20Case%20Tutorial%20ServiceNow%20Approval%20Reminders%20a8e075be60c94c77b1e4da9ac249d5ce/Untitled%201.png)
@@ -102,8 +113,8 @@ This strategic alignment of triggers, conditional logic, and timed actions, coup
         1. The recipient will be the approval record approver’s email
         2. Setup the message you would like to send the approver 
             
-            ```html
-            Your pending approval request for request <a href="https://{servicenow-instance}.service-now.com/nav_to.do?uri=sysapproval_approver.do?sysparm_query=sysapproval.number=RITM0123456^approver={user.sys_id}"> is due for a review.
+            ```
+            Your pending approval request for request <ahref="https://{servicenow-instance}.service-now.com/nav_to.do?uri=sysapproval_approver.do?sysparm_query=sysapproval.number=RITM0123456^approver={user.sys_id}"> is due for a review.
             <br>
             :point_right: <b>Please review your request and update as necessary</b>
             
@@ -125,10 +136,16 @@ An event will be sent to the user once the job is triggered and the approval rec
 
 # Congratulations!
 
-You have successfully navigated through the intricacies of setting up automated approval reminders within ServiceNow. By leveraging the powerful combination of ServiceNow Flow Designer and the Moveworks Events API, you've taken a significant step towards optimizing workflow efficiency and ensuring that approval requests are completed in a timely manner.
+Great job setting up automated approval reminders in ServiceNow! You've learned to use ServiceNow Flow Designer with the Moveworks Events API to:
 
-This tutorial guided you through each pivotal stage - from the trigger initiation upon an approval record's creation, employing conditional logic to ascertain the need for reminders, to the pivotal dispatch of messages to users reminding them of their pending requests. Your ability to integrate these components demonstrates not only technical proficiency but also a commitment to enhancing operational processes within your organization.
+- Trigger reminders when approval records are created
+- Use conditions to decide when reminders are needed
+- Send reminder messages to users with pending requests
 
-We hope this tutorial has empowered you with the knowledge and confidence to implement automated approval reminders effectively. This isn't just a step forward in streamlining your approval processes; it's a leap towards maximizing productivity, reducing bottlenecks, and improving overall satisfaction across your teams.
+This will help your organization:
 
-Congratulations once again on completing this tutorial. Your efforts today lay the groundwork for more efficient, responsive, and user-friendly workflow management. Here's to many more successful implementations in your journey towards employee optimization!
+- Improve workflow efficiency
+- Complete approvals faster
+- Reduce bottlenecks
+
+Well done on finishing this tutorial!
