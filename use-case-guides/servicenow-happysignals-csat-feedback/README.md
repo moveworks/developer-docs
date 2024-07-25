@@ -67,7 +67,7 @@ Note: Be sure to replace [`https://api.am-eu-central.moveworks.ai`](https://api.
 | GovCloud | http://my.moveworksgov.com |
 | EU | http://my.am-eu-central.moveworks.com/ |
 | Canada | http://my.am-ca-central.moveworks.com/ |
-| Australia | https://www.notion.so/My-Moveworks-Customer-Enablement-Plan-eac66a80c5784990b866869e51042475?pvs=21 |
+| Australia | api.am-ap-southeast.moveworks.com |
 
 ```jsx
 var MoveworksApiSdk = Class.create();
