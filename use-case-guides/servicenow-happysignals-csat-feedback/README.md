@@ -63,11 +63,11 @@ Note: Be sure to replace [`https://api.am-eu-central.moveworks.ai`](https://api.
 
 | Data Center | Moveworks API Base URL |
 | --- | --- |
-| US - Standard | http://my.moveworks.com  |
-| GovCloud | http://my.moveworksgov.com |
-| EU | http://my.am-eu-central.moveworks.com/ |
-| Canada | http://my.am-ca-central.moveworks.com/ |
-| Australia | api.am-ap-southeast.moveworks.com |
+| US - Standard | https://my.moveworks.com  |
+| GovCloud | https://my.moveworksgov.com |
+| EU | https://my.am-eu-central.moveworks.com/ |
+| Canada | https://my.am-ca-central.moveworks.com/ |
+| Australia | https://api.am-ap-southeast.moveworks.com |
 
 ```jsx
 var MoveworksApiSdk = Class.create();
