@@ -46,10 +46,12 @@ Let's get started!
 ## Discovery Questions to Personalize Your Experience
 
 1. What text do you want your notification to say?
-    * Customize the notification text by accessing the [Purple Chat Mock](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22mocks%22%3A%5B%7B%22id%22%3A1636%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22iPaaS%3A+Scheduled+job+that+runs+once+a+month+at+the+end+of+the+month.%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22It%27s+time+to+prep+for+month+end+close%21+We+need+your+help+to+ensure+our+financials+accurately+represent+our+business+activity.+%5Cn%5Cn%F0%9F%91%89+Please+look+through+your+inbox+and+forward+any+invoices+that+may+have+been+missed+to+%3Ca+href%3D%5C%22mailto%3Aap%40moveworks.ai%5C%22%3Eap%40moveworks.ai%3C%2Fa%3E.%5Cn%5Cn%F0%9F%91%89+We+also+need+your+expense+reports+submitted+in+%3Ca+href%3D%5C%22expensify.com%5C%22%3EExpensify%21%3C%2Fa%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22Emoji+codes+are+supported+across+all+platforms.+Links+all+work+with+link+tracking+analytics.%22%7D%5D%7D%7D%5D%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%7D) > clicking on the chat bubble to edit the text.
+    * Customize the notification text by accessing the Purple Chat Mock > clicking on the chat bubble to edit the text.
     ![Purple Chat Editing Image](./ServiceNow%20Happy%20Signals%20CSAT%20Survey/image.png)
+
 2. Which employees / tickets should receive these notifications? E.g: Do you want to exclude executives/VIP users?
     * This is configured in the [launch rules](https://developer.moveworks.com/creator-studio/reference/rules/) for your plugin.
+
 3. Do you want to resolve on all tickets or a subset of tickets?
     * This determines the triggering condition configured in your Servicenow Business Rule.
 
