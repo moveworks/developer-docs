@@ -3,7 +3,7 @@ design_pattern_id: 2
 name: Request Time-Off in Workday
 description: Plugin Template Guide for Requesting Time-Offs in Workday with your bot
 systems: [workday]
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Request+Time+Off%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Fetching+%3Cb%3EWorkday+ID%3Cbr%3E%3C%2Fb%3E%F0%9F%94%81+Waiting+to+Collect+Time+Off+Plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EBy+default%2C+you%27re+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EDo+you+want+to+specify+other+information+like+your+time+off+%3Cb%3Eend+date%3C%2Fb%3E%2C+or+any+other+%3Cb%3Ecomments%3C%2Fb%3E%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ENope%2C+I%27m+ready+for+my+day+off%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Position+and+Time+Off+Type%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22ALEX%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3Efirst+time+off+plan%3C%2Fb%3E%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on%3A+%5C%22day+after+tomorrow%5C%22%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3Cbr%3E-+%3Cb%3Estart_date%3C%2Fb%3E%3A+2024-07-31%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EBy+default%2C+you%27re+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EDo+you+want+to+specify+other+information+like+your+time+off+%3Cb%3Eend+date%3C%2Fb%3E%2C+%3Cb%3Estart+time%3C%2Fb%3E%2C+%3Cb%3Eend+time%3C%2Fb%3E%2C+or+any+other+%3Cb%3Ecomments%3C%2Fb%3E%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ENope%2C+I%27m+ready+for+my+day+off%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on%3A+%5C%22ready+for+day+off%21%5C%22%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3Cbr%3E-+%3Cb%3Estart_date%3C%2Fb%3E%3A+2024-07-31%3Cbr%3E-+%3Cb%3Eadditional_details%3C%2Fb%3E%3A+No%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D
 time_in_minutes: 60
 difficulty_level: Intermediate
 ---
@@ -12,7 +12,7 @@ difficulty_level: Intermediate
 
 Your employees deserve to take time off to recharge and be productive. Requesting time off in Workday requires logging in and navigating multiple screens.
 
-This guide helps you build a conversational experience for easy time off requests for employees. It ensures your managers and payroll teams have and accurate records of time off requests.
+This guide helps you build a conversational experience for easy time off requests for your employees. It ensures your managers and payroll teams have and accurate records of time off requests.
 
 Let's dive in!
 
@@ -25,7 +25,7 @@ Let's dive in!
 
 # Conversation Design
 
-[This purple chat mockup](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Fetching+%3Cb%3EWorkday+ID%3Cbr%3E%3C%2Fb%3E%F0%9F%94%81+Waiting+to+Collect+Time+Off+Plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EBy+default%2C+you%27re+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EDo+you+want+to+specify+other+information+like+your+time+off+%3Cb%3Eend+date%3C%2Fb%3E%2C+%3Cb%3Estart+time%3C%2Fb%3E%2C+%3Cb%3Eend+time%3C%2Fb%3E%2C+or+any+other+%3Cb%3Ecomments%3C%2Fb%3E%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ENope%2C+I%27m+ready+for+my+day+off%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Position+and+Time+Off+Type%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
+[This purple chat mockup](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22ALEX%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3Efirst+time+off+plan%3C%2Fb%3E%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on%3A+%5C%22day+after+tomorrow%5C%22%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3Cbr%3E-+%3Cb%3Estart_date%3C%2Fb%3E%3A+2024-07-31%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EBy+default%2C+you%27re+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EDo+you+want+to+specify+other+information+like+your+time+off+%3Cb%3Eend+date%3C%2Fb%3E%2C+%3Cb%3Estart+time%3C%2Fb%3E%2C+%3Cb%3Eend+time%3C%2Fb%3E%2C+or+any+other+%3Cb%3Ecomments%3C%2Fb%3E%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ENope%2C+I%27m+ready+for+my+day+off%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on%3A+%5C%22ready+for+day+off%21%5C%22%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3Cbr%3E-+%3Cb%3Estart_date%3C%2Fb%3E%3A+2024-07-31%3Cbr%3E-+%3Cb%3Eadditional_details%3C%2Fb%3E%3A+No%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
 ## Discovery Questions to Personalize Your Conversation Design
 
@@ -33,15 +33,12 @@ Let's dive in!
     * This determines the expected list of time off plans that will be shown to employees in the conversation design.
     * This also determines the launch rules for your plugin.
 2. Do you want your employees to request time off in Workday, or through your Moveworks copilot?
-    * You can simplify development of your plugin by linking your employees to Workday to request time off [(example conversation design)](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Request+Time+Off%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3ETriggers%3C%2Fb%3E%3A+Natural+Language%3Cbr%3E%3Cbr%3E%3Cb%3EGuideline%3C%2Fb%3E%3A%3Cb%3E+%3C%2Fb%3EList+time+off+plans+in+text+response%3Cbr%3E%3Cbr%3E%3Ci%3ECalls+plugin+to+lookup+eligible+time+off+balances%3C%2Fi%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Fetching+%3Cb%3EWorkday+ID%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Fetching+text+response+for+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+which+time+off+plan+would+you+like+to+select%3F%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3EYou+can+request+time+off+through+this+%3Ca+href%3D%5C%22https%3A%2F%2Fworkday.com%5C%22%3Elink%3C%2Fa%3E+here%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Ci%3EEmployees+log+into+workday+to+request+time+off%3C%2Fi%3E%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D), but this compromises the user experience for your employees.
+    * You can simplify development of your plugin by linking your employees to Workday to request time off [(example conversation design)](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Request+Time+Off%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Calling+Plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%8F%B3+Summarizing+response...%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+you+are+eligible+for+three+time+off+plans%3A%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3EYou+can+request+time+off+through+this+%3Ca+href%3D%5C%22https%3A%2F%2Fworkday.com%5C%22%3Elink%3C%2Fa%3E+here%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Ci%3ELink+redirects+to+Workday.+Employee+log+into+workday+to+request+time+off%3C%2Fi%3E%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D), but this compromises the user experience for your employees.
 3. What are the required fields for managers to review time off requests (example: comments, business justification). Which are optional?
     * This affects what questions will be asked to employees when they submit a time off request
 4. Can your employees request time off requests only for themselves, or also for someone else?
    * Note: this guide only allows employees to request time off for themselves.
    * See API research below to understand how you can customize API research to allow time off requests for other employees
-5. Do you want employees to be notified when their time off request is approved through the bot?
-    * Note: this guide only describes how employees can request time off.
-    * Please build a new plugin to notify employees when their time off request is approved with the [Events API](https://developer.moveworks.com/creator-studio/quickstart/events/)
 
 # For Workday Administrators
 
@@ -65,7 +62,7 @@ This requires you to:
     * An Integration System Security Group (ISSG)
     * Relevant [domain security policies listed below](#domain-permissions-required) as part of your Integrations Security Systems Group (ISSG)
 
-> ℹ️ **You will be creating at least two ISUs and two ISSGs, one in a staging environment, and one in production.**
+> ℹ️ **Depending on your development practices, you may create multiple ISUs and ISSGs, for each Workday environment.**
 
 
 2. Install the Custom Report below in Workday
@@ -397,7 +394,7 @@ async def request_time_off(
             start_date_obj += delta
 
         time_off_payload = {"days": days}
-        time_off_url = f"https://wd2-impl-services1.workday.com/ccx/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
+        time_off_url = PTO_REQUEST_URL_TEMPLATE
 
         time_off_response = await client.post(
             time_off_url, headers=time_off_headers, json=time_off_payload
@@ -471,25 +468,33 @@ We will be building this plugin as a Path along with an iPaaS to chain APIs 1, 2
 
 **Caveats**
 
-1. If an employee selects a time off plan without adequante time balance, you will get an error message for attempting to request time off from the REST API. You can personalize the error message as part of exception handling logic inside your iPaaS.
-2. An employee could specify a time off plan that they are not eligible for
-1. Current Date: used in the "as of date" in the request PTO action. Could be static.
+1. If an employee selects a time off plan without adequante time balance, they will get an error message for attempting to request time off from the REST API. You can personalize the error message as part of exception handling logic inside your iPaaS.
 2. Email Address: we assume that a user is only requesting time off for themselves, and use the `{{user.email_addr}}` value from user roster profile of the employee calling this plugin. This would need to be changed if an employee is requesting time off on behalf of another employee.
+3. This guide only describes how employees can request time off. It does not notify employees when their time off request is approved through the bot.
+    * To add notifications once time off requests are approved, please build a new plugin with the [Events API](https://developer.moveworks.com/creator-studio/quickstart/events/)
 
 ### Build Plugin in Creator Studio
 1. Create a Path in Creator Studio. You can copy the plugin details below
     * Plugin Name: `🏝️ Request Time Off in Workday` 
     * Plugin Description: `Allow employees to submit time off requests in Workday.`
+
     ![Name and Description](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-1.png)
+
 2. The first question should ask which time off plan the employee wants to use for their time off request.
     * You can use **API 2** above to discover the eligible time off plans for any given employee group.
+
     ![Select Time Of](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-2.png)
+
 3. Ask what the starting date for your employee's time off request.
     * This will be configured as a Date Slot inside Creator Studio
+
     ![Select Date](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-3.png)
+
 4. Ask if the employee wants to specify an end date and additional comments for their time off request.
     *  If employee selects no, they will only take time off for a single busines day (8 hours). This is configurable in your iPaaS.
+
     ![Select Other Options](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-4.png)
+
 5. If your employee selects no, you can configure an API action to submit your time off request.
     * If you use the iPaaS code below, configure your API action as follows:
     * Connector: Use your iPaaS connector here
@@ -501,14 +506,18 @@ We will be building this plugin as a Path along with an iPaaS to chain APIs 1, 2
     ```json
     {
         "start_date": "{{start_date}}",
-        "time_off_type_id": "REDACTED"
+        "time_off_type_id": "abc1234"
     }
     ```
+
     ![Submit Time Off](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-5.png)
+
 6. If your employee selects yes, ask clarifying questions about their end date and additional comments for their time off request.
     * End Date: this is configured as a Date slot
     * Comments: this is configured as a Free Text input
+
     ![Select Other Options](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-6.png)
+
 7. Configure an API action to submit your time off request if your employee selects yes.
     * If you use the iPaaS code below, configure your API action as follows:
     * Connector: Use your iPaaS connector here
@@ -520,7 +529,7 @@ We will be building this plugin as a Path along with an iPaaS to chain APIs 1, 2
     ```json
     {
         "start_date": "{{start_date}}",
-        "time_off_type_id": "REDACTED",
+        "time_off_type_id": "abc1234",
         "end_date": "{{end_date}}",
         "comment": "{{comments}}"
     }
