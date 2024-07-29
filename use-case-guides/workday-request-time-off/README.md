@@ -183,7 +183,7 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{i
 ![Screenshot 2024-07-04 at 8.19.38 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.19.38_PM.png)
 
 
-## Step 2: Create a Connector Creator Studio for your iPaaS / APIM tool
+## Step 2: Create a Creator Studio Connector for your iPaaS / APIM tool
 
 Automation tools like [Azure Function Apps](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=azure-function-app), [Workato](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workato), and [Power Automate](https://powerusers.microsoft.com/t5/Building-Power-Apps/Formatting-a-JSON-response-from-Power-Automate-flow-on-PowerApps/td-p/907563) allow you to expose REST APIs for use by cloud based applications like Creator Studio.
 
