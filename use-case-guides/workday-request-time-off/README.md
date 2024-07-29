@@ -468,7 +468,7 @@ We will be building this plugin as a Path along with an iPaaS to chain APIs 1, 2
 
 **Caveats**
 
-1. If an employee selects a time off plan without adequante time balance, they will get an error message for attempting to request time off from the REST API. You can personalize the error message as part of exception handling logic inside your iPaaS.
+1. If an employee selects a time off plan without adequate time balance, they will get an error message for attempting to request time off from the REST API. You can personalize the error message as part of exception handling logic inside your iPaaS.
 2. Email Address: we assume that a user is only requesting time off for themselves, and use the `{{user.email_addr}}` value from user roster profile of the employee calling this plugin. This would need to be changed if an employee is requesting time off on behalf of another employee.
 3. This guide only describes how employees can request time off. It does not notify employees when their time off request is approved through the bot.
     * To add notifications once time off requests are approved, please build a new plugin with the [Events API](https://developer.moveworks.com/creator-studio/quickstart/events/)
