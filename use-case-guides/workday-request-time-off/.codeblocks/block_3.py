@@ -196,7 +196,7 @@ async def request_time_off(
             start_date_obj += delta
 
         time_off_payload = {"days": days}
-        time_off_url = f"https://wd2-impl-services1.workday.com/ccx/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
+        time_off_url = PTO_REQUEST_URL_TEMPLATE
 
         time_off_response = await client.post(
             time_off_url, headers=time_off_headers, json=time_off_payload
