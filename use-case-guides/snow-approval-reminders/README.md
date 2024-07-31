@@ -10,7 +10,7 @@ difficulty_level: Beginner
 
 # Introduction
 
-n today's fast-paced business world, delayed approvals can slow down work and frustrate employees. Our tutorial shows you how to solve this problem using ServiceNow and Moveworks Events to set up automated reminders.
+In today's fast-paced business world, delayed approvals can slow down work and frustrate employees. Our tutorial shows you how to solve this problem using ServiceNow and Moveworks Events to set up automated reminders.
 You'll learn how to:
 
 - Create automated reminders for approval requests
