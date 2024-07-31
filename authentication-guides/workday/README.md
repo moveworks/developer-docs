@@ -9,7 +9,14 @@ difficulty_level: Intermediate
 
 Workday is a cloud-based software vendor that specializes in human capital management (HCM), enterprise resource planning (ERP), and financial management applications.
 
-This guide will walk you through creating a connector within Creator Studio to make API calls to Workday. We have separated this guide into three main sections:
+Workday supports various kinds of web service technologies including the ReST API, SOAP API and the RaaS API.
+- **SOAP Web Services API**: Workday Web Services (WWS) provide a programmatic public API for Workday's business management services. The SOAP-based interface is targeted for import and export of large volume of data needed for integration with enterprise business systems external to Workday. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/soap-web-services-api.html).
+- **ReST API**: The Workday REST API is an addition to the SOAP APIs supported by Workday. It is targeted for applications that do small, typically self-service, transactions initiated by users and provides a subset of Workday functionality crafted for that specific enterprise audience. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/rest-api.html).
+- **Reports as a Service (RaaS) API**: The RaaS API enables us to access advanced and search reports as web services. These reports can be built in the Workday Portal and further consumed via the RaaS API for fetching data. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/reports-as-a-service-raas-/dan1370796320263.html).
+- **Workday Query Language**: Workday Query Language (WQL) enables you to use SQL-like syntax to access Workday data using data sources and fields instead of reports. WQL enables you to query Workday for data and explore - Data sources, Data source filters, Fields. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/workday-query-language-wql-/aht1611188422513.html?toc=1.20.0).
+
+
+This guide will walk you through creating a connector within Creator Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. We have separated this guide into three main sections:
 - [Prerequisites](#prerequisites)
 - [Set up Workday](#set-up-workday)
 - [Create a Connector in Creator Studio](#create-a-connector-and-test-in-creator-studio)
@@ -91,11 +98,13 @@ Use the menu item to access **`Security Group`** > **`Maintain Domain Permission
 
 ![Untitled](images/Untitled%2026.png)
 
-Add any permissions that are needed for your Moveworks bot which will be dependent on what you plan on needing access to, the permissions we typically look for are shown [here](https://help.moveworks.com/docs/workday-access-requirements#permissions). 
+Add the permissions that are needed for your Workday integration / use case. Permissions will vary per plugin guide. For example, permissions for time off and leave of absence are specified [here](https://help.moveworks.com/docs/workday-access-requirements#permissions). 
 
 Click Ok.
 
 ![Untitled](images/Untitled%2027.png)
+
+> Note: These Domain Permissions are dependent on the Workday Use Case that you are interested in building and can heavily differ based on that. For example, if the Workday Use Case you are working on requires the use of Workday Query Language for fetching/updating any data, then you would need to assign both the **View** and **Get** permissions or **Modify** and **Put** for the `Workday Query Language` Domain security policy. Similarly, if the Use Case requires access to certain objects like Accounts or Worker Time-Off details, then you would also have to assign those security policies accordingly.
 
 Run the **`Activate Pending Security Policy Changes`** task to activate permissions
 
@@ -257,8 +266,3 @@ Query parameters: `limit` : `5`
 # **Congratulations!**
 
 You've successfully integrated Workday's API with Creator Studio. This opens up a variety of automation and integration possibilities to Workday.
- 
-
-
-
-
