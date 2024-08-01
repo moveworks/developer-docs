@@ -569,22 +569,30 @@ We will be building this plugin as a Query-Triggered Path along with an iPaaS to
 
     ![Test API](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-alt-3.png)
 
-    
-    * You can use **API 2** above to discover the eligible time off plans for any given employee group.
+5. Save your connector after testing your API.
 
-    ![Select Time Of](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-2.png)
+6. Label your APIs with fields that you want to extract from the response. Set your identifier and description as your Time Off Type and Name. Click Next.
 
-3. Ask what the starting date for your employee's time off request.
+    ![Label APIs](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-alt-4.png)
+
+7. Add a Followup Action to Book Time Off.
+
+    * Type: `Ask clarifying questions and execute a solution`
+    * Name: `Book Time Off`
+
+    ![Add Followup Action](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-alt-5.png)
+
+8. Inside the "Design Conversation" step, ask what the starting date for your employee's time off request.
     * This will be configured as a Date Slot inside Creator Studio
 
     ![Select Date](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-3.png)
 
-4. Ask if the employee wants to specify an end date and additional comments for their time off request.
+9. Ask if the employee wants to specify an end date and additional comments for their time off request.
     *  If employee selects no, they will only take time off for a single busines day (8 hours). This is configurable in your iPaaS.
 
     ![Select Other Options](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-4.png)
 
-5. If your employee selects no, you can configure an API action to submit your time off request.If you use the iPaaS code below, configure your API action as follows:
+10. If your employee selects no, you can configure an API action to submit your time off request.If you use the iPaaS code below, configure your API action as follows:
     * Connector: Use your iPaaS connector here
     * API Endpoint Path: `/workers/{{user.email_addr}}/time-off`
     * Method: `POST`
@@ -600,13 +608,13 @@ We will be building this plugin as a Query-Triggered Path along with an iPaaS to
 
     ![Submit Time Off](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-5.png)
 
-6. If your employee selects yes, ask for the end date and additional comments for their time off request.
+11. If your employee selects yes, ask for the end date and additional comments for their time off request.
     * End Date: this is configured as a Date slot
     * Comments: this is configured as a Free Text input
 
     ![Select Other Options](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-6.png)
 
-7. Configure an API action to submit your time off request if your employee selects yes.
+12. Configure an API action to submit your time off request if your employee selects yes.
     * If you use the iPaaS code below, configure your API action as follows:
     * Connector: Use your iPaaS connector here
     * API Endpoint Path: `/workers/{{user.email_addr}}/time-off`
