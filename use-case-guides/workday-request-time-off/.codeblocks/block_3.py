@@ -12,12 +12,7 @@ load_dotenv()
 
 app = FastAPI()
 
-# Sets up configuration variables. You will need to specify these variables in your middleware tool.
-# 1. Client ID
-# 2. Client Secret
-# 3. Refresh Token
-# 4. Workday Instance (e.g. wd2-impl-services1)
-# 5. Organization (e.g. acme)
+
 class Config:
     CLIENT_ID = os.getenv("CLIENT_ID")
     CLIENT_SECRET = os.getenv("CLIENT_SECRET")
@@ -28,7 +23,7 @@ class Config:
     WORKER_DETAILS_URL = (
         f"https://{INSTANCE}.workday.com/ccx/api/wql/v1/{ORG}/data"
     )
-    PTO_REQUEST_URL_TEMPLATE = f"https://{INSTANCE}.workday.com/ccx/api/absenceManagement/v1/{ORG}/workers/{worker_id}/requestTimeOff"
+    PTO_REQUEST_URL_TEMPLATE = "https://wd2-impl-services1.workday.com/ccx/api/absenceManagement/v1/baincapital_gms4/workers/{worker_id}/requestTimeOff"
 
     @property
     def basic_auth_header(self) -> str:
@@ -41,7 +36,7 @@ class Config:
 
 config = Config()
 
-# Data Models of API Requests and Responses for Input Validation
+
 class WorkerDetail(BaseModel):
     workday_id: str
     full_name: str
@@ -52,7 +47,7 @@ class WorkerDetail(BaseModel):
     time_off_id: str
 
 
-class WorkerResponse(BaseModel):
+class FlattenedWorkerResponse(BaseModel):
     total: int
     data: List[WorkerDetail]
 
@@ -67,7 +62,7 @@ class TimeOffRequest(BaseModel):
         if self.end_date is None:
             self.end_date = self.start_date
 
-# Helper functions
+
 async def get_access_token() -> str:
     async with httpx.AsyncClient() as client:
         response = await client.post(
@@ -104,7 +99,7 @@ async def fetch_worker_details(email: str, access_token: str) -> List[Dict]:
         return response.json()["data"]
 
 
-def process_worker_data(raw_data: List[Dict]) -> List[WorkerDetail]:
+def flatten_worker_details_json(raw_data: List[Dict]) -> List[WorkerDetail]:
     return [
         WorkerDetail(
             workday_id=worker["workdayID"],
@@ -151,7 +146,7 @@ async def submit_time_off_request(
         response.raise_for_status()
         return response.json()
 
-# HTTP Routes
+
 @app.get("/auth")
 async def auth_endpoint():
     try:
@@ -163,13 +158,13 @@ async def auth_endpoint():
         ) from e
 
 
-@app.get("/workers/{email}/time-off", response_model=WorkerResponse)
+@app.get("/workers/{email}/time-off", response_model=FlattenedWorkerResponse)
 async def get_worker_details_endpoint(email: str):
     try:
-        access_token = await get_access_token() # Remove this line if you are using the auth_endpoint
+        access_token = await get_access_token()
         raw_data = await fetch_worker_details(email, access_token)
-        processed_data = process_worker_data(raw_data)
-        return WorkerResponse(total=len(processed_data), data=processed_data)
+        processed_data = flatten_worker_details_json(raw_data)
+        return FlattenedWorkerResponse(total=len(processed_data), data=processed_data)
     except httpx.HTTPError as e:
         raise HTTPException(
             status_code=500, detail="Failed to fetch worker details"
@@ -181,7 +176,7 @@ async def create_time_off_request_endpoint(
     email: str, request: TimeOffRequest
 ):
     try:
-        access_token = await get_access_token() # Remove this line if you are using the auth_endpoint
+        access_token = await get_access_token()
         worker_data = await fetch_worker_details(email, access_token)
         if not worker_data:
             raise HTTPException(status_code=404, detail="Worker not found")
@@ -198,8 +193,3 @@ async def create_time_off_request_endpoint(
         raise HTTPException(
             status_code=500, detail="Failed to create time off request"
         ) from e
-
-
-@app.get("/")
-async def root():
-    return {"message": "Time Off Request API"}
