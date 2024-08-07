@@ -1,91 +1,205 @@
+import os
+from datetime import date, timedelta
+from typing import List, Optional, Dict
+import base64
+import httpx
 from fastapi import FastAPI, HTTPException
-import requests
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel, Field
+from dotenv import load_dotenv
 
-CANONICAL_TIME_OFF_PLAN_MAP = {
-  "Time off (USA)": "67839087362157384953",
-  "Wellness Days (USA)": "802394093284924538920",
-  ...
-}
+load_dotenv()
 
 app = FastAPI()
 
-# Function to get access token
-def get_access_token():
-    workday_instance_id = "your_workday_instance_id"
-    url = "https://wd2-impl-services1.workday.com/ccx/oauth2/{workday_instance_id}/token"
-    headers = {
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
-    # REFRESH_TOKEN should be securely fetched from an environment variable or a secrets manager
-    data = {
-        "grant_type": "refresh_token",
-        "refresh_token": "<Your_Refresh_Token>",  # Redacted for security. Replace <Your_Refresh_Token> with actual value
-    }
+# Sets up configuration variables. You will need to specify these variables in your middleware tool.
+# 1. Client ID
+# 2. Client Secret
+# 3. Refresh Token
+# 4. Workday Instance (e.g. wd2-impl-services1)
+# 5. Organization (e.g. acme)
+class Config:
+    CLIENT_ID = os.getenv("CLIENT_ID")
+    CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+    REFRESH_TOKEN = os.getenv("REFRESH_TOKEN")
+    INSTANCE = os.getenv("INSTANCE")
+    ORG = os.getenv("ORG")
+    AUTH_URL = f"https://{INSTANCE}.workday.com/ccx/oauth2/{ORG}/token"
+    WORKER_DETAILS_URL = (
+        f"https://{INSTANCE}.workday.com/ccx/api/wql/v1/{ORG}/data"
+    )
+    PTO_REQUEST_URL_TEMPLATE = f"https://{INSTANCE}.workday.com/ccx/api/absenceManagement/v1/{ORG}/workers/{worker_id}/requestTimeOff"
 
-    # CLIENT_ID and CLIENT_SECRET should be securely fetched from an environment variable or a secrets manager
-    auth = ("<Your_Client_ID>", "<Your_Client_Secret>") # Redacted for security. Replace <Your_Client_ID> and <Your_Client_Secret> with actual value
-    
-    response = requests.post(url, headers=headers, auth=auth, data=data)
-    if response.status_code != 200:
-        raise HTTPException(status_code=400, detail="Failed to authenticate.")
-    return response.json().get("access_token")
+    @property
+    def basic_auth_header(self) -> str:
+        credentials = f"{self.CLIENT_ID}:{self.CLIENT_SECRET}"
+        b64_credentials = base64.b64encode(credentials.encode("utf-8")).decode(
+            "utf-8"
+        )
+        return f"Basic {b64_credentials}"
 
-# Fetch worker ID by email
-def get_worker_id_by_email(email: str, access_token: str) -> str:
-    workday_instance_id = "<Your_Workday_Instance_ID>"
-    url = f"https://wd2-impl-services1.workday.com/ccx/api/wql/v1/{workday_instance_id}/data?offset=0&limit=1"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {access_token}",
-    }
-    
-    payload = {
-        "query": f"SELECT workdayID FROM workerFromEmailAddress (emailAddress = '{email}')"
-    }
-    
-    response = requests.post(url, headers=headers, json=payload)
-    if response.status_code == 200:
-        data = response.json()
-        # Check if we have at least one record in the data list
-        if data['total'] > 0 and len(data['data']) > 0:
-            return data['data'][0]['workdayID']
-        else:
-            raise HTTPException(status_code=404, detail="Worker ID not found.")
-    else:
-        raise HTTPException(status_code=response.status_code, detail="Failed to fetch worker ID.")
 
-# Endpoint to request time off
-@app.post("/request-time-off/")
-async def request_time_off(email: str, totype: str, start_date: str, end_date: str = None, comments: str = "", start_time: str = "", end_time: str = ""):
+config = Config()
+
+# Data Models of API Requests and Responses for Input Validation
+class WorkerDetail(BaseModel):
+    workday_id: str
+    full_name: str
+    email: str
+    position_descriptor: str
+    position_id: str
+    time_off_descriptor: str
+    time_off_id: str
+
+
+class WorkerResponse(BaseModel):
+    total: int
+    data: List[WorkerDetail]
+
+
+class TimeOffRequest(BaseModel):
+    start_date: date
+    time_off_type_id: str
+    end_date: Optional[date] = None
+    comment: Optional[str] = None
+
+    def __post_init__(self):
+        if self.end_date is None:
+            self.end_date = self.start_date
+
+# Helper functions
+async def get_access_token() -> str:
+    async with httpx.AsyncClient() as client:
+        response = await client.post(
+            config.AUTH_URL,
+            headers={
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": config.basic_auth_header,
+            },
+            data=f"grant_type=refresh_token&refresh_token={config.REFRESH_TOKEN}",
+        )
+        response.raise_for_status()
+        return response.json()["access_token"]
+
+
+def create_worker_query(email: str) -> str:
+    return f"""
+        SELECT workdayID, fullName, email_PrimaryWork, position, allEligibleTimeOffsForWorker
+        FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = false, isActive = false)
+        WHERE email_PrimaryWork = '{email}'
+    """
+
+
+async def fetch_worker_details(email: str, access_token: str) -> List[Dict]:
+    async with httpx.AsyncClient() as client:
+        response = await client.post(
+            config.WORKER_DETAILS_URL,
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {access_token}",
+            },
+            json={"query": create_worker_query(email)},
+        )
+        response.raise_for_status()
+        return response.json()["data"]
+
+
+def process_worker_data(raw_data: List[Dict]) -> List[WorkerDetail]:
+    return [
+        WorkerDetail(
+            workday_id=worker["workdayID"],
+            full_name=worker["fullName"],
+            email=worker["email_PrimaryWork"],
+            position_descriptor=worker["position"]["descriptor"],
+            position_id=worker["position"]["id"],
+            time_off_descriptor=time_off["descriptor"],
+            time_off_id=time_off["id"],
+        )
+        for worker in raw_data
+        for time_off in worker.get("allEligibleTimeOffsForWorker", [])
+    ]
+
+
+def create_time_off_days(
+    request: TimeOffRequest, position_id: str, position_descriptor: str
+) -> List[Dict]:
+    return [
+        {
+            "date": current_date.isoformat(),
+            "dailyQuantity": 8,
+            "timeOffType": {"id": request.time_off_type_id},
+            "position": {"id": position_id, "descriptor": position_descriptor},
+            "comment": request.comment
+            or "Time off request submitted by Moveworks 🤖",
+        }
+        for current_date in (
+            request.start_date + timedelta(n)
+            for n in range((request.end_date - request.start_date).days + 1)
+        )
+    ]
+
+
+async def submit_time_off_request(
+    worker_id: str, days: List[Dict], access_token: str
+) -> Dict:
+    async with httpx.AsyncClient() as client:
+        response = await client.post(
+            config.PTO_REQUEST_URL_TEMPLATE.format(worker_id=worker_id),
+            headers={"Authorization": f"Bearer {access_token}"},
+            json={"days": days},
+        )
+        response.raise_for_status()
+        return response.json()
+
+# HTTP Routes
+@app.get("/auth")
+async def auth_endpoint():
     try:
-        access_token = get_access_token()
-        worker_id = get_worker_id_by_email(email, access_token)
-    except HTTPException as e:
-        return {"error": e.detail}
-    
-    workday_instance_id = "<Your_workday_instance_id>"
-    
-    url_request_off = f"https://wd2-impl-services1.workday.com/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {access_token}",
-    }
+        access_token = await get_access_token()
+        return {"access_token": access_token}
+    except httpx.HTTPError as e:
+        raise HTTPException(
+            status_code=500, detail=f"Authentication failed"
+        ) from e
 
-    to_type_id = CANONICAL_TIME_OFF_PLAN_MAP.get(totype, "")
-    if not to_type_id:
-        return {"error": "Invalid time-off type provided."}
-    
-    payload = {
-        "start_date": start_date,
-        "end_date": end_date or start_date,
-        "type": to_type_id,
-        "comments": comments,
-        "start_time": start_time,
-        "end_time": end_time,
-    }
-    
-    response = requests.post(url_request_off, json=payload, headers=headers)
-    if response.status_code == 200:
-        return {"message": "Time off requested successfully."}
-    else:
-        return {"error": f"Request failed with status code {response.status_code}: {response.text}"}
+
+@app.get("/workers/{email}/time-off", response_model=WorkerResponse)
+async def get_worker_details_endpoint(email: str):
+    try:
+        access_token = await get_access_token() # Remove this line if you are using the auth_endpoint
+        raw_data = await fetch_worker_details(email, access_token)
+        processed_data = process_worker_data(raw_data)
+        return WorkerResponse(total=len(processed_data), data=processed_data)
+    except httpx.HTTPError as e:
+        raise HTTPException(
+            status_code=500, detail="Failed to fetch worker details"
+        ) from e
+
+
+@app.post("/workers/{email}/time-off")
+async def create_time_off_request_endpoint(
+    email: str, request: TimeOffRequest
+):
+    try:
+        access_token = await get_access_token() # Remove this line if you are using the auth_endpoint
+        worker_data = await fetch_worker_details(email, access_token)
+        if not worker_data:
+            raise HTTPException(status_code=404, detail="Worker not found")
+
+        worker = worker_data[0]
+        days = create_time_off_days(
+            request, worker["position"]["id"], worker["position"]["descriptor"]
+        )
+        response = await submit_time_off_request(
+            worker["workdayID"], days, access_token
+        )
+        return JSONResponse(content=response, status_code=201)
+    except httpx.HTTPError as e:
+        raise HTTPException(
+            status_code=500, detail="Failed to create time off request"
+        ) from e
+
+
+@app.get("/")
+async def root():
+    return {"message": "Time Off Request API"}
