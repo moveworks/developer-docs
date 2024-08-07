@@ -1,29 +1,29 @@
 ---
 design_pattern_id: 2
 name: Request Time Off in Workday
-description: Plugin Template Guide for Requesting Time Offs in Workday with your bot
+description: Plugin Template Guide for Requesting Time Off in Workday with Your Bot
 systems: [workday]
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22ALEX%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+here+are+your+time+off+plans+and+balances.+You+can+choose+to+book+time+off+for+any+of+the+plans.%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1+%E2%80%93+Employee+Time+Off+%28USA%29%3A+60+hours%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2+%E2%80%93+Sick+Time+Off+%28USA%29%3A+20+hours%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3+%E2%80%93+Wellness+Day+%28USA%29%3A+24+hours%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22text%22%3A%22Book+Time+Off%22%2C%22style%22%3A%22PRIMARY%22%7D%2C%7B%22text%22%3A%22Got+it%2C+thanks%21%22%7D%5D%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+book+time+with+the+first+time+off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3Efirst+time+off+plan%3C%2Fb%3E%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on%3A+%5C%22day+after+tomorrow%5C%22%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3Cbr%3E-+%3Cb%3Estart_date%3C%2Fb%3E%3A+2024-07-31%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EDo+you+want+to+proceed+with+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EBy+selecting+no%2C+you+can+specify+the+%3Cb%3Eend+date%3C%2Fb%3E%2C+and+any+additional+%3Cb%3Ecomments%3C%2Fb%3E+to+take+time+off.%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EYes%2C+one+day+sounds+good%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on%3A+%5C%22ready+for+day+off%21%5C%22%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3Cbr%3E-+%3Cb%3Estart_date%3C%2Fb%3E%3A+2024-07-31%3Cbr%3E-+%3Cb%3Eadditional_details%3C%2Fb%3E%3A+No%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22ALEX%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERequest+Time+Off%3C%2Fb%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+here+are+your+time+off+plans+and+balances.+You+can+choose+to+book+time+off+for+any+of+the+plans.%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1+%E2%80%93+Employee+Time+Off+%28USA%29%3A+60+hours%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2+%E2%80%93+Sick+Time+Off+%28USA%29%3A+20+hours%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3+%E2%80%93+Wellness+Day+%28USA%29%3A+24+hours%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22text%22%3A%22Book+Time+Off%22%2C%22style%22%3A%22PRIMARY%22%7D%2C%7B%22text%22%3A%22Got+it%2C+thanks%21%22%7D%5D%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+book+time+with+the+first+time-off+plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3Efirst+time+off+plan%3C%2Fb%3E%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+when+would+you+like+to+take+time+off%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ELets+take+time+off+on+July+4%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on%3A+%5C%22day+after+tomorrow%5C%22%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3Cbr%3E-+%3Cb%3Estart_date%3C%2Fb%3E%3A+2024-07-31%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EDo+you+want+to+proceed+with+taking+time+off+for+one+business+day+%288+hours%29.%3Cbr%3E%3Cbr%3EBy+selecting+no%2C+you+can+specify+the+%3Cb%3Eend+date%3C%2Fb%3E%2C+and+any+additional+%3Cb%3Ecomments%3C%2Fb%3E+to+take+time+off.%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EYes%2C+one+day+sounds+good%21%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on%3A+%5C%22ready+for+day+off%21%5C%22%3Cbr%3E%E2%8F%B3+Calling+%3Cb%3ERequest+Time+Off%3C%2Fb%3E+with%3A%3Cbr%3E-+%3Cb%3Etime_off_plan_selection%3C%2Fb%3E%3A+Moveworks+Time+Off+Plan%3Cbr%3E-+%3Cb%3Estart_date%3C%2Fb%3E%3A+2024-07-31%3Cbr%3E-+%3Cb%3Eadditional_details%3C%2Fb%3E%3A+No%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EI+have+submitted+your+time+off+request+to+your+manager+%F0%9F%8F%9D%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D
 time_in_minutes: 60
 difficulty_level: Intermediate
 ---
 
 # Take Time Off in Workday with your Copilot 🏝️
 
-Your employees deserve to take time off to recharge and be productive. Requesting time off in Workday requires you to login and navigate multiple screens.
+Your employees deserve to take time off to recharge and stay productive. Requesting time off in Workday requires you to log in and navigate multiple screens.
 
-This guide helps you build a conversational experience for easy time off requests for your employees. It ensures your managers and payroll teams have accurate records of time off requests.
+This guide helps you build a conversational experience for easy time off requests for your employees. It ensures your managers and payroll teams have accurate records of time-off requests.
 
 Let's dive in!
 
-**Required Pre-requisites**:
+**Prerequisites**:
 
-1. Synchronize your employees’ work email from your IDAM like **Okta** or **Microsoft Entra**, to Moveworks ([using Moveworks Setup](https://help.moveworks.com/docs/ingest-users)).
-2. Validate that your Workday instance uses the same work email as your IDAM.
+1. Synchronize your employees’ work email from your IDAM, such as Okta or Microsoft Entra, to Moveworks [using Moveworks Setup](https://help.moveworks.com/docs/ingest-users).
+2. Ensure that your Workday instance uses the same work email as your IDAM.
 3. Review [how to implement a Creator Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide), and allocate bandwidth for your team or [Moveworks Professional Services](https://developer.moveworks.com/creator-studio/troubleshooting/support/#4-sign-up-for-professional-services) to build the plugin.
-4. Check that your Workday administrator has the necessary permissions to configure an API Client for Workday, and provide access to the `Worker Data` and `Time Off` Business Objects as part of domain security policies. Elaborated in Domain Permissions section below.
-5. Connect your middleware and APIm tools with Creator Studio using a [connector](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/). Follow authentication guides to connect your middleware like [Azure Function Apps](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=azure-function-app), [Workato](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workato), or [Power Automate](https://powerusers.microsoft.com/t5/Building-Power-Apps/Formatting-a-JSON-response-from-Power-Automate-flow-on-PowerApps/td-p/907563) with Creator Studio. Otherwise, you can learn more about these middleware / APIM tools in our [Program Management docs](https://developer.moveworks.com/creator-studio/program-management/automation-tools/).
-6. Click on "Experimental Features" on the top right corner of your Creator Studio window, and ensure Paths in Copilot and Next-gen API editor are enabled. Click "Submit" to get access to necessary features.
+4. Ensure that your Workday administrator has the necessary permissions to configure an API Client for Workday, and provide access to the `Worker Data` and `Time Off` Business Objects as part of domain security policies.
+5. Connect your middleware and APIM tools with Creator Studio using a [connector](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/). Follow authentication guides to connect your middleware such as [Azure Function Apps](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=azure-function-app), [Workato](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workato), or [Power Automate](https://powerusers.microsoft.com/t5/Building-Power-Apps/Formatting-a-JSON-response-from-Power-Automate-flow-on-PowerApps/td-p/907563), with Creator Studio. Otherwise, you can learn more about these middleware / APIM tools in our [Program Management docs](https://developer.moveworks.com/creator-studio/program-management/automation-tools/).
+6. Click on 'Experimental Features' in the top right corner of your Creator Studio window, and ensure that Paths in Copilot and the Next-gen API editor are enabled.
 
     ![Experimental Features](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-alt-1.png)
 
@@ -48,7 +48,8 @@ Let's dive in!
 
 ## Overview of the Configuration
 
-We will be accessing Workday through 
+We will be accessing Workday through:
+
 * the read-only WQL API
 * the read + write AbsenceManagement REST API
 * using your iPaaS connector in Moveworks Creator Studio
@@ -80,14 +81,14 @@ This requires you to:
 
 ![Domain%20Permissions](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-12%20at%2012.49.29 PM.png)
 
-**Inform your Creator Studio developer that they can now use your Workday credentials to build their connector and plugin** 🚀
+**Inform your Creator Studio developer that they can now use your Workday credentials to build their connector and plugin**.
 
 
 # For Creator Studio Developers
 
 ## Step 1: Check you have built a Creator Studio Connector for your middleware / APIM tool
 
-This step was outlined in the Pre-requisites section above, and should be completed before you begin building your plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
+This step was outlined in the Prerequisites section above, and should be completed before you begin building your plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
 
 ## Step 2: Test required APIs with Postman
 
@@ -203,12 +204,7 @@ load_dotenv()
 
 app = FastAPI()
 
-# Sets up configuration variables. You will need to specify these variables in your middleware tool.
-# 1. Client ID
-# 2. Client Secret
-# 3. Refresh Token
-# 4. Workday Instance (e.g. wd2-impl-services1)
-# 5. Organization (e.g. acme)
+
 class Config:
     CLIENT_ID = os.getenv("CLIENT_ID")
     CLIENT_SECRET = os.getenv("CLIENT_SECRET")
@@ -219,7 +215,7 @@ class Config:
     WORKER_DETAILS_URL = (
         f"https://{INSTANCE}.workday.com/ccx/api/wql/v1/{ORG}/data"
     )
-    PTO_REQUEST_URL_TEMPLATE = f"https://{INSTANCE}.workday.com/ccx/api/absenceManagement/v1/{ORG}/workers/{worker_id}/requestTimeOff"
+    PTO_REQUEST_URL_TEMPLATE = "https://wd2-impl-services1.workday.com/ccx/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
 
     @property
     def basic_auth_header(self) -> str:
@@ -232,7 +228,7 @@ class Config:
 
 config = Config()
 
-# Data Models of API Requests and Responses for Input Validation
+
 class WorkerDetail(BaseModel):
     workday_id: str
     full_name: str
@@ -243,7 +239,7 @@ class WorkerDetail(BaseModel):
     time_off_id: str
 
 
-class WorkerResponse(BaseModel):
+class FlattenedWorkerResponse(BaseModel):
     total: int
     data: List[WorkerDetail]
 
@@ -258,7 +254,7 @@ class TimeOffRequest(BaseModel):
         if self.end_date is None:
             self.end_date = self.start_date
 
-# Helper functions
+
 async def get_access_token() -> str:
     async with httpx.AsyncClient() as client:
         response = await client.post(
@@ -295,7 +291,7 @@ async def fetch_worker_details(email: str, access_token: str) -> List[Dict]:
         return response.json()["data"]
 
 
-def process_worker_data(raw_data: List[Dict]) -> List[WorkerDetail]:
+def flatten_worker_details_json(raw_data: List[Dict]) -> List[WorkerDetail]:
     return [
         WorkerDetail(
             workday_id=worker["workdayID"],
@@ -342,7 +338,7 @@ async def submit_time_off_request(
         response.raise_for_status()
         return response.json()
 
-# HTTP Routes
+
 @app.get("/auth")
 async def auth_endpoint():
     try:
@@ -354,13 +350,13 @@ async def auth_endpoint():
         ) from e
 
 
-@app.get("/workers/{email}/time-off", response_model=WorkerResponse)
+@app.get("/workers/{email}/time-off", response_model=FlattenedWorkerResponse)
 async def get_worker_details_endpoint(email: str):
     try:
-        access_token = await get_access_token() # Remove this line if you are using the auth_endpoint
+        access_token = await get_access_token()
         raw_data = await fetch_worker_details(email, access_token)
-        processed_data = process_worker_data(raw_data)
-        return WorkerResponse(total=len(processed_data), data=processed_data)
+        processed_data = flatten_worker_details_json(raw_data)
+        return FlattenedWorkerResponse(total=len(processed_data), data=processed_data)
     except httpx.HTTPError as e:
         raise HTTPException(
             status_code=500, detail="Failed to fetch worker details"
@@ -372,7 +368,7 @@ async def create_time_off_request_endpoint(
     email: str, request: TimeOffRequest
 ):
     try:
-        access_token = await get_access_token() # Remove this line if you are using the auth_endpoint
+        access_token = await get_access_token()
         worker_data = await fetch_worker_details(email, access_token)
         if not worker_data:
             raise HTTPException(status_code=404, detail="Worker not found")
@@ -389,11 +385,6 @@ async def create_time_off_request_endpoint(
         raise HTTPException(
             status_code=500, detail="Failed to create time off request"
         ) from e
-
-
-@app.get("/")
-async def root():
-    return {"message": "Time Off Request API"}
 ```
 
 ## Step 4: Build in Creator Studio
