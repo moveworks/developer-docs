@@ -2,7 +2,7 @@
 design_pattern_id: 28
 name: Workday PTO Lookups
 description: Lookup your PTO balances from Workday within your bot
-systems: [salesforce]
+systems: [workday]
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+how+much+balance+do+I+have%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3Cbr%3E1.+Natural+Language%3Cbr%3E%3Cbr%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+%3Cb%3EActions%3C%2Fb%3E%3Cbr%3E1.+Query+time+off+details+for+employee%3Cbr%3E%3Cbr%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ELookup+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Time+Off+Type+and+Quantity%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EYou+currently+have+the+following+time+off+balances%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3A+196+Hours%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E2%3A+Sick+Time+Off+%28USA%29%3A+12+Days%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22%3Cp%3E3%3A+Wellness+Day+%28USA%29%3A+0+Hours%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EThanks+for+the+information%21%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D
 time_in_minutes: 15
 difficulty_level: Beginner
@@ -10,9 +10,9 @@ difficulty_level: Beginner
 
 ### Presenting the easiest way for your employees to check their Time Off balances 🏝️
 
-Navigating the nuances of PTO balances from Workday can be a task riddled with inefficiency and inconvenience. To streamline this process, the Moveworks Bot, integrated with Workday, provides a seamless way for employees to check their PTO balances effortlessly.
+Your employees need to check their time off balances as part of the time off request process, in order to make sure they don't take more time off than they should. 
 
-This guide aims to facilitate Workday Administrators and HR Systems Engineers in setting up a straightforward method for employees to inquire about their PTO balances directly through the Moveworks Bot, leveraging the capabilities of Workday's comprehensive APIs.
+This guide aims to help Workday Administrators and HR Systems Engineers in setting up a straightforward method for employees to inquire about their PTO balances directly through their Moveworks copilot, leveraging the capabilities of Workday's comprehensive APIs.
 
 Let's dive in!
 
@@ -133,33 +133,25 @@ We will be building this use case as a queries use case in order to lookup the t
 
 ![Untitled](Plugin%20Guide%20Lookup%20PTO%20balance%20in%20Workday%20720c52c6df5641efbdbb08ed3360f105/Untitled%202.png)
 
-✨ **Triggers**
+**Triggers**
 
 1. Natural language input to copilot requesting time off details/balances for the user
 
-**🗣️ Natural Language Slots**
+**Natural Language Slots**
 
 1. None
 
-🤲 **Inferred Slots**
-
-1. User Workday ID: inferred from user roster profile of the employee calling this plugin
-
-**🗺️ Resolvers**
-
-1. None
-
-**🏃‍♂️ Actions**
+**Actions**
 
 1. Lookup time off type details: Calls the `/api/absenceManagement/v1/{instance}/balances?worker=<workday_id_of_user>` API to query the requesting employee's eligible time off plans, and relevant time off types through their User workday ID.
 
-**📚 Guidelines**
+**Guidelines**
 
 1. None
 
-**⚠️ Caveats**
+**Caveats**
 
-1. 
+1. Employees can only check their time off balances. They will not be able to ask about time off balances for other employees.
 
 # Congratulations!
 
