@@ -20,10 +20,8 @@ Let's dive in!
 
 1. Synchronize your employees’ work email from your IDAM, such as Okta or Microsoft Entra, to Moveworks [using Moveworks Setup](https://help.moveworks.com/docs/ingest-users).
 2. Ensure that your Workday instance uses the same work email as your IDAM.
-3. Review [how to implement a Creator Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide), and allocate bandwidth for your team or [Moveworks Professional Services](https://developer.moveworks.com/creator-studio/troubleshooting/support/#4-sign-up-for-professional-services) to build the plugin.
-4. Ensure that your Workday administrator has the necessary permissions to configure an API Client for Workday, and provide access to the `Worker Data` and `Time Off` Business Objects as part of domain security policies.
-5. Connect your middleware and APIM tools with Creator Studio using a [connector](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/). Follow authentication guides to connect your middleware such as [Azure Function Apps](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=azure-function-app), [Workato](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workato), or [Power Automate](https://powerusers.microsoft.com/t5/Building-Power-Apps/Formatting-a-JSON-response-from-Power-Automate-flow-on-PowerApps/td-p/907563), with Creator Studio. Otherwise, you can learn more about these middleware / APIM tools in our [Program Management docs](https://developer.moveworks.com/creator-studio/program-management/automation-tools/).
-6. Click on 'Experimental Features' in the top right corner of your Creator Studio window, and ensure that Paths in Copilot and the Next-gen API editor are enabled.
+3. Ensure that your Workday administrator has the necessary permissions to configure an API Client for Workday, and provide access to the `Worker Data` and `Time Off` Business Objects as part of domain security policies.
+4. Click on 'Experimental Features' in the top right corner of your Creator Studio window, and ensure that Paths in Copilot and the Next-gen API editor are enabled.
 
     ![Experimental Features](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-alt-1.png)
 
@@ -52,7 +50,7 @@ We will be accessing Workday through:
 
 * the read-only WQL API
 * the read + write AbsenceManagement REST API
-* using your iPaaS connector in Moveworks Creator Studio
+* using your middleware connector in Creator Studio
 
 This requires you to:
 
@@ -86,9 +84,9 @@ This requires you to:
 
 # For Creator Studio Developers
 
-## Step 1: Check you have built a Creator Studio Connector for your middleware / APIM tool
+## Step 1: Validate you have built a Creator Studio Connector for your middleware / APIM tool
 
-This step was outlined in the Prerequisites section above, and should be completed before you begin building your plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
+A connector to your [middleware tool](https://developer.moveworks.com/creator-studio/program-management/automation-tools/) is required before you can build a Creator Studio plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
 
 ## Step 2: Test required APIs with Postman
 
@@ -401,8 +399,8 @@ We will be building this plugin as a Query Resolver (fka Query-Triggered Path) a
 
 **Natural Language Slots**
 
-1. Start Date: when time off starts. Configured as a Date Slot.
-2. End Date *(optional)*: when time off ends. By default end date is the same as the start date if the user does not specify an end date. Configured as a Date Slot.
+1. Start date: when time off starts. Configured as a Date Slot.
+2. End date *(optional)*: when time off ends. By default end date is the same as the start date if the user does not specify an end date. Configured as a Date Slot.
 3. Comments *(optional)*: Any relevant context / justification for taking time off. Configured as a Free Text Slot.
 
 **Actions**
@@ -412,9 +410,12 @@ We will be building this plugin as a Query Resolver (fka Query-Triggered Path) a
 
 **Caveats**
 
-1. If an employee selects a time off plan without adequate time balance, they will get an error message for attempting to request time off from the REST API.
-2. Email Address: we assume that a user is only requesting time off for themselves, and use the `{{user.email_addr}}` value from user roster profile of the employee calling this plugin. This would need to be changed if an employee is requesting time off on behalf of another employee.
-3. This guide only describes how employees can request time off. It does not notify employees when their time off request is approved through the bot.
+1. Time off requests for plans with inadequate balances will be rejected by the underlying Workday API.
+
+2. The `{{user.email_addr}}` attribute scopes the time off request to the employee making the request.
+    * You can change this attribute to a slot that collects another employee's name / email address if you want to request time off on behalf of another employee.
+
+3. This guide does not notify employees when their time off request is approved through the bot.
     * To add notifications once time off requests are approved, please build a new plugin with the [Events API](https://developer.moveworks.com/creator-studio/quickstart/events/)
 
 ### Build Plugin in Creator Studio
@@ -509,4 +510,4 @@ We will be building this plugin as a Query Resolver (fka Query-Triggered Path) a
 
 # Congratulations!
 
-You just gave your employees the ability to take time off through your Copilot 🏝️ Look at our other Workday plugins below to further improve their experience below, and get inspired on what to build next.
+You just gave your employees the ability to take time off through your Copilot. Look at our other Workday plugins below to further improve their experience below, and get inspired on what to build next.
