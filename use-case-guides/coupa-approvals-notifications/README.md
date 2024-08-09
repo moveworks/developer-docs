@@ -44,7 +44,7 @@ This step was outlined in the Prerequisites section above, and should be complet
 
 ## Step 2: Test required APIs with Postman
 
-Copy the cURL commands below into your API client like Postman for testing. Substitute any `{{placeholder text}}` with relevant Workday API credentials or inputs.
+Copy the cURL commands below into your API client like Postman for testing. Substitute any `{{placeholder text}}` with relevant Coupa API credentials or inputs.
 
 **API 1: Authorization**
 
@@ -497,4 +497,4 @@ Follow our [Quickstart Guide](https://developer.moveworks.com/creator-studio/qui
 
 # Congratulations!
 
-You just gave your employees the ability to approve requisition requests through your Copilot. Look at our other Workday use cases below to further improve their experience below, and get inspired on what to build next.
+You just gave your employees the ability to approve requisition requests through your Copilot. Look at our other Coupa use cases below to further improve their experience below, and get inspired on what to build next.
