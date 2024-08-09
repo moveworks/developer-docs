@@ -68,7 +68,7 @@ This requires you to:
 
     [Worker Details Moveworks Prompt.xlsx](https://developer.moveworks.com/file-hosting/workday/Worker_Details_Moveworks_Prompt.xlsx)
 
-3. Share your Workday connector credentials with your Moveworks developer team.
+3. Share your Workday API credentials with your Moveworks developer team.
 
 ## Domain Permissions Required
 
