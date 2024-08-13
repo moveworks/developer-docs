@@ -34,13 +34,26 @@ Let's dive in!
 
 1. Which groups of employees can book time off through Workday through this plugin? Is it all employees in a country? Specific teams? Or other groups?
     * This determines the launch rules for your plugin.
+
 2. Do you want your employees to request time off in Workday, or through your Moveworks copilot?
     * You can simplify development of your plugin by linking your employees to Workday to request time off. However, this is not as complete of an experience for your employees. See [example conversation design.](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6521%2C%22title%22%3A%22Request+Time+Off%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+could+you+help+me+with+that%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%9C%85+Calling+Plugin+%3Cb%3ERequest+Time+Off%3Cbr%3E%3C%2Fb%3E%E2%8F%B3+Summarizing+response...%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESounds+good%2C+you+are+eligible+for+three+time+off+plans%3A%3Cbr%3E1.+Employee+Time+Off+%28USA%29%3Cbr%3E2.+Sick+Time+Off+%28USA%29%3Cbr%3E3.+Wellness+Day+%28USA%29%3Cbr%3E%3Cbr%3EYou+can+request+time+off+through+this+%3Ca+href%3D%5C%22https%3A%2F%2Fworkday.com%5C%22%3Elink%3C%2Fa%3E+here.%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Ci%3ELink+redirects+to+Workday.+Employee+log+into+workday+to+request+time+off%3C%2Fi%3E%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D)
+
 3. What are the required fields for managers to review time off requests (example: comments, business justification). Which are optional?
     * This affects what questions will be asked to employees when they submit a time off request
+
 4. Can your employees request time off requests only for themselves, or also for someone else?
    * Note: this guide only allows employees to request time off for themselves.
    * See API research below to understand how you can customize API research to allow time off requests for other employees
+
+## Assumptions and Caveats
+
+1. Time off requests for plans with inadequate balances will be rejected by the underlying Workday API.
+
+2. The `{{user.email_addr}}` attribute scopes the time off request to the employee making the request.
+    * You can change this attribute to a slot that collects another employee's name / email address if you want to request time off on behalf of another employee.
+
+3. This guide does not notify employees when their time off request is approved through the bot.
+    * To add notifications once time off requests are approved, please build a new plugin with the [Events API](https://developer.moveworks.com/creator-studio/quickstart/events/)
 
 # For Workday Administrators
 
@@ -181,11 +194,11 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{i
 
 ![Screenshot 2024-07-04 at 8.19.38 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.19.38_PM.png)
 
-## Step 3: Write your Orchestration Code in your iPaaS
+## Step 3: Write your Orchestration Code in your Middleware / iPaaS
 
 Here is an example of the code you can use to orchestrate the API calls to submit time off requests in Workday. It is deployed as a Python FastAPI application on a server on Azure Virtual Network. You can modify this code to work with your middleware.
 
-### Example iPaaS Code (with Python and FastAPI)
+**Example iPaaS Code (with Python and FastAPI)**
 
 ```python
 import os
@@ -385,11 +398,11 @@ async def create_time_off_request_endpoint(
         ) from e
 ```
 
-## Step 4: Build in Creator Studio
+## Step 4: Review Plugin Architecture
 
-We will be building this plugin as a Query Resolver (fka Query-Triggered Path) along with an iPaaS to chain APIs 1, 2, and 3 together in order to submit a time off request for a user.
+We will be building this plugin as a Query Resolver (fka Query-Triggered Path) along with an iPaaS to chain APIs 1, 2, and 3 (described below) together in order to submit a time off request for a user.
 
-### Plugin Architecture Diagram
+**Plugin Architecture Diagram**
 
 ![Untitled](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Untitled.png)
 
@@ -408,18 +421,8 @@ We will be building this plugin as a Query Resolver (fka Query-Triggered Path) a
 1. Lookup time off type details: Executes the `/api/wql/v1/{{instance}}/data` API to query the requesting employee's Workday ID, eligible time off plans, and relevant time off types through their work email address.
 2. Request time off: Executes the `/api/absenceManagement/v1/{{instance}}/workers/{{worker_id}}/requestTimeOff` API to request time off
 
-**Caveats**
 
-1. Time off requests for plans with inadequate balances will be rejected by the underlying Workday API.
-
-2. The `{{user.email_addr}}` attribute scopes the time off request to the employee making the request.
-    * You can change this attribute to a slot that collects another employee's name / email address if you want to request time off on behalf of another employee.
-
-3. This guide does not notify employees when their time off request is approved through the bot.
-    * To add notifications once time off requests are approved, please build a new plugin with the [Events API](https://developer.moveworks.com/creator-studio/quickstart/events/)
-
-### Build Plugin in Creator Studio
-
+## Step 5: Build Plugin in Creator Studio
 
 1. Create a Query in Creator Studio. You can copy the plugin details below
     * Plugin Name: `🏝️ Request Time Off in Workday` 
