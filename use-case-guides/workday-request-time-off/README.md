@@ -24,9 +24,7 @@ Let's dive in!
 
 3. Ensure that your Workday administrator has the necessary permissions to configure an API Client for Workday and provide access to the **Worker Data** and **Time Off** Business Objects as part of domain security policies.
 
-4. Click 'Experimental Features' in the top right corner of your Creator Studio window, and ensure that Paths in Copilot and the Next-gen API editor are enabled.
-
-    ![Experimental Features](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-alt-1.png)
+4. Ensure the [required features](https://developer.moveworks.com/creator-studio/administration/experimental-features/) are enabled in your Creator Studio instance
 
 
 # Conversation design
