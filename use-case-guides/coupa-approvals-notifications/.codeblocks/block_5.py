@@ -359,7 +359,7 @@ async def poll_approvals():
                     # Send notification and add approval to pending list
                     await send_moveworks_message(
                         format_notification_message(requisition),
-                        ["ssrinivas@moveworks.ai"],
+                        ["email@example.com"], # Replace requistion["created-by"]["email"] with the email address of the user who will receive the notification
                         NotificationContext(
                             approval_id=str(approval_id),
                             requisition_id=str(requisition_id),
