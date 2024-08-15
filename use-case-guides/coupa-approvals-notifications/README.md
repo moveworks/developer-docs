@@ -128,7 +128,7 @@ import json
 from typing import Dict, List, Optional
 from datetime import datetime, timedelta
 import sqlite3
-
+from contextlib import asynccontextmanager
 import asyncio
 import httpx
 from dotenv import load_dotenv
@@ -147,9 +147,9 @@ COUPA_SCOPES = os.getenv("coupa_scopes")
 COUPA_BASE_URL = os.getenv("coupa_base_url")
 MOVEWORKS_BASE_URL = "https://api.moveworks.ai"
 DATABASE_NAME = "pending_approvals.db"
+EVENT_ID = os.getenv("event_id")
+EVENT_API_KEY = os.getenv("event_api_key")
 POLLING_INTERVAL = 60  # number of seconds to wait between polling
-
-app = FastAPI()
 
 # Global variable to store the token and its expiration time
 oauth_token = None
@@ -175,19 +175,10 @@ def init_db():
 init_db()
 
 
-@app.on_event("startup")
-async def startup_event():
-    print("Starting up...")
-    try:
-        asyncio.create_task(continuous_polling())
-        print("Continuous polling task started successfully")
-    except Exception as e:
-        print(f"Error starting continuous polling task: {str(e)}")
-
-
 # Pydantic models for request validation
 class NotificationContext(BaseModel):
     approval_id: str
+    requisition_id: str
 
 
 class NotificationRequest(BaseModel):
@@ -284,7 +275,11 @@ def is_approval_pending(approval_id, submit_date):
 
 
 async def make_request(
-    method: str, url: str, headers: Dict = None, data: Optional[Dict] = None
+    method: str,
+    url: str,
+    headers: Dict = None,
+    data: Optional[Dict] = None,
+    auth_type: str = "Bearer",
 ) -> Dict:
     if headers is None:
         headers = {}
@@ -292,17 +287,21 @@ async def make_request(
     # Set the Accept header to application/json if not already set
     headers.setdefault("Accept", "application/json")
 
-    # Get the OAuth token and add it to the headers
-    token = await get_coupa_oauth_token()
-    headers["Authorization"] = f"Bearer {token}"
+    if auth_type == "Bearer":
+        # Get the OAuth token and add it to the headers
+        token = await get_coupa_oauth_token()
+        headers["Authorization"] = f"Bearer {token}"
+    elif auth_type == "api_key":
+        # Use the API key directly
+        headers["Authorization"] = EVENT_API_KEY
 
     async with httpx.AsyncClient() as client:
         if method == "GET":
             response = await client.get(url, headers=headers)
         elif method == "POST":
             response = await client.post(url, headers=headers, json=data)
-        elif method == "PATCH":
-            response = await client.patch(url, headers=headers, json=data)
+        elif method == "PUT":
+            response = await client.put(url, headers=headers, json=data)
         else:
             raise ValueError(f"Unsupported HTTP method: {method}")
 
@@ -312,6 +311,11 @@ async def make_request(
             detail=f"API request failed: {response.text}",
         )
 
+    return (
+        response.json()
+        if response.status_code == 200
+        else {"status": "success"}
+    )
     return (
         response.json()
         if response.status_code == 200
@@ -364,28 +368,70 @@ async def send_moveworks_message(
 ) -> Dict:
     url = f"{MOVEWORKS_BASE_URL}/rest/v1/events/{EVENT_ID}/messages/send"
     headers = {
-        "Authorization": f"Bearer {EVENT_API_KEY}",
         "Content-Type": "application/json",
     }
 
-    payload = {"message": message, "recipients": recipients}
+    payload = {
+        "message": message,
+        "recipients": recipients,
+    }
 
-    if context and context.approval_id:
-        payload["context"] = {"slots": {"approval_id": context.approval_id}}
+    if context and context.approval_id and context.requisition_id:
+        payload["context"] = {
+            "slots": {
+                "approval_id": context.approval_id,
+            }
+        }
 
-    return await make_request("POST", url, headers, payload)
-
-
-def format_notification_message(approval):
-    return (
-        f"<b>📝 Approval Pending</b>:\n"
-        f"    - <i>Approval Name</i>: {approval['name']}\n"
-        f"    - <i>Submitted By</i>: {approval['created-by']}\n"
-        f"    - <i>Submit Date</i>: {approval['created-at']}\n"
-        f"    - <i>Amount</i>: {approval['total']}\n"
-        f"    - <i>Approval Status</i>: {approval['status']}\n"
-        f"    - <i>Approval ID</i>: {approval['id']}\n"
+    return await make_request(
+        "POST", url, headers, payload, auth_type="api_key"
     )
+
+
+def format_notification_message(requisition):
+    approvals = requisition.get("approvals", [])
+    current_approval = next(
+        (a for a in approvals if a["status"] == "pending_approval"), None
+    )
+
+    if current_approval:
+        approver = current_approval["approver"]["fullname"]
+    else:
+        approver = "Unknown"
+
+    return (
+        f"<b>📝 Coupa Approval Pending</b>:\n"
+        f"- <i>Requisition ID</i>: {requisition['id']}\n"
+        f"- <i>Submitted By</i>: {requisition['created-by']['fullname']}\n"
+        f"- <i>Submit Date</i>: {requisition['submitted-at']}\n"
+        f"- <i>Total Amount</i>: {requisition['total']} {requisition['currency']['code']}\n"
+        f"- <i>Requisition Status</i>: {requisition['status']}\n"
+        f"- <i>Current Approver</i>: {approver}\n"
+        f"- <i>Items</i>: {'\n, '.join(line['description'] for line in requisition['requisition-lines'])}\n"
+    )
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup logic
+    print("Starting up...")
+    try:
+        # Create the polling task
+        polling_task = asyncio.create_task(continuous_polling())
+        print("Continuous polling task started successfully")
+        yield
+    finally:
+        # Shutdown logic
+        print("Shutting down...")
+        # Cancel the polling task if it's still running
+        polling_task.cancel()
+        try:
+            await polling_task
+        except asyncio.CancelledError:
+            print("Polling task cancelled")
+
+
+app = FastAPI(lifespan=lifespan)
 
 
 async def continuous_polling():
@@ -402,7 +448,6 @@ async def poll_approvals():
     try:
         approvals = await get_pending_approvals()
 
-        # Check if approvals is a list or a dictionary
         if isinstance(approvals, list):
             approvals_list = approvals
         elif isinstance(approvals, dict):
@@ -415,21 +460,34 @@ async def poll_approvals():
 
         for approval in approvals_list:
             approval_id = approval["id"]
+            requisition_id = approval["approvable-id"]
             submit_date = approval["updated-at"]
             print(
-                f"Checking approval ID: {approval_id}, Submit Date: {submit_date}"
+                f"Checking approval ID: {approval_id}, Approvable ID: {requisition_id}, Submit Date: {submit_date}"
             )
+
             try:
                 if submit_date and not is_approval_pending(
                     approval_id, submit_date
                 ):
                     print(
-                        f"New approval detected with ID: {approval_id}. Sending notification..."
+                        f"New approval detected with ID: {approval_id}. Fetching requisition details..."
+                    )
+
+                    # Fetch requisition details
+                    requisition = await get_requisition_status(requisition_id)
+
+                    print(
+                        f"Sending notification for Requisition ID: {requisition_id}"
                     )
                     # Send notification and add approval to pending list
                     await send_moveworks_message(
-                        format_notification_message(approval),
-                        ["test@example.com"],
+                        format_notification_message(requisition),
+                        ["ssrinivas@moveworks.ai"],
+                        NotificationContext(
+                            approval_id=str(approval_id),
+                            requisition_id=str(requisition_id),
+                        ),
                     )
                     write_pending_approval(approval_id, submit_date)
                 else:
