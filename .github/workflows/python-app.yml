@@ -26,6 +26,8 @@ jobs:
           GH_SHA_PR_HEAD: '${{ github.event.pull_request.head.sha }}'
       - name: Validate Files
         run: python ci/validate.py
+      - name: Validate Files V2
+        run: python ci/validate_v2.py
       - name: Generate Code Blocks
         run: python ci/copy_code_blocks.py
   comment:

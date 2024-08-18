@@ -1,0 +1,9 @@
+{
+  "expires_in": "3600",
+  "scope": "{{space separated app-scopes}}",
+  "token_type": "Bearer",
+  "access_token": "{{access_token}}",
+  "refresh_token": "{{refresh_token}}",
+  "id_token": "{{oidc_token}}",
+  "geolocation": "https://us2.api.concursolutions.com"
+}

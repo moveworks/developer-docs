@@ -113,6 +113,8 @@ def main():
     guide_files = find_markdown_files("./authentication-guides")
     guide_files += find_markdown_files("./use-case-guides")
     guide_files += find_markdown_files("./design-patterns")
+    guide_files += find_markdown_files("./plugins")
+    guide_files += find_markdown_files("./connectors")
 
     changes_made_anywhere = False
 
