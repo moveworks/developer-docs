@@ -1,0 +1,8 @@
+curl --location --request PATCH 'https://us.api.concursolutions.com/expensereports/v4/users/5026e4fe-725d-44b4-bd97-02073a65b122/context/MANAGER/reports/A2466871CCCF425B8D68/sendBack' \
+--header 'Authorization: Bearer null' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: _abck=32871CD1D1921EEAD39A5E0BFD7DD554~-1~YAAQBgwtFwnN2g6RAQAAvrvxDwzFWuJbDen/xOG96/yUIKyDU77/sWrQe/XnzdNSjZu6xTb9F04IWsMpOUEO/vBm5XEyFa3G58yPAWggGiwy+HkfIttPQcDYw6vcJYT6uYfyKcWT+M6OvAVHkv8K0n/Kb914I55A27J1G5zFSG2Gi355m3y0uR6TL4aGO0VbXa42sXHG/VErYJonOtqDz+pO8hajvsI7Ax0/I154Ap4x5+WjcFgr6E6sLwV9tkLy41RQrRN7bxSpLbUN49rN3lpNwSrPBNNK8dmTY07viTnwRKLxyur7iu/K398muk7GgA6wzAAXLgD9fcVsiEc3j5r9jlAu5FgXTMwr+CNCUWEDeikmSgd3mQWNMl16Oogbuu8=~-1~-1~-1; ak_bmsc=5D41E18B13AB73B25583E440AE0CB399~000000000000000000000000000000~YAAQhpTYF35+Gg6RAQAAALviERiljpuuCcjKFy7odWgT5nvIoj/CkIYcLl8HBpV0PiScupvjQgLhPx9lQ/f9cWPZ51+HukGAVgrVYMZRRa/C5uF4KYfuZuJ+iG9ka+2JgDw6mmhFy9KtO+fdnGXg8kMTBoKPZN5D6J/gF1yKiOmax/CAk+mkjqh7uKrE/HXATdWY4VaM6s6ig1Ckc/bEP3X9QpN39SaevYKDx/Q1TED4aYor0UtR8lRC5WQAYxUOu4XUAAzV2YkcUrMy5PvB+vfk+hy9zOxZRPh8ISB4t68pfdJQZfuFdOUtcEl+aW5RebJ1mx749J/AYg35TRoDEeYfN4yCJICUEW8HuxzPRoWKzuc+4kMZ71Cm0a90qRtv7HYF+kObY6/UYDbUfV/NniLwtyWOuGQkYssAumJ9+C9b7w==; bm_sv=833A90A10A3CD0E0646BAB4757439283~YAAQhpTYF8DeGw6RAQAAsgTpERgefeI1+j/F6rq6mI9f8WoF2Lj4URoWZEB2OfZePjkjwHSXwsqcSsfNPKwc94t7nDQ/ITu5+udn7ax1IHlX5b9fprdxDrFyM1H5odqcEzeGoei7IEK2+Taf8eH57hhr65DGXpT3N+wqAjgxa3Zl2z1DM7/gh+TEnirAnqEXmW2vJXqvmUdEQUy4BK0mwnXKkC5dwfH0/lWolf6RYrqb3rYACtonMpFca6l8Vyfm2HfNcwFllXOhUm2NQA==~1' \
+--data '{
+    "comment":"Rejecting",
+    "expenseRejectedComment": "Rejecting Report through API"
+}'
