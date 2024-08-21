@@ -4,11 +4,11 @@ import pandas as pd
 import requests
 import re
 
-CSV_FILE = "Plugin Research df47317a8eb449178020d6bf3dec4b23_all.csv"
+CSV_FILE = 'Plugin Research df47317a8eb449178020d6bf3dec4b23_all.csv'
 
 df = pd.read_csv(CSV_FILE)
 from enum import Enum
-from data_utils import (
+from ci.data_utils import (
     load_yaml_data,
     replace_nan_with_none,
     deep_equal,
@@ -16,10 +16,9 @@ from data_utils import (
     render_template_file,
 )
 from typing import List
-from model import *
+from ci.model import *
 
 import shutil
-
 
 # CONSTANTS (Can change if we change the Notion DB Structure)
 class NotionColumns(Enum):
@@ -110,13 +109,11 @@ class Record:
 
     @property
     def num_implementations(self) -> int:
-        deployments: str = self._record[
-            NotionColumns.CUSTOMER_DEPLOYMENTS.value
-        ]
+        deployments: str = self._record[NotionColumns.CUSTOMER_DEPLOYMENTS.value]
         if not deployments:
             return 0
-
-        return len(deployments.split(","))
+        
+        return len(deployments.split(','))
 
     def to_front_matter(self) -> dict:
         if self.content_type == ContentTypes.CONNECTOR:
@@ -124,7 +121,7 @@ class Record:
                 "name": self.title,
                 "description": self.description,
                 "fidelity": self.fidelity.name,
-                "num_implementations": self.num_implementations,
+                "num_implementations": self.num_implementations
             }
         elif self.content_type == ContentTypes.PLUGIN:
             return {
@@ -137,9 +134,7 @@ class Record:
                 "num_implementations": self.num_implementations,
             }
         else:
-            raise NotImplementedError(
-                f"No Front Matter for {self.content_type}"
-            )
+            raise NotImplementedError(f"No Front Matter for {self.content_type}")
 
     def to_front_matter_yaml(self) -> str:
         fm = self.to_front_matter()
@@ -149,9 +144,7 @@ class Record:
     @property
     def template_filepath(self) -> str:
         return os.path.join(
-            TEMPLATES_DIR,
-            DIRECTORY_MAP[self.content_type],
-            TEMPLATE_MAP[self.fidelity],
+            TEMPLATES_DIR, DIRECTORY_MAP[self.content_type], TEMPLATE_MAP[self.fidelity]
         )
 
     def render_template(self) -> str:
@@ -163,12 +156,12 @@ class Record:
 
         result = render_template_file(self.template_filepath, render_dict)
         return result
-
+    
     def replace_existing_file_front_matter(self, new_front_matter: dict):
-        with open(self.record_readme, "r", encoding="utf-8") as file:
+        with open(self.record_readme, 'r', encoding='utf-8') as file:
             content = file.read()
         # Parse out the front matter
-        parts = re.split(r"^---\s*$", content, maxsplit=2, flags=re.MULTILINE)
+        parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
         if len(parts) == 3:
             body = parts[2]
         else:
@@ -177,8 +170,10 @@ class Record:
         new_front_matter_str = dump_to_yaml_str(new_front_matter).strip()
         # Combine the new front matter and the original body
         new_content = f"---\n{new_front_matter_str}\n---\n{body}"
-        with open(self.record_readme, "w", encoding="utf-8") as file:
+        with open(self.record_readme, 'w', encoding='utf-8') as file:
             file.write(new_content)
+        
+        
 
 
 def validate_file_consistent_with_notion(record: Record):
@@ -201,7 +196,7 @@ def validate_file_consistent_with_notion(record: Record):
             errors_messages.append(
                 f'Stored value for {k} in {record.record_readme} was "{stored_front_matter[k]}". Expected "{v}"'
             )
-
+    
     if errors_messages:
         # Stage the change
         record.replace_existing_file_front_matter(ideal_front_matter)
@@ -253,9 +248,7 @@ def validate_record(record: Record):
         clear_directory(record.record_directory)
 
     else:
-        raise NotImplementedError(
-            f"No support built for {record.fidelity} yet."
-        )
+        raise NotImplementedError(f"No support built for {record.fidelity} yet.")
 
 
 errors = []
