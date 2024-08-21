@@ -1,0 +1,5 @@
+client_id=READACTED
+client_secret=READACTED
+refresh_token=REDACTED
+event_id=REDACTED
+event_api_key=REDACTED
