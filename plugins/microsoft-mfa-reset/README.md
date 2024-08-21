@@ -2,6 +2,8 @@
 accreditations:
 - smartzee797
 - DEFAULT
+drop_accreditations:
+- sarthaksrinivas
 description: A plugin that can reset your Microsoft MFA device.
 difficulty_level: ADVANCED
 fidelity: GUIDE
