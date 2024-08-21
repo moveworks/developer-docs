@@ -11,6 +11,8 @@ accreditations:
 - sarthaksrinivas
 - nealmoran
 - DEFAULT
+time_in_minutes: 60
+difficulty_level: ADVANCED
 ---
 
 # Stay on top of your purchases with your Copilot 🏝️
