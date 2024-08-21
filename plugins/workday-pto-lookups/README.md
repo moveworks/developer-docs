@@ -1,9 +1,14 @@
 ---
+accreditations:
+- indrapaul24
+- sarthaksrinivas
+- DEFAULT
 description: A plugin that retrieves your time off balance from Workday.
 design_pattern_id: 28
 difficulty_level: BEGINNER
 fidelity: GUIDE
 name: View Time Off Balance
+num_implementations: 1
 purple_chat_link: "https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace={\"\
   title\"%3A\"My+Workspace\"%2C\"botSettings\"%3A{\"name\"%3A\"\"%2C\"imageUrl\"%3A\"\
   \"}%2C\"mocks\"%3A[{\"id\"%3A3925%2C\"title\"%3A\"New+Mock\"%2C\"transcript\"%3A{\"\
@@ -25,10 +30,6 @@ solution_tags:
 systems:
 - workday
 time_in_minutes: 15
-accreditations:
-- indrapaul24
-- sarthaksrinivas
-- DEFAULT
 ---
 
 ### Presenting the easiest way for your employees to check their Time Off balances 🏝️
