@@ -1,13 +1,20 @@
 ---
+accreditations:
+- smartzee797
+- DEFAULT
 description: A plugin that can reset your Microsoft MFA device.
 difficulty_level: ADVANCED
 fidelity: GUIDE
 name: Reset Microsoft MFA
+num_implementations: 1
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace={"title"%3A"My+Workspace"%2C"botSettings"%3A{"name"%3A""%2C"imageUrl"%3A""}%2C"mocks"%3A[{"id"%3A5186%2C"title"%3A"New+Mock"%2C"transcript"%3A{"settings"%3A{"colorStyle"%3A"LIGHT"%2C"startTime"%3A"11%3A43+AM"%2C"defaultPerson"%3A"GWEN"%2C"editable"%3Afalse%2C"botName"%3A""%2C"botImageUrl"%3A""}%2C"messages"%3A[{"from"%3A"USER"%2C"text"%3A"Hi%2C+Can+you+please+help+me+reset+my+Azure+MFA."}%2C{"from"%3A"BOT"%2C"text"%3A"Sure%2C+do+you+want+to+proceed+with+resetting+the+MFA+as+this+cannot+be+reverted+%3F"%2C"cards"%3A[{"buttons"%3A[{"style"%3A"PRIMARY"%2C"text"%3A"Yes"}%2C{"text"%3A"No"}]}]}%2C{"from"%3A"ANNOTATION"%2C"text"%3A"Inbound+Request+to+Middleware+\"Azure+Functions\"+\n\n{\n+\"email\"+%3A+<user_email>\n}\n+\nProcess%3A\n1.+Generate+Bearer+Token+for+Authentication\n2.+LIST+the+existing+MFA+for+the+user\n3.+Delete+the+MFA+for+the+user\n\nOutbound+Response%3A\n{\n+++\"Status\"%3A+\"OK+(200)\"\n}"}%2C{"from"%3A"BOT"%2C"text"%3A"I've+successfully+reset+the+MFA+on+Azure"}]}}]}
-solution_tags: [Access Management, IT]
-systems: [microsoft-graph, azure-function-app]
+solution_tags:
+- Access Management
+- IT
+systems:
+- microsoft-graph
+- azure-function-app
 time_in_minutes: 60
-accreditations: [smartzee797, DEFAULT]
 ---
 
 ### **Introduction**
