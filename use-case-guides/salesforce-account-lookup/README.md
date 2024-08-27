@@ -8,13 +8,6 @@ time_in_minutes: 5
 difficulty_level: Beginner
 ---
 
-### Step : See it in action
-
-<aside>
-✨ Query Salesforce Account object details with your bot
-
-</aside>
-
 # Introduction
 
 Salesforce allows you to manage the entire lifecycle of a customer relationship, from a prospect to a newly closed customer through multiple renewals. However, retrieving specific details of a customer’s account might take some time since you will need to you to login to the Salesforce portal and then navigate to the correct account before you can check on any such information.
