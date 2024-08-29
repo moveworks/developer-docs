@@ -2,28 +2,14 @@
 accreditations:
 - wdavis-moveworks
 - DEFAULT
-drop_accreditations:
-- ajaymerchia
 description: A plugin that can find the birthdays of your teammates in Workday.
 difficulty_level: BEGINNER
+drop_accreditations:
+- ajaymerchia
 fidelity: GUIDE
-name: Look Up Birthdays in Workday
-purple_chat_link: "https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace={\"\
-  title\"%3A\"My+Workspace\"%2C\"botSettings\"%3A{\"name\"%3A\"\"%2C\"imageUrl\"%3A\"\
-  \"}%2C\"mocks\"%3A[{\"id\"%3A3108%2C\"title\"%3A\"New+Mock\"%2C\"transcript\"%3A{\"\
-  settings\"%3A{\"colorStyle\"%3A\"LIGHT\"%2C\"startTime\"%3A\"11%3A43+AM\"%2C\"defaultPerson\"\
-  %3A\"GWEN\"%2C\"editable\"%3Afalse%2C\"botName\"%3A\"\"%2C\"botImageUrl\"%3A\"\"\
-  }%2C\"messages\"%3A[{\"from\"%3A\"USER\"%2C\"text\"%3A\"Can+you+tell+me+of+any+upcoming+birthdadys%3F\"\
-  }%2C{\"from\"%3A\"ANNOTATION\"%2C\"text\"%3A\"<p>GET+call+to+WorkDay+RaaS+report+for+upcoming+birthdays<br><br>Response%3A<br>{<br>\\\
-  t\\\"Report_Entry\\\"%3A+[<br>\\t\\t{<br>\\t\\t\\t\\\"Next_Birthday\\\"%3A+\\\"\
-  2024-01-17\\\"%2C<br>\\t\\t\\t\\\"Worker\\\"%3A+\\\"Emma+Hobson\\\"<br>\\t\\t}%2C<br>\\\
-  t\\t{<br>\\t\\t\\t\\\"Next_Birthday\\\"%3A+\\\"2024-01-17\\\"%2C<br>\\t\\t\\t\\\"\
-  Worker\\\"%3A+\\\"Enrique+Vasquez\\\"<br>\\t\\t}%2C<br>\\t\\t{<br>\\t\\t\\t\\\"\
-  Next_Birthday\\\"%3A+\\\"2024-01-18\\\"%2C<br>\\t\\t\\t\\\"Worker\\\"%3A+\\\"Min-gyu+Kang+\uFF08\
-  \uAC15\uBBFC\uADDC\uFF09\\\"<br>\\t\\t}%2C<br>\\t\\t{<br>\\t\\t\\t\\\"Next_Birthday\\\
-  \"%3A+\\\"2024-01-19\\\"%2C<br>\\t\\t\\t\\\"Worker\\\"%3A+\\\"Maximilian+Schneider\\\
-  \"<br>\\t\\t}<br>\\t]<br>}<%2Fp>\"}%2C{\"from\"%3A\"BOT\"%2C\"text\"%3A\"<p>Sure%2C+here+are+some+upcoming+birthdays%3A<br><br>-+Emma+Hobson's+birthday+is+on+January+17th+<br>-+Enrique+Vasquez's+birthday+is+also+on+January+17th+<br>-+Min-gyu+Kang's+birthday+is+on+January+18th+<br>-+Maximilian+Schneider's+birthday+is+on+January+19th+<br><br>Let+me+know+if+you+need+information+on+more+birthdays.<%2Fp>\"\
-  }]}}]}"
+name: Look up Birthdays in Workday
+num_implementations: 1
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A3108%2C%22title%22%3A%22New+Mock%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Afalse%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Can+you+tell+me+of+any+upcoming+birthdadys%3F%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3EGET+call+to+WorkDay+RaaS+report+for+upcoming+birthdays%3Cbr%3E%3Cbr%3EResponse%3A%3Cbr%3E%7B%3Cbr%3E%5Ct%5C%22Report_Entry%5C%22%3A+%5B%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-17%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Emma+Hobson%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-17%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Enrique+Vasquez%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-18%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Min-gyu+Kang+%EF%BC%88%EA%B0%95%EB%AF%BC%EA%B7%9C%EF%BC%89%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-19%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Maximilian+Schneider%5C%22%3Cbr%3E%5Ct%5Ct%7D%3Cbr%3E%5Ct%5D%3Cbr%3E%7D%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESure%2C+here+are+some+upcoming+birthdays%3A%3Cbr%3E%3Cbr%3E-+Emma+Hobson%27s+birthday+is+on+January+17th+%3Cbr%3E-+Enrique+Vasquez%27s+birthday+is+also+on+January+17th+%3Cbr%3E-+Min-gyu+Kang%27s+birthday+is+on+January+18th+%3Cbr%3E-+Maximilian+Schneider%27s+birthday+is+on+January+19th+%3Cbr%3E%3Cbr%3ELet+me+know+if+you+need+information+on+more+birthdays.%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D
 solution_tags:
 - HR
 systems:

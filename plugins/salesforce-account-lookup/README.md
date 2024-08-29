@@ -2,14 +2,14 @@
 accreditations:
 - indrapaul24
 - DEFAULT
-drop_accreditations:
-- ajaymerchia
 description: A plugin that retrieves customer data from Salesforce.
 design_pattern_id: 28
 difficulty_level: BEGINNER
+drop_accreditations:
+- ajaymerchia
 fidelity: GUIDE
-name: Look Up Salesforce Accounts
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace={"title"%3A"My+Workspace"%2C"botSettings"%3A{"name"%3A""%2C"imageUrl"%3A""}%2C"mocks"%3A[{"id"%3A9782%2C"title"%3A"New+Mock"%2C"transcript"%3A{"settings"%3A{"colorStyle"%3A"LIGHT"%2C"startTime"%3A"11%3A43+AM"%2C"defaultPerson"%3A"GWEN"%2C"editable"%3Afalse%2C"botName"%3A""%2C"botImageUrl"%3A""}%2C"messages"%3A[{"from"%3A"USER"%2C"text"%3A"What+is+the+Renewal+date+for+ACME%3F"}%2C{"from"%3A"ANNOTATION"%2C"text"%3A"Query+Salesforce+Accounts+API+endpoint"}%2C{"from"%3A"BOT"%2C"text"%3A"The+renewal+date+for+ACME+is+on+February+25%2C+2026"}%2C{"from"%3A"USER"%2C"text"%3A"Perfect%2C+thanks!"}]}}]}
+name: Look up Salesforce Accounts
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A9782%2C%22title%22%3A%22New+Mock%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Afalse%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22What+is+the+Renewal+date+for+ACME%3F%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22Query+Salesforce+Accounts+API+endpoint%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22The+renewal+date+for+ACME+is+on+February+25%2C+2026%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Perfect%2C+thanks%21%22%7D%5D%7D%7D%5D%7D
 solution_tags:
 - Sales
 systems:
