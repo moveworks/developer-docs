@@ -9,6 +9,13 @@ from enum import Enum
 from model import *
 
 DEFAULT_AUTHOR_MARKER = 'DEFAULT'
+DELETE_NO_PURPLE_CHAT_FLAG = '--delete-no-pc'
+
+import shutil
+
+def clear_directory(directory):
+    if os.path.exists(directory):
+        shutil.rmtree(directory)
 
 def find_markdown_files(directory_path):
     markdown_files = []
@@ -140,8 +147,19 @@ def validate_yaml_schema_generic(data, required_field_type_pairs, file_path):
     missing_or_invalid_fields = required_field_type_pairs.keys() - data.keys()
 
     if missing_or_invalid_fields:
-        print(f"Missing fields in {file_path}: {missing_or_invalid_fields}")
-        sys.exit(1)
+        if (
+            DELETE_NO_PURPLE_CHAT_FLAG in sys.argv and 
+            len(missing_or_invalid_fields) == 1 and 
+            'purple_chat_link' in missing_or_invalid_fields
+        ):
+            DIRECTORY_TO_CLEAR = os.path.dirname(file_path)
+            print(f'Clearing {DIRECTORY_TO_CLEAR} due to missing PC link & flag')
+            clear_directory(DIRECTORY_TO_CLEAR)
+            return True
+            
+        else:
+            print(f"Missing fields in {file_path}: {missing_or_invalid_fields}")
+            sys.exit(1)
 
     for field, type_ in required_field_type_pairs.items():
         if issubclass(type_, Enum):
@@ -162,7 +180,7 @@ ALL_REDIRECTS = set()
 
 def standard_frontmatter_validations(file_path: str, data: dict):
     description: str = data.get('description')
-    if description and not description.endswith('.'):
+    if description and not description.strip().endswith('.'):
         print(
                 f"Missed a period at the end of your description for {file_path}. ('{description}')"
             )
