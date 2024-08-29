@@ -3,14 +3,14 @@ accreditations:
 - dsujay_movester
 - sarthaksrinivas
 - DEFAULT
-drop_accreditations:
-- ajaymerchia
-description: A plugin to notify you of new ticket appprovals inManageEngine ServiceDesk Plus (SDP) on-premise.
+description: A plugin that automatically notifies employees about new ticket approvals.
 design_pattern_id: 10
 difficulty_level: ADVANCED
-fidelity: GUIDE
-name: Notify Employees for New Ticket Approvals
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A3423%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3ETriggers%3C%2Fb%3E%3Cbr%3E1.+New+approval+queue+detected+while+polling+ManageEngine+approval+APIs%3Cbr%3E2.+Middleware+initiated+trigger%3Cbr%3E%3Cbr%3E%3Cb%3ESlots%3C%2Fb%3E%3Cbr%3E1.+%3Ci%3EApproval+ID%3C%2Fi%3E%3A+reqired+for+approval+actions+to+work%3Cbr%3E%3Cbr%3E%3Cb%3EActions%3C%2Fb%3E%3Cbr%3E%3Cbr%3E1.+%3Ci%3EApprove+ticket%3C%2Fi%3E%3A+Approve+and+move+ticket+to+next+approver+level+%28up+to+5+levels%29%3Cbr%3E2.+%3Ci%3EReject+ticket%3C%2Fi%3E%3A+Reject+ticket+and+move+record+back+to+previous+approver+or+level%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22+You+have+one+open+approval%3A+%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%8E%AB+New+Ticket+Pending+Your+Approval%3C%2Fb%3E%3C%2Fp%3E%22%2C%22text%22%3A%22%3Cp%3E%3Ci%3ETicket+Type%3C%2Fi%3E%3A+Request%3Cbr%3E%3Ci%3ETicket+%23%3C%2Fi%3E%3A+874%3Cbr%3E%3Ci%3ERequester%3C%2Fi%3E%3A+Sam+Stinson%3Cbr%3E%3Ci%3EPriority%3C%2Fi%3E%3A+High%3Cbr%3E%3Ci%3EDescription%3C%2Fi%3E%3A+The+A%2FV+Equipment+in+Conference+Room+B+has+stopped+working.+The+internals+are+fried.+Requesting+approval+for+replacement.%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Approve%22%7D%2C%7B%22text%22%3A%22Reject%22%7D%5D%7D%5D%7D%5D%7D%7D%5D%7Dhttps://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A3423%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3ETriggers%3C%2Fb%3E%3Cbr%3E1.+New+approval+queue+detected+while+polling+ManageEngine+approval+APIs%3Cbr%3E2.+Middleware+initiated+trigger%3Cbr%3E%3Cbr%3E%3Cb%3ESlots%3C%2Fb%3E%3Cbr%3E1.+%3Ci%3EApproval+ID%3C%2Fi%3E%3A+reqired+for+approval+actions+to+work%3Cbr%3E%3Cbr%3E%3Cb%3EActions%3C%2Fb%3E%3Cbr%3E%3Cbr%3E1.+%3Ci%3EApprove+ticket%3C%2Fi%3E%3A+Approve+and+move+ticket+to+next+approver+level+%28up+to+5+levels%29%3Cbr%3E2.+%3Ci%3EReject+ticket%3C%2Fi%3E%3A+Reject+ticket+and+move+record+back+to+previous+approver+or+level%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22+You+have+one+open+approval%3A+%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%8E%AB+New+Ticket+Pending+Your+Approval%3C%2Fb%3E%3C%2Fp%3E%22%2C%22text%22%3A%22%3Cp%3E%3Ci%3ETicket+Type%3C%2Fi%3E%3A+Request%3Cbr%3E%3Ci%3ETicket+%23%3C%2Fi%3E%3A+874%3Cbr%3E%3Ci%3ERequester%3C%2Fi%3E%3A+Sam+Stinson%3Cbr%3E%3Ci%3EPriority%3C%2Fi%3E%3A+High%3Cbr%3E%3Ci%3EDescription%3C%2Fi%3E%3A+The+A%2FV+Equipment+in+Conference+Room+B+has+stopped+working.+The+internals+are+fried.+Requesting+approval+for+replacement.%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Approve%22%7D%2C%7B%22text%22%3A%22Reject%22%7D%5D%7D%5D%7D%5D%7D%7D%5D%7D
+drop_accreditations:
+- ajaymerchia
+fidelity: VALIDATED
+name: Notify on Ticket Approvals
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A8601%2C%22title%22%3A%22New+Mock%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Afalse%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3ETriggers%3C%2Fb%3E%3Cbr%3E1.+New+approval+queue+detected+while+polling+ManageEngine+approval+APIs%3Cbr%3E2.+Middleware+initiated+trigger%3Cbr%3E%3Cbr%3E%3Cb%3ESlots%3C%2Fb%3E%3Cbr%3E1.+%3Ci%3EApproval+ID%3C%2Fi%3E%3A+reqired+for+approval+actions+to+work%3Cbr%3E%3Cbr%3E%3Cb%3EActions%3C%2Fb%3E%3Cbr%3E%3Cbr%3E1.+%3Ci%3EApprove+ticket%3C%2Fi%3E%3A+Approve+and+move+ticket+to+next+approver+level+%28up+to+5+levels%29%3Cbr%3E2.+%3Ci%3EReject+ticket%3C%2Fi%3E%3A+Reject+ticket+and+move+record+back+to+previous+approver+or+level%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22+You+have+one+open+approval%3A+%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3E%3Cb%3E%F0%9F%8E%AB+New+Ticket+Pending+Your+Approval%3C%2Fb%3E%3C%2Fp%3E%22%2C%22text%22%3A%22%3Cp%3E%3Ci%3ETicket+Type%3C%2Fi%3E%3A+Request%3Cbr%3E%3Ci%3ETicket+%23%3C%2Fi%3E%3A+874%3Cbr%3E%3Ci%3ERequester%3C%2Fi%3E%3A+Sam+Stinson%3Cbr%3E%3Ci%3EPriority%3C%2Fi%3E%3A+High%3Cbr%3E%3Ci%3EDescription%3C%2Fi%3E%3A+The+A%2FV+Equipment+in+Conference+Room+B+has+stopped+working.+The+internals+are+fried.+Requesting+approval+for+replacement.%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Approve%22%7D%2C%7B%22text%22%3A%22Reject%22%7D%5D%7D%5D%7D%5D%7D%7D%5D%7D
 solution_tags:
 - Approvals
 - IT
@@ -18,6 +18,7 @@ systems:
 - manage-engine
 time_in_minutes: 60
 ---
+
 # Notify Employees for New Ticket Approvals with Your Copilot 🎫
 
 Keep your IT processes running smoothly by enabling employees to approve or reject tickets directly through your Copilot. This guide will help you build a conversational experience for easy ticket approvals in ManageEngine ServiceDesk Plus (SDP) on-premise. Let's dive in!
@@ -141,6 +142,11 @@ curl --location --request PUT 'https://{{SDP_BASE_URL}}/api/v3/{{ticket}}/{{tick
 
 
 ## Step 3: Write your Orchestration Code in your iPaaS
+
+![Architecture Diagram](./architecture.png) 
+
+This diagram describes the flow we will build in this guide.
+
 Here's an example of the code structure you can use to orchestrate the API calls for ticket approvals in ManageEngine SDP:
 
 ```python

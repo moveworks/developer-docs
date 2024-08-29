@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import requests
 import re
+import sys
 
 CSV_FILE = 'Plugin Research df47317a8eb449178020d6bf3dec4b23_all.csv'
 
@@ -34,7 +35,7 @@ class NotionColumns(Enum):
     CUSTOMER_DEPLOYMENTS = "Customers Deployed"
 
 
-TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt"}
+TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
 TEMPLATES_DIR = "ci/templates"
 
 
@@ -56,7 +57,7 @@ class Record:
 
     @property
     def record_directory(self) -> str:
-        return os.path.join(DIRECTORY_MAP[self.content_type], record.slug)
+        return os.path.join(DIRECTORY_MAP[self.content_type], self.slug)
 
     @property
     def record_readme(self) -> str:
@@ -92,16 +93,13 @@ class Record:
 
     @property
     def description(self) -> str:
-        configured_description = self._record[NotionColumns.DESCRIPTION.value]
+        configured_description: str = self._record[NotionColumns.DESCRIPTION.value]
         if configured_description:
+            configured_description = configured_description.strip().replace('\u2019', "'")
+            if not configured_description.endswith('.'):
+                configured_description += '.'
             return configured_description
         return None
-
-        # Better to handle this logic in the front-end as a default
-        # if self.content_type == ContentTypes.CONNECTOR:
-        #     return f'Connect Creator Studio to {self.title}.'
-        # elif self.content_type == ContentTypes.PLUGIN:
-        #     return f'A new plugin for your copilot: {self.title}'
 
     @property
     def purple_chat_link(self) -> str:
@@ -139,7 +137,10 @@ class Record:
     def to_front_matter_yaml(self) -> str:
         fm = self.to_front_matter()
         result_dict = {k: v for k, v in fm.items() if v is not None}
-        return dump_to_yaml_str(result_dict)
+        result_value = dump_to_yaml_str(result_dict)
+
+        return result_value
+
 
     @property
     def template_filepath(self) -> str:
@@ -158,7 +159,7 @@ class Record:
         return result
     
     def replace_existing_file_front_matter(self, new_front_matter: dict):
-        with open(self.record_readme, 'r', encoding='utf-8') as file:
+        with open(self.record_readme, 'r') as file:
             content = file.read()
         # Parse out the front matter
         parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
@@ -170,7 +171,7 @@ class Record:
         new_front_matter_str = dump_to_yaml_str(new_front_matter).strip()
         # Combine the new front matter and the original body
         new_content = f"---\n{new_front_matter_str}\n---\n{body}"
-        with open(self.record_readme, 'w', encoding='utf-8') as file:
+        with open(self.record_readme, 'w') as file:
             file.write(new_content)
         
         
@@ -204,8 +205,8 @@ def validate_file_consistent_with_notion(record: Record):
 
 
 def clear_directory(directory):
-    if os.path.exists(record.record_directory):
-        shutil.rmtree(record.record_directory)
+    if os.path.exists(directory):
+        shutil.rmtree(directory)
 
 
 def validate_record(record: Record):
@@ -220,9 +221,11 @@ def validate_record(record: Record):
     ]:
         # Check if the guide file exists
         if not os.path.exists(record.record_readme):
-            raise FileNotFoundError(
-                f"Could not find a guide or research file for {record.record_directory}"
-            )
+            if not os.path.exists(record.record_directory):
+                os.makedirs(record.record_directory)
+            
+            open(record.record_readme, "w+").write(record.render_template())
+            print('WARNING: ', f"This record is supposed to be {record.fidelity}, but we could not find a guide or research file for {record.record_directory}. Please add your proof.")
 
         # Detect discrepancies with the guide file
         validate_file_consistent_with_notion(record)
@@ -251,21 +254,41 @@ def validate_record(record: Record):
         raise NotImplementedError(f"No support built for {record.fidelity} yet.")
 
 
-errors = []
+def main():
+    errors = []
 
-# Complain if there are any duplicate slugs.
-slug_counts = df[NotionColumns.SLUG.value].value_counts()
-if max(slug_counts.values) > 1:
-    raise ValueError("Found duplicate slugs in CSV.", slug_counts)
+    all_stored_slugs = sum(map(lambda t: os.listdir(DIRECTORY_MAP[t]), ContentTypes), [])
+    all_stored_slugs = list(filter(lambda x: x not in ['.DS_Store'], all_stored_slugs))
+    slugs_not_in_notion = list(filter(lambda slug: df[df[NotionColumns.SLUG.value] == slug].empty, all_stored_slugs))
+
+    if slugs_not_in_notion:
+        for s in slugs_not_in_notion:
+            for t in ContentTypes:
+                p = os.path.join(DIRECTORY_MAP[t], s)
+                if os.path.exists(p):
+                    clear_directory(p)
+        raise ValueError(f'Found directories not stored in Notion. Please add them to notion or remove them. {slugs_not_in_notion}')
+
+    # Complain if there are any duplicate slugs.
+    slug_counts = df[NotionColumns.SLUG.value].value_counts()
+    if max(slug_counts.values) > 1:
+        raise ValueError("Found duplicate slugs in CSV.", slug_counts)
 
 
-for _, record in df.iterrows():
-    record = Record(record=record)
-    try:
-        validate_record(record)
-    except Exception as e:
-        errors.append(e)
+    for _, record in df.iterrows():
+        record = Record(record=record)
+        try:
+            validate_record(record)
+        except Exception as e:
+            errors.append(e)
 
-if errors:
-    print(errors)
-    raise errors[0]
+    if errors:
+        print(f'FOUND {len(errors)} ERRORS')
+        for err in errors:
+            print(err)
+            print('---------------------')
+        raise errors[0]
+
+
+if __name__ == "__main__":
+    main()
