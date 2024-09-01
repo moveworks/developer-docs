@@ -154,7 +154,7 @@ def validate_yaml_schema_generic(data, required_field_type_pairs, file_path):
         ):
             DIRECTORY_TO_CLEAR = os.path.dirname(file_path)
             print(f'Clearing {DIRECTORY_TO_CLEAR} due to missing PC link & flag')
-            # clear_directory(DIRECTORY_TO_CLEAR)
+            clear_directory(DIRECTORY_TO_CLEAR)
             return True
             
         else:
