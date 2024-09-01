@@ -269,5 +269,8 @@ for _, record in df.iterrows():
         errors.append(e)
 
 if errors:
-    print(errors)
+    print(f'FOUND {len(errors)} ERRORS')
+    for err in errors:
+        print(err)
+        print('---------------------')
     raise errors[0]
