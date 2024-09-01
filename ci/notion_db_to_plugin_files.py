@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import requests
 import re
+import sys
 
 CSV_FILE = 'Plugin Research df47317a8eb449178020d6bf3dec4b23_all.csv'
 
@@ -207,8 +208,8 @@ def validate_file_consistent_with_notion(record: Record):
 
 
 def clear_directory(directory):
-    if os.path.exists(record.record_directory):
-        shutil.rmtree(record.record_directory)
+    if os.path.exists(directory):
+        shutil.rmtree(directory)
 
 
 def validate_record(record: Record):
@@ -256,24 +257,29 @@ def validate_record(record: Record):
         raise NotImplementedError(f"No support built for {record.fidelity} yet.")
 
 
-errors = []
+def main():
+    errors = []
 
-# Complain if there are any duplicate slugs.
-slug_counts = df[NotionColumns.SLUG.value].value_counts()
-if max(slug_counts.values) > 1:
-    raise ValueError("Found duplicate slugs in CSV.", slug_counts)
+    # Complain if there are any duplicate slugs.
+    slug_counts = df[NotionColumns.SLUG.value].value_counts()
+    if max(slug_counts.values) > 1:
+        raise ValueError("Found duplicate slugs in CSV.", slug_counts)
 
 
-for _, record in df.iterrows():
-    record = Record(record=record)
-    try:
-        validate_record(record)
-    except Exception as e:
-        errors.append(e)
+    for _, record in df.iterrows():
+        record = Record(record=record)
+        try:
+            validate_record(record)
+        except Exception as e:
+            errors.append(e)
 
-if errors:
-    print(f'FOUND {len(errors)} ERRORS')
-    for err in errors:
-        print(err)
-        print('---------------------')
-    raise errors[0]
+    if errors:
+        print(f'FOUND {len(errors)} ERRORS')
+        for err in errors:
+            print(err)
+            print('---------------------')
+        raise errors[0]
+
+
+if __name__ == "__main__":
+    main()

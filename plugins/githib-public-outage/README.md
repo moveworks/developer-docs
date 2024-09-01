@@ -1,5 +1,5 @@
 ---
-description: A plugin that checks public http://github.com outages
+description: A plugin that checks public http://github.com outages.
 fidelity: VALIDATED
 name: Alerts for Public Outages
 num_implementations: 1

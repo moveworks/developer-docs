@@ -1,5 +1,5 @@
 ---
-description: 'A plugin that lookups Change Request information '
+description: A plugin that lookups Change Request information.
 fidelity: IDEA
 name: Lookup Change Request
 num_implementations: 0

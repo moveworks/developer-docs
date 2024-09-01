@@ -1,5 +1,5 @@
 ---
-description: 'A plugin that allows for the user to submit a relocation request seamlessly. '
+description: A plugin that allows for the user to submit a relocation request seamlessly.
 fidelity: IDEA
 name: Submit Relocation Request
 num_implementations: 0

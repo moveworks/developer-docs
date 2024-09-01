@@ -1,6 +1,5 @@
 ---
-description: 'A plugin that easily allows employees to submit any facilities issues
-  or requests e.g., desk '
+description: 'A plugin that easily allows employees to submit any facilities issues.'
 fidelity: IDEA
 name: Submit Facilities Issue
 num_implementations: 0

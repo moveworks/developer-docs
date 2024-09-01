@@ -12,6 +12,7 @@ solution_tags:
 - Productivity
 systems:
 - microsoft-graph
+- sharepoint
 time_in_minutes: 30
 ---
 

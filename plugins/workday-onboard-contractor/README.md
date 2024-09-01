@@ -1,6 +1,6 @@
 ---
-description: 'A plugin that provides directives and clear next steps during the onboarding
-  process of a contractor. '
+description: A plugin that provides directives and clear next steps during the onboarding
+  process of a contractor.
 fidelity: IDEA
 name: Onboard A Contractor
 num_implementations: 0

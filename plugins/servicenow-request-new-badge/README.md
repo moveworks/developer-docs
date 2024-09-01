@@ -1,5 +1,5 @@
 ---
-description: 'A plugin that allows an employee to request a badge to access the office. '
+description: A plugin that allows an employee to request a badge to access the office.
 fidelity: IDEA
 name: Request New Badge
 num_implementations: 0

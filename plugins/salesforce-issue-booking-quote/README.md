@@ -1,5 +1,5 @@
 ---
-description: 'A plugin which reports an error when booking or issuing a quote '
+description: A plugin which reports an error when booking or issuing a quote.
 fidelity: VALIDATED
 name: Issue Booking Quote
 num_implementations: 1

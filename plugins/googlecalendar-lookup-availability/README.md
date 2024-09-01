@@ -1,5 +1,5 @@
 ---
-description: A plugin that returns open slots in Google Calendar
+description: A plugin that returns open slots in Google Calendar.
 fidelity: IDEA
 name: Lookup Calendar Availability
 num_implementations: 0

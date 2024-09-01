@@ -1,5 +1,5 @@
 ---
-description: 'A plugin that lets you request off-site working days. '
+description: A plugin that lets you request off-site working days.
 fidelity: VALIDATED
 name: Request Remote Work
 num_implementations: 1

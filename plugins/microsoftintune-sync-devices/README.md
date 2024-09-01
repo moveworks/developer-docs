@@ -1,6 +1,6 @@
 ---
-description: 'A plugin that keeps track of and finds all devices in Intune and prompts
-  a sync command. '
+description: A plugin that keeps track of and finds all devices in Intune and prompts
+  a sync command.
 fidelity: VALIDATED
 name: Sync Devices
 num_implementations: 1

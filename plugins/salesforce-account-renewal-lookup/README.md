@@ -1,6 +1,6 @@
 ---
 description: A plugin that enables users to quickly lookup and review account renewal
-  information
+  information.
 fidelity: IDEA
 name: Look Up Account Renewal Information
 num_implementations: 0
