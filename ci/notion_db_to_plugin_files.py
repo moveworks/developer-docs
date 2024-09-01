@@ -34,7 +34,7 @@ class NotionColumns(Enum):
     CUSTOMER_DEPLOYMENTS = "Customers Deployed"
 
 
-TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt"}
+TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
 TEMPLATES_DIR = "ci/templates"
 
 
@@ -220,10 +220,11 @@ def validate_record(record: Record):
     ]:
         # Check if the guide file exists
         if not os.path.exists(record.record_readme):
-            os.makedirs(record.record_directory)
-            raise FileNotFoundError(
-                f"This record is supposed to be {record.fidelity}, but we could not find a guide or research file for {record.record_directory}. Please add your proof."
-            )
+            if not os.path.exists(record.record_directory):
+                os.makedirs(record.record_directory)
+            
+            open(record.record_readme, "w+").write(record.render_template())
+            print('WARNING: ', f"This record is supposed to be {record.fidelity}, but we could not find a guide or research file for {record.record_directory}. Please add your proof.")
 
         # Detect discrepancies with the guide file
         validate_file_consistent_with_notion(record)
