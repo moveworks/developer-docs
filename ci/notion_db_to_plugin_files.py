@@ -139,7 +139,10 @@ class Record:
     def to_front_matter_yaml(self) -> str:
         fm = self.to_front_matter()
         result_dict = {k: v for k, v in fm.items() if v is not None}
-        return dump_to_yaml_str(result_dict)
+        result_value = dump_to_yaml_str(result_dict)
+
+        return result_value
+
 
     @property
     def template_filepath(self) -> str:
@@ -158,7 +161,7 @@ class Record:
         return result
     
     def replace_existing_file_front_matter(self, new_front_matter: dict):
-        with open(self.record_readme, 'r', encoding='utf-8') as file:
+        with open(self.record_readme, 'r') as file:
             content = file.read()
         # Parse out the front matter
         parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
@@ -170,7 +173,7 @@ class Record:
         new_front_matter_str = dump_to_yaml_str(new_front_matter).strip()
         # Combine the new front matter and the original body
         new_content = f"---\n{new_front_matter_str}\n---\n{body}"
-        with open(self.record_readme, 'w', encoding='utf-8') as file:
+        with open(self.record_readme, 'w') as file:
             file.write(new_content)
         
         
