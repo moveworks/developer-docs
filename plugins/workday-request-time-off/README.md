@@ -15,6 +15,7 @@ solution_tags:
 systems:
 - workday
 time_in_minutes: 60
+video: https://vimeo.com/990186716/e5fea427e1
 ---
 
 # Take time off in Workday with your copilot 🏝️
