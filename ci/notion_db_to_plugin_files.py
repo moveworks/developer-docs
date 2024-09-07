@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 import re
 import sys
-
+from typing import Optional
 CSV_FILE = 'Plugin Research df47317a8eb449178020d6bf3dec4b23_all.csv'
 
 df = pd.read_csv(CSV_FILE)
@@ -31,8 +31,10 @@ class NotionColumns(Enum):
     SLUG = "Slug"
     SYSTEM_SLUG = "System Slug"
     SOLUTION_TAGS = "Solutions Tags"
+    CUSTOM_TAGS = "Custom Tags"
     SYSTEM_IMAGE = "System Image"
     CUSTOMER_DEPLOYMENTS = "Customers Deployed"
+    VIDEO = 'Video Link'
 
 
 TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
@@ -90,6 +92,14 @@ class Record:
     def solution_tags(self) -> List[str]:
         tags_csv: str = self._record[NotionColumns.SOLUTION_TAGS.value]
         return tags_csv.split(", ")
+    
+    @property
+    def custom_tags(self) -> List[str]:
+        tags_csv: str = self._record[NotionColumns.CUSTOM_TAGS.value]
+        if tags_csv:
+            return tags_csv.split(", ")
+        else:
+            return []
 
     @property
     def description(self) -> str:
@@ -112,6 +122,10 @@ class Record:
             return 0
         
         return len(deployments.split(','))
+    
+    @property
+    def video_link(self) -> Optional[str]:
+        return self._record[NotionColumns.VIDEO.value]
 
     def to_front_matter(self) -> dict:
         if self.content_type == ContentTypes.CONNECTOR:
@@ -119,7 +133,9 @@ class Record:
                 "name": self.title,
                 "description": self.description,
                 "fidelity": self.fidelity.name,
-                "num_implementations": self.num_implementations
+                "num_implementations": self.num_implementations,
+                "video": self.video_link,
+                "custom_tags": self.custom_tags
             }
         elif self.content_type == ContentTypes.PLUGIN:
             return {
@@ -130,13 +146,15 @@ class Record:
                 "purple_chat_link": self.purple_chat_link,
                 "solution_tags": self.solution_tags,
                 "num_implementations": self.num_implementations,
+                "video": self.video_link,
+                "custom_tags": self.custom_tags
             }
         else:
             raise NotImplementedError(f"No Front Matter for {self.content_type}")
 
     def to_front_matter_yaml(self) -> str:
         fm = self.to_front_matter()
-        result_dict = {k: v for k, v in fm.items() if v is not None}
+        result_dict = {k: v for k, v in fm.items() if bool(v)}
         result_value = dump_to_yaml_str(result_dict)
 
         return result_value
