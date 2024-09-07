@@ -3,8 +3,6 @@ accreditations:
 - indrapaul24
 - sarthaksrinivas
 - DEFAULT
-custom_tags:
-- Video
 description: A plugin that retrieves your time off balance from Workday.
 design_pattern_id: 28
 difficulty_level: BEGINNER
@@ -18,6 +16,7 @@ solution_tags:
 systems:
 - workday
 time_in_minutes: 15
+video: https://vimeo.com/986250533/69b44dbdb4
 ---
 
 ### Presenting the easiest way for your employees to check their Time Off balances 🏝️
