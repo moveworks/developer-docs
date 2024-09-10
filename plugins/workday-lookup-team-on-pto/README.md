@@ -1,5 +1,6 @@
 ---
-description: A plugin that allows a user to get a list of those who are on PTO today.
+description: A plugin that allows a manager to get a list of their team members who
+  are on PTO today.
 fidelity: VALIDATED
 name: Look up Team Members on PTO
 num_implementations: 1
