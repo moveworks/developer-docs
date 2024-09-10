@@ -267,7 +267,6 @@ def validate_record(record: Record):
 
     elif record.fidelity in [Fidelity.IMPOSSIBLE]:
         clear_directory(record.record_directory)
-
     else:
         raise NotImplementedError(f"No support built for {record.fidelity} yet.")
 
@@ -298,7 +297,7 @@ def main():
         try:
             validate_record(record)
         except Exception as e:
-            errors.append(e)
+            errors.append(Exception(e, record.slug))
 
     if errors:
         print(f'FOUND {len(errors)} ERRORS')
