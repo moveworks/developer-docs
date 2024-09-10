@@ -8,6 +8,6 @@ solution_tags:
 - HR
 - HR - Workplace Culture
 systems:
-- ADP
+- adp
 
 ---

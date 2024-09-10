@@ -7,6 +7,6 @@ solution_tags:
 - HR
 - HR - Employee Records
 systems:
-- ADP
+- adp
 
 ---
