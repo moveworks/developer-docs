@@ -7,6 +7,6 @@ solution_tags:
 - HR
 - HR - Recruiting & Talent
 systems:
-- ADP
+- adp
 
 ---

@@ -7,6 +7,6 @@ solution_tags:
 - Finance - Payroll
 - HR
 systems:
-- ADP
+- adp
 
 ---

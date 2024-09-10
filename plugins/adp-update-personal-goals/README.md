@@ -7,6 +7,6 @@ solution_tags:
 - HR
 - HR - Performance Management
 systems:
-- ADP
+- adp
 
 ---

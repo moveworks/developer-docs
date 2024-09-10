@@ -7,7 +7,7 @@ solution_tags:
 - HR
 - HR - Time & Absence
 systems:
-- ADP
+- adp
 video: https://vimeo.com/986250533/69b44dbdb4
 
 ---
