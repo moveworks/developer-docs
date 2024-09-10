@@ -8,6 +8,6 @@ solution_tags:
 - HR
 - HR - Learning & Development
 systems:
-- ADP
+- adp
 
 ---
