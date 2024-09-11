@@ -14,6 +14,7 @@ systems:
 - microsoft-graph
 - sharepoint
 time_in_minutes: 30
+video: https://youtu.be/JN1pmdZA8UM
 ---
 
 # Introduction
