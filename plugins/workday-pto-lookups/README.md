@@ -16,7 +16,7 @@ solution_tags:
 systems:
 - workday
 time_in_minutes: 15
-video: https://vimeo.com/986250533/69b44dbdb4
+video: https://youtu.be/2yIZoXsuc1I
 ---
 
 ### Presenting the easiest way for your employees to check their Time Off balances 🏝️

@@ -8,6 +8,5 @@ solution_tags:
 - HR - Time & Absence
 systems:
 - sap-success-factors
-video: https://vimeo.com/986250533/69b44dbdb4
 
 ---

@@ -8,5 +8,5 @@ solution_tags:
 - Productivity
 systems:
 - sharepoint
-video: https://vimeo.com/982255363/f121165bac
+video: https://youtu.be/Pq0e5kW7Ypg
 ---
