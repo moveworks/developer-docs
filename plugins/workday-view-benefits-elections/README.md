@@ -8,5 +8,5 @@ solution_tags:
 - HR - Benefits
 systems:
 - workday
-video: https://vimeo.com/995986244/bacf030ac3
+video: https://youtu.be/CCEYG_K9Pzg
 ---
