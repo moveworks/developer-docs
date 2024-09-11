@@ -14,6 +14,7 @@ solution_tags:
 systems:
 - jira
 time_in_minutes: 60
+video: https://youtu.be/BLVAH5sg1_M
 ---
 
 # Introduction
