@@ -8,6 +8,6 @@ solution_tags:
 - HR - Learning & Development
 systems:
 - workday
-video: https://vimeo.com/999288807/cc3ddae786
+video: https://youtu.be/bMA7HJ8WS5c
 
 ---
