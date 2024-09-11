@@ -1,4 +1,4 @@
-# ./ci/copy_from_notion.sh
+./ci/copy_from_notion.sh
 
 # Run the second line up to 3 times if it fails
 for attempt in {1..3}; do

@@ -9,6 +9,7 @@ solution_tags:
 systems:
 - perplexity
 time_in_minutes: 5
+video: https://youtu.be/krteejLKJUQ
 ---
 
 # Introduction
