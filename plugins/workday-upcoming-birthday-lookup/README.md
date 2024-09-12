@@ -58,7 +58,7 @@ Since we want to get a RaaS report, we only need to reference the report in our 
 
 # **Prerequisites**
 
-- A connection to Workday, [follow our guide.](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
+- A connection to Workday, [follow our guide.](../../connectors/workday/README.md)
 - A user login to Workday.
 
 # **Walkthrough**
@@ -113,7 +113,7 @@ We will now go into Creator Studio to create the query. You can follow [our guid
     
     Click *Next.*
     
-3. Choose the connector you created previously, [follow our guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday) if you haven’t already done so.
+3. Choose the connector you created previously, [follow our guide](../../connectors/workday/README.md) if you haven’t already done so.
     
     ![choose a system with workday as the chosen system](images/Untitled%207.png)
     

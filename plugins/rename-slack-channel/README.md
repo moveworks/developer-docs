@@ -52,12 +52,12 @@ Since we want to integrate with Slack Channels, we should look into their Web AP
 1. **[List Conversations API](https://api.slack.com/methods/conversations.list):** An API to list channels in the workspace
 2. **[Rename Conversation API](https://api.slack.com/methods/conversations.rename):** An API to rename a channel given its ID
 
-Both these APIs are hosted on the Slack Web API and should be authenticated with a bearer token. You can follow our [Authentication Guide: Slack API](../../authentication-guides/slack/README.md) to create an API key with the right privileges.
+Both these APIs are hosted on the Slack Web API and should be authenticated with a bearer token. You can follow our [Authentication Guide: Slack API](../../connectors/slack/README.md) to create an API key with the right privileges.
 
 # Prerequisites
 
-- Access to the Slack Web APIs (follow [our guide](../../authentication-guides/slack/README.md))
-- An Workato APIM Endpoint (follow [our guide](../../authentication-guides/workato/README.md))
+- Access to the Slack Web APIs (follow [our guide](../../connectors/slack/README.md))
+- An Workato APIM Endpoint (follow [our guide](../../connectors/workato/README.md))
 - Postman
 
 # Walkthrough
@@ -66,7 +66,7 @@ Both these APIs are hosted on the Slack Web API and should be authenticated with
 
 ### Setup Trigger
 
-1. Open your Workato Recipe. If you don’t have it handy, [follow our guide](../../authentication-guides/workato/README.md).
+1. Open your Workato Recipe. If you don’t have it handy, [follow our guide](../../connectors/workato/README.md).
 2. Add a Request JSON Schema
     
     ![Untitled](Use%20Case%20Guide%20Rename%20Slack%20Channel%20da6e0d8cf5774fc397343685a5998988/Untitled%201.png)
@@ -151,7 +151,7 @@ Both these APIs are hosted on the Slack Web API and should be authenticated with
 
 ### Validate & Deploy API
 
-You can follow our [system guide on Workato APIM](../../authentication-guides/workato/README.md) to test & deploy your recipe. You should make sure that:
+You can follow our [system guide on Workato APIM](../../connectors/workato/README.md) to test & deploy your recipe. You should make sure that:
 
 1. Protected channels return an error
     
@@ -188,7 +188,7 @@ You can follow our [system guide on Workato APIM](../../authentication-guides/wo
     ![Untitled](Use%20Case%20Guide%20Rename%20Slack%20Channel%20da6e0d8cf5774fc397343685a5998988/Untitled%2024.png)
     
 3. Add an API Action to execute your Workato Recipe.
-    - Connector: Follow our [Workato APIM guide](../../authentication-guides/workato/README.md).
+    - Connector: Follow our [Workato APIM guide](../../connectors/workato/README.md).
     - Path: `/mw/ajay-merchia-vv1/rename-channel`
     - Method: `POST`
     - Headers:
