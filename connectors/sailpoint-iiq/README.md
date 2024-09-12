@@ -1,5 +1,4 @@
 ---
-fidelity: IDEA
-name: Sailpoint IIQ
-
+fidelity: VALIDATED
+name: Sailpoint IdentityIQ
 ---
