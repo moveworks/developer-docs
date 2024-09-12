@@ -62,15 +62,15 @@ Since we want to integrate with Azure MFA, we should look into their Graph APIs.
 1. **[List Authentication Methods API](https://learn.microsoft.com/en-us/graph/api/authentication-list-phonemethods?view=graph-rest-1.0&tabs=http):** An API to list MFA devices for the user
 2. **[Delete Authentication Method API](https://learn.microsoft.com/en-us/graph/api/phoneauthenticationmethod-delete?view=graph-rest-1.0&tabs=http):** An API to delete an MFA device
 
-Both these APIs are hosted on the Microsoft Graph API and should be authenticated with a bearer token. You can follow our [Microsoft Graph Guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=microsoft-graph-api) to create an API key with the right privileges.
+Both these APIs are hosted on the Microsoft Graph API and should be authenticated with a bearer token. You can follow our [Microsoft Graph Guide](../../connectors/microsoft-graph/README.md) to create an API key with the right privileges.
 
-- Access to the Microsoft Graph APIs (follow [our guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=microsoft-graph-api))
-- An Azure Function App Deployment (follow [our guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=azure-function-app))
+- Access to the Microsoft Graph APIs (follow [our guide](../../connectors/microsoft-graph/README.md))
+- An Azure Function App Deployment (follow [our guide](../../connectors/azure-function-app/README.md))
 - [Install Postman](https://www.postman.com/downloads/)
 
 # **Prerequisites**
 
-- A Working Azure Function (follow [our guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=azure-function-app))
+- A Working Azure Function (follow [our guide](../../connectors/azure-function-app/README.md))
 - Postman
 
 # **Walkthrough**
@@ -79,7 +79,7 @@ Both these APIs are hosted on the Microsoft Graph API and should be authenticate
 
 ### Implement the Azure Function Code
 
-1. Open your Azure Function App code. If you don’t have it handy, [follow our guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=azure-function-app).
+1. Open your Azure Function App code. If you don’t have it handy, [follow our guide](../../connectors/azure-function-app/README.md).
 2. Update your code with the API flowchart we outlined above:
     
     ```python
@@ -191,7 +191,7 @@ Both these APIs are hosted on the Microsoft Graph API and should be authenticate
 
 ### ****Validating & Deploying the API****
 
-You can follow our system guide on Azure Functions to [test & deploy](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=azure-function-app) your function. 
+You can follow our system guide on Azure Functions to [test & deploy](../../connectors/azure-function-app/README.md) your function. 
 
 You may want to create some fictitious MFA devices for testing. The following API call will create an MFA device for the specified user.
 
@@ -220,7 +220,7 @@ curl --location '[https://graph.microsoft.com/v1.0/users/{{your_email}](https://
     ![Untitled](Use%20Case%20Guide%20Microsoft%20MFA%20Reset%20ce908c78ba7e462db7a30c342050723d/Untitled%201.png)
     
 2. Add an API Action to execute your Azure Function App.
-    - Connector: Follow our [Microsoft Graph API guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=microsoft-graph-api).
+    - Connector: Follow our [Microsoft Graph API guide](../../connectors/microsoft-graph/README.md).
     - Path: `/api/trigger_azure_zee`
     - Method: `POST`
     - Headers:
