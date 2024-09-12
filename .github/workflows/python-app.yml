@@ -27,7 +27,7 @@ jobs:
       - name: Validate Files
         run: python ci/validate.py
       - name: Validate Files V2
-        run: python ci/validate_v2.py
+        run: python -m ci.validate_v2
       - name: Generate Code Blocks
         run: python ci/copy_code_blocks.py
   comment:

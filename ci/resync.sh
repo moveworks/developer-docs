@@ -20,7 +20,7 @@ git add .
 git commit -m "Resync to Notion $branch_name"
 
 # Run git push and capture the output
-output=$(git push 2>&1)
+output=$(git push --set-upstream origin $branch_name 2>&1)
 echo "$output"
 
 # Use grep to find the URL in the output. Adjust the pattern if needed.
