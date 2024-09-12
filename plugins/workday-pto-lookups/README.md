@@ -29,7 +29,7 @@ Let's dive in!
 
 ### **System Overview**
 
-**Depends on**: `Workday connector` [(link)](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
+**Depends on**: `Workday connector` [(link)](../../connectors/workday/README.md)
 
 **Assumptions**:
 
@@ -91,7 +91,7 @@ This document provides a comprehensive step-by-step guide designed for Workday A
 We will be accessing Workday through the read-only AbsenceManagement REST API, through a Workday Connector in Moveworks. This requires you to:
 
 1. Configure User Ingestion in Moveworks for your Workday instance using [Moveworks Setup](https://help.moveworks.com/docs/ingest-users-workday). This will help us identify the correct Workday ID of the users using the Moveworks Bot to query data.
-2. Create a Connector in Creator Studio – [link](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
+2. Create a Connector in Creator Studio – [link](../../connectors/workday/README.md)
     1. Grant the [domain permissions below](#domain-permissions-required) as part of your Integrations Security Systems Group (ISSG)
 3. Test required APIs in Postman
 4. Build use case in Creator Studio
@@ -106,7 +106,7 @@ We will be accessing Workday through the read-only AbsenceManagement REST API, t
 
 ### Step 1: Create a Connector in Creator Studio
 
-[Follow the authentication guide to create a working Workday connector in Creator Studio](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday)
+[Follow the authentication guide to create a working Workday connector in Creator Studio](../../connectors/workday/README.md)
 
 ### **Step 2: Test required APIs with Postman**
 
