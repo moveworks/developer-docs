@@ -1,12 +1,16 @@
+echo "Starting resync"
+git checkout main
+git pull -r upstream main
+
 ./ci/copy_from_notion.sh
 
 # Run the second line up to 3 times if it fails
 for attempt in {1..3}; do
-    python ci/notion_db_to_plugin_files.py 2>&1 && break
-    echo "Attempt $attempt failed. Retrying..." 2>&1
+    python -m ci.notion_db_to_plugin_files 2>&1 && break
+    echo "NotionDB copy attempt $attempt failed. Retrying..." 2>&1
 done
 
-python ci/validate_v2.py --delete-no-pc 2>&1
+python -m ci.validate_v2 --delete-no-pc 2>&1
 
 branch_name="resync_$(date +%Y_%m_%d)"
 echo "Checking out new branch: $branch_name"
