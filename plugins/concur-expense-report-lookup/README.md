@@ -30,7 +30,7 @@ Let's get started!
 # Prerequisites
 
 - [Postman](https://www.postman.com/) or an API Testing Tool
-- Concur Connector built in Creator Studio (follow the [Concur Authentication](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=concur) guide to create your connector)
+- Concur Connector built in Creator Studio (follow the [Concur Authentication](../../connectors/sap-concur/README.md) guide to create your connector)
 
 # What are we building?
 
@@ -96,7 +96,7 @@ Since we want to integrate with Concur Expense, we should look into their [Expen
 
 ### Setup the API
 
-1. Select the Concur connector that you set up earlier in the [Authentication Guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=concur)
+1. Select the Concur connector that you set up earlier in the [Authentication Guide](../../connectors/sap-concur/README.md)
     
     ![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/Untitled%202.png)
     

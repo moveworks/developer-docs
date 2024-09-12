@@ -78,7 +78,7 @@ We will be accessing Workday through:
 
 This requires you to:
 
-1. Integrate Workday with Creator Studio – by following [this guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=workday). After following this guide, you will have
+1. Integrate Workday with Creator Studio – by following [this guide](../../connectors/workday/README.md). After following this guide, you will have
     * An API Client for Workday
     * An Integration System User (ISU)
     * An Integration System Security Group (ISSG)

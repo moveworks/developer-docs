@@ -28,7 +28,7 @@ Let's get started!
 # Prerequisites
 
 - [Postman](https://www.postman.com/) or an API Testing Tool
-- Salesforce Connector built in Creator Studio (follow [our guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=salesforce))
+- Salesforce Connector built in Creator Studio (follow [our guide](../../connectors/salesforce/README.md))
 
 # What are we building?
 

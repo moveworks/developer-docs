@@ -51,7 +51,7 @@ There's only 1 API needed to build this use case. We can use the [Enumerate Item
 
 # Prerequisites
 
-- A Microsoft Graph Connection (follow [our guide](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=microsoft-graph-api)). Make sure you request the `Sites.Read.All` permission for this use case.
+- A Microsoft Graph Connection (follow [our guide](../../connectors/microsoft-graph/README.md)). Make sure you request the `Sites.Read.All` permission for this use case.
 
 # Steps
 
@@ -94,7 +94,7 @@ From this link, our `list_id` is `7144e89f-7793-4faf-a3f8-d81f9255cdad`. You can
 
 ### Setup the API
 
-1. Select the [Microsoft Graph integration](https://developer.moveworks.com/creator-studio/resources/authentication-guide?id=microsoft-graph-api) you set up earlier
+1. Select the [Microsoft Graph integration](../../connectors/microsoft-graph/README.md) you set up earlier
 
     ![Select Connector](./images/image-1.png)
 
