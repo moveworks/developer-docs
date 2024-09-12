@@ -6,7 +6,7 @@ import sys
 from urllib.parse import urlparse, unquote
 from collections import defaultdict
 from enum import Enum
-from model import *
+from ci.model import *
 
 DEFAULT_AUTHOR_MARKER = 'DEFAULT'
 DELETE_NO_PURPLE_CHAT_FLAG = '--delete-no-pc'
