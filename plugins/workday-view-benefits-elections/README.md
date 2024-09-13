@@ -1,4 +1,5 @@
 ---
+description: A plugin that looks up an employees benefits information.
 fidelity: VALIDATED
 name: View Benefit Elections
 num_implementations: 0
