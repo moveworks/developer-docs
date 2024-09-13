@@ -1,5 +1,5 @@
 ---
-description: A plugin that lets a user look up their specific cost center.
+description: A plugin that looks up info on a specific specific cost center.
 fidelity: VALIDATED
 name: Look up My Cost Center
 num_implementations: 1
@@ -9,5 +9,5 @@ solution_tags:
 - Finance - Procurement
 systems:
 - servicenow
-video: https://youtu.be/NAFlOXKzJ4g
+video: https://youtu.be/DDmmd2eRphw
 ---
