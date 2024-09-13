@@ -1,5 +1,5 @@
 ---
-description: List the metadata of all Sharepoint sites in your instance.
+description: A plugin that lists the metadata of all Sharepoint sites in your instance.
 fidelity: VALIDATED
 name: List All Sites
 num_implementations: 0

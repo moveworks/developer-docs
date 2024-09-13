@@ -1,5 +1,5 @@
 ---
-description: A plugin that looksup opportunities based on an Account Name.
+description: A plugin that looks up details from an opportunity in Salesforce.
 fidelity: VALIDATED
 name: Look up Opportunity Information
 num_implementations: 1
