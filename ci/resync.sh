@@ -14,6 +14,7 @@ python -m ci.validate_v2 --delete-no-pc 2>&1
 
 branch_name="resync_$(date +%Y_%m_%d)"
 echo "Checking out new branch: $branch_name"
+git branch -D "$branch_name"
 git checkout -b "$branch_name"
 
 git add .
