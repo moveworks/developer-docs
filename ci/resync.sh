@@ -17,11 +17,21 @@ git pull -r $remote main
 
 ./ci/copy_from_notion.sh
 
-# Run the second line up to 3 times if it fails
+# Initialize a counter for the number of attempts
+attempt_counter=0
+
+# Run the second script up to 3 times if it fails
 for attempt in {1..3}; do
     python -m ci.notion_db_to_plugin_files 2>&1 && break
     echo "--------------------------"
-    echo "NotionDB copy attempt $attempt failed. Retrying..." 2>&1
+    echo "NotionDB copy attempt $attempt failed. Retrying..."
+    ((attempt_counter++)) # Increment the attempt counter
+    
+    # Check if it has failed 3 times
+    if [[ $attempt_counter -eq 3 ]]; then
+        echo "Failed to copy from NotionDB after 3 attempts. Exiting..."
+        exit 1
+    fi
 done
 
 python -m ci.validate_v2 --delete-no-pc 2>&1
