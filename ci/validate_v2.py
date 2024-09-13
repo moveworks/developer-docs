@@ -305,7 +305,6 @@ def main():
     print(f"Scanning {len(guide_files)} files...")
 
     for file in guide_files:
-        print(f"Checking {file}...")
         validate_no_outside_links(file)
         validate_no_broken_images(file)
         validate_file_name(file)
