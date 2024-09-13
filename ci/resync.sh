@@ -54,13 +54,20 @@ git commit -m "Resync to Notion $branch_name"
 output=$(git push --set-upstream $remote $branch_name 2>&1)
 echo "$output"
 
-# Use grep to find the URL in the output. Adjust the pattern if needed.
-pull_request_url=$(echo "$output" | grep -o 'https://github.com[^ ]*compare[^ ]*')
+# Use grep to find the URL in the output.
+pull_request_url=$(echo "$output" | grep -o 'https://github.com[^ ]*pull/new/[^ ]*')
 
 if [ ! -z "$pull_request_url" ]; then
     echo "To open a pull request, visit: $pull_request_url"
-    # Assuming you're on MacOS, use `open` to open the URL. Use `xdg-open` on Linux.
-    open "$pull_request_url"
+    # Depending on the OS, use either `open` (for MacOS) or `xdg-open` (for Linux) to open the URL in the default web browser.
+    if [ "$(uname)" == "Darwin" ]; then
+        open "$pull_request_url"
+    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+        xdg-open "$pull_request_url"
+    else
+        echo "Automatic opening of URLs is not supported on this platform. Please open the URL manually."
+        echo "$pull_request_url"
+    fi
 else
     echo "Pull request URL not found."
 fi
