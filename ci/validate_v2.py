@@ -233,7 +233,6 @@ def validate_plugin_schema(file_path):
         "fidelity": Fidelity,
         "systems": list,
         "purple_chat_link": str,
-        "solution_tags": list,
     }
     if data.get("fidelity") == Fidelity.GUIDE.name:
         required_fields.update(
