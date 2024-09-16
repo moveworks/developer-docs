@@ -91,6 +91,8 @@ class Record:
     @property
     def solution_tags(self) -> List[str]:
         tags_csv: str = self._record[NotionColumns.SOLUTION_TAGS.value]
+        if not tags_csv:
+            return []
         return tags_csv.split(", ")
     
     @property
