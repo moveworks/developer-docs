@@ -9,6 +9,5 @@ solution_tags:
 - HR
 - HR - Benefits
 systems:
-- polygonio
-
+- polygon-io
 ---
