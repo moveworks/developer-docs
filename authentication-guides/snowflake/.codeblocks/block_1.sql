@@ -1,1 +1,0 @@
-DESCRIBE SECURITY INTEGRATION oauth_moveworks_connector;
