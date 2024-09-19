@@ -1,4 +1,0 @@
-{
-    "message": "You have a new pending approval in JIRA.  It has been requested by {{creator.emailAddress}} and is of type \"{{issueType.name}}\".  Please view it <a href=\"https://moveworksus.atlassian.net/jira/servicedesk/projects/LEG/queues/custom/58/{{issue.key}}\">here</a>",
-    "recipients": ["{{approvers.approver.emailAddress}}"]
-}
