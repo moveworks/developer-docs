@@ -9,4 +9,6 @@ solution_tags:
 - IT
 systems:
 - microsoft-intune
+redirects:
+- microsoftintune-fix-microsoft-teams-drivers
 ---

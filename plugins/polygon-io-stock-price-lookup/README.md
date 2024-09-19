@@ -10,4 +10,6 @@ solution_tags:
 - HR - Benefits
 systems:
 - polygon-io
+redirects:
+- polygon-stock-price-lookup
 ---
