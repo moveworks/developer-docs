@@ -1,1 +1,0 @@
-https://api.moveworks.ai/rest/v1/events/{{EventID}}/messages/send
