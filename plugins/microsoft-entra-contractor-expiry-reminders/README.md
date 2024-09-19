@@ -8,5 +8,6 @@ solution_tags:
 - IT
 systems:
 - microsoft-entra
-
+redirects:
+- entra-contractor-expiry-reminders
 ---
