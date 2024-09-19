@@ -8,4 +8,6 @@ solution_tags:
 - Productivity
 systems:
 - google-calendar
+redirects:
+- googlecalendar-meeting-invitees
 ---
