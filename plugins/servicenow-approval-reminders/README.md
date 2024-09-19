@@ -11,6 +11,7 @@ purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools
 redirects:
 - snow-approval-reminders
 solution_tags:
+- Approvals
 - IT
 systems:
 - servicenow

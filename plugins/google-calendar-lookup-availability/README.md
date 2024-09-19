@@ -10,6 +10,6 @@ solution_tags:
 - Productivity
 - Sales
 systems:
-- googlecalendar
+- google-calendar
 
 ---

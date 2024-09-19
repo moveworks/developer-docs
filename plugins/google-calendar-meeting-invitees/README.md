@@ -7,6 +7,7 @@ purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools
 solution_tags:
 - Productivity
 systems:
-- googlecalendar
-
+- google-calendar
+redirects:
+- googlecalendar-meeting-invitees
 ---
