@@ -7,6 +7,7 @@ from urllib.parse import urlparse, unquote
 from collections import defaultdict
 from enum import Enum
 from ci.model import *
+from ci.data_utils import load_yaml_data
 
 DEFAULT_AUTHOR_MARKER = 'DEFAULT'
 DELETE_NO_PURPLE_CHAT_FLAG = '--delete-no-pc'
@@ -124,25 +125,6 @@ def validate_file_name(file):
         sys.exit(1)
 
 
-def load_yaml_data(file_path):
-    with open(file_path, "r", encoding="utf-8") as file:
-        lines = file.readlines()
-
-    try:
-        front_matter = "".join(lines[1 : lines.index("---\n", 1)])
-    except ValueError as ve:
-        print(f"Missing YAML front matter in {file_path}")
-        return False, {}
-
-    try:
-        data = yaml.safe_load(front_matter)
-    except yaml.YAMLError as e:
-        print(f"Error in YAML formatting in {file_path}: {e}")
-        return False, {}
-
-    return True, data or {}
-
-
 def validate_yaml_schema_generic(data, required_field_type_pairs, file_path):
     missing_or_invalid_fields = required_field_type_pairs.keys() - data.keys()
 
@@ -208,10 +190,19 @@ def standard_frontmatter_validations(file_path: str, data: dict):
         sys.exit(1)
     ALL_REDIRECTS.update(unique_redirects)
 
+def load_file(file_path):
+    try:
+        return load_yaml_data(file_path)
+    except ValueError as err:
+        if DELETE_NO_PURPLE_CHAT_FLAG in sys.argv:
+            DIRECTORY_TO_CLEAR = os.path.dirname(file_path)
+            print(f'Clearing {DIRECTORY_TO_CLEAR} due to broken YAML')
+            clear_directory(DIRECTORY_TO_CLEAR)
+            sys.exit(1)
+    
+
 def validate_connector_schema(file_path):
-    success, data = load_yaml_data(file_path)
-    if not success:
-        sys.exit(1)
+    data = load_file(file_path)
 
     required_fields = {
         "name": str,
@@ -224,10 +215,7 @@ def validate_connector_schema(file_path):
 
 
 def validate_plugin_schema(file_path):
-    success, data = load_yaml_data(file_path)
-    if not success:
-        sys.exit(1)
-
+    data = load_file(file_path)
     required_fields = {
         "name": str,
         "fidelity": Fidelity,
