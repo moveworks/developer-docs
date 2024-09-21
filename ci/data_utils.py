@@ -25,7 +25,6 @@ def load_yaml_data(file_path):
         front_matter = "".join(lines[1 : lines.index("---\n", 1)])
     except ValueError as ve:
         raise ValueError(f"Missing YAML front matter in {file_path}")
-        return False, {}
 
     try:
         data = yaml.safe_load(front_matter)
