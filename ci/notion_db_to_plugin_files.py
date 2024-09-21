@@ -35,6 +35,7 @@ class NotionColumns(Enum):
     SYSTEM_IMAGE = "System Image"
     CUSTOMER_DEPLOYMENTS = "Customers Deployed"
     VIDEO = 'Video Link'
+    REDIRECTS = 'Redirect Slugs'
 
 
 TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
@@ -81,27 +82,30 @@ class Record:
     def img_path(self) -> str:
         return os.path.join(self.record_directory, LOGO_FILE)
 
+
+    def get_csv_prop(self, column: NotionColumns, err_if_empty: bool = False) -> List[str]:
+        csv_val: str = self._record[column.value]
+        if not csv_val:
+            if err_if_empty:
+                raise ValueError(f"No {column.name} defined for {self.title}")
+            return []
+        return list(map(lambda x: x.strip(), csv_val.split(',')))
+
     @property
     def systems(self) -> List[str]:
-        sys_slug_csv: str = self._record[NotionColumns.SYSTEM_SLUG.value]
-        if not sys_slug_csv:
-            raise ValueError(f"No system slugs defined for {self.title}")
-        return sys_slug_csv.split(",")
+        return self.get_csv_prop(NotionColumns.SYSTEM_SLUG)
 
     @property
     def solution_tags(self) -> List[str]:
-        tags_csv: str = self._record[NotionColumns.SOLUTION_TAGS.value]
-        if not tags_csv:
-            return []
-        return tags_csv.split(", ")
+        return self.get_csv_prop(NotionColumns.SOLUTION_TAGS)
     
     @property
     def custom_tags(self) -> List[str]:
-        tags_csv: str = self._record[NotionColumns.CUSTOM_TAGS.value]
-        if tags_csv:
-            return tags_csv.split(", ")
-        else:
-            return []
+        return self.get_csv_prop(NotionColumns.CUSTOM_TAGS)
+        
+    @property
+    def redirects(self) -> List[str]:
+        return self.get_csv_prop(NotionColumns.REDIRECTS)
 
     @property
     def description(self) -> str:
@@ -137,7 +141,8 @@ class Record:
                 "fidelity": self.fidelity.name,
                 "num_implementations": self.num_implementations,
                 "video": self.video_link,
-                "custom_tags": self.custom_tags
+                "custom_tags": self.custom_tags,
+                "redirects": self.redirects
             }
         elif self.content_type == ContentTypes.PLUGIN:
             return {
@@ -149,7 +154,8 @@ class Record:
                 "solution_tags": self.solution_tags,
                 "num_implementations": self.num_implementations,
                 "video": self.video_link,
-                "custom_tags": self.custom_tags
+                "custom_tags": self.custom_tags,
+                "redirects": self.redirects
             }
         else:
             raise NotImplementedError(f"No Front Matter for {self.content_type}")
