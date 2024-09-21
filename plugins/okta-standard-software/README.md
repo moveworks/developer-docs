@@ -9,6 +9,5 @@ solution_tags:
 - IT
 systems:
 - okta
-redirects:
-- microsoftpowerautomate-standard-software
+
 ---
