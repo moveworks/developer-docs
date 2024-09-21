@@ -11,11 +11,11 @@ df = pd.read_csv(CSV_FILE)
 from enum import Enum
 from ci.data_utils import (
     load_yaml_data,
-    replace_nan_with_none,
     deep_equal,
     dump_to_yaml_str,
     render_template_file,
 )
+from ci.df_utils import replace_nan_with_none
 from typing import List
 from ci.model import *
 
