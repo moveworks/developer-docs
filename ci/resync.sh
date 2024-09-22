@@ -11,6 +11,13 @@ else
     remote="upstream"
 fi
 
+if [ -x "./ci/pre-sync.sh" ]; then
+    echo "Running pre-sync script."
+    ./ci/pre-sync.sh
+else
+    echo "./ci/pre-sync.sh not found. If you need to run any commands on your local machine before the sync runs, please add them here."
+fi
+
 # Use the determined remote for git operations
 git checkout main
 git pull -r $remote main
