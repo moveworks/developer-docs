@@ -9,5 +9,6 @@ solution_tags:
 - Finance - Procurement
 systems:
 - sap-ariba
+video: https://youtu.be/ed2SQiEkcAA?feature=shared
 
 ---
