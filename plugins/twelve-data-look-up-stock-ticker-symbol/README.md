@@ -1,5 +1,5 @@
 ---
-description: A plugin that makes it easy for an employee to query what the stock ticket
+description: A plugin that makes it easy for an employee to query what the stock ticker
   is for a company and receive a response.
 fidelity: VALIDATED
 name: Look Up Stock Ticker Symbol
