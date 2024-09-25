@@ -45,43 +45,49 @@ All authentication with these endpoints is done over the same OAuth client as me
 1. The plugin feature must be enabled in IdentityIQ.
 2. You must have **System Administrator** or **Plugin Administrator** capabilities to install plugins.
 3. Open the **Installed Plugins** page by selecting Plugins from the list under the gear icon.
-
+    
     ![https://files.readme.io/8594357-Untitled_-_2023-08-30T104629.939.png](https://files.readme.io/8594357-Untitled_-_2023-08-30T104629.939.png)
+    
 
 4. Click **New** to upload the plugin.
-
+    
     ![https://files.readme.io/4ae9d18-Untitled_-_2023-08-30T104619.261.png](https://files.readme.io/4ae9d18-Untitled_-_2023-08-30T104619.261.png)
+    
 
 5. **Click to upload your plugin**. A window dialog will appear. You can drag & drop our ZIP file from there.
-
+    
     ![https://files.readme.io/b3e3922-Untitled_-_2023-08-30T104605.163.png](https://files.readme.io/b3e3922-Untitled_-_2023-08-30T104605.163.png)
+    
 
 6. Finish the plugin installation following the prompts in your Sailpoint Instance.
 
 ## Step 2: Set up OAuth API Client
 
 1. Create an Identity for Moveworks. We recommend naming the account `svc.moveworks`.
-
+    
     ![*Home Page → Create Identity*](https://files.readme.io/92d1d5f-Untitled_-_2023-08-30T104504.270.png)
 
     *Home Page → Create Identity*
 
-
+    
     ![*Fill out information on Create Identity Page*](https://files.readme.io/53141de-Untitled_-_2023-08-30T104507.334.png)
     
     *Fill out information on Create Identity Page*
 
 2. Make sure the new service account has the appropriate user capabilities enabled. If you are installing the Moveworks for Sailpoint plugin, then make sure that the  `Moveworks Approvals Plugin Service Account` user capability is enabled.
-
+    
     ![https://files.readme.io/ffb2e1e-Untitled_-_2023-08-30T104445.410.png](https://files.readme.io/ffb2e1e-Untitled_-_2023-08-30T104445.410.png)
+    
 
 3. Go to configure API Authentication.
-
+    
     ![https://files.readme.io/5001f18-Untitled_-_2023-08-30T104420.452.png](https://files.readme.io/5001f18-Untitled_-_2023-08-30T104420.452.png)
 
-4. Create a new API Client, setting the Proxy User to our service account.
 
+4. Create a new API Client, setting the Proxy User to our service account.
+    
     ![https://files.readme.io/bde0b19-Untitled_-_2023-08-30T104317.237.png](https://files.readme.io/bde0b19-Untitled_-_2023-08-30T104317.237.png)
+
 
 5. Note your `Client ID` and `Client Secret` - this will be required later to configure the Connector within Creator Studio
 
@@ -125,7 +131,7 @@ Once you have all the required credentials from the above process, please move o
     2. Set up your API Connection to configure the API endpoint based on the following:
         1. Click on Use Existing Connector > select the Sailpoint connector that you just created > Click on Apply. This will populate the Authorization section of the API Editor
             
-            ![image.png](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/image%201.png)
+          ![image.png](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/image%201.png)
             
         2. Fill out the Endpoint URL: `/identityiq/rest/ping`
         
