@@ -47,7 +47,7 @@ Based on the [Supported Models](https://docs.perplexity.ai/docs/model-cards#onli
 
 # Prerequisites
 
-- A Perplexity Connection (follow [our guide](../../connectors?id=perplexity))
+- A Perplexity Connection (follow [our guide](../../connectors/perplexity/README.md))
 
 # Steps
 
@@ -62,7 +62,7 @@ Based on the [Supported Models](https://docs.perplexity.ai/docs/model-cards#onli
 
 ### Setup the API
 
-1. Select [the perplexity integration](../../connectors?id=perplexity) you set up earlier.
+1. Select [the perplexity integration](../../connectors/perplexity/README.md) you set up earlier.
     
     ![Untitled](Use%20Case%20Tutorial%20Perplexity%20Online%20Search%20f1697b887ee94a45a422a1c4e988bada/Untitled.png)
     
