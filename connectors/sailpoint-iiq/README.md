@@ -91,7 +91,7 @@ All authentication with these endpoints is done over the same OAuth client as me
 
 5. Note your `Client ID` and `Client Secret` - this will be required later to configure the Connector within Creator Studio
 
-### Step 3: Test with Postman
+## Step 3: Test with Postman
 
 Once you have all the required credentials from the above process, please move on to test the OAuth API and try to fetch the token.
 
