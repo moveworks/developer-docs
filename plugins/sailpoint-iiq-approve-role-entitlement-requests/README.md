@@ -50,7 +50,7 @@ Please review the [SailPoint IIQ Connector](https://developer.moveworks.com/cre
 
 ## **Step 1: Check if you have built a Creator Studio Connector for your middleware / APIM tool**
 
-This step was outlined in the [Prerequisites section](https://www.notion.so/Approve-Reject-Role-Entitlement-Requests-9efceba376ca450bbfbbd350be83bcfc?pvs=21) above, and should be completed before you begin building your plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
+This step was outlined in the [Prerequisites section](#prerequisites) above, and should be completed before you begin building your plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
 
 ## **Step 2: Test required APIs with Postman**
 
