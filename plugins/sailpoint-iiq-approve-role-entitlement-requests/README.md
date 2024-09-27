@@ -101,7 +101,7 @@ In the sample middleware code mentioned below, we will use this API to poll for 
 </List>
 ```
 
-    ![image.png](Approve%20Reject%20Role%20Entitlement%20Requests%209efceba376ca450bbfbbd350be83bcfc/image.png)
+  ![image.png](Approve%20Reject%20Role%20Entitlement%20Requests%209efceba376ca450bbfbbd350be83bcfc/image.png)
 
 ### **API 3: Moveworks Events API**
 
