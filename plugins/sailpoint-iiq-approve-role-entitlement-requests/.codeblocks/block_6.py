@@ -58,13 +58,14 @@ class NotificationRequest(BaseModel):
     recipients: List[str] = Field(..., min_items=1)
     context: Optional[NotificationContext] = None
 
-# Utility class that allows for hiding interaction with XML objects behind a json-style accessor language.
+# While using xml.ElementTree.fromstring is still vulnerable to the billion laughs attack/other DOS style attacks, we accept the risk due to this not being directly exposed to users
 def safe_parse(doc: str) -> ElementTree.Element:
     return ElementTree.fromstring(doc, XMLParser(resolve_entities=False, no_network=True))
 
 class _Unspecified:
     pass
 
+# Utility class that allows for hiding interaction with XML objects behind a json-style accessor language.
 class XmlJsonAccessor(UserDict):
   
     def __init__(self, doc: Union[ElementTree.Element, str]):
