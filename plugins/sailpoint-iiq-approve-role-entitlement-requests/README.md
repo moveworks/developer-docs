@@ -222,13 +222,14 @@ class NotificationRequest(BaseModel):
     recipients: List[str] = Field(..., min_items=1)
     context: Optional[NotificationContext] = None
 
-# Utility class that allows for hiding interaction with XML objects behind a json-style accessor language.
+# While using xml.ElementTree.fromstring is still vulnerable to the billion laughs attack/other DOS style attacks, we accept the risk due to this not being directly exposed to users
 def safe_parse(doc: str) -> ElementTree.Element:
     return ElementTree.fromstring(doc, XMLParser(resolve_entities=False, no_network=True))
 
 class _Unspecified:
     pass
 
+# Utility class that allows for hiding interaction with XML objects behind a json-style accessor language.
 class XmlJsonAccessor(UserDict):
   
     def __init__(self, doc: Union[ElementTree.Element, str]):
@@ -701,7 +702,7 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
 
-# **Step 4: Build in Creator Studio**
+## **Step 4: Build in Creator Studio**
 
 1. Create a new Event in Creator Studio named "🎫 Entitlement Request Approvals in SailPoint IIQ".
     - Choose to add a follow-up action so that you can approve or reject the ticket.
