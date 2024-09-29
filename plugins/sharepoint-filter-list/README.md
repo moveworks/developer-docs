@@ -11,8 +11,8 @@ purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools
 solution_tags:
 - Productivity
 systems:
-- microsoft-graph
 - sharepoint
+- microsoft-graph
 time_in_minutes: 30
 video: https://youtu.be/JN1pmdZA8UM
 ---
