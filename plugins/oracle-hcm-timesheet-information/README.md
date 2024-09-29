@@ -7,6 +7,6 @@ solution_tags:
 - HR
 - HR - Time & Absence
 systems:
-- workday
+- oracle-hcm
 
 ---

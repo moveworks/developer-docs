@@ -1,13 +1,13 @@
 ---
-description: A connector that connects your SailPoint IIQ instance to Moveworks via
-  Creator Studio.
-fidelity: GUIDE
-name: Sailpoint IdentityIQ
-difficulty_level: BEGINNER
-time_in_minutes: 20
 accreditations:
 - indrapaul24
 - DEFAULT
+description: A connector that connects your SailPoint IIQ instance to Moveworks via
+  Creator Studio.
+difficulty_level: BEGINNER
+fidelity: VALIDATED
+name: Sailpoint IdentityIQ
+time_in_minutes: 20
 ---
 
 # Introduction
