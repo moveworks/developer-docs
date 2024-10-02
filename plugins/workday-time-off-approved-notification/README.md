@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that automatically notifies an employee when their time off
   request has been approved.
 fidelity: IDEA

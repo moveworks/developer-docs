@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that allows for the swift approval or rejection of purchase
   requests, optimizing procurement efficiency.
 difficulty_level: ADVANCED
