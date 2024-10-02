@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: Remind managers when employee contracts are expiring so they can terminate
   or renew them.
 fidelity: IDEA

@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that notifies agents & HRBPs when new HR cases are assigned
   to them.
 fidelity: VALIDATED
