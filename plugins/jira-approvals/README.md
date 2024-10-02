@@ -2,6 +2,8 @@
 accreditations:
 - npmoran21
 - DEFAULT
+custom_tags:
+- Polling Required
 description: A plugin that notifies users about pending Jira approvals.
 design_pattern_id: 10
 difficulty_level: INTERMEDIATE

@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that sends reminders to AEs to update their forecast in Clari,
   ensuring that sales data is current and accurate.
 fidelity: IDEA

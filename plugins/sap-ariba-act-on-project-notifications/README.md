@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin to provide actionable notifications based on project updates,
   allowing users to respond directly from the notification.
 fidelity: IDEA
