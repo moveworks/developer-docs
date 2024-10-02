@@ -2,6 +2,8 @@
 accreditations:
 - sarthaksrinivas
 - DEFAULT
+custom_tags:
+- Polling Required
 description: A plugin which allows employees to remain aware of promotions, location
   changes, or othere.
 fidelity: VALIDATED
