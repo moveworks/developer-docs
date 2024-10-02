@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that allows a user to be notified when a new comment is added
   to a project.
 fidelity: IDEA

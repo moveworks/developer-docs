@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that keeps teams aware of purchase order status and the approval
   cycle, streamlining the way this information is found.
 fidelity: IDEA
