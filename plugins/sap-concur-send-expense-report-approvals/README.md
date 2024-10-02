@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that sends expense report approval notifications & allows managers
   to approve them in chat.
 fidelity: IDEA
