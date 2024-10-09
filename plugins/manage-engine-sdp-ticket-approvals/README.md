@@ -19,6 +19,7 @@ solution_tags:
 systems:
 - manage-engine
 time_in_minutes: 60
+video: https://youtu.be/dixMBJSonkc?si=nsHTaUL5IPDNAoDn
 ---
 
 # Notify Employees for New Ticket Approvals with Your Copilot 🎫
