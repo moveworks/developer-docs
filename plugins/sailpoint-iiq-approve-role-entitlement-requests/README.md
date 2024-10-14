@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that notifies users when their approval is needed on a role
   entitlement request, and allows the user to approve / reject the request.
 fidelity: VALIDATED

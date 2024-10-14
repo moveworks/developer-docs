@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that reminds your employees about pending Workday trainings.
 fidelity: IDEA
 name: Remind Employees about Pending Trainings
