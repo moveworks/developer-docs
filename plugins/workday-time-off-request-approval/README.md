@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that automatically notifies a manager when they need to approve
   their direct reports' time off.
 fidelity: VALIDATED

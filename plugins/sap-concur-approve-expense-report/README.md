@@ -1,6 +1,8 @@
 ---
 accreditations:
 - DEFAULT
+custom_tags:
+- Polling Required
 description: A plugin to notify managers when they have expense reports to approve
   or reject to streamline the process and simplify administrative workflows.
 difficulty_level: ADVANCED

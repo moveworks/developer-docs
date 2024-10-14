@@ -2,6 +2,8 @@
 accreditations:
 - kevmok
 - DEFAULT
+custom_tags:
+- Polling Required
 description: A plugin that reminds users about pending ServiceNow approvals.
 design_pattern_id: 10
 difficulty_level: BEGINNER
