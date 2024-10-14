@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that notifies a manager if someone on their team submitted a
   transaction that isn't automatically approved.
 fidelity: IDEA

@@ -2,6 +2,8 @@
 accreditations:
 - tporter-moveworks
 - DEFAULT
+custom_tags:
+- Polling Required
 description: A plugin that nudges assignees about tickets that haven't been updated
   in a while.
 design_pattern_id: 10

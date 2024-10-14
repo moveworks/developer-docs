@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that notifies employees when their trainings are due.
 fidelity: VALIDATED
 name: Notify Training Due Date
