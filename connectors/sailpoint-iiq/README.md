@@ -5,7 +5,7 @@ accreditations:
 description: A connector that connects your SailPoint IIQ instance to Moveworks via
   Creator Studio.
 difficulty_level: BEGINNER
-fidelity: VALIDATED
+fidelity: GUIDE
 name: Sailpoint IdentityIQ
 time_in_minutes: 20
 ---
