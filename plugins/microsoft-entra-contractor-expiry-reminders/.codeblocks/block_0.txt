@@ -1,0 +1,1 @@
+(&(objectClass=user)(|(accountExpires>={90_days_start})(accountExpires<={90_days_end})(accountExpires>={60_days_start})(accountExpires<={60_days_end})(accountExpires>={30_days_start})(accountExpires<={30_days_end})))
