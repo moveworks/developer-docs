@@ -1,0 +1,3 @@
+Hi [Manager Name],
+The following [Number of Employees] employees' contracts are expiring soon. Please take the necessary action to extend or terminate each of the following:
+[List of Employees with Expiration Dates]
