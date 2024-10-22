@@ -49,10 +49,12 @@ The overall workflow would be a simple **Weekly** job that performs the followin
 ## Step-by-Step Implementation
 
 **Step 1: Schedule the Job**
-Set up a scheduled task or job in your middleware to run every Monday. This timing ensures managers are informed at the start of the week, giving ample time for decision-making.
+Set up a scheduled task or job in your middleware to run on a periodic basis. You could choose to run it every day, every week, every month, etc. What you decide here will play into Step 2.
 
 **Step 2: Define Date Ranges for Notification**
-Calculate the dates for 90, 60, and 30 days ahead of the current date, accounting for a ±4 day margin. These date ranges will be used in the Active Directory query to identify expiring contracts.
+You want to pick the right date range to ensure that your managers get notified about contractors that are about to expire. This could be notifying them when the contract expires in 30, 60, or 90 days. It could be weekly notifications for managers for any contracts expiring in 60 days. This part is up to you, but it should match your scheduling from Step 1.
+
+Either way, you'll need some date ranges to filter based on. You'll pass those date ranges into an Active Directory query to identify expiring contracts.
 
 **Step 3: Active Directory Query**
 Execute an LDAP query to fetch user accounts with expiration dates within your calculated ranges. Your query might look similar to this:
