@@ -1,0 +1,31 @@
+{
+    "schemas": [
+        "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+    ],
+    "totalResults": 95,
+    "startIndex": 1,
+    "itemsPerPage": 95,
+    "Resources": [
+        {
+            "displayName": "Kyle Hirai",
+            "id": "ad0dd555-2c34-4129-9d87-f7962b37cf56",
+            "userName": "kyle@moveworks.ai"
+        },
+        {
+            "displayName": "William Never",
+            "id": "ca5c42ed-06cb-431c-888a-369294210200",
+            "userName": "concur_admin@moveworks.ai"
+        },
+        {
+            "displayName": "ConcurConsultant ConcurConsultant",
+            "id": "9c10ad63-2774-476c-8ae2-0e2c18e7e27c",
+            "userName": "ConcurConsultant@p0030517jrwi"
+        },
+        {
+            "displayName": "Concur Administrator",
+            "id": "80f30214-1010-48ba-ab3e-374559f32a6c",
+            "userName": "ConcurAdmin@p0030517jrwi"
+        },
+        ...
+    ]
+}
