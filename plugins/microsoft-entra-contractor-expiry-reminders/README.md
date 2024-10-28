@@ -11,7 +11,8 @@ solution_tags:
 - IT
 systems:
 - microsoft-entra
-
+time_in_minutes: 60
+difficulty_level: ADVANCED
 ---
 
 # Remind Managers about their expiring Contractors **with your Copilot**
