@@ -55,7 +55,7 @@ This step was outlined in the [Prerequisites section](#prerequisites) above, and
 
 ## Step 2: Test required APIs with Postman
 
-Copy the cURL commands below into your API client like Postman for testing. Substitute any `{{placeholder text}}` with relevant ManageEngine SDP API credentials or inputs.
+Copy the cURL commands below into your API client like Postman for testing. Substitute any `{{placeholder text}}` with relevant SAP Concur API credentials or inputs.
 
 ### API 1: Authorization
 
@@ -173,7 +173,7 @@ This diagram describes the flow we will build in this guide.
 
   ![image.png](./architecture.png)
 
-There are four steps to support Concur Expense report approvals from SailPoint using Creator Studio:
+There are four steps to support Concur Expense report approvals using Creator Studio:
 
 1. Setup polling for new approvals (by default, every 60 seconds)
     - This is required to retrieve newly submitted expense reports
