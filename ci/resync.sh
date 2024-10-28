@@ -41,7 +41,10 @@ for attempt in {1..3}; do
     fi
 done
 
-python -m ci.validate_v2 --delete-no-pc 2>&1
+if ! python -m ci.validate_v2 --delete-no-pc 2>&1; then
+    echo "Validation failed. Exiting..."
+    exit 1
+fi
 
 branch_name="resync_$(date +%Y_%m_%d)"
 
