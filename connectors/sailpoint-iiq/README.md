@@ -40,53 +40,53 @@ All authentication with these endpoints is done over the same OAuth client as me
 
 > Please download the .ZIP file of the Moveworks Plugin before proceeding to configure.
 > 
-> [MoveworksPlugin.zip](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/MoveworksPlugin.zip)
+> [moveworks_plugin.zip](https://developer.moveworks.com/file-hosting/sailpoint/moveworks_plugin.zip)
 
-1. The plugin feature must be enabled in IdentityIQ.
-2. You must have **System Administrator** or **Plugin Administrator** capabilities to install plugins.
-3. Open the **Installed Plugins** page by selecting Plugins from the list under the gear icon.
-    
-    ![https://files.readme.io/8594357-Untitled_-_2023-08-30T104629.939.png](https://files.readme.io/8594357-Untitled_-_2023-08-30T104629.939.png)
-    
+1. Ensure that the plugin feature is enabled in IdentityIQ and that you have **System Administrator** or **Plugin Administrator** capabilities to install plugins.
 
-4. Click **New** to upload the plugin.
+2. Open the **Installed Plugins** page by selecting Plugins from the list under the gear icon.
     
-    ![https://files.readme.io/4ae9d18-Untitled_-_2023-08-30T104619.261.png](https://files.readme.io/4ae9d18-Untitled_-_2023-08-30T104619.261.png)
+    ![Installed Plugins](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/installed_plugins.png)
     
 
-5. **Click to upload your plugin**. A window dialog will appear. You can drag & drop our ZIP file from there.
+3. Click **New** to upload the plugin.
     
-    ![https://files.readme.io/b3e3922-Untitled_-_2023-08-30T104605.163.png](https://files.readme.io/b3e3922-Untitled_-_2023-08-30T104605.163.png)
+    ![New](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/new%20plugin.png)
     
 
-6. Finish the plugin installation following the prompts in your Sailpoint Instance.
+4. **Click to upload your plugin**. A window dialog will appear. You can drag & drop our ZIP file from there.
+    
+    ![Upload](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/upload%20plugin.png)
+    
+
+5. Finish the plugin installation following the prompts in your Sailpoint Instance.
 
 ## Step 2: Set up OAuth API Client
 
 1. Create an Identity for Moveworks. We recommend naming the account `svc.moveworks`.
     
-    ![*Home Page → Create Identity*](https://files.readme.io/92d1d5f-Untitled_-_2023-08-30T104504.270.png)
+    ![*Home Page → Create Identity*](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/create%20identity.png)
 
     *Home Page → Create Identity*
 
     
-    ![*Fill out information on Create Identity Page*](https://files.readme.io/53141de-Untitled_-_2023-08-30T104507.334.png)
+    ![*Fill out information on Create Identity Page*](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/identity%20fill%20up.png)
     
     *Fill out information on Create Identity Page*
 
 2. Make sure the new service account has the appropriate user capabilities enabled. If you are installing the Moveworks for Sailpoint plugin, then make sure that the  `Moveworks Approvals Plugin Service Account` user capability is enabled.
     
-    ![https://files.readme.io/ffb2e1e-Untitled_-_2023-08-30T104445.410.png](https://files.readme.io/ffb2e1e-Untitled_-_2023-08-30T104445.410.png)
+    ![User cap](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/user%20capabilities.png)
     
 
 3. Go to configure API Authentication.
     
-    ![https://files.readme.io/5001f18-Untitled_-_2023-08-30T104420.452.png](https://files.readme.io/5001f18-Untitled_-_2023-08-30T104420.452.png)
+    ![API Auth](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/API%20Auth.png)
 
 
 4. Create a new API Client, setting the Proxy User to our service account.
     
-    ![https://files.readme.io/bde0b19-Untitled_-_2023-08-30T104317.237.png](https://files.readme.io/bde0b19-Untitled_-_2023-08-30T104317.237.png)
+    ![OAuth Client](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/new%20oauth%20client.png)
 
 
 5. Note your `Client ID` and `Client Secret` - this will be required later to configure the Connector within Creator Studio
