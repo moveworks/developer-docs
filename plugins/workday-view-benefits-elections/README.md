@@ -7,6 +7,7 @@ purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools
 solution_tags:
 - HR
 - HR - Benefits
+- HR - Onboarding
 systems:
 - workday
 video: https://youtu.be/CCEYG_K9Pzg
