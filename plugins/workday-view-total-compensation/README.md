@@ -8,6 +8,7 @@ solution_tags:
 - Finance - Payroll
 - HR
 - HR - Employee Records
+- HR - Onboarding
 systems:
 - workday
 
