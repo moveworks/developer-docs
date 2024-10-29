@@ -7,6 +7,7 @@ purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools
 solution_tags:
 - HR
 - HR - Learning & Development
+- HR - Onboarding
 systems:
 - workday
 
