@@ -44,7 +44,7 @@ Let's dive in!
 
 # **SAP Concur Configuration**
 
-Please review the [Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) to set up a new connector in Creator Studio that connects to your SAP Concur instance for using the Expense [Reports v4](https://developer.concur.com/api-reference/expense/expense-report/v4.reports.html) and [Workflows v4](https://developer.concur.com/api-reference/expense/expense-report/v4.workflows.html) APIs.
+Please review the [Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) to set up a new connector in Creator Studio that connects to your SAP Concur instance for using the Expense [Reports v3](https://developer.concur.com/api-reference/expense/expense-report/v3.reports.html) and [Reports v4](https://developer.concur.com/api-reference/expense/expense-report/v4.reports.html) APIs.
 
 
 # **For Creator Studio Developers**
@@ -68,67 +68,23 @@ curl --location 'https://us2.api.concursolutions.com/oauth2/v0/token' \
 --data-urlencode 'grant_type=refresh_token'
 ```
 
-### **API 2: Get All Users**
+### **API 2: Get all Pending Expense Reports**
 
 ```bash
-curl --location --request GET 'https://us2.api.concursolutions.com/profile/identity/v4/users?count=100&attributes=displayName%2Cid%2CuserName' \
+curl --location --request GET 'https://us2.api.concursolutions.com/api/v3.0/expense/reports?user=ALL&submitDateAfter={modified_date_after}&ApprovalStatusCode=A_PEND' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer {auth_token}' \
 ```
 
-Expected response:
-
-  ```json
-  {
-      "schemas": [
-          "urn:ietf:params:scim:api:messages:2.0:ListResponse"
-      ],
-      "totalResults": 95,
-      "startIndex": 1,
-      "itemsPerPage": 95,
-      "Resources": [
-          {
-              "displayName": "Kyle Hirai",
-              "id": "ad0dd555-2c34-4129-9d87-f7962b37cf56",
-              "userName": "kyle@moveworks.ai"
-          },
-          {
-              "displayName": "William Never",
-              "id": "ca5c42ed-06cb-431c-888a-369294210200",
-              "userName": "concur_admin@moveworks.ai"
-          },
-          {
-              "displayName": "ConcurConsultant ConcurConsultant",
-              "id": "9c10ad63-2774-476c-8ae2-0e2c18e7e27c",
-              "userName": "ConcurConsultant@p0030517jrwi"
-          },
-          {
-              "displayName": "Concur Administrator",
-              "id": "80f30214-1010-48ba-ab3e-374559f32a6c",
-              "userName": "ConcurAdmin@p0030517jrwi"
-          },
-          ...
-      ]
-  }
-  ```
-
-### **API 3: Get Reports to Approve by User**
-
-```bash
-curl --location --request GET 'https://us2.api.concursolutions.com/expensereports/v4/users/{user_id}/context/MANAGER/reportsToApprove?sort=reportDate&order=desc&includeDelegateApprovals=true' \
---header 'Accept: application/json' \
---header 'Authorization: Bearer {auth_token}' \
-```
-
-### **API 4: Moveworks Events API**
+### **API 3: Moveworks Events API**
 
 Please replace the `email@example.com` with the email address of the user who will receive the notification.
 
-You can get the `{{moveworks_event_id}}` and `{{moveworks_events_api_key}}` from following the quickstart guide [here](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/).
+You can get the `{moveworks_event_id}` and `{moveworks_events_api_key}` from following the quickstart guide [here](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/).
 
 ```bash
-curl --location 'https://api.moveworks.ai/rest/v1/events/{{moveworks_event_id}}/messages/send' \
---header 'Authorization: Bearer {{moveworks_events_api_key}}' \
+curl --location 'https://api.moveworks.ai/rest/v1/events/{moveworks_event_id}/messages/send' \
+--header 'Authorization: Bearer {moveworks_events_api_key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "message": "💸 New Concur Expense Report Approval Request ....\n",
@@ -143,7 +99,7 @@ curl --location 'https://api.moveworks.ai/rest/v1/events/{{moveworks_event_id}}/
 }'
 ```
 
-### **API 5: Approve Expense Report (as Approver)**
+### **API 4: Approve Expense Report (as Approver)**
 
 ```bash
 curl --location --request PATCH 'https://us2.api.concursolutions.com/expensereports/v4/users/{user_id}/context/MANAGER/reports/{report_id}/approve' \
@@ -154,7 +110,7 @@ curl --location --request PATCH 'https://us2.api.concursolutions.com/expenserepo
 }'
 ```
 
-### **API 6: Send Back Expense Report (as Approver)**
+### **API 5: Send Back Expense Report (as Approver)**
 
 ```bash
 curl --location --request PATCH 'https://us.api.concursolutions.com/expensereports/v4/users/{user_id}/context/MANAGER/reports/{report_id}/sendBack' \
@@ -170,15 +126,14 @@ curl --location --request PATCH 'https://us.api.concursolutions.com/expenserepor
 
 This diagram describes the flow we will build in this guide.
 
-
   ![image.png](./architecture.png)
 
-There are four steps to support Concur Expense report approvals using Creator Studio:
+There are four steps to support Concur Expense Report approvals using Creator Studio:
 
 1. Setup polling for new approvals (by default, every 60 seconds)
     - This is required to retrieve newly submitted expense reports
 2. Send a notification to Moveworks with the expense report details and slots to approve or reject the report
-3. Store approval notifications you have already sent in a database queue
+3. Store approval notifications you have already sent in a database
     - If you don't do this, your employees will get notified every time you poll for new records
 4. Actioning on the approvals based on the chosen action (approve/send back)
 
@@ -383,7 +338,7 @@ async def get_valid_token() -> str:
 
 def format_notification_message(report):
     return (
-        f"<b>💳 Expense Report Pending Your Approval</b>:\n"
+        f"<b>💸 New Concur Expense Report Approval Request</b>:\n"
         f"    - <i>Report Name</i>: {report['Name']}\n"
         f"    - <i>Owner</i>: {report['OwnerName']}\n"
         f"    - <i>Submit Date</i>: {report['SubmitDate']}\n"
@@ -395,69 +350,18 @@ def format_notification_message(report):
 
 
 # API functions
-async def get_all_users(auth_token: str) -> Dict:
-    url = f"{CONCUR_BASE_URL}/profile/identity/v4/users?count=100&attributes=displayName,id,userName"
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {auth_token}",
-    }
-    return await make_request("GET", url, headers)
-
-
-async def get_reports_to_approve(auth_token: str, user_id: str) -> Dict:
-    url = f"{CONCUR_BASE_URL}/expensereports/v4/users/{user_id}/context/MANAGER/reportsToApprove?sort=reportDate&order=desc&includeDelegateApprovals=true"
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {auth_token}",
-    }
-    response = await make_request("GET", url, headers)
-    # Wrap the response in a dictionary if it's a list
-    if isinstance(response, list):
-        return {"reports": response}
-    return response
-    return await make_request("GET", url, headers)
-
-
 async def get_all_expense_reports(
-    auth_token: str, submit_date_after: str = None
+    auth_token: str, modified_date_after: str = None
 ) -> Dict:
-    if not submit_date_after:
-        submit_date_after = datetime.now().strftime("%Y-%m-%d")
+    if not modified_date_after:
+        modified_date_after = datetime.now().strftime("%Y-%m-%d")
 
-    url = f"{CONCUR_BASE_URL}/api/v3.0/expense/reports?user=ALL&submitDateAfter={submit_date_after}&ApprovalStatusCode=A_PEND"
+    url = f"{CONCUR_BASE_URL}/api/v3.0/expense/reports?user=ALL&modifiedDateAfter={modified_date_after}&ApprovalStatusCode=A_PEND"
     headers = {
         "Accept": "application/json",
         "Authorization": f"Bearer {auth_token}",
     }
     return await make_request("GET", url, headers)
-
-
-# Calls /expensereports/v4/reports/{report_id} and /expensereports/v4/reports/{report_id}/expenses APIs and assembles the response. The response from Concur API is a list of expenses, but we want to return the report with the expenses as a dictionary.
-async def get_report_expenses(
-    auth_token: str, user_id: str, report_id: str
-) -> Dict:
-    url = f"{CONCUR_BASE_URL}/expensereports/v4/users/{user_id}/context/TRAVELER/reports/{report_id}/expenses?user=ALL&submitDateAfter=2024-08-01"
-
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {auth_token}",
-    }
-    return await make_request("GET", url, headers)
-
-
-async def get_report(auth_token: str, user_id: str, report_id: str) -> Dict:
-    url = f"{CONCUR_BASE_URL}/expensereports/v4/users/{user_id}/context/TRAVELER/reports/{report_id}"
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {auth_token}",
-    }
-
-    response = await make_request("GET", url, headers)
-    # Combine the report with the expenses
-    response["expenses"] = await get_report_expenses(
-        auth_token, user_id, report_id
-    )
-    return response
 
 
 async def approve_report(
@@ -508,14 +412,6 @@ async def send_moveworks_message(
         payload["context"] = {"slots": {"report_id": context.report_id}}
 
     return await make_request("POST", url, headers, payload)
-
-
-def get_user_details(users: Dict, email: str) -> List[Dict]:
-    return [
-        user
-        for user in users.get("Resources", [])
-        if user["userName"] == email
-    ]
 
 
 async def continuous_polling():
@@ -607,27 +503,6 @@ async def poll_reports():
 
 
 # API routes
-@app.get("/users")
-async def read_all_users(auth_token: str = Depends(get_valid_token)) -> Dict:
-    return await get_all_users(auth_token)
-
-
-@app.get("/reports")
-async def read_reports(
-    submit_date_after: str = None, auth_token: str = Depends(get_valid_token)
-) -> Dict:
-    reports = await get_all_expense_reports(auth_token, submit_date_after)
-    return reports
-
-
-@app.get("/reports/{report_id}")
-async def read_report(
-    report_id: str, user_id: str, auth_token: str = Depends(get_valid_token)
-) -> Dict:
-    report = await get_report(auth_token, user_id, report_id)
-    return report
-
-
 @app.patch("/reports/approve")
 async def approve(
     user_id: str, report_id: str, auth_token: str = Depends(get_valid_token)
@@ -646,24 +521,6 @@ async def send_back(
     result = await send_back_report(auth_token, user_id, report_id)
     remove_pending_report(report_id)
     return result
-
-
-@app.get("/user-details")
-async def read_user_details(
-    email: str, auth_token: str = Depends(get_valid_token)
-) -> List[Dict]:
-    users = await get_all_users(auth_token)
-    user_details = get_user_details(users, email)
-    if not user_details:
-        raise HTTPException(status_code=400, detail="Cannot find user")
-    return user_details
-
-
-@app.post("/send-notification")
-async def send_notification(request: NotificationRequest) -> Dict:
-    return await send_moveworks_message(
-        request.message, request.recipients, request.context
-    )
 
 
 # Error handling
@@ -690,13 +547,13 @@ if __name__ == "__main__":
 ## Step 4: Build in Creator Studio
 
 1. Create a new Event in Creator Studio named "Concur Expense Report Approvals".
-    - Choose to add a followup action so that you can approve or reject the ticket.
+    - Choose to add a followup action so that you can approve or send back the expense report.
 2. Configure the API Connection:
     - Import the cURL command for the Middleware APIs that you have deployed.
     - Add necessary authorization headers.
 3. Design the conversation flow:
     - Ask if the user wants to view pending approvals.
-    - Display ticket details for approval.
+    - Display expense report details for approval.
     - Provide options to approve, reject, or view more details.
 4. Follow our [Quickstart Guide](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/) to build an event with followup actions in Creator Studio, which can be called from your middleware.
 

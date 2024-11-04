@@ -192,7 +192,7 @@ async def get_valid_token() -> str:
 
 def format_notification_message(report):
     return (
-        f"<b>💳 Expense Report Pending Your Approval</b>:\n"
+        f"<b>💸 New Concur Expense Report Approval Request</b>:\n"
         f"    - <i>Report Name</i>: {report['Name']}\n"
         f"    - <i>Owner</i>: {report['OwnerName']}\n"
         f"    - <i>Submit Date</i>: {report['SubmitDate']}\n"
@@ -204,69 +204,18 @@ def format_notification_message(report):
 
 
 # API functions
-async def get_all_users(auth_token: str) -> Dict:
-    url = f"{CONCUR_BASE_URL}/profile/identity/v4/users?count=100&attributes=displayName,id,userName"
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {auth_token}",
-    }
-    return await make_request("GET", url, headers)
-
-
-async def get_reports_to_approve(auth_token: str, user_id: str) -> Dict:
-    url = f"{CONCUR_BASE_URL}/expensereports/v4/users/{user_id}/context/MANAGER/reportsToApprove?sort=reportDate&order=desc&includeDelegateApprovals=true"
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {auth_token}",
-    }
-    response = await make_request("GET", url, headers)
-    # Wrap the response in a dictionary if it's a list
-    if isinstance(response, list):
-        return {"reports": response}
-    return response
-    return await make_request("GET", url, headers)
-
-
 async def get_all_expense_reports(
-    auth_token: str, submit_date_after: str = None
+    auth_token: str, modified_date_after: str = None
 ) -> Dict:
-    if not submit_date_after:
-        submit_date_after = datetime.now().strftime("%Y-%m-%d")
+    if not modified_date_after:
+        modified_date_after = datetime.now().strftime("%Y-%m-%d")
 
-    url = f"{CONCUR_BASE_URL}/api/v3.0/expense/reports?user=ALL&submitDateAfter={submit_date_after}&ApprovalStatusCode=A_PEND"
+    url = f"{CONCUR_BASE_URL}/api/v3.0/expense/reports?user=ALL&modifiedDateAfter={modified_date_after}&ApprovalStatusCode=A_PEND"
     headers = {
         "Accept": "application/json",
         "Authorization": f"Bearer {auth_token}",
     }
     return await make_request("GET", url, headers)
-
-
-# Calls /expensereports/v4/reports/{report_id} and /expensereports/v4/reports/{report_id}/expenses APIs and assembles the response. The response from Concur API is a list of expenses, but we want to return the report with the expenses as a dictionary.
-async def get_report_expenses(
-    auth_token: str, user_id: str, report_id: str
-) -> Dict:
-    url = f"{CONCUR_BASE_URL}/expensereports/v4/users/{user_id}/context/TRAVELER/reports/{report_id}/expenses?user=ALL&submitDateAfter=2024-08-01"
-
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {auth_token}",
-    }
-    return await make_request("GET", url, headers)
-
-
-async def get_report(auth_token: str, user_id: str, report_id: str) -> Dict:
-    url = f"{CONCUR_BASE_URL}/expensereports/v4/users/{user_id}/context/TRAVELER/reports/{report_id}"
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {auth_token}",
-    }
-
-    response = await make_request("GET", url, headers)
-    # Combine the report with the expenses
-    response["expenses"] = await get_report_expenses(
-        auth_token, user_id, report_id
-    )
-    return response
 
 
 async def approve_report(
@@ -317,14 +266,6 @@ async def send_moveworks_message(
         payload["context"] = {"slots": {"report_id": context.report_id}}
 
     return await make_request("POST", url, headers, payload)
-
-
-def get_user_details(users: Dict, email: str) -> List[Dict]:
-    return [
-        user
-        for user in users.get("Resources", [])
-        if user["userName"] == email
-    ]
 
 
 async def continuous_polling():
@@ -416,27 +357,6 @@ async def poll_reports():
 
 
 # API routes
-@app.get("/users")
-async def read_all_users(auth_token: str = Depends(get_valid_token)) -> Dict:
-    return await get_all_users(auth_token)
-
-
-@app.get("/reports")
-async def read_reports(
-    submit_date_after: str = None, auth_token: str = Depends(get_valid_token)
-) -> Dict:
-    reports = await get_all_expense_reports(auth_token, submit_date_after)
-    return reports
-
-
-@app.get("/reports/{report_id}")
-async def read_report(
-    report_id: str, user_id: str, auth_token: str = Depends(get_valid_token)
-) -> Dict:
-    report = await get_report(auth_token, user_id, report_id)
-    return report
-
-
 @app.patch("/reports/approve")
 async def approve(
     user_id: str, report_id: str, auth_token: str = Depends(get_valid_token)
@@ -455,24 +375,6 @@ async def send_back(
     result = await send_back_report(auth_token, user_id, report_id)
     remove_pending_report(report_id)
     return result
-
-
-@app.get("/user-details")
-async def read_user_details(
-    email: str, auth_token: str = Depends(get_valid_token)
-) -> List[Dict]:
-    users = await get_all_users(auth_token)
-    user_details = get_user_details(users, email)
-    if not user_details:
-        raise HTTPException(status_code=400, detail="Cannot find user")
-    return user_details
-
-
-@app.post("/send-notification")
-async def send_notification(request: NotificationRequest) -> Dict:
-    return await send_moveworks_message(
-        request.message, request.recipients, request.context
-    )
 
 
 # Error handling

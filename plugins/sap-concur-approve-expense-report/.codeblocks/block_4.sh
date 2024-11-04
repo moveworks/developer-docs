@@ -1,14 +1,7 @@
-curl --location 'https://api.moveworks.ai/rest/v1/events/{{moveworks_event_id}}/messages/send' \
---header 'Authorization: Bearer {{moveworks_events_api_key}}' \
+curl --location --request PATCH 'https://us.api.concursolutions.com/expensereports/v4/users/{user_id}/context/MANAGER/reports/{report_id}/sendBack' \
+--header 'Authorization: Bearer {auth_token}' \
 --header 'Content-Type: application/json' \
---data-raw '{
-    "message": "💸 New Concur Expense Report Approval Request ....\n",
-    "recipients": [
-        "email@example.com"
-    ],
-    "context": {
-        "slots": {
-            "report_id": "692D37074CAA42C2BE47"
-        }
-    }
+--data '{
+    "comment":"Rejecting",
+    "expenseRejectedComment": "Rejecting Report through API"
 }'
