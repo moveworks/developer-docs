@@ -19,7 +19,7 @@ time_in_minutes: 60
 
 # Approve / Reject Expense Reports **with your Copilot**
 
-Loop in the right approvers at the right time to streamline the process and simplify administrative workflows to have expense reports approved or rejected on time in SAP Concur.
+Have expense reports approved or rejected on time in SAP Concur by looping in the right approvers at the right time to simplify administrative workflows.
 
 Let's dive in!
 
