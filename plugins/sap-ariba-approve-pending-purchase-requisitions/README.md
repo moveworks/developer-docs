@@ -87,12 +87,10 @@ Copy the cURL commands below into your API client like Postman for testing. Subs
 
 **Required APIs**
 
-For Ariba Approvals on procurement records, you will need to create an application that provides Moveworks with the ability to execute REST API requests to the following APIs:
+For Ariba Approvals on procurement records, you will need to create an application that provides Moveworks with the ability to execute REST API requests to the following API:
 
-| API Name | Used for | Link |
-| --- | --- | --- |
-| **Document Approval API - Version v2 (Active)** | Approvals, Lookups | [https://api.sap.com/api/approval_v2/overview](https://api.sap.com/api/approval_v2/overview) |
-| **Master Data Retrieval API for Procurement -  Version v1 (Active)** | Approvals | [https://api.sap.com/api/mds_search/overview](https://api.sap.com/api/mds_search/overview) |
+- **Document Approval API - Version v2 (Active)**  [https://api.sap.com/api/approval_v2/overview](https://api.sap.com/api/approval_v2/overview)
+
 
 ### API 1: Authorization
 
