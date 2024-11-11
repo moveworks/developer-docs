@@ -133,11 +133,8 @@ Now, we will implement the connector in Creator Studio using the Client Credenti
     - Oauth2 Token Url: `{{oauth_server_url_prefix}}/v2/oauth/token` (For eg., `https://api.ariba.com/v2/oauth/token` for US Data center)
     - Oauth2 Client Authentication: `OAuth 2.0 with Basic Auth Header set to username and password`
     - Oauth2 Custom Oauth Request Options Additional Headers:
-        
-        
-        | Key |  Value |
-        | --- | --- |
-        | `APIKey` | Your **Application Key** |
+        - Key: `APIKey`
+        - Value: Your **Application Key**
     
     Click on `Save` to submit the credentials and your connector will be ready.
     
@@ -151,19 +148,18 @@ Now, we will implement the connector in Creator Studio using the Client Credenti
             ![image.png](SAP%20Ariba%20a174fbebeb184d33a656ab9c3e79673b/image%201.png)
             
         2. Fill out the Endpoint URL: GET `/approval/v2/{{env}}/pendingApprovables`. The `env` here can be either `prod` or `sandbox`
-        3. Add the following Headers: 
+        3. Add the following Headers:
+            - Header 1:
+                - Key: `APIKey`
+                - Value: Your **Application Key** 
+            - Header 2:
+                - Key: `Accept`
+                - Value: `application/json` 
             
-            
-            | Key | Value |
-            | --- | --- |
-            | `APIKey` | Your **Application Key** |
-            | `Accept` | `application/json` |
         4. Add the following Params:
+            - Key: `realm`
+            - Value: **Realm used by Application** 
             
-            
-            | Key | Value |
-            | --- | --- |
-            | `realm` | **Realm used by Application** |
 3. Click on Test to check if the Connector setup was successful and expect a successful response as shown below
     
     ![image.png](SAP%20Ariba%20a174fbebeb184d33a656ab9c3e79673b/image%202.png)
