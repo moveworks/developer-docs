@@ -9,7 +9,7 @@ accreditations:
 
 # Introduction
 
-SAP Ariba is a comprehensive cloud-based solution for procurement and supply chain management. This guide covers the access needs that are required to establish a stable connection to your Ariba Instance, authenticate with SAP Ariba’s APIs and test it successfully in Creator Studio.
+SAP Ariba is a comprehensive cloud-based solution for procurement and supply chain management. This guide covers the access needs that are required to establish a stable connection to your Ariba Instance, authenticate with SAP Ariba’s APIs, and test it successfully in Creator Studio.
 
 # Prerequisites
 
