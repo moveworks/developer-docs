@@ -3,7 +3,7 @@ description: A plugin which can look up assigned epics in Jira.
 fidelity: VALIDATED
 name: Check Open Epics
 num_implementations: 1
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A5094%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ECan+I+get+a+summary+of+Epics+in+Project+Kalistar%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERetrieve+Epics+for+Project%3C%2Fb%3E+for+%5C%22Kalistar%5C%22%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22Here+are+the+currently+open+epics%3A%3Cbr%3E%3Cb%3EEPIC-111%3A%3C%2Fb%3E+Implement+new+security+protocols%3Cbr%3E%3Cb%3EEPIC-222%3A%3C%2Fb%3E+Upgrade+network+infrastructure%3Cbr%3EWould+you+like+to+visit+JIRA+for+more+details+or+take+any+action+on+these+epics%3F%22%7D%5D%7D%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A5094%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3E+What+open+epics+are+in+project+Kalistar%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERetrieve+Epics+for+Project%3C%2Fb%3E+for+%5C%22Kalistar%5C%22%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22Here+are+the+currently+open+epics%3A%3Cbr%3E%3Cb%3EEPIC-111%3A%3C%2Fb%3E+Implement+new+security+protocols%3Cbr%3E%3Cb%3EEPIC-222%3A%3C%2Fb%3E+Upgrade+network+infrastructure%3Cbr%3EWould+you+like+to+visit+JIRA+for+more+details+or+take+any+action+on+these+epics%3F%22%7D%5D%7D%7D%5D%7D
 solution_tags:
 - Engineering
 - IT
@@ -31,7 +31,7 @@ Let's get started!
 
 ## **Conversation Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A5094%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3ECan+I+get+a+summary+of+Epics+in+Project+Kalistar%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERetrieve+Epics+for+Project%3C%2Fb%3E+for+%5C%22Kalistar%5C%22%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22Here+are+the+currently+open+epics%3A%3Cbr%3E%3Cb%3EEPIC-111%3A%3C%2Fb%3E+Implement+new+security+protocols%3Cbr%3E%3Cb%3EEPIC-222%3A%3C%2Fb%3E+Upgrade+network+infrastructure%3Cbr%3EWould+you+like+to+visit+JIRA+for+more+details+or+take+any+action+on+these+epics%3F%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A5094%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3E+What+open+epics+are+in+project+Kalistar%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERetrieve+Epics+for+Project%3C%2Fb%3E+for+%5C%22Kalistar%5C%22%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22Here+are+the+currently+open+epics%3A%3Cbr%3E%3Cb%3EEPIC-111%3A%3C%2Fb%3E+Implement+new+security+protocols%3Cbr%3E%3Cb%3EEPIC-222%3A%3C%2Fb%3E+Upgrade+network+infrastructure%3Cbr%3EWould+you+like+to+visit+JIRA+for+more+details+or+take+any+action+on+these+epics%3F%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
 # Creator Studio Components
 
@@ -77,30 +77,30 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
     
     # **Steps**
     
-    ## **Step 1: Build in Creator Studio**
-    
-    ### **Setup the APIs**
-    
-    - Define your API actions for fetching all the backlog ideas of a specific project :
+    ## **Step 1: Build HTTP Action**
+
+    - Define your HTTP Actions for fetching all the backlog ideas of a specific project :
         1. **Get projects paginated**
-            - In Creator Studio, create a new Plugin.
+            - In Creator Studio, create a new Action.
                 - Navigate to `Plugins` section > `Actions` tab
-                - Click on `CREATE` to create a new plugin
-            - Set up your API Connection to configure the API endpoint based on the following:
-                - Click on `Use Existing Connector` > select the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) that you just created > Click on `Apply`. This will populate the Authorization section of the API Editor.
-            - **Path**: `/rest/api/3/project/search`
-            - **Method**: GET
-            - **Query** **Parameters** :
-                - Key ( **query** ) : Value ( **{{project_name}}** )
-                
-                  ![Screenshot 2024-12-09 at 7.06.32 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-09_at_7.06.32_PM.png)
-                
+                - Click on `CREATE` to define a new action
+
+              ![Screenshot 2024-12-19 at 3.59.19 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot%202024-12-19%20at%203.59.19 PM.png)
+
+            - Click on the `IMPORT CURL` option and paste the following cURL command:
+              ```bash
+              curl --request GET \
+                --url 'https://your-domain.atlassian.net/rest/api/3/project/search?query={{project_name}}?'\
+                --user 'email@example.com:<api_token>' \
+                --header 'Accept: application/json'
+              ```
+           - Click on `Use Existing Connector` > select the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) that you just created > Click on `Apply`. This will populate the Base URL and the Authorization section of the API Editor.
             - **Input Variables** :
-                - project_name : Example Value ( **Content System Discovery** )
+                - project_name : Example Value ( **Content System Discovery** ).
                 
                   ![Screenshot 2024-12-10 at 6.10.35 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-10_at_6.10.35_PM.png)
                 
-            - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
+            - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right. If the output schema does not match the API response or fails to populate automatically, kindly click the `GENERATE FROM RESPONSE` button to refresh and align the schema with the API response.
             
               ![Screenshot 2024-12-09 at 7.24.53 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-09_at_7.24.53_PM.png)
             
@@ -109,12 +109,21 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
               ![Screenshot 2024-12-09 at 7.29.30 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-09_at_7.29.30_PM.png)
             
         2. **Search for issues using JQL enhanced search**
-            - Repeat the steps above to create another plugin.
-            - **Path**: `/rest/api/3/search`
-            - **Method**: GET
+            - Repeat the steps above to create another action.
+            - Click on the `IMPORT CURL` option and paste the following cURL command:
+              ```bash
+              curl --request GET \
+               --url 'https://your-domain.atlassian.net/rest/api/3/search/jql?fields=summary%2Cassignee%2CemailAddress%2Cstatus&jql=project%3D{{PROJECT_KEY}}%20AND%20issuetype%3DEpic%20AND%20assignee%20IS%20NOT%20EMPTY%20AND%20Status%20!%3D%20%22done%22?'\
+              --user 'email@example.com:<api_token>' \
+              --header 'Accept: application/json'
+              ```
+           - Use the existing connector by following the steps outlined in the previous point to populate the Base URL and Authorization section.
+
             - **Query** **Parameters** :
                 - Key ( **jql** ) : Value ( **project = {{PROJECT_KEY}} AND issuetype=Epic AND assignee IS NOT EMPTY AND Status != "done”** )
-                - Key ( **fields** ) : Value ( **summary,assignee,emailAddress,status** )
+                  - This JQL query filters out open Epics by excluding completed ones and ensuring each Epic has an assigned user.
+                - Key ( **fields** ) : Value ( **summary,assignee,emailAddress,status..etc** )
+                  - This JQL query retrieves only the specified fields from the response, ensuring a focused and concise dataset. 
                 
                   ![Screenshot 2024-12-10 at 1.06.43 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-10_at_1.06.43_PM.png)
                 
@@ -123,7 +132,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
                 
                   ![Screenshot 2024-12-10 at 6.15.07 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-10_at_6.15.07_PM.png)
                 
-            - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
+            - Test the Connector setup as described earlier to verify the response. If the output schema is incorrect or missing, click `GENERATE FROM RESPONSE` to update it.
             
               ![Screenshot 2024-12-10 at 1.14.19 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-10_at_1.14.19_PM.png)
             
@@ -132,7 +141,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
               ![Screenshot 2024-12-10 at 1.18.45 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-10_at_1.18.45_PM.png)
             
 
-### Build Compound Actions
+## **Step 2: Build Compound Action**
 
 - Head over to the **Compound Actions** tab and click **CREATE**
 
@@ -172,15 +181,15 @@ Note: Name only letters, numbers, and underscores. We suggest using snake case o
 
   ![Screenshot 2024-12-10 at 4.05.44 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-10_at_4.05.44_PM.png)
 
-### Publishing Plugins
+## **Step 3: Publish Workflow to Plugin**
 
 - Head over to the `Compound Actions` tab and click on the kebab menu ( `︙` )
-- Next, click on `Publish as Plugin`
+- Next, click on `Publish Workflow to Plugin`
 - First, verify your Plugin **Name** & **Short description** . This is autofilled from the name & description of your compound action.
 
   ![Screenshot 2024-12-10 at 4.10.56 PM.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-10_at_4.10.56_PM.png)
 
-- Next, decide if you want to check the User consent required before execution? checkbox. This will ask the user to confirm all of their slot values before executing to plugin and is considered a best practice to enable.
+- Next, consider whether to select the `User consent required before execution?` checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice.
 
   ![Screenshot 2024-12-10 at 4.10.56 PM copy.png](Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot_2024-12-10_at_4.10.56_PM_copy.png)
 
@@ -189,7 +198,7 @@ Note: Name only letters, numbers, and underscores. We suggest using snake case o
 - Lastly, click `Next` and set the **Launch Rules** you want your plugin to abide by.
     - See our [guide](https://developer.moveworks.com/creator-studio/administration/launch-options/) on Launch Rules
 
-## **Step 2: See it in action!**
+## **Step 4: See it in action!**
 
 - After clicking the final `Submit` button, your plugin will be published to the bot and triggerable based on your **Launch Rules.**
 - You should wait up to **5 minutes** after making changes before trying to test in your bot!
