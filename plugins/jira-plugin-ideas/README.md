@@ -1,5 +1,7 @@
 ---
 description: A plugin that retrieves ideas from your backlog in Jira.
+difficulty_level: BEGINNER
+time_in_minutes: 5 
 fidelity: GUIDE
 name: Check Backlog Ideas
 num_implementations: 1
