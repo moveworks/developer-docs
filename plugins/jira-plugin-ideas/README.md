@@ -1,9 +1,9 @@
 ---
 description: A plugin that retrieves ideas from your backlog in Jira.
-fidelity: VALIDATED
+fidelity: GUIDE
 name: Check Backlog Ideas
 num_implementations: 1
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6991%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EAre+there+any+plugin+ideas+about+approvals%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ECheck+Plugin+Ideas+%3C%2Fb%3Efor+%5C%22approvals%5C%22%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESure%2C+here+are+the+currently+open+plugin+ideas.%3Cbr%3E%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3EPlugin+Idea%3A+Purchase+Order+Approvals+from+Coupa%3Cbr%3E%3C%2Fp%3E%22%2C%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22View+Details%22%7D%2C%7B%22text%22%3A%22Upvote%22%7D%5D%7D%2C%7B%22title%22%3A%22%3Cp%3EPlugin+Idea%3A+Expense+Report+Approvals+from+Expensify%3Cbr%3E%3C%2Fp%3E%22%2C%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22View+Details%22%7D%2C%7B%22text%22%3A%22Upvote%22%7D%5D%7D%5D%7D%5D%7D%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A9926%2C%22title%22%3A%22New+Mock%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Show+me+the+backlog+items+from+Project+Iron+that+reference+onboarding.%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22Retrieving+%27s+backlog+items+from+Project+Iron+with+keyword+onboarding.%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22Here%27s+your+current+Jira+backlog+for+Project+Iron+with+keyword+%27onboarding%27%3A%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22Backlog+Item+1%3A+Implement+onboarding+feature%22%2C%22text%22%3A%22%3Cb%3EStatus%3A%3C%2Fb%3E+To+Do%3Cbr%3E%3Cb%3EPriority%3A%3C%2Fb%3E+High%22%7D%2C%7B%22title%22%3A%22Backlog+Item+2%3A+Resolve+onboarding+task+resolution%22%2C%22text%22%3A%22%3Cb%3EStatus%3A%3C%2Fb%3E+To+Do%3Cbr%3E%3Cb%3EPriority%3A%3C%2Fb%3E+Medium%22%7D%2C%7B%22title%22%3A%22Backlog+Item+3%3A+Update+user+onboarding+date%22%2C%22text%22%3A%22%3Cb%3EStatus%3A%3C%2Fb%3E+To+Do%3Cbr%3E%3Cb%3EPriority%3A%3C%2Fb%3E+Low%22%7D%5D%7D%5D%7D%7D%5D%7D
 solution_tags:
 - Approvals
 - IT
@@ -31,7 +31,7 @@ Let's get started!
 
 ## **Conversation Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6991%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EAre+there+any+plugin+ideas+about+approvals%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ECheck+Plugin+Ideas+%3C%2Fb%3Efor+%5C%22approvals%5C%22%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESure%2C+here+are+the+currently+open+plugin+ideas.%3Cbr%3E%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3EPlugin+Idea%3A+Purchase+Order+Approvals+from+Coupa%3Cbr%3E%3C%2Fp%3E%22%2C%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22View+Details%22%7D%2C%7B%22text%22%3A%22Upvote%22%7D%5D%7D%2C%7B%22title%22%3A%22%3Cp%3EPlugin+Idea%3A+Expense+Report+Approvals+from+Expensify%3Cbr%3E%3C%2Fp%3E%22%2C%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22View+Details%22%7D%2C%7B%22text%22%3A%22Upvote%22%7D%5D%7D%5D%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A9926%2C%22title%22%3A%22New+Mock%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Show+me+the+backlog+items+from+Project+Iron+that+reference+onboarding.%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22Retrieving+%27s+backlog+items+from+Project+Iron+with+keyword+onboarding.%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22Here%27s+your+current+Jira+backlog+for+Project+Iron+with+keyword+%27onboarding%27%3A%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22Backlog+Item+1%3A+Implement+onboarding+feature%22%2C%22text%22%3A%22%3Cb%3EStatus%3A%3C%2Fb%3E+To+Do%3Cbr%3E%3Cb%3EPriority%3A%3C%2Fb%3E+High%22%7D%2C%7B%22title%22%3A%22Backlog+Item+2%3A+Resolve+onboarding+task+resolution%22%2C%22text%22%3A%22%3Cb%3EStatus%3A%3C%2Fb%3E+To+Do%3Cbr%3E%3Cb%3EPriority%3A%3C%2Fb%3E+Medium%22%7D%2C%7B%22title%22%3A%22Backlog+Item+3%3A+Update+user+onboarding+date%22%2C%22text%22%3A%22%3Cb%3EStatus%3A%3C%2Fb%3E+To+Do%3Cbr%3E%3Cb%3EPriority%3A%3C%2Fb%3E+Low%22%7D%5D%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
 # Creator Studio Components
 
@@ -91,33 +91,31 @@ curl --request GET \
 
 # **Steps**
 
-## **Step 1: Build in Creator Studio**
+## **Step 1: Build HTTP Action**
 
-### **Setup the API Action’s**
-
-- Define your API actions for fetching all the backlog ideas of a specific project :
+- Define your HTTP actions for fetching all the backlog ideas of a specific project :
     1. **Get projects paginated**
-        - In Creator Studio, create a new Plugin.
+        - In Creator Studio, create a new Action.
             - Navigate to `Plugins` section > `Actions` tab
-            - Click on `CREATE` to create a new plugin
-        - Set up your API Connection to configure the API endpoint based on the following:
-            - Click on `Use Existing Connector` > select the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) that you just created > Click on `Apply`. This will populate the Authorization section of the API Editor.
+            - Click on `CREATE` to define a new action
             
-              ![Screenshot 2024-12-09 at 6.54.23 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-09_at_6.54.23_PM.png)
-            
-        - **Fill out the Endpoint URL** : `/rest/api/3/project/search`
-        - **Method**: GET
-        - **Query** **Parameters** :
-            - Key ( **query** ) : Value ( **{{project_name}}** )
-                
-              ![Screenshot 2024-12-09 at 7.06.32 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-09_at_7.06.32_PM.png)
-                
+          ![Screenshot 2024-12-19 at 3.59.19 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/studio.png)
+
+        - Click on the `IMPORT CURL` option and paste the following cURL command:
+          ```bash
+          curl --request GET \
+            --url 'https://your-domain.atlassian.net/rest/api/3/project/search?query={{project_name}}?' \
+            --user 'email@example.com:<api_token>' \
+            --header 'Accept: application/json'
+          ```
+        - Click on `Use Existing Connector` > select the `Jira connector` that you just created > Click on `Apply`. This will populate the Base URL and the Authorization section of the API Editor.
+                      
         - **Input Variables** :
             - **project_name** : Example Value ( **Content System Discovery** )
                 
                 ![Screenshot 2024-12-10 at 6.10.35 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-10_at_6.10.35_PM.png)
                 
-        - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
+        - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right. If the output schema does not match the API response or fails to populate automatically, kindly click the `GENERATE FROM RESPONSE` button to refresh and align the schema with the API response.
             
             ![Screenshot 2024-12-09 at 7.24.53 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-09_at_7.24.53_PM.png)
             
@@ -127,10 +125,17 @@ curl --request GET \
         
     2. **Get Board Details**
         - Repeat the steps above to create another plugin.
-        - **Path**: `/rest/agile/1.0/board`
-        - **Method**: GET
+        - Click on the `IMPORT CURL` option and paste the following cURL command:
+          ```bash
+          curl --request GET \
+            --url 'https://your-domain.atlassian.net/rest/agile/1.0/board?projectKeyOrId={projectKeyOrId}' \
+            --user 'email@example.com:<api_token>' \
+            --header 'Accept: application/json'
+          ```
+        - Use the existing connector by following the steps outlined in the previous point to populate the Base URL and Authorization section.
         - **Query** **Parameters** :
             - Key ( **projectKeyOrId** ) : Value ( **{{project_key}}** )
+            - This JQL query parameter filters out boards that are associated with a specific project.
             
               ![Screenshot 2024-12-10 at 1.36.59 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-10_at_1.36.59_PM.png)
             
@@ -139,7 +144,7 @@ curl --request GET \
             
               ![Screenshot 2024-12-11 at 10.42.00 AM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-11_at_10.42.00_AM.png)
             
-        - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
+        - Test the Connector setup as described earlier to verify the response. If the output schema is incorrect or missing, click `GENERATE FROM RESPONSE` to update it.
             
              ![Screenshot 2024-12-09 at 7.44.13 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-09_at_7.44.13_PM.png)
             
@@ -149,11 +154,19 @@ curl --request GET \
             
     3. **Fetch the backlog issues**
         - Repeat the steps above to create another plugin.
-        - **Path**: `/rest/agile/1.0/board/{{board_id}}/backlog`
-        - **Method**: GET
+        - Click on the `IMPORT CURL` option and paste the following cURL command:
+          ```bash
+          curl --request GET \
+            --url 'https://your-domain.atlassian.net/rest/agile/1.0/board/26/backlog?fields=summary,status,priority,assignee&jql=(summary ~ "keyword")' \
+            --user 'email@example.com:<api_token>' \
+            --header 'Accept: application/json'
+          ```
+        - Use the existing connector by following the steps outlined in the previous point to populate the Base URL and Authorization section.
         - **Query Parameters** :
             - Key ( **jql** ) : Value ( **(summary ~ "{{keyword}}")** )
+              - This JQL query filters out boards that are associated with a specific keyword.
             - Key ****( **fields** ) : **Value** ( summary,status,priority,assignee )
+              - This JQL query retrieves only the specified fields from the response, ensuring a focused and concise dataset.
             
               ![Screenshot 2024-12-09 at 8.17.42 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-09_at_8.17.42_PM.png)
             
@@ -163,7 +176,7 @@ curl --request GET \
             
               ![Screenshot 2024-12-09 at 8.17.50 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-09_at_8.17.50_PM.png)
             
-        - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
+        - Test the Connector setup as described earlier to verify the response. If the output schema is incorrect or missing, click `GENERATE FROM RESPONSE` to update it.
         
           ![Screenshot 2024-12-11 at 10.52.54 AM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-11_at_10.52.54_AM.png)
         
@@ -172,7 +185,7 @@ curl --request GET \
           ![Screenshot 2024-12-10 at 1.02.21 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-10_at_1.02.21_PM.png)
         
 
-### Build Compound Actions
+### Step 2: Build Compound Actions
 
 - Head over to the **Compound Actions** tab and click **CREATE**
     
@@ -212,15 +225,15 @@ Note: Name only letters, numbers, and underscores. We suggest using snake case o
 
   ![Screenshot 2024-12-10 at 11.52.48 AM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-10_at_11.52.48_AM.png)
 
-### Publishing Plugins
+### Step 3: Publish Workflow to Plugin
 
 - Head over to the `Compound Actions` tab and click on the kebab menu ( `︙` )
-- Next, click on `Publish as Plugin`
+- Next, click on `Publish Workflow to Plugin`
 - First, verify your Plugin **Name** & **Short description** . This is autofilled from the name & description of your compound action.
     
     ![Screenshot 2024-12-10 at 12.07.21 PM.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-10_at_12.07.21_PM.png)
     
-- Next, decide if you want to check the User consent required before execution? checkbox. This will ask the user to confirm all of their slot values before executing to plugin and is considered a best practice to enable.
+- Next, consider whether to select the `User consent required before execution?` checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice.
     
     ![Screenshot 2024-12-10 at 12.07.21 PM copy.png](Check%20Backlog%20Ideas%2001577b6af20449d7a17c39f529cd906b/Screenshot_2024-12-10_at_12.07.21_PM_copy.png)
     
@@ -229,7 +242,7 @@ Note: Name only letters, numbers, and underscores. We suggest using snake case o
 - Lastly, click `Next` and set the **Launch Rules** you want your plugin to abide by.
     - See our [guide](https://developer.moveworks.com/creator-studio/administration/launch-options/) on Launch Rules
 
-## **Step 2: See it in action!**
+## **Step 4: See it in action!**
 
 - After clicking the final `Submit` button, your plugin will be published to the bot and triggerable based on your **Launch Rules.**
 - You should wait up to **5 minutes** after making changes before trying to test in your bot!
