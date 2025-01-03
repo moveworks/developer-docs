@@ -13,6 +13,7 @@ solution_tags:
 systems:
 - coupa
 time_in_minutes: 60
+video: https://www.loom.com/share/6f3d22bc767d489e97dabe66b132d789?sid=a00d2ba3-38d3-4ed7-8151-8e7688a6e7e2
 ---
 
 # Research
