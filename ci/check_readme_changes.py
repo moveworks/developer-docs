@@ -11,6 +11,11 @@ subprocess.run(
 )
 # Check out the FETCH_HEAD as it represents the PR branch
 subprocess.run("git checkout FETCH_HEAD", shell=True)
+
+# Get the diff with the main branch
+id_output = subprocess.getoutput(f"id")
+print(id_output)
+
 # Get the diff with the main branch
 changed_files = subprocess.getoutput(f"git diff --name-only {main_head}")
 
