@@ -3,6 +3,6 @@ curl --location 'https://{{domain}}.workday.com/ccx/api/wql/v1/{{instance}}/data
 --header 'Authorization: Bearer {{access_token}}' \
 --data-raw '
     {
-        "query": "SELECT workdayID, fullName, email_PrimaryWorkOrPrimaryHome, position, eligibleAndVisibleTimeOffPlansForWorkerAsOfDate, allEligibleTimeOffsForWorker, cf_TimeOffBalanceForPTOAndVacationPlans FROM workerFromEmailAddress (emailAddress = 'test@workday.net')"
+        "query": "SELECT workdayID, fullName, email_PrimaryWorkOrPrimaryHome, position, eligibleAndVisibleTimeOffPlansForWorkerAsOfDate, allEligibleTimeOffsForWorker FROM workerFromEmailAddress (emailAddress = 'test@workday.net')"
     }
 '
