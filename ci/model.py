@@ -6,6 +6,7 @@ class Fidelity(Enum):
     GUIDE = "Guide"
     TEMPLATE = "Template"
     IMPOSSIBLE = "Impossible"
+    BUILT_IN = "Built-In"
 
 
 class ContentTypes(Enum):
