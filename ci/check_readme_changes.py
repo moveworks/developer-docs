@@ -33,6 +33,8 @@ for file in changed_files.split("\n"):
         comment_message += f"Changes to {file} can be viewed at https://developer.moveworks.com/creator-studio/resources/{top_directory}?id={second_directory}&commit_id={commit_id}; "
 
 print(f"Writing output: '{comment_message}' to {env_file}")
+
+comment_message = "This is a test from 4BG0P"
 with open(env_file, "a") as f:
     f.write(f"comment_message={comment_message}\n")
 
