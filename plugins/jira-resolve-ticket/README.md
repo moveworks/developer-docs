@@ -1,6 +1,4 @@
 ---
-custom_tags:
-- Built In
 description: A plugin that lets the appropriate individual close a ticket.
 fidelity: BUILT_IN
 name: Resolve a Ticket
