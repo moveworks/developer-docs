@@ -168,4 +168,3 @@ Now, we will implement the connector in Creator Studio using the Client Credenti
 # Congratulations
 
 You have successfully integrated SAP Ariba’s APIs with Creator Studio. This opens up a variety of automation and integration possibilities using your SAP Ariba instance.
- 
