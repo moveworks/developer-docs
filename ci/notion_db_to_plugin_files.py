@@ -244,6 +244,7 @@ def validate_record(record: Record):
     elif record.fidelity in [
         Fidelity.GUIDE,
         Fidelity.VALIDATED,
+        Fidelity.BUILT_IN,
     ]:
         # Check if the guide file exists
         if not os.path.exists(record.record_readme):

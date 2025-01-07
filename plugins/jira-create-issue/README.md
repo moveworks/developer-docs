@@ -1,6 +1,4 @@
 ---
-custom_tags:
-- Built In
 description: A plugin that allows an individual to create an issue in Jira.
 fidelity: BUILT_IN
 name: Create An Issue
