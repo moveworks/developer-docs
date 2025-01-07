@@ -35,3 +35,4 @@ for file in changed_files.split("\n"):
 print(f"Writing output: '{comment_message}' to {env_file}")
 with open(env_file, "a") as f:
     f.write(f"comment_message={comment_message}\n")
+
