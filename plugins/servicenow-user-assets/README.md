@@ -3,7 +3,11 @@
 Research Owner: Moveworks
 Publish Ready: Yes
 Content Type: Plugin
-Current Fidelity: Guide
+accreditations:
+- DEFAULT
+difficulty_level: BEGINNER
+fidelity: GUIDE
+time_in_minutes: 20
 Systems: ServiceNow (https://www.notion.so/ServiceNow-98ec79cf338a4a53adef2e87650ca726?pvs=21)
 Plugin Library Link: https://developer.moveworks.com/creator-studio/resources/plugin?id=servicenow-user-assets
 Description: A plugin that queries associated assets such as laptops, mice etc for a user.
