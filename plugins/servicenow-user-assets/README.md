@@ -55,7 +55,7 @@ Of the various tables that can be accessed on ServiceNow, for this use case, we 
 
 ```bash
 curl --request GET \
---url '[https://your-domain.service-now.com/api/now/table/alm_asset?](https://api/now/table/alm_asset?sysparm_query=assigned_to.email%3Dexample%40email.com&sysparm_fields=model_category.name,display_name,asset_tag)sysparm_query=assigned_to.email%3Dexample%[40email.com](http://40email.com/)&sysparm_fields=model_category.name%2C%20display_name%2C%20asset_tag\
+--url 'https://your-domain.service-now.com/api/now/table/alm_asset?sysparm_query=assigned_to.email%3Dexample%40email.com&sysparm_fields=model_category.name%2C%20display_name%2C%20asset_tag\'
 --header 'Authorization: Bearer YOUR_ACCESS_TOKEN'
 ```
 
@@ -71,7 +71,7 @@ We first need to define the HTTP Action for fetching all the details of assets w
     - Navigate to `Plugins` section > `Actions` tab
     - Click on `CREATE` to define a new action
         
-        [https://us-central1-creator-studio-workflows.cloudfunctions.net/getGithubContentProxy?path=/moveworks/developer-docs/main/plugins/jira-open-epics/Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot%202024-12-19%20at%203.59.19%E2%80%AFPM.png](https://us-central1-creator-studio-workflows.cloudfunctions.net/getGithubContentProxy?path=/moveworks/developer-docs/main/plugins/jira-open-epics/Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/Screenshot%202024-12-19%20at%203.59.19%E2%80%AFPM.png)
+        ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image.png)
         
 - Let’s first take care of the Authorization needed for accessing the API. 
 
@@ -90,14 +90,14 @@ This will populate the Authorization details needed for the API request to be su
 Click on the Params tab. We’ll be adding 2 query parameters. They are as follows:
     
     
-    | **Key** | **Value** |
+    | Key | Value |
     | --- | --- |
     | sysparm_query | assigned_to.email={{email_addr}} |
     | sysparm_fields | model_category.name, display_name, asset_tag |
     
     Adding these parameters helps us filter the response by an email address and reduce the response body to output only the name of the asset, its display name and its tag. This is demonstrated in the screenshot below. 
     
-    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image.png)
+    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%201.png)
     
 
 - Notice the {{email_addr}} value for the sysparm_query parameter. The double curly braces indicate that this value needs to be fetched as an Input Variable. 
@@ -105,38 +105,37 @@ Click on the Params tab. We’ll be adding 2 query parameters. They are as follo
 Head over to the Input Variables tab. Here’s what we’ll be adding:
     
     
-    | **Name** | **Description** | **Example Value** | **Data Type** |
+    | Name | Description | Example Value | Data Type |
     | --- | --- | --- | --- |
     | email_addr | email_addr | example@email.com | string |
     
     This is shown in the screen shot below. 
     
-    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%201.png)
+    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%202.png)
     
 
 - Click on **Test** to verify if the Connector setup was successful. You should see a successful response, as demonstrated below. The request's response will appear on the left side, and the generated output schema will be displayed on the right. 
 
 If the output schema does not align with the API response or fails to populate automatically, please click the **GENERATE FROM RESPONSE** button to refresh and synchronize the schema with the API response.
 
-![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%202.png)
+![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%203.png)
 
 - Add the **API Name** and **API Description** as shown below, then click the `Save` button.
     
-    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%203.png)
+    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%204.png)
     
 
 ## **Step 2: Build Compound Action**
 
 - Head over to the **Compound Actions** tab and click **CREATE**
-    
-    [https://us-central1-creator-studio-workflows.cloudfunctions.net/getGithubContentProxy?path=/moveworks/developer-docs/main/plugins/jira-open-epics/Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/image_4.png](https://us-central1-creator-studio-workflows.cloudfunctions.net/getGithubContentProxy?path=/moveworks/developer-docs/main/plugins/jira-open-epics/Check%20Open%20Epics%20eed349af481e4c09819d9f8fe6e27824/image_4.png)
-    
+
+![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%205.png)
 
 - Give your Compound Action a **Name** and **Description** , then click `Next` Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName ). Here’s an example:
 
 ![Screenshot 2025-01-06 at 11.05.26 AM.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/Screenshot_2025-01-06_at_11.05.26_AM.png)
 
-         Click Next. 
+Click Next. 
 
 - Click on the **Script Editor** tab. Here, you can build your compound action using YAML syntax. This syntax allows for defining actions (such as HTTP Requests and APIthon Scripts) and workflow logic (including switch statements, for-each loops, return statements, parallel execution, and try/catch blocks). 
 
@@ -168,7 +167,7 @@ steps:
 - Next, select **Publish Workflow to Plugin**.
 - First, verify your **Plugin Name** and **Short Description**.
     
-    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%204.png)
+    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%206.png)
     
     Note: Decide whether to select the **User consent required before execution?** checkbox. Enabling this option prompts users to confirm all slot values before the plugin executes, which is widely considered a best practice.
     
@@ -194,4 +193,3 @@ If you encounter any issues:
 ## Congratulations!
 
 Copilot’s users should now be able to get details of their assets through chat. Explore our other guides for more inspiration on what to build next.
-
