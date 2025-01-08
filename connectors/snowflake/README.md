@@ -89,7 +89,7 @@ For this tutorial, we are going to use the [Custom client integration](https://d
         ![Untitled](Authentication%20Tutorial%20Snowflake%2080f48383283545edaa968ced07eacca3/Untitled%201.png)
         
     6. After allowing the above consent, the Authorization URL would be redirected to the `OAUTH_REDIRECT_URI` location and you will be able to see the Auth Code Grant in the following format. Please note it may take some time:
-    `https://www.moveworks.com/?code=<.......81BB573502BB8C.....>`
+    `https://localhost.com/?code=<.......81BB573502BB8C.....>`
     7. The code value is the **Auth Code Grant**, please note it down as it will be used in the next step to request an Access Token.
 
 ## **Step 2: Request Access Token and Refresh Token using Postman**
