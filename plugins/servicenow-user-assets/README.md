@@ -86,22 +86,25 @@ This will populate the Authorization details needed for the API request to be su
     
 
 - We will now add relevant filtering query parameters which will help us get the result we want.
+- Click on the Params tab. We’ll be adding 2 query parameters. They are as follows:
+    - Keys:
+        - sysparm_query
+        - sysparm_fields
+    - Values:
+        - assigned_to.email={{email_addr}}
+        - model_category.name, display_name, asset_tag
 
-Click on the Params tab. We’ll be adding 2 query parameters. They are as follows:
-    - **Key**                                    **Value**
-    - sysparm_query                assigned_to.email={{email_addr}}
-    - sysparm_fields                 model_category.name, display_name, asset_tag
-    
-    Adding these parameters helps us filter the response by an email address and reduce the response body to output only the name of the asset, its display name and its tag. This is demonstrated in the screenshot below. 
-    
-    ![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%201.png)
-    
+Adding these parameters helps us filter the response by an email address and reduce the response body to output only the name of the asset, its display name and its tag. This is demonstrated in the screenshot below. 
+
+![image.png](Look%20Up%20My%20Assets%20ac9d37cc28494071a3f8429c48af2ef5/image%201.png)
 
 Notice the {{email_addr}} value for the sysparm_query parameter. The double curly braces indicate that this value needs to be fetched as an Input Variable. 
 
 - Head over to the Input Variables tab. Here’s what we’ll be adding:
-    - **Name**              **Description**      **Example Value               Data Type**
-    - email_addr      email_addr       [example@email.com](mailto:example@email.com)       string
+    - Name: email_addr
+    - Description: email_addr
+    - Example Value: example@email.com
+    - Data Type: string
 
 This is shown in the screen shot below. 
 
