@@ -7,6 +7,7 @@ solution_tags:
 - Sales
 systems:
 - salesforce
+---
 # Plugin to create account in salesforce
 
 # Introduction
@@ -47,13 +48,13 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 To build this use case, we will use one **API** to achieve the goal of creating a Salesforce account:
 
-![Screenshot 2025-01-07 at 6.40.52 PM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-07_at_6.40.52_PM.png)
+![Screenshot 2025-01-07 at 6.40.52 PM.png](images/Screenshot_2025-01-07_at_6.40.52_PM.png)
 
 ## API #1:Creating a Salesforce Account.
 
 The API is used to [create a salesforce account](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_sobject_create.htm)  you supply the required field values in the request data, and send the request using the POST HTTP method.
 
-```jsx
+```bash
 curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Account/' \
 --header 'Authorization: Bearer' \
 --header 'Content-Type: application/json' \
@@ -66,7 +67,7 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Account/' \
 }'
 ```
 
-![Screenshot 2025-01-09 at 6.36.19 PM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-09_at_6.36.19_PM.png)
+![Screenshot 2025-01-09 at 6.36.19 PM.png](images/Screenshot_2025-01-09_at_6.36.19_PM.png)
 
 # Steps
 
@@ -79,11 +80,11 @@ Define your HTTP Actions for fetching the **Account ID** from Salesforce based o
 - Navigate to **Plugins** section > **Actions** tab.
 - Click on **CREATE** to define a new action.
 
-![Screenshot 2025-01-07 at 7.14.13 PM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-07_at_7.14.13_PM.png)
+![Screenshot 2025-01-07 at 7.14.13 PM.png](images/Screenshot_2025-01-07_at_7.14.13_PM.png)
 
 Click on the `IMPORT CURL` option and paste the following cURL command:
 
-```jsx
+```bash
 curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Account/' \
 --header 'Authorization: Bearer' \
 --header 'Content-Type: application/json' \
@@ -105,17 +106,17 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Account/' \
     - BillingState: The name of the state where the company is located.
     - BillingCountry: The name of the country where the company is located.
 
-![Screenshot 2025-01-08 at 9.38.20 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_9.38.20_AM.png)
+![Screenshot 2025-01-08 at 9.38.20 AM.png](images/Screenshot_2025-01-08_at_9.38.20_AM.png)
 
-![Screenshot 2025-01-08 at 9.57.02 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_9.57.02_AM.png)
+![Screenshot 2025-01-08 at 9.57.02 AM.png](images/Screenshot_2025-01-08_at_9.57.02_AM.png)
 
 We have provided sample input variables for **Account Name,Billing city,Billing country,Billing state, Billing street** Using these input variables, we tested the plugin by making a **POST** request to create a A**ccount** in Salesforce.
 
-![Screenshot 2025-01-08 at 10.02.05 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_10.02.05_AM.png)
+![Screenshot 2025-01-08 at 10.02.05 AM.png](images/Screenshot_2025-01-08_at_10.02.05_AM.png)
 
 After that, you can test the plugin by checking the response. If the contact has been successfully created, the response will return a **201** status code, indicating successful creation of the contact, If the output schema is incorrect or missing, click `GENERATE FROM RESPONSE` to update it.
 
-![Screenshot 2025-01-08 at 10.10.13 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_10.10.13_AM.png)
+![Screenshot 2025-01-08 at 10.10.13 AM.png](images/Screenshot_2025-01-08_at_10.10.13_AM.png)
 
 Add the **API Name** and **API Description** as shown below, then click the `Save` button.
 
@@ -123,9 +124,9 @@ Add the **API Name** and **API Description** as shown below, then click the�
 
 - Head over to the **Compound Actions** tab and click **CREATE**
 
-![Screenshot 2025-01-08 at 10.06.43 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_10.06.43_AM.png)
+![Screenshot 2025-01-08 at 10.06.43 AM.png](images/Screenshot_2025-01-08_at_10.06.43_AM.png)
 
-![Screenshot 2025-01-08 at 10.13.39 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_10.13.39_AM.png)
+![Screenshot 2025-01-08 at 10.13.39 AM.png](images/Screenshot_2025-01-08_at_10.13.39_AM.png)
 
 Give your Compound Action a **Name** and **Description** , then click `Next` Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
 
@@ -147,7 +148,7 @@ steps:
 
 Click on the `Script editor` tab. Here you will be able to build your compound action using the YAML syntax. At a high-level, this syntax provides actions (HTTP Request, APIthon Scripts) and workflow logic (switch statements, for each loops, return statements, parallel, try/catch). See the [Compound Action Syntax](https://developer.moveworks.com/creator-studio/reference/compound_actions_syntax/) Reference for more info.
 
-![Screenshot 2025-01-08 at 10.16.19 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_10.16.19_AM.png)
+![Screenshot 2025-01-08 at 10.16.19 AM.png](images/Screenshot_2025-01-08_at_10.16.19_AM.png)
 
 Click on `Input fields` tab and click the `+Add` button. Here you will define the slots that you want to collect from users through the conversation and trigger your Workflow with. After defining the input fields, click the `Submit` button to save your changes.
 
@@ -157,11 +158,11 @@ Click on `Input fields` tab and click the `+Add` button. Here you will defin
 - Next, click on `Publish Workflow to Plugin`
 - First, verify your Plugin **Name** & **Short description** . This is autofilled from the name & description of your compound action.
 
-![Screenshot 2025-01-08 at 10.19.55 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_10.19.55_AM.png)
+![Screenshot 2025-01-08 at 10.19.55 AM.png](images/Screenshot_2025-01-08_at_10.19.55_AM.png)
 
 Next, consider whether to select the `User consent required before execution?` checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice.
 
-![Screenshot 2025-01-08 at 10.21.44 AM.png](Plugin%20to%20create%20account%20in%20salesforce%20174a620edb2580ddbb4af320530265dc/Screenshot_2025-01-08_at_10.21.44_AM.png)
+![Screenshot 2025-01-08 at 10.21.44 AM.png](images/Screenshot_2025-01-08_at_10.21.44_AM.png)
 
 - Click `Next` and set up your positive and negative triggering examples. This ensures that the bot triggers your plugin given a relevant utterance.
     - See our [guide](https://developer.moveworks.com/creator-studio/conversation-design/triggers/natural-language-triggers/#how-to-write-good-triggering-examples) on Triggering
