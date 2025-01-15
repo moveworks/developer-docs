@@ -41,7 +41,7 @@ def extract_code_blocks_from_file(file_path: str):
     mdit = MarkdownIt("commonmark")
     code_blocks = []
 
-    with open(file_path, "r") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         md_content = f.read()
         tokens = mdit.parse(md_content)
 
@@ -89,7 +89,7 @@ def create_code_files_from_blocks(file_path: str, code_blocks: List[dict]):
 
         # check if file already exists
         if os.path.exists(blob_file_path):
-            with open(blob_file_path, "r") as blob_file:
+            with open(blob_file_path, "r", encoding="utf-8") as blob_file:
                 existing_data = blob_file.read()
                 # check if contents are the same, if not update it
                 if existing_data != block["contents"]:
@@ -98,7 +98,7 @@ def create_code_files_from_blocks(file_path: str, code_blocks: List[dict]):
             changes_made = True
 
         # Write file
-        with open(blob_file_path, "w") as blob_file:
+        with open(blob_file_path, "w", encoding="utf-8") as blob_file:
             blob_file.write(block["contents"])
         newly_created_files.add(filename)
 
