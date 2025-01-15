@@ -88,8 +88,9 @@ curl --request GET \
         - In Creator Studio, create a new Action.
             - Navigate to `Plugins` section > `Actions` tab
             - Click on `CREATE` to define a new action
+
             
-            ![getGithubContentProxy (1).png](Look%20up%20JIRA%20Issues%20for%20an%20Epic%209c26fe0785024292801e70c76c0b89ae/getGithubContentProxy_(1).png)
+            ![getGithubContentProxy (1).png](Look%20up%20JIRA%20Issues%20for%20an%20Epic%209c26fe0785024292801e70c76c0b89ae/step%20one.png)
             
         - Click on the `IMPORT CURL` option and paste the following cURL command:
             
@@ -161,7 +162,7 @@ curl --request GET \
 
 - Head over to the **Compound Actions** tab and click **CREATE**
     
-    ![getGithubContentProxy (2).png](Look%20up%20JIRA%20Issues%20for%20an%20Epic%209c26fe0785024292801e70c76c0b89ae/getGithubContentProxy_(2).png)
+    ![getGithubContentProxy (2).png](Look%20up%20JIRA%20Issues%20for%20an%20Epic%209c26fe0785024292801e70c76c0b89ae/step%20two.png)
     
 - Give your Compound Action a **Name** and **Description** , then click `Next` Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
     
