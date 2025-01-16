@@ -163,12 +163,12 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Contact' \
 - **Phone**: The contact’s phone number.
 - **AccountId**: The ID of the account associated with the contact.
 
-![image (1).png](image_(1).png)
+![image.png](image%2014.png)
 
 - We have provided sample input variables for **FirstName**, **LastName**, **Email**, and **AccountId**.
 - Using these input variables, we tested the plugin by making a **POST** request to create a **Contact** in Salesforce.
 
-![image (2).png](image_(2).png)
+![image.png](image%2015.png)
 
 - After that, you can test the plugin by checking the response, which will include the **Contact ID**. If the contact has been successfully created,
 - the response will return a **201** status code, indicating successful creation of the contact, If the output schema is incorrect or missing, click `GENERATE FROM RESPONSE` to update it.
