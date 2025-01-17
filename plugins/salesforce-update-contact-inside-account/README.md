@@ -12,8 +12,6 @@ systems:
 
 ---
 
-# Update contact inside account
-
 # Introduction:
 
 Salesforce is a CRM platform, and the "Update Contact in Salesforce" plugin simplifies modifying existing contacts in your Salesforce account. By integrating this feature with your bot, users can easily update and manage contacts, enhancing efficiency and organization.
@@ -124,16 +122,16 @@ curl --location --request GET 'https://<YOUR_DOMAIN>/services/data/v63.0/query/?
 - **Input Variables**:
         **Name**: The name of the contact (e.g., "John Doe").
 
-![image.png](image%205.png)
+![image.png](image%2012.png)
 
 - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
 - If the output schema does not match the API response or fails to populate automatically, kindly click the `GENERATE FROM RESPONSE` button to refresh and align the schema with the API response.
 
-![image.png](image%206.png)
+![image.png](image%2013.png)
 
 - Add the **API Name** and **API Description** as shown below, then click the `Save` button
 
-![image.png](image%207.png)
+![image.png](image%205.png)
 
 ### **2. Update Contact Inside Salesforce Account**
 
@@ -151,22 +149,22 @@ curl --location --request PATCH 'https://<YOUR_DOMAIN>/services/data/v63.0/sobje
 
 - To update a contact in Salesforce, we send a PATCH request with the following body:
 
-![image.png](image%208.png)
+![image.png](image%2014.png)
 
 - **Phone**: The contact’s phone number.
 - **Email**: The contact’s email address.
 - Please ensure that these fields are not required to update the contact
 
-![image.png](image%209.png)
+![image.png](image%2015.png)
 
 - We have provided sample input variables for Email and Phone. Using these input variables, we tested the plugin by making a PATCH request to update a Contact in Salesforce
 
-![image.png](image%2010.png)
+![image.png](image%2016.png)
 
 - After that, you can test the plugin by checking the response, which will include the Contact ID. If the contact has been successfully updated,
 - the response will return a 204 status code, indicating successful update of the contact. If the output schema is incorrect or missing, click "GENERATE FROM RESPONSE" to update it
 
-![image.png](image%2011.png)
+![image.png](image%206.png)
 
 - Add the **API Name** and **API Description** as shown below, then click the `Save` button
 
@@ -174,11 +172,11 @@ curl --location --request PATCH 'https://<YOUR_DOMAIN>/services/data/v63.0/sobje
 
 - Head over to the **Compound Actions** tab and click **CREATE**
 
-![image.png](image%2012.png)
+![image.png](image%207.png)
 
 - Give your Compound Action a **Name** and **Description** , then click `Next` Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
 
-![image.png](image%2013.png)
+![image.png](image%208.png)
 
 - Click on the `Script editor` tab. Here you will be able to build your compound action using the YAML syntax.
 - At a high-level, this syntax provides actions (HTTP Request, APIthon Scripts) and workflow logic (switch statements, for each loops, return statements, parallel, try/catch). See the [Compound Action Syntax](https://developer.moveworks.com/creator-studio/reference/compound_actions_syntax/) Reference for more info.
@@ -214,7 +212,7 @@ steps:
 
 - Click on `Input fields` tab and click the `+Add` button. Here you will define the slots that you want to collect from users through the conversation and trigger your Workflow with. After defining the input fields, click the `Submit` button to save your changes.
 
-![image.png](image%2014.png)
+![image.png](image%209.png)
 
 ## **Step 3: Publish Workflow to Plugin**
 
@@ -222,11 +220,11 @@ steps:
 - Next, click on `Publish Workflow to Plugin`
 - First, verify your Plugin **Name** & **Short description** . This is autofilled from the name & description of your compound action.
 
-![image.png](image%2015.png)
+![image.png](image%2010.png)
 
 - Next, consider whether to select the `User consent required before execution?` checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice.
 
-![image.png](image%2016.png)
+![image.png](image%2011.png)
 
 - Click `Next` and set up your positive and negative triggering examples. This ensures that the bot triggers your plugin given a relevant utterance.
     - See our [guide](https://developer.moveworks.com/creator-studio/conversation-design/triggers/natural-language-triggers/#how-to-write-good-triggering-examples) on Triggering
