@@ -214,9 +214,10 @@ curl --location 'https://<DOMAIN>.workday.com/ccx/api/absenceManagement/v1/<INST
 ```
 
 
-## Step 3: Build in Creator Studio - Agentic Automation Engine
+## Step 2: Build in Creator Studio - Agentic Automation Engine
 
 Here, we will have to build 2 plugins using the Plugins workspace in Creator Studio to enable the following user journey:
+
 ![architecture](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/architecture.png)
 
 The 2 separate plugins are required here since we are trying to provide a list of options to the user and we will need to take the selected options as the input for the next plugin.
@@ -451,7 +452,7 @@ The 2 separate plugins are required here since we are trying to provide a list o
 
     ![plugin 2](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/plugin%202.png)
 
-## **Step 4: See it in action!**
+## **Step 3: See it in action!**
 
 - After both of the plugins are submitted, your use case will be published to the bot and triggerable based on your **Launch Rules.**
 - You should wait up to **5 minutes** after making changes before trying to test in your bot!
