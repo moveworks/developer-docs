@@ -22,7 +22,7 @@ Retrieving official department information can be a cause of headache for employ
 
 By integrating ServiceNow’s financial management features with Moveworks, your employees can conveniently access and manage crucial financial information without unnecessary hurdles.
 
-This guide provides a step-by-step process to set up the “Look Up Cost Centre ID by its Name” feature on your bot using Creator Studio. With this functionality, Copilot users can easily find key details about cost centers such as their IDs.
+This guide provides a step-by-step process to set up the “Look Up Cost Center ID by its Name” feature on your bot using Creator Studio. With this functionality, Copilot users can easily find key details about cost centers such as their IDs.
 
 # Prerequisites
 
