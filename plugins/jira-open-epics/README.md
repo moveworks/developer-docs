@@ -46,8 +46,8 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
         - Query the specified project to fetch its unique project key or ID.
     2. **Fetch Assigned Epics Information**:
         - Use the retrieved project key or ID to fetch assigned epic details. Utilize JQL (Jira Query Language) to filter results and specify required fields, such as summary, assignee, status etc.
-    3. Guidelines:
-        1. None
+- **Guidelines**:
+  1. None
     
     # **API Research**
     
