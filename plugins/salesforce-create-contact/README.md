@@ -61,10 +61,6 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/query/?q=SELECT+Id+FR
 --header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
-- Import this request into Postman, replace the credentials, and execute it. You should receive the account ID based on the account name
-
-![image.png](image%201.png)
-
 ## **API #2: Create Contact in Salesforce**
 
 The [**Create Contact in Salesforce**](https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc_rest_contacts/createContacts.html) API allows you to create a new **Contact** record in Salesforce. Using the provided **First Name**, **Last Name**, **Email**, and **Account ID**, this API adds a new contact to the specified account in Salesforce. If an **Account ID** is not provided, the contact can still be created without being linked to an account.
@@ -86,10 +82,6 @@ curl --location 'https://<YOUR_DOMAIN>.my.salesforce.com/services/data/v62.0/sob
 }'
 ```
 
-- Import this request into Postman, replace the credentials, and execute it. You will receive a contact ID once the contact is created with the provided fields
-
-![image.png](image%202.png)
-
 - **<YOUR_DOMAIN>**: Your Salesforce instance domain (e.g., `yourcompany.my.salesforce.com`).
 - **<FIRST_NAME>**, **<LAST_NAME>**, **<EMAIL>**, <PHONE>,**<ACCOUNT_ID>**: The contact's information and the associated account ID.
 
@@ -106,7 +98,7 @@ Define your HTTP Actions for fetching the **Account ID** from Salesforce based o
 - Navigate to **Plugins** section > **Actions** tab.
 - Click on **CREATE** to define a new action.
 
-![image.png](image%203.png)
+![image.png](image%201.png)
 
 - Click on the `IMPORT CURL` option and paste the following cURL command:
 
@@ -116,27 +108,25 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/query/?q=SELECT+Id+FR
 
 - Click on `Use Existing Connector` > select the [Salesforce](https://developer.moveworks.com/creator-studio/resources/connector/?id=salesforce) [](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira)[**connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=salesforce) that you just created > Click on `Apply`. This will populate the Base URL and the Authorization section of the API Editor.
 - **Query Parameters for Salesforce Account Query**
-
-       **Key ( q ):  Value** (`SELECT Id FROM Account WHERE Name = '{{Account_name}}'` )
-
+- **Key ( q ):  Value** (`SELECT Id FROM Account WHERE Name = '{{Account_name}}'` )
 - This query filters out the account associated with a contact based on the account name and retrieves only the Id field for the account, ensuring that the response contains only the essential information and limits unnecessary data retrieval.
 
-![image.png](image%204.png)
+![image.png](image%202.png)
 
 - **Input Variables** :
 
              Account_name : Example Value (arbaan GT).
 
-![image.png](image%205.png)
+![image.png](image%203.png)
 
 - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
 - If the output schema does not match the API response or fails to populate automatically, kindly click the `GENERATE FROM RESPONSE` button to refresh and align the schema with the API response.
 
-![image.png](image%206.png)
+![image.png](image%204.png)
 
 - Add the **API Name** and **API Description** as shown below, then click the `Save` button
 
-![image.png](image%207.png)
+![image.png](image%205.png)
 
 ### **2. Create contact inside Salesforce Account**
 
@@ -157,7 +147,7 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Contact' \
 
 - To create a **Contact** in Salesforce, we send a **POST** request with the following body:
 
-![image.png](image%208.png)
+![image.png](image%206.png)
 
 - **FirstName**: The contact's first name.
 - **LastName**: The contact's last name.
@@ -165,17 +155,17 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Contact' \
 - **Phone**: The contact’s phone number.
 - **AccountId**: The ID of the account associated with the contact.
 
-![image.png](image%2014.png)
+![image.png](image%2012.png)
 
 - We have provided sample input variables for **FirstName**, **LastName**, **Email**, and **AccountId**.
 - Using these input variables, we tested the plugin by making a **POST** request to create a **Contact** in Salesforce.
 
-![image.png](image%2015.png)
+![image.png](image%2013.png)
 
 - After that, you can test the plugin by checking the response, which will include the **Contact ID**. If the contact has been successfully created,
 - the response will return a **201** status code, indicating successful creation of the contact, If the output schema is incorrect or missing, click `GENERATE FROM RESPONSE` to update it.
 
-![image.png](image%209.png)
+![image.png](image%207.png)
 
 - Add the **API Name** and **API Description** as shown below, then click the `Save` button
 
@@ -183,7 +173,7 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Contact' \
 
 - Head over to the **Compound Actions** tab and click **CREATE**
 
-![image.png](image%2010.png)
+![image.png](image%208.png)
 
 - Give your Compound Action a **Name** and **Description** , then click `Next` Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
 
@@ -219,7 +209,7 @@ steps:
 
 - Click on `Input fields` tab and click the `+Add` button. Here you will define the slots that you want to collect from users through the conversation and trigger your Workflow with. After defining the input fields, click the `Submit` button to save your changes.
 
-![image.png](image%2011.png)
+![image.png](image%209.png)
 
 ## **Step 3: Publish Workflow to Plugin**
 
@@ -229,11 +219,11 @@ steps:
     
     
 
-![image.png](image%2012.png)
+![image.png](image%2010.png)
 
 - Next, consider whether to select the `User consent required before execution?` checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice.
 
-![image.png](image%2013.png)
+![image.png](image%2011.png)
 
 - Click `Next` and set up your positive and negative triggering examples. This ensures that the bot triggers your plugin given a relevant utterance.
 - See our [guide](https://developer.moveworks.com/creator-studio/conversation-design/triggers/natural-language-triggers/#how-to-write-good-triggering-examples) on Triggering
