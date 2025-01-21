@@ -1,5 +1,5 @@
-curl --location 'https://{{domain}}.workday.com/ccx/oauth2/{{instance}}/token' \
+curl --location --request POST 'https://<DOMAIN>.workday.com/ccx/oauth2/<INSTANCE>/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---user '{{client_id}}:{{client_secret}}' \
+--user '<CLIENT_ID>:<CLIENT_SECRET>' \
 --data-urlencode 'grant_type=refresh_token' \
---data-urlencode 'refresh_token={{refresh_token}}'
+--data-urlencode 'refresh_token=<REFRESH_TOKEN>'
