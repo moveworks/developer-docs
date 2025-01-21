@@ -1,6 +1,5 @@
 ---
 accreditations:
-- sarthaksrinivas
 - DEFAULT
 description: A plugin that books time off in Workday.
 design_pattern_id: 2
@@ -28,13 +27,11 @@ Let's dive in!
 
 **Prerequisites**:
 
-1. [Use Moveworks Setup](https://help.moveworks.com/docs/ingest-users) to synchronize your employees’ work email from your IDAM, such as Okta or Microsoft Entra, to Moveworks. 
+1. Validate that your Workday instance uses the same work email as your IDAM.
 
-2. Validate that your Workday instance uses the same work email as your IDAM.
+2. Ensure that your Workday administrator has the necessary permissions to configure an API Client for Workday and provide access to Business Objects like **Worker Data** and **Time Off**  as part of domain security policies.
 
-3. Ensure that your Workday administrator has the necessary permissions to configure an API Client for Workday and provide access to the **Worker Data** and **Time Off** Business Objects as part of domain security policies.
-
-4. Ensure the [required features](https://developer.moveworks.com/creator-studio/administration/experimental-features/) are enabled in your Creator Studio instance
+3. Follow the [Workday Connector guide](https://developer.moveworks.com/creator-studio/resources/connector?id=workday) to set up your Creator Studio Connector.
 
 
 # Conversation design
@@ -58,9 +55,9 @@ Let's dive in!
 
 ## Assumptions and caveats
 
-1. The underlying Workday API will reject time off requests for plans with inadequate balances.
+1. The underlying Workday API will reject time off requests for plans where validations set in your Workday instances are not met. For example, if you have plans with inadequate balances or you're trying to submit a time off request on a holiday, the API would fail and the Bot would respond accordingly.
 
-2. The `{{user.email_addr}}` attribute scopes the time off request to the employee making the request.
+2. The `meta_info.user` attribute scopes the time off request to the employee making the request.
     * If you want to request time off on behalf of another employee, you can change this attribute to a slot that collects that employee's name and email address.
 
 3. This guide does not notify employees when their time off request is approved through the bot.
@@ -72,9 +69,8 @@ Let's dive in!
 
 We will be accessing Workday through:
 
-* The read-only WQL API.
-* The read + write AbsenceManagement REST API.
-* Using your middleware connector in Creator Studio.
+* The read-only [Common API](https://community.workday.com/sites/default/files/file-hosting/restapi/#common/v1/get-/workers).
+* The read + write [AbsenceManagement REST API](https://community.workday.com/sites/default/files/file-hosting/restapi/#absenceManagement/v1/workers).
 
 This requires you to:
 
@@ -83,440 +79,388 @@ This requires you to:
     * An Integration System User (ISU)
     * An Integration System Security Group (ISSG)
     * Relevant [domain security policies listed below](#domain-permissions-required) as part of your Integrations Security Systems Group (ISSG)
+    * A User-Based Security Group
+    * Relevant Business Processes adjusted to your User-Based Security Group
 
-2. Install the Custom Report below in Workday
+2. Set up relevant Business Processes
 
-    Use the custom report definitions below to install the columns and prompt defaults for your custom report. This report sets up the calculated fields for the time off request and time off balance required for the plugin to work.
-
-    [Worker Details Moveworks Columns.xlsx](https://developer.moveworks.com/file-hosting/workday/Worker_Details_Moveworks_Columns.xlsx)
-
-    [Worker Details Moveworks Prompt.xlsx](https://developer.moveworks.com/file-hosting/workday/Worker_Details_Moveworks_Prompt.xlsx)
+    * [Create a new User-Based Security Group](https://help.moveworks.com/docs/workday-access-requirements#set-up-a-user-based-security-group) by following the steps and assign your ISU to the group.
+    * Use the `Edit Business Process Security Policy` task and select one of the [business processes listed below](#business-processes-to-edit).
+        ![edit business process](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/edit%20business%20process.png)
+    * Find the corresponding Initiating Action for the selected business process and add the User-Based Security Group you just created for this action.
+        ![add group to business process](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/add%20group%20to%20business%20process.png)
+    * Make sure to add the Security Group to all of the Business Process Types mentioned below.
+    * Activate your security policy changes using the `Activate Pending Security Policy Changes` task
+        ![activate policy](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/activate%20policy.png)
 
 3. Share your Workday API credentials with your Moveworks developer team.
 
 ## Domain permissions required
 
-| Workday Web Service | Domain Permissions Required | Description |
-| --- | --- | --- |
-| Worker Data Query (WQL) | Get_References, Get_Workers, Get_Eligible_Time_Off_Plans, Get_Time_Off_Balance, Get_Positions | Permissions needed to retrieve worker information, including contact details, position, and time off balances. |
-| Time Off Request (REST) | Put_Time_Off_Request, Get_Workers, Get_Positions | Permissions needed to submit time off requests and retrieve worker and position information. |
+| Operation       | Domain Security Policy                             | Functional Areas    |
+| --------------- | -------------------------------------------------- | ------------------- |
+| Get Only        | Worker Data: Workers                               | Staffing            |
+| View and Modify | Worker Data: Time Off (Time Off)                   | Time Off and Leave  |
+| View Only       | Worker Data: Time Off (Time Off Balances)          | Time Off and Leave  |
+| Get and Put     | Worker Data: Time Off (Time Off)                   | Time Off and Leave  |
+| Get Only        | Worker Data: Time Off (Time Off Balances)          | Time Off and Leave  |
+| View Only       | Worker Data: Leave of Absence                      | Time Off and Leave  |
+| Get Only        | Worker Data: Leave of Absence                      | Time Off and Leave  |
+| View Only       | Worker Data: Public Worker Reports                 | Staffing            |
+| Get Only        | Worker Data: Public Worker Reports                 | Staffing            |
+| View and Modify | Business Process Reporting                         | System              |
+| Get and Put     | Business Process Reporting                         | System              |
+| View Only       | Indexed Data Source: Workers                       | Staffing            |
+| View Only       | Worker Data: Staffing                              | Staffing            |
+| Get Only        | Indexed Data Source: Workers                       | Staffing            |
+| View Only       | Worker Data: Current Staffing Information          | Staffing            |
+| Get Only        | Worker Data: Current Staffing Information          | Staffing            |
+| View Only       | Person Data: Public Work Email Address Integration | Contact Information |
+| Get Only        | Person Data: Public Work Email Address Integration | Contact Information |
+| View Only       | Person Data: Work Contact Information              | Contact Information |
+| Get Only        | Person Data: Work Contact Information              | Contact Information |
 
-![Domain%20Permissions](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-07-12%20at%2012.49.29 PM.png)
+![Domain%20Permissions](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/domain%20perms.png)
+
+## Business Processes to Edit
+
+| Business Process Type | Initiating Action | Description |
+| --- | --- | --- |
+| Request Time Off | Request Time Off (REST Service) | Request time off for a worker using the public REST Service |
+| Request Leave of Absence | Request Leave of Absence (REST Service) | Request leave of absence for a worker using the public REST Service |
 
 **Inform your Creator Studio developer that they can now use your Workday credentials to build their connector and plugin**.
 
 
 # For Creator Studio developers
 
-## Step 1: Validate you have built a Creator Studio connector for your middleware / APIM tool
 
-A connector to your [middleware tool](https://developer.moveworks.com/creator-studio/program-management/automation-tools/) is required before you can build a Creator Studio plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
+## Step 1: Test required APIs
 
-## Step 2: Test required APIs with Postman
-
-Copy the cURL commands below into your API client, like Postman, for testing. Substitute any `{{placeholder text}}` with relevant Workday API credentials or inputs.
+Copy the cURL commands below into your API client, like Postman or the Creator Studio Actions page, for testing. Substitute any `{{placeholder text}}` with relevant Workday API credentials or inputs.
 
 We will use the following inputs for each API call below. You should to change these values based on your Workday instance and user you are testing with.
-
-* User email: `test@workday.net`
 
 **API 1: Authentication**
 
 Use the API below to generate a new access token for Workday. This access token is required for all subsequent API calls.
 
 ```bash
-curl --location 'https://{{domain}}.workday.com/ccx/oauth2/{{instance}}/token' \
+curl --location --request POST 'https://<DOMAIN>.workday.com/ccx/oauth2/<INSTANCE>/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---user '{{client_id}}:{{client_secret}}' \
+--user '<CLIENT_ID>:<CLIENT_SECRET>' \
 --data-urlencode 'grant_type=refresh_token' \
---data-urlencode 'refresh_token={{refresh_token}}'
+--data-urlencode 'refresh_token=<REFRESH_TOKEN>'
 ```
 
-![Screenshot 2024-07-04 at 8.00.56 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.00.56_PM.png)
+**API 2: Get worker ID for an employee given their name**
 
-**API 2: Get time off plan details from Workday**
+Use the API below to search for your user and their worker ID given their first name.
+
+```bash
+curl --location 'https://<DOMAIN>.workday.com/ccx/api/v1/<INSTANCE>/workers?search={{first_name}}' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>'
+```
+
+**API 3: Get eligible time off plan details for a specific worker ID**
 
 Use the API below to get relevant time off plan details for an employee in Workday. 
 
 ```bash
-curl --location 'https://{{domain}}.workday.com/ccx/api/wql/v1/{{instance}}/data?limit=10&offset=0' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer {{access_token}}' \
---data-raw '
-    {
-        "query": "SELECT workdayID, fullName, email_PrimaryWorkOrPrimaryHome, position, eligibleAndVisibleTimeOffPlansForWorkerAsOfDate, allEligibleTimeOffsForWorker FROM workerFromEmailAddress (emailAddress = 'test@workday.net')"
-    }
-'
+curl --location 'https://<DOMAIN>.workday.com/ccx/api/absenceManagement/v1/<INSTANCE>/workers/{{worker_id}}/eligibleAbsenceTypes' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
-![Screenshot 2024-07-04 at 8.07.14 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.07.14_PM.png)
-
-**API 3: Request time off in Workday**
+**API 4: Request time off in Workday**
 
 Use the API below to submit the time off request for a user in Workday. You must pass the following details from API 2 as part of the request:
 
-1. The date(s) you are requesting time off for, as a JSON array, where each date follows the `YYYY-MM-DD` format.
-2. The `timeOffType_id` from API 2:which is the ID within the `allEligibleTimeOffsForWorker` field
-2. The `position_id` from API 2
-4. The `workdayId` from API 2
+1. `selected_date_n` - The date(s) you are requesting time off for, as a JSON array, where each date follows the `YYYY-MM-DD` format.
+2. `timeOffType_id` - The `id` from API 2 which is the primary ID for each time off types inside the `data` attribute
+3. The `dailyDefaultQuantity` from API 2 corresponding to each time off type.
 
 ```bash
-curl --location 'https://{{domain}}.workday.com/ccx/api/absenceManagement/v1/{{instance}}/workers/{{worker_id}}/requestTimeOff' \
+curl --location 'https://<DOMAIN>.workday.com/ccx/api/absenceManagement/v1/<INSTANCE>/workers/{{worker_id}}/requestTimeOff' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer {{access_token}}' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
   "days": [
     {
       "date": "{{selected_date_1}}",
-      "dailyQuantity": 8,
+      "dailyQuantity": {{dailyDefaultQuantity}},
       "comment": "User is taking time off through API",
       "timeOffType": {
         "id": "{{timeOffType_id}}"
-      },
-      "position": {
-            "id": "{{position_id}}"
-        }
+      }
     },
     {
       "date": "{{selected_date_2}}",
-      "dailyQuantity": 8,
+      "dailyQuantity": {{dailyDefaultQuantity}},
       "comment": "User is taking time off through API",
       "timeOffType": {
         "id": "{{timeOffType_id}}"
-      },
-      "position": {
-            "id": "{{position_id}}"
-        }
+      }
     },
     {
       "date": "{{selected_date_3}}",
-      "dailyQuantity": 8,
+      "dailyQuantity": {{dailyDefaultQuantity}},
       "comment": "User is taking time off through API",
       "timeOffType": {
         "id": "{{timeOffType_id}}"
-      },
-      "position": {
-            "id": "{{position_id}}"
-        }
+      }
     }
   ]
 }'
 ```
 
-![Screenshot 2024-07-04 at 8.19.38 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot_2024-07-04_at_8.19.38_PM.png)
-
-## Step 3: Write your orchestration code in your middleware
-
-Here is an example of the code you can use to orchestrate the API calls to submit time off requests in Workday. It is deployed as a Python FastAPI application on a server on Azure Virtual Network. You can modify this code to work with your middleware.
-
-**Example middleware code (with Python and FastAPI)**
-
-```python
-import os
-from datetime import date, timedelta
-from typing import List, Optional, Dict
-import base64
-import httpx
-from fastapi import FastAPI, HTTPException
-from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field
-from dotenv import load_dotenv
-
-load_dotenv()
-
-app = FastAPI()
-
-
-class Config:
-    CLIENT_ID = os.getenv("CLIENT_ID")
-    CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-    REFRESH_TOKEN = os.getenv("REFRESH_TOKEN")
-    INSTANCE = os.getenv("INSTANCE")
-    ORG = os.getenv("ORG")
-    AUTH_URL = f"https://{INSTANCE}.workday.com/ccx/oauth2/{ORG}/token"
-    WORKER_DETAILS_URL = (
-        f"https://{INSTANCE}.workday.com/ccx/api/wql/v1/{ORG}/data"
-    )
-    PTO_REQUEST_URL_TEMPLATE = "https://wd2-impl-services1.workday.com/ccx/api/absenceManagement/v1/{workday_instance_id}/workers/{worker_id}/requestTimeOff"
-
-    @property
-    def basic_auth_header(self) -> str:
-        credentials = f"{self.CLIENT_ID}:{self.CLIENT_SECRET}"
-        b64_credentials = base64.b64encode(credentials.encode("utf-8")).decode(
-            "utf-8"
-        )
-        return f"Basic {b64_credentials}"
-
-
-config = Config()
-
-
-class WorkerDetail(BaseModel):
-    workday_id: str
-    full_name: str
-    email: str
-    position_descriptor: str
-    position_id: str
-    time_off_descriptor: str
-    time_off_id: str
-
-
-class FlattenedWorkerResponse(BaseModel):
-    total: int
-    data: List[WorkerDetail]
-
-
-class TimeOffRequest(BaseModel):
-    start_date: date
-    time_off_type_id: str
-    end_date: Optional[date] = None
-    comment: Optional[str] = None
-
-    def __post_init__(self):
-        if self.end_date is None:
-            self.end_date = self.start_date
-
-
-async def get_access_token() -> str:
-    async with httpx.AsyncClient() as client:
-        response = await client.post(
-            config.AUTH_URL,
-            headers={
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": config.basic_auth_header,
-            },
-            data=f"grant_type=refresh_token&refresh_token={config.REFRESH_TOKEN}",
-        )
-        response.raise_for_status()
-        return response.json()["access_token"]
-
-
-def create_worker_query(email: str) -> str:
-    return f"""
-        SELECT workdayID, fullName, email_PrimaryWork, position, allEligibleTimeOffsForWorker
-        FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = false, isActive = false)
-        WHERE email_PrimaryWork = '{email}'
-    """
-
-
-async def fetch_worker_details(email: str, access_token: str) -> List[Dict]:
-    async with httpx.AsyncClient() as client:
-        response = await client.post(
-            config.WORKER_DETAILS_URL,
-            headers={
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {access_token}",
-            },
-            json={"query": create_worker_query(email)},
-        )
-        response.raise_for_status()
-        return response.json()["data"]
-
-
-def flatten_worker_details_json(raw_data: List[Dict]) -> List[WorkerDetail]:
-    return [
-        WorkerDetail(
-            workday_id=worker["workdayID"],
-            full_name=worker["fullName"],
-            email=worker["email_PrimaryWork"],
-            position_descriptor=worker["position"]["descriptor"],
-            position_id=worker["position"]["id"],
-            time_off_descriptor=time_off["descriptor"],
-            time_off_id=time_off["id"],
-        )
-        for worker in raw_data
-        for time_off in worker.get("allEligibleTimeOffsForWorker", [])
-    ]
-
-
-def create_time_off_days(
-    request: TimeOffRequest, position_id: str, position_descriptor: str
-) -> List[Dict]:
-    return [
-        {
-            "date": current_date.isoformat(),
-            "dailyQuantity": 8,
-            "timeOffType": {"id": request.time_off_type_id},
-            "position": {"id": position_id, "descriptor": position_descriptor},
-            "comment": request.comment
-            or "Time off request submitted by Moveworks 🤖",
-        }
-        for current_date in (
-            request.start_date + timedelta(n)
-            for n in range((request.end_date - request.start_date).days + 1)
-        )
-    ]
-
-
-async def submit_time_off_request(
-    worker_id: str, days: List[Dict], access_token: str
-) -> Dict:
-    async with httpx.AsyncClient() as client:
-        response = await client.post(
-            config.PTO_REQUEST_URL_TEMPLATE.format(worker_id=worker_id),
-            headers={"Authorization": f"Bearer {access_token}"},
-            json={"days": days},
-        )
-        response.raise_for_status()
-        return response.json()
-
-
-@app.get("/auth")
-async def auth_endpoint():
-    try:
-        access_token = await get_access_token()
-        return {"access_token": access_token}
-    except httpx.HTTPError as e:
-        raise HTTPException(
-            status_code=500, detail=f"Authentication failed"
-        ) from e
-
-
-@app.get("/workers/{email}/time-off", response_model=FlattenedWorkerResponse)
-async def get_worker_details_endpoint(email: str):
-    try:
-        access_token = await get_access_token()
-        raw_data = await fetch_worker_details(email, access_token)
-        processed_data = flatten_worker_details_json(raw_data)
-        return FlattenedWorkerResponse(total=len(processed_data), data=processed_data)
-    except httpx.HTTPError as e:
-        raise HTTPException(
-            status_code=500, detail="Failed to fetch worker details"
-        ) from e
-
-
-@app.post("/workers/{email}/time-off")
-async def create_time_off_request_endpoint(
-    email: str, request: TimeOffRequest
-):
-    try:
-        access_token = await get_access_token()
-        worker_data = await fetch_worker_details(email, access_token)
-        if not worker_data:
-            raise HTTPException(status_code=404, detail="Worker not found")
-
-        worker = worker_data[0]
-        days = create_time_off_days(
-            request, worker["position"]["id"], worker["position"]["descriptor"]
-        )
-        response = await submit_time_off_request(
-            worker["workdayID"], days, access_token
-        )
-        return JSONResponse(content=response, status_code=201)
-    except httpx.HTTPError as e:
-        raise HTTPException(
-            status_code=500, detail="Failed to create time off request"
-        ) from e
-```
-
-## Step 4: Review plugin architecture
-
-We will build this plugin as a Query Resolver (fka Query-Triggered Path) along with an iPaaS to chain APIs 1, 2, and 3 (described below) together to submit a user's time off request.
-
-**Triggers**
-
-1. Natural language input to copilot requesting to take time off
-
-**Natural language slots**
-
-1. Start date: when time off starts. It is configured as a Date Slot.
-2. End date *(optional)*: when time off ends. If the user does not specify an end date, the end date is the same as the start date . It is configured as a Date Slot.
-3. Comments *(optional)*: Any relevant context / justification for taking time off. It is configured as a Free Text Slot.
-
-**Actions**
-
-1. Lookup time off type details: Executes the `/api/wql/v1/{{instance}}/data` API to query the requesting employee's Workday ID, eligible time off plans, and relevant time off types through their work email address.
-2. Request time off: Executes the `/api/absenceManagement/v1/{{instance}}/workers/{{worker_id}}/requestTimeOff` API to request time off
-
-
-## Step 5: Build your plugin in Creator Studio
-
-1. Create a Query in Creator Studio. You can copy the plugin details below
-    * Plugin Name: `🏝️ Request Time Off in Workday` 
-    * Plugin Description: `Allow employees to submit time off requests in Workday`
-
-    ![Name and Description](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-1.png)
-
-2. On the API Connection Screen, Click "Import CURL" to import a cURL command of the `GET /workers/{email}/time-off` API from your middleware tool. You can configure additional authorization headers as per your organization's security policies.
-
-    ```bash
-    curl --location 'https//{{base_url}}/workers/{{user.email_addr}}/time-off' \
-    --header 'Content-Type: application/json'
-    ```
-
-    ![API Connection](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-2.png)
-
-
-3. Test your `GET /workers/{email}/time-off` API to make sure it returns your employee's time off details as expected. You can configure the API for one employee only for testing purposes (like `user@workday.net` in the example below), and replace it with the requester's email address before launching to production (with `{{user.email_addr}}`).
-
-    ![Test API](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-3.png)
-
-4. Save your connector after testing your API.
-
-5. Label your APIs with fields that you want to extract from the response. Set your identifier and description as your Time Off Type and Name. Click Next.
-
-    ![Label APIs](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-4.png)
-
-6. Add a follow-up action to book time off with API 3.
-
-    * Type: `Ask clarifying questions and execute a solution`
-    * Name: `Book Time Off`
-
-    ![Add follow-up action](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-5.png)
-
-7. Configure slots from the query response to ensure you pass the time off type id from the query to the API action. You can view and add slots from the "🔑 View Slots" button in the "Design Conversation" step.
-
-    ![Configure Slots](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-6.png)
-
-8. Inside the "Design Conversation" step, ask what is the starting date for your employee's time off request.
-    * Configure this as a Date Slot inside Creator Studio
-
-    ![Select Date](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-7.png)
-
-9. Ask if your employee wants to specify an end date and additional comments for their time off request.
-    *  If your employee selects no, they will only take time off for a single business day (8 hours). This is configurable in your iPaaS.
-
-    ![Select Other Options](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-8.png)
-
-10. If your employee selects no, configure an API action to submit your time off request. If you use the iPaaS code above, configure your API action as follows:
-    * Connector: Use your iPaaS connector here
-    * API Endpoint Path: `/workers/{{user.email_addr}}/time-off`
-    * Method: `POST`
-    * Headers: `Content-Type` : `application/json`
-    * Query Params: Leave Blank
-    * Request Body: Use the below JSON to configure your API action. The time off type ID can be found from **API 2** by specifying an employee's email.
-    ```json
-    {
-        "start_date": "{{start_date}}",
-        "time_off_type_id": "abc1234"
-    }
-    ```
-
-    ![Submit Time Off](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-9.png)
-
-11. If your employee selects yes, ask for the end date and additional comments for their time off request.
-    * End Date: this is configured as a Date slot
-    * Comments: this is configured as a Free Text input
-
-    ![Select Other Options](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-10.png)
-
-12. Configure an API action to submit your time off request if your employee selects yes.
-    * If you use the iPaaS code below, configure your API action as follows:
-    * Connector: Use your iPaaS connector here
-    * API Endpoint Path: `/workers/{{user.email_addr}}/time-off`
-    * Method: `POST`
-    * Headers: `Content-Type` : `application/json`
-    * Query Params: Leave Blank
-    * Request Body: Use the below JSON to configure your API action. The time off type id can be found from the **API 2** response with an employee's email.
-    ```json
-    {
-        "start_date": "{{start_date}}",
-        "time_off_type_id": "{{time_off_type_id}}",
-        "end_date": "{{end_date}}",
-        "comment": "{{comments}}"
-    }
-    ```
-    ![API Action](./Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/crest-11.png)
+
+## Step 2: Build in Creator Studio - Agentic Automation Engine
+
+Here, we will have to build 2 plugins using the Plugins workspace in Creator Studio to enable the following user journey:
+
+![architecture](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/architecture.png)
+
+The 2 separate plugins are required here since we are trying to provide a list of options to the user and we will need to take the selected options as the input for the next plugin.
+
+### Creator Studio Components
+
+- **Triggers**:
+    1. Natural Language
+- **Slots**:
+    1. Time Off Date(s).
+    2. Time Off Type.
+    3. Comments (Optional).
+- **Actions**:
+    1. **Get worker details**:
+        - Query the worker API to fetch an employees unique ID.
+    2. **Retreive eligible Time Off types**:
+        - Use the retrieved worker ID to fetch the eligible time off types for the employee.
+    3. **Create Time Off Request**:
+        - Use the slots and retreived details to submit a Time Off request for the employee.
+- **Guidelines**:
+    1. Plugin 2: Submit Time Off Request
+        - Add a guideline to ensure that this plugin executes only when Plugin 1:Get Eligible Time Off Plans has executed and always ask the user for dates instead of making any assumptions.
+
+### 1. Build HTTP Actions
+
+- Define your HTTP Actions for submitting a time off request :
+    1. **Get worker details**
+        - In Creator Studio, create a new Action.
+            - Navigate to `Plugins` section > `Actions` tab
+            - Click on `CREATE` to define a new action
+
+            ![Screenshot 2024-12-19 at 3.59.19 PM.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/Screenshot%202024-12-19%20at%203.59.19 PM.png)
+
+        - Click on the `IMPORT CURL` option and paste the following cURL command:
+            ```bash
+            curl --location 'https://<DOMAIN>.workday.com/ccx/api/v1/<INSTANCE>/workers?search={{first_name}}' \
+            --header 'Authorization: Bearer <ACCESS_TOKEN>'
+            ```
+        - Click on `Use Existing Connector` > select the [**Workday** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) that you just created > Click on `Apply`. This will populate the Base URL and the Authorization section of the API Editor.
+        - **Input Variables** :
+            - **first_name** : Example Value ( **John** ).
+            
+                ![action 1](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/action%201.png)
+            
+        - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right. If the output schema does not match the API response or fails to populate automatically, kindly click the `GENERATE FROM RESPONSE` button to refresh and align the schema with the API response.
+        
+            ![action 1 result](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/action%201%20result.png)
+        
+        - Add the **API Name** and **API Description** accordingly and `Save` the action.
+        
+    2. **Retreive eligible Time Off types**
+        - Repeat the steps above to create another action.
+        - Click on the `IMPORT CURL` option and paste the following cURL command:
+
+            ```bash
+            curl --location 'https://<DOMAIN>.workday.com/ccx/api/absenceManagement/v1/<INSTANCE>/workers/{{worker_id}}/eligibleAbsenceTypes' \
+            --header 'Authorization: Bearer <ACCESS_TOKEN>'
+            ```
+
+        - Use the existing connector by following the steps outlined in the previous point to populate the Base URL and Authorization section.
+        - **Input Variables** :
+            - **worker_id** : Example Value ( **01756f8736e1** )
+            
+                ![action 2](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/action%202.png)
+            
+        - Test the Connector setup as described earlier to verify the response. If the output schema is incorrect or missing, click `GENERATE FROM RESPONSE` to update it.
+        
+            ![action 2 result](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/action%202%20result.png)
+        
+        - Add the **API Name** and **API Description** accordingly and `Save` the action.
+
+    3. **Create Time Off Request**
+        - Repeat the steps above to create another action.
+        - Click on the `IMPORT CURL` option and paste the following cURL command:
+
+            ```bash
+            curl --location 'https://<DOMAIN>.workday.com/ccx/api/absenceManagement/v1/<INSTANCE>/workers/{{worker_id}}/requestTimeOff' \
+            --header 'Content-Type: application/json' \
+            --header 'Authorization: Bearer <ACCESS_TOKEN>' \
+            --data '{{{time_off_details}}}'
+            ```
+
+        - Use the existing connector by following the steps outlined in the previous point to populate the Base URL and Authorization section.
+        - **Input Variables** :
+            - **worker_id** : Example Value ( **01756f8736e1** )
+            - **time_off_details** : Example Value ( `{   "days": [     {       "date": "2025-02-28T17:00:00.000Z",       "dailyQuantity": "8",       "timeOffType": {         "id": "4da2ece1ad9d100161c0ac66d1b20000"       }     },     {       "date": "2025-03-01T17:00:00.000Z",       "dailyQuantity": "8",       "timeOffType": {         "id": "4da2ece1ad9d100161c0ac66d1b20000"       }     },     {       "date": "2025-03-02T17:00:00.000Z",       "dailyQuantity": "8",       "timeOffType": {         "id": "4da2ece1ad9d100161c0ac66d1b20000"       }     }   ] }` )
+                - We are providing the whole body of the payload as an input variable because we will be handling the creation of this whole JSON formatted body based on the date(s) selected while building the Compound Action script.
+            
+                ![action 3](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/action%203.png)
+            
+        - Test the Connector setup as described earlier to verify the response. If the output schema is incorrect or missing, click `GENERATE FROM RESPONSE` to update it.
+        
+            ![action 3 result](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/action%203%20result.png)
+        
+        - Add the **API Name** and **API Description** accordingly and `Save` the action.
+
+### 2. Build Compound Action
+
+- Build both of your compound actions for requesting a time off:
+    1. **Compound Action 1: Get Eligible Time Off Plans**
+        - Head over to the **Compound Actions** tab and click **CREATE**
+            ![image 4.png](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/image_4.png)
+        - Give your Compound Action a **Name** and **Description** , then click `Next`
+            Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
+
+        - Click on the `Script editor` tab. Here you will be able to build your compound action using the YAML syntax. At a high-level, this syntax provides actions (HTTP Request, APIthon Scripts) and workflow logic (switch statements, for each loops, return statements, parallel, try/catch). See the [Compound Action Syntax](https://developer.moveworks.com/creator-studio/reference/compound_actions_syntax/) Reference for more info.
+
+            ```yaml
+                steps:
+                    - action:
+                        action_name: workday_get_worker
+                        input_args:
+                            first_name: meta_info.user.first_name
+                        output_key: workday_get_worker_result
+                    - action:
+                        action_name: workday_get_eligible_types
+                        input_args:
+                            worker_id: data.workday_get_worker_result.data.$FILTER(worker => worker.primaryWorkEmail == meta_info.user.email_addr)[0].id
+                        output_key: workday_get_eligible_types_result
+                    - return:
+                        output_mapper:
+                            instructions_for_model: '"You MUST ask the user which time off they would like to choose. Also let the user know if they can not submit time off through MoveworksBot they can use this link: <example link to redirect users>"'
+                            workerWorkday_id: data.workday_get_worker_result.data.$FILTER(worker => worker.primaryWorkEmail == meta_info.user.email_addr)[0].id
+                            list:
+                                MAP():
+                                    converter:
+                                        dailyQuantity: item.dailyDefaultQuantity
+                                        type: '"Eligible time off types"'
+                                        timeOffType_Id: item.id
+                                        descriptor: item.descriptor
+                                    items: data.workday_get_eligible_types_result.data
+
+            ```
+
+    2. **Compound Action 2: Create Time Off Request**
+        - Repeat the steps above to create another compound action.
+
+        - Click on the `Script editor` tab to add the script.
+
+            ```yaml
+                steps:
+                    - action:
+                        action_name: workday_get_worker
+                        input_args:
+                            first_name: meta_info.user.first_name
+                        output_key: workday_get_worker_result
+                    - action:
+                        action_name: workday_get_eligible_types
+                        input_args:
+                            worker_id: data.workday_get_worker_result.data.$FILTER(worker => worker.primaryWorkEmail == meta_info.user.email_addr)[0].id
+                        output_key: workday_get_eligible_types_result
+                    - action:
+                        action_name: mw.generate_structured_value_action
+                        input_args:
+                            model: '"gpt-4o-mini"'
+                            output_schema: >-
+                            {
+                                "type": "object",
+                                "required": [
+                                "submitted_time_off_dates"
+                                ],
+                                "properties": {
+                                    "submitted_time_off_dates": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "pattern": "^\\d{4}-\\d{2}-\\d{2}T08:00:00\\.000Z$",
+                                            "description": "Dates of submitted time off in the format YYYY-MM-DDT08:00:00.000Z."
+                                        },
+                                        "description": "An array of dates when time off has been submitted, each in the format YYYY-MM-DDT08:00:00.000Z."
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                            payload: data.time_off_dates
+                        output_key: generate_structured_value_action_result
+                    - action:
+                        action_name: workday_create_time_off
+                        input_args:
+                            worker_id: data.workday_get_worker_result.data.$FILTER(worker => worker.primaryWorkEmail == meta_info.user.email_addr)[0].id
+                            time_off_details:
+                                EVAL():
+                                    expression: '$STRINGIFY_JSON({"days": days})'
+                                    args:
+                                        days:
+                                            MAP():
+                                                converter:
+                                                    comment: data.comment
+                                                    dailyQuantity: data.workday_get_eligible_types_result.data.$FILTER(obj => obj.descriptor == data.time_off_type)[0].dailyDefaultQuantity
+                                                    date: item
+                                                    timeOffType:
+                                                        id: data.workday_get_eligible_types_result.data.$FILTER(obj => obj.descriptor == data.time_off_type)[0].id
+                                                items: $PARSE_JSON(data.generate_structured_value_action_result.openai_chat_completions_response.choices[0].message.content).submitted_time_off_dates
+                        output_key: workday_create_time_off_result
+                    - return:
+                        output_mapper:
+                            final_result: data.workday_create_time_off_result.days
+                            instructions_for_model: '"Transform the provided JSON data into a streamlined
+                            message for time off requests. Avoid repeating information except when
+                            showing dates and hours. Include the requesters name. Keep the message
+                            direct and end it after conveying the key information - no need for
+                            calls to actions."'
+
+            ```
+
+    - Click on `Input fields` tab and click the `+Add` button. Here you will define the slots that you want to collect from users through the conversation and trigger your Workflow with. After defining the input fields, click the `Submit` button to save your changes.
+        - **Name - Description - Example Value - Data Type**
+        - time_off_dates - `Submitted array of time off dates in format: "Month name day year"` - `January 12 2025, March 3 2025, April 1 2025` - `string`
+        - comment - `optional comment related to the time off requested. Use default if not provided: "n/a"` - `Raised time off request` - `string`
+        - time_off_type - `Time off type related to the user's input provided upon execution of the previous plugin` - `Global PTO` - `string`
+        ![compound action 2](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/compound%20action%202.png)
+
+### 3: Publish Workflows to Plugin
+
+- Head over to the `Compound Actions` tab and click on the kebab menu ( `︙` ) for the **Compound Action 1: Get Eligible Time Off Plans** workflow
+- Next, click on `Publish Workflow to Plugin`
+- First, verify your Plugin's **Name** & **Short description** . This is autofilled from the name & description of your compound action.
+
+  ![plugin 1](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/plugin%201.png)
+
+- Next, consider whether to select the `User consent required before execution?` checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice. Specifically for **Plugin 1: Get Eligible Time Off Plans**, user consent is not required since the conversation is proactively started by the user themself.
+
+- Click `Next` and set up your positive and negative triggering examples. This ensures that the bot triggers your plugin given a relevant utterance.
+    - See our [guide](https://developer.moveworks.com/creator-studio/conversation-design/triggers/natural-language-triggers/#how-to-write-good-triggering-examples) on Triggering
+- Lastly, click `Next` and set the **Launch Rules** you want your plugin to abide by and `Submit` the plugin.
+    - See our [guide](https://developer.moveworks.com/creator-studio/administration/launch-options/) on Launch Rules
+
+- Repeat the above steps for **Compound Action 2: Create Time Off Request** as well.
+- Make sure to follow the guideline to set the **Short description** in this case, because that will provide the Bot with the instruction to always execute **Plugin 1** before **Plugin 2:  Create Time Off Request**
+    - **Short description**: `You MUST ALWAYS run the '<workday_get_eligible_time_off_plans>' plugin preceding this. You should always ask the user for the date(s) if not provided and do not assume current date.`
+    - Replace `<workday_get_eligible_time_off_plans>` with the name of your Plugin 1.
+
+    ![plugin 2](Plugin%20Template%20Request%20Time-Off%20in%20Workday%20081c4d522bf64bbead3697288dd46047/plugin%202.png)
+
+## **Step 3: See it in action!**
+
+- After both of the plugins are submitted, your use case will be published to the bot and triggerable based on your **Launch Rules.**
+- You should wait up to **5 minutes** after making changes before trying to test in your bot!
+- If you run into an issue:
+    1. Check our [troubleshooting guides](https://developer.moveworks.com/creator-studio/troubleshooting/support/)
+    2. Understand your issue using Logs
+    3. Reach out to Support
+
 
 # Congratulations!
 
