@@ -137,7 +137,7 @@ This requires you to:
 
 ## Step 1: Test required APIs
 
-Copy the cURL commands below into your API client, like Postman or the Creator Studio Actions page, for testing. Substitute any `{{placeholder text}}` with relevant Workday API credentials or inputs.
+Copy the cURL commands below into your API client, like Postman or the Creator Studio Actions page, for testing. Substitute any `<PLACEHOLDER_TEXT>` or `{{placeholder_text}}` with relevant Workday API credentials or inputs. The ones with `{{}}` will be used as is while building the Actions since these will be your inputs from the user depending on their query.
 
 We will use the following inputs for each API call below. You should to change these values based on your Workday instance and user you are testing with.
 
