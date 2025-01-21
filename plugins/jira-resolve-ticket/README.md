@@ -1,6 +1,4 @@
 ---
-custom_tags:
-- Built In
 description: A plugin that lets the appropriate individual close a ticket.
 fidelity: VALIDATED
 name: Resolve a Ticket
@@ -9,5 +7,4 @@ solution_tags:
 - IT
 systems:
 - jira
-
 ---
