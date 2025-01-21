@@ -1,6 +1,4 @@
 ---
-custom_tags:
-- Built In
 description: A plugin that allows a user to query the status and details of a ticket.
 fidelity: VALIDATED
 name: Query a Ticket
