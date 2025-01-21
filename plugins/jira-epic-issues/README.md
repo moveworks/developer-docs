@@ -48,8 +48,8 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
         - Query the specified epic name to fetch its unique epic key.
     2. **Fetch Linked Issues Information**:
         - Use the retrieved epic key to fetch the linked issues for that epic. Utilize JQL (Jira Query Language) to filter results and specify required fields, such as summary, assignee, status, etc.
-    3. Guidelines:
-        1. None
+- **Guidelines**:
+    1. None
 
 # **API Research**
 
