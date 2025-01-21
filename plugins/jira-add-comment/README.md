@@ -1,6 +1,4 @@
 ---
-custom_tags:
-- Built In
 description: A plugin that lets a user add a comment to a ticket to keep the status
   of it up-to-date.
 fidelity: VALIDATED

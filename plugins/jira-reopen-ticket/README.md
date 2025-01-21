@@ -1,6 +1,4 @@
 ---
-custom_tags:
-- Built In
 description: A plugin that lets a designated employee reopen a ticket that was previously
   closed.
 fidelity: VALIDATED
@@ -10,5 +8,4 @@ solution_tags:
 - IT
 systems:
 - jira
-
 ---
