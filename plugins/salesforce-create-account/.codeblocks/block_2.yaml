@@ -1,0 +1,13 @@
+steps:
+  - action:
+      output_key: Create_Account_Salesforce_result
+      action_name: Create_Account_Salesforce
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        billing_country: data.billing_country
+        billing_city: data.billing_city
+        billing_state: data.billing_state
+        billing_street: data.billing_street
+        account_name: data.account_name
