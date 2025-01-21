@@ -64,7 +64,7 @@ curl --request GET \
   
 ```
 
-![image.png](image%201.png)
+
 
 ## **API #2: Update Stage of Opportunity using Opportunity ID**
 
@@ -84,7 +84,7 @@ curl --location --request PATCH 'https://<YOUR_DOMAIN>.my.salesforce.com/service
 - **<OPPORTUNITY_ID>** : Retrieved opportunity id.
 - **<STAGE_NAME>** : Predefined Opportunity Stage Name in Salesforce to be updated.
 
-![image.png](image%202.png)
+
 
 # **Steps**
 
