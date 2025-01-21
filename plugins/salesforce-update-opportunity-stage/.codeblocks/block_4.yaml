@@ -1,0 +1,23 @@
+steps:
+  - action:
+      output_key: opportunity
+      action_name: Get_Stage_Of_Opportunity
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        Account_Name: data.Account_Name
+  - return:
+      output_mapper:
+        Account_Name: data.Account_Name
+        Current_Stage: data.opportunity.records[0].StageName
+  - action:
+      output_key: result
+      action_name: Update_Opportunity_Details
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        StageName: data.StageName
+        Opportunity_Id: data.opportunity.records[0].Id
+
