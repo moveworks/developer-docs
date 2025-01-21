@@ -1,2 +1,2 @@
-curl --location 'https//{{base_url}}/workers/{{user.email_addr}}/time-off' \
---header 'Content-Type: application/json'
+curl --location 'https://<DOMAIN>.workday.com/ccx/api/v1/<INSTANCE>/workers?search={{first_name}}' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>'
