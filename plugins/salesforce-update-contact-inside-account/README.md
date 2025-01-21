@@ -61,10 +61,6 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/query/?q=SELECT+ID+FR
 --header 'Authorization: Bearer <YOUR_AUTH_TOKEN>'
 ```
 
-- To import the following request into Postman, replace the credentials with your own, and execute it to retrieve the contact ID based on the contact name
-
-![image.png](image%201.png)
-
 ## API #2: Update Contact Inside Account
 
 The [**Update Contact** API](https://help.salesforce.com/s/articleView?id=mktg.mc_jb_update_a_contact.htm&type=5) allows you to update an existing contact's email and phone number based on the contact's name using the **PATCH** method. This API ensures that the contact information is updated.
@@ -82,11 +78,6 @@ curl --location --request PATCH 'https://<YOUR_DOMAIN>/services/data/v62.0/sobje
     "Phone": "<Phone>"
 }'
 ```
-
-- To import the following request into Postman, replace the credentials with your own, and execute it to update the contact details, including email and phone
-
-![image.png](image%202.png)
-
 - `<YOUR_DOMAIN>` is your Salesforce instance domain (e.g., `yourcompany.my.salesforce.com`).
 - `<CONTACT_ID>` is the unique ID of the contact you want to update.
 - `<EMAIL>`, `<PHONE>` represent the updated **Email**, **Phone number** with the contact, respectively
