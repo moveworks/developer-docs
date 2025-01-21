@@ -61,7 +61,7 @@ Either way, you'll need some date ranges to filter based on. You'll pass those d
 **Step 3: Active Directory Query**
 Execute an LDAP query to fetch user accounts with expiration dates within your calculated ranges. Your query might look similar to this:
 
-```ldap
+```sh
 (&(objectClass=user)(|(accountExpires>={90_days_start})(accountExpires<={90_days_end})(accountExpires>={60_days_start})(accountExpires<={60_days_end})(accountExpires>={30_days_start})(accountExpires<={30_days_end})))
 ```
 

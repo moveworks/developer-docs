@@ -1,6 +1,4 @@
 ---
-custom_tags:
-- Built In
 description: A plugin that lets concerned employees to receive relevant communications
   about a ticket.
 fidelity: VALIDATED
@@ -10,5 +8,4 @@ solution_tags:
 - IT
 systems:
 - jira
-
 ---

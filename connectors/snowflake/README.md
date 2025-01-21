@@ -42,13 +42,13 @@ For this tutorial, we are going to use the [Custom client integration](https://d
           ENABLED = TRUE
           OAUTH_CLIENT = CUSTOM
           OAUTH_CLIENT_TYPE = 'CONFIDENTIAL'
-          OAUTH_REDIRECT_URI = 'https://moveworks.com'
+          OAUTH_REDIRECT_URI = 'https://localhost.com'
           OAUTH_ISSUE_REFRESH_TOKENS = TRUE
-          OAUTH_REFRESH_TOKEN_VALIDITY = 86400;
         ```
         
-        > **Note: Only account administrators (users with the ACCOUNTADMIN role) or a role with the global CREATE INTEGRATION privilege can execute this SQL command.**
-        > 
+        > **Note:**
+        > - Only account administrators (users with the ACCOUNTADMIN role) or a role with the global CREATE INTEGRATION privilege can execute this SQL command.
+        > - The Refresh Tokens generated are valid for a preiod of [90 days by default](https://docs.snowflake.com/en/sql-reference/sql/alter-security-integration-oauth-snowflake#snowflake-oauth-partner-application-parameters). **Please follow the Authentication process from Step 1.2 (Retrieve the OAuth details for client configuration) onwards to re-generate the refresh tokens after every 90 days, manually.**
     2. You will see the following confirmation if everything is correctly set up:
         
         ![Untitled](Authentication%20Tutorial%20Snowflake%2080f48383283545edaa968ced07eacca3/Untitled.png)
@@ -89,7 +89,7 @@ For this tutorial, we are going to use the [Custom client integration](https://d
         ![Untitled](Authentication%20Tutorial%20Snowflake%2080f48383283545edaa968ced07eacca3/Untitled%201.png)
         
     6. After allowing the above consent, the Authorization URL would be redirected to the `OAUTH_REDIRECT_URI` location and you will be able to see the Auth Code Grant in the following format. Please note it may take some time:
-    `https://www.moveworks.com/?code=<.......81BB573502BB8C.....>`
+    `https://localhost.com/?code=<.......81BB573502BB8C.....>`
     7. The code value is the **Auth Code Grant**, please note it down as it will be used in the next step to request an Access Token.
 
 ## **Step 2: Request Access Token and Refresh Token using Postman**
