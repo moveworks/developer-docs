@@ -54,7 +54,7 @@ To build this use case, we will use one **API** to achieve the goal of creating 
 
 ## API #1:Query the contact with Name:
 
-The Retrieve [contact information by account name](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_opportunity.htm) API retrieves contact details for a given **Account Name** from Salesforce using a SOQL query. This API helps in accessing contact information associated with specific Salesforce accounts.
+The Retrieve [contact information by account name](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm) API retrieves contact details for a given **Account Name** from Salesforce using a SOQL query. This API helps in accessing contact information associated with specific Salesforce accounts.
 
 - **Purpose**: Fetches contact details based on **Account Name**.
 - **Features**: Supports filtering by **Account Name** and returns relevant contact information.
