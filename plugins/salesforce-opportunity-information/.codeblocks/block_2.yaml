@@ -1,0 +1,15 @@
+steps:
+  - action:
+      output_key: result
+      action_name: LOOKUP_OPPORTUNITY
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        Name: data.Name
+  - return:
+      output_mapper:
+        StageName: data.result.records[0].StageName
+        Amount: data.result.records[0].Amount
+        CloseDate: data.result.records[0].CloseDate
+        AccountId: data.result.records[0].AccountId
