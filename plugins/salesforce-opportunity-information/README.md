@@ -61,7 +61,7 @@ The Retrieve [Opportunity information by account name](https://developer.salesf
 - **Features**: Supports filtering by **Account Name** and returns relevant Opportunity information.
 - **Example**: Queries Salesforce to retrieve Opportunity information for the specified **Account Name**
 
-```jsx
+```yaml
 curl --location 'https://<YOUR_DOMAIN>//services/data/v62.0/query?q=SELECT%20%20AccountId%2C%20Amount%2C%20StageName%2C%20CloseDate%20FROM%20Opportunity%20WHERE%20Name%20%3D%20%27Bala%20Murugan%27' \
 --header 'Authorization: Bearer' \
 --header 'Content-Type: application/json'
@@ -85,7 +85,7 @@ Define your HTTP Actions for fetching the **Account ID** from Salesforce based o
 
 Click on the `IMPORT CURL` option and paste the following cURL command:
 
-```jsx
+```yaml
 curl --location 'https://<YOUR_DOMAIN>//services/data/v62.0/query?q=SELECT%20%20AccountId%2C%20Amount%2C%20StageName%2C%20CloseDate%20FROM%20Opportunity%20WHERE%20Name%20%3D%20%27Bala%20Murugan%27' \
 --header 'Authorization: Bearer' \
 --header 'Content-Type: application/json'

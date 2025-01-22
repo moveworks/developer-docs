@@ -60,7 +60,7 @@ The Retrieve [contact information by account name](https://developer.salesforce
 - **Features**: Supports filtering by **Account Name** and returns relevant contact information.
 - **Example**: Queries Salesforce to retrieve contact information for the specified **Account Name**
 
-```jsx
+```yaml
 curl --location 'https://<YOUR_DOMAIN>//services/data/v62.0/query?q=SELECT%20Id%2CName%2CPhone%2CEmail%20FROM%20Contact%20WHERE%20Name%3D%27james%20ciapello%27' \
 --header 'Authorization: Bearer\
 --header 'Content-Type: application/json'
@@ -84,7 +84,7 @@ Define your HTTP Actions for fetching the **Account ID** from Salesforce based o
 
 Click on the `IMPORT CURL` option and paste the following cURL command:
 
-```jsx
+```yaml
 curl --location 'https://<YOUR_DOMAIN>//services/data/v62.0/query?q=SELECT%20Id%2CName%2CPhone%2CEmail%20FROM%20Contact%20WHERE%20Name%3D%27james%20ciapello%27' \
 --header 'Authorization: Bearer\
 --header 'Content-Type: application/json'
