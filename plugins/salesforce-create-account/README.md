@@ -7,7 +7,8 @@ solution_tags:
 - Sales
 systems:
 - salesforce
-
+difficulty_level: BEGINNER
+time_in_minutes: 15
 ---
 # Plugin to create account in salesforce
 
