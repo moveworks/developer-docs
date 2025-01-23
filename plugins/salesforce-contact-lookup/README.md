@@ -107,11 +107,11 @@ curl --location 'https://<YOUR_DOMAIN>//services/data/v62.0/query?q=SELECT%20Id%
 - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
 - If the output schema does not match the API response or fails to populate automatically, kindly click the `GENERATE FROM RESPONSE` button to refresh and align the schema with the API response.
 
-![Screenshot 2025-01-22 at 5.55.38 PM.png](images/Screenshot_2025-01-22_at_5.55.38_PM.png)
+![Screenshot 2025-01-22 at 5.55.38 PM.png](images/imageR.png)
 
 Add the **API Name** and **API Description** as shown below, then click the Save button
 
-![Screenshot 2025-01-22 at 5.58.21 PM.png](images/Screenshot_2025-01-22_at_5.58.21_PM.png)
+![Screenshot 2025-01-22 at 5.58.21 PM.png](images/imageS.png)
 
 ## **Step 2: Build Compound Action**
 
