@@ -77,7 +77,7 @@ curl --request GET \
             - Navigate to `Plugins` section > `Actions` tab
             - Click on `CREATE` to define a new action
                 
-                ![getGithubContentProxy_(1).webp](Look%20Up%20Issue%20by%20Keyword%20183588d8909f8069b979d009682dc9e6/getGithubContentProxy_(1).webp)
+                ![getGithubContentProxy_(1).webp](Look%20Up%20Issue%20by%20Keyword%20183588d8909f8069b979d009682dc9e6/getGithubContentProxy1.webp)
                 
         - Click on the `IMPORT CURL` option and paste the following cURL command:
             
@@ -115,7 +115,7 @@ curl --request GET \
 
 - Head over to the **Compound Actions** tab and click **CREATE**
     
-    ![getGithubContentProxy_(2).webp](Look%20Up%20Issue%20by%20Keyword%20183588d8909f8069b979d009682dc9e6/getGithubContentProxy_(2).webp)
+    ![getGithubContentProxy_(2).webp](Look%20Up%20Issue%20by%20Keyword%20183588d8909f8069b979d009682dc9e6/getGithubContentProxy2.webp)
     
 - Give your Compound Action a **Name** and **Description** , then click `Next` Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
     
