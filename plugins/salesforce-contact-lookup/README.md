@@ -12,8 +12,6 @@ systems:
 video: https://youtu.be/29vs5VXiV3s
 ---
 
-
-
 # Introduction
 
 Salesforce is a CRM platform, and the "Look Up Contact Information in Salesforce" plugin helps you efficiently retrieve contact details from your Salesforce account. By integrating this feature with your bot, users can quickly access and manage contact information, enhancing productivity and organization.

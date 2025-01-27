@@ -13,7 +13,7 @@ systems:
 video: https://youtu.be/NAFlOXKzJ4g
 ---
 
-# Plugin to lookup Opportunity in salesforce
+
 
 # Introduction
 
