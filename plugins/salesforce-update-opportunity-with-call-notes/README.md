@@ -13,7 +13,7 @@ systems:
 - salesforce
 ---
 
-# Update opportunity call summary and Next step
+
 
 # **Introduction**
 
