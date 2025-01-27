@@ -167,7 +167,7 @@ steps:
 
 - Navigate to the **Compound Actions** tab and click on the kebab menu (︙).
 - Next, select **Publish Workflow to Plugin**.
-- First, verify your **Plugin Name** and **Short Description**.
+- Then, verify your **Plugin Name** and **Short Description**.
 
 ![image.png](Check%20Software%20License%20Inventory%20103588d8909f81b1bb09fa20f9891c4c/image%207.png)
 
