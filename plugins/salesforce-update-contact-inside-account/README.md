@@ -20,7 +20,6 @@ This guide will walk you through the process of adding the "Update Contact in Sa
 
 # **Prerequisites:**
 
-- [Postman](https://www.postman.com/) or another API Testing Tool.
 - Salesforce Connector built in Creator Studio (follow the [Salesforce Authentication](https://developer.moveworks.com/creator-studio/resources/connector/?id=salesforce) guide to create your connector for updating contacts in Salesforce).
 
 # **What are we building?**
