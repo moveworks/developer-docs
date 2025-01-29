@@ -1,0 +1,3 @@
+curl --location '<YOUR_DOMAIN>.//services/data/v62.0/query?q=SELECT%20Id%2C%20Subject%2C%20Description%2C%20ActivityDate%20FROM%20Task%20WHERE%20WhatId%20%3D%20%<OPPORTUNITY_ID>%27%20' \
+--header 'Authorization: Bearer 00D4W0000090wRK!AQUAQMaXlIDKtS2IeUOK4qSHqT8HrWG_aU3ZqVQX3NcH3yvk5dXMID10pNfRQniEVi_i4g8zg6DeyRhczNqjmuDsGWGMME5A' \
+--header 'Content-Type: application/json'
