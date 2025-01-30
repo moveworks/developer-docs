@@ -46,6 +46,9 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 - **Guidelines**:
     1. Add a guideline to ensure that this plugin executes only after the **Lookup Issue Status** plugins has run. Additionally, always prompt the user for a specific issue and status instead of making any assumptions.
 
+    2. Add a guideline to ensure that this plugin always retrieves the issue key and status id directly from the response of the **Lookup Issue Status** plugin, rather than relying on a sample values or making assumptions.
+
+
 # **API Research**
 
 To efficiently build the use case for updating the status of a specific issue, we utilize a single API along with the **Look Up Issue by Keyword** and **Lookup Issue Status** plugins.
@@ -141,8 +144,17 @@ curl --request POST \
     ```
     
 - Click on `Input fields` tab and click the `+Add` button. Here you will define the slots that you want to collect from users through the conversation and trigger your Workflow with. After defining the input fields, click the `Submit` button to save your changes.
+
+  - Make sure to follow the guidelines when setting the Description in this case, as it will instruct the bot to always retrieves the issue key and status id directly from the response of the `Lookup Issue Status` plugin.
+
+  - Sample description : 
+    - issue_key : Fetch the issue key from the get_available_issue_statuses plugin call and use that issue key value for issue_key.
+
+    - status_id : Represent the results from the get_available_transitions plugin.The user confirms the new issue status. After that, fetch the status ID of the specific status selected by the user from the results of the get_available_transitions plugin and use that new status id value for status_id.
+
+    - Replace <get_available_issue_statuses> with the name of your Lookup Issue Status plugin.
     
-    ![Screenshot 2025-01-23 at 8.06.23 PM.png](Update%20Issue%20Status%20135588d8909f80c7893bdaaf5c94afd6/Screenshot_2025-01-23_at_8.06.23_PM.png)
+      ![Screenshot 2025-01-23 at 8.06.23 PM.png](Update%20Issue%20Status%20135588d8909f80c7893bdaaf5c94afd6/Screenshot_2025-01-23_at_8.06.23_PM.png)
     
 
 ## **Step 3: Publish Workflow to Plugin**
