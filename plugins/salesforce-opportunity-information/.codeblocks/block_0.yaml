@@ -1,3 +1,2 @@
-curl --location 'https://<YOUR_DOMAIN>//services/data/v62.0/query?q=SELECT  AccountId, Amount, StageName, CloseDate, Id FROM Opportunity WHERE Account.Name like '<account_name>' ORDER BY CloseDate DESC LIMIT 1' \
---header 'Authorization: Bearer' \
+curl --location 'https://<YOUR_DOMAIN>//services/data/v62.0/query?q=SELECT%20AccountId%2C%20Amount%2C%20StageName%2C%20CloseDate%2C%20Id%20FROM%20Opportunity%20WHERE%20Account.Name%20like%20ABC1%20ORDER%20BY%20CloseDate%20DESC%20LIMIT%201' \
 --header 'Content-Type: application/json'
