@@ -82,7 +82,7 @@ curl https://api.openai.com/v1/chat/completions \
 
 ## **Step 1: Build HTTP Action**
 
-Define your HTTP Actions for fetching all the backlog ideas of a specific project :
+Define your HTTP Actions to retrieve information by interacting with OpenAI's Chat Completions API :
 
 1. **Perform a Chat Completion**
     - In Creator Studio, create a new Action.

@@ -51,6 +51,8 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 - **Guidelines**:
     1. Add a guideline to ensure that this plugin executes only when **Look Up Issue by Keyword** plugin has executed and always ask the user for specific issue instead of making any assumptions.
 
+    2. Add a guideline to ensure that this plugin always retrieves the issue key directly from the response of the **Look Up Issue by Keyword** plugin, rather than relying on a sample issue key or making assumptions.
+
 # **API Research**
 
 To efficiently build the use case for fetching available statuses for a specific issue, we utilize a single API and the **Look Up Issue by Keyword** plugin. 
@@ -72,7 +74,7 @@ curl --request GET \
 
 ## **Step 1: Build HTTP Action**
 
-- Define your HTTP Actions for fetching all the backlog ideas of a specific project :
+- Define your HTTP Actions for fetching all the available statuses of a specific issue :
     1. **Search for Epic by Name**
         - In Creator Studio, create a new Action.
             - Navigate to `Plugins` section > `Actions` tab
@@ -139,6 +141,12 @@ curl --request GET \
     ```
     
 - Click on `Input fields` tab and click the `+Add` button. Here you will define the slots that you want to collect from users through the conversation and trigger your Workflow with. After defining the input fields, click the `Submit` button to save your changes.
+
+  - Make sure to follow the guidelines when setting the Description in this case, as it will instruct the bot to always retrieve the issue key directly from the response of the **Look Up Issue by Keyword** plugin.
+
+  - Sample description : Represent the results from the fetch_details_of_specified_issue plugin. The user confirms the issue name. After that, fetch the issue key of the specific issue selected by the user from the response of the fetch_details_of_specified_issue plugin call and use that issue key value for issue_key.
+
+  - Replace <fetch_details_of_specified_issue> with the name of your Look Up Issue by Keyword plugin.
     
     ![Screenshot 2025-01-23 at 12.02.04 PM.png](Lookup%20Issue%20Status%20183588d8909f80839d99f85479e59d9f/Screenshot_2025-01-23_at_12.02.04_PM.png)
     
