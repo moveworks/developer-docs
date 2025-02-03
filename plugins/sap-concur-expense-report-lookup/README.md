@@ -98,12 +98,11 @@ Since we want to integrate with Concur Expense, we should look into their [Expen
                 ![getGithubContentProxy.webp](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/getGithubContentProxy.webp)
                 
         - Click on the `IMPORT CURL` option and paste the following cURL command:
-            
-            ```bash
-            curl --request GET \
-              --url 'https://your-domain.com//api/v3.0/expense/reports?user={{user_email}}' \
-              --user 'email@example.com:<api_token>' \
-              --header 'Accept: application/json'
+             
+           ```bash
+             curl --location 'https://us2.api.concursolutions.com/api/v3.0/expense/reports?user={{user_email_address}}&limit=10' \
+            --header 'Accept: application/json' \
+            --header 'Authorization: Bearer {{generated_bearer_token}}'
             ```
             
         - Click on `Use Existing Connector` > select the [SAP Concur Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) that you just created > Click on `Apply`. This will populate the Base URL and the Authorization section of the API Editor.
