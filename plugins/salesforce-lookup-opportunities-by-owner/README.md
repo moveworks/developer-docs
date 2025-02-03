@@ -1,8 +1,7 @@
 ---
-description: A plugin that allows you to specify a sales representative's name and
-  get related opportunities that they own.
+description: A plugin that allows you to specify a sales representative's name and get related accounts and opportunities that they own.
 fidelity: GUIDE
-name: Look up Opportunities by Owner
+name: Look up Accounts and Opportunities by Owner
 difficulty_level: INTERMEDIATE
 time_in_minutes: 20
 num_implementations: 1
