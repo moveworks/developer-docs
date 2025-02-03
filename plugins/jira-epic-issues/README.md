@@ -83,7 +83,7 @@ curl --request GET \
 
 ## **Step 1: Build HTTP Action**
 
-- Define your HTTP Actions for fetching all the backlog ideas of a specific project :
+- Define your HTTP Actions for fetching all the linked issues of a specific epic :
     1. **Search for Epic by Name**
         - In Creator Studio, create a new Action.
             - Navigate to `Plugins` section > `Actions` tab
