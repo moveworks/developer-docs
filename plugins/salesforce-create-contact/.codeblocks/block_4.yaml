@@ -1,0 +1,22 @@
+steps:
+  - action:
+      output_key: result
+      action_name: Create_contact_Query_API
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        Account_name: data.Account_name
+  - action:
+      output_key: result
+      action_name: create_salesforce_contact1
+      progress_updates:
+        on_complete: Contact creation completed
+        on_pending: Contact creation in progress
+      input_args:
+        Phone: data.Phone
+        LastName: data.LastName
+        FirstName: data.FirstName
+        AccountId: data.result.records[0].Id
+        Email: data.Email       
+

@@ -1,0 +1,63 @@
+    steps:
+        - action:
+            action_name: workday_get_worker
+            input_args:
+                first_name: meta_info.user.first_name
+            output_key: workday_get_worker_result
+        - action:
+            action_name: workday_get_eligible_types
+            input_args:
+                worker_id: data.workday_get_worker_result.data.$FILTER(worker => worker.primaryWorkEmail == meta_info.user.email_addr)[0].id
+            output_key: workday_get_eligible_types_result
+        - action:
+            action_name: mw.generate_structured_value_action
+            input_args:
+                model: '"gpt-4o-mini"'
+                output_schema: >-
+                {
+                    "type": "object",
+                    "required": [
+                    "submitted_time_off_dates"
+                    ],
+                    "properties": {
+                        "submitted_time_off_dates": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^\\d{4}-\\d{2}-\\d{2}T08:00:00\\.000Z$",
+                                "description": "Dates of submitted time off in the format YYYY-MM-DDT08:00:00.000Z."
+                            },
+                            "description": "An array of dates when time off has been submitted, each in the format YYYY-MM-DDT08:00:00.000Z."
+                        }
+                    },
+                    "additionalProperties": false
+                }
+                payload: data.time_off_dates
+            output_key: generate_structured_value_action_result
+        - action:
+            action_name: workday_create_time_off
+            input_args:
+                worker_id: data.workday_get_worker_result.data.$FILTER(worker => worker.primaryWorkEmail == meta_info.user.email_addr)[0].id
+                time_off_details:
+                    EVAL():
+                        expression: '$STRINGIFY_JSON({"days": days})'
+                        args:
+                            days:
+                                MAP():
+                                    converter:
+                                        comment: data.comment
+                                        dailyQuantity: data.workday_get_eligible_types_result.data.$FILTER(obj => obj.descriptor == data.time_off_type)[0].dailyDefaultQuantity
+                                        date: item
+                                        timeOffType:
+                                            id: data.workday_get_eligible_types_result.data.$FILTER(obj => obj.descriptor == data.time_off_type)[0].id
+                                    items: $PARSE_JSON(data.generate_structured_value_action_result.openai_chat_completions_response.choices[0].message.content).submitted_time_off_dates
+            output_key: workday_create_time_off_result
+        - return:
+            output_mapper:
+                final_result: data.workday_create_time_off_result.days
+                instructions_for_model: '"Transform the provided JSON data into a streamlined
+                message for time off requests. Avoid repeating information except when
+                showing dates and hours. Include the requesters name. Keep the message
+                direct and end it after conveying the key information - no need for
+                calls to actions."'
+

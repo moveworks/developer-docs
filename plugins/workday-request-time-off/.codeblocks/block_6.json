@@ -1,6 +1,0 @@
-{
-    "start_date": "{{start_date}}",
-    "time_off_type_id": "{{time_off_type_id}}",
-    "end_date": "{{end_date}}",
-    "comment": "{{comments}}"
-}
