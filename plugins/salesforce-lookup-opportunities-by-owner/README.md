@@ -12,6 +12,7 @@ solution_tags:
 systems:
 - salesforce
 ---
+
 # **Introduction :**
 
 Salesforce is a CRM platform, and the **Lookup Account and Opportunity by Their Owner** plugin allows users to specify the name of a sales representative and retrieve related accounts and opportunities that they own. By integrating this functionality into your bot, users can efficiently and seamlessly look up accounts and opportunities (contract values), thus improving productivity and organization.
