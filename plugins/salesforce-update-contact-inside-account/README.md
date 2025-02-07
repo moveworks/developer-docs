@@ -1,16 +1,15 @@
 ---
 description: A plugin that updates a contact inside of an account in salesforce.
+difficulty_level: BEGINNER
 fidelity: GUIDE
 name: Update Contact Inside Account
-difficulty_level: BEGINNER
-time_in_minutes: 15
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+update+the+contact+details+for+John+Doe+in+our+Palm+Hotels+account.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I%27ve+found+the+following+contact+details+for+John+Doe+in+Palm+Hotels.%3Cbr%3EWhat+would+you+like+to+update%3F%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EJohn+Doe+-+Current+Details%3C%2Fb%3E%3Cbr%3E%3Cb%3EEmail%3A%3C%2Fb%3E+john.doe%40example.com%3Cbr%3E%3Cb%3EPhone%3A%3C%2Fb%3E+123-456-7890%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Update+the+phone+number.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Please+provide+the+new+phone+number+for+John+Doe.%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22987-654-3210%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Okay%2C+I+can+update+John+Doe%27s+phone+number+to+987-654-3210.%3Cbr%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EPlease+confirm+the+updates%3C%2Fb%3E%3Cbr%3E%3Cb%3EContact%3A%3C%2Fb%3E+John+Doe%3Cbr%3E%3Cb%3ENew+Phone+Number%3A%3C%2Fb%3E+987-654-3210%3Cbr%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22Update+in+Salesforce%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Edit+Details%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Cancel%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
 - Sales
 systems:
 - salesforce
+time_in_minutes: 15
 ---
-
 
 # Introduction:
 
