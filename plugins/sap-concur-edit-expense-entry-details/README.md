@@ -74,7 +74,7 @@ curl --request PUT \
             - Navigate to `Plugins` section > `Actions` tab
             - Click on `CREATE` to define a new action
                 
-                ![getGithubContentProxy (1).webp](Edit%20Expense%20Entry%20Details%20fe7f2a58a2154da1b94d57cbc2091b29/getGithubContentProxy_(1).webp)
+                ![getGithubContentProxy 1.webp](Edit%20Expense%20Entry%20Details%20fe7f2a58a2154da1b94d57cbc2091b29/getGithubContentProxy_1.webp)
                 
         - Click on the `IMPORT CURL` option and paste the following cURL command:
             
@@ -122,7 +122,7 @@ curl --request PUT \
 
 - Head over to the **Compound Actions** tab and click **CREATE**
     
-    ![getGithubContentProxy_(2).webp](Edit%20Expense%20Entry%20Details%20fe7f2a58a2154da1b94d57cbc2091b29/getGithubContentProxy_(2).webp)
+    ![getGithubContentProxy_2.webp](Edit%20Expense%20Entry%20Details%20fe7f2a58a2154da1b94d57cbc2091b29/getGithubContentProxy_2.webp)
     
 - Give your Compound Action a **Name** and **Description** , then click `Next` Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
     
