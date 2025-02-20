@@ -43,7 +43,7 @@ Based on the needs of this use case, we should build a **Custom RAG Query**.
 
 There’s only 1 API needed to build this use case. If we look at Perplexity’s API reference, there’s only one endpoint: [Chat Completions](https://docs.perplexity.ai/reference/post_chat_completions).
 
-Based on the [Supported Models](https://docs.perplexity.ai/docs/model-cards#online-llms) documentation, we want to do an online search, so we should use either `pplx-7b-online` or `pplx-70b-online`. We should be careful about [pricing](https://docs.perplexity.ai/docs/pricing) for these models.
+Based on the [Supported Models](https://docs.perplexity.ai/guides/model-cards) documentation, we want to do an online search, so we should use either `llama-3.1-sonar-small-128k-online` or `llama-3.1-sonar-large-128k-online`. We should be careful about [pricing](https://docs.perplexity.ai/docs/pricing) for these models.
 
 # Prerequisites
 
@@ -75,7 +75,7 @@ Based on the [Supported Models](https://docs.perplexity.ai/docs/model-cards#onli
          --header 'content-type: application/json' \
          --data '
     {
-      "model": "pplx-70b-online",
+      "model": "llama-3.1-sonar-large-128k-online",
       "messages": [
         {
           "role": "system",
@@ -96,7 +96,7 @@ Based on the [Supported Models](https://docs.perplexity.ai/docs/model-cards#onli
         
         ```json
         {
-          "model": "pplx-70b-online",
+          "model": "llama-3.1-sonar-large-128k-online",
           "messages": [
             {
               "role": "system",
