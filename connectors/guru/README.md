@@ -1,5 +1,4 @@
 ---
-fidelity: IDEA
+fidelity: BUILT_IN
 name: Guru
-
 ---
