@@ -41,7 +41,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
         - Query the **Opportunity ID** for the specified **Account Name**, ensuring the most recent opportunity is fetched.
     2. **Retrieve Call Notes using Opportunity ID:**
         - Use the **retrieved Opportunity ID** to fetch the **latest Call Notes** (stored as tasks) associated with that opportunity.
-- Guidelines:
+- **Guidelines**:
     1. None.
 
 # API Research
