@@ -1,6 +1,5 @@
 ---
-fidelity: VALIDATED
+fidelity: IDEA
 name: Officespace
-num_implementations: 0
 
 ---
