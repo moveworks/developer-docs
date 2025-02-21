@@ -30,7 +30,7 @@ Let’s get started!
 
 ## **Conversation Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/resources/plugin/?id=salesforce-account-renewal-lookup) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Show+renewal+details+for+Vertex+Solutions.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searches+for+upcoming+renewal+information+for+the+account+%27Vertex+Solutions%27.%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here+are+the+renewal+details+for+Vertex+Solutions%3A%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EAccount+Renewal+Information%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ERenewal+Date%3A%3C%2Fb%3E+June+30%2C+2023%3Cbr%3E%3Cb%3EContract+Terms%3A%3C%2Fb%3E+12+months%2C+auto-renew%3Cbr%3E%3Cb%3EPricing%3A%3C%2Fb%3E+%2420%2C000+annually%3Cbr%3E%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
 
 # **Creator Studio Components**
 
