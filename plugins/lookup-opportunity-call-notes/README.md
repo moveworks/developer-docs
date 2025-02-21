@@ -41,7 +41,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
         - Query the **Opportunity ID** for the specified **Account Name**, ensuring the most recent opportunity is fetched.
     2. **Retrieve Call Notes using Opportunity ID:**
         - Use the **retrieved Opportunity ID** to fetch the **latest Call Notes** (stored as tasks) associated with that opportunity.
-- **Guidelines:**
+- **Guidelines**:
     1. None.
 
 # API Research
@@ -144,7 +144,7 @@ curl --request GET
     
     ```yaml
     curl --location '<YOUR_DOMAIN>./services/data/v62.0/query?q=SELECT%20Id%2C%20Subject%2C%20Description%2C%20ActivityDate%20FROM%20Task%20WHERE%20WhatId%20%3D%20%<OPPORTUNITY_ID>%27%20' \
-    --header 'Authorization: Bearer 00D4W0000090wRK!AQUAQMaXlIDKtS2IeUOK4qSHqT8HrWG_aU3ZqVQX3NcH3yvk5dXMID10pNfRQniEVi_i4g8zg6DeyRhczNqjmuDsGWGMME5A' \
+    --header 'Authorization: Bearer\
     --header 'Content-Type: application/json'
     ```
     
