@@ -4,7 +4,7 @@ curl --request POST \
      --header 'content-type: application/json' \
      --data '
 {
-  "model": "pplx-70b-online",
+  "model": "llama-3.1-sonar-large-128k-online",
   "messages": [
     {
       "role": "system",
