@@ -1,6 +1,4 @@
 ---
-fidelity: VALIDATED
+fidelity: BUILT_IN
 name: Officespace
-num_implementations: 0
-
 ---
