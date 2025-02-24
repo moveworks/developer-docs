@@ -1,10 +1,9 @@
 ---
+name: Greenhouse
 difficulty_level: BEGINNER
 fidelity: GUIDE
-name: Greenhouse
 time_in_minutes: 30
 =======
-
 # **Introduction**
 
 Connecting Greenhouse to Creator Studio enables seamless automation of recruiting workflows, from job requisition to candidate management. By leveraging Greenhouse’s API and using API Key Authentication, you can automate hiring processes, retrieve recruiting analytics and improve collaboration between recruiters, hiring managers and interviewers. This guide provides a step-by-step process to connect your Greenhouse instance to Creator Studio and test the integration for streamlined recruiting operations.
