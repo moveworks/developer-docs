@@ -1,0 +1,26 @@
+steps:
+  - action:
+      output_key: Get_Worker_Data_result
+      action_name: Get_Worker_Data
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        jobTitle: data.jobTitle
+        fullName: data.fullName
+  - action:
+      output_key: Get_Worker_DirectReports_result
+      action_name: Get_Worker_DirectReports
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        worker_id: data.Get_Worker_Data_result.data[0].worker.id
+  - return:
+      output_mapper:
+        MAP():
+          converter:
+            id: item.id
+            name: item.descriptor.$TITLECASE()
+          items: data.Get_Worker_DirectReports_result.data
+  
