@@ -87,76 +87,110 @@ Since we want to integrate with Concur Expense, we should look into their [Expen
 
 # Steps
 
-## Step 1: Build in Creator Studio
+## **Step 1: Build HTTP Action**
 
-### Setup use case
+- Define your HTTP Actions for fetching all the expense reports :
+    1. **Retrieve Expense Reports**
+        - In Creator Studio, create a new Action.
+            - Navigate to `Plugins` section > `Actions` tab
+            - Click on `CREATE` to define a new action
+                
+                ![getGithubContentProxy.webp](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/getGithubContentProxy.webp)
+                
+        - Click on the `IMPORT CURL` option and paste the following cURL command:
+             
+           ```bash
+             curl --location 'https://us2.api.concursolutions.com/api/v3.0/expense/reports?user={{user_email_address}}&limit=10' \
+            --header 'Accept: application/json' \
+            --header 'Authorization: Bearer {{generated_bearer_token}}'
+            ```
+            
+        - Click on `Use Existing Connector` > select the [SAP Concur Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) that you just created > Click on `Apply`. This will populate the Base URL and the Authorization section of the API Editor.
+        - **Query** **Parameters** :
+            - Key ( user ) : Value ( **{{user.email_addr}}** )
+                - This filter searches for expense reports that are associated with the user who queried the bot.
 
-1. Start in the Queries Workspace and create a new query.
-2. Provide the Basic Info so the Next Gen Copilot knows how to use this plugin:
-    1. **Query Label**: `Lookup Expenses from Concur` 
-    2. **Short Description:** `Lookup your Expense Reports from Concur. This includes looking up any information regarding the name, status, approver, total to be paid, and more.`
+            - Key ( limit ) : Value ( **10** )
+                    
+                ![Screenshot 2025-02-03 at 12.40.30 PM.png](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/Screenshot_2025-02-03_at_12.40.30_PM.png)
+                    
+                
+        - Click on `Test` to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right. If the output schema does not match the API response or fails to populate automatically, kindly click the `GENERATE FROM RESPONSE` button to refresh and align the schema with the API response.
+            
+            ![Screenshot 2025-01-29 at 2.30.58 PM.png](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/Screenshot_2025-01-29_at_2.30.58_PM.png)
+            
+        - Add the **API Name** and **API Description** as shown below, then click the `Save` button
+            
+            ![Screenshot 2025-01-29 at 2.34.05 PM.png](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/Screenshot_2025-01-29_at_2.34.05_PM.png)
+            
 
-### Setup the API
+## **Step 2: Build Compound Action**
 
-1. Select the Concur connector that you set up earlier in the [Authentication Guide](../../connectors/sap-concur/README.md)
+- Head over to the **Compound Actions** tab and click **CREATE**
     
-    ![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/Untitled%202.png)
+    ![Screenshot 2025-01-29 at 2.39.47 PM.png](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/Screenshot_2025-01-29_at_2.39.47_PM.png)
     
-2. Define your API action for querying the Expense Reports data from Concur:
-    - Path: `/api/v3.0/expense/reports`
-    - Method: `GET`
-    - Headers:
-        
-        
-        | KEY | VALUE |
-        | --- | --- |
-        | Accept | application/json |
-    - Query parameters:
-        
-        
-        | KEY | VALUE |
-        | --- | --- |
-        | user | {{user.email_addr}} |
-        | limit | 10 |
-        - Selecting `user.email_addr` would ensure that the bot picks up the the email address that is currently mapped to the Bot for the user, and use that as the query parameter in the above API.
-3. Test your setup in Creator Studio and look for a successful execution. A 200 Response Code represents that the API was successfully executed.
-If you check the `OwnerLoginID` or `OwnerName` from the returned API response, you will see that it contains your Email ID and Name respectively. 
+- Give your Compound Action a **Name** and **Description** , then click `Next` Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
     
-    ![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/Untitled%203.png)
+    ![Screenshot 2025-01-29 at 2.41.08 PM.png](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/Screenshot_2025-01-29_at_2.41.08_PM.png)
     
-
-### Label the API Response
-
-1. Select the `Name` as the Identifier.
-2. Select any of the fields as the Description. In this example, we have selected `Approval Status Name` as the Description.
-3. From among the Additional Fields, select the fields that you want users to query on and label them accordingly.
+- Click on the `Script editor` tab. Here you will be able to build your compound action using the YAML syntax. At a high-level, this syntax provides actions (HTTP Request, APIthon Scripts) and workflow logic (switch statements, for each loops, return statements, parallel, try/catch). See the [Compound Action Syntax](https://developer.moveworks.com/creator-studio/reference/compound_actions_syntax/) Reference for more info.
     
-    ![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/Untitled%204.png)
+    ```bash
+    steps:
+      - action:
+          action_name: fetch_all_expense_reports_for_a_user
+          input_args:
+            user_email: meta_info.user.email_addr
+          output_key: fetch_all_expense_reports_for_a_user_result
+      - script:
+          output_key: expense_reports
+          input_args:
+            res: data.fetch_all_expense_reports_for_a_user_result
+          code: |
+            expense_reports = []
+            for item in res["Items"]:
+                    details = {
+                        "Expense Report Name": item["Name"],
+                        "Total Amount": f"${item['Total']:.2f}",
+                        "Approval Status": item["ApprovalStatusName"],
+                        "Date": item["SubmitDate"],
+                        "ExpenseID": item["ID"]
+                    }
+                    expense_reports.append(details)
+            return expense_reports
+      - return:
+          output_mapper:
+            all_expense_reports: data.expense_reports
+    ```
     
-4. No follow-up action needed.
+- Click the `Submit` button to save your changes.
 
-### Build your Generative Intent
+## **Step 3: Publish Workflow to Plugin**
 
-1. Since we want to capture the email ID of the User who is using the Bot, which is further used to filter the Expense Reports API, we will need to provide accurate examples when to trigger this Use Case. Creator Studio will automatically generate utterances which will trigger the Use Case to execute the API and fetch details for your expense reports.
+- Head over to the `Compound Actions` tab and click on the kebab menu ( `︙` )
+- Next, click on `Publish Workflow to Plugin`
+- First, verify your Plugin **Name** & **Short description** . This is autofilled from the name & description of your compound action.
     
-    ![Untitled](Use%20Case%20Tutorial%20Lookup%20Expense%20Reports%20in%20Concur%200ad48c0ab26047b1bab45a82557a0bda/image4.png)
-
-    We want to provide different kinds of utterances here based on our Use Case. We want the bot to trigger the Expense Reports Use Case whenever a user asks anything related to their expense reports. Here are some examples you can use:
-    - What are my expense reports?
-    - Get me the status of my expense reports.
-    - What are the approval statuses of my expense reports?
-    - When were my expense reports created?
+    ![Screenshot 2025-01-29 at 2.53.44 PM.png](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/Screenshot_2025-01-29_at_2.53.44_PM.png)
     
+- Next, consider whether to select the `User consent required before execution?` checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice.
+    
+    ![Screenshot 2025-01-29 at 2.54.48 PM.png](View%20Expense%20Reports%2018a588d8909f80c886e7ec4de72f8217/Screenshot_2025-01-29_at_2.54.48_PM.png)
+    
+- Click `Next` and set up your positive and negative triggering examples. This ensures that the bot triggers your plugin given a relevant utterance.
+    - See our [guide](https://developer.moveworks.com/creator-studio/conversation-design/triggers/natural-language-triggers/#how-to-write-good-triggering-examples) on Triggering
+- Lastly, click `Next` and set the **Launch Rules** you want your plugin to abide by.
+    - See our [guide](https://developer.moveworks.com/creator-studio/administration/launch-options/) on Launch Rules
 
-### Launch the use case
+## **Step 4: See it in action!**
 
-Use our [Launch Rules](https://developer.moveworks.com/creator-studio/launch-options/) to launch your use case to your Copilot. 
-
-## Step 2: See it in action!
-
-Trigger the use case by asking for it from your Copilot. Find interesting ways to combine it with your own enterprise data.
-
-Note: It could take a couple minutes before your flow shows up in your copilot. If it doesn’t show up after five minutes, follow [our troubleshooting guides](https://developer.moveworks.com/creator-studio/troubleshooting/support) to further debug.
+- After clicking the final `Submit` button, your plugin will be published to the bot and triggerable based on your **Launch Rules.**
+- You should wait up to **5 minutes** after making changes before trying to test in your bot!
+- If you run into an issue:
+    1. Check our [troubleshooting guides](https://developer.moveworks.com/creator-studio/troubleshooting/support/)
+    2. Understand your issue using Logs
+    3. Reach out to Support
 
 # Congratulations!
 
