@@ -1,6 +1,5 @@
 ---
 description: Connect your Moveworks Copilot to Notion.
-fidelity: IDEA
+fidelity: BUILT_IN
 name: Notion
-
 ---
