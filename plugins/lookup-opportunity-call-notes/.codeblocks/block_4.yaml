@@ -1,0 +1,23 @@
+steps:
+  - action:
+      output_key: opportunityid
+      action_name: GET_OpportunityID_Using_AccountName
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        account_name: data.account_name
+  - action:
+      output_key: callnote_result
+      action_name: Lookup_Callnotes_From_Opportunity
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        opportunity_id: data.opportunityid.records[0].Id
+  - return:
+      output_mapper:
+        Description: data.callnote_result.records[0].Description
+        ActivityDate: data.callnote_result.records[0].ActivityDate
+        Subject: data.callnote_result.records[0].Subject
+
