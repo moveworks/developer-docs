@@ -81,7 +81,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
     
     ## **Step 1: Build HTTP Action**
 
-    - Define your HTTP Actions for fetching all the backlog ideas of a specific project :
+    - Define your HTTP Actions for fetching all the open epics of a specific project :
         1. **Get projects paginated**
             - In Creator Studio, create a new Action.
                 - Navigate to `Plugins` section > `Actions` tab
