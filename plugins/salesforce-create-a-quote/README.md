@@ -1,7 +1,7 @@
 ---
 description: A plugin that allows sales representatives to build a quote (configure,
   price, quote) for a customer.
-fidelity: IDEA
+fidelity: GUIDE
 name: Create a Quote
 difficulty_level: INTERMEDIATE
 time_in_minutes: 30
