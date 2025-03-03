@@ -3,7 +3,7 @@ description: A plugin that allows a user to easily see a summary of their expens
   reports.
 fidelity: GUIDE
 difficulty_level: BEGINNER
-time_in_minutes: 30
+time_in_minutes: 20
 accreditations: 
 - DEFAULT
 name: View My Expense Reports Details
@@ -98,6 +98,12 @@ This will populate the Authorization details needed for the API request to be su
     - Values:
         - {{user_email_id}}
         - ["id", "created-at", "updated-at", "title", "status", "type-of-expense", {"expense_lines":["description","approved-amount","amount"]}, "auditor-note", "total", "audit-score"]
+
+- Click on the Header Tab. Add the following:
+    - Key
+        - Accept
+    - Value
+        - application/json
 
 Adding these parameters helps us filter the response by the user’s email address and reduce the response body to output only relevant details such as the ID of the report, its title, status etc. This is demonstrated in the screenshot below. 
 
@@ -194,6 +200,8 @@ If you encounter any issues:
 - Check our [**troubleshooting guides**](https://developer.moveworks.com/creator-studio/troubleshooting/support/)
 - Use **Logs** to understand the issue
 - Reach out to **Support**
+
+What can you ask your AI Agent? Anything about your expense report! From details such as ID, title, description, expense lines and the amount spent in each of them to real-time approval status and updating timestamps. Moveworks’ AI Agent can understand the data fields returned in the API response and gives you the answer you’re looking for. Go ahead and try it out!
 
 ## Congratulations!
 
