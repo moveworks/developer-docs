@@ -23,7 +23,7 @@ Let's get started!
 
 # **Prerequisites**
 
-- [Postman](https://www.postman.com/) or an API Testing Tool
+- Greenhouse Connector built in Creator Studio (follow the [Greenhouse Authentication](https://developer.moveworks.com/creator-studio/resources/connector?id=greenhouse) guide to create your connector)
 
 # **What are we building?**
 
