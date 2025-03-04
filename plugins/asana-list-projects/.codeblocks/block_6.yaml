@@ -1,0 +1,16 @@
+steps:
+  - action:
+      output_key: get_projects_filter_team_asana_result
+      action_name: get_projects_filter_team_asana
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        team_gid: data.team_gid
+  - return:
+      output_mapper:
+        instructions_for_model: '"ALWAYS run get_team_gid_asana and prompt the user
+          whether their is a team which matches the user query or if multiple
+          teams match the user request ask which team he wants to filter on"'
+        list_of_projects: data.get_projects_filter_team_asana_result
+

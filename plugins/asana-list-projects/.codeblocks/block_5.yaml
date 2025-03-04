@@ -1,0 +1,10 @@
+steps:
+  - action:
+      output_key: get_teams_in_an_asana_workspace_result
+      action_name: get_teams_in_an_asana_workspace
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+  - return:
+      output_mapper:
+        teams_list: data.get_teams_in_an_asana_workspace_result
