@@ -55,10 +55,31 @@ To efficiently implement the use case of fetching open jobs, we utilize a single
 
 The [**List Jobs**](https://developers.greenhouse.io/job-board.html#list-jobs) endpoint allows you to retrieve a list of all currently open job roles within the company. Job board data is publicly available, so authentication is not required for any GET endpoints.
 
+Why the Job Board is better for fetching Open Jobs :
+
+- The Job Board API (/jobs) only returns published (live) job postings.
+- The Harvest API (/jobs?status=open) may include internal or hidden jobs that aren't publicly available.
+- Since our goal is to show only open jobs for candidates, the Job Board API ensures you're fetching publicly available jobs.
+
 ```bash
 curl --request GET \
-  --url 'https://boards-api.greenhouse.io/v1/boards/<your_company_name>/jobs' \
+  --url 'https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs' \
 ```
+
+Steps to Find the board_token in Greenhouse :
+- Go to Greenhouse Settings
+    - Log in to your Greenhouse account.
+    - Click on Configure (⚙️) → Job Boards & Posts.
+- Open Job Board Settings
+    - Find your job board under Job Boards.
+    - Click on the Board Name to open its setting
+- Locate the board_token
+    - In the Board Settings section, find the URL field.
+    - The last part of the URL is the board_token
+- Use the board_token in the API Request
+    - Once you have the board_token, use it in the Greenhouse Job Board API to fetch open jobs.
+    - Replace {board_token} with the value found in previous step.
+
 
 # **Steps**
 
@@ -76,7 +97,7 @@ curl --request GET \
             
             ```bash
             curl --request GET \
-              --url 'https://boards-api.greenhouse.io/v1/boards/<your_company_name>/jobs' \
+              --url 'https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs' \
             ```
             
         - Click `Test` to verify if the Connector setup is successful. You should see the request response on the left and the generated output schema on the right. Since the API response schema is long, trim the **Output Schema** to include only the necessary details for accurate results. You can use the sample Output Schema provided below for this use case. Refer to the **Prune Response Schema** section in this [documentation](https://help.moveworks.com/docs/http-actions) for guidance.
