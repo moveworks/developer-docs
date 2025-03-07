@@ -10,7 +10,6 @@ solution_tags:
 - HR
 systems:
 - workday
-
 ---
 # Introduction:
 
