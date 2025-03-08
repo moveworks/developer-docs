@@ -1,0 +1,18 @@
+steps:
+  - action:
+      output_key: Lookup_Account_and_Opportunity_by_Owner_result
+      action_name: Lookup_Account_and_Opportunity_by_Owner
+      progress_updates:
+        on_complete: Accounts retrieval completed
+        on_pending: Retrieving Accounts
+      input_args:
+        Owner_Name: data.Owner_Name
+  - return:
+      output_mapper:
+        list:
+          MAP():
+            converter:
+              Account: item.Account.Name
+              ContractValue: item.Amount
+            items: data.Lookup_Account_and_Opportunity_by_Owner_result.records
+
