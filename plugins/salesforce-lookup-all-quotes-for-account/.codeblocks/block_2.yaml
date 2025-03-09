@@ -1,0 +1,16 @@
+steps:
+  - action:
+      output_key: Lookup_quote_Information_result
+      action_name: Lookup_Quote_Salesforce
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        Account_Name: data.Account_Name
+  - return:
+      output_mapper:
+        list:
+          MAP():
+            converter:
+              QuoteNumber: item.QuoteNumber
+            items: data.Lookup_quote_Information_result.records
