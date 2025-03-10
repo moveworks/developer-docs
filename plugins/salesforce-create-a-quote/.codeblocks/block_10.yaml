@@ -1,0 +1,48 @@
+steps:
+  - action:
+      output_key: Get_LatestOpportunity_By_Account_result
+      action_name: Get_LatestOpportunity_By_Account
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        Account_Name: data.Account_Name
+  - action:
+      output_key: Fetch_Product_Price_Details_result
+      action_name: Fetch_Product_Price_Details
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        Product_Name: data.Product_Name
+  - action:
+      output_key: Quote_Creation_API_result
+      action_name: Quote_Creation_API
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        OpportunityId: data.Get_LatestOpportunity_By_Account_result.records[0].Id
+        Pricebook2Id: data.Fetch_Product_Price_Details_result.records[0].Pricebook2.Id
+        Status: data.Status
+        Name: data.Name
+  - action:
+      output_key: Get_Quote_By_Account_Product_result
+      action_name: Get_Quote_By_Account_Product
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        Quote_Name: data.Quote_Name
+  - action:
+      output_key: Create_a_QuoteLineItem_result
+      action_name: Create_a_QuoteLineItem
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        UnitPrice: data.UnitPrice
+        PricebookEntry_Id: data.Fetch_Product_Price_Details_result.records[0].Id
+        Quantity: data.Quantity
+        QuoteId: data.Get_Quote_By_Account_Product_result.records[0].Id
+
