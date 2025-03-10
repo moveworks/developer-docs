@@ -58,7 +58,7 @@ The [List Users](https://developers.greenhouse.io/harvest.html#get-list-users) e
 
 ```bash
 curl 'https://harvest.greenhouse.io/v1/users'
--H "Authorization: Basic MG****Q6"
+--user '<api_key>:'
 ```
 
 ## **API #1: List Candidates**
@@ -67,7 +67,7 @@ The [List Candidates](https://developers.greenhouse.io/harvest.html#get-list-can
 
 ```bash
 curl 'https://harvest.greenhouse.io/v1/candidates'
--H "Authorization: Basic MG****Q6"
+--user '<api_key>:'
 ```
 
 # **Steps**
