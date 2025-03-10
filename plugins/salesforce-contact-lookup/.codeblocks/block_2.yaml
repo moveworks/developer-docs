@@ -1,15 +1,9 @@
-steps:
-  - action:
-      output_key: result
-      action_name: Salesforce_lookup_contact
-      progress_updates:
-        on_complete: ON_COMPLETE_MESSAGE
-        on_pending: ON_PENDING_MESSAGE
-      input_args:
-        Name: data.Name
-  - return:
-      output_mapper:
-        Title: data.result.records[0].Title
-        Phone: data.result.records[0].Phone
-        Id: data.Id.result.records[0].Id
-        Email: data.result.records[0].Email
+curl --request POST
+--location 'https://<DOMAIN>.myworkday.com/api/wql/v1/<INSTANCE>/data?offset=0&limit=1' \
+--header 'Content-Type: application/json' \
+--data '{ 
+    "query": "SELECT workdayID, fullName, email_PrimaryWorkOrPrimaryHome, timeZoneOfLocationOfWorkersPrimaryPosition 
+              FROM allWorkers 
+              WHERE fullName LIKE '\''%{{fullName}}%'\''"  
+}'
+
