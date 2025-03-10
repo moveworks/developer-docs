@@ -93,7 +93,7 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/v63.0/process/approvals/' \
 
 Define your HTTP Actions for fetching the **Account ID** from Salesforce based on the provided **Account Name**.
 
-### 1. Get the Opportunity ID using the Account Name
+### 1. Get the Quote ID using the Account Name
 
 - Navigate to **Plugins** section > **Actions** tab.
 - Click on **CREATE** to define a new action.
