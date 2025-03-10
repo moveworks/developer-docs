@@ -17,7 +17,7 @@ systems:
 
 # **Introduction**
 
-Workday is a comprehensive enterprise platform for human resources, and the **"Check-In Workday"**feature simplifies the process of tracking employee attendance, time entries, and work schedules. By integrating this feature with your bot, users can efficiently manage their work hours and ensure accurate payroll processing, all within a seamless conversational interface.
+Workday is a comprehensive enterprise platform for human resources, and the **"Check-In Workday"** feature simplifies the process of tracking employee attendance, time entries, and work schedules. By integrating this feature with your bot, users can efficiently manage their work hours and ensure accurate payroll processing, all within a seamless conversational interface.
 
 This guide will walk you through how to add the **"Check-In Workday"** feature to your bot using Creator Studio. Let’s get started!
 
