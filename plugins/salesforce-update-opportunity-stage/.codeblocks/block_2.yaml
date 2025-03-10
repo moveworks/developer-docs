@@ -1,0 +1,14 @@
+steps:
+   - action:
+      output_key: Update_Opportunity_Details_result
+      action_name: Update_Opportunity_Details
+      progress_updates:
+        on_complete: Updated Opportunity stage
+        on_pending: Updating Opportunity stage
+      input_args:
+        StageName: data.StageName
+        Opportunity_Id: data.opportunity.records[0].Id
+   - return:
+      output_mapper:
+        Updated_StageName: data.Update_Opportunity_Details_result.records[0].StageName
+
