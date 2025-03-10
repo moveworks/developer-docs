@@ -27,11 +27,11 @@ To authenticate the Gong Connector, you'll need to obtain API credentials from y
     
 2. Click Get API Key to generate your access key and secret.
     
-    ![image.png](Gong%20182588d8909f80689fd6cafe7586de60/image%201.png)
+    ![image.png](Gong%20182588d8909f80689fd6cafe7586de60/image1.png)
     
-    ![image (1).png](Gong%20182588d8909f80689fd6cafe7586de60/image_(1).png)
+    ![image (1).png](Gong%20182588d8909f80689fd6cafe7586de60/image3.png)
     
-    ![image.png](Gong%20182588d8909f80689fd6cafe7586de60/image%202.png)
+    ![image.png](Gong%20182588d8909f80689fd6cafe7586de60/image2.png)
     
 3. Use these credentials to authenticate the connector within Moveworks.
 
