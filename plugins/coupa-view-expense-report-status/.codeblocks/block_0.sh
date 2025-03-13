@@ -1,0 +1,4 @@
+curl --location --globoff --request GET '[https://your-instance.coupacloud.com/api/expense_reports?expensed-by[email]=example%40example.com&fields=["id"%2C "created-at"%2C "updated-at"%2C "title"%2C "status"%2C "type-of-expense"%2C {"expense_lines"%3A["description"%2C"approved-amount"%2C"amount"]](https://moveworks-usa-coupalink-demo.coupacloud.com/api/expense_reports?expensed-by%5Bemail%5D=sbhadwal%40moveworks.ai&fields=%5B%22id%22%2C%20%22created-at%22%2C%20%22updated-at%22%2C%20%22title%22%2C%20%22status%22%2C%20%22type-of-expense%22%2C%20%7B%22expense_lines%22%3A%5B%22description%22%2C%22approved-amount%22%2C%22amount%22%5D)}%2C%20%22auditor-note%22%2C%20%22total%22%2C%20%22audit-score%22]' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer YOUR_ACCESS_TOKEN’ \
