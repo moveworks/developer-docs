@@ -61,7 +61,7 @@ curl 'https://harvest.greenhouse.io/v1/users'
 --user '<api_key>:'
 ```
 
-## **API #1: List Candidates**
+## **API #2: List Candidates**
 
 The [List Candidates](https://developers.greenhouse.io/harvest.html#get-list-candidates) endpoint retrieves user details based on their email ID. This is essential for verifying the referrer and fetching their Greenhouse User ID.
 
