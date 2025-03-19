@@ -1,4 +1,4 @@
-curl --location '<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
+curl --location  https://'<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 
 --data '{

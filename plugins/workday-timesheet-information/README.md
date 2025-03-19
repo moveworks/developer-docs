@@ -63,7 +63,7 @@ The [**Lookup Timesheet Information**](https://community.workday.com/sites/defa
     - Provides **timesheet status** information (e.g., submitted, approved, rejected).
 
 ```yaml
-curl --location '<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
+curl --location  https://'<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 
 --data '{
@@ -95,7 +95,7 @@ Define your HTTP Actions for fetching all the backlog ideas of a specific projec
 - Click on the IMPORT CURL option and paste the following cURL command:
 
 ```yaml
-curl --location '<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
+curl --location  https://'<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer 
 --data '{
@@ -179,12 +179,12 @@ steps:
 - Head over to the Compound Actions tab and click on the kebab menu ( ︙ )
 - Next, click on Publish Workflow to Plugin
 - First, verify your Plugin **Name** & **Short description** . This is autofilled from the name & description of your compound action.
-    
-    ![123.png](images/123.png)
+    ![hr1.png](images/hr1.png)
+   
     
 - Next, consider whether to select the User consent required before execution? checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice.
     
-    ![Screenshot 2025-03-18 at 10.49.35 AM.png](images/Screenshot_2025-03-18_at_10.49.35_AM.png)
+   ![123.png](images/123.png)
     
 - Click Next and set up your positive and negative triggering examples. This ensures that the bot triggers your plugin given a relevant utterance.
     - See our [guide](https://developer.moveworks.com/creator-studio/conversation-design/triggers/natural-language-triggers/#how-to-write-good-triggering-examples) on Triggering
