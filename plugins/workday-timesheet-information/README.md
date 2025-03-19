@@ -13,8 +13,6 @@ systems:
 
 ---
 
-# Lookup Timesheet Information
-
 # **Introduction**
 
 Workday is a comprehensive enterprise platform for human resources, and the "Lookup Timesheet Information" feature simplifies the process of accessing and reviewing employee timesheet data. By integrating this feature with your bot, users can effortlessly retrieve their work hours, project details, and timesheet statuses, all within a seamless conversational interface.
@@ -29,14 +27,16 @@ This guide will walk you through how to add the "Lookup Timesheet Information" f
 
 ### **Conversation Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/resources/plugin/?id=workday-timesheet-information) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A8559%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Can+you+pull+my+timesheet+data+for+project+Hydrogen%3F%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cb%3EPull+Timesheet+Data%3C%2Fb%3E%3Cbr%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ELookup+Time+Sheet+Information%3C%2Fb%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22You%27ve+spent+%3Cb%3E120+hours%3C%2Fb%3E+on+project+Hydrogen+this+month.+Do+you+need+detailed+timesheet+entries+or+any+other+project+data%3F%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
 # **Creator Studio Components**
 
 - **Triggers:**
     1. **Natural Language**
 - **Slots:**
-    1. WorkerID
+    1. WorkerID 
+    2. Period Start Date
+    3. Period End Date
 - **Actions:**
     1. **Search Timesheet Information**
         - Retrieve the worker’s details and their associated timesheet information using the Workday WQL API.
@@ -50,7 +50,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/resources/plu
     ![Screenshot 2025-03-17 at 6.56.49 PM.png](images/Screenshot_2025-03-17_at_6.56.49_PM.png)
     
 
-## **API #1: Lookup Timesheet Information**
+## **API #1: Retrieve Timesheet Information using WQL**
 
 The [**Lookup Timesheet Information**](https://community.workday.com/sites/default/files/file-hosting/restapi/#wql/v1/get-/data) API allows you to retrieve timesheet data for workers in Workday. This API uses the **Timesheet Query** endpoint to fetch details such as work hours, project allocations, and timesheet statuses.
 
@@ -68,13 +68,14 @@ curl --location '<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
 --header 'Authorization: Bearer 
 --data '{
 
-  "query": " SELECT allTimesheetDaysAreWithinTheActivityDateRange, costCenterForWorkerFromTimesheet, criticalValidationExists, eventTarget_01, excludeWeekends, isApproved, isJobExempt, isPayrollTimesheet, isProjectTimesheet, isProjectWorksheet, isTimeInTimeOutTimesheet, lockedInWorkday, moreThan24HoursWorkedInADay, multi_WorkerTimesheetForTimesheet, payrollProcessing, payrollTimesheetLinesAreMissingACostCenter, payrollTimesheetLinesAreMissingAPosition, periodIsInUseByAnotherProjectTimesheetForThisWorker, positionsFilledByWorkerAsOfTimesheetPeriodEndDate, projectTimesheetDefaultDefaultHoursPerDay, projectTimesheetDefaultsSumOfDefaultsHours, projectTimesheetIsDuplicateOfPriorProjectTimesheet, projectTimesheetLinesForTimesheet, referenceID1, savedCustomValidationResult, supervisoryOrganizationOfMulti_WorkerTimesheetForWorkerTimeCard, timeInTimeOut, timesheet, timesheetApprovalDateTime, timesheetDays, timesheetDefaultLinesForTimesheet, timesheetLinesForTimesheet, timesheetPeriod, timesheetPeriodEndDate, timesheetPeriodStartDate, timesheetStatus, totalBillableProjectHoursLogged, totalDaysOffRequestedForTimesheetPeriod, totalHoursLoggedForTimeInTimeOutTimesheetIncludesUnapproved, totalHoursLoggedForTimesheet, totalHoursLoggedForTimesheetApproved, totalHoursOffRequestedForTimesheetPeriod, totalNon_BillableProjectHoursLogged, validationErrorsAndWarnings, workerDefaultWeeklyHours, workerOnTimesheet, workerScheduledWeeklyHours, worksheetLinesAreMissingTheTask, worksheetTotalTimeAllocationPercent, worktagsFromTimesheetDefaultLines FROM timesheets (periodStartDate = '\''2024-12-01'\'', periodEndDate = '\''2025-12-27'\'' ) WHERE workerOnTimesheet = '\'{{'workeronTimesheet'}}'\''"
+  "query": " SELECT allTimesheetDaysAreWithinTheActivityDateRange, costCenterForWorkerFromTimesheet, criticalValidationExists, eventTarget_01, excludeWeekends, isApproved, isJobExempt, isPayrollTimesheet, isProjectTimesheet, isProjectWorksheet, isTimeInTimeOutTimesheet, lockedInWorkday, moreThan24HoursWorkedInADay, multi_WorkerTimesheetForTimesheet, payrollProcessing, payrollTimesheetLinesAreMissingACostCenter, payrollTimesheetLinesAreMissingAPosition, periodIsInUseByAnotherProjectTimesheetForThisWorker, positionsFilledByWorkerAsOfTimesheetPeriodEndDate, projectTimesheetDefaultDefaultHoursPerDay, projectTimesheetDefaultsSumOfDefaultsHours, projectTimesheetIsDuplicateOfPriorProjectTimesheet, projectTimesheetLinesForTimesheet, referenceID1, savedCustomValidationResult, supervisoryOrganizationOfMulti_WorkerTimesheetForWorkerTimeCard, timeInTimeOut, timesheet, timesheetApprovalDateTime, timesheetDays, timesheetDefaultLinesForTimesheet, timesheetLinesForTimesheet, timesheetPeriod, timesheetPeriodEndDate, timesheetPeriodStartDate, timesheetStatus, totalBillableProjectHoursLogged, totalDaysOffRequestedForTimesheetPeriod, totalHoursLoggedForTimeInTimeOutTimesheetIncludesUnapproved, totalHoursLoggedForTimesheet, totalHoursLoggedForTimesheetApproved, totalHoursOffRequestedForTimesheetPeriod, totalNon_BillableProjectHoursLogged, validationErrorsAndWarnings, workerDefaultWeeklyHours, workerOnTimesheet, workerScheduledWeeklyHours, worksheetLinesAreMissingTheTask, worksheetTotalTimeAllocationPercent, worktagsFromTimesheetDefaultLines FROM timesheets (periodStartDate = ''{{periodStartDate}}'', periodEndDate = ''{{periodEndDate}}'' ) WHERE workerOnTimesheet = ''{{workeronTimesheet}}''
 
 }
 '
 ```
 
 - **<YOUR_DOMAIN>**: Your workday instance domain (e.g., yourcompany.workday.com).
+- **<INSTANCE>:**  Your workday instance (e.g, moveworks_dpt1)
 
 # **Steps**
 
@@ -99,14 +100,14 @@ curl --location '<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
 --header 'Authorization: Bearer 
 --data '{
 
-  "query": " SELECT allTimesheetDaysAreWithinTheActivityDateRange, costCenterForWorkerFromTimesheet, criticalValidationExists, eventTarget_01, excludeWeekends, isApproved, isJobExempt, isPayrollTimesheet, isProjectTimesheet, isProjectWorksheet, isTimeInTimeOutTimesheet, lockedInWorkday, moreThan24HoursWorkedInADay, multi_WorkerTimesheetForTimesheet, payrollProcessing, payrollTimesheetLinesAreMissingACostCenter, payrollTimesheetLinesAreMissingAPosition, periodIsInUseByAnotherProjectTimesheetForThisWorker, positionsFilledByWorkerAsOfTimesheetPeriodEndDate, projectTimesheetDefaultDefaultHoursPerDay, projectTimesheetDefaultsSumOfDefaultsHours, projectTimesheetIsDuplicateOfPriorProjectTimesheet, projectTimesheetLinesForTimesheet, referenceID1, savedCustomValidationResult, supervisoryOrganizationOfMulti_WorkerTimesheetForWorkerTimeCard, timeInTimeOut, timesheet, timesheetApprovalDateTime, timesheetDays, timesheetDefaultLinesForTimesheet, timesheetLinesForTimesheet, timesheetPeriod, timesheetPeriodEndDate, timesheetPeriodStartDate, timesheetStatus, totalBillableProjectHoursLogged, totalDaysOffRequestedForTimesheetPeriod, totalHoursLoggedForTimeInTimeOutTimesheetIncludesUnapproved, totalHoursLoggedForTimesheet, totalHoursLoggedForTimesheetApproved, totalHoursOffRequestedForTimesheetPeriod, totalNon_BillableProjectHoursLogged, validationErrorsAndWarnings, workerDefaultWeeklyHours, workerOnTimesheet, workerScheduledWeeklyHours, worksheetLinesAreMissingTheTask, worksheetTotalTimeAllocationPercent, worktagsFromTimesheetDefaultLines FROM timesheets (periodStartDate = '\''2024-12-01'\'', periodEndDate = '\''2025-12-27'\'' ) WHERE workerOnTimesheet = '\'{{workeronTimesheet}}'\''"
+   "query": " SELECT allTimesheetDaysAreWithinTheActivityDateRange, costCenterForWorkerFromTimesheet, criticalValidationExists, eventTarget_01, excludeWeekends, isApproved, isJobExempt, isPayrollTimesheet, isProjectTimesheet, isProjectWorksheet, isTimeInTimeOutTimesheet, lockedInWorkday, moreThan24HoursWorkedInADay, multi_WorkerTimesheetForTimesheet, payrollProcessing, payrollTimesheetLinesAreMissingACostCenter, payrollTimesheetLinesAreMissingAPosition, periodIsInUseByAnotherProjectTimesheetForThisWorker, positionsFilledByWorkerAsOfTimesheetPeriodEndDate, projectTimesheetDefaultDefaultHoursPerDay, projectTimesheetDefaultsSumOfDefaultsHours, projectTimesheetIsDuplicateOfPriorProjectTimesheet, projectTimesheetLinesForTimesheet, referenceID1, savedCustomValidationResult, supervisoryOrganizationOfMulti_WorkerTimesheetForWorkerTimeCard, timeInTimeOut, timesheet, timesheetApprovalDateTime, timesheetDays, timesheetDefaultLinesForTimesheet, timesheetLinesForTimesheet, timesheetPeriod, timesheetPeriodEndDate, timesheetPeriodStartDate, timesheetStatus, totalBillableProjectHoursLogged, totalDaysOffRequestedForTimesheetPeriod, totalHoursLoggedForTimeInTimeOutTimesheetIncludesUnapproved, totalHoursLoggedForTimesheet, totalHoursLoggedForTimesheetApproved, totalHoursOffRequestedForTimesheetPeriod, totalNon_BillableProjectHoursLogged, validationErrorsAndWarnings, workerDefaultWeeklyHours, workerOnTimesheet, workerScheduledWeeklyHours, worksheetLinesAreMissingTheTask, worksheetTotalTimeAllocationPercent, worktagsFromTimesheetDefaultLines FROM timesheets (periodStartDate = ''{{periodStartDate}}'', periodEndDate = ''{{periodEndDate}}'' ) WHERE workerOnTimesheet = ''{{workeronTimesheet}}''
 
 }
 '
 ```
 
 - Click on Use Existing Connector > select the [Workday connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=workday) that you just created > Click on Apply. This will populate the Base URL and the Authorization section of the API Editor.
-- **Body :** {"query": " SELECT allTimesheetDaysAreWithinTheActivityDateRange, costCenterForWorkerFromTimesheet, criticalValidationExists, eventTarget_01, excludeWeekends, isApproved, isJobExempt, isPayrollTimesheet, isProjectTimesheet, isProjectWorksheet, isTimeInTimeOutTimesheet, lockedInWorkday, moreThan24HoursWorkedInADay, multi_WorkerTimesheetForTimesheet, payrollProcessing, payrollTimesheetLinesAreMissingACostCenter, payrollTimesheetLinesAreMissingAPosition, periodIsInUseByAnotherProjectTimesheetForThisWorker, positionsFilledByWorkerAsOfTimesheetPeriodEndDate, projectTimesheetDeeklyHours, workerOnTimesheet, workerScheduledWeeklyHours, worksheetLinesAreMissingTheTask, worksheetTotalTimeAllocationPercent, worktagsFromTimesheetDefaultLines FROM timesheets (periodStartDate = '2024-12-01', periodEndDate = '2025-12-27' ) WHERE workerOnTimesheet = '{{workeronTimesheet}}'"}
+- **Body :** {"query": " SELECT allTimesheetDaysAreWithinTheActivityDateRange, costCenterForWorkerFromTimesheet, criticalValidationExists, eventTarget_01, excludeWeekends, isApproved, isJobExempt, isPayrollTimesheet, isProjectTimesheet, isProjectWorksheet, isTimeInTimeOutTimesheet, lockedInWorkday, moreThan24HoursWorkedInADay, multi_WorkerTimesheetForTimesheet, payrollProcessing, payrollTimesheetLinesAreMissingACostCenter, payrollTimesheetLinesAreMissingAPosition, periodIsInUseByAnotherProjectTimesheetForThisWorker, positionsFilledByWorkerAsOfTimesheetPeriodEndDate, projectTimesheetDeeklyHours, workerOnTimesheet, workerScheduledWeeklyHours, worksheetLinesAreMissingTheTask, worksheetTotalTimeAllocationPercent, worktagsFromTimesheetDefaultLines FROM timesheets (periodStartDate = '{{periodStartDate}}', periodEndDate = '{{periodEndDate}}') WHERE workerOnTimesheet = '{{workeronTimesheet}}'"}
     
     ![Screenshot 2025-03-18 at 10.46.04 AM.png](images/Screenshot_2025-03-18_at_10.46.04_AM.png)
     
@@ -114,7 +115,7 @@ curl --location '<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
     
          Name : Example Value (Julie Bowles).
     
-    ![Screenshot 2025-03-18 at 10.46.46 AM.png](images/Screenshot_2025-03-18_at_10.46.46_AM.png)
+    ![Screenshot 2025-03-19 at 11.56.46 AM.png](images/Screenshot_2025-03-19_at_11.56.46_AM.png)
     
 - Click on Test to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right.
 - If the output schema does not match the API response or fails to populate automatically, kindly click the GENERATE FROM RESPONSE button to refresh and align the schema with the API response.
@@ -170,9 +171,8 @@ steps:
 ```
 
 - Click on Input fields tab and click the +Add button. Here you will define the slots that you want to collect from users through the conversation and trigger your Workflow with. After defining the input fields, click the Submit button to save your changes
-    
-    ![Screenshot 2025-03-18 at 10.49.26 AM.png](images/Screenshot_2025-03-18_at_10.49.26_AM.png)
-    
+
+![Screenshot 2025-03-19 at 11.57.30 AM.png](images/Screenshot_2025-03-19_at_11.57.30_AM.png)
 
 ## **Step 3: Publish Workflow to Plugin**
 
