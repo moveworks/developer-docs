@@ -6,7 +6,7 @@ difficulty_level: BEGINNER
 time_in_minutes: 30
 name: Look up Delayed Epics
 num_implementations: 1
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+want+to+make+sure+my+projects+don%27t+get+delayed+twice%2C+which+of+my+active+epics+have+been+rolled+over+already%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ECheck+Rollover+Epics%3C%2Fb%3E%3Cbr%3E%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESure%21+Here+are+your+rolled+over+epics%3A%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22apiBlock%22%3A%7B%22code%22%3A%22%5B%5Cn++%7B%5Cn++++%5C%22title%5C%22%3A+%5C%22Migrate+ETL+infrastructure+to+new+platform%5C%22%2C%5Cn++++%5C%22epic_id%5C%22%3A+%5C%22BD-723%5C%22%2C%5Cn++++%5C%22status%5C%22%3A+%5C%22In+Progress%5C%22%2C%5Cn++++%5C%22original_due_date%5C%22%3A+%5C%22November+23%5C%22%2C%5Cn++++%5C%22new_due_date%5C%22%3A+%5C%22December+10%5C%22%5Cn++%7D%2C%5Cn++%7B%5Cn++++%5C%22title%5C%22%3A+%5C%22Add+multiple+sorting+levels+to+BizOps+table%5C%22%2C%5Cn++++%5C%22epic_id%5C%22%3A+%5C%22BD-860%5C%22%2C%5Cn++++%5C%22status%5C%22%3A+%5C%22In+Progress%5C%22%2C%5Cn++++%5C%22original_due_date%5C%22%3A+%5C%22November+18%5C%22%2C%5Cn++++%5C%22new_due_date%5C%22%3A+%5C%22December+6%5C%22%5Cn++%7D%5Cn%5D%22%2C%22connectorName%22%3A%22jira%22%7D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+want+to+make+sure+my+projects+don%27t+get+delayed+twice%2C+which+of+my+active+epics+have+been+rolled+over+already%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ECheck+Rollover+Epics%3C%2Fb%3E%3Cbr%3E%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHere+are+the+active+epics+that+have+been+rolled+over%3A%3Cbr%3E%5Cn%3Cbr%3E%5Cn1.+%3Cstrong%3EEpic+Name%3A%3C%2Fstrong%3E+Migrate+ETL+infrastructure+to+new+platform%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3ECurrent+Due+Date%3A%3C%2Fstrong%3E+January+27%2C+2025%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3EPrevious+Due+Date%3A%3C%2Fstrong%3E+January+20%2C+2025%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3EKey%3A%3C%2Fstrong%3E+ME-13%3Cbr%3E%5Cn%3Cbr%3E%5Cn2.+%3Cstrong%3EEpic+Name%3A%3C%2Fstrong%3E+Creator+Studio+Bugs%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3ECurrent+Due+Date%3A%3C%2Fstrong%3E+February+22%2C+2025%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3EPrevious+Due+Date%3A%3C%2Fstrong%3E+February+12%2C+2025%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3EKey%3A%3C%2Fstrong%3E+CSB-10%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - Engineering
 - IT
@@ -32,7 +32,7 @@ Let's get started!
 
 ## **Conversation Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+want+to+make+sure+my+projects+don%27t+get+delayed+twice%2C+which+of+my+active+epics+have+been+rolled+over+already%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ECheck+Rollover+Epics%3C%2Fb%3E%3Cbr%3E%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESure%21+Here+are+your+rolled+over+epics%3A%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22apiBlock%22%3A%7B%22code%22%3A%22%5B%5Cn++%7B%5Cn++++%5C%22title%5C%22%3A+%5C%22Migrate+ETL+infrastructure+to+new+platform%5C%22%2C%5Cn++++%5C%22epic_id%5C%22%3A+%5C%22BD-723%5C%22%2C%5Cn++++%5C%22status%5C%22%3A+%5C%22In+Progress%5C%22%2C%5Cn++++%5C%22original_due_date%5C%22%3A+%5C%22November+23%5C%22%2C%5Cn++++%5C%22new_due_date%5C%22%3A+%5C%22December+10%5C%22%5Cn++%7D%2C%5Cn++%7B%5Cn++++%5C%22title%5C%22%3A+%5C%22Add+multiple+sorting+levels+to+BizOps+table%5C%22%2C%5Cn++++%5C%22epic_id%5C%22%3A+%5C%22BD-860%5C%22%2C%5Cn++++%5C%22status%5C%22%3A+%5C%22In+Progress%5C%22%2C%5Cn++++%5C%22original_due_date%5C%22%3A+%5C%22November+18%5C%22%2C%5Cn++++%5C%22new_due_date%5C%22%3A+%5C%22December+6%5C%22%5Cn++%7D%5Cn%5D%22%2C%22connectorName%22%3A%22jira%22%7D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+want+to+make+sure+my+projects+don%27t+get+delayed+twice%2C+which+of+my+active+epics+have+been+rolled+over+already%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ECheck+Rollover+Epics%3C%2Fb%3E%3Cbr%3E%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHere+are+the+active+epics+that+have+been+rolled+over%3A%3Cbr%3E%5Cn%3Cbr%3E%5Cn1.+%3Cstrong%3EEpic+Name%3A%3C%2Fstrong%3E+Migrate+ETL+infrastructure+to+new+platform%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3ECurrent+Due+Date%3A%3C%2Fstrong%3E+January+27%2C+2025%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3EPrevious+Due+Date%3A%3C%2Fstrong%3E+January+20%2C+2025%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3EKey%3A%3C%2Fstrong%3E+ME-13%3Cbr%3E%5Cn%3Cbr%3E%5Cn2.+%3Cstrong%3EEpic+Name%3A%3C%2Fstrong%3E+Creator+Studio+Bugs%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3ECurrent+Due+Date%3A%3C%2Fstrong%3E+February+22%2C+2025%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3EPrevious+Due+Date%3A%3C%2Fstrong%3E+February+12%2C+2025%3Cbr%3E%5Cn%26nbsp%3B-+%3Cstrong%3EKey%3A%3C%2Fstrong%3E+CSB-10%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
 
 # **Creator Studio Components**
 
@@ -54,7 +54,7 @@ To efficiently implement the use case of fetching issues linked to a specific ep
 
 ![Delayed epics.png](Look%20up%20Delayed%20Epics%204cee06a04c2346979461a3f82128b84f/fea6d706-1514-4e67-af30-aa7976eb8f46.png)
 
-## **API #1: Search for Inprogress Epic issues**
+## **API #1: Search for Inprogress Epics**
 
 The [Search for Inprogress epic issues using JQL enhanced search (GET)](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issue-search/#api-rest-api-3-search-jql-get) API enables you to retrieve in-progress epics using Jira Query Language (JQL). This API is ideal for filtering epics that are not closed across all accessible projects. It also supports additional query parameters for refining search results, such as specifying fields to include in the response.
 
@@ -81,7 +81,7 @@ curl --request GET \
 ## **Step 1: Build HTTP Action**
 
 - Define your HTTP Actions for fetching all the rolled-over epics :
-    1. **Search for Epic by Name**
+    1. **Search for Inprogress Epics**
         - In Creator Studio, create a new Action.
             - Navigate to `Plugins` section > `Actions` tab
             - Click on `CREATE` to define a new action
@@ -114,7 +114,7 @@ curl --request GET \
             
             ![Screenshot 2025-02-18 at 1.27.02 PM.png](Look%20up%20Delayed%20Epics%204cee06a04c2346979461a3f82128b84f/Screenshot_2025-02-18_at_1.27.02_PM.png)
             
-    2. **Retrieve Issues Linked to the Epic**
+    2. **Retrieve changelog details**
         - Repeat the steps above to create another action.
         - Click on the `IMPORT CURL` option and paste the following cURL command:
             
