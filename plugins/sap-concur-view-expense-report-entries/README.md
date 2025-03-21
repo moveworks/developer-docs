@@ -11,7 +11,6 @@ solution_tags:
 systems:
 - sap-concur
 
----
 # **Introduction**
 
 SAP Concur is a leading platform for managing business expenses, travel and invoicing. The **View Expense Entries For Report** plugin simplifies retrieving all expense entries associated with a specific report, allowing employees to efficiently review and validate their expenses.
