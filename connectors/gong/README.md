@@ -1,8 +1,7 @@
 ---
 description: Gong Connector.
-fidelity: IDEA
+fidelity: GUIDE
 name: Gong
-
 ---
 
 # **Introduction**
