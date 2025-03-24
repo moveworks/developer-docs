@@ -24,7 +24,7 @@ Let's get started!
 ## Prerequisites
 
 - SAP Concur Connector built in Creator Studio (follow the [SAP Concur Authentication guide](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) to create your connector)
-- The  Look up Expense Reports plugin built in Creator Studio. It retrieves all reports related to a user who queried the bot. Refer to the [Look up Expense Reports](https://developer.moveworks.com/creator-studio/resources/plugin?id=sap-concur-expense-report-lookup) guide for setup instructions.
+- The Look up Expense Reports plugin built in Creator Studio. It retrieves all reports related to a user who queried the bot. Refer to the [Look up Expense Reports](https://developer.moveworks.com/creator-studio/resources/plugin?id=sap-concur-expense-report-lookup) guide for setup instructions.
 
 ## What are we building?
 
