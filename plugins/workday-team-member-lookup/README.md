@@ -12,6 +12,7 @@ solution_tags:
 - HR
 - HR - Employee Records
 - HR - Onboarding
+- HR - Time & Absence
 systems:
 - workday
 time_in_minutes: 25

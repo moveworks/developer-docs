@@ -1,11 +1,11 @@
 ---
-difficulty_level: BEGINNER
-fidelity: GUIDE
-name: Github
-time_in_minutes: 10
 accreditations:
 - indrapaul24
 - DEFAULT
+difficulty_level: BEGINNER
+fidelity: GUIDE
+name: GitHub
+time_in_minutes: 10
 ---
 
 # **Introduction**
