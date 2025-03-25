@@ -1,14 +1,15 @@
 {
   "data": [
     {
-      "gid": "67890",
-      "resource_type": "task",
-      "name": "My Company Workspace"
+      "gid": "111111111",
+      "name": "New Feature Development",
+      "resource_type": "project"
+    },
+    {
+      "gid": "222222222",
+      "name": "Q2 Product Roadmap",
+      "resource_type": "project"
     }
-  ],
-  "next_page": {
-    "offset": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9",
-    "path": "/tasks/12345/attachments?limit=2&offset=eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9",
-    "uri": "https://app.asana.com/api/1.0/tasks/12345/attachments?limit=2&offset=eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
-  }
+  ]
 }
+
