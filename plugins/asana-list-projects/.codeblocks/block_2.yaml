@@ -2,9 +2,6 @@ steps:
   - action:
       output_key: get_projects_filter_team_asana_result
       action_name: get_projects_filter_team_asana
-      progress_updates:
-        on_complete: ON_COMPLETE_MESSAGE
-        on_pending: ON_PENDING_MESSAGE
       input_args:
         team_gid: data.team_gid
   - return:
