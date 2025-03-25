@@ -1,5 +1,5 @@
 ---
-description: See a list of all the teams in your asana workspace
+description: Plugin the lets you see a list of all the teams in your asana workspace.
 fidelity: GUIDE
 time_in_minutes: 30
 difficulty_level: BEGINNER 
