@@ -1,0 +1,20 @@
+steps:
+  - action:
+      output_key: Tax_Elections_result
+      action_name: Tax_Elections
+      progress_updates:
+        on_complete: Retrieved tax data
+        on_pending: Retrieving tax data
+      input_args:
+        fullName: meta_info.user.full_name
+  - return:
+      output_mapper:
+        FederalTaxElection:
+          Allowances: data.Tax_Elections_result.data[0].federalWithholdingW_4_NumberOfAllowances
+          Status: data.Tax_Elections_result.data[0].federalWithholdingW_4_MaritalStatus.descriptor
+          Additionalwithholding: data.Tax_Elections_result.data[0].federalWithholdingW_4_AdditionalAmount
+        StateTaxElection:
+          Allowances: data.Tax_Elections_result.data[0].stateWithholdingResident_NumberOfAllowances
+          Status: data.Tax_Elections_result.data[0].stateWithholdingResident_MaritalStatus
+          Additionalwithholding: data.Tax_Elections_result.data[0].stateWithholdingWork_AdditionalAmount.value
+
