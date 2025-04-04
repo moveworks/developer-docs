@@ -16,6 +16,7 @@ solution_tags:
 systems:
 - workday
 time_in_minutes: 25
+video: https://www.loom.com/share/d2f169b14d2544b5ae3dcacb807232da?sid=1d00d88d-35dd-4377-9ea5-726c18a04787
 ---
 
 # Introduction:
