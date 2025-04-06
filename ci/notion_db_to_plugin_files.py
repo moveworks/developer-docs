@@ -36,7 +36,7 @@ class NotionColumns(Enum):
     CUSTOMER_DEPLOYMENTS = "Customers Deployed"
     VIDEO = 'Video Link'
     REDIRECTS = 'Redirect Slugs'
-    INSTALLATION_LINK = 'Installation_Link'
+    INSTALLATION_LINK = 'installation_link'
 
 
 TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
