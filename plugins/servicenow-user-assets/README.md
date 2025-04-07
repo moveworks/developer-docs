@@ -15,6 +15,7 @@ solution_tags:
 systems:
 - servicenow
 time_in_minutes: 20
+video: https://www.loom.com/share/ca81f360b91244e6818dc68cb42e2694?sid=d8b54972-00aa-4d47-9539-8b548018e518
 ---
 
 # Introduction
