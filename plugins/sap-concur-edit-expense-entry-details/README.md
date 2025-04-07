@@ -150,13 +150,13 @@ curl --request PUT \
             ExchangeRate: data.ExchangeRate
       - return:
           output_mapper:
-            result: data.edit_expense_entry_details_result
+            update_expense_entries: data.edit_expense_entry_details_result
     ```
     
 - Click on `Input fields` tab and click the `+Add` button. Here you will define the slots that you want to collect from users through the conversation and trigger your Workflow with. After defining the input fields, click the `Submit` button to save your changes.
     - Make sure to follow the guidelines when setting the Description in this case, as it will instruct the bot to always retrieves the expense id and existing values (e.g., transaction date, amount, etc.) directly from the response of the **View Expense Entries For Report** plugin
     - Sample description :
-        - expenseID : Represent the results from the fetch_all_expense_entries_of_specific_report plugin in a structured format. Allow the user to confirm the expense name from the fetched entries. Once the user selects a specific expense, extract the ID value from the response under the 'ID' field and assign it to expense_id for further processing.
+        - expenseID : Represent all the results from the fetch_all_expense_entries_of_specific_report plugin in a structured format. ALWAYS instruct the user that only non-submitted expense reports can be updated, as submitted reports cannot be modified. Users are only allowed to update specific fields, which include TransactionDate, BusinessPurpose (Expense Category), TransactionCurrencyCode, TransactionAmount, and ExchangeRate (with the note that the ExchangeRate can only be updated when changing the currency code). Before proceeding, allow the user to review and confirm the expense entry name, along with the details that need to be updated. Once the user confirms a specific expense entry, extract the ID from the response and assign it to expenseID for further processing
         - TransactionDate : Use the input value provided by the user. Also, convert the input value to the date format of yyyy-mm-dd (example value: 2025-01-31). If the user doesn't provide any input value, then use the existing value of TransactionDate parameter, which can be fetched from the fetch_all_expense_entries_of_specific_report plugin response.
         - TransactionAmount : Use the input value provided by the user. If the user doesn't provide any input value, then use the existing value of TransactionAmount parameter, which can be fetched from the fetch_all_expense_entries_of_specific_report plugin response.
         - Replace <fetch_all_expense_reports_for_a_user> with the name of your **View Expense Entries For Report** plugin.
