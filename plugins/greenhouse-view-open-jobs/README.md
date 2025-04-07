@@ -1,8 +1,8 @@
 ---
 description: A plugin that allows an employee to identify open roles at the company.
-fidelity: GUIDE
 difficulty_level: BEGINNER
-time_in_minutes: 20
+fidelity: GUIDE
+installation_link: https://my.moveworks.com/crest-nextgen/crest-nextgen/home?externalAssetId=2e975851-7400-478c-8ab6-c018cf028635
 name: View Open Jobs
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22What+open+roles+in+PM+are+available%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%5Cn%E2%9C%85+Working+on+%3Cb%3EOpen+PM+Roles+Available%3C%2Fb%3E%5Cn%3Cbr%3E%5Cn%E2%8F%B3+Calling+Plugin+%3Cb%3EView+Open+Jobs%3C%2Fb%3E%5Cn%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHere+are+the+current+open+PM+roles+we+have%3A%3C%2Fp%3E%5Cn%3Cp%3E1.+Senior+Product+Manager%3C%2Fp%3E%5Cn%3Cp%3E2.+Product+Manager+-+New+Initiatives%3C%2Fp%3E%5Cn%3Cp%3E3.+Associate+Product+Manager%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
@@ -10,7 +10,9 @@ solution_tags:
 - HR - Recruiting & Talent
 systems:
 - greenhouse
+time_in_minutes: 20
 ---
+
 # **Introduction**
 
 Greenhouse is a leading Applicant Tracking System (ATS) that helps companies streamline their hiring process. The **View Open Jobs** plugin allows employees to easily identify open roles within their organization.
