@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-We recommend creating the connector for Coupa first, prior to installing this plugin. Please follow the [Coupa Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=coupa) to create the connector. Note that for Look Up Expense Reports Pending My Approval, you will also need to add the following permissions (the connector guide will walk you through how to add permissions):
+We recommend creating the connector for Coupa first, prior to installing this plugin. Please follow the [Coupa Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=coupa) to create the connector. Note that for Look Up My Expense Report Details, you will also need to add the following permissions (the connector guide will walk you through how to add permissions):
 
 - User » Standard role for all users who need to create and/or approve requisitions
 
