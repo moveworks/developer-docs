@@ -36,6 +36,7 @@ class NotionColumns(Enum):
     CUSTOMER_DEPLOYMENTS = "Customers Deployed"
     VIDEO = 'Video Link'
     REDIRECTS = 'Redirect Slugs'
+    INSTALLATION_LINK = 'installation_link'
 
 
 TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
@@ -132,6 +133,10 @@ class Record:
     @property
     def video_link(self) -> Optional[str]:
         return self._record[NotionColumns.VIDEO.value]
+    
+    @property
+    def installation_link(self) -> Optional[str]:
+        return self._record[NotionColumns.INSTALLATION_LINK.value]
 
     def to_front_matter(self) -> dict:
         if self.content_type == ContentTypes.CONNECTOR:
@@ -155,7 +160,8 @@ class Record:
                 "num_implementations": self.num_implementations,
                 "video": self.video_link,
                 "custom_tags": self.custom_tags,
-                "redirects": self.redirects
+                "redirects": self.redirects,
+                "installation_link": self.installation_link
             }
         else:
             raise NotImplementedError(f"No Front Matter for {self.content_type}")
@@ -239,12 +245,11 @@ def validate_record(record: Record):
     if not record.slug:
         return
 
-    if record.fidelity in [Fidelity.TEMPLATE]:
-        raise NotImplementedError("No support built for templates yet.")
     elif record.fidelity in [
         Fidelity.GUIDE,
         Fidelity.VALIDATED,
         Fidelity.BUILT_IN,
+        Fidelity.TEMPLATE
     ]:
         # Check if the guide file exists
         if not os.path.exists(record.record_readme):
