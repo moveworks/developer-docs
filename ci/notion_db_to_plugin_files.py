@@ -245,12 +245,11 @@ def validate_record(record: Record):
     if not record.slug:
         return
 
-    if record.fidelity in [Fidelity.TEMPLATE]:
-        raise NotImplementedError("No support built for templates yet.")
     elif record.fidelity in [
         Fidelity.GUIDE,
         Fidelity.VALIDATED,
         Fidelity.BUILT_IN,
+        Fidelity.TEMPLATE
     ]:
         # Check if the guide file exists
         if not os.path.exists(record.record_readme):
