@@ -19,7 +19,7 @@ time_in_minutes: 30
 
 The **Reset Microsoft MFA** plugin empowers IT teams to securely reset Multi-Factor Authentication (MFA) for users directly through the Moveworks AI Assistant. Whether a user has forgotten their credentials, switched to a new device or experienced suspicious activity, this plugin eliminates the need for manual IT intervention by enabling quick, conversational MFA resets.
 
-This guide will walk you through how to set up the integration and build the reset workflow in Agent ****Studio.Let’s get started!
+This guide will walk you through how to set up the integration and build the reset workflow in Agent Studio. Let’s get started!
 
 # Prerequisites
 
