@@ -1,6 +1,6 @@
 ---
 description: A plugin that allows an user to view past gong meetings.
-fidelity: difficulty_level: BEGINNER
+difficulty_level: BEGINNER
 fidelity: GUIDE
 time_in_minutes: 30
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=f3aeb246-68d3-4a36-a123-f4edaac0de60
