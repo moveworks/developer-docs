@@ -22,7 +22,7 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 
 - Access to Agent Studio
 - [Zoom Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=zoom&commit_id=280a6873f0354f3c7bd834c823295c3af2fc7086) set up in Creator Studio
-- [View Zoom Meetings](https://www.notion.so/View-Zoom-Meetings-1ce588d8909f807896cbe831e3acbc4f?pvs=21) Plugin
+- View Zoom Meetings Plugin
 
 # What are we building?
 
