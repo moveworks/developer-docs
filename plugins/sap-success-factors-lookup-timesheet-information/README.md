@@ -1,4 +1,17 @@
-# Lookup Timesheet Information
+---
+description: A plugin that lookups timesheet information based of a project.
+fidelity: GUIDE
+name: 'Lookup Timesheet Information '
+difficulty_level: BEGINNER
+time_in_minutes: 15
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%26nbsp%3BMay+I+view+my+timesheet+information%3F%26nbsp%3B%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3E✅+Working+on+%3Cstrong%3ETimesheet+Data%3C%2Fstrong%3E%3Cbr%3E%5Cn⏳+Calling+Plugin+%3Cstrong%3ELookup+Time+Sheet+Information%3C%2Fstrong%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3E%3Cstrong%3E1.+Recent+Approved+Timesheets%3A%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+01%2F08%2F2024+-+01%2F14%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-%3Cstrong%3E+Period%3A%3C%2Fstrong%3E+01%2F22%2F2024+-+01%2F28%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+01%2F29%2F2024+-+02%2F04%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E2.+Pending+Timesheets%3A+%3C%2Fstrong%3E%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+03%2F04%2F2024+-+03%2F10%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Pending+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+03%2F11%2F2024+-+03%2F17%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Pending%26nbsp%3B%3C%2Fp%3E%22%7D%5D%7D%5D%7D
+solution_tags:
+- HR
+- HR - Time & Absence
+systems:
+- sap-success-factors
+
+---
 
 # **Introduction :**
 
@@ -15,7 +28,7 @@ This guide will help you install and configure the plugin in Agent Studio within
 
 ## **Agent Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%26nbsp%3BMay+I+view+my+timesheet+information%3F%26nbsp%3B%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cstrong%3ETimesheet+Data%3C%2Fstrong%3E%3Cbr%3E%5Cn%E2%8F%B3+Calling+Plugin+%3Cstrong%3ELookup+Time+Sheet+Information%3C%2Fstrong%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3E%3Cstrong%3E1.+Recent+Approved+Timesheets%3A%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+01%2F08%2F2024+-+01%2F14%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-%3Cstrong%3E+Period%3A%3C%2Fstrong%3E+01%2F22%2F2024+-+01%2F28%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+01%2F29%2F2024+-+02%2F04%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E2.+Pending+Timesheets%3A+%3C%2Fstrong%3E%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+03%2F04%2F2024+-+03%2F10%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Pending+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+03%2F11%2F2024+-+03%2F17%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Pending%26nbsp%3B%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%26nbsp%3BMay+I+view+my+timesheet+information%3F%26nbsp%3B%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3E%E2%9C%85+Working+on+%3Cstrong%3ETimesheet+Data%3C%2Fstrong%3E%3Cbr%3E%5Cn%E2%8F%B3+Calling+Plugin+%3Cstrong%3ELookup+Time+Sheet+Information%3C%2Fstrong%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3E%3Cstrong%3E1.+Recent+Approved+Timesheets%3A%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+01%2F08%2F2024+-+01%2F14%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-%3Cstrong%3E+Period%3A%3C%2Fstrong%3E+01%2F22%2F2024+-+01%2F28%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+01%2F29%2F2024+-+02%2F04%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Approved%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E2.+Pending+Timesheets%3A+%3C%2Fstrong%3E%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+03%2F04%2F2024+-+03%2F10%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Pending+%26nbsp%3B%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E%3Cstrong%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B-+Period%3A%3C%2Fstrong%3E+03%2F11%2F2024+-+03%2F17%2F2024%2C+%3Cstrong%3EHours%3A%3C%2Fstrong%3E+40%3A00%2C+%3Cstrong%3EStatus%3A%3C%2Fstrong%3E+Pending%26nbsp%3B%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
 
 # **Installation Steps**
 
@@ -29,7 +42,7 @@ After configuring the connector, refer to our installation documentation for mor
 
 The **SAP_Lookup_Timesheet_Information** API retrieves a userId using user email.
 
-```yaml
+```bash
 curl --request GET
 --location 'https://<API_SERVER>/odata/v2/User?%24top=30&%24filter=email%20eq%20%27<email>%27%20&%24select=defaultFullName%2Cemail%2CempId%2CfirstName%2CuserId%2C%20username%2CassignmentUUID%2Cmanager' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
@@ -49,7 +62,7 @@ curl --request GET
 
 ## API #2: **Fetch Timesheet Information using UserId**
 
-```yaml
+```bash
 curl --request GET
 --location '<API_SERVER>/odata/v2/User('\''<userId>'\'')/userIdOfEmployeeTimeSheetNav?%24top=10&%24skip=5&%24expand=employeeTimeSheetEntry&%24select=approvalStatus%2Cperiod%20%2CrecordedHoursAndMinutes%2CplannedHoursAndMinutes%2CexternalCode&%24orderby=period%20desc' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
