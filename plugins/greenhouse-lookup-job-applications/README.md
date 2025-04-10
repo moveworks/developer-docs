@@ -37,6 +37,8 @@ We recommend creating the connector for Greenhouse first, prior to installing th
 
 After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
 
+Note: Make sure only hiring managers, recruiters or HR team members can use this plugin to fetch candidate applications. In the plugin settings, choose "Launch to selected users" and add their email addresses. This keeps the "Lookup Job Applications" feature secure and only available to the right people. Check the Launch Rules [guide](https://help.moveworks.com/docs/launch-configuration) for help.
+
 # Customization Options
 
 Some slot descriptions reference the **View Open Jobs** plugin. Please update them only if this plugin was referred to by a different name.
