@@ -33,7 +33,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-We recommend creating the connector for Workday first, prior to installing this plugin. Please follow the [Microsoft Graph Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=microsoft-graph) guide to create the connector.
+We recommend creating the connector for Microsoft Graph first, prior to installing this plugin. Please follow the [Microsoft Graph Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=microsoft-graph) guide to create the connector.
 
 **Note**: For **Reset Microsoft MFA** functionality, you will need to also add the following permissions (the connector guide will walk you through how to add permissions): 
 
