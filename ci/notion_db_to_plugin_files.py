@@ -36,7 +36,7 @@ class NotionColumns(Enum):
     CUSTOMER_DEPLOYMENTS = "Customers Deployed"
     VIDEO = 'Video Link'
     REDIRECTS = 'Redirect Slugs'
-    INSTALLATION_LINK = 'installation_link'
+    INSTALLATION_ASSET_UUID = 'installation_asset_uuid'
 
 
 TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
@@ -135,8 +135,8 @@ class Record:
         return self._record[NotionColumns.VIDEO.value]
     
     @property
-    def installation_link(self) -> Optional[str]:
-        return self._record[NotionColumns.INSTALLATION_LINK.value]
+    def installation_asset_uuid(self) -> Optional[str]:
+        return self._record[NotionColumns.INSTALLATION_ASSET_UUID.value]
 
     def to_front_matter(self) -> dict:
         if self.content_type == ContentTypes.CONNECTOR:
@@ -147,7 +147,8 @@ class Record:
                 "num_implementations": self.num_implementations,
                 "video": self.video_link,
                 "custom_tags": self.custom_tags,
-                "redirects": self.redirects
+                "redirects": self.redirects,
+                "installation_asset_uuid": self.installation_asset_uuid
             }
         elif self.content_type == ContentTypes.PLUGIN:
             return {
@@ -161,7 +162,7 @@ class Record:
                 "video": self.video_link,
                 "custom_tags": self.custom_tags,
                 "redirects": self.redirects,
-                "installation_link": self.installation_link
+                "installation_asset_uuid": self.installation_asset_uuid
             }
         else:
             raise NotImplementedError(f"No Front Matter for {self.content_type}")
