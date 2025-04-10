@@ -3,6 +3,7 @@ description: A plugin that lets you get contract data for a specified account th
   Salesforce.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: f94cce19-8330-4db5-bcc6-4b37d209a265
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=f94cce19-8330-4db5-bcc6-4b37d209a265
 name: Look up Contract Information
 num_implementations: 1

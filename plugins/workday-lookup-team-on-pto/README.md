@@ -2,6 +2,7 @@
 description: A plugin that allows a manager to get a list of their team members who
   are on PTO on a given date.
 fidelity: VALIDATED
+installation_asset_uuid: 713dc42f-adb9-4a3d-a426-175e0ea5cebc
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=713dc42f-adb9-4a3d-a426-175e0ea5cebc
 name: Look up Direct Reports on PTO on a specific date
 num_implementations: 1

@@ -5,6 +5,7 @@ description: A plugin that books time off in Workday.
 design_pattern_id: 2
 difficulty_level: INTERMEDIATE
 fidelity: TEMPLATE
+installation_asset_uuid: e3a12c85-4980-4a0d-908e-a5e29e2e3470
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=e3a12c85-4980-4a0d-908e-a5e29e2e3470
 name: Request Time Off
 num_implementations: 2

@@ -4,6 +4,7 @@ accreditations:
 description: A plugin that allows someone to look up the ID of a cost center.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: 8fb82a59-5feb-4cea-bdfc-6d7a9c4a530e
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=8fb82a59-5feb-4cea-bdfc-6d7a9c4a530e
 name: Look Up a Cost Center ID by its Name
 num_implementations: 1

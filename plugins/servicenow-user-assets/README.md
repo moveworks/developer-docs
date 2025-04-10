@@ -5,6 +5,7 @@ description: A plugin that queries associated assets such as laptops, mice etc f
   a user.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: 8882af4a-2bd7-43f6-b6b8-7812168a311b
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=8882af4a-2bd7-43f6-b6b8-7812168a311b
 name: Look Up My Assets
 num_implementations: 2

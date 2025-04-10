@@ -3,6 +3,7 @@ description: A plugin that lets user identify which epics have been rolled over 
   a new sprint.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: 97048e78-afa7-4b30-badb-229601b86bec
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=97048e78-afa7-4b30-badb-229601b86bec
 name: Look up Delayed Epics
 num_implementations: 1

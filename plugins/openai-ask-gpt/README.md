@@ -5,6 +5,7 @@ description: A plugin that lets an employee ask ChatGPT a question or summarize 
   sentence.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: 037fed63-d2a5-4586-ac84-250a5dcd1649
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=037fed63-d2a5-4586-ac84-250a5dcd1649
 name: Ask GPT
 num_implementations: 1

@@ -2,6 +2,7 @@
 description: A plugin which can look up assigned epics in Jira.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: 5fb6a24b-044b-4cee-833b-dbdfa4beb8d4
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=5fb6a24b-044b-4cee-833b-dbdfa4beb8d4
 name: Check Open Epics
 num_implementations: 1

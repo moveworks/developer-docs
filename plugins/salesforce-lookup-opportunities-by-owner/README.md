@@ -3,6 +3,7 @@ description: A plugin that allows you to specify a sales representative's name a
   get related accounts and opportunities that they own.
 difficulty_level: INTERMEDIATE
 fidelity: TEMPLATE
+installation_asset_uuid: 60452743-51e9-440a-9906-4a0a4df84dde
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=60452743-51e9-440a-9906-4a0a4df84dde
 name: Look up Account and Opportunities by Owner
 num_implementations: 1

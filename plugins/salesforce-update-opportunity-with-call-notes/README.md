@@ -3,6 +3,7 @@ description: A plugin that allows you to post an update to the next steps field 
   an opportunity or add notes.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: 97d984d3-f849-49bb-a096-b64cfcfab6b6
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=97d984d3-f849-49bb-a096-b64cfcfab6b6
 name: Update Opportunity with Call Notes
 num_implementations: 1

@@ -2,6 +2,7 @@
 description: A plugin that looks up details from an opportunity in Salesforce.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: 3bd88e8f-994f-48bb-a0db-11c1f70d420b
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=3bd88e8f-994f-48bb-a0db-11c1f70d420b
 name: Look up Opportunity Information
 num_implementations: 1

@@ -2,6 +2,7 @@
 description: A plugin that looks up an employees benefits information.
 difficulty_level: INTERMEDIATE
 fidelity: TEMPLATE
+installation_asset_uuid: 862f53a4-ee19-41e9-a215-1526550d68bf
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=862f53a4-ee19-41e9-a215-1526550d68bf
 name: View Benefit Elections
 num_implementations: 0

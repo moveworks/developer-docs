@@ -4,6 +4,7 @@ accreditations:
 description: A plugin that retrieves ideas from your backlog in Jira.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
+installation_asset_uuid: f3c6f63a-3e66-4434-bcaf-0f801232766a
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=f3c6f63a-3e66-4434-bcaf-0f801232766a
 name: Check Backlog Ideas
 num_implementations: 1

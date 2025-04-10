@@ -4,7 +4,7 @@ accreditations:
 - DEFAULT
 description: A plugin which allows you to view team members (peers and delegates).
 difficulty_level: INTERMEDIATE
-fidelity: GUIDE
+fidelity: TEMPLATE
 installation_link: https://my.moveworks.com/crest-nextgen/crest-nextgen/home?externalAssetId=b19c050b-47a9-44e6-b3b1-5a7838eda5a3
 name: Look up Team Members
 num_implementations: 1
