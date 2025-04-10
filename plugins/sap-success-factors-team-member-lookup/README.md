@@ -42,7 +42,7 @@ After configuring the connector, refer to our installation documentation for mor
 
 The **SAP_Lookup_Team_Member** API retrieves a Team members using user email.
 
-```yaml
+```bash
 curl --request GET
 --location 'https://<API_SERVER>/odata/v2/User?%24top=30&%24filter=email%20eq%20%27<email>%27%20&%24select=defaultFullName%2Cemail%2CempId%2CfirstName%2CuserId%2C%20username%2CassignmentUUID%2Cmanager&%24expand=manager' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
@@ -63,7 +63,7 @@ curl --request GET
 
 ## API #2: **Fetch Team members using Manager’s UserId**
 
-```yaml
+```bash
 curl --request GET
 --location 'https://<API_SERVER>/odata/v2/User('\''<Manager_userId>'\'')/directReports?%24select=defaultFullName%2Cemail%2CempId%2CfirstName%2CuserId%2Cusername' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
