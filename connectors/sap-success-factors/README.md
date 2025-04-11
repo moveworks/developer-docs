@@ -113,7 +113,26 @@ The following steps will walk you through how to register an OAuth application i
 ![image.png](ee3f5032-34b5-42c7-bd3e-3ef0fab43e87.png)
 
 - Fill in the required fields:
-    - `tokenUrl`: API server endpoint followed by `/oauth/token`
+    - `tokenUrl`:  The full URL to the token endpoint of your SAP SuccessFactors API server. This is constructed by appending `/oauth/token` to your instance-specific API server URL.
+    
+    **Example:**
+    
+    ```bash
+    https://<your-api-server-url>/oauth/token
+    ```
+    
+    - For a complete list of SAP SuccessFactors API servers by region and environment, refer to the [SAP API Server Directory](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/list-of-sap-successfactors-api-servers).
+    
+    ### Additional Guidance on API Servers
+    
+    - Use the correct server URL for your instance to avoid authentication and connectivity issues.
+    - SAP does **not** support IP addresses in endpoint URLs as part of its reference architecture. Always use domain names.
+    
+    ### Common Endpoint Patterns
+    
+    ![image.png](image%20410.png)
+    
+    - **Tip:** To find your instance-specific information (such as API server region and version), log into your SAP SuccessFactors account, click your profile in the top header, and select **Show version information**.
     - `clientId`: The API Key from your SF OAuth registration.
     - `userId` or `userName`: Choose one based on your setup.
     - `privateKey`: X.509 private key.

@@ -1,4 +1,6 @@
-curl --location 'https://<API_SERVER_DOMAIN>/rest/timemanagement/absence/v1/timeAccountBalances?%24at=2020-03-17' \
---header 'Authorization: Bearer <ACCESS_TOKEN>' \
---header 'Accept: application/json'
-
+curl --location 'https://<API_SERVER_DOMAIN>/oauth/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'company_id=<COMPANY_ID>' \
+--data-urlencode 'client_id=<CLIENT_ID>' \
+--data-urlencode 'grant_type=urn:ietf:params:oauth:grant-type:saml2-bearer' \
+--data-urlencode 'assertion=<SAML_ASSERTION>'
