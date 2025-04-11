@@ -9,7 +9,7 @@ drop_accreditations:
 - ajaymerchia
 fidelity: GUIDE
 name: Look up Salesforce Accounts
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A3558%2C%22title%22%3A%22New+Mock%22%2C%22transcript%22%3A%7B%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+have+a+call+with+IntelliFresh+soon.+Can+you+give+me+a+summary+of+their+account%2C+the+date+of+the+recent+call%2C+and+the+next+steps%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3ESearches+Salesforce+for+IntelliFresh+account+details%2C+recent+call+date+and+notes%2C+excluding+opportunity+status.%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EHere%27s+the+summary+for+%3Cb%3EIntelliFresh%3C%2Fb%3E%3A%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22Account+Summary%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3EAE+Assigned%3A%3C%2Fb%3E+Alex+Mercer%3Cbr%3E%3Cb%3EAnnual+Revenue%3A%3C%2Fb%3E+%245M%3Cbr%3E%3Cb%3EContact+Information%3A%3C%2Fb%3E+Jane+Doe%2C+janed%40intellifresh.com%3Cbr%3E%3Cb%3ELast+Interaction+Date%3A%3C%2Fb%3E+2023-04-15%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22Recent+Call+Details%22%2C%22text%22%3A%22%3Cb%3ECall+Date%3A%3C%2Fb%3E+2023-04-20%3Cbr%3E%3Cb%3ENext+Steps%3A%3C%2Fb%3E%3Cbr%3E%3Cb%3E1.%3C%2Fb%3E+Schedule+a+product+demo+for+the+latest+version.%3Cbr%3E%3Cb%3E2.%3C%2Fb%3E+Send+over+the+case+studies+related+to+their+industry.%3Cbr%3E%3Cb%3E3.%3C%2Fb%3E+Follow+up+email+next+week+to+discuss+potential+upgrade+options.%22%7D%5D%7D%5D%2C%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43%2BAM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%7D%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22What+is+the+Renewal+date+for+ACME%253F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Query+Salesforce+Accounts+API+endpoint%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22The+renewal+date+for+ACME+is+on+February+25%2C+2026%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22ACME%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Perfect%2C+thanks%21%22%7D%5D%2C%22role%22%3A%22user%22%7D%5D%7D
 solution_tags:
 - Sales
 systems:
@@ -19,145 +19,57 @@ time_in_minutes: 5
 
 # Introduction
 
-Salesforce allows you to manage the entire lifecycle of a customer relationship, from a prospect to a newly closed customer through multiple renewals. However, retrieving specific details of a customer’s account might take some time since you will need to you to login to the Salesforce portal and then navigate to the correct account before you can check on any such information.
+The **Look Up Salesforce Accounts** plugin enables teams to effortlessly retrieve detailed customer account information from Salesforce using the Moveworks AI Assistant. Instead of logging into Salesforce and manually navigating through the portal, users can now quickly access account data through a simple conversational query — streamlining workflows and improving productivity across sales, customer success, and support teams.
 
-In this tutorial, we will guide you through building an plugin on Creator Studio that simplifies this process and help you to swiftly pull up detailed information through a simple conversational query with your Moveworks’ bot.
-
-Let's get started!
+This guide will walk you through the simple installation process in Agent Studio. Let’s get started!
 
 # Prerequisites
 
-- [Postman](https://www.postman.com/) or an API Testing Tool
-- Salesforce Connector built in Creator Studio (follow [our guide](../../connectors/salesforce/README.md))
+- Access to Agent Studio
 
 # What are we building?
 
-## Conversation Design
+## Agent Design
 
-[This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A8491%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22What+is+the+Renewal+date+for+ACME%3F%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22Query+Salesforce+Accounts+API+endpoint%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22The+renewal+date+for+ACME+is+on+February+25%2C+2026%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Perfect%2C+thanks%21%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22What+is+the+Renewal+date+for+ACME%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Query+Salesforce+Accounts+API+endpoint%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22The+renewal+date+for+ACME+is+on+February+25%2C+2026%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22ACME%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Perfect%2C+thanks%21%22%7D%5D%2C%22role%22%3A%22user%22%7D%5D%7D) shows the experience we are going to build.
 
-## Creator Studio Components
+# Installation Steps
 
-- **Triggers:**
-    1. Natural Language
-- **Slots**:
-    1. Name of the Salesforce Account
-- **Actions:**
-    1. Query Customer Account details
-- **Guidelines:**
-    1. None
+We recommend creating the connector for Salesforce first, prior to installing this plugin. Please follow the [Salesforce Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=salesforce) guide to create the connector.
 
-Based on the needs of this use case, we should build a [Lookup Single Record by ID / Keyword](https://developer.moveworks.com/creator-studio/design-patterns/dp-6/)**.**
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
 
-## API Research
+# Appendix
 
-There’s only 1 API needed to build this use case
+### API #1: Salesforce SOQL Query API
 
-### API #1: Account Lookups
+An API for Salesforce to execute the specified SOQL Query. Here, our query would be related to the `Account` object. Sample SOQL Query API: Here is an example of a sample query API using a SOQL query on the Account object.
 
-Since we want to integrate with Salesforce, we should look into their SOQL Query APIs. For this use case, we will need only 1 API call.
+```bash
+curl --location --globoff 'https://{{your-salesforce-instance}}.my.salesforce.com/services/data/v58.0/query?q=SELECT%20Name%2CType%2CDescription%2CId%2CWebsite%2COwner.Name%20FROM%20Account%20WHERE%20Name%20LIKE%20%27{{query}}%27' \
+--header 'Authorization: Bearer {{generated_bearer_token}}'
+```
 
-![Untitled](Use%20Case%20Tutorial%20Salesforce%20Account%20Lookup%200b5238e472eb4113bbc51e0a65fa3e08/Untitled.png)
+**Query Parameters :**
 
-1. [Salesforce SOQL Query API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_query.htm): An API for Salesforce to execute the specified SOQL Query. Here, our query would be related to the `Account` object
-    1. Sample SOQL Query API: Here is an example of a sample query API using a SOQL query on the `Account` object.
+- Key ( **q** ) : Value ( **{{SELECT Email,Name,Phone,Title FROM Contact WHERE Account.Name LIKE '%25Nutanix%25' ORDER BY CreatedDate DESC}}** )
 
-        ```bash
-        curl --location --globoff 'https://{{your-salesforce-instance}}.my.salesforce.com/services/data/v58.0/query?q=SELECT%20Name%2CType%2CDescription%2CId%2CWebsite%2COwner.Name%20FROM%20Account%20WHERE%20Name%20LIKE%20%27{{query}}%27' \
-        --header 'Authorization: Bearer {{generated_bearer_token}}'
-        ```
+The Query we used here is:
 
-        The Query we used here is:
+```bash
+SELECT
+ Name,
+ Type,
+ Description,
+ Id,
+ Website,
+ Owner.Name
+FROM
+ Account
+WHERE
+ Name LIKE '%25{{query}}%25'
+```
 
-        ```sql
-        SELECT
-         Name,
-         Type,
-         Description,
-         Id,
-         Website,
-         Owner.Name
-        FROM
-         Account
-        WHERE
-         Name LIKE '%25{{query}}%25'
-        ```
+Use this Query to fetch all relevant details from your customer’s Salesforce account by replacing the `{{query}}` field with the name of the customer you’re trying to lookup for. The `%25` searches for the Account inside account names, instead of an exact keyword match (Example: matching Acme with "Acme Inc." and "Acme Semiconductors", instead of matching no results). 
 
-        Use this Query to fetch all relevant details from your customer’s Salesforce account by replacing the `{{query}}` field with the name of the customer you’re trying to lookup for. The `%25` searches for the Account inside account names, instead of an exact keyword match (Example: matching `Acme` with "Acme Inc." and "Acme Semiconductors", instead of matching no results.
-
-> In the above example, we have used only Standard Salesforce objects, however, you can also use the [Custom](https://help.salesforce.com/s/articleView?id=sf.basics_object_types.htm&type=5) objects that is defined in your Salesforce instance to build the Query. Custom objects can be identified by the trailing `__c` after their name.
-You can visit [`https://workbench.developerforce.com/`](https://workbench.developerforce.com/) and explore the different fields present within the `Account` object. You can also try out different SOQL queries and use the one which you think is a best fit for the Use Case.
->
->
-> ![Untitled](Use%20Case%20Tutorial%20Salesforce%20Account%20Lookup%200b5238e472eb4113bbc51e0a65fa3e08/Untitled%201.png)
->
-
-# Steps
-
-## Step 1: Build in Creator Studio
-
-### Setup use case
-
-1. Start in the Queries Workspace and create a new query.
-2. Provide the Basic Info so the Next Gen Copilot knows how to use this plugin:
-    1. **Query Label**: `Lookup Customer Account Details`
-    2. **Short Description:** `Lookup Customer Account Details. This includes looking up any information regarding the description, owner, the website of the customer, and more.`
-
-### Setup the API
-
-1. Select the Salesforce connector that you set up earlier in the Authentication Guide
-
-    ![Untitled](Use%20Case%20Tutorial%20Salesforce%20Account%20Lookup%200b5238e472eb4113bbc51e0a65fa3e08/Untitled%202.png)
-
-1. Define your API action for querying the Accounts data from Salesforce:
-    - Path: `/services/data/v58.0/query`
-    - Method: `GET`
-    - Query parameters:
-
-        | KEY | VALUE |
-        | --- | --- |
-        | q | `SELECT Name, Type, Description, Id, Website, Owner.Name FROM Account WHERE Name LIKE '{{query}}'` |
-    - Provide an example value for the `{{query}}` field based on any customer account you know. If you don’t have any of your customer’s name handy, please check `Accounts` section within your Salesforce instance to get the exact name of any of the customer accounts present there. For example:
-
-        ![Untitled](Use%20Case%20Tutorial%20Salesforce%20Account%20Lookup%200b5238e472eb4113bbc51e0a65fa3e08/Untitled%203.png)
-
-1. Test your setup in Creator Studio and look for a successful execution. A 200 Response Code represents that the API was successfully executed.
-
-    ![Untitled](Use%20Case%20Tutorial%20Salesforce%20Account%20Lookup%200b5238e472eb4113bbc51e0a65fa3e08/Untitled%204.png)
-
-### Label the API Response
-
-1. Select the `Name` as the Identifier.
-2. Select any of the fields as the Description. In this example, we have selected `Website` as the Description.
-3. From among the Additional Fields, select the fields that you want users to query on and label them accordingly. For example, the field `Owner` contains the name of the Owner of a customer Account and we want the bot to pick up the abbreviation name of the Owner and map it to this field. Therefore, the Label should be something like - `Owner Name`
-
-    ![Untitled](Use%20Case%20Tutorial%20Salesforce%20Account%20Lookup%200b5238e472eb4113bbc51e0a65fa3e08/Untitled%205.png)
-
-4. No follow-up action needed.
-
-### Setup your Generative Intent
-
-1. Since we want to capture the name of the customer from the utterance, which is further used to filter the SOQL Query, we will need to utilize smart extraction on the natural language slot. To do this, we need to provide the name of the customer that will be present in the `User utterance example` field in the `Keyword` field as well for every example.
-
-    ![Untitled](Use%20Case%20Tutorial%20Salesforce%20Account%20Lookup%200b5238e472eb4113bbc51e0a65fa3e08/Untitled%206.png)
-
-We want to provide different kinds of utterances here based on the Accounts Lookup use case and the various fields present within the Accounts object within your Salesforce instance. Here are some examples you can use:
-
-1. What is the description of ACME?
-2. What is the website of Teamboost?
-3. What is the SFDC Url for ChatBoost?
-4. What information is available for ACME?
-
-### Launch the use case
-
-Use our [Launch Rules](https://developer.moveworks.com/creator-studio/launch-options/) to launch your use case to your Copilot.
-
-## Step 2: See it in action
-
-Trigger the use case by asking for it from your Copilot. Find interesting ways to combine it with your own enterprise data.
-
-Note: It could take a couple minutes before your flow shows up in your copilot. If it doesn’t show up after five minutes, follow [our troubleshooting guides](https://developer.moveworks.com/creator-studio/troubleshooting/support) to further debug.
-
-# Congratulations
-
-You just added Salesforce Account Lookups to your Copilot! Check out our other guides for inspiration on what to build next.
+In the above example, we have used only Standard Salesforce objects, however, you can also use the [Custom](https://help.salesforce.com/s/articleView?id=sf.basics_object_types.htm&type=5) objects that is defined in your Salesforce instance to build the Query. Custom objects can be identified by the trailing __c after their name. You can visit [https://workbench.developerforce.com](https://workbench.developerforce.com/) and explore the different fields present within the **Account** object. You can also try out different SOQL queries and use the one which you think is a best fit for the Use Case.
