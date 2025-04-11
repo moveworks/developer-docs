@@ -26,7 +26,7 @@ You have to be one of the following:
 
 Also known as the 2-legged OAuth and OAuth Client Credentials Flow, this guide will focus on the Machine-to-Machine authentication flow between your Databricks instance and Agent Studio.
 
-Learn more about it [here](https://docs.databricks.com/aws/en/assets/files/partner-oauth-integration-guide-11f212f32b2b33a1330f54cb31d564cc.pdf).
+Learn more about it [here](https://docs.databricks.com/aws/en/dev-tools/auth/oauth-m2m).
 
 ## STEP 1: Create service principal and service principal secret
 
