@@ -2,6 +2,7 @@
 description: A plugin that allows sales representatives to look up a quote by its
   quote number for a customer/account in Salesforce.
 fidelity: GUIDE
+installation_asset_uuid: 4621f692-81d4-44d4-8d31-71542479f929
 name: Look up a Quote by its Quote Number
 difficulty_level: BEGINNER
 time_in_minutes: 15
