@@ -2,6 +2,7 @@
 description: A plugin that allows hiring managers or recruiters to fetch interview
   feedback submitted by interviewers for a specific candidate.
 fidelity: IDEA
+installation_asset_uuid: 414b76b1-97e2-4657-b0ce-d4a9ca3e534a
 name: Fetch Interview Feedback
 difficulty_level: BEGINNER
 time_in_minutes: 15
