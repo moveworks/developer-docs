@@ -2,6 +2,7 @@
 description: A plugin that streamlines the quote approval process for sales representatives,
   allowing them to submit and track approvals efficiently.
 fidelity: GUIDE
+installation_asset_uuid: b4eb733f-7761-420e-afbe-8ae2f4eab4d5
 name: Submit Quote Approvals
 difficulty_level: BEGINNER
 time_in_minutes: 15
