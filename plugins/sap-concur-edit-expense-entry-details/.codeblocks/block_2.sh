@@ -15,4 +15,4 @@ steps:
         ExchangeRate: data.ExchangeRate
   - return:
       output_mapper:
-        result: data.edit_expense_entry_details_result
+        update_expense_entries: data.edit_expense_entry_details_result
