@@ -1,0 +1,13 @@
+steps:
+  - action:
+      output_key: fetchQuoteDetails_result
+      action_name: fetchQuoteDetails
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        QuoteNumber: data.QuoteNumber
+  - return:
+      output_mapper:
+        items: data.fetchQuoteDetails_result.records
+
