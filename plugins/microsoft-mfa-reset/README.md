@@ -12,7 +12,6 @@ solution_tags:
 - IT
 systems:
 - microsoft-graph
-- azure-function-app
 time_in_minutes: 60
 ---
 
