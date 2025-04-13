@@ -1,6 +1,6 @@
 ---
 description: A plugin that allows you to ask queries through Databricks's AI/BI Genie.
-fidelity: GUIDE
+fidelity: TEMPLATE
 difficulty_level: BEGINNER
 time_in_minutes: 30
 installation_asset_uuid: 7eae9cd8-f515-4dd5-9c71-052c3bd74fc5
