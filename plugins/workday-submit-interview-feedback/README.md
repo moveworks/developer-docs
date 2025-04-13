@@ -1,5 +1,6 @@
 ---
 fidelity: GUIDE
+installation_asset_uuid: 4aabfaf9-922d-45e3-936a-78425a7c12f6
 name: Submit Interview Feedback
 difficulty_level: INTERMEDIATE
 time_in_minutes: 20
