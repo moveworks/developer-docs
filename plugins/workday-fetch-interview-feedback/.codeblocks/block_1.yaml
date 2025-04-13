@@ -1,0 +1,4 @@
+curl --location 'https://<YOUR_DOMAIN>/ccx/api/recruiting/v4/<INSTANCE>/interviews/49440b62ccba100dc52c8143c8d00000/feedback' \
+\
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+
