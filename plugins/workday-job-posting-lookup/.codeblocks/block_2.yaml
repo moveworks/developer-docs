@@ -1,0 +1,15 @@
+steps:
+  - action:
+      action_name: View_Jobs
+      progress_updates:
+        on_complete: Retrieved job postings
+        on_pending: Retrieving postings
+      output_key: View_Jobs_result
+  - return:
+      output_mapper:
+        list:
+          MAP():
+            converter:
+              title: item.title
+              jobDescription: item.jobDescription
+            items: data.View_Jobs_result.data
