@@ -30,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-We recommend creating the **Highspot connector** first before installing this plugin.
+We recommend creating the [Highspot connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=highspot) first before installing this plugin.
 
 Please follow the [Highspot API Access Guide](https://api.highspot.com/) to configure API credentials and enable POST access.
 
@@ -80,7 +80,7 @@ Authorization: Basic <base64 credential>
 **Example:**
 
 ```bash
-curl --location 'https://api.highspot.com/v1.0/spots/6138e1ca2505892258c9c6fc/users?role=viewer' \
+curl --location 'https://api.highspot.com/v1.0/spots/{{spot_id}}/users?role=viewer' \
 --header 'Content-Type: application/json' \
 --header 'hs-user: your.name@company.com' \
 --header 'Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=' \
