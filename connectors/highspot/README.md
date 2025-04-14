@@ -53,12 +53,9 @@ Now let’s set up the connection in Agent Studio:
 
 ### Example Header (if needed):
 
-```
-http
-CopyEdit
+```bash
 Authorization: Basic <base64(key:secret)>
 hs-user: user@example.com
-
 ```
 
 You can also use the header `hs-user` to **impersonate** other users for actions like content retrieval or spot access.
