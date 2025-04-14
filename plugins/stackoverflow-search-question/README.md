@@ -18,7 +18,7 @@ The **Search a Question on StackOverflow for Teams** plugin enhances the Movew
 # Prerequisites
 
 - Access to Agent Studio
-- Stackoverflow Connector set up in Creator Studio.
+- [Stackoverflow Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow&commit_id=f056c20d59f68cf98a4a511b658cd89cd3c2d7b4) set up in Creator Studio.
 
 # What are we building?
 
@@ -28,7 +28,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Stackoverflow Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [**Stackoverflow Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow&commit_id=f056c20d59f68cf98a4a511b658cd89cd3c2d7b4) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 # Appendix
 
