@@ -1,11 +1,11 @@
 ---
 description: Connect your Moveworks Copilot to Highspot.
-fidelity: TEMPLATE
-time_in_minutes: 30
 difficulty_level: BEGINNER
+fidelity: GUIDE
 name: Highspot
-
+time_in_minutes: 30
 ---
+
 # Introduction
 
 Integrating Highspot with Agent Studio enables seamless access to content, user data, and spot management through workflow automation. By connecting with Highspot's REST API using Basic Authentication, you can streamline content retrieval, automate sharing workflows, and personalize sales enablement.
