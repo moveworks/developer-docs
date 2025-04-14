@@ -14,16 +14,12 @@ This guide walks you through the setup process for connecting your Highspot envi
 
 Let’s get started!
 
----
-
 # **Prerequisites**
 
 Make sure you meet the following:
 
 - You have access to **Highspot API Credentials**.
 - You’re either using a **service account** or have permission to view documents and spots.
-
----
 
 # **Connect with Basic Authentication**
 
@@ -33,8 +29,6 @@ Highspot’s API uses **Basic Authentication**, where:
 - **Secret** = Password
 
 You’ll use these credentials when configuring your connection within Agent Studio.
-
----
 
 ## STEP 1: Generate API Key and Secret
 
@@ -48,8 +42,6 @@ To generate your Highspot API credentials:
 
 > ⚠️ Tip: API credentials are tied to the user who generates them. It's recommended to create a dedicated service account for API usage. This user can impersonate others by passing their email via the hs-user header.
 > 
-
----
 
 ## STEP 2: Connect to Agent Studio
 
@@ -71,8 +63,6 @@ hs-user: user@example.com
 
 You can also use the header `hs-user` to **impersonate** other users for actions like content retrieval or spot access.
 
----
-
 ## STEP 3: Test with a Simple API Call
 
 - **Endpoint:** `/v1.0/search/items?query-string=Sales`
@@ -83,8 +73,6 @@ Use this endpoint in Agent Studio to validate your credentials and ensure access
 
 > ✅ A successful response will return a list of content the authenticated user (or impersonated user) can view.
 > 
-
----
 
 # Congratulations!
 
