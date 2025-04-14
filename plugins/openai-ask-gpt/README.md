@@ -4,7 +4,7 @@ accreditations:
 description: A plugin that lets an employee ask ChatGPT a question or summarize a
   sentence.
 difficulty_level: BEGINNER
-fidelity: TEMPLATE
+fidelity: GUIDE
 installation_asset_uuid: 037fed63-d2a5-4586-ac84-250a5dcd1649
 name: Ask GPT
 num_implementations: 1
