@@ -10,7 +10,6 @@ solution_tags:
 - Sales
 systems:
 - highspot
-
 ---
 # Add User to Share Spot You Own
 
