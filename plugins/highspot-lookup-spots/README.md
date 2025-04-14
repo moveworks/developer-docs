@@ -10,7 +10,6 @@ solution_tags:
 - Sales
 systems:
 - highspot
-
 ---
 # Get User’s Spots
 
