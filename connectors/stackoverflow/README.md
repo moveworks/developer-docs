@@ -49,7 +49,7 @@ Integrating Stack Overflow with Creator Studio enables seamless access to valuab
     - **state** - optional
     
     ```bash
-    https://{{your organization}}.stackenterprise.co/oauth?client_id=4&scope=write_access;no_expiry&redirect_uri=https://localhost.com
+    https://{{your organization}}.stackenterprise.co/oauth?client_id=4&scope=write_access,no_expiry&redirect_uri=https://localhost.com
     ```
     
 2. The user approves your app
