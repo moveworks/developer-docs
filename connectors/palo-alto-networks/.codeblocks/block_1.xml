@@ -1,0 +1,8 @@
+xml
+CopyEdit
+<response status="success">
+  <result>
+    <key>YOUR_API_KEY_HERE</key>
+  </result>
+</response>
+
