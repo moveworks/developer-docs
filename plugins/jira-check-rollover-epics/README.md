@@ -2,7 +2,7 @@
 description: A plugin that lets user identify which epics have been rolled over to
   a new sprint.
 difficulty_level: BEGINNER
-fidelity: GUIDE
+fidelity: TEMPLATE
 installation_asset_uuid: 97048e78-afa7-4b30-badb-229601b86bec
 name: Look up Delayed Epics
 num_implementations: 1
