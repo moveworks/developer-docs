@@ -1,6 +1,9 @@
 ---
 description: Plugin to create a task for an user and assign projects, start date,
   due date.
+fidelity: TEMPLATE
+diffuculty: BEGINNER
+time_in_minutes: 15
 fidelity: VALIDATED
 installation_asset_uuid: 4fae8fc0-9878-4881-b7a2-1f5503671bd9
 name: Create a Task
@@ -11,7 +14,6 @@ solution_tags:
 systems:
 - asana
 ---
-
 # Introduction
 
 The **Create Task in Asana** plugin enables your users to add tasks to an Asana project directly through the Moveworks AI Assistant. Users can specify task details such as name, description, due date, and assignee, ensuring seamless task management without leaving their chat interface.
