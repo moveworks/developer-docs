@@ -1,6 +1,5 @@
 ---
-description: Agents & Support admins can look up tickets that have breached or nearing
-  SLA breach.
+description: Agents & Support admins can look up tickets that have breached or nearing SLA breach.
 fidelity: TEMPLATE
 time_in_minutes: 30
 difficulty_level: BEGINNER
