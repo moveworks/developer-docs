@@ -65,23 +65,17 @@ PAN-OS uses **API keys** for authentication. You’ll first exchange your userna
 Use the following `curl` command:
 
 ```bash
-bash
-CopyEdit
 curl -k "https://<firewall-or-panorama>/api/?type=keygen&user=<admin-username>&password=<admin-password>"
-
 ```
 
 **Response:**
 
 ```xml
-xml
-CopyEdit
 <response status="success">
   <result>
     <key>YOUR_API_KEY_HERE</key>
   </result>
 </response>
-
 ```
 
 Store this `YOUR_API_KEY_HERE` securely — it will be used in every request from Agent Studio.
