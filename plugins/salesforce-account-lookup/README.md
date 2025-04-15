@@ -2,7 +2,7 @@
 accreditations:
 - indrapaul24
 - DEFAULT
-description: A plugin that retrieves customer data from Salesforce.
+description: A plugin that allows you to retrieve customer data from Salesforce.
 design_pattern_id: 28
 difficulty_level: BEGINNER
 drop_accreditations:
@@ -10,7 +10,7 @@ drop_accreditations:
 fidelity: TEMPLATE
 installation_asset_uuid: c03e0e09-a166-4c48-abf4-56c8876b4526
 name: Look up Salesforce Accounts
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A3558%2C%22title%22%3A%22New+Mock%22%2C%22transcript%22%3A%7B%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+have+a+call+with+IntelliFresh+soon.+Can+you+give+me+a+summary+of+their+account%2C+the+date+of+the+recent+call%2C+and+the+next+steps%3F%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3ESearches+Salesforce+for+IntelliFresh+account+details%2C+recent+call+date+and+notes%2C+excluding+opportunity+status.%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EHere%27s+the+summary+for+%3Cb%3EIntelliFresh%3C%2Fb%3E%3A%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22Account+Summary%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3EAE+Assigned%3A%3C%2Fb%3E+Alex+Mercer%3Cbr%3E%3Cb%3EAnnual+Revenue%3A%3C%2Fb%3E+%245M%3Cbr%3E%3Cb%3EContact+Information%3A%3C%2Fb%3E+Jane+Doe%2C+janed%40intellifresh.com%3Cbr%3E%3Cb%3ELast+Interaction+Date%3A%3C%2Fb%3E+2023-04-15%3C%2Fp%3E%22%7D%2C%7B%22title%22%3A%22Recent+Call+Details%22%2C%22text%22%3A%22%3Cb%3ECall+Date%3A%3C%2Fb%3E+2023-04-20%3Cbr%3E%3Cb%3ENext+Steps%3A%3C%2Fb%3E%3Cbr%3E%3Cb%3E1.%3C%2Fb%3E+Schedule+a+product+demo+for+the+latest+version.%3Cbr%3E%3Cb%3E2.%3C%2Fb%3E+Send+over+the+case+studies+related+to+their+industry.%3Cbr%3E%3Cb%3E3.%3C%2Fb%3E+Follow+up+email+next+week+to+discuss+potential+upgrade+options.%22%7D%5D%7D%5D%2C%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43%2BAM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%7D%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22What+is+the+Renewal+date+for+ACME%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Query+Salesforce+Accounts+API+endpoint%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22The+renewal+date+for+ACME+is+on+February+25%2C+2026%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22ACME%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Perfect%2C+thanks%21%22%7D%5D%2C%22role%22%3A%22user%22%7D%5D%7D
 solution_tags:
 - Sales
 systems:

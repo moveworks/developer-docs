@@ -1,7 +1,6 @@
 ---
-description: Provide Support leads a TLDR summary of what activity happened on the
-  ticket, and what course of actions were taken by agent(s) - taking comments & activity
-  into consideration.
+description: A Plugin that provides support leads with a TLDR summary of ticket activity
+  and agent actions, based on comments and updates.
 difficulty_level: BEGINNER
 fidelity: VALIDATED
 name: Summarise Ticket History & Activity
