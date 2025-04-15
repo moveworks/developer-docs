@@ -22,13 +22,13 @@ This guide will show you how to add the "**Look up a Quote by its Quote Number i
 # **Prerequisites:**
 
 - Salesforce Connector built in Creator Studio (follow the [Salesforce Authentication](https://developer.moveworks.com/creator-studio/resources/connector/?id=salesforce) guide to create your connector)
-- The [Look up all Quotes for an Account  in Salesforce](https://developer.moveworks.com/creator-studio/resources/plugin/?id=salesforce-lookup-all-quotes-for-account&commit_id=868affde4f80bacf715f9763144a6df82369ae69) plugin is built in Creator Studio. This plugin allows users to retrieve specific Quote Numbers based on the Account Name. For setup instructions, refer to the [Look up all Quotes for an Account  in Salesforce](https://developer.moveworks.com/creator-studio/resources/plugin/?id=salesforce-lookup-all-quotes-for-account&commit_id=868affde4f80bacf715f9763144a6df82369ae69) in Salesforce guide
+- The [Look up all Quotes for an Account  in Salesforce](https://developer.moveworks.com/creator-studio/resources/plugin/?id=salesforce-lookup-all-quotes-for-account) plugin is built in Creator Studio. This plugin allows users to retrieve specific Quote Numbers based on the Account Name. For setup instructions, refer to the [Look up all Quotes for an Account  in Salesforce](https://developer.moveworks.com/creator-studio/resources/plugin/?id=salesforce-lookup-all-quotes-for-account) in Salesforce guide
 
 # **What are we building?**
 
 ### **Conversation Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?mock_id=vCk3HyHuEs49VvmV) shows the experience we are going to build
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+look+up+a+quote+for+a+customer+in+Salesforce.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Okay%2C+which+customer+are+you+looking+for%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Acme+Inc.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Searching+Salesforce+for+quotes+related+to+%27Acme+Inc.%27...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Found+3+quotes+for+Acme+Inc.%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22I+found+three+quotes+for+Acme+Inc.++Can+you+confirm+which+quote+you%27re+looking+for%3F%22%7D%2C%7B%22richText%22%3A%22%3Cul%3E%3Cli%3EQuote+Q-1234%3C%2Fli%3E%3Cli%3EQuote+Q-5678%3C%2Fli%3E%3Cli%3EQuote+Q-9012%3C%2Fli%3E%3C%2Ful%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Quote+Q-5678%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Retrieving+quote+details+from+Salesforce...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Successfully+retrieved+quote+details.%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here+are+the+details+for+Quote+Q-5678%3A%22%7D%2C%7B%22richText%22%3A%22%3Cul%3E%3Cli%3E%3Cb%3EQuote+Number%3A%3C%2Fb%3E+Q-5678%3C%2Fli%3E%3Cli%3E%3Cb%3ECustomer%3A%3C%2Fb%3E+Acme+Inc.%3C%2Fli%3E%3Cli%3E%3Cb%3ESKU%3A%3C%2Fb%3E+X500%3C%2Fli%3E%3Cli%3E%3Cb%3EQuantity%3A%3C%2Fb%3E+100%3C%2Fli%3E%3Cli%3E%3Cb%3EPrice%3A%3C%2Fb%3E+15000%3C%2Fli%3E%3Cli%3E%3Cb%3EValid+Until%3A%3C%2Fb%3E+2024-05-20%3C%2Fli%3E%3Cli%3E%3Cb%3EStatus%3A%3C%2Fb%3E+Draft%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Quote+Q-5678%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build
 
 # **Creator Studio Components**
 
@@ -43,13 +43,13 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **API Research**
 
-To build this use case, we will use **API** to achieve the goal of looking up an existing quote inside a Salesforce account
+To build this use case, we will use **SOQL APIs** to achieve the goal of looking up an existing quote inside a Salesforce account
 
 ![image.png](image.png)
 
 ## API #1: Retrieve Quote Based on Quote Number
 
-The [Retrieve Quote Based on Quote Number](https://developer.salesforce.com/docs/atlas.en-us.cpq_dev_api.meta/cpq_dev_api/cpq_api_pricing_parent.htm) API allows you to retrieve the details of a quote from Salesforce by querying the **Quote Number**. This API is designed to fetch a specific quote's information using the unique **Quote Number**.
+This API allows you to retrieve the details of a quote from Salesforce by querying the **Quote Number**. This API is designed to fetch a specific quote's information using the unique **Quote Number**.
 
 - **Purpose**: Fetches the details of a specific quote based on its **Quote Number**.
 - **Features**: Supports querying and retrieving the quote associated with the provided **Quote Number**.
