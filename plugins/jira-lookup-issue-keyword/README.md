@@ -1,7 +1,7 @@
 ---
 accreditations:
 - DEFAULT
-description: A plugin that enables efficient searching for issues using specific keywords,
+description: A plugin that allows efficient searching for issues using specific keywords,
   helping to improve project tracking and workflow management.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
