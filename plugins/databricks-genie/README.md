@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we do recommend that you create a Databricks connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Databricks Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a [Databricks connector](https://developer.moveworks.com/marketplace/package?id=databricks&hist=home%2Cbrws) in Agent Studio before installing this plugin to streamline the process. Please follow our [**Databricks Connector Guide**](https://developer.moveworks.com/marketplace/package?id=databricks&hist=home%2Cbrws) to do so. Once you have done this, simply follow our [plugin installation documentatio](https://help.moveworks.com/docs/ai-agent-marketplace-installation)n to get your plugin installed in minutes.
 
 # Appendix
 
@@ -78,3 +78,20 @@ While you can create a connector during plugin installation, we do recommend tha
         - **`{{conversation_id}}`**: The unique identifier for the conversation from which the message originates, same as before.
         - **`{{message_id}}`**: The unique identifier for the message containing the attachment, same as before.
         - **`{{attachment_id}}`**: The unique identifier for the specific query result attachment you wish to retrieve, obtained from above api’s response.
+
+
+## Customization Steps
+
+After you have installed this plugin, there are a few items to edit to ensure this plugin works properly for your organization. 
+
+In this plugin, the genie workspace ID is currently hard coded in the compound action. This means that you will have to update this plugin with your space ID, and then update the plugin description and triggering accordingly. To get your space id:
+
+1. Log in to Databricks
+2. Navigate to the Genie Space in your Databricks workspace
+3. Observe the URL In your browser’s address bar. It will be in the format:
+    1. `https://${DATABRICKS_HOST}/genie/rooms/<space-id>`
+4. Make note of the <space-id>
+
+1. Once you get your SpaceId, please go to the compound action inside of Agent Studio for the plugin called `databricks_ask_genie_compound`
+2. Please enter your space id, in the input_args where:
+    1.  space_id: '"<your_space_id>"’
