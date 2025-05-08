@@ -172,4 +172,4 @@ Next, consider whether to select theÂ `User consent required before execution?`Â
 
 # **Congratulations!**
 
-You've just added the "Lookup Contact Information" feature inside your Salesforce account to your Copilot! Explore our other guides for more inspiration on what to build next.
+You've just added the "Lookup Contact Information" feature inside your Salesforce account to your AI Assistant! Explore our other guides for more inspiration on what to build next.
