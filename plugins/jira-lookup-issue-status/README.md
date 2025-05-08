@@ -1,8 +1,8 @@
 ---
 accreditations:
 - DEFAULT
-description: A plugin that retrieves all possible workflow statuses for a specific
-  issue.
+description: A plugin that allows retrieving all possible workflow statuses for a
+  specific issue.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
 installation_asset_uuid: d185ff99-c8df-4f05-95d6-c0380dd1d75a
