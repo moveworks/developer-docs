@@ -15,7 +15,7 @@ systems:
 
 # **Introduction :**
 
-The **View_Payroll_Information** plugin allows users to view employee’s payroll information in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily access their pay details to stay informed and ensure transparency in their compensation records.
+The **View Payroll Information** plugin allows users to view employee’s payroll information in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily access their pay details to stay informed and ensure transparency in their compensation records.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
 
@@ -32,7 +32,7 @@ This [purple chat]( https://developer.moveworks.com/creator-studio/developer-to
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) Guide to do so. Once completed, follow our plugin installation documentation to install the  **View_Payroll_Information** plugin in minutes
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) Guide to do so. Once completed, follow our plugin installation documentation to install the  **View Payroll Information** plugin in minutes
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -40,7 +40,7 @@ After configuring the connector, refer to our installation documentation for mor
 
 ## API #1: **Fetch an employee payroll information using User displayName**
 
-The **View_Payroll_Information** API retrieves a payroll information of an employee using displayName.
+The **View Payroll Information** API retrieves a payroll information of an employee using displayName.
 
 ```bash
 curl --request GET
