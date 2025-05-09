@@ -14,7 +14,7 @@ systems:
 
 # **Introduction :**
 
-The **Salesforce_Identify_Annual_Recurring_Revenue**  plugin allows users to retrieve and analyze Annual Recurring Revenue (ARR) data directly from Salesforce through the Moveworks AI Assistant. With this plugin, users can quickly access key revenue metrics and insights.
+The **Identify Annual Recurring Revenue**  plugin allows users to retrieve and analyze Annual Recurring Revenue (ARR) data directly from Salesforce through the Moveworks AI Assistant. With this plugin, users can quickly access key revenue metrics and insights.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
 
@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **Salesforce Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **Salesforce_Identify_Annual_Recurring_Revenue** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our  [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin installation documentation to install the **Identify Annual Recurring Revenue** plugin in minutes.
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -73,7 +73,7 @@ Below are the steps you can follow to create a custom field
 
 ### **API #1: Identify Annual Recurring Revenue**
 
-The **Salesforce_Identify_Annual_Recurring_Revenue**   API retrieves a ARR(Annual Recurring Revenue) using Account Name.
+The **Identify Annual Recurring Revenue**   API retrieves a ARR(Annual Recurring Revenue) using Account Name.
 
 ```bash
 curl --location '<YOUR_INSTANCE>.salesforce.com/services/data/v60.0/query?q=SELECT+SUM(ARR__c)+totalARR+FROM+Opportunity+WHERE+Account.Name+like+<Account_Name>' \
