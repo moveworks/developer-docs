@@ -15,7 +15,7 @@ systems:
 
 # **Introduction :**
 
-The **Employee_Hire_Date** plugin allows users to retrieve the hire date of an employee from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review the hire date information for any employee.
+The **Employee Hire Date** plugin allows users to retrieve the hire date of an employee from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review the hire date information for any employee.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
 
@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) Guide to do so. Once completed, follow our plugin installation documentation to install the  **Employee_Hire_Date** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) Guide to do so. Once completed, follow our plugin installation documentation to install the  **Employee Hire Date** plugin in minutes.
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -40,7 +40,7 @@ After configuring the connector, refer to our installation documentation for mor
 
 ## API #1: **Fetch Manager’s UserId using User Email**
 
-The **Employee_Hire_Date** API retrieves a hireDate using user’s diaplayName.
+The **Employee Hire Date** API retrieves a hireDate using user’s diaplayName.
 
 ```bash
 curl --request GET
