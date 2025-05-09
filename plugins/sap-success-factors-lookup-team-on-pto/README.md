@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **SAP SuccessFactors Connector Guide** for instructions. Once completed, refer to our plugin installation documentation to install the **Lookup Direct Reports PTO on a Specific Date** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our [SAP SuccessFactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for instructions. Once completed, refer to our plugin installation documentation to install the **Lookup Direct Reports PTO on a Specific Date** plugin in minutes.
 
 For **Lookup Direct Reports PTO on a Specific Date**, you will also need to add the following permissions:
 
