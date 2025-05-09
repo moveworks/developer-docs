@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our **SAP SuccessFactors Connector Guide** for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Update Personal Email** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [SAP SuccessFactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Update Personal Email** plugin in minutes.
 
 For **Update Personal Email**, you will also need to ensure the following permissions are in place:
 
