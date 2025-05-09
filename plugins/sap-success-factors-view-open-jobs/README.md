@@ -15,7 +15,7 @@ systems:
 
 # **Introduction :**
 
-The **View_Open_Jobs** plugin allows users to view open job postings in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily access available job opportunities, helping them stay informed and take the next step in their career growth.
+The **View Open Jobs** plugin allows users to view open job postings in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily access available job opportunities, helping them stay informed and take the next step in their career growth.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
 
@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) to do so. Once completed, follow our plugin installation documentation to install the  **View_Open_Jobs** plugin in minutes
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) to do so. Once completed, follow our plugin installation documentation to install the  **View Open Jobs** plugin in minutes
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -40,7 +40,7 @@ After configuring the connector, refer to our installation documentation for mor
 
 ## API #1: Fetch open job postings
 
-The **View_Open_Jobs** API retrieves a list of currently available job postings.
+The **View Open Jobs** API retrieves a list of currently available job postings.
 
 ```bash
 curl --request GET
