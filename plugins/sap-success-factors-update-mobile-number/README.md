@@ -15,7 +15,7 @@ systems:
 
 # **Introduction :**
 
-The **SAP_Update_Mobile_Number** plugin allows users to update their mobile number in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily update their contact information to ensure their records stay current.
+The **Update_Mobile_Number** plugin allows users to update their mobile number in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily update their contact information to ensure their records stay current.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
 
@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our SAP SuccessFactors Connector Guide to do so. Once completed, follow our plugin installation documentation to install the  **SAP_Update_Mobile_Number** plugin in minutes
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) Guide to do so. Once completed, follow our plugin installation documentation to install the  **Update_Mobile_Number** plugin in minutes
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -40,7 +40,7 @@ After configuring the connector, refer to our installation documentation for mor
 
 ## API #1: **Fetch UserId using User Email**
 
-The **SAP_Update_Mobile_Number** API retrieves a userId using user email.
+The **Update_Mobile_Number** API retrieves a userId using user email.
 
 ```bash
 curl --request GET
