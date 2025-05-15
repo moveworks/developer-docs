@@ -56,6 +56,5 @@ curl --request GET
 
 **Query Parameters :**
 
-- $filter (string) ****– Filter items by property values
+- $filter (string) – Filter items by property values
 - $select (array[string]) – Select properties to be returned
-- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
