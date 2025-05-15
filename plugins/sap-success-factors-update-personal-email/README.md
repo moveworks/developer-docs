@@ -81,3 +81,4 @@ curl --request PUT \
     - `userId` (string) – The unique identifier of the user to be updated.
 - **Request Body Fields:**
     - `userId`, `firstName`, `lastName`, `displayName`, `nickname`, `email`, `location`, `status`
+- **Note:** The plugin you will install only updates the `email` field.
