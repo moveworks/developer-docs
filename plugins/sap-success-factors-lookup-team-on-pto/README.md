@@ -78,10 +78,17 @@ curl --location 'https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime?
 --header 'Accept: application/json'
 ```
 
-**Query Parameters:**
+**Query Parameters**
 
-- `userId` (string) – Employee ID to fetch approved time-off records.
-- `startDate` / `endDate` (string) – Date range in `YYYY-MM-DD` format.
-- `$filter` – Filters by `approvalStatus='APPROVED'`, specific `timeType` values, and the given date range.
-- `$select` – Returns only `userId`, `startDate`, `endDate`, `timeType`, `approvalStatus`.
-- `$top` – Limits number of results (e.g., `$top=1` for the first record).
+- `userId` – Employee ID to fetch approved time-off records
+- `startDate` / `endDate` – Date range in `YYYY-MM-DD` format
+- `$filter` – Filters by `approvalStatus='APPROVED'`, specific `timeType` values, and the given date range
+    
+    > **Custom Instruction:**
+    > 
+    > - `timeType` values (e.g., `"VACATION"`, `"SICK_LEAVE"`) are **specific to each customer's instance**
+    > - These values **must be updated** based on your instance’s configuration
+    > - To find the valid `timeType` values:
+    >     - Visit the SAP documentation for the [TimeType Entity](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/timetype)
+- `$select` – Returns only `userId`, `startDate`, `endDate`, `timeType`, `approvalStatus`
+- `$top` – Limits number of results (e.g., `$top=1` for the first record)
