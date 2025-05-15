@@ -35,7 +35,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;)  Guide to do so. Once completed, follow our plugin installation documentation to install the  **Fetch Pending Tim Off Approvals** plugin in minutes
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;)  Guide to do so. Once completed, follow our plugin installation documentation to install the  **Fetch Pending Time Off Approvals** plugin in minutes
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -59,10 +59,10 @@ curl --request GET
 
 **Query Parameters :**
 
-- $filter (string) ****– Filter items by property values
-- $expand (array[string]) ****– Expand related entities
+- $filter (string) – Filter items by property values
+- $expand (array[string]) – Expand related entities
 - $select (array[string]) – Select properties to be returned
-- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
+- optional_fields(string) – Specify additional fields to include in the response, such as $top,$skip
 
 ## API #2: **Fetch Direct reports userIds using Manager’s UserId**
 
@@ -82,7 +82,7 @@ curl --request GET
 **Query Parameters :**
 
 - $select (array[string]) – Select properties to be returned,
-- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
+- optional_fields(string) – Specify additional fields to include in the response, such as $top,$skip
 
 ## API #3: **Fetch Pending Time Off Approvals using** direct Report’s **UserId**
 
@@ -101,4 +101,4 @@ curl --request GET
 **Query Parameters :**
 
 - $select (array[string]) – Select properties to be returned,
-- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
+- optional_fields(string) – Specify additional fields to include in the response, such as $top,$skip
