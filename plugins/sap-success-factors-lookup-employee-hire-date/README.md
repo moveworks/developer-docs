@@ -52,5 +52,5 @@ curl --request GET
 **Query Parameters :**
 
 - $filter (string) – Filter items by property values. Use this to filter the hiredate by email.
-    - `<email>`  (string) – The email of the user whose hiredate you want to retrieve.
+    - `<email>`  (string) – The email of the users whose hiredate you want to retrieve.
 - $select (array[string]) – Select properties to be returned.
