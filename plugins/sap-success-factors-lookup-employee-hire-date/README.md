@@ -14,10 +14,10 @@ systems:
 ---
 # **Introduction :**
 
-The **SAP_Employee_Hire_Date** plugin allows users to retrieve the hire date of an employee from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review the hire date information for any employee.
+The **Employee Hire Date** plugin allows users to retrieve the hire date of an employee from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review the hire date information for any employee.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
-
+ 
 # Prerequisites :
 
 - Access to Agent Studio
@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our SAP SuccessFactors Connector Guide to do so. Once completed, follow our plugin installation documentation to install the  **SAP_Employee_Hire_Date** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our SAP SuccessFactors Connector Guide to do so. Once completed, follow our plugin installation documentation to install the  **Employee Hire Date** plugin in minutes.
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -41,7 +41,7 @@ After configuring the connector, refer to our installation documentation for mor
 
 The **Fetch Manager’s UserId using User Email** API retrieves a hireDate using user’s Email.
 
-```jsx
+```bash
 curl --request GET
 --location 'https://<API_SERVER>/odata/v2/User?%24top=30&%24filter=email%20eq%20%27<email>select=hireDate' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
