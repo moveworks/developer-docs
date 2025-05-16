@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that checks public http://github.com outages.
 fidelity: VALIDATED
 name: Alerts for Public Outages

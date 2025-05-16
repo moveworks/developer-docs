@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that alerts key stakeholders about feature releases.
 fidelity: IDEA
 name: Notify Of Feature Release
