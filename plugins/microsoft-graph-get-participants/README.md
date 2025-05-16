@@ -1,5 +1,5 @@
 ---
-description: A plugin that allows the user to get all the participants of a meet.
+description: A plugin that allows the user to get all the participants of a meeting.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
 installation_asset_uuid: 83ffecf4-66cf-4a7c-9a3a-9c03f2689a65
