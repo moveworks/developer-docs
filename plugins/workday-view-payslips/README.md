@@ -52,7 +52,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers?search=
 
 - `search` (string) – Search for workers by name
 
-### **API #2: Get Payslips of Worker**
+### **API #2: Fetch Payslips for Worker**
 
 ```bash
 curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/common/v1/<TENANT>/workers/{WORKER_ID}/paySlips' \
