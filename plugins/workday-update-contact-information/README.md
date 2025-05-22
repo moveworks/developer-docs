@@ -16,14 +16,13 @@ systems:
 ---
 ## Introduction
 
-The “Update Contact Information” plugin allows employees to quickly and easily update their home contact number through the Moveworks AI Assistant. This eliminates the need to manually navigate Workday, ensuring that personal contact information stays current with minimal effort.
+The **Update Contact Information** plugin allows employees to quickly and easily update their home contact number through the Moveworks AI Assistant. This eliminates the need to manually navigate Workday, ensuring that personal contact information stays current with minimal effort.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) built in Creator Studio (follow the Workday Authentication guide to create your connector)
 
 ## **What are we building?**
 
@@ -33,9 +32,14 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## **Installation Steps**
 
-We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) guide to set up the connector.
+We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [**Workday Connector**](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) guide to set up the connector.
+For this plugin, ensure the Workday integration system user has the following permissions
 
-Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+**Required Permissions:**
+
+- View and Modify access to Person Data: Home Phone
+
+Once the connector is configured, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
 ## **Appendix**
 
