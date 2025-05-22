@@ -12,8 +12,6 @@ systems:
 - workday
 
 ---
-# Workday - View Bonuses
-
 ## Introduction
 
 The **“View Bonuses”** plugin allows employees to access their bonus details for a specific period using **Workday**, all through the Moveworks AI Assistant. This ensures users have quick and easy visibility into their compensation without needing to navigate Workday manually.
@@ -38,7 +36,6 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Required Permissions:**
 
-- `View access` to Employee Compensation data
 - `View access` to Bonus Details
 
 After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup
