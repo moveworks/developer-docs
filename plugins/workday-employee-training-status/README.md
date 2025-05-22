@@ -15,14 +15,13 @@ systems:
 ---
 ## **Introduction**
 
-The “Check Employee Training Status” plugin empowers managers to view which employees have not completed their required trainings using Workday, all through the Moveworks AI Assistant. This ensures that managers can take timely action to maintain compliance and team readiness without manually digging through reports in Workday.
+The **Check Employee Training Status** plugin empowers managers to view which employees have not completed their required trainings using Workday, all through the Moveworks AI Assistant. This ensures that managers can take timely action to maintain compliance and team readiness without manually digging through reports in Workday.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#step-4-add-domain-security-policies-to-the-integration-systems-security-group) built in Creator Studio (follow the Workday Authentication guide to create your connector).
 
 ## **What are we building?**
 
@@ -38,8 +37,8 @@ Note: For the Check Employee Training Status functionality, make sure your Workd
 
 Specifically, ensure the following domain permissions are assigned with both **View** and **Get** access:
 
-- Learning
-- Required Learning Assignments
+- View and Get access to Learning
+- View and Modify access to Required Learning Assignments
 
 Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
