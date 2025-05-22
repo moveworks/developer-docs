@@ -18,7 +18,7 @@ systems:
 
 ## Introduction
 
-The “**Update Contact Information”** plugin enables employees to update their home contact address via the **Moveworks AI Assistant**, eliminating the need to navigate Workday manually. This helps maintain accurate and current personal contact details with minimal user effort.
+The “**Update Employee Address”** plugin enables employees to update their home contact address via the **Moveworks AI Assistant**, eliminating the need to navigate Workday manually. This helps maintain accurate and current personal contact details with minimal user effort.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
@@ -34,19 +34,12 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 ## Installation Steps
 
-We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) guide to set up the connector. 
-Note: For Update Address functionality, you will need to also add the following permission (the connector guide will walk you through how to add domain permissions):
+We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) guide to set up the connector.
 
-### Assign
+### Required Permission:
 
-Person Data: Home Contact Information
-
-Domain permission with Modify, **GET**, **PUT** 
-
-Person Data: Home Address
-
-Domain permission with **GET**, **PUT** 
- 
+- **Modify**, **Get**, **Put** access to `Person Data: Home Contact Information`
+- **Get**, **Put** access to `Person Data: Home Address`
 
 After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
