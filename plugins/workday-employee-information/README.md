@@ -22,7 +22,6 @@ This guide will walk you through installing and configuring the plugin in **Agen
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) built in Creator Studio (follow the Workday Authentication guide to create your connector)
 
 ## **What are we building?**
 
@@ -32,9 +31,16 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## **Installation Steps**
 
-We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) guide to set up the connector.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**Workday Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Lookup Personal Work Information** plugin in minutes.
 
-Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+For **Lookup Personal Work Information**, you will also need to ensure the following permissions are in place:
+
+**Required Scopes:**
+
+- `User Profile Access`
+- `Employee Data Access`
+
+After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup
 
 ## **Appendix**
 
@@ -50,10 +56,10 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers?search=
 
 - `search` (string) – Search for workers by name
 
-### **API #2: Fetch Hire Date of Worker**
+### **API #2: Get Worker History By ID**
 
 ```bash
-curl --location --request GET 'https://<API_SERVER_DOMAIN>/ccx/api/staffing/v7/<TENANT>/workers/{WORKER_ID}/serviceDates' \
+curl --location --request GET 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers/{{worker_id}}/history' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{}'
@@ -61,4 +67,4 @@ curl --location --request GET 'https://<API_SERVER_DOMAIN>/ccx/api/staffing/v7/<
 
 **Query Parameters:**
 
-- `WORKER_ID` (string) –  fetch hire date for a specific worker ID
+- `WORKER_ID` (string) – retrieve the employment history for a specific worker
