@@ -16,7 +16,6 @@ systems:
 
 ---
 
-
 # **Introduction :**
 
 The **Lookup Holiday Schedule** plugin allows users to retrieve the holiday schedule for a specific employee directly from Workday through the Moveworks AI Assistant. With this plugin, users can quickly access and review upcoming holidays as defined in Workday.
@@ -25,7 +24,6 @@ This guide will help you install and configure the plugin in Agent Studio within
 # Prerequisites :
 
 - Access to Agent Studio
-- [Workday Connector guide](https://developer.moveworks.com/creator-studio/resources/connector?id=workday) built in Agent Studio (follow the Workday Connector  Authentication guide to create your connector)
 
 # What are we building?
 
@@ -35,9 +33,16 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our Workday Connector Guide to do so. Once completed, follow our plugin installation documentation to install the  **Lookup Holiday Schedule** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our [Workday Connector Guide](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) to do so. Once completed, follow our plugin installation documentation to install the  **Lookup Holiday Schedule** plugin in minutes.
 
-After configuring the connector, refer to our installation documentation for more details on completing the setup.
+For **Lookup Holiday Schedule**, you will also need to ensure the following permissions are in place:
+
+**Required Scopes:**
+
+- `User Profile Access`
+- `Employee Data Access`
+
+After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation)  for more details on completing the setup.
 
 # **Appendix**
 
