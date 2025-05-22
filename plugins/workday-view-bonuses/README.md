@@ -12,6 +12,8 @@ systems:
 - workday
 
 ---
+# Workday - View Bonuses
+
 ## Introduction
 
 The **“View Bonuses”** plugin allows employees to access their bonus details for a specific period using **Workday**, all through the Moveworks AI Assistant. This ensures users have quick and easy visibility into their compensation without needing to navigate Workday manually.
@@ -21,7 +23,6 @@ This guide will walk you through installing and configuring the plugin in **Agen
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) built in Creator Studio (follow the Workday Authentication guide to create your connector)
 
 ## **What are we building?**
 
@@ -29,19 +30,18 @@ This guide will walk you through installing and configuring the plugin in **Agen
 
 This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Can+I+see+my+bonus+history%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%E2%9C%85+Authenticate+the+user%5Cn%E2%9C%85+Retrieve+bonus+payment+records%5Cn%F0%9F%94%81+Presenting+your+bonus+history%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Sure%2C+here%27s+a+summary+of+your+bonus+payments+over+the+years+%F0%9F%91%87%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EBonus+History%3C%2Fb%3E%3Cbr%3EYour+bonus+payments+are+as+follows%3A%3Cbr%3E%3Cb%3E2023%3A%3C%2Fb%3E+%245%2C000%3Cbr%3E%3Cb%3E2022%3A%3C%2Fb%3E+%244%2C500%3Cbr%3E%3Cb%3E2021%3A%3C%2Fb%3E+%244%2C000%3Cbr%3EFor+detailed+information+and+bonus+criteria%2C+you+can+click+below.%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22View+Detailed+Bonus+History%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Learn+About+Bonus+Criteria%22%7D%5D%7D%5D%7D%5D%7D) shows the experience we are going to build.
 
-## **Installation Steps**
+## Installation Steps
 
-We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) guide to set up the connector.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**Workday Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-> Note: For the View Bonuses functionality, make sure your Workday integration system user has the necessary domain permissions.
-> 
+For this plugin, ensure the Workday integration system user has the following permissions:
 
-Specifically, ensure the following domain permissions are assigned with both **View** and **Get** access:
+**Required Permissions:**
 
-- **Compensation**
-- **Bonus**
+- `View access` to Employee Compensation data
+- `View access` to Bonus Details
 
-Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup
 
 ## **Appendix**
 
@@ -64,7 +64,7 @@ curl --location --request POST 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENA
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
-  "query": "SELECT one_TimePaymentEventReason as Reason, positionForOneTimePayment, scheduledPaymentDate, completedOn, actualBonus_Amount as Amount, plan, compensationElement, employee{employee, employeeID, supervisoryOrganization} as employee FROM bonusAndOne_TimePayments WHERE one_TimePaymentEventReason IN (\"3e2f3c97dcb941e7afd0806555954818\") AND employee = \"<WORKER_ID>\" ORDER BY scheduledPaymentDate DESC LIMIT 10"
+  "query": "SELECT one_TimePaymentEventReason as Reason, positionForOneTimePayment, scheduledPaymentDate, completedOn, actualBonus_Amount as Amount, plan, compensationElement, employee{employee, employeeID, supervisoryOrganization} as employee FROM bonusAndOne_TimePayments WHERE employee = \"{{worker_id}}\" ORDER BY scheduledPaymentDate DESC LIMIT 10"
 }'
 ```
 
