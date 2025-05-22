@@ -17,14 +17,13 @@ systems:
 ---
 ## **Introduction**
 
-The “View Total Compensation” plugin enables employees and managers to instantly access detailed compensation information directly through the Moveworks AI Assistant. This eliminates the need to navigate Workday manually, providing fast, secure, and self-serve access to pay insights anytime.
+The “**View Total Compensation**” plugin enables employees and managers to instantly access detailed compensation information directly through the Moveworks AI Assistant. This eliminates the need to navigate Workday manually, providing fast, secure, and self-serve access to pay insights anytime.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** so you can provide employees with an on-demand view of their compensation details. Let’s get started!
 
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#step-4-add-domain-security-policies-to-the-integration-systems-security-group) built in Creator Studio (follow the Workday Authentication guide to create your connector).
 
 ## **What are we building?**
 
