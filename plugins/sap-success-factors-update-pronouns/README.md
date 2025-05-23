@@ -32,9 +32,9 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [SAP Successfactors Connector Guide](https://developer.moveworks.com/marketplace/package?id=sap-success-factors&hist=home%2Cbrws) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [ SAP SuccessFactors Connector Guide](https://developer.moveworks.com/marketplace/package?id=sap-success-factors&hist=home%2Cbrws) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-For this plugin, ensure the SAP Sucessfactors integration system user has the following permissions:
+For this plugin, ensure the   SAP SuccessFactors  integration system user has the following permissions:
 
 **Required Permissions:**
 
