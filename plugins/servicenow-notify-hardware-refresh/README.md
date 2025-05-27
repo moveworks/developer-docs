@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that notifies a user when they're due for a hardware refresh.
 fidelity: IDEA
 name: Notify on Hardware Refresh
