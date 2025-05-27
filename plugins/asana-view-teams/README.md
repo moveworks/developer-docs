@@ -1,5 +1,5 @@
 ---
-description: Plugin the lets you see a list of all the teams in your asana workspace.
+description: A plugin that lets you see a list of all the teams in your asana workspace.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
 installation_asset_uuid: f0364001-08d9-4faf-bf5f-badbb5f2ecaa
