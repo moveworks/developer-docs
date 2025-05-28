@@ -47,20 +47,20 @@ Once the connector is configured, refer to our [plugin installation documentatio
 
 ## **Appendix**
 
-### **API #1: Get Employee ID of the User**
+### **API #1: Get Worker Details by Email**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
---header 'Content-Type: application/json' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/moveworks_dpt1/data' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Content-Type: application/json' \
 --data '{
-  "query": "SELECT employeeID, fullName FROM allActiveEmployees WHERE fullName = \"{{full_name}}\""
+  "query": "SELECT workdayID, fullName, businessTitle, email_PrimaryWorkOrPrimaryHome as email, employeeID FROM allWorkers WHERE email_PrimaryWorkOrPrimaryHome = %27{{email}}%27"
 }'
 ```
 
 **Query Parameters:**
 
-- `full_name` (string) - To retrieve details for a specific employee id.
+- `email`(string) -The primary home email address of the worker used to look up their Workday ID.
 
 ### **API #2: Fetch Compensation Bonus and Base Salary of the Employee**
 
