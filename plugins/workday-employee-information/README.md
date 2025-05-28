@@ -44,19 +44,34 @@ After configuring the connector, refer to our [**plugin installation documentati
 
 ## **Appendix**
 
-### **API #1: Get Worker Details by Name**
+### **API#1: Get Worker ID By Email**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers?search=<WORKER_NAME>' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/moveworks_dpt1/data' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "SELECT workdayID, fullName, businessTitle, email_PrimaryWorkOrPrimaryHome as email, employeeID FROM allWorkers WHERE email_PrimaryWorkOrPrimaryHome = %27{{email}}%27"
+}'
+```
+
+**Request Body Parameters:**
+
+- `email` (string) – The primary home email address of the worker used to look up their Workday ID
+
+### **API #2: Get Worker Details By ID**
+
+```bash
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/moveworks_dpt1/workers/{{worker_id}}' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json'
 ```
 
-**Query Parameters:**
+**Parameters:**
 
-- `search` (string) – Search for workers by name
+- `WORKER_ID` (string) – retrieve the w**orker Details** for a specific worker
 
-### **API #2: Get Worker History By ID**
+### **API #3: Get Worker History By ID**
 
 ```bash
 curl --location --request GET 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers/{{worker_id}}/history' \
@@ -65,6 +80,6 @@ curl --location --request GET 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/w
 --data '{}'
 ```
 
-**Query Parameters:**
+**Parameters:**
 
 - `WORKER_ID` (string) – retrieve the employment history for a specific worker
