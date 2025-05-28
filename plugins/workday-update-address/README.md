@@ -13,8 +13,7 @@ systems:
 - workday
 
 ---
-
-
+# Workday
 
 ## Introduction
 
@@ -45,17 +44,20 @@ After you have configured the connector, Please refer to our [plugin installati
 
 ## Appendix
 
-### API #1: Get Worker Details by Name
+### API #1: Get Worker Details by Email
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers?search=<WORKER_NAME>' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/moveworks_dpt1/data' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
---header 'Content-Type: application/json'
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "SELECT workdayID, fullName, businessTitle, email_PrimaryWorkOrPrimaryHome as email, employeeID FROM allWorkers WHERE email_PrimaryWorkOrPrimaryHome = %27{{email}}%27"
+}'
 ```
 
 **Query Parameters:**
 
-- `search` *(string)* – Name of the worker to search for
+- `email` (string) – The primary home email address of the worker used to look up their Workday ID
 
 ### API #2: Initialize Home Contact Change Event
 
