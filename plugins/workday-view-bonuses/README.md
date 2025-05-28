@@ -42,17 +42,20 @@ After configuring the connector, refer to our [plugin installation documentation
 
 ## **Appendix**
 
-### **API #1: Get Worker Details by Name**
+### **API#1: Get Worker Details by Email**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers?search=<WORKER_NAME>' \
+cucurl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/moveworks_dpt1/data' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
---header 'Content-Type: application/json'
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "SELECT workdayID, fullName, businessTitle, email_PrimaryWorkOrPrimaryHome as email, employeeID FROM allWorkers WHERE email_PrimaryWorkOrPrimaryHome = %27{{email}}%27"
+}'
 ```
 
-**Query Parameters:**
+**Request Body Parameters:**
 
-- `search` (string) – Search for workers by name
+- `email` (string) – The primary home email address of the worker used to look up their Workday ID
 
 ### **API #2: Retrieve Worker Bonus History**
 
