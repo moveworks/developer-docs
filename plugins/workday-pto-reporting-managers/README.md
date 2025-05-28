@@ -44,7 +44,7 @@ After configuring the connector, refer to our [plugin installation documentation
 ### **API#1: Get Worker Details by Email**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/moveworks_dpt1/data' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -71,7 +71,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers/{{WORKE
 ### API #3: Get PTO Balance for a Worker
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/absenceManagement/v1/moveworks_dpt1/balances?worker=<WORKER_ID>' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/absenceManagement/v1/<TENANT>/balances?worker=<WORKER_ID>' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Accept: application/json'
 ```
