@@ -47,7 +47,7 @@ After configuring the connector, refer to our [**plugin installation documentati
 ### **API#1: Get Worker ID By Email**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/moveworks_dpt1/data' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -62,7 +62,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/moveworks_dpt1/data'
 ### **API #2: Get Worker Details By ID**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/moveworks_dpt1/workers/{{worker_id}}' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers/{{worker_id}}' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json'
 ```
