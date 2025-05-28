@@ -68,7 +68,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers/{{WORKE
 
 - **`WORKER_ID`**(string) – Filter direct reports for a specific worker ID
 
-### API #3: Get PTO Balance for a Worker
+### **API #3: Get PTO Balance for a Worker**
 
 ```bash
 curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/absenceManagement/v1/<TENANT>/balances?worker=<WORKER_ID>' \
