@@ -13,7 +13,7 @@ systems:
 ---
 # **Introduction :**
 
-Workday is a leading enterprise management platform, and the **“View Tax Elections”** feature allows users to view current tax election. Integrating this functionality into your bot enables users to seamlessly browse job listings, enhancing efficiency and organization.
+Workday is a leading enterprise management platform, and the **“Workday View Tax Elections”** feature allows users to view current tax election. Integrating this functionality into your bot enables users to seamlessly browse job listings, enhancing efficiency and organization.
 
 This guide provides step-by-step instructions for incorporating the **View Tax Elections** feature into your bot using Creator Studio.
 
@@ -80,7 +80,7 @@ Define your HTTP Actions for fetching all the backlog ideas of a specific projec
         
 - Click on the  IMPORT CURL option and paste the following cURL command:
     
-    ```jsx
+    ```bash
     curl --request GET
     --location 'https://<DOMAIN>/api/wql/v1/<INSTANCE>/data?query=SELECT%20stateWithholdingOtherTaxElection%2C%20workerTaxWithholdingElections%2C%20workerAnnualFederalTaxElections%2C%20email_PrimaryWorkOrPrimaryHome%2C%20workdayID%2C%20fullName%2C%20federalWithholdingW_4_NoWageNoTaxExempt%2C%20federalWithholdingW_4_LastUpdatedDate%2C%20federalWithholdingW_4_NumberOfAllowances%2C%20federalWithholdingW_4_AdditionalAmount%2C%20stateWithholdingResident_MaritalStatus%2C%20stateWithholdingDomicile_MaritalStatus%2C%20stateWithholdingWork_MaritalStatus%2C%20stateWithholdingDomicile_NumberOfAdditionalAllowances%2C%20stateWithholdingDomicile_NumberOfAllowances%2C%20stateWithholdingResident_NumberOfAdditionalAllowances%2C%20stateWithholdingResident_NumberOfAllowances%2C%20stateWithholdingWork_AdditionalAmount%2C%20stateWithholdingResident_WH_4Filed%2C%20stateWithholdingResident_WH_47Filed%2C%20stateWithholdingWork_WH_4Filed%2C%20stateWithholdingWork_WH_47Filed%2C%20localCityWithholdingResident_City%2C%20stateWithholdingResident_CertificateOfResidence%2C%20workerStateTaxWithholdingElections%2C%20federalWithholdingW_4_MaritalStatus%20FROM%20workerFromName%20(name%20%3D%20%27<NAME>%27)' \
     --header 'Content-Type: application/json'
@@ -165,4 +165,4 @@ Define your HTTP Actions for fetching all the backlog ideas of a specific projec
 
 # **Congratulations!**
 
-You've just added the **"View Tax Elections"** feature inside your workday to your Copilot! Explore our other guides for more inspiration on what to build next.
+You've just added the **"Workday view Tax Elections"** feature inside your workday to your Copilot! Explore our other guides for more inspiration on what to build next.
