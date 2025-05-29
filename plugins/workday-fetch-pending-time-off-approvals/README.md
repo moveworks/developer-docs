@@ -86,4 +86,4 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/absenceManagement/v2/<TENAN
 **Parameters:**
 
 - **`WORKER_ID`**(string) – Filter Time Off Approvals for a specific worker ID.
-- **`STATUS_ID`**(string) – Filter this completion status ID (e.g., In Progress).
+- **`STATUS_ID`**(string) – Filter this completion status ID (e.g: In Progress).
