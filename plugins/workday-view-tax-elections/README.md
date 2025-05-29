@@ -65,18 +65,6 @@ curl --request GET
 
 # **Steps**
 
-```bash
-curl --location --request PATCH 'https://<YOUR_DOMAIN>.my.salesforce.com/services/data/v58.0/sobjects/Opportunity' \
---header 'Content-Type: application/json' \
---data '{
-    "AccountId": "<ACCOUNT_ID>",
-    "Name": "<NAME>",
-    "StageName": "<STAGE_NAME>",
-    "CloseDate": "<CLOSE_DATE>",
-    "Amount": "<AMOUNT>"
-}'
-```
-
 ## **Step 1: Build HTTP Action**
 
 Define your HTTP Actions for fetching all the backlog ideas of a specific project :
@@ -114,7 +102,6 @@ Define your HTTP Actions for fetching all the backlog ideas of a specific projec
 
 ## **Step 2: Build Compound Action**
 
-![image.png](image%204.png)
 
 - Head over to the **Compound Actions** tab and click **CREATE**
     
