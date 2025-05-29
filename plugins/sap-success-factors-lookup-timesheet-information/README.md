@@ -14,14 +14,13 @@ systems:
 
 # **Introduction :**
 
-The **SAP_Lookup_Timesheet_Information** plugin allows users to retrieve a list of timesheets information from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access timesheet information of user.
+The **Timesheet_Information** plugin allows users to retrieve a list of timesheets information from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access timesheet information of user.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
 
 # Prerequisites :
 
 - Access to Agent Studio
-- [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP  Successfactors  Authentication guide to create your connector)
 
 # What are we building?
 
@@ -31,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **SAP successfactors Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **SAP_Lookup_Timesheet_Information** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **SAP successfactors Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **Lookup Timesheet Information** plugin in minutes.
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -54,7 +53,7 @@ curl --request GET
 - $filter (string) – Filter items by property values. Use this to filter the user by email.
     - `<email>`  (string) – The email of the user whose timesheet information you want to retrieve. This would be provided user ID of the user.
 - $select (array[string]) – Select properties to be returned
-- $top (integer) – Show only the first n items
+- $top (integer) – Show only the first n item
 
 ## API #2: **Fetch Timesheet Information using UserId**
 
