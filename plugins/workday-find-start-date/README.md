@@ -24,7 +24,6 @@ This guide will walk you through installing and configuring the plugin in **Agen
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) built in Creator Studio (follow the Workday Authentication guide to create your connector)
 
 ## **What are we building?**
 
@@ -36,29 +35,37 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) guide to set up the connector.
 
+For this plugin, ensure the Workday integration system user has the following permissions:
+
+**Required Permissions:**
+
+- View access to `Worker Data: Service Dates`
+
 Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
 ## **Appendix**
 
-### **API #1: Get Worker Details by Name**
+### **API#1: Get Worker Details by Email**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/v1/<TENANT>/workers?search=<WORKER_NAME>' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
---header 'Content-Type: application/json'
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "SELECT workdayID, fullName, businessTitle, email_PrimaryWorkOrPrimaryHome as email, employeeID FROM allWorkers WHERE email_PrimaryWorkOrPrimaryHome = %27{{email}}%27"
+}'
 ```
 
-**Query Parameters:**
+**Request Body Parameters:**
 
-- `search` (string) – Search for workers by name
+- `email` (string) – The primary home email address of the worker used to look up their Workday ID
 
 ### **API #2: Get Start Date of Worker**
 
 ```bash
-curl --location --request POST 'https://<API_SERVER_DOMAIN>/ccx/api/staffing/v7/<TENANT>/workers/{WORKER_ID}/serviceDates' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/staffing/v7/<TENANT>/workers/{WORKER_ID}/serviceDates' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
---header 'Content-Type: application/json' \
---data '{}'
+--header 'Content-Type: application/json'
 ```
 
 **Query Parameters:**
