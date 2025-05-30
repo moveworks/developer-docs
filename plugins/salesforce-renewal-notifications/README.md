@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin to send renewal reminder notifications to Renewal Managers and
   assists with next steps.
 fidelity: IDEA

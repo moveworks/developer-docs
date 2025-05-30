@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin that allows teams to get notified from your HR Case management
   system when payroll cases are submitted. You can review cases and make any corrections
   in chat.
