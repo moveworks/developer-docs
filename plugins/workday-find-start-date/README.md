@@ -39,7 +39,7 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Required Permissions:**
 
-- `View access` to Worker Data: Service Dates
+- View access to `Worker Data: Service Dates`
 
 Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
