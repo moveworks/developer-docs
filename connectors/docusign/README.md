@@ -172,15 +172,15 @@ Additional Resources
 5. Fill these values 
     
     
-    | **Field Name** | **What to Fill In** | **Description**  |
+    | Field Name | What to Fill In | Description  |
     | --- | --- | --- |
-    | **JWT Auth Algorithm** | JWT_ALGORITHM_RS256 | Use RS256 (RSA SHA-256) as the signing algorithm. This is required by DocuSign for JWT tokens. |
-    | **Jwt Auth Claims Expiry Seconds** | **`3600`** (or less, e.g., **`3600`**) | Token expiration time in seconds from issuance (**`iat`**). Max is 1 hour (3600 seconds). |
-    | **Jwt Auth Claims Issuer** | Your **Integration Key** (Client ID) | The Integration Key (a GUID) assigned to your app in DocuSign Admin, which we saved earlier. |
-    | **Jwt Auth Claims Audience** | **`account.docusign.com`**  | The OAuth token endpoint host you are requesting the token from (audience). |
-    | **Jwt Auth Claims Subject** | The **User ID (GUID)** of the admin | The DocuSign userId (not email) of the admin. |
-    | **Jwt Auth Additional Claims** | Key : `scope`
-    value : `signature impersonation organization_read user_read user_write group_read permission_read domain_read identity_provider_read` | Scopes required for accessing Api endpoints. Space delimited. |
+    | JWT Auth Algorithm | JWT_ALGORITHM_RS256 | Use RS256 (RSA SHA-256) as the signing algorithm. This is required by DocuSign for JWT tokens. |
+    | Jwt Auth Claims Expiry Seconds | 3600 (or less, e.g., 3600) | Token expiration time in seconds from issuance (iat). Max is 1 hour (3600 seconds). |
+    | Jwt Auth Claims Issuer | Your Integration Key (Client ID) | The Integration Key (a GUID) assigned to your app in DocuSign Admin, which we saved earlier. |
+    | Jwt Auth Claims Audience | account.docusign.com  | The OAuth token endpoint host you are requesting the token from (audience). |
+    | Jwt Auth Claims Subject | The User ID (GUID) of the admin | The DocuSign userId (not email) of the admin. |
+    | Jwt Auth Additional Claims | Key : scope
+    value : signature impersonation organization_read user_read user_write group_read permission_read domain_read identity_provider_read | Scopes required for accessing Api endpoints. Space delimited. |
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2020.png)
     
