@@ -169,8 +169,11 @@ Additional Resources
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2019.png)
     
-5. Fill these values 
+5. Fill these values after selecting `Jwt Auth` under **Auth Config**
     
+    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2020.png)
+    
+    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2021.png)
     
     | Field Name | What to Fill In | Description  |
     | --- | --- | --- |
@@ -181,10 +184,6 @@ Additional Resources
     | Jwt Auth Claims Subject | The User ID (GUID) of the admin | The DocuSign userId (not email) of the admin. |
     | Jwt Auth Additional Claims | Key : scope, value : signature impersonation organization_read user_read user_write group_read permission_read domain_read identity_provider_read | Scopes required for accessing Api endpoints. Space delimited. |
 
-    
-    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2020.png)
-    
-    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2021.png)
     
 6. Go to **input args** and put the **accountId** value from **Apps and keys** as **example value**. Check **Required** and **Save.**
     
