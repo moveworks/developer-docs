@@ -179,8 +179,8 @@ Additional Resources
     | Jwt Auth Claims Issuer | Your Integration Key (Client ID) | The Integration Key (a GUID) assigned to your app in DocuSign Admin, which we saved earlier. |
     | Jwt Auth Claims Audience | account.docusign.com  | The OAuth token endpoint host you are requesting the token from (audience). |
     | Jwt Auth Claims Subject | The User ID (GUID) of the admin | The DocuSign userId (not email) of the admin. |
-    | Jwt Auth Additional Claims | Key : scope
-    value : signature impersonation organization_read user_read user_write group_read permission_read domain_read identity_provider_read | Scopes required for accessing Api endpoints. Space delimited. |
+    | Jwt Auth Additional Claims | Key : scope, value : signature impersonation organization_read user_read user_write group_read permission_read domain_read identity_provider_read | Scopes required for accessing Api endpoints. Space delimited. |
+
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2020.png)
     
