@@ -1,9 +1,11 @@
 ---
-name: Docusign
+description: A jwt based connector for Docusign.
 difficulty_level: BEGINNER
 fidelity: GUIDE
+name: Docusign
 time_in_minutes: 30
 ---
+
 # **Introduction**
 
 Integrating DocuSign with Agent Studio allows for seamless incorporation of electronic signature capabilities and document management into your workflows. By leveraging DocuSign's robust REST API and utilizing appropriate authentication mechanisms, you can automate signature processes and enhance your document management workflows. This guide provides a step-by-step process to connect your DocuSign instance to Agent Studio and test the integration for efficient document execution and collaboration.
