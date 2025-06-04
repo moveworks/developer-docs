@@ -16,7 +16,7 @@ systems:
 
 # **Introduction:**
 
-The **Create Campaign Inside Account** plugin allows users to effortlessly create and manage campaigns directly linked to specific Accounts within Salesforce via the Move works AI Assistant. With this plugin, users can quickly initiate new campaigns, assign relevant details, and associate them with the correct Account—without navigating through multiple Salesforce screens.
+The **Create Campaign Inside Account** plugin allows users to effortlessly create and manage campaigns directly linked to specific Accounts within Salesforce via the Moveworks AI Assistant. With this plugin, users can quickly initiate new campaigns, assign relevant details, and associate them with the correct Account—without navigating through multiple Salesforce screens.
 
 This guide will walk you through the installation and configuration of the plugin in Agent Studio, ensuring seamless integration and enabling your team to launch targeted campaigns efficiently in just a few minutes. Let’s get started!
 
