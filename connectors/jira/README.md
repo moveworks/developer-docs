@@ -101,14 +101,8 @@ Example API: Get All Projects
         - Click on **Create** to create a new plugin
     - Set up your API Connection to configure the API endpoint based on the following:
         - Select **Inherit from existing connector** > select the **Jira** connector that you just created. This will populate the Authorization section of the API Editor.
-        
-          ![Screenshot 2024-12-04 at 1.47.43 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-04_at_1.47.43_PM.png)
-        
         - Fill out the Endpoint URL: `/rest/api/3/project`
-    - Click on **Test** to check if the Connector setup was successful and expect a successful response as shown below
-    
-      ![Screenshot 2024-12-04 at 1.49.34 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-04_at_1.49.34_PM.png)
-    
+    - Click on **Test** to check if the Connector setup was successful and expect a successful response.
 
 # Congratulations!
 
