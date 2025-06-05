@@ -7,19 +7,24 @@ time_in_minutes: 15
 
 # **Introduction**
 
-Connecting Jira to Creator Studio allows seamless integration of project management and issue tracking capabilities. By leveraging Jira's robust REST API and using Basic Authentication, you can automate ticket management and enhance workflows. This guide provides a step-by-step process to connect your Jira instance to Creator Studio and test the integration for efficient project collaboration.
+Connecting Jira to Agent Studio allows seamless integration of project management and issue tracking capabilities. By leveraging Jira's robust REST API and using Basic Authentication, you can automate ticket management and enhance workflows. This guide provides a step-by-step process to connect your Jira instance to Agent Studio and test the integration for efficient project collaboration.
 
 # **Prerequisites**
 
 - **Access to a Jira Instance**: Ensure you have access to either a **Sandbox or Production** Jira instance, depending on your testing environment.
 - **Install Postman**: Download and install Postman or another API testing tool to interact with Jira's REST API.
-- **API Token**: You **do not need to be an Atlassian admin** to create a new API token in Jira. Any user with an Atlassian account can generate an API token for authentication purposes.
+- **Admin API Token**: While any Atlassian user can generate an API token for basic authentication, we recommend using a Jira admin account to generate the token when setting up plugins in Agent Studio. This ensures the automation has sufficient permissions to:
+    - Access tickets across multiple projects
+    - Update issue statuses
+    - Assign users
+    - Create or delete issues, if required
+
 
 # **Connect with Basic Authentication**
 
 ## **Step 1: Get Your Jira API Token**
 
-- Log in to Your Atlassian Account :
+- Log in to Your Atlassian Admin Account :
     - Go to [id.atlassian.com](http://id.atlassian.com).
 - Access the API Token Management Page:
     - After logging in, click on your **profile picture** in the top-right corner.
@@ -80,9 +85,9 @@ Example API: Get All Projects
     - Send the Request and Verify the Response:
         - Send the request and upon success, you will receive list of all projects in your Jira instance, including their key, name, type, links and metadata.
 
-## **Step 4: Connect Jira to Creator Studio**
+## **Step 4: Connect Jira to Agent Studio**
 
-- In Creator Studio, create a new connector with the following configuration:
+- In Agent Studio, create a new connector with the following configuration:
     - **Base URL**: `https://<your-site>.atlassian.net`
     - **Auth Config**: Basic Auth
     - **Username**: username from previous steps
@@ -91,11 +96,11 @@ Example API: Get All Projects
       ![Screenshot 2024-12-02 at 12.38.38 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-02_at_12.38.38_PM.png)
 
 - Test your Connector by setting up a demo API action
-    - In Creator Studio, create a new Plugin.
-        - Click on **Plugins** > **Actions** tab
-        - Click on **CREATE** to create a new plugin
+    - In Agent Studio, create a new Plugin.
+        - Click on **Actions** > **HTTP Actions** tab
+        - Click on **Create** to create a new plugin
     - Set up your API Connection to configure the API endpoint based on the following:
-        - Click on **Use Existing Connector** > select the **Jira** connector that you just created > Click on **Apply**. This will populate the Authorization section of the API Editor.
+        - Select **Inherit from existing connector** > select the **Jira** connector that you just created. This will populate the Authorization section of the API Editor.
         
           ![Screenshot 2024-12-04 at 1.47.43 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-04_at_1.47.43_PM.png)
         
@@ -107,4 +112,4 @@ Example API: Get All Projects
 
 # Congratulations!
 
-You've successfully integrated Jira’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
+You've successfully integrated Jira’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
