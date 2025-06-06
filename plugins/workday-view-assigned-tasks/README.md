@@ -42,6 +42,20 @@ Specifically, ensure the following domain permissions are assigned with both **V
 - Worker Data
 - Worker Inbox Task
 
+**Tenant Configuration:**
+ 
+All Workday API endpoints in this plugin use `<TENANT>` as a placeholder. After installation, replace `<TENANT>` in the action definitions with your actual Workday tenant name.
+ 
+To find your tenant name:
+ 
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.:
+   
+    `https://impl.workday.com/**your_tenant**/...`
+   
+ 
+Make sure to update this across all actions that reference the Workday API.
+
 Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
 ## **Appendix**
