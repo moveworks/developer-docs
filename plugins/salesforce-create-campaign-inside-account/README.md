@@ -40,34 +40,31 @@ After configuring the connector, refer to our installation documentation for mor
 
 ## **Customization Process**
 
-We are using a custom field for Account , if you already have one, you can update the action to use your own field. 
+To associate a Campaign with an Account, we use a custom lookup field named `Account__c` on the Campaign object. If you already have a similar custom field, you can update the plugin’s action to reference your existing field.
+If not, follow the steps below to create this custom field
 
-Below are the steps you can follow to create a custom field 
-
-## **Steps to Create ‘Account’ Custom Field on Accounts Module**
+## **Steps to Create ‘Account’  Custom Lookup Field on Campaign**
 
 1. **Go to Setup**
-    - Click the gear icon and select **Setup**
+    - Click the gear icon in the top right corner and select Setup
 2. **Open Object Manager**
-    - In Setup, select **Object Manager**.
-    - Find and click **Account**.
-3. **Access Fields & Relationships**
-    - Click **Fields & Relationships** in the left menu.
+    - In the Setup menu, go to Object Manager.
+    - Search for and select Campaign.
+3. **Create Custom Field**
+    - Click Fields & Relationships from the left sidebar.
     - Click Next
-4. **Create Account Field**
-    - Click **New**.
-    - Choose **Lookup Relationship** as the field type, then click **Next**.
-5. Select Related To
-    - In the **"Related To"** dropdown, select **Account**.
-    - Click Next
-6. Configure Field Details
-    - For **Field Label**, enter: `Account`
-    - The **Field Name, enter**: `Account`
-    - When you reach the **Field-Level Security** step during the custom field creation, **do not make any changes** to the default selections
+    - Click New to create a new field
+    - Select Lookup Relationship as the field type, then click Next.
+    - In the “Related To” dropdown, select Account, then click Next
+4. Configure Field Details
+    - **Field Label**: `Account`
+    - **Field Name**: `Account`
+    - When you reach the **Field-Level Security** step during the custom field creation,do not make any changes to the default selections
     - Then, **click the Next button** to continue.
-    - When you reach the **Add custom related lists**  step during the custom field creation, **do not make any changes** to the default selections
+    - When you reach the **Add custom related lists** step during the custom field creation, **do not make any changes** to the default selections
     - Click the **Save & New** button
-
+    
+    Once done, your `Account__c` field is ready to be used in the API to associate campaigns with accounts.
 ## **Appendix**
 
 ### **API #1: Get Account Id Details by Account Name**
