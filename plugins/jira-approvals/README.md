@@ -9,7 +9,7 @@ design_pattern_id: 10
 difficulty_level: INTERMEDIATE
 fidelity: GUIDE
 name: Approve Jira Issues
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%22name%22%3A%22%22%2C%22imageUrl%22%3A%22%22%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A4219%2C%22title%22%3A%22New+Mock%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Afalse%2C%22botName%22%3A%22%22%2C%22botImageUrl%22%3A%22%22%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22Bot%22%2C%22text%22%3A%22Hi+Neal%2C%5CnYou+have+a+new+pending+approval+in+JIRA.+It+has+been+requested+by+nmoran%40moveworks.us+and+is+of+type+%5C%22Request+a+budget+allocation%5C%22.+Please+view+it+%3Ca+href%3D%5C%22www.jira.com%5C%22%3Ehere%3C%2Fa%3E%22%7D%5D%7D%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Hi+Neal%2C%5CnYou+have+a+new+pending+approval+in+JIRA.+It+has+been+requested+by+nmoran%40moveworks.us+and+is+of+type+%5C%22Request+a+budget+allocation%5C%22.+Please+view+it+%3Ca+href%3D%5C%22www.jira.com%5C%22%3Ehere%3C%2Fa%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - Approvals
 - IT
