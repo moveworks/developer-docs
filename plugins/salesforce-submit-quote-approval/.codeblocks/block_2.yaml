@@ -1,0 +1,11 @@
+steps:
+  - action:
+      output_key: Submit_Quote_for_Approval_result
+      action_name: Submit_Quote_For_Approval_Salesforce
+      progress_updates:
+        on_complete: Quote submitted for approval
+        on_pending: Submitting Quote for approval
+      input_args:
+        OwnerId: data.OwnerId
+        Id: data.Id
+
