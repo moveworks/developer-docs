@@ -1,7 +1,8 @@
 ---
 description: A plugin that allows the user to fetch the status and details of all
   offer approvals related to a specific job application.
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: c793b512-61e2-4cf7-b7ca-70d299afb56f
 name: Look Up Job Offer Approval Status
 difficulty_level: BEGINNER
 time_in_minutes: 15
