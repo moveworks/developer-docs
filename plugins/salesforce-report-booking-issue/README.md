@@ -1,7 +1,7 @@
 ---
-description: A plugin which reports an error when booking or issuing a quote.
+description: A plugin that retrieves the reason for a failed booking or quote in Salesforce, such as missing approvals, denied statuses or validation errors.
 fidelity: GUIDE
-name: Report a Booking Issue
+name: View Booking or Quote Failure Reason
 difficulty_level: BEGINNER
 time_in_minutes: 10
 num_implementations: 1
@@ -12,11 +12,11 @@ systems:
 - salesforce
 
 ---
-# Report a Booking Issue
+# View Booking or Quote Failure Reason
 
 ## **Introduction:-**
 
-**The “Report a Booking Issue” Plugin** helps support and operations teams quickly identify and log issues related to booking records within Salesforce. By offering a simple interface to capture and report discrepancies or failures, it streamlines the issue resolution process and reduces the need for manual case logging.
+The **“View Booking or Quote Failure Reason”** Plugin empowers support and operations teams to instantly access detailed failure reasons for booking or quote processes within Salesforce. By providing real-time visibility into error messages or status issues, this plugin enables faster diagnosis, reduces back-and-forth with engineering teams, and improves overall resolution time.
 
 This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
 
@@ -42,7 +42,7 @@ We are using a custom field for Quote, if you already have one, you can update t
 
 Below are the steps you can follow to create a custom field
 
-### **Steps to Create ‘Account’ Custom Field on Accounts Module**
+### **Steps to Create ‘Quote’ Custom Field on Quote Module**
 
 1. **Go to Setup**
     - Click the gear icon and select **Setup**
