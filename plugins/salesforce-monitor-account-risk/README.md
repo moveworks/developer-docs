@@ -1,6 +1,6 @@
 ---
 description: A plugin that summarizes risks for a specific account.
-fidelity: Guide
+fidelity: GUIDE
 name: Monitor Account Risk
 difficulty_level: BEGINNER
 time_in_minutes: 15
