@@ -55,9 +55,9 @@ If not, follow the steps below to create the custom object and required fields.
 
 - Click the **Create** dropdown and choose **Custom Object**.
 - Fill in the details:
-    - **Label:** `Risk_Type`
-    - **Plural Label:** `Risk_Type`
-    - **Object Name:** `Risk_Type`
+    - **Label:** `Risk Type`
+    - **Plural Label:** `Risk Type`
+    - **Object Name:** `Risk Type`
     - Select:
         
         **Allow Reports**
@@ -87,8 +87,8 @@ Once saved, your custom object `Risk_Type__c` is created and ready for field set
 
 **4. Configure Field Details**
 
-- **Field Label:** `Risk_Description`
-- **Field Name:** `Risk_Description`
+- **Field Label:** `Risk Description`
+- **Field Name:** `Risk Description`
     
     (Salesforce will auto-create the API name as `Risk_Description__c`)
     
