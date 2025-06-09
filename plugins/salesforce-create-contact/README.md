@@ -57,7 +57,7 @@ curl --location 'https://<YOUR_DOMAIN>/services/data/vXX.0/query/?q=SELECT+Id+FR
 ### **API #2: Create Contact in Salesforce**
 
 ```bash
-curl --location 'https://<YOUR_DOMAIN>.my.salesforce.com/services/data/vXX.0/sobjects/Contact' \
+curl --location 'https://<YOUR_DOMAIN>/services/data/vXX.0/sobjects/Contact' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: <YOUR_AUTH_TOKEN>' \
 --data '{
