@@ -15,7 +15,7 @@ systems:
 
 Workday is a leading enterprise management platform, and the **“ View Tax Elections”** feature allows users to view current tax election. Integrating this functionality into your bot enables users to seamlessly browse job listings, enhancing efficiency and organization.
 
-This guide provides step-by-step instructions for incorporating the **View Tax Elections** feature into your bot using Creator Studio.
+This guide provides step-by-step instructions for incorporating the **View Tax Elections** feature into your bot using Agent Studio.
 
 Let's get started!
 
@@ -37,7 +37,7 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Required Permissions:**
 
-- `View access` to worker data
+- `View access` to worker data : Payroll data
 
 **Tenant Configuration:**
 
