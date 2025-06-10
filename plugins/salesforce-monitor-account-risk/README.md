@@ -36,11 +36,13 @@ After configuring the connector, refer to our [plugin installation documentation
 
 ## **Customization Process**
 
-To monitor and associate risk data with specific Accounts, we use a **custom object** named `Risk_Type__c` and create **custom fields** including a lookup fields( `Risk_Impact__c`  `Risk_Probability__c`  `Risk_Impact__c`  `Risk_Description__c` If you already have similar customizations, you can update the plugin’s action to reference your existing object and fields.
+To monitor and associate risk data with specific Accounts, we use a **custom object** named `Risk_Type__c` and create **custom fields** including lookup fields   `Risk_Probability__c`  `Risk_Impact__c`  `Risk_Description__c` .
+
+If you already have similar customizations, you can update the plugin’s action to reference your existing object and fields.
 
 If not, follow the steps below to create the custom object and required fields.
 
-## Steps to Create Risk type Custom Object on Accounts module
+## Steps to Create ‘Risk type’ Custom Object on Accounts module
 
 **1. Go to Setup**
 
@@ -58,19 +60,19 @@ If not, follow the steps below to create the custom object and required fields.
     - **Label:** `Risk Type`
     - **Plural Label:** `Risk Type`
     - **Object Name:** `Risk Type`
-    - Select:
-        
-        **Allow Reports**
-        
-        **Allow Activities**
-        
-        **Track Field History**
-        
+        - Select:
+            
+            **Allow Reports**
+            
+            **Allow Activities**
+            
+            **Track Field History**
+            
 - Click **Save**.
 
 Once saved, your custom object `Risk_Type__c` is created and ready for field setup.
 
-## Steps to Create Custom Fields on Risk Type
+## Steps to Create Custom Fields on Risk Type Custom Object
 
 **1. Access the Risk Object**
 
@@ -101,7 +103,7 @@ Once saved, your custom object `Risk_Type__c` is created and ready for field set
 **6. Add Custom Related Lists**
 
 - Do not make any changes to this step.
-- Click **Save & New** to continue adding fields - `Risk_Probability`  and `Risk_Impact`  following the same steps.
+- Click **Save & New** to continue adding the custom fields - `Risk_Probability`  and `Risk_Impact` , following the same steps.
 
 ## **Appendix**
 
