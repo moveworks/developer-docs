@@ -36,7 +36,7 @@ Note: To enable the Update Personal Email functionality, ensure the SAP SuccessF
 
 **Required Scopes:**
 
-- `User profile update privileges`
+- `User` – to access user profile data
 
 After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
