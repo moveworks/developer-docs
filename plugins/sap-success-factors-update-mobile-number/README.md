@@ -15,14 +15,15 @@ systems:
 
 # **Introduction :**
 
-The **SAP_Update_Mobile_Number** plugin allows users to update their mobile number in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily update their contact information to ensure their records stay current.
+The **Update Mobile Number** plugin allows users to update their mobile number in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily update their contact information to ensure their records stay current.
 
-This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
+This guide will help you install and configure the plugin in Agent Studio within minutes. 
+
+Let’s get started!
 
 # Prerequisites :
 
 - Access to Agent Studio
-- [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP  Successfactors  Authentication guide to create your connector)
 
 # What are we building?
 
@@ -32,15 +33,22 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our SAP SuccessFactors Connector Guide to do so. Once completed, follow our plugin installation documentation to install the  **SAP_Update_Mobile_Number** plugin in minutes
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-After configuring the connector, refer to our installation documentation for more details on completing the setup.
+For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
+
+**Required Scopes:**
+
+- User profile update privileges
+- Admin privileges
+
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 # **Appendix**
 
 ## API #1: **Fetch UserId using User Email**
 
-The **SAP_Update_Mobile_Number** API retrieves a userId using user email.
+The **Fetch UserId using User Email** API retrieves a userId using user email.
 
 ```bash
 curl --request GET
@@ -50,21 +58,20 @@ curl --request GET
 --header 'Accept: application/json' \
 ```
 
-**Path Parameters:**
+**Query Parameters:**
 
 - `<email>` (string) – The email of the user whose userId you want to retrieve.
-
-**Query Parameters :**
-
-- $filter (string) – Filter items by property values
+- $filter (string) ****– Filter items by property values
 - $select (array[string]) – Select properties to be returned
-- optional_fields(string) – Specify additional fields to include in the response, such as $top,$skip
+- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
 
 ## API #2: Update BusinessPhone number **using UserId**
 
+The **Update BusinessPhone number** API updates the businessphone number using UserId.
+
 ```bash
 curl --request PUT
---location 'https://<API_SERVER>//odata/v2/User(userId='{{userId}}')' \
+--location 'https://<API_SERVER>//odata/v2/User(userId='\''<userId>'\'')' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -84,3 +91,15 @@ curl --request PUT
 **Path Parameters:**
 
 - `<userId>`(integer) – The user ID of the employee whose business phone number you want to update.
+
+**Request Body Fields:**
+
+- `userId` (string) – The unique identifier of the user.
+- `firstName` (string) – The user's first name.
+- `lastName`  (string) – The user's last name.
+- `displayName` (string) – The full display name of the user.
+- `nickname`  (string) – The nickname of the user.
+- `email`  (string) – The user's email address.
+- `location`  (string) – The user's work location.
+- `status` (string) – The user's status.
+- `businessPhone`  (string) – The user's business phone number to be updated.
