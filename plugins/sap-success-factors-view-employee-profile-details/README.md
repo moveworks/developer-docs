@@ -21,7 +21,6 @@ This guide will walk you through installing and configuring the plugin in **Agen
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [SAP SuccessFactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP SuccessFactors Authentication guide to create your connector).
 
 ## **What are we building?**
 
@@ -31,15 +30,15 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **SAP SuccessFactors Connector Guide** for instructions. Once completed, refer to our plugin installation documentation to install the **View Employee Profile Details** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-For **View Employee Profile Details**, you will also need to add the following permissions:
+For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 
 **Required Scopes:**
 
-- `Admin privileges`
+- **`View User`** – To view employee profile details
 
-After configuring the connector, refer to our plugin installation documentation for more details on completing the setup.
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 
@@ -54,7 +53,7 @@ curl --request GET \
 
 **Query Parameters:**
 
-- `$filter` (string) – Filters users based on the email address. Example: `email eq '{{email}}'`
-- `$expand` (string) – Expands related entities. Example: `manager`
-- `$top` (integer) – Limits the number of results returned. Example: `20`
-- `$select` (string) – Specifies which properties to return. Example: `empId, defaultFullName, jobTitle, department, email, businessPhone, hireDate, location, manager/displayName`
+- `$filter` (string) – Filters users based on the email address.
+- `$expand` (string) – Expands related entities.
+- `$top` (integer) – Limits the number of results returned.
+- `$select` (string) – Specifies which properties to return.
