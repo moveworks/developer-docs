@@ -77,7 +77,3 @@ curl --request GET \
   --user 'email@example.com:<api_token>' \
   --header 'Accept: application/json'
 ```
-
-# **Congratulations!**
-
-You've just added the Jira "**Lookup Backlog Ideas**" feature to your Copilot! Explore our other guides for more inspiration on what to build next.
