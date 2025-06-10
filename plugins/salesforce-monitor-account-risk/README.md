@@ -36,7 +36,7 @@ After configuring the connector, refer to our [plugin installation documentation
 
 ## **Customization Process**
 
-To monitor and associate risk data with specific Accounts, we use a **custom object** named `Risk_Type__c` and create **custom fields** including lookup fields   `Risk_Probability__c`  `Risk_Impact__c`  `Risk_Description__c` .
+To monitor and associate risk data with specific Accounts, we use a **custom object** named `Risk_Type__c` and create **custom fields** including lookup fields   `Risk_Probability__c`  `Risk_Impact__c`  `Risk_Description__c` . 
 
 If you already have similar customizations, you can update the plugin’s action to reference your existing object and fields.
 
