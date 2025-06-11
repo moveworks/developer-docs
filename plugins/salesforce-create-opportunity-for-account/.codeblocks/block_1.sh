@@ -1,4 +1,6 @@
-curl --location --request PATCH 'https://<YOUR_DOMAIN>.my.salesforce.com/services/data/v58.0/sobjects/Opportunity' \
+curl --request PATCH \
+--location 'https://<YOUR_DOMAIN>/services/data/v58.0/sobjects/Opportunity' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
     "AccountId": "<ACCOUNT_ID>",
@@ -7,3 +9,4 @@ curl --location --request PATCH 'https://<YOUR_DOMAIN>.my.salesforce.com/service
     "CloseDate": "<CLOSE_DATE>",
     "Amount": "<AMOUNT>"
 }'
+
