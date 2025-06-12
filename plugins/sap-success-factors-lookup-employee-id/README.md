@@ -1,6 +1,8 @@
 ---
 description: A plugin that provides an employe's unique ID when prompted.
-fidelity: GUIDE
+difficulty_level: BEGINNER
+fidelity: TEMPLATE
+installation_asset_uuid: 16169b7e-89fe-4d17-8ce6-c2ec70e8a34a
 name: Lookup Employee ID
 difficulty_level: BEGINNER
 time_in_minutes: 10
@@ -10,8 +12,9 @@ solution_tags:
 - HR - Employee Records
 systems:
 - sap-success-factors
-
+time_in_minutes: 10
 ---
+
 ## Introduction
 
 The **“Lookup Employee ID”** plugin allows users to quickly retrieve an employee’s unique ID from SAP SuccessFactors through the Moveworks AI Assistant. This ensures that users can easily reference the correct employee record for various HR processes and tasks.

@@ -10,7 +10,6 @@ solution_tags:
 - HR - Employee Records
 systems:
 - sap-success-factors
-
 ---
 ## Introduction
 
