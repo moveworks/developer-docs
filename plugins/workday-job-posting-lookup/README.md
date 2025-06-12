@@ -60,6 +60,8 @@ Make sure to update this across all actions that reference the Workday API.
 
 After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
+# **Appendix**
+
 ## **API #1: Fetch open jobs**
 
 The **Get Job openings** API enables users to retrieve comprehensive details about open job postings from Workday. By leveraging Workday's reporting and APIs, this functionality ensures efficient and precise data retrieval, even in environments with a large number of job openings.
