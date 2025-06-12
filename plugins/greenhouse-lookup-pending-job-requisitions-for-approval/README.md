@@ -37,7 +37,7 @@ After you have configured the connector, please refer to our [plugin installatio
 
 # Customization Options
 
-For approval-related actions, update the **redirectional link** in the `instructions_for_model` block of the compound action script. Replace `YOUR_DOMAIN` in the link `https://YOUR_DOMAIN/approvals` with your organization's domain URL.
+For approval-related actions, update the **redirectional link** in the `instructions_for_model` block of the **compound action** script. Replace `YOUR_DOMAIN` in the link `https://YOUR_DOMAIN/approvals` with your organization's domain URL.
 
 # Appendix
 
