@@ -42,7 +42,7 @@ To find your tenant name:
 - Log into Workday.
 - Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [`https://impl.workday.com/**your_tenant**/...`](https://impl.workday.com/**your_tenant**/...)
 
-Make sure to update this across all actions that reference the Workday API.
+Make sure to update this across all actions that reference the Workday API
 
 After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
