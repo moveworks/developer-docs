@@ -48,10 +48,6 @@ curl 'https://harvest.greenhouse.io/v1/users?email={{user.email_addr}}'
 --user '<api_key>:'
 ```
 
-**Query Parameters :**
-
-- Key ( **email** ) : Value ( **{{user.email_addr}}** )
-
 ### API #2: Fetch Open Jobs
 
 The [List Jobs](https://developers.greenhouse.io/harvest.html?shell#get-list-jobs) API in Greenhouse allows you to retrieve a list of jobs in the system. The `fields` parameter will be used to limit the response to essential details, optimizing data retrieval.
@@ -71,8 +67,3 @@ The [List Applications](https://developers.greenhouse.io/harvest.html?shell#get-
 curl 'https://harvest.greenhouse.io/v1/applications?job_id={{job_id}}&last_activity_after={{last_activity_after}}'
 --user '<api_key>:'
 ```
-
-**Query Parameters :**
-
-- Key ( **job_id** ) : Value ( **{{job_id}}** )
-- Key ( **last_activity_after** ) : Value ( **{{last_activity_after}}** )
