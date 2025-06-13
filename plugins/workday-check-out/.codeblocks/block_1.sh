@@ -1,2 +1,5 @@
-curl --request GET 
---location 'https://<DOMAIN>.myworkday.com/api/timeTracking/v3/<INSTANCE>/values/timeValues/outReason/?date=2025-02-28&inOutCodeOnly=true&offset=0&limit=10&worker=<WORKER_ID>'
+curl --request GET \
+curl --location 'https://<DOMAIN>.myworkday.com/api/timeTracking/v3/<TENANT>/values/timeValues/outReason/?date={{date}}&inOutCodeOnly=true&offset=0&limit=10&worker={{WORKER_ID}}' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Content-Type: application/json' \
+
