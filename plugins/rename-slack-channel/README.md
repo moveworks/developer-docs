@@ -1,5 +1,5 @@
 ---
-description: A plugin that allows a user to rename a slack channel.
+description: A plugin that allows a user to rename a Slack channel.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
 installation_asset_uuid: 01f3bcba-e3b4-45ef-a527-e465687edf99
