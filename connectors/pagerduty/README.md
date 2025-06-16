@@ -9,10 +9,10 @@ time_in_minutes: 30
 
 **PagerDuty** is a leading incident management platform that empowers teams to detect, respond to, and resolve critical incidents in real-time. It enables organizations to reduce downtime, enhance reliability, and maintain seamless digital operations by integrating alerting, on-call scheduling, automation, and escalation policies.
 
-This guide will walk you through the process of creating a connector within **Creator Studio** to make API calls to PagerDuty, using **OAuth 2.0 with the Client Credentials Grant** for secure authentication. The guide is organized into three main sections:
+This guide will walk you through the process of creating a connector within **Agent Studio** to make API calls to PagerDuty, using **OAuth 2.0 with the Client Credentials Grant** for secure authentication. The guide is organized into three main sections:
 
 1. **Set Up OAuth2 and Generate Client Credentials in PagerDuty**
-2. **Create a Connector in Creator Studio**
+2. **Create a Connector in Agent Studio**
 3. **Test API Calls with the Configured Connector**
 
 # **Prerequisites:**
@@ -26,9 +26,9 @@ This guide will walk you through the process of creating a connector within **Cr
 
 # Set up PagerDuty
 
-To connect **PagerDuty** with **Creator Studio**, we’ll use **OAuth 2.0 authentication with the Client Credentials Grant**. This method allows backend systems like Creator Studio to securely authenticate without user interaction, ideal for server-to-server API integrations.
+To connect **PagerDuty** with **Agent Studio**, we’ll use **OAuth 2.0 authentication with the Client Credentials Grant**. This method allows backend systems like Agent Studio to securely authenticate without user interaction, ideal for server-to-server API integrations.
 
-This guide walks you through registering an OAuth2 application in PagerDuty, generating an access token, and configuring the connector in Creator Studio for seamless access to PagerDuty APIs.
+This guide walks you through registering an OAuth2 application in PagerDuty, generating an access token, and configuring the connector in Agent Studio for seamless access to PagerDuty APIs.
 
 ## Step 1: Generate an API Key in PagerDuty
 
@@ -76,7 +76,7 @@ After the app is registered:
 - Copy and securely store the:
     - **Client ID**
     - **Client Secret**
-- These will be used in Creator Studio for authentication
+- These will be used in Agent Studio for authentication
 
 ![Untitled1.png](Untitled1.png)
 
@@ -108,9 +108,9 @@ curl -i --request POST \
 
 For more details on the above cURL request and <TOKEN_ENDPOINT>, refer to the official documentation: [Click here](https://developer.pagerduty.com/docs/app-oauth-token)
 
-### **6.Integrate with Creator Studio**
+### **6.Integrate with Agent Studio**
 
-To complete the integration between PagerDuty and Creator Studio using OAuth 2.0, follow the steps below:
+To complete the integration between PagerDuty and Agent Studio using OAuth 2.0, follow the steps below:
 
 - **Connector Name**
     
@@ -157,7 +157,7 @@ To complete the integration between PagerDuty and Creator Studio using OAuth 2.0
     `OAuth 2.0 with Request Body`
     
 
-### **7. Integrate PagerDuty API in Creator Studio**
+### **7. Integrate PagerDuty API in Agent Studio**
 
 - Add your API details below to integrate with the SAP SuccessFactors API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy).
 
@@ -179,4 +179,4 @@ curl --location 'https://api.pagerduty.com/incidents' \
 
 # **Congratulations!**
 
-You've successfully integrated **PagerDuty** with **Creator Studio** using **OAuth 2.0 with Client Credentials Grant**. You can now securely access PagerDuty APIs and power automated use cases within your workflows.
+You've successfully integrated **PagerDuty** with **Agent Studio** using **OAuth 2.0 with Client Credentials Grant**. You can now securely access PagerDuty APIs and power automated use cases within your workflows.
