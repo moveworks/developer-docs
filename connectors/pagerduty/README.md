@@ -1,5 +1,5 @@
 ---
-fidelity: Guide
+fidelity: GUIDE
 name: Pagerduty
 difficulty_level: INTERMEDIATE
 time_in_minutes: 30
