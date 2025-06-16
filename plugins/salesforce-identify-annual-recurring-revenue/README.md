@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our  [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin installation documentation to install the **Identify Annual Recurring Revenue** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our  [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin [installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to install the **Identify Annual Recurring Revenue** plugin in minutes.
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
