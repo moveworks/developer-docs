@@ -49,7 +49,7 @@ The following steps will guide you through generating an API token in Okta and c
 In Agent Studio, create a new connector with the following configuration (please name it accordingly for easy identification while creating use cases):
 
 1. **Auth Config:**
-    - Api
+    - API
 2. **Api Key Auth Type**
     - Choose Header Auth.
 3. **API Key:**
