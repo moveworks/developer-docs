@@ -57,6 +57,8 @@ In Agent Studio, create a new connector with the following configuration (please
     Replace `{api_token}` with the actual token you generated in Step 1
 4. Click on **Save** to submit the credentials, and your connector will be ready
 
+![okta 4.png](okta_4.png)
+
 ## **Step 3: Integrate Okta API in Agent Studio**
 
 - Add your API details below to integrate with the Okta API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-actions).
