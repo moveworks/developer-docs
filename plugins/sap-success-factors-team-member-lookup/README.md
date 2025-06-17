@@ -14,34 +14,40 @@ systems:
 time_in_minutes: 15
 ---
 
-# **Introduction :**
+# **Introduction:**
 
-The **SAP_Lookup_Team_Member** plugin allows users to retrieve a list of team members from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access team member information.
+The **View Team Members** plugin provides instant access to organizational data in SAP SuccessFactors through the Moveworks AI Assistant. Users can quickly retrieve team structures, reporting lines, and employee details without switching systems.
 
-This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
+This guide outlines the simple setup process to enable team member lookups
 
-# Prerequisites :
+# **Prerequisites :**
 
-- Access to Agent Studio
-- [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP  Successfactors  Authentication guide to create your connector)
+- Access to Agent Studio.
 
-# What are we building?
+# **What are we building?**
 
-## **Agent Design**
+### **Agent Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWho+is+on+my+team%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESearches+SAP+Success+Factors+for+relevant+information%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou%27re+part+of+an+amazing+team+led+by+%3Cb%3EEllen+Hows%3C%2Fb%3E.+Here+are+your+wonderful+teammates%3A%3Cbr%3E-+Gwen%3Cbr%3E-+Dave%3Cbr%3E-+Ivy%3Cbr%3E-+Ajay%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
+This [purple chat]( https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWho+is+on+my+team%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESearches+SAP+Success+Factors+for+relevant+information%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou%27re+part+of+an+amazing+team+led+by+%3Cb%3EEllen+Hows%3C%2Fb%3E.+Here+are+your+wonderful+teammates%3A%3Cbr%3E-+Gwen%3Cbr%3E-+Dave%3Cbr%3E-+Ivy%3Cbr%3E-+Ajay%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **SAP successfactors Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **SAP_Lookup_Team_Member** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [SAP Successfactors Connector Guide](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-After configuring the connector, refer to our installation documentation for more details on completing the setup.
+For this plugin, ensure the SAP Sucessfactors integration system user has the following permissions:
+
+## **Required Permissions:**
+
+- **Employee Data:** View access to employee profiles
+- **User Management:** View permissions for team member directory
+
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup
 
 # **Appendix**
 
-## API #1: **Fetch Manager’s UserId using User Email**
+## **API #1: Fetch Manager’s UserId using User Email**
 
-The **SAP_Lookup_Team_Member** API retrieves a Team members using user email.
+The Fetch Manager’s Id API retrieves a Manager’s userId using user email.
 
 ```bash
 curl --request GET
@@ -53,16 +59,11 @@ curl --request GET
 
 **Path Parameters:**
 
-- `<email>` (string) – The email of the user whose team members you want to retrieve. This would be provided list of team members.
+- <email> (string) – The email of the user whose team members you want to retrieve. This would be provided list of team members.
 
-**Query Parameters :**
+## **API #2: Querying the Direct Reports of a User**
 
-- $filter (string) ****– Filter items by property values
-- $expand (array[string]) ****– Expand related entities
-- $select (array[string]) – Select properties to be returned
-- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
-
-## API #2: **Fetch Team members using Manager’s UserId**
+The **Querying the Direct Reports of a User** Api is used to fetch the Team Members using Manager’s UserId. 
 
 ```bash
 curl --request GET
@@ -75,9 +76,4 @@ curl --request GET
 
 **Path Parameters:**
 
-- `<Manager_userId>`(integer) – The userId of the Manager whose direct Reports you want to retrieve. This would be provided list of team members for the user.
-
-**Query Parameters :**
-
-- $select (array[string]) – Select properties to be returned,
-- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
+- <Manager_userId>(integer) – The userId of the Manager whose direct Reports you want to retrieve. This would be provided list of team members for the user.
