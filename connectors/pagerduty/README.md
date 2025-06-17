@@ -30,7 +30,7 @@ To connect **PagerDuty** with **Agent Studio**, we’ll use **OAuth 2.0 authenti
 
 This guide walks you through registering an OAuth2 application in PagerDuty, generating an access token, and configuring the connector in Agent Studio for seamless access to PagerDuty APIs.
 
-## Step 1: Generate an API Key in PagerDuty
+## Step 1: Register OAuth 2.0 API Client in PagerDuty
 
 ### 1. Log in to PagerDuty Admin Console
 
@@ -159,7 +159,7 @@ To complete the integration between PagerDuty and Agent Studio using OAuth 2.0, 
 
 ### **7. Integrate PagerDuty API in Agent Studio**
 
-- Add your API details below to integrate with the SAP SuccessFactors API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy).
+- Add your API details below to integrate with the PagerDuty API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy).
 
 ```bash
 curl --location 'https://api.pagerduty.com/incidents' \
