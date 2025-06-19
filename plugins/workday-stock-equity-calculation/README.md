@@ -33,6 +33,13 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) guide to set up the connector.
 
+**Note**: To enable the **View My Stock Grant Summary** functionality, ensure your Workday integration system user has the necessary domain permissions.
+
+Specifically, the following domain permissions must be granted with both **View** and **Get** access:
+
+- **Stock Grants** – to retrieve employee stock grant records and details
+- **Worker Data: Self-Service** – to ensure employees can securely retrieve their own stock-related information
+
 **Tenant Configuration:**
 
 All Workday API endpoints in this plugin use `<TENANT>` as a placeholder. After installation, replace `<TENANT>` in the action definitions with your actual Workday tenant name.
