@@ -1,4 +1,6 @@
 ---
+custom_tags:
+- Polling Required
 description: A plugin which alerts managers when a contractor is about to expire,
   and allows them to renew from their copilot.
 fidelity: IDEA
