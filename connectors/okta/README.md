@@ -110,7 +110,7 @@ Now that your service app configuration is completed, make sure you have collect
 
 - **Client ID** of the App
 - **KID** of the generated Public Key configuration
-- **Private Key** in PEM format [(that you generated along with the Public Keys)](https://www.notion.so/Okta-20f51d5024bf803f8888db7dbe6ea646?pvs=21)
+- **Private Key** in PEM format (that you generated along with the Public Keys)
 
 You can get the **Client ID** and **KID** of your App by:
 
@@ -144,7 +144,7 @@ Please refer to the **table** below and fill out the connector configuration acc
 | Accept | application/json |
 | Content-Type | application/x-www-form-urlencoded |
 | client_assertion_type | urn:ietf:params:oauth:client-assertion-type:jwt-bearer |
-| [scope](https://www.notion.so/Okta-20f51d5024bf803f8888db7dbe6ea646?pvs=21) | okta.users.read |
+| scope | okta.users.read |
 | grant_type | client_credentials |
 
 Click on **Save** to submit the credentials, and your connector will be ready
