@@ -2,7 +2,7 @@
 description: A plugin that allows hiring managers or recruiters to retrieve candidate
   applications for a specific job.
 difficulty_level: BEGINNER
-fidelity: TEMPLATE
+fidelity: GUIDE
 installation_asset_uuid: 1bcce37f-d556-4883-a34f-c66500c4275a
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=06f6255e-527d-47b4-9dbd-3d74743e7366
 name: Lookup Job Applications
