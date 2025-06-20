@@ -1,11 +1,11 @@
 ---
-fidelity: GUIDE
-name: Okta
 difficulty_level: BEGINNER
-time_in_minutes: 15
+fidelity: VALIDATED
+name: Okta
 num_implementations: 0
-
+time_in_minutes: 15
 ---
+
 # Introduction:
 
 Okta is an identity and access management platform that helps organizations securely manage user authentication, authorization, and lifecycle management across applications and services.
