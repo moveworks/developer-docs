@@ -14,11 +14,9 @@ systems:
 - workday
 
 ---
-# **Check Employee ID**
-
 ## **Introduction**
 
-The **“Check Employee ID”** plugin allows employees to instantly access their unique employee ID directly through the Moveworks AI Assistant, powered by Workday. This streamlines access to essential personal information, reduces dependency on HR teams, and improves the overall employee self-service experience
+The **“Check Employee ID”** plugin allows employees to instantly access their unique employee ID directly through the Moveworks AI Assistant, powered by Workday. This streamlines access to essential personal information, reduces dependency on HR teams, and improves the overall employee self-service experience.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
