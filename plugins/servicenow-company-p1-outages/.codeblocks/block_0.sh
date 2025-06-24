@@ -1,4 +1,4 @@
 curl --request GET
---location 'https://<YOUR_DOMAIN>/api/now/table/incident?sysparm_query=priority%3D1%5EstateNOT%20IN6%2C7%5EORDERBYDESCsys_updated_on&sysparm_limit=1' \
+--location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=priority%3D1%5Eshort_descriptionLIKEoutage%5Eactive%3Dtrue&sysparm_fields=number%2Cshort_description%2Cpriority%2Cstate' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
