@@ -37,7 +37,7 @@ We recommend setting up **ServiceNow** before installing this plugin. Please f
 
 For this plugin, ensure the user has the following permissions:
 
-- **Table Access**: `Read` access to the `incident` table.
+- **Table Access**: `Read` access to the `problem` table.
 
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
@@ -49,7 +49,7 @@ The **Find Company p1 Outages** API retrieves active Priority 1 (p1) outages c
 
 ```bash
 curl --request GET
---location 'https://<YOUR_DOMAIN>/api/now/table/incident?sysparm_query=priority%3D1%5EstateNOT%20IN6%2C7%5EORDERBYDESCsys_updated_on&sysparm_limit=1' \
+--location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=priority%3D1%5Eshort_descriptionLIKEoutage%5Eactive%3Dtrue&sysparm_fields=number%2Cshort_description%2Cpriority%2Cstate' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 ```
