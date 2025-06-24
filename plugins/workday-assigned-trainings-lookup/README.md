@@ -77,7 +77,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "query": "SELECT enrolledContent as Course, learner, registrationStatus, completionStatus, learningAssignment{dueDate1} as learningAssignment FROM learningEnrollments WHERE  completionStatus =  \"{{status_id}}\" AND learner = \"{{worker_id}}\""
+  "query": "SELECT enrolledContent as Course, learner, registrationStatus, completionStatus, learningAssignment{dueDate1} as learningAssignment FROM learningEnrollments WHERE completionStatus IN (\"<status_id_1>\", \"<status_id_2>\") AND learner = \"{{worker_id}}\""
 }'
 
 ```
@@ -85,4 +85,5 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 **Query Parameters:**
 
 - `worker_id` (string) – Filter learning enrollments for a specific learner or worker ID
-- `status_id` (string) – Filter enrollments with this completion status ID (e.g., In Progress)
+- `status_id_1` (string) – Filter enrollments with this completion status ID (e.g., In Progress)
+- `status_id_2` (string) – Filter enrollments with this additional completion status ID (e.g., Not Started)
