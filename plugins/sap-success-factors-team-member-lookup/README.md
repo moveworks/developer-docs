@@ -28,11 +28,11 @@ This guide outlines the simple setup process to enable team member lookups
 
 ### **Agent Design**
 
-This [purple chat]( https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWho+is+on+my+team%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESearches+SAP+Success+Factors+for+relevant+information%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou%27re+part+of+an+amazing+team+led+by+%3Cb%3EEllen+Hows%3C%2Fb%3E.+Here+are+your+wonderful+teammates%3A%3Cbr%3E-+Gwen%3Cbr%3E-+Dave%3Cbr%3E-+Ivy%3Cbr%3E-+Ajay%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWho+is+on+my+team%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESearches+SAP+Success+Factors+for+relevant+information%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou%27re+part+of+an+amazing+team+led+by+%3Cb%3EEllen+Hows%3C%2Fb%3E.+Here+are+your+wonderful+teammates%3A%3Cbr%3E-+Gwen%3Cbr%3E-+Dave%3Cbr%3E-+Ivy%3Cbr%3E-+Ajay%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [SAP Successfactors Connector Guide](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [SAP Successfactors Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP Sucessfactors integration system user has the following permissions:
 
