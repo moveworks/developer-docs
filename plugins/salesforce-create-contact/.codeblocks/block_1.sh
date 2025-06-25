@@ -1,4 +1,4 @@
-curl --location 'https://<YOUR_DOMAIN>.my.salesforce.com/services/data/v62.0/sobjects/Contact' \
+curl --location 'https://<YOUR_DOMAIN>/services/data/vXX.0/sobjects/Contact' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: <YOUR_AUTH_TOKEN>' \
 --data '{
