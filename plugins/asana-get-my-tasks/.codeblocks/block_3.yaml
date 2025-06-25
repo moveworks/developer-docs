@@ -1,0 +1,19 @@
+steps:
+  - action:
+      action_name: get_user_task_list_asana
+      input_args:
+        user_gid: meta_info.user.email_addr
+      output_key: get_user_task_list_asana_result
+  - action:
+      output_key: get_tasks_from_user_task_list_asana_result
+      action_name: get_tasks_from_user_task_list_asana
+      progress_updates:
+        on_complete: ON_COMPLETE_MESSAGE
+        on_pending: ON_PENDING_MESSAGE
+      input_args:
+        user_task_list_gid: data.get_user_task_list_asana_result.data.gid
+        from_date_of_tasks: data.from_date_of_tasks
+  - return:
+      output_mapper:
+        list_of_user_tasks_result: data.get_tasks_from_user_task_list_asana_result
+
