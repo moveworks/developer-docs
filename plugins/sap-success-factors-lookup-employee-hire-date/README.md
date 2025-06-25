@@ -1,6 +1,7 @@
 ---
 description: A plugin that fetches the hiring date of an employee.
 fidelity: GUIDE
+installation_asset_uuid: e89ecd89-dd13-4a97-ab24-dbd4eb976c2b
 name: Lookup Employee Hire Date
 difficulty_level: BEGINNER
 time_in_minutes: 10
@@ -10,14 +11,15 @@ solution_tags:
 - HR - Employee Records
 systems:
 - sap-success-factors
-
+time_in_minutes: 10
 ---
+
 # **Introduction :**
 
 The **Employee Hire Date** plugin allows users to retrieve the hire date of an employee from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review the hire date information for any employee.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
- 
+
 # Prerequisites :
 
 - Access to Agent Studio
@@ -31,7 +33,8 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our SAP SuccessFactors Connector Guide to do so. Once completed, follow our plugin installation documentation to install the  **Employee Hire Date** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) Guide to do so. Once completed, follow our plugin installation documentation to install the  **Employee Hire Date** plugin in minutes.
+
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 
@@ -39,11 +42,18 @@ After configuring the connector, refer to our installation documentation for mor
 
 ## API #1: **Fetch Manager’s UserId using User Email**
 
+
 The **Fetch Manager’s UserId using User Email** API retrieves a hireDate using user’s Email.
 
 ```bash
 curl --request GET
 --location 'https://<API_SERVER>/odata/v2/User?%24top=30&%24filter=email%20eq%20%27<email>select=hireDate' \
+
+The **Employee Hire Date** API retrieves a hireDate using user’s diaplayName.
+
+```bash
+curl --request GET
+--location 'https://<API_SERVER>/odata/v2/User?%24top=30&%24filter=displayName%20eq%20%27<displayName>%27&%24select=hireDate' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
@@ -54,3 +64,7 @@ curl --request GET
 - $filter (string) – Filter items by property values. Use this to filter the hiredate by email.
     - `<email>`  (string) – The email of the users whose hiredate you want to retrieve.
 - $select (array[string]) – Select properties to be returned.
+
+**Path Parameters:**
+
+- `<displayName>` (string) – The displayName of the user whose hire date you want to retrieve. This will provide the hire date of the employee.
