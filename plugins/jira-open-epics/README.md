@@ -1,5 +1,5 @@
 ---
-description: A plugin that allows looking up assigned epics in Jira.
+description: A plugin that allows looking up assigned epics in Jira that are still in progress.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
 installation_asset_uuid: 3b94ffb0-cfe6-4f62-b648-5810a0e359ec
@@ -17,7 +17,7 @@ time_in_minutes: 20
 
 # Introduction
 
-Jira is a leading platform for managing projects and tasks across industries. The **Lookup Open Epics** plugin simplifies retrieving and managing assigned epics by providing quick insights into their status, helping teams stay on top of their priorities and deadlines.
+Jira is a leading platform for managing projects and tasks across industries. The **Lookup Open Epics** plugin streamlines the process of retrieving and tracking epics that are actively assigned but not yet completed. It offers quick visibility into ownership and progress, helping teams stay aligned with their goals and delivery timelines.
 
 Integrating this feature with your bot enables seamless lookup and management of open epics through conversational queries, enhancing team productivity and collaboration.
 
