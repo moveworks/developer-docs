@@ -1,0 +1,15 @@
+{
+  "data": [
+    {
+      "gid": "111111111",
+      "name": "New Feature Development",
+      "resource_type": "project"
+    },
+    {
+      "gid": "222222222",
+      "name": "Q2 Product Roadmap",
+      "resource_type": "project"
+    }
+  ]
+}
+
