@@ -48,7 +48,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **SAP successfactors Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **Lookup Timesheet Information** plugin in minutes.
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 
