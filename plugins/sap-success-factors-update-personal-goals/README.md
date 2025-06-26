@@ -1,7 +1,7 @@
 ---
 description: A plugin that lets an employee add personal goals for themselves.
 difficulty_level: BEGINNER
-fidelity: TEMPLATE
+fidelity: GUIDE
 installation_asset_uuid: d5a14309-2edd-4967-8dd4-27032e9ad02b
 name: Add Personal Goals
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I%27d+like+to+add+new+goals+from+my+performance+review.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EPlease+list+your+goals+with+their+titles+and+descriptions.%3Cbr%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E1.+Improve+customer+satisfaction+-+Increase+scores+by+10%25+with+faster+responses+and+training.+%3Cbr%3E2.+Enhance+product+knowledge+-+Complete+4+new+product+modules.+%3Cbr%3E3.+Boost+sales+figures+-+Target+a+15%25+sales+increase+by+Q3.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESummarizing+and+pulling+appropriate+plugin+%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EPlease+confirm+these+are+the+goals.%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3ENew+Goals%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E1.+%3Cb%3EImprove+customer+satisfaction%3C%2Fb%3E+-+Increase+scores+by+10%25+with+faster+responses+and+training.%3Cbr%3E2.+%3Cb%3EEnhance+product+knowledge%3C%2Fb%3E+-+Complete+4+new+product+modules.%3Cbr%3E3.+%3Cb%3EBoost+sales+figures%3C%2Fb%3E+-+Target+a+15%25+sales+increase+by+Q3.%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22Confirm%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Edit%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Cancel%22%7D%5D%7D%5D%7D%5D%7D
@@ -13,7 +13,6 @@ systems:
 - sap-success-factors
 time_in_minutes: 15
 ---
-
 ## Introduction
 
 The “**Add Personal Goals**” plugin allows users to easily add new performance goals to SAP SuccessFactors through the Moveworks AI Assistant. It focuses solely on goal creation, making it simple for employees to stay proactive and aligned with their priorities.
@@ -23,7 +22,6 @@ This guide will walk you through installing and configuring the plugin in Agent 
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [SAP SuccessFactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP SuccessFactors Authentication guide to create your connector).
 
 ## **What are we building?**
 
@@ -33,15 +31,15 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in Agent Studio beforehand to streamline the process. Please follow our [SAP SuccessFactors Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for detailed instructions. Once completed, refer to our plugin installation documentation to install the Add Personal Goals plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-For Add Personal Goals, you will also need to ensure the following permission is in place:
+For this plugin, ensure the SAP SuccessFactors integration user has the following permission:
 
 **Required Scope:**
 
-- `Admin privileges`
+- `Add` access to the **Goal Plan** entity
 
-After configuring the connector, refer to our plugin installation documentation for more details on completing the setup.
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 
