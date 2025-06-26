@@ -18,14 +18,15 @@ systems:
 
 # **Introduction :**
 
-The **Fetch Pending Time Off Approvals** plugin allows users to retrieve a list of pending time off approvals from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review time off requests awaiting their approval.
+The “**Fetch Pending Time Off Approvals”** plugin allows users to retrieve a list of pending time off approvals from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review time off requests awaiting their approval.
 
-This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
+This guide will help you install and configure the plugin in Agent Studio within minutes. 
+
+Let’s get started!
 
 # Prerequisites :
 
 - Access to Agent Studio
-- [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP  Successfactors  Authentication guide to create your connector)
 
 # What are we building?
 
@@ -35,15 +36,21 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;)  Guide to do so. Once completed, follow our plugin installation documentation to install the  **Fetch Pending Time Off Approvals** plugin in minutes
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-After configuring the connector, refer to our installation documentation for more details on completing the setup.
+For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
+
+**Required Scopes:**
+
+- `View` access to the **User** and **Time Off** entity
+
+After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 # **Appendix**
 
 ## API #1: **Fetch Manager’s UserId using User Email**
 
-The **Fetch Pending Time Off Approvals** API retrieves a userId using user email.
+The **Fetch Manager’s UserId using User Email** API retrieves a userId using user email.
 
 ```bash
 curl --request GET
@@ -53,16 +60,13 @@ curl --request GET
 --header 'Accept: application/json' \
 ```
 
-**Path Parameters:**
+**Query Parameters**
 
-- `<email>` (string) – The email of the user whose userId you want to retrieve. This would be provided list of team members.
-
-**Query Parameters :**
-
-- $filter (string) – Filter items by property values
-- $expand (array[string]) – Expand related entities
+- `<email>` (string) – The email of the user whose userId you want to retrieve.
+- $filter (string) ****– Filter items by property values
+- $expand (array[string]) ****– Expand related entities
 - $select (array[string]) – Select properties to be returned
-- optional_fields(string) – Specify additional fields to include in the response, such as $top,$skip
+- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
 
 ## API #2: **Fetch Direct reports userIds using Manager’s UserId**
 
@@ -75,14 +79,11 @@ curl --request GET
 
 ```
 
-**Path Parameters:**
+**Query Parameters:**
 
 - `<Manager_userId>`(integer) – The userId of the Manager whose direct Report’s userIds you want to retrieve. This would be provided list of userIds for the direct Reports.
-
-**Query Parameters :**
-
 - $select (array[string]) – Select properties to be returned,
-- optional_fields(string) – Specify additional fields to include in the response, such as $top,$skip
+- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
 
 ## API #3: **Fetch Pending Time Off Approvals using** direct Report’s **UserId**
 
@@ -94,11 +95,8 @@ curl --request GET
 --header 'Accept: application/json' \
 ```
 
-**Path Parameters:**
-
-- `<userId>`(integer) – The userId of the direct report whose pending time off approvals you want to retrieve. This will return a list of pending time off requests awaiting approval.
-
 **Query Parameters :**
 
+- `<userId>`(integer) – The userId of the direct report whose pending time off approvals you want to retrieve. This will return a list of pending time off requests awaiting approval.
 - $select (array[string]) – Select properties to be returned,
-- optional_fields(string) – Specify additional fields to include in the response, such as $top,$skip
+- `optional_fields`(string) – Specify additional fields to include in the response, such as $top,$skip
