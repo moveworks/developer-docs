@@ -37,7 +37,7 @@ We recommend setting up **ServiceNow** before installing this plugin. Please f
 
 For this plugin, ensure the user has the following permissions:
 
-- **Table Access**: `Read` access to the `problem` table.
+- **Table Access**: `Read` access to the `cmdb_ci_outage` table.
 
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
@@ -45,11 +45,11 @@ Once the connector is successfully configured, follow our [plugin installation 
 
 ## API #1: Find Company p1 Outages
 
-The **Find Company p1 Outages** API retrieves active Priority 1 (p1) outages currently impacting the company.
+The **Find Company p1 Outages** API retrieves active p1 outages currently impacting the company.
 
 ```bash
 curl --request GET
---location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=priority%3D1%5Eshort_descriptionLIKEoutage%5Eactive%3Dtrue&sysparm_fields=number%2Cshort_description%2Cpriority%2Cstate' \
+--location 'https://<YOUR_DOMAIN>/api/now/table/cmdb_ci_outage?sysparm_query=ORDERBYDESCsys_created_on&sysparm_limit=1&sysparm_display_value=true' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 ```
