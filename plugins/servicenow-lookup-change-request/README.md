@@ -13,7 +13,7 @@ systems:
 ---
 ## **Introduction:**
 
-The **Lookup Change Request** plugin connects ServiceNow with the Moveworks AI Assistant. It provides real-time updates on change requests without manual effort. Users receive status details directly in their messaging platform.
+The **Look Up Change Request** plugin connects ServiceNow with the Moveworks AI Assistant. It provides real-time updates on change requests without manual effort. Users receive status details directly in their messaging platform.
 
 This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
 
