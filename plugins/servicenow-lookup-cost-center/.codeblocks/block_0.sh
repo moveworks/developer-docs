@@ -1,3 +1,3 @@
-curl --request GET \
---url 'https://your-domain.service-now.com/api/now/table/cmn_cost_center'
---header 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=email=<USER_EMAIL>' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Accept: application/json'
