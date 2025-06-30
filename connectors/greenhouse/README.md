@@ -6,7 +6,7 @@ time_in_minutes: 30
 ---
 # **Introduction**
 
-Connecting Greenhouse to Creator Studio enables seamless automation of recruiting workflows, from job requisition to candidate management. By leveraging Greenhouse’s API and using API Key Authentication, you can automate hiring processes, retrieve recruiting analytics and improve collaboration between recruiters, hiring managers and interviewers. This guide provides a step-by-step process to connect your Greenhouse instance to Creator Studio and test the integration for streamlined recruiting operations.
+Connecting Greenhouse to Agent Studio enables seamless automation of recruiting workflows, from job requisition to candidate management. By leveraging Greenhouse’s API and using API Key Authentication, you can automate hiring processes, retrieve recruiting analytics and improve collaboration between recruiters, hiring managers and interviewers. This guide provides a step-by-step process to connect your Greenhouse instance to Agent Studio and test the integration for streamlined recruiting operations.
 
 # **Prerequisites**
 
@@ -58,23 +58,21 @@ Example API: Get All Jobs
     - Click **Send** in Postman.
     - Upon success, you will receive a list of all jobs in your Greenhouse instance, including their **ID, title, departments, status** and **offices**.
 
-## **Step 3: Connect Greenhouse to Creator Studio**
+## **Step 3: Connect Greenhouse to Agent Studio**
 
-- In Creator Studio, create a new Plugin.
-    - Click on **Plugins** > **Actions** tab
-    - Click on **CREATE** to create a new plugin
-    - Fill in the Base URL: `https://harvest.greenhouse.io` and Endpoint URL: `/v1/jobs`
-    - Click on **Use Existing Authorization** > select the **Basic Auth** > Click on **Apply**. This will populate the Authorization section of the API Editor.
-    - Click on **Test** to verify if the Connector setup is successful. If successful, click on the **Save** button.
-        
-        ![Screenshot 2025-02-20 at 6.39.45 PM.png](Greenhouse%2008d7bcd3089a4176902fb7930a44389d/Screenshot_2025-02-20_at_6.39.45_PM.png)
-        
-    - Provide the **Connector Name**, **API Name** and **API Description** as shown below, then click on **Save**.
-        
-        ![Screenshot 2025-02-20 at 6.53.49 PM.png](Greenhouse%2008d7bcd3089a4176902fb7930a44389d/Screenshot_2025-02-20_at_6.53.49_PM.png)
-        
-    - This will create a connector for the Greenhouse instance with the specified connector name, which can be used in the future when creating actions.
+- In Agent Studio, create a new connector with the following configuration:
+    - **Base URL**: `https://harvest.greenhouse.io`
+    - **Auth Config**: Basic Auth
+    - **Username**: Harvest API key as the username
+- Test your Connector by setting up a demo API action
+    - In Agent Studio, create a new Plugin.
+        - Click on **Actions** > **HTTP Actions** tab
+        - Click on **Create** to create a new plugin
+    - Set up your API Connection to configure the API endpoint based on the following:
+        - Select **Inherit from existing connector** under the **Connector** section > choose the **Greenhouse** connector that you just created. This will populate the Authorization section of the API Editor.
+        - Fill out the Endpoint URL: /v1/jobs
+    - Click on **Test** to check if the Connector setup was successful and expect a successful response.
 
 # Congratulations!
 
-You've successfully integrated Greenhouse’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Greenhouse environment.
+You've successfully integrated Greenhouse’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Greenhouse environment.
