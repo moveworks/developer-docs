@@ -1,13 +1,17 @@
-curl --request POST 
---location --globoff 'https://<DOMAIN>.myworkday.com/api/timeTracking/v3/<INSTANCE>/timeClockEvents?worker={{WORKER_ID}}' 
---data '{ "worker": {
-        "id": "<WORKER_ID>"
+curl --request POST \
+curl --location 'https://<DOMAIN>.myworkday.com/api/timeTracking/v3/<TENANT>/timeClockEvents?worker={{WORKER_ID}}' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Content-Type: application/json' \
+--data '{ 
+    "worker": {
+        "id": "{{WORKER_ID}}"
     },
     "eventType": {
-        "id": "<EVENTTYPE_ID>"
+        "id": "{{EVENT_TYPE_ID}}"
     },
     "timeZone": {
-        "id": "<TIMEZONE_ID>"
+        "id": "{{TIMEZONE}}"
     },
-    "dateTime": "<DATETIME>"
-    }' 
+    "dateTime": "{{DATETIME}}"
+}
+'
