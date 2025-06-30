@@ -1,9 +1,9 @@
-curl --location 'https://<YOUR_DOMAIN>/services/data/v62.0/sobjects/Quote' \
+curl --location 'https://<YOUR_DOMAIN>/services/data/vXX.0/sobjects/Quote' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer <YOUR_AUTH_TOKEN>' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "OpportunityId": "<OPPORTUNITY_ID>",
-  "Name": "<QUOTE_NAME>",
-  "Status": "<QUOTE_STATUS>",
-  "Pricebook2Id": "<PRICEBOOK2_ID>"
+  "OpportunityId": "<OpportunityId>",
+  "Name": "<name>",
+  "Status": "<status>",
+  "Pricebook2Id": "<Pricebook2Id>"
 }'
