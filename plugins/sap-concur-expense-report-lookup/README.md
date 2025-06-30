@@ -9,7 +9,7 @@ difficulty_level: BEGINNER
 drop_accreditations:
 - ajaymerchia
 fidelity: TEMPLATE
-installation_asset_uuid: 156b5c09-a306-4e0c-aa30-7591e588f924
+installation_asset_uuid: c828f6ed-53d5-4be6-b1d3-e3114f81a467
 name: Look up Expense Reports
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Show+me+my+expense+reports%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Running+Creator+Studio+plugin+to+retrieve+Expense+Reports+from+Concur%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22You+have+two+expense+reports%3A%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ENew+test+report%3C%2Fb%3E%3Cbr%3ESubmitted+%26+Pending+Approval%3Cbr%3E%3Cb%3ETotal+Claimed+Amount%3A%3C%2Fb%3E+%2460.00%3Cbr%3EStatus%3A+%3Ci%3ECurrently+not+paid%3C%2Fi%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22View+in+SAP+Concur%22%2C%22connectorName%22%3A%22sap-concur%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cb%3EInternet+Reimbursement%3C%2Fb%3E%3Cbr%3ENot+submitted%3Cbr%3E%3Cb%3ETotal+Claimed+Amount%3A%3C%2Fb%3E+%2425.00%3Cbr%3EStatus%3A+%3Ci%3ENot+paid%3C%2Fi%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22View+in+SAP+Concur%22%2C%22connectorName%22%3A%22sap-concur%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 redirects:
