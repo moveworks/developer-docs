@@ -44,7 +44,7 @@ We recommend creating the connector for SAP Concur first, prior to installing th
 
 Refer to [SAP Concur Scope Usage](https://developer.concur.com/api-reference/expense/expense-report/v4.reports.html#scope-usage) for full details.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 
