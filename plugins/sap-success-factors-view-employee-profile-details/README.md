@@ -2,7 +2,7 @@
 description: A plugin that allows to view an employee profile details.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
-installation_asset_uuid: 345f804d-f0c8-49d9-8920-11af4a1795de
+installation_asset_uuid: 74a2e8ce-c3d8-4867-8552-48b41054fa7b
 name: View employee profile details
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHey+Copilot%2C+can+I+view+the+profile+details+for+John+Doe%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Fetching+the+profile+details+for+John+Doe.+One+moment%2C+please.%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Retrieving+employee+profile+details...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Here+are+the+profile+details+for+John+Doe%3A%22%7D%2C%7B%22apiBlock%22%3A%7B%22code%22%3A%22%7B%5Cn%5C%22Name%5C%22%3A+%5C%22John+Doe%5C%22%2C%5Cn%5C%22Employee+ID%5C%22%3A+%5C%2212345%5C%22%2C%5Cn%5C%22Position%5C%22%3A+%5C%22Senior+Developer%5C%22%2C%5Cn%5C%22Department%5C%22%3A+%5C%22Information+Technology%5C%22%2C%5Cn%5C%22Email%5C%22%3A+%5C%22john.doe%40example.com%5C%22%2C%5Cn%5C%22Phone+Number%5C%22%3A+%5C%22%2B1-987-654-3210%5C%22%2C%5Cn%5C%22Hire+Date%5C%22%3A+%5C%22January+15%2C+2018%5C%22%2C%5Cn%5C%22Manager%5C%22%3A+%5C%22Jane+Smith%5C%22%2C%5Cn%5C%22Location%5C%22%3A+%5C%22New+York+Office%5C%22%5Cn%7D%22%2C%22caption%22%3A%22Employee+Profile%22%2C%22connectorName%22%3A%22sap-success-factors%22%7D%7D%2C%7B%22richText%22%3A%22Would+you+like+more+information+or+details+on+another+employee%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
@@ -22,7 +22,6 @@ This guide will walk you through installing and configuring the plugin in **Agen
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [SAP SuccessFactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP SuccessFactors Authentication guide to create your connector).
 
 ## **What are we building?**
 
@@ -32,15 +31,15 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **SAP SuccessFactors Connector Guide** for instructions. Once completed, refer to our plugin installation documentation to install the **View Employee Profile Details** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-For **View Employee Profile Details**, you will also need to add the following permissions:
+For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 
 **Required Scopes:**
 
-- `Admin privileges`
+- **`View User`** – To view employee profile details
 
-After configuring the connector, refer to our plugin installation documentation for more details on completing the setup.
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 
@@ -55,7 +54,7 @@ curl --request GET \
 
 **Query Parameters:**
 
-- `$filter` (string) – Filters users based on the email address. Example: `email eq '{{email}}'`
-- `$expand` (string) – Expands related entities. Example: `manager`
-- `$top` (integer) – Limits the number of results returned. Example: `20`
-- `$select` (string) – Specifies which properties to return. Example: `empId, defaultFullName, jobTitle, department, email, businessPhone, hireDate, location, manager/displayName`
+- `$filter` (string) – Filters users based on the email address.
+- `$expand` (string) – Expands related entities.
+- `$top` (integer) – Limits the number of results returned.
+- `$select` (string) – Specifies which properties to return.
