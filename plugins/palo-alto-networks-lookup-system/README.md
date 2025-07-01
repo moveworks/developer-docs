@@ -31,7 +31,7 @@ We recommend creating the connector for [**Palo Alto Networks**](https://develop
 
 For the **Lookup System Info** plugin, ensure the user account used in the connector has access to run operational commands (`type=op`) through the XML API.
 
-After the connector is set up, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for instructions on how to complete installation in Agent Studio.
+After the connector is set up, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for instructions on how to complete installation in Agent Studio.
 
 
 ## Appendix
