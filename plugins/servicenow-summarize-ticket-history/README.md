@@ -33,7 +33,7 @@ We recommend creating the connector for **ServiceNow** first, prior to installin
 
 - **Read access to the `sys_history_line` table**
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Customization Options
 
