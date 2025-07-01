@@ -8,6 +8,7 @@ solution_tags:
 - IT
 systems:
 - palo-alto-networks
+time_in_minutes: 10
 ---
 ## Introduction
 
