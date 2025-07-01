@@ -44,7 +44,10 @@ We recommend creating the connector for Workday first, prior to installing this 
 
 After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
 
-# Appendix
+# Customization Options
+
+After installing the plugin from the marketplace, you must **update the API endpoint** in the plugin configuration with your organization's Workday report URL.You can find this URL by following the steps below. This ensures the plugin fetches birthday data from your tenant-specific Workday report.The final URL will look like:
+https://your-domain.com/ccx/service/customreport2/<tenant>/<username>/Alert_-_Birthdays_for_this_week_and_next?format=json
 
 ### **Get the URL for the Report**
 
