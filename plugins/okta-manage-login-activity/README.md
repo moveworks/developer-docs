@@ -14,7 +14,7 @@ systems:
 ---
 ## **Introduction :**
 
-The **Manage Login Activity plugin** integrates Okta with the Moveworks AI Assistant. It enables security teams to monitor user login activity across specific groups and identify suspicious behavior such as logins from unknown devices, new locations, or elevated risk levels
+The **Manage Login Activity plugin** works with the Okta connector to help the Moveworks AI Assistant monitor user login activity. It enables security teams to identify suspicious behavior—such as logins from unknown devices, new locations, or elevated risk levels—across specific user groups.
 
 This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
 
@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our **[Okta Connector Guide](https://developer.moveworks.com/marketplace/package/?id=okta&hist=home%2Cbrws#how-to-implement)** for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-**For this plugin, ensure the Okta API token user has the following minimum permissions:**
+**For this plugin, ensure the Okta API token user has the following required permissions:**
 
 - **Read** access to the **Groups API** (**groups**)
 - **Read** access to the **Group Members API** (**users**)
