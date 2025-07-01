@@ -36,7 +36,7 @@ We recommend creating the connector for Slack first, prior to installing this pl
 
 - Assign the `channels:read`, `groups:read`, `im:read` and `mpim:read` scopes to the User token that is being used.
 
-Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

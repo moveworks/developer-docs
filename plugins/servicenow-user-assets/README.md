@@ -41,7 +41,7 @@ We recommend creating the connector for ServiceNow first, prior to installing th
 
 - **asset (Asset Manager)** role. More details [here](https://www.servicenow.com/docs/bundle/xanadu-it-service-management/page/product/asset-management/reference/r_InstalledWithAssetManagement.html).
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 
