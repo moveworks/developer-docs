@@ -41,7 +41,7 @@ For the **Add User to Share Spot You Own** plugin, ensure the connector includes
 
 Once the connector is configured, continue with the standard plugin installation process in Agent Studio.
 
-[Visit our plugin installation documentation →](https://help.moveworks.com/docs/ai-agent-marketplace)
+[Visit our plugin installation documentation →](https://help.moveworks.com/docs/ai-agent-marketplace-installation)
 
 ## Customization Options
 
