@@ -19,7 +19,7 @@ video: https://www.loom.com/share/798cecea1d4f400dbbbef9a484df9d7d?sid=22ec6eaa-
 
 **The Check Employee ID plugin** integrates The ServiceNow connector to help the Moveworks AI Assistant. It allows users to quickly retrieve their employee ID without navigating ServiceNow manually. The AI assistant provides the employee ID directly within the user's messaging platform.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!.
 
 ## **Prerequisites :**
 
