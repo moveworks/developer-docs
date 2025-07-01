@@ -3,7 +3,7 @@ description: A plugin that lets employees access their performance goals to trac
   your progress and stay aligned with objectives.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
-installation_asset_uuid: 57375344-2844-4ba2-be4f-1856498633d0
+installation_asset_uuid: c2c50d15-ab73-43fa-814d-0017496fbc79
 name: View Personal Goals
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22How+can+I+view+my+performance+goals%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%E2%9C%85+Authenticating+your+access+to+the+performance+management+system%5Cn%E2%9C%85+Retrieving+your+current+performance+goals%5Cn%F0%9F%94%81+Preparing+to+display+your+goals%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EYour+Performance+Goals%3C%2Fb%3E%3Cbr%3EKeeping+track+of+your+performance+goals+helps+you+stay+focused+and+aligned+with+your+career+aspirations.+Here+are+your+current+goals%3A%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EQ1+Objectives%3A%3C%2Fb%3E+Increase+sales+conversion+rate+by+10%25.%3Cbr%3E%3Cb%3EQ2+Objectives%3A%3C%2Fb%3E+Complete+Advanced+Sales+Training.%3Cbr%3E%3Cb%3EAnnual+Goal%3A%3C%2Fb%3E+Achieve+%27Exceeds+Expectations%27+in+customer+satisfaction+surveys.%3Cbr%3ETo+discuss+your+goals+or+make+adjustments%2C+please+schedule+a+meeting+with+your+manager.%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22Schedule+Meeting+with+Manager%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Review+More+Details%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
@@ -24,7 +24,6 @@ This guide will walk you through installing and configuring the plugin in **Agen
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [SAP SuccessFactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP SuccessFactors Authentication guide to create your connector).
 
 ## **What are we building?**
 
@@ -34,19 +33,19 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **View Personal Goals** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow the [SAP SuccessFactors Connector](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) Guide to configure the connection.
 
-For **View Personal Goals**, you will also need to ensure the following permission is in place:
+Note: To enable the View Personal Goals functionality, ensure the SAP SuccessFactors integration user has the necessary permission scopes.
 
 **Required Scope:**
 
-- `Admin privileges`
+- `View` access to the **Goal Plan** entity
 
-After configuring the connector, refer to our plugin installation documentation for more details on completing the setup.
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 
-### **API #1: FETCH_EMPLOYEE_DETAILS_BY_EMAIL**
+### **API #1: Fetch Employee Details by Email**
 
 ```bash
 curl --request GET \
@@ -60,7 +59,7 @@ curl --request GET \
 - `$filter` (string) – Filters users based on the email address.
 - `$select` (string) – Specifies which properties to return.
 
-### **API #2: FETCH_GOALS_BY_USERID**
+### **API #2: Fetch Goals by UserId**
 
 ```bash
 curl --request GET \
