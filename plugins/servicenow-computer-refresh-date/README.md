@@ -1,7 +1,8 @@
 ---
 description: A plugin that lets employees find out when their computer needs to be
   refreshed.
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: 1914e5aa-44e9-4735-b49e-5f30d9696ffb
 name: Look up Computer Refresh Date
 difficulty_level: BEGINNER
 time_in_minutes: 15
@@ -11,7 +12,6 @@ solution_tags:
 - IT
 systems:
 - servicenow
-
 ---
 
 ## Introduction
@@ -32,13 +32,13 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## **Installation Steps**
 
-We recommend setting up **ServiceNow** before installing this plugin. Please follow the [ServiceNow Connector](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) guide to configure the connection.
+We recommend setting up **ServiceNow** before installing this plugin. Please follow the [ServiceNow Connector](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) guide to configure the connection.
 
 For this plugin, ensure the user has the following permissions:
 
 - **Table Access**: `Read` access to the `sys_user`, `cmdb_ci_computer` and `cmdb_model`  tables.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
 # **Customization Process**
 
@@ -49,7 +49,7 @@ Below are the steps you can follow to create a custom field
 ## **Steps to Create Last Refresh Date** and **Next Scheduled Refresh on Computer**
 
 1. **Navigate to a Computer Record**
-    - In the left-hand navigation filter, search: `Computers`
+    - In the left-hand navigation filter, search: `Computers`
     - Open any existing Computer record (or create a new one).
 2. **Open the Table Configuration**
     - While viewing the Computer record, click the gear/hamburger menu (☰) in the top-left (next to the form title).
@@ -63,13 +63,13 @@ Below are the steps you can follow to create a custom field
     - Column label: Last Refresh Date
     - **Type**: `Date`
     - Column name: Auto-generated as `u_last_refresh_date`
-    - Click **Submit**
+    - Click **Submit**
 5. **Create the "Next Scheduled Refresh" Field**
     - Repeat the above steps:
     - **Column label**: `Next Scheduled Refresh`
     - **Type**: `Date`
     - Column name: Auto-generated as `u_next_scheduled_refresh`
-    - Click **Submit**
+    - Click **Submit**
 
 ## **Appendix**
 

@@ -2,7 +2,7 @@
 description: A plugin that provides an employe's unique ID when prompted.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
-installation_asset_uuid: 16169b7e-89fe-4d17-8ce6-c2ec70e8a34a
+installation_asset_uuid: 25746fde-0098-445d-a8dc-4f51cd89608f
 name: Lookup Employee ID
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Hey+Copilot%2C+can+you+help+me+find+my+Employee+ID%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Hi+%5BUser+Name%5D%21+I%27d+be+happy+to+help+you+with+that.+Let+me+retrieve+your+Employee+ID.%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Fetching+your+Employee+ID...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Here+is+your+Employee+ID%3A+%3Cb%3E12345%3C%2Fb%3E.%22%7D%2C%7B%22richText%22%3A%22Is+there+anything+else+I+can+help+you+with%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
@@ -22,7 +22,6 @@ This guide will walk you through installing and configuring the plugin in **Agen
 ## **Prerequisites**
 
 - Access to Agent Studio
-- [SAP SuccessFactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP SuccessFactors Authentication guide to create your connector).
 
 ## **What are we building?**
 
@@ -32,15 +31,15 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **SAP SuccessFactors Connector Guide** for instructions. Once completed, refer to our plugin installation documentation to install the **Lookup Employee ID** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-For **Lookup Employee ID**, you will also need to add the following permissions:
+For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 
 **Required Scopes:**
 
-- `Admin privileges`
+- `View`access to the **User** entity
 
-After configuring the connector, refer to our plugin installation documentation for more details on completing the setup.
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 
