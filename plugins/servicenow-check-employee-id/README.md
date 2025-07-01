@@ -40,7 +40,7 @@ For this plugin, ensure the ServiceNow integration user has the following requir
 - **Read** access to the **User (sys_user)** table
 - **Read** access to the **Employee Number (employee_number)** field
 
-After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup!
+After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup!.
 
 ## **Appendix**
 
