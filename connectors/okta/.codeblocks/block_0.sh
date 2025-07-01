@@ -1,3 +1,3 @@
 curl -i -X GET \
-  https://subdomain.okta.com/api/v1/users \
-  -H 'Authorization: YOUR_API_KEY_HERE'
+  https://{YOUR_INSTANCE}.okta.com/api/v1/users \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN_HERE"
