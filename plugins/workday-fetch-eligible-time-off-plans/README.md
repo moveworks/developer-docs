@@ -39,7 +39,7 @@ We recommend creating the connector for Workday first, prior to installing this 
 
 - Assign `Staffing` and `Time Off and Leave` domain permissions with both **View** and **Get** permissions access.
 
-Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 
