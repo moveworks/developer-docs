@@ -15,7 +15,7 @@ systems:
 ---
 # **Introduction:**
 
-**The Look Up License Cost plugin connects ServiceNow with the Moveworks AI Assistant.** It enables users to instantly retrieve software license cost information from ServiceNow without manual effort, providing accurate pricing details directly within their messaging platform.
+**The Look Up License Cost** enables users to quickly retrieve cost-related details of software licenses in ServiceNow directly through the Moveworks AI Assistant. It enables users to instantly retrieve software license cost information from ServiceNow without manual effort, providing accurate pricing details directly within their messaging platform.
 
 This guide will walk you through the installation and configuration of the plugin in Agent Studio in just a few minutes. Let’s get started!
 
