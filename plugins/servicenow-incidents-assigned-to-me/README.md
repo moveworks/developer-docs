@@ -14,7 +14,7 @@ systems:
 ---
 # **Introduction:**
 
-The **“Get Incident Assigned to Me”** plugin enables users to instantly view incidents assigned to them in ServiceNow directly through the Moveworks AI Assistant, eliminating the need to manually log in and search. With a simple query, users can access key incident details such as the incident number, short description, assignment status, and assigned group—helping them stay organized and accelerate issue resolution
+The **“Get Incident Assigned to Me”** plugin enables users to instantly view incidents assigned to them in ServiceNow directly through the Moveworks AI Assistant. It eliminates the need to manually log in or navigate the system.This helps users stay informed and respond to incidents more efficiently.
 
 This guide will walk you through the installation and configuration of the plugin in Agent Studio in just a few minutes. Let’s get started!
 
@@ -43,7 +43,7 @@ After configuring the connector, refer to our [**plugin installation documentati
 ### **API #1: Get Incidents Details by User Email**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?sysparm_query=assigned_to.email%3D<USER_EMAIL>&sysparm_fields=number%2Cshort_description' \
+curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?sysparm_query=assigned_toemail%3D<USER_EMAIL>sysparm_fields=number%2Cshort_description%2Curgency%2Cstate%2Cdescription' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 
