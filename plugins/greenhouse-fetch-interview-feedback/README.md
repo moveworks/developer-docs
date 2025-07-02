@@ -37,7 +37,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 We recommend creating the connector for Greenhouse first, prior to installing this plugin. Please follow the [Greenhouse Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=greenhouse) guide to create the connector.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Customization Options
 
