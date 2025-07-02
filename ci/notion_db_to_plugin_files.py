@@ -207,8 +207,6 @@ class Record:
         with open(self.record_readme, 'w') as file:
             file.write(new_content)
         
-        
-
 
 def validate_file_consistent_with_notion(record: Record):
     # Ensure the front matter is AT LEAST the same
@@ -245,23 +243,54 @@ def clear_directory(directory):
 def validate_record(record: Record):
     if not record.slug:
         return
+    
+    # Download/prepare the Connector image url if needed
+    image_content = None
+    if record.content_type == ContentTypes.CONNECTOR and record.img_url and record.fidelity != Fidelity.IMPOSSIBLE:
+        try:
+            response = requests.get(record.img_url)
+            
+            # Check if the response was successful (status code 200)
+            if response.status_code != 200:
+                print(f"{record.slug} - Error fetching image: HTTP status {response.status_code}")
+                image_content = None
+            else:
+                image_content = response.content
+        except Exception as e:
+            print(f"Failed to download image for {record.slug}: {e}")
 
-    elif record.fidelity in [
+    if record.fidelity in [
         Fidelity.GUIDE,
         Fidelity.VALIDATED,
         Fidelity.BUILT_IN,
         Fidelity.TEMPLATE
     ]:
-        # Check if the guide file exists
+        # Create directory if needed
+        if not os.path.exists(record.record_directory):
+            os.makedirs(record.record_directory)
+        
+        # Write image if its not already there or if it has changed
+        if image_content and not os.path.exists(record.img_path):
+            print(f"Adding image for {record.slug}")
+            open(record.img_path, "wb+").write(image_content)
+        elif image_content and os.path.exists(record.img_path):
+            existing_image = open(record.img_path, "rb").read()
+            if existing_image != image_content:
+                print(f"Updating image for {record.slug}")
+                open(record.img_path, "wb+").write(image_content)
+        
+        # Check if README exists
         if not os.path.exists(record.record_readme):
-            if not os.path.exists(record.record_directory):
-                os.makedirs(record.record_directory)
-            
             open(record.record_readme, "w+").write(record.render_template())
-            print('WARNING: ', f"This record is supposed to be {record.fidelity}, but we could not find a guide or research file for {record.record_directory}. Please add your proof.")
-
+            
+            if record.fidelity == Fidelity.BUILT_IN:
+                print(f"Created new BUILT_IN record for {record.slug}")
+            else:
+                print('WARNING: ', f"This record is supposed to be {record.fidelity}, but we could not find a guide or research file for {record.record_directory}. Please add your proof.")
+        
         # Detect discrepancies with the guide file
         validate_file_consistent_with_notion(record)
+
     elif record.fidelity in [Fidelity.IDEA]:
         existing_image = None
         if os.path.exists(record.img_path):
@@ -272,11 +301,12 @@ def validate_record(record: Record):
         open(record.record_readme, "w+").write(record.render_template())
         # Add the logo
         if record.content_type == ContentTypes.CONNECTOR:
-            if existing_image:
+            if image_content:
+                print(f"Updating image for {record.slug}")
+                open(record.img_path, "wb+").write(image_content)
+            elif existing_image:
+                print(f"Preserving existing image for {record.slug}")
                 open(record.img_path, "wb+").write(existing_image)
-            elif record.img_url:
-                response = requests.get(record.img_url)
-                open(record.img_path, "wb+").write(response.content)
             else:
                 raise ValueError(f"No Image for Connector: {record.slug}")
 
