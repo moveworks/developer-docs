@@ -42,7 +42,7 @@ We recommend creating the connector for Workday first, prior to installing this 
 
 - Assign the `Public Profile Preferences: Birthday` domain permission with **Get** access.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Customization Options
 
