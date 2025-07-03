@@ -12,7 +12,7 @@ systems:
 ---
 ## **Introduction:**
 
-The **Create Change Request from Incident** plugin integrates ServiceNow connector to help the Moveworks AI Assistant. It enables users to effortlessly create a change request directly from an existing incident, without navigating through ServiceNow manually. The AI assistant provides the employee ID directly within the user's messaging platform.
+The **Create Change Request from Incident** plugin enables users to generate change requests in ServiceNow directly from existing incidents using the Moveworks AI Assistant. This integration streamlines the workflow by eliminating the need to manually navigate through ServiceNow. The AI Assistant also surfaces relevant details, such as the employee ID, directly within the user's messaging platform for a seamless experience.
 
 This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
 
