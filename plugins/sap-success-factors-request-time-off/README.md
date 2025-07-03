@@ -1,5 +1,5 @@
 ---
-description: A plugn that enables an employee to request time off in SAP SuccessFactors.
+description: A plugin that enables an employee to request time off in SAP SuccessFactors.
 difficulty_level: INTERMEDIATE
 fidelity: TEMPLATE
 installation_asset_uuid: 3d755982-e50b-4237-9bc8-f9272584f859
