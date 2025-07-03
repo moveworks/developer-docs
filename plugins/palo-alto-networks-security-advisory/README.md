@@ -1,5 +1,5 @@
 ---
-description: A plugin that allows you to lookup recent security advisories from PAN-OS.
+description: A plugin that allows you to lookup recent security advisories.
 fidelity: TEMPLATE
 installation_asset_uuid: cd80f8f6-2ec0-4836-9c5f-1094503444e4
 name: Look Up Recent Security Advisories
@@ -10,6 +10,7 @@ systems:
 - palo-alto-networks
 time_in_minutes: 10
 ---
+
 ## Introduction
 
 The **Lookup Security Advisory** plugin enables users to retrieve the latest vulnerability and threat advisories from **Palo Alto Networks** directly within the Moveworks AI Assistant. This allows security teams to stay up-to-date and take immediate action—without leaving their workflow.
