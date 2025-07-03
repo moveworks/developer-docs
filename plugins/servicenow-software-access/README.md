@@ -15,7 +15,7 @@ systems:
 
 ## **Introduction:-**
 
-The **“Request Software Access”** plugin enables users to seamlessly request software directly through the Moveworks AI Assistant—without navigating the ServiceNow portal manually. By prompting the user for a software name, the plugin fetches relevant catalog items in real time. Once the user selects the desired software, it collects a business justification and requester email before automatically submitting the request via ServiceNow’s API. This streamlined process ensures faster request fulfillment and improved user experience.
+The **“Request Software Access”** plugin enables users to seamlessly request software directly through the Moveworks AI Assistant—without having to navigate ServiceNow. This streamlined process ensures faster request fulfillment and improved user experience.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
