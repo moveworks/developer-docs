@@ -34,7 +34,7 @@ We recommend creating the connector for Slack first, prior to installing this pl
 
 **Note**: For **Fetch Public Slack Channels** functionality, you will need to also add the following permissions (the connector guide will walk you through how to add permissions): 
 
-- Assign the `channels:read`, `groups:read`, `im:read` and `mpim:read` scopes to the User token that is being used.
+- Assign the `channels:read`, `groups:read`, `im:read` and `mpim:read` scopes to the **Bot User OAuth Token** that is being used.
 
 Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
