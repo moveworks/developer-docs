@@ -18,7 +18,7 @@ video: https://www.loom.com/share/798cecea1d4f400dbbbef9a484df9d7d?sid=22ec6eaa-
 
 ## **Introduction :**
 
-**The Check Employee ID plugin** integrates ServiceNow with the Moveworks AI Assistant. It allows users to quickly retrieve their employee ID without navigating ServiceNow manually. The AI assistant provides the employee ID directly within the user's messaging platform.
+**The Check Employee ID** plugin enables users to quickly retrieve their unique employee identification number directly within ServiceNow. This eliminates the need to manually search through employee records, making it more convenient for users to access their ID, verify their identity, and streamline HR or IT processes.
 
 This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
 
@@ -36,12 +36,12 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [ServiceNow Connector](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) [**Guide**](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-For this plugin, ensure the ServiceNow integration user has the following minimum permissions:
+For this plugin, ensure the ServiceNow integration user has the following required permissions:
 
 - **Read** access to the **User (sys_user)** table
 - **Read** access to the **Employee Number (employee_number)** field
 
-After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup!
+After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup!.
 
 ## **Appendix**
 
