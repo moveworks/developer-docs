@@ -2,7 +2,7 @@
 description: A plugin that allows employees to see what current job postings are available.
 difficulty_level: INTERMEDIATE
 fidelity: TEMPLATE
-installation_asset_uuid: d0150d49-1997-4079-985a-a8a3134fe10b
+installation_asset_uuid: fb03c05b-914e-4ee6-b94c-4cc4bb25a25b
 name: View Open Job Postings
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Can+I+see+the+current+job+postings%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESure%2C+here%27s+the+latest+list+from+Workday%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ESoftware+Engineer%3C%2Fb%3E%3Cbr%3EJoin+our+tech+team+and+work+on+innovative+projects.+Ideal+for+those+passionate+about+coding+and+technology.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EMarketing+Specialist%3C%2Fb%3E%3Cbr%3EHelp+us+enhance+our+brand+presence+and+engage+our+audience.+Perfect+for+creative+and+strategic+thinkers.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EProduct+Manager%3C%2Fb%3E%3Cbr%3ELead+the+development+of+our+next+product+line.+Suitable+for+visionary+leaders+with+a+knack+for+product+development.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EHR+Coordinator%3C%2Fb%3E%3Cbr%3ESupport+our+team+in+creating+a+great+workplace.+Great+for+individuals+passionate+about+people+and+culture.%22%7D%5D%7D%5D%7D
 solution_tags:
