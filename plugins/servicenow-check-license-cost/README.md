@@ -44,7 +44,7 @@ After configuring the connector, refer to our [**plugin installation documentat
 ### **API #1: Get License Details by Display Name**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/alm_license?sysparm_query=model.display_name%3D<SOFTWARE_NAME>' \
+curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/alm_license?sysparm_query=model.display_nameLIKE%20<SOFTWARE_NAME>' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
