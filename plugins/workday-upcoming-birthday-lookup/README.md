@@ -52,7 +52,7 @@ https://your-domain.com/ccx/service/customreport2/<tenant>/<username>/Alert_-_Bi
 
 ### **Get the URL for the Report**
 
-In this step, we will get the URL for the report we want to run within Creator Studio. We are using a inbuilt report as part of this example but you can call any report that already exists or that you create using these steps.
+In this step, we will get the URL for the report we want to run within Agent Studio. We are using a inbuilt report as part of this example but you can call any report that already exists or that you create using these steps.
 
 We are going to use the `*Alert - Birthdays for this week and next*` report to get the upcoming birthdays for this example.
 
