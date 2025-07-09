@@ -1,0 +1,163 @@
+name: ai-doc-check
+
+on:
+  pull_request:
+    types: [opened] # Trigger only when a new PR is opened
+
+jobs:
+  lint_readme:
+    runs-on: ubuntu-latest
+    # This job will now run for any newly opened Pull Request,
+    # regardless of the number of commits it contains at the time of opening.
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        # Checkout the head branch of the Pull Request to access the changed files
+        ref: ${{ github.event.pull_request.head.ref }}
+
+    - name: Get changed files and check for README.md
+      id: get_changed_files # Assign an ID to this step to reference its outputs later
+      uses: actions/github-script@v7 # Use github-script to interact with the GitHub API
+      with:
+        script: |
+          // Fetch the list of files changed in the current Pull Request
+          const { data: files } = await github.rest.pulls.listFiles({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.issue.number,
+          });
+
+          // Check if 'README.md' is among the changed files, including those in subdirectories
+          // It will find any file ending with '/README.md' or exactly 'README.md' for the root file.
+          const readmeFile = files.find(file => file.filename === 'README.md' || file.filename.endsWith('/README.md'));
+          if (readmeFile) {
+            console.log('README.md was changed. Proceeding with AI Doc Check.');
+            // Set outputs that can be used by subsequent steps
+            core.setOutput('readme_changed', true);
+            core.setOutput('readme_path', readmeFile.filename);
+          } else {
+            console.log('README.md was not changed. Skipping AI Doc Check.');
+            core.setOutput('readme_changed', false);
+          }
+        result-encoding: json # Encode the output as JSON
+
+    - name: Read README.md content
+      id: read_readme_content # Assign an ID to this step
+      # This step only runs if README.md was detected as changed in the previous step
+      if: steps.get_changed_files.outputs.readme_changed == 'true'
+      run: |
+        # Get the path of the README.md file from the previous step's output
+        README_PATH="${{ fromJson(steps.get_changed_files.outputs.readme_path) }}"
+        # Read the content of the README.md file
+        README_CONTENT=$(cat "$README_PATH")
+        # Output the content. Using 'EOF' delimiter for multi-line output.
+        echo "readme_content<<EOF" >> $GITHUB_OUTPUT
+        echo "$README_CONTENT" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+        echo "README content read successfully."
+
+    - name: Install Python dependencies
+      # Only install Python if README.md was changed
+      if: steps.get_changed_files.outputs.readme_changed == 'true'
+      uses: actions/setup-python@v5 # Setup Python environment
+      with:
+        python-version: '3.x' # Use the latest Python 3 version
+
+    - name: Install Google Generative AI library
+      # Only install the library if README.md was changed
+      if: steps.get_changed_files.outputs.readme_changed == 'true'
+      run: pip install google-generativeai # Install the necessary Python library for Gemini
+
+    - name: Call Gemini LLM for review
+      id: gemini_review # Assign an ID to this step
+      # This step only runs if README.md was changed
+      if: steps.get_changed_files.outputs.readme_changed == 'true'
+      env:
+        # Pass the Gemini API key from GitHub Secrets as an environment variable
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        # Pass the README content as an environment variable
+        README_CONTENT: ${{ steps.read_readme_content.outputs.readme_content }}
+      run: |
+        python <<EOF
+        import google.generativeai as genai
+        import os
+        import json
+
+        # Configure the Gemini API with the key from environment variables
+        genai.configure(api_key=os.environ.get('GEMINI_API_KEY'))
+        # Initialize the Gemini model (using gemini-2.0-flash for speed)
+        model = genai.GenerativeModel('gemini-2.0-flash')
+
+        readme_content = os.environ.get('README_CONTENT')
+        if not readme_content:
+            print("Error: README content is empty.")
+            exit(1)
+
+        # Construct the prompt for Gemini
+        prompt = f"""
+        Review the following README.md file content for grammar, style, and substance.
+        Provide specific suggestions for improvement.
+        Focus on clarity, conciseness, accuracy, and overall readability.
+        If there are no significant issues, state that.
+        Format your suggestions clearly, perhaps using bullet points or numbered lists.
+
+        README.md Content:
+        ---
+        {readme_content}
+        ---
+
+        Suggestions:
+        """
+
+        try:
+            # Generate content using the Gemini model
+            response = model.generate_content(prompt)
+            review_text = response.text
+            # Escape potential markdown characters in the review text for safe output
+            # This prevents issues when the output is later used in a GitHub comment
+            review_text = review_text.replace('\\', '\\\\').replace('`', '\\`').replace('$', '\\$').replace('"', '\\"')
+            # Output the review text for the next step to consume
+            print(f"review_output<<EOF")
+            print(review_text)
+            print(f"EOF")
+            print(f"review_output={json.dumps(review_text)}") # Also output for direct access
+            print(f"Review generated successfully.")
+        except Exception as e:
+            print(f"Error calling Gemini API: {e}")
+            print(f"review_output=Error: Could not get review from Gemini.")
+            exit(1)
+        EOF
+
+    - name: Post Gemini suggestions as PR comment
+      # This step runs only if a review was successfully generated and README.md was changed
+      if: steps.gemini_review.outputs.review_output != '' && steps.get_changed_files.outputs.readme_changed == 'true'
+      uses: actions/github-script@v7 # Use github-script to post the comment
+      with:
+        script: |
+          // Get the review output from the previous step
+          const reviewOutput = `${{ steps.gemini_review.outputs.review_output }}`;
+          const prNumber = context.issue.number;
+
+          if (!prNumber) {
+            console.log('Could not get PR number. Skipping comment.');
+            return;
+          }
+
+          // Construct the comment body in Markdown
+          const commentBody = `## 📝 README.md Review by Gemini LLM\n\n${reviewOutput}\n\n---
+          _This review was generated automatically for the first commit on this Pull Request._`;
+
+          try {
+            // Create a comment on the Pull Request
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: commentBody
+            });
+            console.log('Comment posted successfully.');
+          } catch (error) {
+            console.error(`Failed to post comment: ${error.message}`);
+          }
