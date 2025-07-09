@@ -147,10 +147,12 @@ jobs:
       if: steps.gemini_review.outputs.review_output != '' && steps.get_changed_files.outputs.readme_changed == 'true'
       uses: actions/github-script@v7 # Use github-script to post the comment
       with:
+        # Pass the review output as an explicit input to github-script
+        review_content: ${{ steps.gemini_review.outputs.review_output }}
         script: |
-          // Get the review output from the previous step as a raw string.
-          // We will manually escape backticks for safe Markdown rendering.
-          const reviewOutput = `${{ steps.gemini_review.outputs.review_output }}`;
+          // Get the review output from the step's input.
+          // This is the safest way to handle arbitrary multi-line string content.
+          const reviewOutput = core.getInput('review_content');
           const prNumber = context.issue.number;
 
           if (!prNumber) {
@@ -161,7 +163,7 @@ jobs:
           // Construct the comment body in Markdown.
           // Escape backticks in the reviewOutput to prevent premature closing of markdown code blocks.
           const escapedReviewOutput = reviewOutput.replace(/`/g, '\\`');
-          const commentBody = `## 📝 README.md Review by Gemini LLM\n\n${escapedReviewOutput}\n\n---
+          const commentBody = `##Review by Gemini LLM\n\n${escapedReviewOutput}\n\n---
           _This review was generated automatically for this Pull Request._`;
 
           try {
