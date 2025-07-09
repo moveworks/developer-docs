@@ -43,20 +43,19 @@ jobs:
           }
         result-encoding: json # Encode the output as JSON
 
-    - name: Read README.md content
+    - name: Read README.md content and Base64 encode it
       id: read_readme_content # Assign an ID to this step
       # This step only runs if README.md was detected as changed in the previous step
       if: steps.get_changed_files.outputs.readme_changed == 'true'
       run: |
         # Get the path of the README.md file from the previous step's output
         README_PATH="${{ fromJson(steps.get_changed_files.outputs.readme_path) }}"
-        # Read the content of the README.md file
-        README_CONTENT=$(cat "$README_PATH")
-        # Output the content. Using 'EOF' delimiter for multi-line output.
-        echo "readme_content<<EOF" >> $GITHUB_OUTPUT
-        echo "$README_CONTENT" >> $GITHUB_OUTPUT
-        echo "EOF" >> $GITHUB_OUTPUT
-        echo "README content read successfully."
+        # Read the content of the README.md file and base64 encode it
+        # This prevents issues with special characters or multi-line content in YAML
+        README_CONTENT_BASE64=$(cat "$README_PATH" | base64 -w 0)
+        # Output the base64 encoded content
+        echo "readme_content_base64=$README_CONTENT_BASE64" >> $GITHUB_OUTPUT
+        echo "README content read and base64 encoded successfully."
 
     - name: Install Python dependencies
       # Only install Python if README.md was changed
@@ -77,29 +76,32 @@ jobs:
       env:
         # Pass the Gemini API key from GitHub Secrets as an environment variable
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        # Pass the README content as an environment variable
-        README_CONTENT: ${{ steps.read_readme_content.outputs.readme_content }}
+        # Pass the Base64 encoded README content as an environment variable
+        README_CONTENT_BASE64: ${{ steps.read_readme_content.outputs.readme_content_base64 }}
         # GITHUB_OUTPUT is an environment variable pointing to the file where outputs should be written
         GITHUB_OUTPUT: ${{ github.env.GITHUB_OUTPUT }}
       run: |
         python <<EOF
         import google.generativeai as genai
         import os
+        import base64 # Import base64 for decoding
 
         # Configure the Gemini API with the key from environment variables
         genai.configure(api_key=os.environ.get('GEMINI_API_KEY'))
         # Initialize the Gemini model (using gemini-2.0-flash for speed)
         model = genai.GenerativeModel('gemini-2.0-flash')
 
-        readme_content = os.environ.get('README_CONTENT')
-        if not readme_content:
-            print("Error: README content is empty.")
-            # Write error to output for debugging purposes
+        readme_content_base64 = os.environ.get('README_CONTENT_BASE64')
+        if not readme_content_base64:
+            print("Error: README content (base64) is empty.")
             with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
                 f.write(f"review_output<<EOF\n")
-                f.write(f"Error: README content is empty.")
+                f.write(f"Error: README content (base64) is empty.")
                 f.write(f"\nEOF\n")
             exit(1)
+
+        # Decode the base64 content back to a string
+        readme_content = base64.b64decode(readme_content_base64).decode('utf-8')
 
         # Construct the prompt for Gemini
         prompt = f"""
