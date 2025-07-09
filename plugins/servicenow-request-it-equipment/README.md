@@ -1,5 +1,5 @@
 ---
-description: A plugin that enables a user to request desk equipment.
+description: A plugin that enables a user to request a hardware asset.
 fidelity: IDEA
 name: Request IT Equipment
 num_implementations: 1
