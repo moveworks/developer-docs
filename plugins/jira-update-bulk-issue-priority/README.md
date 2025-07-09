@@ -40,13 +40,14 @@ Once the connector is successfully configured, follow our [plugin installation d
 ### **API #1: Get Bugs Assigned for a Specific Date Range:**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/rest/api/3/search?jql=issuetype=Bug AND assignee="{{email}}" AND statusCategory!=Done AND created >= {{created_range}}' \
+curl --location 'https://<YOUR_INSTANCE>/rest/api/3/search?jql=issuetype={{issue_type}} AND assignee="{{email}}" AND statusCategory!=Done AND created >= {{created_range}}' \
 --header 'Accept: application/json' \
 --header 'Authorization: Basic <API_TOKEN>'
 ```
 
 **Query Parameter:**
 
+- `issue_type` (string)– Filters issues by type (e.g., Bug, Task, Story, etc.)
 - `email` (string)– Returns issues assigned to the specified user
 - `created_range` (string)– Filters by issues created in a given time range (e.g., `7d`, `30d`, etc.)
 
