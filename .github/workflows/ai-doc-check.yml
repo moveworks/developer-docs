@@ -36,7 +36,8 @@ jobs:
             console.log('README.md was changed. Proceeding with AI Doc Check.');
             // Set outputs that can be used by subsequent steps
             core.setOutput('readme_changed', true);
-            core.setOutput('readme_path', readmeFile.filename);
+            // Explicitly JSON.stringify the path to ensure robust parsing later
+            core.setOutput('readme_path', JSON.stringify(readmeFile.filename));
           } else {
             console.log('README.md was not changed. Skipping AI Doc Check.');
             core.setOutput('readme_changed', false);
@@ -47,13 +48,13 @@ jobs:
       id: read_readme_content # Assign an ID to this step
       # This step only runs if README.md was detected as changed in the previous step
       if: steps.get_changed_files.outputs.readme_changed == 'true'
-      env: # Pass the README path as an environment variable
-        # Removed fromJson() as readme_path is already a plain string output
-        README_FILE_PATH: ${{ steps.get_changed_files.outputs.readme_path }}
       run: |
-        # Read the content of the README.md file using the environment variable
+        # Get the path of the README.md file from the previous step's output.
+        # Use fromJson to correctly parse the JSON string output from the previous step.
+        README_PATH="${{ fromJson(steps.get_changed_files.outputs.readme_path) }}"
+        # Read the content of the README.md file using the resolved path
         # and base64 encode it. This prevents issues with special characters or multi-line content in YAML.
-        README_CONTENT_BASE64=$(cat "$README_FILE_PATH" | base64 -w 0)
+        README_CONTENT_BASE64=$(cat "$README_PATH" | base64 -w 0)
         # Output the base64 encoded content
         echo "readme_content_base64=$README_CONTENT_BASE64" >> $GITHUB_OUTPUT
         echo "README content read and base64 encoded successfully."
