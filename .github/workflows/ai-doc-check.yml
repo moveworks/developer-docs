@@ -79,6 +79,8 @@ jobs:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         # Pass the README content as an environment variable
         README_CONTENT: ${{ steps.read_readme_content.outputs.readme_content }}
+        # GITHUB_OUTPUT is an environment variable pointing to the file where outputs should be written
+        GITHUB_OUTPUT: ${{ github.env.GITHUB_OUTPUT }}
       run: |
         python <<EOF
         import google.generativeai as genai
@@ -92,6 +94,11 @@ jobs:
         readme_content = os.environ.get('README_CONTENT')
         if not readme_content:
             print("Error: README content is empty.")
+            # Write error to output for debugging purposes
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write(f"review_output<<EOF\n")
+                f.write(f"Error: README content is empty.")
+                f.write(f"\nEOF\n")
             exit(1)
 
         # Construct the prompt for Gemini
@@ -114,18 +121,20 @@ jobs:
             # Generate content using the Gemini model
             response = model.generate_content(prompt)
             review_text = response.text
-            # Output the review text for the next step to consume as a multi-line string
-            # The content between <<EOF and EOF will be the value of review_output
-            print(f"review_output<<EOF")
-            print(review_text) # This is the raw text from Gemini
-            print(f"EOF")
+            
+            # Write the review text to GITHUB_OUTPUT directly using the multi-line delimiter
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write(f"review_output<<EOF\n")
+                f.write(review_text)
+                f.write(f"\nEOF\n")
             print(f"Review generated successfully.")
         except Exception as e:
             print(f"Error calling Gemini API: {e}")
             # If an error occurs, still set an output so the next step can check it
-            print(f"review_output<<EOF")
-            print(f"Error: Could not get review from Gemini. Details: {e}")
-            print(f"EOF")
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write(f"review_output<<EOF\n")
+                f.write(f"Error: Could not get review from Gemini. Details: {e}")
+                f.write(f"\nEOF\n")
             exit(1)
         EOF
 
