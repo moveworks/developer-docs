@@ -83,7 +83,6 @@ jobs:
         python <<EOF
         import google.generativeai as genai
         import os
-        import json
 
         # Configure the Gemini API with the key from environment variables
         genai.configure(api_key=os.environ.get('GEMINI_API_KEY'))
@@ -115,18 +114,18 @@ jobs:
             # Generate content using the Gemini model
             response = model.generate_content(prompt)
             review_text = response.text
-            # Escape potential markdown characters in the review text for safe output
-            # This prevents issues when the output is later used in a GitHub comment
-            review_text = review_text.replace('\\', '\\\\').replace('`', '\\`').replace('$', '\\$').replace('"', '\\"')
-            # Output the review text for the next step to consume
+            # Output the review text for the next step to consume as a multi-line string
+            # The content between <<EOF and EOF will be the value of review_output
             print(f"review_output<<EOF")
-            print(review_text)
+            print(review_text) # This is the raw text from Gemini
             print(f"EOF")
-            print(f"review_output={json.dumps(review_text)}") # Also output for direct access
             print(f"Review generated successfully.")
         except Exception as e:
             print(f"Error calling Gemini API: {e}")
-            print(f"review_output=Error: Could not get review from Gemini.")
+            # If an error occurs, still set an output so the next step can check it
+            print(f"review_output<<EOF")
+            print(f"Error: Could not get review from Gemini. Details: {e}")
+            print(f"EOF")
             exit(1)
         EOF
 
@@ -146,8 +145,10 @@ jobs:
           }
 
           // Construct the comment body in Markdown
-          const commentBody = `## 📝 README.md Review by Gemini LLM\n\n${reviewOutput}\n\n---
-          _This review was generated automatically for the first commit on this Pull Request._`;
+          // Escape backticks in the reviewOutput to prevent premature closing of markdown code blocks
+          const escapedReviewOutput = reviewOutput.replace(/`/g, '\\`');
+          const commentBody = `## 📝 README.md Review by Gemini LLM\n\n${escapedReviewOutput}\n\n---
+          _This review was generated automatically for this Pull Request._`;
 
           try {
             // Create a comment on the Pull Request
