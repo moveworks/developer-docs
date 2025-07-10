@@ -8,10 +8,10 @@ time_in_minutes: 40
 
 SAP SuccessFactors is a cloud-based human resources (HR) management solution, empowering businesses with data-driven insights to optimize talent management, employee engagement, and overall workforce performance.
 
-This guide will walk you through the process of creating a connector within Creator Studio to make API calls to SAP SuccessFactors, using **OAuth Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
+This guide will walk you through the process of creating a connector within Agent Studio to make API calls to SAP SuccessFactors, using **OAuth Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
 
 1. **Set up OAuth Client Credentials Flow**
-2. **Create a Connector in Creator Studio**
+2. **Create a Connector in Agent Studio**
 
 # **Prerequisites:**
 
@@ -22,13 +22,13 @@ This guide will walk you through the process of creating a connector within Crea
 
 # **Set up SAP SuccessFactors**
 
-To connect SAP SuccessFactors with Creator Studio, we’ll use OAuth2 with the Client Credentials Flow. You’ll need to register an application in SAP SuccessFactors and obtain the following credentials:
+To connect SAP SuccessFactors with Agent Studio, we’ll use OAuth2 with the Client Credentials Flow. You’ll need to register an application in SAP SuccessFactors and obtain the following credentials:
 
 - **Company ID**
 - **Client ID**
 - **Assertion** (Base64-encoded SAML assertion, generated after registering the application)
 
-The following steps will walk you through how to register an OAuth application in SAP SuccessFactors, generate the required assertion, and authenticate to get an access token. This token is essential to securely interact with the SAP SuccessFactors APIs and set up the connector within Creator Studio
+The following steps will walk you through how to register an OAuth application in SAP SuccessFactors, generate the required assertion, and authenticate to get an access token. This token is essential to securely interact with the SAP SuccessFactors APIs and set up the connector within Agent Studio
 
 ## **Step 1: Register the Application in SAP SuccessFactors**
 
@@ -179,11 +179,11 @@ curl --location 'https://<API_SERVER_DOMAIN>/oauth/token' \
 --data-urlencode 'grant_type=urn:ietf:params:oauth:grant-type:saml2-bearer' \
 --data-urlencode 'assertion=<SAML_ASSERTION>'
 ```
-- By importing the cURL request into Creator Studio during action creation, you can directly retrieve the access token as part of your workflow, making it easier to integrate and automate the process
+- By importing the cURL request into Agent Studio during action creation, you can directly retrieve the access token as part of your workflow, making it easier to integrate and automate the process
 
-## **Step 4: Integrate with Creator Studio**
+## **Step 4: Integrate with Agent Studio**
 
-In Creator Studio, create a new connector with the following configuration (please name it accordingly for easy identification while creating use cases):
+In Agent Studio, create a new connector with the following configuration (please name it accordingly for easy identification while creating use cases):
 
 1. **Auth Config:**
     - OAuth2
@@ -209,7 +209,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/rest/timemanagement/absence/v1/time
 
 ```
 
-## **Step 5: Integrate SAP SuccessFactors API in Creator Studio**
+## **Step 5: Integrate SAP SuccessFactors API in Agent Studio**
 
 - Add your API details below to integrate with the SAP SuccessFactors API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy).
 
@@ -236,4 +236,4 @@ curl --location 'https://<API_SERVER_DOMAIN>/rest/timemanagement/absence/v1/time
 
 # **Congratulations!**
 
-You've successfully integrated the **SAP SuccessFactors API** with Creator Studio. You can now start using it for your specific use cases
+You've successfully integrated the **SAP SuccessFactors API** with Agent Studio. You can now start using it for your specific use cases

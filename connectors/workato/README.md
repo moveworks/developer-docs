@@ -12,7 +12,7 @@ accreditations:
 
 Workato is a low-code, no-code tool that allows you to build “recipes” as custom APIs.
 
-In this guide, we will demonstrate how to trigger a Workato API endpoint from Creator Studio and return data back to Creator Studio. We will walk through creating & publishing a recipe, testing it in Postman, and connecting it to Creator Studio.
+In this guide, we will demonstrate how to trigger a Workato API endpoint from Agent Studio and return data back to Agent Studio. We will walk through creating & publishing a recipe, testing it in Postman, and connecting it to Agent Studio.
 
 We are going to build a simple “Reverse Echo” API that returns the value sent to the API, but backwards.
 
@@ -134,7 +134,7 @@ We are going to build a simple “Reverse Echo” API that returns the value sen
     ![Untitled](Authentication%20Guide%20Workato%20c6344fa56dd748e9bc3f0c58d1abe8d3/Untitled%2016.png)
     
 
-## Step 6: Connect to Creator Studio
+## Step 6: Connect to Agent Studio
 
 1. In your API editor, create a new connector. You can read more about the supported auth types on [our connector reference](https://developer.moveworks.com/creator-studio/connector-configuration/).
     - Base Url: `https://apim.workato.com`
@@ -171,4 +171,4 @@ We are going to build a simple “Reverse Echo” API that returns the value sen
 
 # Congratulations!
 
-You just connected your first Workato API to Creator Studio.
+You just connected your first Workato API to Agent Studio.

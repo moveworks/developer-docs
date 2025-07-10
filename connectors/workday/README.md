@@ -18,10 +18,10 @@ Workday supports various kinds of web service technologies including the ReST AP
 - **Workday Query Language**: Workday Query Language (WQL) enables you to use SQL-like syntax to access Workday data using data sources and fields instead of reports. WQL enables you to query Workday for data and explore - Data sources, Data source filters, Fields. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/workday-query-language-wql-/aht1611188422513.html?toc=1.20.0).
 
 
-This guide will walk you through creating a connector within Creator Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. We have separated this guide into three main sections:
+This guide will walk you through creating a connector within Agent Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. We have separated this guide into three main sections:
 - [Prerequisites](#prerequisites)
 - [Set up Workday](#set-up-workday)
-- [Create a Connector in Creator Studio](#create-a-connector-and-test-in-creator-studio)
+- [Create a Connector in Agent Studio](#create-a-connector-and-test-in-creator-studio)
 
 
 
@@ -30,7 +30,7 @@ This guide will walk you through creating a connector within Creator Studio to m
 - [Install Postman](https://www.postman.com/downloads/) for testing the API connection
 
 # Set up Workday
-To connect to Workday from within Creator Studio, we are going to be using [OAuth2 with the Refresh Token](https://oauth.net/2/grant-types/refresh-token/). This requires a client_id, a client_secret and a refresh_token. The following will walk you through how to set up a user and create the necessary ids so we can set up the connector within Creator Studio.
+To connect to Workday from within Agent Studio, we are going to be using [OAuth2 with the Refresh Token](https://oauth.net/2/grant-types/refresh-token/). This requires a client_id, a client_secret and a refresh_token. The following will walk you through how to set up a user and create the necessary ids so we can set up the connector within Agent Studio.
 
 
 1. Create an Integration Systems User (ISU)
@@ -210,15 +210,15 @@ curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENA
 
 3. Confirm the values have been filled in properly by the import, if they have, you can run the command by hitting `send`
 
-The above command should return the top five employees in your Workday database. If successful, you are done with the hardest part of connecting Creator Studio to Workday! 
+The above command should return the top five employees in your Workday database. If successful, you are done with the hardest part of connecting Agent Studio to Workday! 
 
 ![Alt text](images/image-3.png)
 
-Next, let's take the above and create a connector within Creator Studio so we can query directly from within Moveworks.
+Next, let's take the above and create a connector within Agent Studio so we can query directly from within Moveworks.
 
-# Create a Connector and Test in Creator Studio
+# Create a Connector and Test in Agent Studio
 
-Now that we have created everything within Workday and we have tested with our curl command, we can create duplicate our test in Creator Studio.
+Now that we have created everything within Workday and we have tested with our curl command, we can create duplicate our test in Agent Studio.
 
 ## Create a Connector
 
@@ -267,4 +267,4 @@ Query parameters: `limit` : `5`
 
 # **Congratulations!**
 
-You've successfully integrated Workday's API with Creator Studio. This opens up a variety of automation and integration possibilities to Workday.
+You've successfully integrated Workday's API with Agent Studio. This opens up a variety of automation and integration possibilities to Workday.

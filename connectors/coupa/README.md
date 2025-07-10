@@ -12,7 +12,7 @@ drop_accreditations:
 
 # **Introduction**
 
-Coupa is a cloud-based platform that streamlines business spend management. It offers robust tools for procurement, invoicing, and expense management. This guide will demonstrate how to create an **OAuth Client** in Coupa, authenticate with Coupa’s API, and test it in Creator Studio.
+Coupa is a cloud-based platform that streamlines business spend management. It offers robust tools for procurement, invoicing, and expense management. This guide will demonstrate how to create an **OAuth Client** in Coupa, authenticate with Coupa’s API, and test it in Agent Studio.
 
 # **Prerequisites**
 
@@ -59,9 +59,9 @@ Copy all three of them and store in a secure place. We will need these later to 
     ![Untitled](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%201.png)
     
 
-## **Step 3: Integrate with Creator Studio**
+## **Step 3: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - **Connection Name:** Coupa Connector
     - Base URL: `https://{{INSTANCE_DOMAIN}}` (For example: `https://moveworks-usa-coupalink-demo.coupacloud.com`)
     - Auth Config: `Oauth2`
@@ -93,11 +93,11 @@ Copy all three of them and store in a secure place. We will need these later to 
         | Key | Value |
         | --- | --- |
         | limit | 1 |
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ![Untitled](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%202.png)
     
 
 # **Congratulations!**
 
-You've successfully integrated Coupa’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Coupa instance.
+You've successfully integrated Coupa’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Coupa instance.

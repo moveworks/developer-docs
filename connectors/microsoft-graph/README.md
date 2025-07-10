@@ -10,7 +10,7 @@ accreditations: [sswiderek-moveworks, ajaymerchia, DEFAULT]
 
 The Microsoft Graph API allows you to access all your Microsoft data through one unified API. 
 
-In this guide, we will demonstrate how to authenticate with the Microsoft Graph API from Creator Studio. We will walk through identifying permissions needed, creating a Microsoft Graph API key with those permissions, testing an endpoint in Postman, and connecting it to Creator Studio.
+In this guide, we will demonstrate how to authenticate with the Microsoft Graph API from Agent Studio. We will walk through identifying permissions needed, creating a Microsoft Graph API key with those permissions, testing an endpoint in Postman, and connecting it to Agent Studio.
 
 # Prerequisites
 
@@ -33,7 +33,7 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
 ### Grant Permissions
 
 1. Open [App Registrations in the Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
-2. Register a `Creator Studio` app, or select an existing one.
+2. Register a `Agent Studio` app, or select an existing one.
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%201.png)
     
@@ -85,7 +85,7 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%209.png)
     
 
-## Step 4: Connect to Creator Studio
+## Step 4: Connect to Agent Studio
 
 1. In your API editor, create a new connector. You can read more about the supported auth types on [our connector reference](https://developer.moveworks.com/creator-studio/connector-configuration/).
     - Base Url: `https://graph.microsoft.com`
@@ -137,4 +137,4 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
 
 # Congratulations!
 
-You just connected your Microsoft Graph API to Creator Studio.
+You just connected your Microsoft Graph API to Agent Studio.

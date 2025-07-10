@@ -13,7 +13,7 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
 
 - **Access to a Jira Instance**: Ensure you have access to either a **Sandbox or Production** Jira instance, depending on your testing environment.
 - **Install Postman**: Download and install Postman or another API testing tool to interact with Jira's REST API.
-- **Admin API Token**: While any Atlassian user can generate an API token for basic authentication, we recommend using a Jira admin account to generate the token when setting up plugins in Creator Studio. This ensures the automation has sufficient permissions to:
+- **Admin API Token**: While any Atlassian user can generate an API token for basic authentication, we recommend using a Jira admin account to generate the token when setting up plugins in Agent Studio. This ensures the automation has sufficient permissions to:
     - Access tickets across multiple projects
     - Update issue statuses
     - Assign users
@@ -38,7 +38,7 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
         
       ![Screenshot 2024-12-03 at 9.50.29 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-03_at_9.50.29_PM.png)
         
-    - Name the token (e.g., "Creator Studio").
+    - Name the token (e.g., "Agent Studio").
         
         ![Screenshot 2024-12-03 at 9.58.40 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-03_at_9.58.40_PM.png)
         
