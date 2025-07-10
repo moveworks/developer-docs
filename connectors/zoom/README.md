@@ -6,7 +6,7 @@ time_in_minutes: 30
 ---
 # **Introduction**
 
-Integrating Zoom with Creator Studio allows seamless incorporation of virtual meeting data and collaboration insights to enhance your workflows. By leveraging Zoom's robust REST API and using appropriate authentication mechanisms, you can automate meeting data management and enhance your collaborative processes. This guide provides a step-by-step process to connect your Zoom instance to Creator Studio and test the integration for efficient meeting management and collaboration.
+Integrating Zoom with Agent Studio allows seamless incorporation of virtual meeting data and collaboration insights to enhance your workflows. By leveraging Zoom's robust REST API and using appropriate authentication mechanisms, you can automate meeting data management and enhance your collaborative processes. This guide provides a step-by-step process to connect your Zoom instance to Agent Studio and test the integration for efficient meeting management and collaboration.
 
 # **Prerequisites**
 
@@ -48,9 +48,9 @@ Integrating Zoom with Creator Studio allows seamless incorporation of virtual me
     ![Screenshot 2025-03-17 at 1.53.40 PM.png](Zoom%201b5588d8909f80eab403e031bd13a14e/Screenshot_2025-03-17_at_1.53.40_PM.png)
     
 
-# **Step 2: Connect Zoom to Creator Studio**
+# **Step 2: Connect Zoom to Agent Studio**
 
-- In Creator Studio, create a new action with the following configuration:
+- In Agent Studio, create a new action with the following configuration:
     - Base URL : [`https://api.zoom.us/v2/`](https://api.zoom.us/v2/)
     - Auth config : **OAuth2**
     - OAuth2 Grant Type : **Client Credentials Grant**
@@ -82,4 +82,4 @@ Integrating Zoom with Creator Studio allows seamless incorporation of virtual me
 
 # Congratulations!
 
-You've successfully integrated Zoom with Creator Studio. This opens up a variety of automation and integration possibilities within your Zoom environment.
+You've successfully integrated Zoom with Agent Studio. This opens up a variety of automation and integration possibilities within your Zoom environment.

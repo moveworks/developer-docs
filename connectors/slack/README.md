@@ -7,7 +7,7 @@ difficulty_level: BEGINNER
 
 # **Introduction**
 
-Slack's API provides a powerful way to automate tasks in your Slack workspace. This guide will show you how to create a Slack app, authenticate with Slack's API, and use it for channel creation in your workspace, all through Creator Studio.
+Slack's API provides a powerful way to automate tasks in your Slack workspace. This guide will show you how to create a Slack app, authenticate with Slack's API, and use it for channel creation in your workspace, all through Agent Studio.
 
 # **Prerequisites**
 
@@ -20,7 +20,7 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 
 1. Go to [Your Apps](https://api.slack.com/apps) on Slack API's website.
 2. Click on `Create New App` and choose `From scratch`.
-3. Name your app (e.g., `Creator Studio Bot`) and select your Slack workspace.
+3. Name your app (e.g., `Agent Studio Bot`) and select your Slack workspace.
     
     ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Untitled.png)
     
@@ -64,9 +64,9 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
     ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Untitled%204.png)
     
 
-## **Step 4: Integrate with Creator Studio**
+## **Step 4: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - Base URL: `https://slack.com/api`
     - Auth Config: `Api Key Auth`
     - Api Key Auth Auth Type: `Header Auth`
@@ -96,7 +96,7 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
         ```
         
     
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ```json
     
@@ -114,4 +114,4 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 
 # **Congratulations!**
 
-You've successfully integrated Slack's API with Creator Studio. This opens up a variety of automation and integration possibilities within your Slack workspace.
+You've successfully integrated Slack's API with Agent Studio. This opens up a variety of automation and integration possibilities within your Slack workspace.
