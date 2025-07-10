@@ -38,7 +38,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 
 ## **Appendix**
 
-### **API #1: Get Approved Change Request by Number**
+### API #1: **Get Approved Change Request by Number**
 
 ```bash
 curl --location 'https://<YOUR_DOMAIN>/api/now/table/change_request?sysparm_query=numberLIKE{{change_number}}%5Eapproval%3Dapproved&sysparm_fields=sys_id%2Cnumber%2Capproval%2Cstate%2Cshort_description' \
@@ -53,7 +53,24 @@ curl --location 'https://<YOUR_DOMAIN>/api/now/table/change_request?sysparm_quer
 - `approval` (string) – Filters results to return only Change Requests with the specified approval status
 - `sysparm_fields` (string) – Fields to include in the response
 
-### **API #2: Schedule a Change**
+### **API #2: Get Approved Change Request by Description**
+
+```bash
+curl --location 'https://<YOUR_DOMAIN>/api/now/table/change_request?sysparm_query=short_descriptionLIKE{{short_desc}}^approval=approved&sysparm_fields=sys_id,number,approval,state,short_description' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json'
+```
+
+---
+
+**Query Parameters:**
+
+- `short_description` (string) – A keyword or phrase to match against the **short description** field in the `change_request` table.
+- `approval` (string) – Filters results to return only Change Requests with the specified **approval status**.
+- `sysparm_fields` (string) – Fields to include in the response
+
+### API #3: **Schedule a Change**
 
 ```bash
 curl --location --request PATCH 'https://<YOUR_DOMAIN>/api/now/table/change_request/{{sys_id}}' \
