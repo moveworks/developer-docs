@@ -83,16 +83,16 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
         - Header Auth Value Pattern: `Bearer %s`
         - Api Key: `{{xoxb_your_bot_access_token}}`
   
-    ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%206.png)   
+        ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%206.png)   
     
    
 2. Add your API details and Test.
     - Fill the endpoint as : **/conversations.list**
     - Click Test
       
-   ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%208.png)
+      ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%208.png)
 
-   ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%207.png)
+      ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%207.png)
 
 # **Congratulations!**
 
