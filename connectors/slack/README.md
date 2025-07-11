@@ -45,26 +45,7 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 
 1. Click `Install App to Workspace`.
 
-## **Step 3: Test with Postman**
-
-1. Set up your request in Postman with your `Bot User OAuth Access Token`.
-    
-    ```bash
-    curl -X POST 'https://slack.com/api/conversations.create' \
-    --header 'Authorization: Bearer {{xoxb_your_bot_access_token}}' \
-    --data-urlencode 'name=test-channel'
-    ```
-    
-2. Import this request into Postman and execute it.
-    
-    ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Untitled%203.png)
-    
-3. Check for a successful response with details of the newly created channel.
-    
-    ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Untitled%204.png)
-    
-
-## **Step 4: Integrate with Agent Studio**
+## **Step 3: Integrate with Agent Studio**
 
 1. In Agent Studio, create a new **HTTP Action** and Test it.
    - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
