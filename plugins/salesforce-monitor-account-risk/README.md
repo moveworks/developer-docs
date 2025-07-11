@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that summarizes risks for a specific account.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: c3df603e-bcaf-4614-8458-bde4403614f9
 name: Monitor Account Risk

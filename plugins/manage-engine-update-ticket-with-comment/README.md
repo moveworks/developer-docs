@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that lets a user add a comment to a ticket to keep the status
   of it up-to-date.
 fidelity: BUILT_IN

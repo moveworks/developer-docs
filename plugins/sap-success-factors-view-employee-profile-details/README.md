@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows to view an employee profile details.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
 fidelity: TEMPLATE
 installation_asset_uuid: 74a2e8ce-c3d8-4867-8552-48b41054fa7b
 name: View employee profile details

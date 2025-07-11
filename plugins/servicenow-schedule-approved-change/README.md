@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows users to plan the scheduling of approved changes.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 4ddd763c-1c32-49fa-9ef5-3c2d52278291
 name: Schedule a Change

@@ -1,9 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows a user to easily see a summary of their expense
   reports.
 difficulty_level: BEGINNER
+domain:
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 22a929a6-9694-46c4-897e-abe0e35e97f5
 name: Look Up My Expense Report Details

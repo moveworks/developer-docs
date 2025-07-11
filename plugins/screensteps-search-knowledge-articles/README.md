@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that lets the user search for knowledge articles.
 fidelity: BUILT_IN
 name: Search Knowledge Articles

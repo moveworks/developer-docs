@@ -1,4 +1,5 @@
 ---
+availability: IDEA
 description: A plugin that allows users to approve or reject change requests.
 fidelity: IDEA
 name: Approve or Reject a Change Request

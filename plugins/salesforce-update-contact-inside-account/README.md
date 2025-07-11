@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to update a contact inside of an account in
   Salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 0afd1fb7-1bd5-4679-8d81-8bfe76390676
 name: Update a Contact Inside an Account
