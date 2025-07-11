@@ -30,6 +30,4 @@ class Availability(Enum):
     IDEA = "Idea"
     VALIDATED = "Validated"
     BUILT_IN = "Built-In"
-    GUIDE = "Guide"
-    TEMPLATE = "Template"
-    IMPOSSIBLE = "Impossible"
+    INSTALLABLE = "Installable"
