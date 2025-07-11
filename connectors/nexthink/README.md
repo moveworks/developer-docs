@@ -11,7 +11,7 @@ accreditations:
 
 # **Introduction**
 
-Accessing features using the Nexthink APIs gives you the flexibility to create integrations from external third-party tools. Using APIs helps remove complexity, as IT teams do not have to access multiple consoles to carry out their work. This guide will demonstrate how to create API credentials, authenticate with Nexthink’s API, and test it in Creator Studio.
+Accessing features using the Nexthink APIs gives you the flexibility to create integrations from external third-party tools. Using APIs helps remove complexity, as IT teams do not have to access multiple consoles to carry out their work. This guide will demonstrate how to create API credentials, authenticate with Nexthink’s API, and test it in Agent Studio.
 
 # **Prerequisites**
 
@@ -20,7 +20,7 @@ Accessing features using the Nexthink APIs gives you the flexibility to create i
 
 # Walkthrough
 
-To set up an integration with a Nexthink API, you must first create a set of API credentials for your instance that Creator Studio will use to access the API and send requests.
+To set up an integration with a Nexthink API, you must first create a set of API credentials for your instance that Agent Studio will use to access the API and send requests.
 
 ## **Step 1: Create API Credentials**
 
@@ -37,7 +37,7 @@ To set up an integration with a Nexthink API, you must first create a set of API
 5. Fill up the details based on the below instructions:
     - **Name**: provide a meaningful name for the credential. Nexthink recommends using the name of the application you are configuring to call the API.
     - **Description**: enter a description to inform users what applications and services use the credentials and why.
-    - **Permissions**: select the features you want to enable the permissions for. Some permissions are related to features that may not be available to you, for example, features in technical preview or those not included in your license. For most starting Creator Studio use cases, enable the permissions check for the "Remote Actions API".
+    - **Permissions**: select the features you want to enable the permissions for. Some permissions are related to features that may not be available to you, for example, features in technical preview or those not included in your license. For most starting Agent Studio use cases, enable the permissions check for the "Remote Actions API".
         - **Remote Actions API** Select the checkbox to send API calls to trigger and query remote actions.
         - **Enrichment API** Select the checkbox to send API calls to operate the enrichment feature.
         - **Campaigns API** Select the checkbox to send API calls to trigger campaigns.
@@ -77,9 +77,9 @@ To set up an integration with a Nexthink API, you must first create a set of API
     ![Untitled](Authentication%20Tutorial%20Nexthink%20f0799a5634704e0587dead9284041f00/Untitled%205.png)
     
 
-## **Step 3: Integrate with Creator Studio**
+## **Step 3: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - Base URL: `https://{{nexthink_instance}}.api.{{region}}.nexthink.cloud`
     - Auth Config: `Oauth2`
     - Oauth2 Grant Type: `Client Credentials Grant`
@@ -97,7 +97,7 @@ To set up an integration with a Nexthink API, you must first create a set of API
     
     - Path: `/api/v1/workflows`
     - Method: `GET`
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ```bash
     
@@ -115,4 +115,4 @@ To set up an integration with a Nexthink API, you must first create a set of API
 
 # **Congratulations!**
 
-You've successfully integrated Nexthink’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Nexthink workspace.
+You've successfully integrated Nexthink’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Nexthink workspace.

@@ -6,7 +6,7 @@ name: Gong
 
 # **Introduction**
 
-Integrating Gong with Creator Studio allows seamless integration of conversation intelligence and sales insights to enhance your workflows. By leveraging Gong's robust REST API and using appropriate authentication mechanisms, you can automate call data management and enhance your sales processes. This guide provides a step-by-step process to connect your Gong instance to Creator Studio and test the integration for efficient sales collaboration.
+Integrating Gong with Agent Studio allows seamless integration of conversation intelligence and sales insights to enhance your workflows. By leveraging Gong's robust REST API and using appropriate authentication mechanisms, you can automate call data management and enhance your sales processes. This guide provides a step-by-step process to connect your Gong instance to Agent Studio and test the integration for efficient sales collaboration.
 
 Let’s get started!
 
@@ -34,9 +34,9 @@ To authenticate the Gong Connector, you'll need to obtain API credentials from y
     
 3. Use these credentials to authenticate the connector within Moveworks.
 
-## **Step 2: Connect Gong to Creator Studio**
+## **Step 2: Connect Gong to Agent Studio**
 
-- In Creator Studio, create a new action with the following configuration:
+- In Agent Studio, create a new action with the following configuration:
     - **Base URL**: Base url received by Gong
     - **Auth Config**: Basic Auth
     - **Username**: username from previous steps
@@ -61,4 +61,4 @@ To authenticate the Gong Connector, you'll need to obtain API credentials from y
 
 # Congratulations!
 
-You've successfully integrated Gong’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Gong environment.
+You've successfully integrated Gong’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Gong environment.

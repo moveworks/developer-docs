@@ -13,7 +13,7 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
 
 - **Access to a Jira Instance**: Ensure you have access to either a **Sandbox or Production** Jira instance, depending on your testing environment.
 - **Install Postman**: Download and install Postman or another API testing tool to interact with Jira's REST API.
-- **Admin API Token**: While any Atlassian user can generate an API token for basic authentication, we recommend using a Jira admin account to generate the token when setting up plugins in Creator Studio. This ensures the automation has sufficient permissions to:
+- **Admin API Token**: While any Atlassian user can generate an API token for basic authentication, we recommend using a Jira admin account to generate the token when setting up plugins in Agent Studio. This ensures the automation has sufficient permissions to:
     - Access tickets across multiple projects
     - Update issue statuses
     - Assign users
@@ -38,7 +38,7 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
         
       ![Screenshot 2024-12-03 at 9.50.29 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-03_at_9.50.29_PM.png)
         
-    - Name the token (e.g., "Creator Studio").
+    - Name the token (e.g., "Agent Studio").
         
         ![Screenshot 2024-12-03 at 9.58.40 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-03_at_9.58.40_PM.png)
         
@@ -88,20 +88,21 @@ Example API: Get All Projects
 
 - In Agent Studio, create a new connector with the following configuration:
     - **Base URL**: `https://<your-site>.atlassian.net`
+    - Name : Name accordingly
+    - Description : Give a suitable description.
     - **Auth Config**: Basic Auth
     - **Username**: username from previous steps
     - **Password**: password from previous steps
 
-      ![Screenshot 2024-12-02 at 12.38.38 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-02_at_12.38.38_PM.png)
+      ![Pasted_Graphic.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic.png)
+      ![Pasted_Graphic_1.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_1.png)
+      ![Pasted_Graphic_2.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_2.png)
+      
 
-- Test your Connector by setting up a demo API action
-    - In Agent Studio, create a new Plugin.
-        - Click on **Actions** > **HTTP Actions** tab
-        - Click on **Create** to create a new plugin
-    - Set up your API Connection to configure the API endpoint based on the following:
-        - Select **Inherit from existing connector** under the **Connector** section > choose the **Jira** connector that you just created. This will populate the Authorization section of the API Editor.  
-        - Fill out the Endpoint URL: `/rest/api/3/project`
-    - Click on **Test** to check if the Connector setup was successful and expect a successful response.
+- Test your Connector by clicking on the Test button and check if the connector setup is successfull.
+
+    ![Pasted_Graphic_3.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_3.png)
+      
     
 # Congratulations!
 

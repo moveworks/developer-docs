@@ -9,7 +9,7 @@ accreditations:
 
 # Introduction
 
-SAP Ariba is a comprehensive cloud-based solution for procurement and supply chain management. This guide covers the access needs that are required to establish a stable connection to your Ariba Instance, authenticate with SAP Ariba’s APIs, and test it successfully in Creator Studio.
+SAP Ariba is a comprehensive cloud-based solution for procurement and supply chain management. This guide covers the access needs that are required to establish a stable connection to your Ariba Instance, authenticate with SAP Ariba’s APIs, and test it successfully in Agent Studio.
 
 # Prerequisites
 
@@ -120,11 +120,11 @@ SAP Ariba is a comprehensive cloud-based solution for procurement and supply cha
     Replace the values within `{{_}}` with the actual values you obtained from Step 1 and execute the API. You should get a successful response with the `access_token` 
     
 
-Now, we will implement the connector in Creator Studio using the Client Credentials authentication method.
+Now, we will implement the connector in Agent Studio using the Client Credentials authentication method.
 
-## Step 3: Integrate with Creator Studio
+## Step 3: Integrate with Agent Studio
 
-1. In Creator Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
+1. In Agent Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
     - Base URL: Will be your **API Public URL** (For eg., `https://openapi.ariba.com/api` for US Data center)
     - Auth Config: `Oauth2`
     - Oauth2 Grant Type: `Client Credentials Grant`
@@ -139,7 +139,7 @@ Now, we will implement the connector in Creator Studio using the Client Credenti
     Click on `Save` to submit the credentials and your connector will be ready.
     
 2. Test your Connector by setting up a demo API action
-    1. In Creator Studio, create a new API Action.
+    1. In Agent Studio, create a new API Action.
         1. Go to the Actions tab within Plugins workspace
         2. Click on CREATE to create a new API Action
     2. Set up your API Connection to configure the API endpoint based on the following:
@@ -167,4 +167,4 @@ Now, we will implement the connector in Creator Studio using the Client Credenti
 
 # Congratulations
 
-You have successfully integrated SAP Ariba’s APIs with Creator Studio. This opens up a variety of automation and integration possibilities using your SAP Ariba instance.
+You have successfully integrated SAP Ariba’s APIs with Agent Studio. This opens up a variety of automation and integration possibilities using your SAP Ariba instance.
