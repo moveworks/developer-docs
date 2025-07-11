@@ -25,3 +25,11 @@ DIRECTORY_MAP = {ContentTypes.CONNECTOR: "connectors", ContentTypes.PLUGIN: "plu
 MARKDOWN_EXTENSION = '.md'
 README_FILENAME = f"README{MARKDOWN_EXTENSION}"
 LOGO_FILE = "logo.png"
+
+class Availability(Enum):
+    IDEA = "Idea"
+    VALIDATED = "Validated"
+    BUILT_IN = "Built-In"
+    GUIDE = "Guide"
+    TEMPLATE = "Template"
+    IMPOSSIBLE = "Impossible"
