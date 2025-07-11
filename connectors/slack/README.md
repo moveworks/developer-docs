@@ -66,51 +66,33 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 
 ## **Step 4: Integrate with Agent Studio**
 
-1. In Agent Studio, create a new connector with the following configuration:
-    - Base URL: `https://slack.com/api`
-    - Auth Config: `Api Key Auth`
-    - Api Key Auth Auth Type: `Header Auth`
-    - Header Auth Key: `Authorization`
-    - Header Auth Value Pattern: `Bearer %s`
-    - Api Key: `{{xoxb_your_bot_access_token}}`
-2. Define your API action for channel creation.
+1. In Agent Studio, create a new **HTTP Action** and Test it.
+   - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
+
+      ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic.png)
+
+      ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%201.png)
+   
+   - Click on **Create New Connector** and fill the following information.
+        - Base Url: `https://slack.com/api`
+        - Name: Name Accordingly
+        - Description: Give a Suitable Description
+        - Auth Config: `Api Key Auth`
+        - Api Key Auth Auth Type: `Header Auth`
+        - Header Auth Key: `Authorization`
+        - Header Auth Value Pattern: `Bearer %s`
+        - Api Key: `{{xoxb_your_bot_access_token}}`
+  
+    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%206.png)   
     
-    ```bash
-    curl -X POST '{{base_url}}/conversations.create' \
-    --header 'Content-Type: application/x-www-form-urlencoded' \
-    --data-urlencode 'name={{channel-name}}'
-    ```
-    
-    - Path: `/conversations.create`
-    - Method: `POST`
-    - Headers
-        
-        
-        | Key | Value |
-        | --- | --- |
-        | Content-Type | application/x-www-form-urlencoded |
-    - Body:
-        
-        ```text
-        name=channel-name
-        ```
-        
-    
-3. Test your setup in Agent Studio and look for a successful execution.
-    
-    ```json
-    
-    {
-        "ok": true,
-        "channel": {
-            "id": "C1234567890",
-            "name": "channel-name",
-            "is_channel": true,
-            ...
-        }
-    }
-    ```
-    
+   
+2. Add your API details and Test.
+    - Fill the endpoint as : **/conversations.list**
+    - Click Test
+      
+   ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%208.png)
+
+   ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%207.png)
 
 # **Congratulations!**
 
