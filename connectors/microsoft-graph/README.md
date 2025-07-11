@@ -87,52 +87,33 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
 
 ## Step 4: Connect to Agent Studio
 
-1. In your API editor, create a new connector. You can read more about the supported auth types on [our connector reference](https://developer.moveworks.com/creator-studio/connector-configuration/).
-    - Base Url: `https://graph.microsoft.com`
-    - Auth Config: `Oauth`
+1. In Agent Studio, create a new HTTP Action and Test it.
+   a. Go to Agent Studio and **Click on Actions** -> **HTTP Actions** -> **Create**
+       ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic.png)
+       ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%201.png)
+   b. Click on **Create New Connector** and fill the following information.
+    - Base Url: `https://graph.microsoft.com/v1.0`
+    - Name: Name Accordingly
+    - Description: Give a Suitable Description.
+    - Auth Config: `Oauth2`
     - OAuth Grant Type: `Client Credentials Grant`
     - Client ID: `{{application_id}}`
     - Client Secret: `{{client_secret}}`
     - OAuth Token Url: `https://login.microsoftonline.com/{{tenant_id}}/oauth2/token`
     - OAuth2 Client Authorization: `OAuth 2.0 with Request Body`
-    - OAuth2 Custom Oauth Response Response Type: `Json`
-    - Json Expires In Key: `expires_in`
-    - Json Access Token Key: `access_token`
-    - Json Expires In Format: `CUSTOM_OAUTH2_EXPIRES_IN_FORMAT_SECONDS`
     - Oauth2 Custom Oauth Request Options Additional Request Data:
-        
-        
-        | Key | Value |
-        | --- | --- |
-        | resource | https://graph.microsoft.com |
-2. Add your API details. You can read more about setting up API actions from our [API configuration reference](https://developer.moveworks.com/creator-studio/api-configuration/).
-    
-    ```python
-    curl --location 'https://graph.microsoft.com/v1.0/users/{{user.primary_email_address}}/authentication/phoneMethods' \
-    --data ''
-    ```
-    
-3. Hit test & celebrate!
-    
-    ```bash
-    {
-        "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('amerchia%406x2pb8.onmicrosoft.com')/authentication/phoneMethods",
-        "value": [
-            {
-                "id": "e37fc753-ff3b-4958-9484-eaa9425c82bc",
-                "phoneNumber": "+1 2065555555",
-                "phoneType": "office",
-                "smsSignInState": "notSupported"
-            },
-            {
-                "id": "3179e48a-750b-4051-897c-87b9720928f7",
-                "phoneNumber": "+1 2065555555",
-                "phoneType": "mobile",
-                "smsSignInState": "notAllowedByPolicy"
-            }
-        ]
-    }
-    ```
+          - resource : https://graph.microsoft.com
+          - grant_type : client_credentials
+  
+    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_2.png)
+    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_3.png)
+    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_4.png)
+3. Add your API details.
+   a. Fill the endpoint as : /users/{{user_email}}
+   b. Enter your email.
+   c. Click Test
+   
+   
     
 
 # Congratulations!
