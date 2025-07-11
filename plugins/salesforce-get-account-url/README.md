@@ -1,6 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that lets you get the URL for a specific Salesforce account
   or customer.
+domain:
+- Sales
 fidelity: IDEA
 name: Get Salesforce Account URL
 num_implementations: 1

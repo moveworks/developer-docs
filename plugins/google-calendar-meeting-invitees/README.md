@@ -1,5 +1,8 @@
 ---
+availability: IDEA
 description: A plugin that retrieves attendees for a meeting.
+domain:
+- Productivity
 fidelity: IDEA
 name: Look up Meeting Attendees
 num_implementations: 1

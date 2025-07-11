@@ -1,12 +1,13 @@
 ---
-difficulty_level: BEGINNER
-fidelity: GUIDE
-name: Nexthink
-time_in_minutes: 15
 accreditations:
 - indrapaul24
 - sarthaksrinivas
 - DEFAULT
+availability: VALIDATED
+difficulty_level: BEGINNER
+fidelity: GUIDE
+name: Nexthink
+time_in_minutes: 15
 ---
 
 # **Introduction**

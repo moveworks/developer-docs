@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an user to view past gong meetings.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: c4e6ca33-199b-433b-992d-7f21ada9737d
 name: Lookup Gong meetings

@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lets a user request software access.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 693105c6-8048-4574-8fe9-2bd5879173f6
 name: Request Software Access

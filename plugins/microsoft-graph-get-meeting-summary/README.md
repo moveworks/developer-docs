@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the user to get the summary of a teams meeting.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: fba01ae3-83b6-4905-860e-a757e34df646
 name: Lookup meeting summary

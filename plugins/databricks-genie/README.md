@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to ask queries through Databricks's AI/BI Genie.
 difficulty_level: BEGINNER
+domain:
+- Data Analysis
 fidelity: TEMPLATE
 installation_asset_uuid: d16cd236-4455-41f2-8d7a-5b58e5151ad6
 name: Databricks AI/BI Genie

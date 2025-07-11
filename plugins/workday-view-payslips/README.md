@@ -1,7 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows employees to securely access and retrieve their
   payslips.
 difficulty_level: BEGINNER
+domain:
+- HR
+- Finance - Payroll
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: a2c6b4be-0b94-4646-a361-3e4d98fa8118
 name: View Payslips

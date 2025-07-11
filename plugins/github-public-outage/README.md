@@ -1,7 +1,13 @@
 ---
+agent_functionality:
+- Polling Required
+availability: VALIDATED
 custom_tags:
 - Polling Required
 description: A plugin that checks public http://github.com outages.
+domain:
+- IT
+- Engineering
 fidelity: VALIDATED
 name: Alerts for Public Outages
 num_implementations: 1

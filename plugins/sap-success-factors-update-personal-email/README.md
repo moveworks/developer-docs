@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an employee to change/update their personal email.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
 fidelity: TEMPLATE
 installation_asset_uuid: b73c0316-7c48-4a68-a831-fe783a8bdd00
 name: Update Personal Email

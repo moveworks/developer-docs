@@ -1,5 +1,8 @@
 ---
+availability: INSTALLABLE
 difficulty_level: INTERMEDIATE
+domain:
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: 55214768-445e-444c-a0d0-0da41e47f2fc
 name: Generate PTO Report for Direct Reports

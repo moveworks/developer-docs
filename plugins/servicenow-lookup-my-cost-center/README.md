@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that looks up information on a specific cost center.
 difficulty_level: BEGINNER
+domain:
+- Finance
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: 47a085c8-77cf-4d5f-a00e-84430889dadc
 name: Look up My Cost Center

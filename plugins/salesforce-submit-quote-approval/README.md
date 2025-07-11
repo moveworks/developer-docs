@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that streamlines the quote approval process for sales representatives,
   allowing them to submit and track approvals efficiently.
 difficulty_level: BEGINNER
+domain:
+- Sales
+- Approvals
 fidelity: TEMPLATE
 installation_asset_uuid: b6f7c3d7-27b4-4e40-bfbd-575fb713ac59
 name: Submit Quote Approvals

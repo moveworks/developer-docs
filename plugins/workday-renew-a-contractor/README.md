@@ -1,8 +1,14 @@
 ---
+agent_functionality:
+- Polling Required
+availability: IDEA
 custom_tags:
 - Polling Required
 description: A plugin which alerts managers when a contractor is about to expire,
   and allows them to renew from their copilot.
+domain:
+- HR
+- HR - Employee Records
 fidelity: IDEA
 name: Renew a Contractor
 num_implementations: 1

@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that integrates with Service Now Software Asset Management (SAM)
   and allows a team member to identify the price of additional licenses.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 6e154dfc-c941-425e-ab6a-3c7bc924549c
 name: Look up License Cost

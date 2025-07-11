@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables a user to update their pronouns.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
 fidelity: TEMPLATE
 installation_asset_uuid: 099db9ee-fe4f-4825-923d-177b500a3247
 name: Update Pronouns

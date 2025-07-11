@@ -1,6 +1,9 @@
 ---
+availability: IDEA
 description: A plugin which provides clear and detailed instructions for managing
   and troubleshooting Microsoft Teams.
+domain:
+- IT
 fidelity: IDEA
 name: Fix Microsoft Teams Drivers
 num_implementations: 1

@@ -1,5 +1,8 @@
 ---
+availability: BUILT_IN
 description: A plugin that allows a user to search a form based on their query.
+domain:
+- IT
 fidelity: BUILT_IN
 name: Search for a Form
 purple_chat_link: https://developer.moveworks.com/creator-studio/resources/plugin?id=jira-search-form

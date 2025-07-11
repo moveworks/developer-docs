@@ -1,7 +1,11 @@
 ---
+availability: VALIDATED
 description: A plugin that allows hiring managers or recruiters to fetch interview
   feedback submitted by interviewers for a specific candidate.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: GUIDE
 installation_asset_uuid: d23c790b-701b-47db-b2cf-b578020ad498
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=8b6b721a-0f6a-4bac-a72e-8b0dc66ac15d

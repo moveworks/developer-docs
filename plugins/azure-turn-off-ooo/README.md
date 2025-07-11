@@ -1,5 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that lets you end an OOO message that was set up if required.
+domain:
+- HR
+- HR - Time & Absence
 fidelity: IDEA
 name: End Out of Office Status Early
 num_implementations: 1

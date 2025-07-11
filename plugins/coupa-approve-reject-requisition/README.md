@@ -1,9 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to streamline the approval process for purchase
   requisitions in Coupa.
 difficulty_level: BEGINNER
+domain:
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 6068a9a3-886a-40dc-a170-a97b90c4e9cb
 name: Approve or Reject a Purchase Requisition

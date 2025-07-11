@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables an opportunity owner to update its stage to ensure
   information is kept up-to-date.
 difficulty_level: INTERMEDIATE
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 8268e233-eebe-48f3-a3ea-01046ed6b6db
 name: Update the Stage of an Opportunity

@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that retrieves the current on call members for a team from Pagerduty.
 difficulty_level: INTERMEDIATE
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 1e9bca2b-d8ed-464a-8444-1d848bfc13ae
 name: Look up Oncall Members

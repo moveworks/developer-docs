@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows looking up maintenance records and schedules for
   an asset.
 difficulty_level: INTERMEDIATE
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: b9d54358-c23a-4efc-b3ec-33b1e6c61c5e
 name: Look Up Maintenance Details of My Asset

@@ -1,8 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows someone to look up the ID of a cost center.
 difficulty_level: BEGINNER
+domain:
+- Finance
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: 28c429a8-ba01-4b41-b1e6-1546073d7f98
 name: Look Up a Cost Center ID by its Name

@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to specify a sales representative's name and
   get related accounts and opportunities that they own.
 difficulty_level: INTERMEDIATE
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: c9aa5c7d-ab77-4d55-ae52-407237277807
 name: Look Up an Account and Opportunities by Owner

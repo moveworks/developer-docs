@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables an employee to get details of which SKUs a customer
   purchased.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 81268ceb-81f1-41c8-a8c5-039baaa7cb36
 name: Get Purchase Information

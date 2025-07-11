@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows retrieving all possible workflow statuses for a
   specific issue.
 difficulty_level: BEGINNER
+domain:
+- Engineering
+- IT
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 5631157d-c2c2-4c96-a754-c141cb35c12f
 name: Lookup Issue Status

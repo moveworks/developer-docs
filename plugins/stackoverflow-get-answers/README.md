@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the user to fetch answers of a specific question
   on Stack Overflow.
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 94d1ff0e-a8fe-4fed-80c7-98975f71b583
 name: Lookup answers for a question

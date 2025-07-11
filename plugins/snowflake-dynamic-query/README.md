@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that dynamically queries snowflake based on a user's request.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: b6aeead1-84c8-411b-b8cd-3279cd9b1c95
 name: Snowflake Cortex Analyst

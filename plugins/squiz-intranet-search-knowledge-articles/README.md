@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that allows users to search indexed knowledge articles (HTML
   articles).
 fidelity: BUILT_IN

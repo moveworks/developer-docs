@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you fetch the latest call notes from an Opportunity.
 difficulty_level: INTERMEDIATE
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: fb23771f-9454-4676-bd05-6a9bac2cbb13
 name: Look Up Call Notes from an Opportunity

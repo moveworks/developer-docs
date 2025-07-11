@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that integrates with Service Now Software Asset Management (SAM)
   and allows a team member to identify the license renewal date.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Finance
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: a2f98e5f-a35e-4d6f-a8cb-d9587952be5c
 name: Look up License Renewal Date

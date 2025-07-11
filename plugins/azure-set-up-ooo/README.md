@@ -1,5 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that sets your OOO status across multiple business systems.
+domain:
+- HR
+- HR - Time & Absence
 fidelity: IDEA
 name: Set Out of Office Status
 num_implementations: 1

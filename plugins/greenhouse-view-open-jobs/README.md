@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an employee to identify open roles at the company.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: 8c348433-9e5b-4233-a99a-222c0c7f846d
 name: View Open Jobs
