@@ -69,9 +69,9 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 1. In Agent Studio, create a new **HTTP Action** and Test it.
    - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
 
-      ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic.png)
+      ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic.png)
 
-      ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%201.png)
+      ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%201.png)
    
    - Click on **Create New Connector** and fill the following information.
         - Base Url: `https://slack.com/api`
@@ -83,16 +83,16 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
         - Header Auth Value Pattern: `Bearer %s`
         - Api Key: `{{xoxb_your_bot_access_token}}`
   
-    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%206.png)   
+    ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%206.png)   
     
    
 2. Add your API details and Test.
     - Fill the endpoint as : **/conversations.list**
     - Click Test
       
-   ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%208.png)
+   ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%208.png)
 
-   ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%207.png)
+   ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%207.png)
 
 # **Congratulations!**
 
