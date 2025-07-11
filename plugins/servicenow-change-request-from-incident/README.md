@@ -1,8 +1,10 @@
 ---
 description: A plugin that allows the creation of appropriate change requests from
   incidents.
-fidelity: IDEA
+fidelity: GUIDE
 name: Create a Change Request from an Incident
+difficulty_level: BEGINNER
+time_in_minutes: 20
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+create+a+change+request+from+a+ServiceNow+incident%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+can+help+with+that.+What+is+the+incident+number+or+can+you+give+me+a+description+to+search+for%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22It%27s+the+one+about+the+email+server+being+down%2C+I+think+the+number+is+INC0010042%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESearching+for+incidents+matching+a+keyword+%3Ccode%3Eemail+server%3C%2Fcode%3E+and+ID+%3Ccode%3EINC0010042%3C%2Fcode%3E%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFound+one+matching+incident.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I+found+that+incident.+What+type+of+change+request+is+this%3F%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Standard%22%7D%2C%7B%22buttonText%22%3A%22Normal%22%7D%2C%7B%22buttonText%22%3A%22Emergency%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Emergency%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I+will+create+an+%3Cb%3EEmergency%3C%2Fb%3E+change+request+based+on+this+incident.+Here+are+the+details+I%27ve+pulled+from+the+incident%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EShort+Description%3A%3C%2Fb%3E+Email+server+is+down%3C%2Fli%3E%3Cli%3E%3Cb%3EDescription%3A%3C%2Fb%3E+Users+are+reporting+that+they+are+unable+to+send+or+receive+emails.+The+issue+appears+to+have+started+at+2%3A00+PM+EST.+The+mail+queue+is+backed+up+and+not+processing.%3C%2Fli%3E%3Cli%3E%3Cb%3EConfiguration+Item%3A%3C%2Fb%3E+outlook-prod-mail-server-01%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EDoes+this+look+right%3F%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Create+Change+Request%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Create+Change+Request%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ECreating+a+new+change+request+in+ServiceNow%2C+linking+it+to+incident+INC0010042%2C+and+assigning+it+to+the+Database+team.%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESuccessfully+created+change+request.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EDone.+I%27ve+created+the+change+request+%3Cb%3ECHG0030001%3C%2Fb%3E+and+linked+it+to+the+original+incident.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22CHG0030001%3A+Email+server+is+down%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - IT
@@ -32,15 +34,16 @@ While you can create a connector during plugin installation, we recommend settin
 
 For this plugin, ensure the ServiceNow integration user has the following required permissions:
 
-- **Read** access to the **Incident (incident)** table
-- **Create** access to the **Change Request (change_request)** table
-- **Read** access to the **Change Model (chg_model)** table
+- **Read** access to the **Incident** (`incident`) table – for fetching incident details
+- **Update** access to the **Incident** (`incident`) table – for linking a Change Request back to an Incident
+- **Create** access to the **Change Request** (`change_request`) table – for submitting new change requests
+- **Read** access to the **Change Model** (`chg_model`) table – for retrieving change model types
 
 After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup!
 
 ## **Appendix**
 
-## **API #1: Get Incident Details by Short Description**
+### **API #1: Get Incident Details by Short Description**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?sysparm_query=short_descriptionLIKE<KEYWORD>&sysparm_limit=5&sysparm_fields=number%2Cshort_description' \
@@ -49,7 +52,7 @@ curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?
 
 ```
 
-### **Query Parameters:**
+**Query Parameters:**
 
 - `KEYWORD` – Filters incidents where the short description contains the specified keyword .
 
@@ -61,7 +64,7 @@ curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?
 --header 'Authorization: Basic <ENCODED_CREDENTIALS>'
 ```
 
-### **Query Parameters:**
+**Query Parameters:**
 
 - `INCIDENT_NUMBER`  – The unique identifier for the incident
 
@@ -75,23 +78,44 @@ curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/chg_model
 
 ### **Query Parameters:**
 
-- `MODEL_NAME` – Type of the change model
+- `MODEL_NAME` – Type of the change mode
 
-## **API #4: Create a Change Request**
+### **API #4: Create a Change Request**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/change_request' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
---header 'Cookie: <SESSION_COOKIES>' \
 --data '{
   "chg_model": "<CHANGE_MODEL_SYS_ID>",
-  "cmdb_ci": "<INCIDENT_SYS_ID>"
-}'
+   "short_description": "<SHORT_DESCRIPTION>",
+   "description": "<DESCRIPTION>",
+   "cmdb_ci": "<CONFIGURATION_ITEM>"
+   }'
 ```
 
-### **Query Parameters:**
+**Query Parameters:**
 
-- `CHANGE_MODEL_SYS_ID` – The Change Model Sys ID. This defines the type of change
-- `INCIDENT_SYS_ID` – Sys ID of the Incident that the change request should be related to.
+- `CHANGE_MODEL_SYS_ID` **(string)** – The Change Model Sys ID. This defines the type of change
+- `short_description` **(string)** – Short description of the Incident for creating the Change Request.
+- `description` **(string)** – Description of the Incident for creating the Change Request.
+- `CONFIGURATION_ITEM` **(string)** – ****Configuration Item ****of the Incident for creating the Change Request.
+
+### **API #5: Link a Change Request to an Incident**
+
+```bash
+curl --location --request PATCH 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident/<INCIDENT_SYS_ID>' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--data '{
+  "caused_by": "<CHANGE_REQUEST_SYS_ID>"
+}'
+
+```
+
+**Query Parameters:**
+
+- `CHANGE_REQUEST_SYS_ID`  **(string)** – The Sys ID of the change request that caused this incident. This creates a relationship between the incident and the change request.
+- `INCIDENT_SYS_ID` **(string)** – The Sys ID of the incident
