@@ -37,6 +37,9 @@ class NotionColumns(Enum):
     VIDEO = 'Video Link'
     REDIRECTS = 'Redirect Slugs'
     INSTALLATION_ASSET_UUID = 'installation_asset_uuid'
+    AVAILABILITY = "Availability"
+    DOMAIN = "Domain"
+    AGENT_FUNCTIONALITY = "Agent_Functionality"
 
 
 TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
@@ -137,6 +140,18 @@ class Record:
     @property
     def installation_asset_uuid(self) -> Optional[str]:
         return self._record[NotionColumns.INSTALLATION_ASSET_UUID.value]
+    
+    @property
+    def domain(self) -> List[str]:
+        return self.get_csv_prop(NotionColumns.DOMAIN)
+    
+    @property
+    def agent_functionality(self) -> List[str]:
+        return self.get_csv_prop(NotionColumns.AGENT_FUNCTIONALITY)
+    
+    @property
+    def availability(self) -> Availability:
+        return Availability(self._record[NotionColumns.AVAILABILITY.value])
 
     def to_front_matter(self) -> dict:
         if self.content_type == ContentTypes.CONNECTOR:
@@ -148,7 +163,8 @@ class Record:
                 "video": self.video_link,
                 "custom_tags": self.custom_tags,
                 "redirects": self.redirects,
-                "installation_asset_uuid": self.installation_asset_uuid
+                "installation_asset_uuid": self.installation_asset_uuid,
+                "availability": self.availability.name,
             }
         elif self.content_type == ContentTypes.PLUGIN:
             return {
@@ -162,7 +178,10 @@ class Record:
                 "video": self.video_link,
                 "custom_tags": self.custom_tags,
                 "redirects": self.redirects,
-                "installation_asset_uuid": self.installation_asset_uuid
+                "installation_asset_uuid": self.installation_asset_uuid,
+                "availability": self.availability.name,
+                "domain": self.domain,
+                "agent_functionality": self.agent_functionality,
             }
         else:
             raise NotImplementedError(f"No Front Matter for {self.content_type}")
