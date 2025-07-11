@@ -95,18 +95,18 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
       ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%201.png)
    
    - Click on **Create New Connector** and fill the following information.
-    - Base Url: `https://graph.microsoft.com/v1.0`
-    - Name: Name Accordingly
-    - Description: Give a Suitable Description.
-    - Auth Config: `Oauth2`
-    - OAuth Grant Type: `Client Credentials Grant`
-    - Client ID: `{{application_id}}`
-    - Client Secret: `{{client_secret}}`
-    - OAuth Token Url: `https://login.microsoftonline.com/{{tenant_id}}/oauth2/token`
-    - OAuth2 Client Authorization: `OAuth 2.0 with Request Body`
-    - Oauth2 Custom Oauth Request Options Additional Request Data:
-        - resource : https://graph.microsoft.com
-        - grant_type : client_credentials
+        - Base Url: `https://graph.microsoft.com/v1.0`
+        - Name: Name Accordingly
+        - Description: Give a Suitable Description.
+        - Auth Config: `Oauth2`
+        - OAuth Grant Type: `Client Credentials Grant`
+        - Client ID: `{{application_id}}`
+        - Client Secret: `{{client_secret}}`
+        - OAuth Token Url: `https://login.microsoftonline.com/{{tenant_id}}/oauth2/token`
+        - OAuth2 Client Authorization: `OAuth 2.0 with Request Body`
+        - Oauth2 Custom Oauth Request Options Additional Request Data:
+            - resource : https://graph.microsoft.com
+            - grant_type : client_credentials
   
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_2.png)
    
