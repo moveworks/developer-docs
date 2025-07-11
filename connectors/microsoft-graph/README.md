@@ -87,10 +87,13 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
 
 ## Step 4: Connect to Agent Studio
 
-1. In Agent Studio, create a new HTTP Action and Test it.
-   a. Go to Agent Studio and **Click on Actions** -> **HTTP Actions** -> **Create**
-       ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic.png)
-       ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%201.png)
+1. In Agent Studio, create a new **HTTP Action** and Test it.
+   a. Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
+
+      ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic.png)
+
+      ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%201.png)
+   
    b. Click on **Create New Connector** and fill the following information.
     - Base Url: `https://graph.microsoft.com/v1.0`
     - Name: Name Accordingly
@@ -106,15 +109,19 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
           - grant_type : client_credentials
   
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_2.png)
+   
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_3.png)
+   
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_4.png)
-3. Add your API details.
-   a. Fill the endpoint as : /users/{{user_email}}
+   
+3. Add your API details and Test.
+   a. Fill the endpoint as : **/users/{{user_email}}**
    b. Enter your email.
    c. Click Test
    
-   
-    
+   ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_6.png)
+
+   ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_7.png)
 
 # Congratulations!
 
