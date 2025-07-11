@@ -12,7 +12,6 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 # **Prerequisites**
 
 - Admin access to a Slack workspace ([Create a Slack Workspace](https://slack.com/get-started#/create))
-- [Install Postman](https://www.postman.com/downloads/)
 
 # **Walkthrough**
 
