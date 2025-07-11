@@ -114,7 +114,7 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
    
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_4.png)
    
-3. Add your API details and Test.
+2. Add your API details and Test.
    a. Fill the endpoint as : **/users/{{user_email}}**
    b. Enter your email.
    c. Click Test
