@@ -105,8 +105,8 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
     - OAuth Token Url: `https://login.microsoftonline.com/{{tenant_id}}/oauth2/token`
     - OAuth2 Client Authorization: `OAuth 2.0 with Request Body`
     - Oauth2 Custom Oauth Request Options Additional Request Data:
-          - resource : https://graph.microsoft.com
-          - grant_type : client_credentials
+        - resource : https://graph.microsoft.com
+        - grant_type : client_credentials
   
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_2.png)
    
