@@ -1,6 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that looks up an employees benefits information.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Benefits
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 9a015612-5551-4fa2-8d86-d75d13c4814a
 name: View Benefit Elections

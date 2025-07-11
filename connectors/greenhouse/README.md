@@ -1,9 +1,11 @@
 ---
+availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
 name: Greenhouse
 time_in_minutes: 30
 ---
+
 # **Introduction**
 
 Connecting Greenhouse to Agent Studio enables seamless automation of recruiting workflows, from job requisition to candidate management. By leveraging Greenhouse’s API and using API Key Authentication, you can automate hiring processes, retrieve recruiting analytics and improve collaboration between recruiters, hiring managers and interviewers. This guide provides a step-by-step process to connect your Greenhouse instance to Agent Studio and test the integration for streamlined recruiting operations.

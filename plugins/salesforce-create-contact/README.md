@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to create a contact inside a Salesforce account.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 87c13817-55d7-4f79-b501-74d8e4d43722
 name: Create a Contact Inside an Account

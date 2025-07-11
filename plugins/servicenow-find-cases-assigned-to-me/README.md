@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lists all cases assigned assigned to an employee.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: 6de358c9-5ec1-4fc6-9dab-038dfa2e5827
 name: Find Cases Assigned To Me

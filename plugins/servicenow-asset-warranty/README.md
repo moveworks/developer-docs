@@ -1,4 +1,5 @@
 ---
+availability: INSTALLABLE
 description: A plugin that retrieves warranty information for assets, aiding in repair
   and replacement decision-making.
 difficulty_level: BEGINNER

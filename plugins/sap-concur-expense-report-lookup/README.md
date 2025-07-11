@@ -2,10 +2,14 @@
 accreditations:
 - indrapaul24
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows employees to access and review their own expense
   reports and relative statuses.
 design_pattern_id: 28
 difficulty_level: BEGINNER
+domain:
+- Approvals
+- Finance
 drop_accreditations:
 - ajaymerchia
 fidelity: TEMPLATE

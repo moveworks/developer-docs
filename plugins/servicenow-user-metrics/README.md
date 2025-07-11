@@ -1,4 +1,5 @@
 ---
+availability: INSTALLABLE
 description: 'A Plugin that allows you to evaluate performance of an IT Agent across
   several parameters including:
 
@@ -12,6 +13,8 @@ description: 'A Plugin that allows you to evaluate performance of an IT Agent ac
 
   - SLA Adherence.'
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 16fec9a3-3657-4368-9265-08b5e6f8bbbc
 name: Review IT Agent's Performance Over Time

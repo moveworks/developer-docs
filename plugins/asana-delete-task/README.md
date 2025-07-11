@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to delete a task in asana.
 difficulty_level: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: c2ba8ffa-f918-4225-9074-48daf261c658
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=12b2cf36-e78a-482e-850c-817845fd0a89

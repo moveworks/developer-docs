@@ -1,5 +1,11 @@
 ---
+availability: IDEA
 description: A plugin that lets you request off-site working days.
+domain:
+- HR
+- Facilities
+- IT
+- HR - Workplace Culture
 fidelity: IDEA
 name: Request Remote Work
 num_implementations: 1

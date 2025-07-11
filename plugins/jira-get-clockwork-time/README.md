@@ -1,6 +1,11 @@
 ---
+availability: IDEA
 description: A plugin that allows fetching the total hours logged on a project over
   a specified period.
+domain:
+- Project Management
+- IT
+- Productivity
 fidelity: IDEA
 name: Get Clockwork Time
 num_implementations: 1

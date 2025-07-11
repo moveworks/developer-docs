@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lets you identify common / standard software available
   to employees at your organization.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: f4003ba5-0407-47fe-bf09-793c705ebd2d
 name: Find Standard Software

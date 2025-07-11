@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows a user to update the status of an issue.
 difficulty_level: BEGINNER
+domain:
+- Project Management
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: e46b69d5-fece-49ff-839d-c3ec796e8c6f
 name: Update Issue Status

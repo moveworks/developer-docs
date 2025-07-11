@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that provides an employe's unique ID when prompted.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
 fidelity: TEMPLATE
 installation_asset_uuid: 25746fde-0098-445d-a8dc-4f51cd89608f
 name: Lookup Employee ID

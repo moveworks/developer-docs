@@ -1,8 +1,13 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows retrieving ideas from your backlog in Jira.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Project Management
+- Approvals
 fidelity: TEMPLATE
 installation_asset_uuid: a3e60d56-5302-4777-bc51-7879c32bcff0
 name: Lookup Backlog Ideas

@@ -1,6 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin which allows you to view team members (peers and delegates).
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 909e5f7b-e535-48cc-bc30-ea54fc7c6331
 name: Look up Team Members

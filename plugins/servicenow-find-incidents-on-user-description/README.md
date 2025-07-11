@@ -1,8 +1,13 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to look up incidents based on a description.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Ticketing
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 679184e2-d1d7-4fa4-9113-7ce81b3b8d09
 name: Look Up Incidents based on a Description

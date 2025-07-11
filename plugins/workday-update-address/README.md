@@ -1,6 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an employee to update their address in Workday.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Employee Records
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: e1bdeec8-cda8-460c-b56f-05b6508c39e8
 name: Update Employee Address
