@@ -108,20 +108,20 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
             - resource : https://graph.microsoft.com
             - grant_type : client_credentials
   
-    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_2.png)
+        ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_2.png)
    
-    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_3.png)
+        ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_3.png)
    
-    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_4.png)
+        ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_4.png)
    
 3. Add your API details and Test.
     - Fill the endpoint as : **/users/{{your_email}}**
     - Enter your email in the url.
     - Click Test
    
-   ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_6.png)
+      ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_6.png)
 
-   ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_7.png)
+      ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted_Graphic_7.png)
 
 # Congratulations!
 
