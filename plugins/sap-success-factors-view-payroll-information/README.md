@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows to fetch the payroll information of an employee.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
 fidelity: TEMPLATE
 installation_asset_uuid: d00b19ec-8601-4fc5-a115-ff4e3ed0f7da
 name: View Payroll Information

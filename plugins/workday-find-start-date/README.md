@@ -1,7 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables a user to ask the exact date they started at a
   company, and the bot replies with the desired information.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 792c9327-dc40-4c88-b648-24d6c70e77dc
 name: Find Start Date

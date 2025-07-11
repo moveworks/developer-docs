@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the flexibility to modify details of existing expense
   entries to ensure accuracy.
 difficulty_level: BEGINNER
+domain:
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 3d9d0820-31d9-415b-a14f-445bc52279c5
 name: Edit Expense Entry Details

@@ -1,6 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that provisions a long distance authorization code for you to
   login when travelling.
+domain:
+- IT
 fidelity: IDEA
 name: 'Provision Long Distance Authorization Code '
 num_implementations: 1

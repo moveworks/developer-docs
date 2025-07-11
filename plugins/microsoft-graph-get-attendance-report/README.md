@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the user to generate an attendance report of a meet.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 3c5ad01b-af12-4faf-8e0b-7a6555ae59e3
 name: Lookup Attendance Report

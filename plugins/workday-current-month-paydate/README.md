@@ -1,5 +1,8 @@
 ---
+availability: IDEA
 description: A plugin that lets a user get paydates for the current month.
+domain:
+- Finance - Payroll
 fidelity: IDEA
 name: Get Current Month Paydate
 num_implementations: 1

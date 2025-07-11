@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that lets a user get redirected to talk to a live agent.
 fidelity: BUILT_IN
 name: 'Live Agent: API Handoff'

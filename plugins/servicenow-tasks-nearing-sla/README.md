@@ -1,4 +1,5 @@
 ---
+availability: INSTALLABLE
 description: A Plugin that allows agents and support admins to identify tickets that
   have breached or are nearing their SLA deadlines.
 difficulty_level: BEGINNER

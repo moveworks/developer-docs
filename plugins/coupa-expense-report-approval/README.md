@@ -1,9 +1,13 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to streamline the approval process for Coupa
   expense reports.
 difficulty_level: BEGINNER
+domain:
+- Finance
+- Approvals
 fidelity: TEMPLATE
 installation_asset_uuid: f1e3f1b5-610f-4c12-aff7-86569ef9acfd
 name: Approve or Reject an Expense Report

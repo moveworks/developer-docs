@@ -3,11 +3,17 @@ accreditations:
 - dsujay_movester
 - sarthaksrinivas
 - DEFAULT
+agent_functionality:
+- Polling Required
+availability: VALIDATED
 custom_tags:
 - Polling Required
 description: A plugin that automatically notifies employees about new ticket approvals.
 design_pattern_id: 10
 difficulty_level: ADVANCED
+domain:
+- IT
+- Approvals
 drop_accreditations:
 - ajaymerchia
 fidelity: GUIDE

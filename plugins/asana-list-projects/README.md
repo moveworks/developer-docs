@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that a list of project records in Asana with the ability to
   filter on workspace or team.
 difficulty_level: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 40fdd2bb-a940-4d63-bd5c-039dd1bd02ca
 name: Get a list of my projects

@@ -1,8 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows referrers to track the status of their submitted
   job referrals, including updates on application review, interview progress and hiring
   decisions.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: 7b7653cb-b8ee-47b2-9d9c-ca6cc8a4f268
 name: View My Referral Status

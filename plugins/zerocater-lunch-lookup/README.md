@@ -1,5 +1,8 @@
 ---
+availability: IDEA
 description: A plugin that lets you lookup the menu for the day.
+domain:
+- Facilities
 fidelity: IDEA
 name: "Get Today\u2019s Menu"
 num_implementations: 2

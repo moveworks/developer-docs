@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that looks up details from an opportunity in Salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 560a4437-0a74-4571-b550-649ae1c6fb86
 name: Look Up Opportunity Information
