@@ -1,9 +1,13 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that books time off in Workday.
 design_pattern_id: 2
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: 6401a5fe-48b8-46c1-b4a2-2c549577989f
 name: Request Time Off

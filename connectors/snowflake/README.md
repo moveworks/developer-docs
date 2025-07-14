@@ -1,11 +1,12 @@
 ---
+accreditations:
+- indrapaul24
+- DEFAULT
+availability: VALIDATED
 difficulty_level: ADVANCED
 fidelity: GUIDE
 name: Snowflake
 time_in_minutes: 60
-accreditations:
-- indrapaul24
-- DEFAULT
 ---
 
 # **Introduction**

@@ -1,7 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that retrieves your stock grant details from Workday, including
   the number of shares granted, current value per share, and the total stock value.
 difficulty_level: BEGINNER
+domain:
+- HR
+- Finance - Payroll
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 112641e7-1d1e-4ee8-817b-77710b0bddc0
 name: View My Stock Grant Summary

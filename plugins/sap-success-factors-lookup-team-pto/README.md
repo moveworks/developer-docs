@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows a manager to view PTO balance for associated team
   members.
 difficulty_level: INTERMEDIATE
+domain:
+- HR - Time & Absence
+- HR
 fidelity: TEMPLATE
 installation_asset_uuid: 4904a204-0288-4316-b3bf-ed138aff00e1
 name: Lookup Direct Reports PTO balance

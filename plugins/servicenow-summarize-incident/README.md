@@ -1,8 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that provides a quick summary of an incident.
 difficulty_level: BEGINNER
+domain:
+- Ticketing
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 298f075c-ac6b-41aa-a3d8-0fdc901fa6d1
 name: Summarize an Incident

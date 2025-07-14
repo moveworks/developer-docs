@@ -2,8 +2,14 @@
 accreditations:
 - sarthaksrinivas
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin which allows you to view team members (peers and delegates).
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Employee Records
+- HR - Onboarding
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: 1d9ae78c-54f8-47d8-989e-1a7f2bb4e373
 name: Look up Team Members

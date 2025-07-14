@@ -1,6 +1,9 @@
 ---
+availability: BUILT_IN
 description: A plugin which allows a user to retrieve incident ticket information
   by entering the ticket number.
+domain:
+- IT
 fidelity: BUILT_IN
 name: Look up Ticket
 num_implementations: 1

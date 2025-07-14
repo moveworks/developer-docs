@@ -1,7 +1,13 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an employee to get a snapshot of their outstanding
   tasks on Workday.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
+- HR - Learning & Development
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: e3f86550-b5bc-4a04-a145-075c8fe5c86f
 name: View Assigned Tasks

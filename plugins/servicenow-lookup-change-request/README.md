@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lookups Change Request information.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 78ac87da-6c70-46d7-8b4d-6dcdc64939f4
 name: Look up Change Request

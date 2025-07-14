@@ -1,6 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lets an employee add personal goals for themselves.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Performance Management
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 3c7b2520-916a-4cff-9df1-08206ad998bb
 name: Add Personal Goals

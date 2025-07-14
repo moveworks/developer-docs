@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an employee to request a badge to access the office.
 difficulty_level: BEGINNER
+domain:
+- Facilities
 fidelity: TEMPLATE
 installation_asset_uuid: 9dee32e7-0a1e-41b4-ad98-c8c8ae556fca
 name: Request New Badge

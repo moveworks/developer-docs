@@ -1,9 +1,11 @@
 ---
+availability: VALIDATED
+difficulty_level: INTERMEDIATE
 fidelity: GUIDE
 name: SAP Success Factors
-difficulty_level: INTERMEDIATE
 time_in_minutes: 40
 ---
+
 # Introduction:
 
 SAP SuccessFactors is a cloud-based human resources (HR) management solution, empowering businesses with data-driven insights to optimize talent management, employee engagement, and overall workforce performance.

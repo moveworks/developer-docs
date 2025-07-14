@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the user to view historical teams meetings by date.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 0f6252b2-253f-48c4-9240-1db6cfb7e527
 name: Lookup Teams Meetings

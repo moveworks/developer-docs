@@ -1,5 +1,11 @@
 ---
+availability: IDEA
 description: A plugin that lets you look up specific terms used by your organization.
+domain:
+- Finance
+- HR
+- Marketing
+- Sales
 fidelity: IDEA
 name: Look up Internal Dictionary
 num_implementations: 1

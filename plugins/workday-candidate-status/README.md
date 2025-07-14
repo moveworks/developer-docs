@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows a hiring manager to look up the status of a candidate
   / job they've posted.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: 7108b174-432c-44fc-bdb2-a9f32c907ec4
 name: Lookup Candidate Status

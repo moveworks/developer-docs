@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lets you see a list of all the teams in your asana workspace.
 difficulty_level: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: d8710c18-9b57-48c9-8078-6cfb45aafe3d
 name: See all Teams

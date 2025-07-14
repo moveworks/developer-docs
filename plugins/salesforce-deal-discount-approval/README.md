@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that facilitates the review and authorization of deal discounts,
   ensuring pricing strategies are cleared while keeping business objectives in mind.
 difficulty_level: BEGINNER
+domain:
+- Sales
+- Approvals
 fidelity: TEMPLATE
 installation_asset_uuid: 127670cf-065b-4d15-bc4c-63d60f1a6cad
 name: Approve / Reject Deal Discounts

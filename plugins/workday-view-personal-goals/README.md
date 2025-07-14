@@ -1,7 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lets employees access their performance goals to track
   your progress and stay aligned with objectives.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Performance Management
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 1e4cbb05-2cf7-482c-8b26-3578ae08e7f6
 name: View Personal Goals

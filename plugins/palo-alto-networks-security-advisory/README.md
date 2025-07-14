@@ -1,5 +1,8 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to lookup recent security advisories.
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: cd80f8f6-2ec0-4836-9c5f-1094503444e4
 name: Look Up Recent Security Advisories

@@ -1,5 +1,10 @@
 ---
+availability: IDEA
 description: A plugin that lets employees look up the stock price for the company.
+domain:
+- Finance
+- HR
+- HR - Benefits
 fidelity: IDEA
 name: Look up Stock Price
 num_implementations: 1

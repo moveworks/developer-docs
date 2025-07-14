@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that creates a new sales opportunity for an account in Salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: fd81a046-b0e8-46bc-8dea-648ad29d974f
 name: Create a New Sales Opportunity for an Account

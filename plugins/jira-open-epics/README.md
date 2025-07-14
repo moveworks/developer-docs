@@ -1,7 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows looking up assigned epics in Jira that are still
   in progress.
 difficulty_level: BEGINNER
+domain:
+- Project Management
+- IT
+- Engineering
 fidelity: TEMPLATE
 installation_asset_uuid: c8c1aa79-1867-4cdb-b761-fb22ec1b6879
 name: Lookup Open Epics

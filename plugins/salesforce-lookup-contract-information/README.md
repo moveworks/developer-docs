@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lets you get contract data for a specified account through
   Salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 9f95fdf3-7dae-4c04-a50b-571fa2ea1f6e
 name: Look Up Contract Information

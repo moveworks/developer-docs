@@ -1,5 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that allows you to lookup open purchase orders from Coupa.
+domain:
+- Finance
+- Finance - Procurement
 fidelity: IDEA
 name: Query Open Purchase Orders
 num_implementations: 1

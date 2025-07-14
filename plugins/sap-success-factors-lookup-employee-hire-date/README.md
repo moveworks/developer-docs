@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that fetches the hiring date of an employee.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
 fidelity: TEMPLATE
 installation_asset_uuid: 8beda148-ad77-46fb-9c59-8830283926ea
 name: Lookup Employee Hire Date

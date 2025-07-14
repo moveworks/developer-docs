@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows employees to see what current job postings are available.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: fb03c05b-914e-4ee6-b94c-4cc4bb25a25b
 name: View Open Job Postings

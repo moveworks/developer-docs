@@ -3,10 +3,14 @@ accreditations:
 - indrapaul24
 - sarthaksrinivas
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows employees to retrieve their time off balance from
   Workday.
 design_pattern_id: 28
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: 44d2b992-7b09-447f-bb42-e7623b646875
 name: View Time Off Balance

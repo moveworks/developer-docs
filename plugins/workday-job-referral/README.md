@@ -1,5 +1,9 @@
 ---
+availability: VALIDATED
 description: A plugin that allows an employee to take steps to submit a job referral.
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: VALIDATED
 name: Submit Job Referral
 num_implementations: 1

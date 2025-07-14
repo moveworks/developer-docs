@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to lookup a user's spots in Highspot.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: b547e459-5ebd-49ba-bde9-209b4d076f74
 name: "Lookup a User\u2019s Spots"

@@ -1,4 +1,5 @@
 ---
+availability: INSTALLABLE
 description: A Plugin that provides a summary of incident metrics over time, including
   Tickets Raised, Resolved, Avg. First Response & Resolution Time, First Contact Resolution
   Rate, Reopen Rate, and SLA Adherence %.

@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that helps a user reset their password in duo.
 fidelity: BUILT_IN
 name: Reset Password

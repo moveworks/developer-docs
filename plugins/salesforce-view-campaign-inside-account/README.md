@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to view a campaign inside of an account in Salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 36cd462c-0a18-45e9-9bad-daecddf3544f
 name: View Campaign Inside Account

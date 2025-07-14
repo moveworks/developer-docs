@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows HRs, Directors or Finance leaders to fetch pending
   job requisitions for approval.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: ed690ed3-ed3d-49ab-bbe3-9d0acc522ce4
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=3a35f279-1d2a-4f54-b166-2d4377209251
