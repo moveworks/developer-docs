@@ -1,6 +1,11 @@
 ---
+availability: VALIDATED
 description: A plugin that allows you to add a specific user to a particular Jira
   project.
+domain:
+- IT
+- Project Management
+- Productivity
 fidelity: VALIDATED
 name: Add User to Project
 num_implementations: 1

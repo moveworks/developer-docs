@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows a user to fetch all public Slack channels.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 118bbe0d-ae1e-49d4-8f4a-041c3b61ed04
 name: Lookup Public Slack Channels

@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows efficient searching for JIRA issues linked to a
   specific EPIC, helping improve project tracking.
 difficulty_level: BEGINNER
+domain:
+- Engineering
+- IT
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 971404c1-a937-4775-aaeb-3ae24da9fa1d
 name: Look up JIRA Issues for an Epic

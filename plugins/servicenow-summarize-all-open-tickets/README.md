@@ -1,4 +1,5 @@
 ---
+availability: INSTALLABLE
 description: A Plugin that lists open support issues with their status, assignee,
   and days open, and summarizes them by status, assignee, and duration.
 difficulty_level: BEGINNER

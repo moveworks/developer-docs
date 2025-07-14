@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows sales representatives to build a quote (configure,
   price, quote) for a customer.
 difficulty_level: INTERMEDIATE
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 82fa707a-6ad9-4c85-a4fb-2b406b57c955
 name: Create a Quote

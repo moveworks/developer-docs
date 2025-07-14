@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lookups timesheet information based of a project.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: 68b830ce-b358-4440-b3dd-9c95a56a5fdb
 name: Look up Timesheet Information

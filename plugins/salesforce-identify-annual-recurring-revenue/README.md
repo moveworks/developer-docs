@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables an employee to query annual recurring revenue.
 difficulty_level: INTERMEDIATE
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: baaf23f8-bcf4-466f-8db3-87ccd3926b91
 name: Identify Annual Recurring Revenue

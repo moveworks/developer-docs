@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that helps security teams stay informed about login activity
   and mitigate risk.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 0cd3e3af-c41b-4b6d-840f-6e5f175d65b6
 name: Manage Login Activity

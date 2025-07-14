@@ -1,6 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that shows holidays for an employee's specific region.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Benefits
+- HR - Time & Absence
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: b100d397-c27a-45b4-a16f-dbaf958e4d2e
 name: Look Up Holiday Schedule

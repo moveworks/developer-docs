@@ -1,5 +1,8 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to get system information about a firewall.
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 63a90eb0-9826-44d7-87d4-606bb86778bd
 name: Lookup System Information
@@ -9,6 +12,7 @@ solution_tags:
 systems:
 - palo-alto-networks
 ---
+
 ## Introduction
 
 The **Lookup System Info** plugin allows users to retrieve system-level details from **Palo Alto Networks firewalls** directly through the Moveworks AI Assistant. This includes information like hostname, model, serial number, PAN-OS version, and more—helping IT teams quickly verify firewall status without logging into the web UI or CLI.

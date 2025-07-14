@@ -1,5 +1,8 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the user to add a comment to a post on Stack Overflow.
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 05c83873-8138-482d-96cc-60d97e8934fc
 name: Add comment on post
