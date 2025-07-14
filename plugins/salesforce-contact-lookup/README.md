@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that looks up details on a contact within Salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 77f9849b-eb4c-458b-b6cf-940379e54e47
 name: Look Up a Contact

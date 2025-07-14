@@ -1,10 +1,11 @@
 ---
-fidelity: GUIDE
-name: SAP Ariba
-difficulty_level: INTERMEDIATE
-time_in_minutes: 60
 accreditations:
 - DEFAULT
+availability: VALIDATED
+difficulty_level: INTERMEDIATE
+fidelity: GUIDE
+name: SAP Ariba
+time_in_minutes: 60
 ---
 
 # Introduction

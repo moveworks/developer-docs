@@ -1,5 +1,9 @@
 ---
+availability: INSTALLABLE
 description: Plugin that allows you to create a project in Asana.
+domain:
+- Productivity
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 83d3d1c0-ae7b-4199-8310-892ef150d180
 name: Create a Project

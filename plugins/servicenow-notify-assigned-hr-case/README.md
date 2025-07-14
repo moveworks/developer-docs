@@ -1,8 +1,14 @@
 ---
+agent_functionality:
+- Polling Required
+availability: VALIDATED
 custom_tags:
 - Polling Required
 description: A plugin that notifies agents & HRBPs when new HR cases are assigned
   to them.
+domain:
+- HR
+- HR - Workplace Culture
 fidelity: VALIDATED
 name: Notify HRBPs About New Cases
 num_implementations: 1

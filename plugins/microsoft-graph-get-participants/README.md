@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the user to get all the participants of a meeting.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: eec582d5-576f-4888-8b5e-470e835dc96b
 name: Lookup Teams Meeting Participants

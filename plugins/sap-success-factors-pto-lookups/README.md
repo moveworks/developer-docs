@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that retrieves your time off balance from SAP Success Factors.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: ab1e8cc3-6d90-46c8-85de-ac312be56178
 name: View Time Off Balance

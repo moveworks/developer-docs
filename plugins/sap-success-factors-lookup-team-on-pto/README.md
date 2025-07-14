@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows a manager to get a list of their team members who
   are on PTO on a given date.
 difficulty_level: INTERMEDIATE
+domain:
+- HR - Time & Absence
+- HR
 fidelity: TEMPLATE
 installation_asset_uuid: f80ba69a-3483-40ac-b2ea-d736404b4605
 name: Lookup Direct Reports on PTO on a specific date

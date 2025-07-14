@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows hiring managers or recruiters to fetch interview
   feedback submitted by interviewers for a specific candidate.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: 51711d03-6e1f-4845-88a1-34705898c9a3
 name: Look up Interview Feedback

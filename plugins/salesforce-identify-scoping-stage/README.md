@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin to help sales teams ask which opportunities are in what stage
   for easy transparency.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: a58161eb-f3a7-4f5a-9e1a-e8a5827cad7d
 name: Identify Scoping Stage

@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to post an update to an opportunity or add notes.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 0d2d68ae-1c2d-4045-a11b-7941c2329d0a
 name: Update an Opportunity with Call Notes

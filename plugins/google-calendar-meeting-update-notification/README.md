@@ -1,6 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that sends a notification to an employee to make them aware
   of a recently updated meeting.
+domain:
+- Productivity
 fidelity: IDEA
 name: Receive Meeting Update Notification
 num_implementations: 1

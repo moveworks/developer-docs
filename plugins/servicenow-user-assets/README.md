@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows a user to query their associated assets such as
   laptops, headphones etc.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Finance
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: b5a0d33a-e374-4f1a-9c80-a058d6e4050a
 name: Look Up My Assets

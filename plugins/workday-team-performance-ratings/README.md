@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables a manager to get a quick summary of their team's
   performance ratings for calibration meetings.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Performance Management
 fidelity: TEMPLATE
 installation_asset_uuid: 80c4c207-fd18-4ab5-b846-0af272d1979d
 name: Get Team Performance Ratings

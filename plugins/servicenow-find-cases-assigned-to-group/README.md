@@ -1,6 +1,10 @@
 ---
+availability: VALIDATED
 description: A plugin that managers can use to identify all cases assigned to their
   group.
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: VALIDATED
 name: Find Cases Assigned To My Group
 num_implementations: 1
@@ -10,5 +14,4 @@ solution_tags:
 - HR - Recruiting & Talent
 systems:
 - servicenow
-
 ---

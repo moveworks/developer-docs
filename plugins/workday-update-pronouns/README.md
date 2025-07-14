@@ -1,5 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that enables a user to update their pronouns.
+domain:
+- HR
+- HR - Employee Records
 fidelity: IDEA
 name: Update Pronouns
 num_implementations: 1

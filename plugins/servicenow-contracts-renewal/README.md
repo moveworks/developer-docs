@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that identifies contracts nearing expiration, facilitating timely
   renewals or negotiations.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: b71351ef-e9f3-4810-820c-fbb28df7ef78
 name: Look Up Contracts up for Renewal

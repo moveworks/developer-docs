@@ -1,10 +1,14 @@
 ---
-name: Azure Function Apps
+accreditations:
+- smartzee797
+- ajaymerchia
+- DEFAULT
+availability: VALIDATED
 description: Integrate with Azure Function Apps using function keys.
-fidelity: GUIDE
 difficulty_level: ADVANCED
+fidelity: GUIDE
+name: Azure Function Apps
 time_in_minutes: 60
-accreditations: [smartzee797, ajaymerchia, DEFAULT]
 ---
 
 # Introduction

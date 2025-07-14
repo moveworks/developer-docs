@@ -2,6 +2,7 @@
 accreditations:
 - indrapaul24
 - DEFAULT
+availability: VALIDATED
 description: A connector that connects your SailPoint IIQ instance to Moveworks via
   Agent Studio.
 difficulty_level: BEGINNER

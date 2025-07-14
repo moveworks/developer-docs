@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an employee to update phone number,.
 difficulty_level: BEGINNER
+domain:
+- HR - Employee Records
+- HR
 fidelity: TEMPLATE
 installation_asset_uuid: d8ea946b-43ff-47cd-893e-7982fc31a615
 name: Update Mobile Number

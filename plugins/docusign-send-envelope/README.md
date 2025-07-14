@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows users to send envelopes to be signed using pre-defined
   templates.
 difficulty_level: BEGINNER
+domain:
+- Legal
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 531b6e58-06f0-4664-8927-4e1dba351a5c
 name: Send an Envelope Using a Template

@@ -1,5 +1,8 @@
 ---
+availability: VALIDATED
 description: A plugin that allows someone to look up items in the CMDB.
+domain:
+- IT
 fidelity: VALIDATED
 name: Look up CMDB Items
 num_implementations: 1

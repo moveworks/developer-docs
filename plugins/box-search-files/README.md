@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that lets a user search knowledge from across the organization
   (across PDFs, docs and PPTs).
 fidelity: BUILT_IN

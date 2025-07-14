@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables users to check-in for the selected time clock event
   in Workday.
 difficulty_level: INTERMEDIATE
+domain:
+- HR - Time & Absence
+- HR
 fidelity: TEMPLATE
 installation_asset_uuid: 683a074a-5d1a-4655-b660-991cc7811dbc
 name: Check-In in Workday

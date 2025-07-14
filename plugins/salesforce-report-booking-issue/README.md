@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin which reports an error when booking or issuing a quote.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 1455a963-a93c-4e25-94c6-77cca76210aa
 name: Look Up Booking or Quote Failure Reason

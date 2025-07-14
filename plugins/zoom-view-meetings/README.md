@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin allows users to filter and view their historical Zoom meetings
   by date.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: fe3c8684-3729-4b62-b211-d5f958324a03
 name: Lookup Zoom Meetings

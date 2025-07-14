@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that allows a user to query the status and details of a ticket.
 fidelity: BUILT_IN
 name: Query Ticket

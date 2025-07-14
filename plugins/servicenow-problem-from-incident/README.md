@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows for an incident to be converted into a problem.
 difficulty_level: INTERMEDIATE
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 90734bf4-dca5-4b0a-8831-123c5db89c00
 name: Create a Problem from an Incident

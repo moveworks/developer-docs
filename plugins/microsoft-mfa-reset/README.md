@@ -2,8 +2,11 @@
 accreditations:
 - smartzee797
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows users to reset their Microsoft MFA device.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: ee4c234e-9573-411f-a1e2-b9ded2dad2ae
 name: Reset Microsoft MFA

@@ -2,9 +2,12 @@
 accreditations:
 - indrapaul24
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to retrieve customer data from Salesforce.
 design_pattern_id: 28
 difficulty_level: BEGINNER
+domain:
+- Sales
 drop_accreditations:
 - ajaymerchia
 fidelity: TEMPLATE

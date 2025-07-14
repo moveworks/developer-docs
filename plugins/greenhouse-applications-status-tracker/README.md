@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows a recruiter or hiring manager to check-in on the
   status of a candidate / job they've posted.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: b7ed8deb-de42-44d4-ad9d-687484fa1d25
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=120d9bb9-3be2-4f76-8077-3563f4121bf7

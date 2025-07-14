@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows sales representatives to look up all quotes for
   a customer/account in Salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: a0ac2987-8d18-40cc-8650-5b040f76ab56
 name: Look Up all Quotes for an Account

@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows efficient searching for issues using specific keywords,
   helping to improve project tracking and workflow management.
 difficulty_level: BEGINNER
+domain:
+- Engineering
+- IT
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: dfa027a6-7e33-4f2b-81ea-35782b8e1278
 name: Look Up Issue by Keyword

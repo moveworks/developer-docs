@@ -1,4 +1,5 @@
 ---
+availability: IDEA
 description: A plugin that allows users to see a quick summary of changes/comments/updates
   to incidents assigned to an agent group done over a specified time duration.
 fidelity: IDEA

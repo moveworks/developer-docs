@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to create a campaign inside of an account in
   Salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 5e7e7e65-ba08-44df-b133-60ebcd91f398
 name: Create Campaign Inside Account

@@ -1,11 +1,12 @@
 ---
+accreditations:
+- ajaymerchia
+- DEFAULT
+availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
 name: Workato
 time_in_minutes: 30
-accreditations:
-- ajaymerchia
-- DEFAULT
 ---
 
 # Introduction

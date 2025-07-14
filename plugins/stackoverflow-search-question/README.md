@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the user to look for questions on Stack overflow
   directly through chat interface.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: c58b6d4e-c694-449d-875b-036c8986414a
 name: Search for a question

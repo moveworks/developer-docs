@@ -1,8 +1,11 @@
 ---
+availability: INSTALLABLE
 description: This plugin provides detailed attendance reports for your Zoom meetings,
   including invitees, participants, participant join and leave times, and other key
   engagement metrics.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 5ab69977-377d-4c13-a89f-eacb8d6a2d3b
 name: Lookup Attendance Report for a meeting

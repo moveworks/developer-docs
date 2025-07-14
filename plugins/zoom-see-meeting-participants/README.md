@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to view participants of a past zoom meeting.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 0bf640b9-45cc-4a9d-ba73-f1b17e1906f8
 name: Lookup Meeting Participants
