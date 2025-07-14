@@ -1,8 +1,9 @@
 ---
-name: Slack
-fidelity: GUIDE
-time_in_minutes: 15
+availability: VALIDATED
 difficulty_level: BEGINNER
+fidelity: GUIDE
+name: Slack
+time_in_minutes: 15
 ---
 
 # **Introduction**

@@ -1,6 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an employee to view their bonus details in Workday.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- Finance - Payroll
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 4fa98f9b-4ec0-4d09-8ea3-ac05526ae6dc
 name: View Bonuses

@@ -1,6 +1,10 @@
 ---
+availability: VALIDATED
 description: A plugin that automates resume screening to identify and filter the most
   relevant candidates based on job criteria.
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: VALIDATED
 installation_asset_uuid: 691b4dba-123c-4566-8fc5-792a865615ad
 name: Lookup Relevant Candidates

@@ -1,13 +1,14 @@
 ---
-name: Coupa
-fidelity: GUIDE
-time_in_minutes: 15
-difficulty_level: BEGINNER
 accreditations:
 - indrapaul24
 - DEFAULT
+availability: VALIDATED
+difficulty_level: BEGINNER
 drop_accreditations:
 - ajaymerchia
+fidelity: GUIDE
+name: Coupa
+time_in_minutes: 15
 ---
 
 # **Introduction**

@@ -1,10 +1,15 @@
 ---
-name: Workday
-fidelity: GUIDE
-time_in_minutes: 30
+accreditations:
+- wdavis-moveworks
+- indrapaul24
+- sarthaksrinivas
+- DEFAULT
+availability: VALIDATED
 difficulty_level: INTERMEDIATE
+fidelity: GUIDE
+name: Workday
 num_implementations: 2
-accreditations: [wdavis-moveworks, indrapaul24, sarthaksrinivas, DEFAULT]
+time_in_minutes: 30
 ---
 
 # Introduction

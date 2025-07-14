@@ -1,4 +1,5 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to create tasks or sub tasks within a parent
   ticket.
 difficulty_level: BEGINNER

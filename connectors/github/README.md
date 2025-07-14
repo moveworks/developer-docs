@@ -2,6 +2,7 @@
 accreditations:
 - indrapaul24
 - DEFAULT
+availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
 name: GitHub

@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows the user to fetch q/a of it's zoom meetings.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 5eea3db0-9326-48fb-9c5e-f610c58b7919
 name: Lookup Q/A of a meeting

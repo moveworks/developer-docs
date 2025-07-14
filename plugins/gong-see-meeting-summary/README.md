@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to lookup a meeting's summary.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 635ed0c9-a0f1-4604-880b-c106d9c60c87
 name: Lookup Meeting Summary

@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that returns a list of all open tasks within the user's task
   list.
 difficulty_level: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: a88f8053-ead5-4185-aada-801293b9da35
 name: See all my tasks

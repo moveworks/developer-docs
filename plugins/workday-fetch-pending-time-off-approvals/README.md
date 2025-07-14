@@ -1,8 +1,13 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows managers to quickly view and manage pending time
   off approvals, ensuring efficient decision-making and maintaining workforce availability
   within the organization.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Time & Absence
+- Approvals
 fidelity: TEMPLATE
 installation_asset_uuid: 9d107761-1c87-4bc7-861d-7a4751c13026
 name: Fetch Pending Time Off Approvals
