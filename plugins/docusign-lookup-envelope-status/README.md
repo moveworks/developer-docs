@@ -38,8 +38,9 @@ After you have configured the connector, please refer to our [plugin installatio
 
 ### **After you have successfully downloaded the plugin :**
 
-- Update the **organization_id** with your organization ID ****in the **Docusign_Get_User_By_Email_ID**  http action. More details [here](https://support.docusign.com/s/document-item?language=en_US&bundleId=rrf1583359212854&topicId=tif1583359135245.html&_LANG=enus).
+- Update the **organization_id** with your organization ID in the **Docusign_Get_User_By_Email_ID**  http action. More details [here](https://support.docusign.com/s/document-item?language=en_US&bundleId=rrf1583359212854&topicId=tif1583359135245.html&_LANG=enus).
     
+
     ![image.png](Look%20up%20status%20of%20an%20Envelope%20208588d8909f8073b1d1d3e3b639ff9a/image.png)
     
 
@@ -76,4 +77,4 @@ curl --request GET \
 - **search_text={{title_part}}**: Query parameter for searching envelopes by part of the title.
 - **include=recipients**: Specifies that recipients should be included in the response data.
 - **user_id={{user_id}}**: Specifies a filter based on a specific user ID.
-- **-header "Authorization: Bearer {{access_token}}"**: Sets the authorization header with an access token needed for authentication.
+- **header "Authorization: Bearer {{access_token}}"**: Sets the authorization header with an access token needed for authentication.

@@ -37,15 +37,15 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Zoom Connector Guide](https://developer.moveworks.com/marketplace/package?id=zoom&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
-**Scopes Needed:**
 
+**Scopes Needed:**
 - **user:read:user:admin**
 - **meeting:read:list_meetings:admin**
 - For more information : [https://developers.zoom.us/docs/integrations/oauth-scopes-overview/](https://developers.zoom.us/docs/integrations/oauth-scopes-overview/)
 
 # Appendix
 
-- This API call retrieves a report of Zoom meetings that a specific user, identified by their email address, has participated in within a specified date range.
+- [Get a meeting activities report​](https://developers.zoom.us/docs/api/meetings/#tag/reports/GET/report/meeting_activities): This API call retrieves a report of Zoom meetings that a specific user, identified by their email address, has participated in within a specified date range.
     
     ```bash
     curl -X GET "https://api.zoom.us/v2/report/users/{{email}}/meetings?from={{from_date}}&to={{to_date}}&type=pastJoined&page_size=300" \

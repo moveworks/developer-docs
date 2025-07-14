@@ -56,7 +56,7 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **email**: The email address of the user whose details you want to retrieve. Replace **`{{email}}`** with the actual email address. This email would be obtained from the meta_data of the user using the plugin.
+        - **email**: The email address of the user whose details you want to retrieve. Replace **{{email}}** with the actual email address. This email would be obtained from the meta_data of the user using the plugin.
 - This API call fetches calendar events for a specified user over a given date range.
     
     ```bash

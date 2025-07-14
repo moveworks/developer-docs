@@ -44,17 +44,17 @@ curl --request GET \ "https://{your_organisation}.stackenterprise.co/api/v3/sear
 - **URL and Query Parameters:**
     - **https://{your_organisation}.stackenterprise.co/api/v3/search**: The base URL for the search API endpoint, customized with your organization's Stack Overflow for Teams subdomain.
     - **filter=!6WPIomnMOOD*e**: Specifies a filter to adjust the fields included in the results.
-        - How to create your ow filter :
-            - Step 1 : Go on [https://api.stackexchange.com/docs/search](https://api.stackexchange.com/docs/search) and click on the default filter [edit].
+        - How to create your own filter :
+            - **Step 1** : Go on [https://api.stackexchange.com/docs/search](https://api.stackexchange.com/docs/search) and click on the **default filter [edit]**.
                 
                 ![image.png](Search%20for%20a%20question%201d2588d8909f80539f43db80a636d7a7/image.png)
                 
-            - Step 2: Select the field you want to include in your json response.
+            - **Step 2**: Select the field you want to include in your json response.
                 
                 ![image.png](Search%20for%20a%20question%201d2588d8909f80539f43db80a636d7a7/image%201.png)
                 
-            - Step 3: Click on Save.
-            - Step 4: Copy the filter value.
+            - **Step 3**: Click on Save.
+            - **Step 4**: Copy the filter value.
                 
                 ![image.png](Search%20for%20a%20question%201d2588d8909f80539f43db80a636d7a7/image%202.png)
                 

@@ -36,14 +36,14 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Zoom Connector Guide](https://developer.moveworks.com/marketplace/package?id=zoom&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
-**Scopes Needed:**
 
+**Scopes Needed:**
 - **meeting:read:past_qa:admin**
 - For more information : [https://developers.zoom.us/docs/integrations/oauth-scopes-overview/](https://developers.zoom.us/docs/integrations/oauth-scopes-overview/)
 
 # Appendix
 
-- This API call allows you to retrieve the Q&A sessions from a specific past Zoom meeting.
+- [List past meetings' Q&A](https://developers.zoom.us/docs/api/meetings/#tag/meetings/GET/past_meetings/{meetingId}/qa): This API call allows you to retrieve the Q&A sessions from a specific past Zoom meeting.
     
     ```bash
     curl -X GET "https://api.zoom.us/v2/past_meetings/{{meeting_id}}/qa" \

@@ -80,7 +80,7 @@ curl -X POST "https://us-35031.api.gong.io/v2/calls/extensive" \
 
 - **{{from_date}}** The lower limit of the date range.
 - **{{to_date}}** The upper limit of the date range.
-- **parties** should always be set to **rue**.
+- **parties** should always be set to **true**.
 
 **Optional Body Parameters:**
 

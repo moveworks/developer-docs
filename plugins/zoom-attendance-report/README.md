@@ -49,7 +49,7 @@ While you can create a connector during plugin installation, we do recommend tha
 
 ## A combination of 2 APIs makes this possible:
 
-- This API is used for retrieving the details of meeting invitees for a specific Zoom meeting. It allows you to access information about the participants invited to a meeting using the meeting's unique identifier.
+- **API #1** [Get a meeting​](https://developers.zoom.us/docs/api/meetings/#tag/meetings/GET/meetings/{meetingId}): This API is used for retrieving the details of meeting invitees for a specific Zoom meeting. It allows you to access information about the participants invited to a meeting using the meeting's unique identifier.
     
     ```bash
     curl -X GET "https://api.zoom.us/v2/meetings/{{meeting_id}}" \
@@ -60,7 +60,8 @@ While you can create a connector during plugin installation, we do recommend tha
     
     - Required parameters:
         - **meeting_id**: The unique identifier for the Zoom meeting whose invitees you are trying to retrieve. This must be replaced with the actual ID of the meeting you wish to inquire about.
-- This API is used to retrieve the list of actual participants who attended a past Zoom meeting. It provides details on who participated in the meeting, including information like names, email addresses, join times, and leave times.
+
+- **API #2** [Get past meeting participants](https://developers.zoom.us/docs/api/meetings/#tag/meetings/GET/past_meetings/{meetingId}/participants): This API is used to retrieve the list of actual participants who attended a past Zoom meeting. It provides details on who participated in the meeting, including information like names, email addresses, join times, and leave times.
     
     ```bash
     curl -X GET "https://api.zoom.us/v2/past_meetings/{{meeting_Id}}/participants" \
