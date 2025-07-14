@@ -59,4 +59,4 @@ While you can create a connector during plugin installation, we do recommend tha
         - **from**: The start date for the report in **YYYY-MM-DD** format, specifying the beginning of the date range. Replace **{{from_date}}** with the appropriate start date.
         - **to**: The end date for the report in **YYYY-MM-DD** format, specifying the end of the date range. Replace **{{to_date}}** with the appropriate end date.
         - **type**: Set to **pastJoined** to filter and retrieve meetings that the user has joined in the past.
-        - **page_size**: The number of records returned per API call. In this case, it's set to **`300`** to retrieve up to 300 meetings per request.
+        - **page_size**: The number of records returned per API call. In this case, it's set to **300** to retrieve up to 300 meetings per request.
