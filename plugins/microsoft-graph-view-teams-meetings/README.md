@@ -17,14 +17,14 @@ time_in_minutes: 30
 
 # Introduction
 
-The **View Teams Meetings** plugin enables users to effortlessly access their past Teams meeting records directly through the Moveworks AI Assistant. Users can quickly retrieve essential meeting details such as titles, dates, durations, and more, all within their chat interface. This ensures a streamlined process for reviewing and managing past meetings with enhanced efficiency.
+The **Lookup Teams Meetings** plugin enables users to effortlessly access their past Teams meeting records directly through the Moveworks AI Assistant. Users can quickly retrieve essential meeting details such as titles, dates, durations, and more, all within their chat interface. This ensures a streamlined process for reviewing and managing past meetings with enhanced efficiency.
 
 This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
 
 # Prerequisites
 
 - Access to Agent Studio
-- [Ms Graph Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=microsoft-graph) set up in Creator Studio
+- [Microsoft Graph Connector Guide](https://developer.moveworks.com/marketplace/package/?id=microsoft-graph&hist=home%2Cbrws#how-to-implement) set up in Agent Studio.
 
 # What are we building?
 
@@ -34,15 +34,15 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Microsoft Graph Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Microsoft Graph Connector Guide](https://developer.moveworks.com/marketplace/package/?id=microsoft-graph&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 **Permissions Needed:**
 
-- `User.Read`
-- `User.Read.All`
-- `Calendars.Read`
-- `Calendars.ReadWrite`
-- `CallRecords.Read.All`
+- **User.Read**
+- **User.Read.All**
+- **Calendars.Read**
+- **Calendars.ReadWrite**
+- **CallRecords.Read.All**
 
 # Appendix
 
@@ -56,7 +56,7 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`email`**: The email address of the user whose details you want to retrieve. Replace **`{{email}}`** with the actual email address. This email would be obtained from the meta_data of the user using the plugin.
+        - **email**: The email address of the user whose details you want to retrieve. Replace **`{{email}}`** with the actual email address. This email would be obtained from the meta_data of the user using the plugin.
 - This API call fetches calendar events for a specified user over a given date range.
     
     ```bash
@@ -67,6 +67,6 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`userid`**: The unique identifier of the user whose calendar events you wish to retrieve. This is obtained from the result of the previous api.
-        - **`from_date`**: The start date-time in **`YYYY-MM-DDTHH:MM:SSZ`** format (or compatible format for your timezone) to filter events that occur on or after this date.
-        - **`to_date`**: The end date-time in **`YYYY-MM-DDTHH:MM:SSZ`** format (or compatible format for your timezone) to filter events that occur on or before this date.
+        - **userid**: The unique identifier of the user whose calendar events you wish to retrieve. This is obtained from the result of the previous api.
+        - **from_date**: The start date-time in **YYYY-MM-DDTHH:MM:SSZ** format (or compatible format for your timezone) to filter events that occur on or after this date.
+        - **to_date**: The end date-time in **YYYY-MM-DDTHH:MM:SSZ** format (or compatible format for your timezone) to filter events that occur on or before this date.

@@ -27,8 +27,8 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 # Prerequisites
 
 - Access to Agent Studio
-- [Asana Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=asana) set up in Creator Studio
-- [Get a List of my Projects](https://developer.moveworks.com/creator-studio/resources/plugin?id=asana-list-projects) Plugin
+- [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) set up in Agent Studio.
+- [Get a List of my Projects](https://developer.moveworks.com/marketplace/plugin?id=asana-list-projects&hist=home%2Cpkg.asana%2Cbrws) Plugin.
 
 # What are we building?
 
@@ -38,11 +38,11 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Asana Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 Required Scopes:
 
-- `tasks:write` – To create tasks in Asana
+- **tasks:write** – To create tasks in Asana
 
 After you have configured the connector, please refer to our installation documentation for more information on how to install a plugin.
 
@@ -57,26 +57,27 @@ curl --request POST \
      --header 'authorization: Bearer {{personal_access_token}}' \
      --header 'content-type: application/json' \
      --data '{
-       "data": {
-         "name": "{{task_name}}",
-         "notes": "{{task_description}}",
-         "due_on": "{{due_date}}",
-         "start_on": "{{start_on}}",
-         "assignee": "{{assignee_gid}}",
-         "projects": ["{{project_gid}}"]
-       }
+       "data": 
+        {
+          "name": "{{task_name}}",
+          "notes": "{{task_description}}",
+          "due_on": "{{due_date}}",
+          "start_on": "{{start_on}}",
+          "assignee": "{{assignee_gid}}",
+          "projects": ["{{project_gid}}"]
+        }
      }'
 ```
 
 **Required Body Parameters:**
 
-- **`name`** (string) – Name of the task.
-- **`projects`** (array) – The project(s) where the task should be created.
+- **name** (string) – Name of the task.
+- **projects** (array) – The project(s) where the task should be created.
 
 **Optional Body Parameters:**
 
-- **`notes`** (string) – Task description.
-- **`due_on`**(string) – Task due date in `YYYY-MM-DD` format.
-- **`start_on`** (string) – Task start date in `YYYY-MM-DD` format.
-- **`assignee`** (string) – GID of the user assigned to the task.
-- **`followers`** (array) – List of user GIDs to be added as followers.
+- **notes** (string) – Task description.
+- **due_on**(string) – Task due date in **YYYY-MM-DD** format.
+- **start_on** (string) – Task start date in **YYYY-MM-DD** format.
+- **assignee** (string) – GID of the user assigned to the task.
+- **followers** (array) – List of user GIDs to be added as followers.

@@ -3,11 +3,11 @@ curl --request PUT \
      --header 'accept: application/json' \
      --header 'authorization: Bearer {personal_access_token}' \
      --header 'content-type: application/json' \
-     --data '
-{
-  "data": {
-    "name": "New Task Name",
-    "completed": true
-  }
-}
-'
+     --data 
+          '{
+            "data": 
+              {
+                "name": "New Task Name",
+                "completed": true
+              }
+          }'

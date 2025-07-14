@@ -24,8 +24,7 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 # Prerequisites
 
 - Access to Agent Studio
-- [Zoom Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=zoom&commit_id=280a6873f0354f3c7bd834c823295c3af2fc7086) set up in Creator Studio
-- [View Zoom Meetings] Plugin
+- [Zoom Connector Guide](https://developer.moveworks.com/marketplace/package?id=zoom&hist=home%2Cbrws#how-to-implement) set up in Agent Studio.
 
 # What are we building?
 
@@ -35,11 +34,11 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Zoom Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Zoom Connector Guide](https://developer.moveworks.com/marketplace/package?id=zoom&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 **Scopes Needed:**
 
-- `meeting:read:list_past_participants:admin`
+- **meeting:read:list_past_participants:admin**
 - For more information : [https://developers.zoom.us/docs/integrations/oauth-scopes-overview/](https://developers.zoom.us/docs/integrations/oauth-scopes-overview/)
 
 # Appendix
@@ -54,4 +53,4 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`meeting_Id`**: The unique identifier for a past Zoom meeting whose participant details you wish to retrieve. This ID corresponds to the specific meeting's recorded session.
+        - **meeting_Id**: The unique identifier for a past Zoom meeting whose participant details you wish to retrieve. This ID corresponds to the specific meeting's recorded session.

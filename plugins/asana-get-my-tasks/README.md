@@ -31,7 +31,7 @@ Let’s dive in!
 # Prerequisites
 
 - [Postman](https://www.postman.com/) or an API Testing Tool
-- [Asana Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=asana) built in Creator Studio (follow the Asana Authentication guide to create your connector)
+- [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) built in Agent Studio.
 
 # **What are we building?**
 
@@ -39,7 +39,7 @@ Let’s dive in!
 
 This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Show+me+my+Asana+tasks.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFetching+tasks+from+Asana+assigned+to+you...%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHere+are+your+open+tasks%3A%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3ETask+1%3A+Finalize+quarterly+report%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3EDue+Date%3A+2024-04-30%3Cbr%3EProject%3A+Q2+Financials%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3ETask+2%3A+Update+project+roadmap%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3EDue+Date%3A+2024-05-15%3Cbr%3EProject%3A+Product+Development%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3ETask+3%3A+Prepare+team+presentation%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3EDue+Date%3A+2024-04-20%3Cbr%3EProject%3A+Marketing%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
 
-# Creator Studio Components
+# Agent Studio Components
 
 - **Triggers**:
     1. Natural Language

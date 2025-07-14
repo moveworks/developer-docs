@@ -18,12 +18,12 @@ time_in_minutes: 30
 
 # **Introduction**
 
-The **Search a Question on StackOverflow for Teams** plugin enhances the Moveworks AI Assistant by allowing users to search through their organization’s private Stack Overflow for Teams knowledge base directly from their chat interface. This integration empowers team members to quickly access proprietary programming solutions, best practices, and expert advice tailored specifically to their organization, all without leaving the Moveworks environment.
+The **Search a Question on StackOverflow** plugin enhances the Moveworks AI Assistant by allowing users to search through their organization’s private Stack Overflow for Teams knowledge base directly from their chat interface. This integration empowers team members to quickly access proprietary programming solutions, best practices, and expert advice tailored specifically to their organization, all without leaving the Moveworks environment.
 
 # Prerequisites
 
 - Access to Agent Studio
-- [Stackoverflow Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) set up in Creator Studio.
+- [Stackoverflow Connector Guide](https://developer.moveworks.com/marketplace/package?id=stackoverflow&hist=home%2Cplgn.gong-view-meetings%2Cbrws#how-to-implement) set up in Agent Studio.
 
 # What are we building?
 
@@ -33,18 +33,17 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [**Stackoverflow Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Stackoverflow Connector Guide](https://developer.moveworks.com/marketplace/package?id=stackoverflow&hist=home%2Cplgn.gong-view-meetings%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 # Appendix
 
 ```bash
-curl --request GET "https://{your_organisation}.stackenterprise.co/api/2.3/search?filter=!6WPIomnMOOD*e&intitle={{question}}&sort={{sort_type}}&order={{desc}}&tags={{tags}}&key={{your_api_key}}" \
-     --header "Authorization: Bearer {{access_token}}"
+curl --request GET \ "https://{your_organisation}.stackenterprise.co/api/v3/search?filter=!6WPIomnMOOD*e&query={{question}}&sort={{sort_type}}&order={{desc}}&tags={{tags}}&key={{your_api_key}}" \ --header "Authorization: Bearer {{access_token}}"
 ```
 
 - **URL and Query Parameters:**
-    - **`https://{your_organisation}.stackenterprise.co/api/2.3/search`**: The base URL for the search API endpoint, customized with your organization's Stack Overflow for Teams subdomain.
-    - **`filter=!6WPIomnMOOD*e`**: Specifies a filter to adjust the fields included in the results.
+    - **https://{your_organisation}.stackenterprise.co/api/v3/search**: The base URL for the search API endpoint, customized with your organization's Stack Overflow for Teams subdomain.
+    - **filter=!6WPIomnMOOD*e**: Specifies a filter to adjust the fields included in the results.
         - How to create your ow filter :
             - Step 1 : Go on [https://api.stackexchange.com/docs/search](https://api.stackexchange.com/docs/search) and click on the default filter [edit].
                 
@@ -60,11 +59,11 @@ curl --request GET "https://{your_organisation}.stackenterprise.co/api/2.3/searc
                 ![image.png](Search%20for%20a%20question%201d2588d8909f80539f43db80a636d7a7/image%202.png)
                 
             
-    - **`intitle={{question}}`**: The title or part of the title of the question you're searching for. Replace **`{{question}}`** with your query string.
-    - **`sort={{sort_type}}`**: Sorts the results based on the specified type. Replace **`{{sort_type}}`** with a sorting option (e.g., activity, votes, creation, relevance).
-    Relevance is the default type.
-    - **`order=desc`**: Specifies the order of sorting, typically **`asc`** for ascending or **`desc`** for descending.
-    - **`tags={{tags}}`**: Filters results to only those with specific tags. Replace **`{{tags}}`** with a semi-colon-separated list of tags eg (knn;python).
-    - **`key={{your_api_key}}`**: Your API key for authenticating the request. Replace **`{{your_api_key}}`** with your actual API key.
+    - **query={{question}}**: The title or part of the title of the question you're searching for. 
+    - **sort={{sort_type}}**: Sorts the results based on the specified type (activity, votes, creation, relevance).
+    Relevance is the default type. Default is relevance.
+    - **order=desc**: Specifies the order of sorting [asc, desc].
+    - **tags={{tags}}**: Filters results to only those with specific tags semi-colon delimited. 
+    - **key={{your_api_key}}**: Your API key for authenticating the request. Replace **{{your_api_key}}** with your actual API key.
 - **Header:**
-    - **`Authorization: Bearer {{access_token}}`**: Uses a bearer token for authentication. Replace **`{{access_token}}`** with your actual access token.
+    - **Authorization: Bearer {{access_token}}**: Uses a bearer token for authentication.

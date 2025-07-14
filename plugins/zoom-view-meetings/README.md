@@ -18,14 +18,14 @@ time_in_minutes: 30
 
 # Introduction
 
-The **View Zoom Meetings** plugin enables users to effortlessly access their past Zoom meeting records directly through the Moveworks AI Assistant. Users can quickly retrieve essential meeting details such as titles, dates, durations, and more, all within their chat interface. This ensures a streamlined process for reviewing and managing past meetings with enhanced efficiency.
+The **Lookup Zoom Meetings** plugin enables users to effortlessly access their past Zoom meeting records directly through the Moveworks AI Assistant. Users can quickly retrieve essential meeting details such as titles, dates, durations, and more, all within their chat interface. This ensures a streamlined process for reviewing and managing past meetings with enhanced efficiency.
 
 This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
 
 # Prerequisites
 
 - Access to Agent Studio
-- [Zoom Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=zoom&commit_id=280a6873f0354f3c7bd834c823295c3af2fc7086) set up in Creator Studio
+- [Zoom Connector Guide](https://developer.moveworks.com/marketplace/package?id=zoom&hist=home%2Cbrws#how-to-implement) set up in Agent Studio.
 
 # What are we building?
 
@@ -35,12 +35,12 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our Zoom **Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Zoom Connector Guide](https://developer.moveworks.com/marketplace/package?id=zoom&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 **Scopes Needed:**
 
-- `user:read:user:admin`
-- `meeting:read:list_meetings:admin`
+- **user:read:user:admin**
+- **meeting:read:list_meetings:admin**
 - For more information : [https://developers.zoom.us/docs/integrations/oauth-scopes-overview/](https://developers.zoom.us/docs/integrations/oauth-scopes-overview/)
 
 # Appendix
@@ -55,8 +55,8 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`email`**: The email address of the user whose meetings you want to retrieve. Replace **`{{email}}`** with the actual email address.
-        - **`from`**: The start date for the report in **`YYYY-MM-DD`** format, specifying the beginning of the date range. Replace **`{{from_date}}`** with the appropriate start date.
-        - **`to`**: The end date for the report in **`YYYY-MM-DD`** format, specifying the end of the date range. Replace **`{{to_date}}`** with the appropriate end date.
-        - **`type`**: Set to **`pastJoined`** to filter and retrieve meetings that the user has joined in the past.
-        - **`page_size`**: The number of records returned per API call. In this case, it's set to **`300`** to retrieve up to 300 meetings per request.
+        - **email**: The email address of the user whose meetings you want to retrieve. Replace **{{email}}** with the actual email address.
+        - **from**: The start date for the report in **YYYY-MM-DD** format, specifying the beginning of the date range. Replace **{{from_date}}** with the appropriate start date.
+        - **to**: The end date for the report in **YYYY-MM-DD** format, specifying the end of the date range. Replace **{{to_date}}** with the appropriate end date.
+        - **type**: Set to **pastJoined** to filter and retrieve meetings that the user has joined in the past.
+        - **page_size**: The number of records returned per API call. In this case, it's set to **`300`** to retrieve up to 300 meetings per request.

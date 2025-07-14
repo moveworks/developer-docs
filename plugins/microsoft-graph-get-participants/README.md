@@ -24,8 +24,7 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 # Prerequisites
 
 - Access to Agent Studio
-- [Ms Graph Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=microsoft-graph) set up in Creator Studio
-- View Teams Meetings Plugin
+- [Microsoft Graph Connector Guide](https://developer.moveworks.com/marketplace/package/?id=microsoft-graph&hist=home%2Cbrws#how-to-implement) set up in Agent Studio.
 
 # What are we building?
 
@@ -35,15 +34,15 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Microsoft Graph Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Microsoft Graph Connector Guide](https://developer.moveworks.com/marketplace/package/?id=microsoft-graph&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 **Permissions Needed:**
 
-- `OnlineMeetings.Read.All`
-- `OnlineMeetings.ReadWrite.All`
-- `OnlineMeetingTranscript.Read.All`
-- `OnlineMeetingArtifact.Read.All`
-- `OnlineMeetingRecording.Read.All`
+- **OnlineMeetings.Read.All**
+- **OnlineMeetings.ReadWrite.All**
+- **OnlineMeetingTranscript.Read.All**
+- **OnlineMeetingArtifact.Read.All**
+- **OnlineMeetingRecording.Read.All**
 
 # Appendix
 
@@ -59,7 +58,7 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`user_email`**: User’s email.
+        - **user_email**: User’s email.
 - The second API call is designed to retrieve the online meeting object using join web url.
     
     ```bash
@@ -70,5 +69,5 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`userid`**: The identifier for the user to whose meeting list the query pertains.
-        - **`weburl`**: The exact web URL link for the meeting, used to filter and identify the specific meeting.
+        - **userid**: The identifier for the user to whose meeting list the query pertains.
+        - **weburl**: The exact web URL link for the meeting, used to filter and identify the specific meeting.

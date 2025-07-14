@@ -24,8 +24,8 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 # Prerequisites
 
 - Access to Agent Studio
-- [Gong Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=gong) set up in Creator Studio
-- View Gong meetings Plugin
+- [Gong Connector Guide](http://developer.moveworks.com/marketplace/package?id=gong&hist=home%2Cbrws#how-to-implement)    set up in Agent Studio.
+- [Lookup Gong meetings Plugin](https://developer.moveworks.com/marketplace/plugin?id=gong-view-meetings&hist=home%2Cpkg.gong%2Cbrws)
 
 # What are we building?
 
@@ -35,7 +35,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our Gong **Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Gong Connector Guide](http://developer.moveworks.com/marketplace/package?id=gong&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 # Appendix
 
@@ -55,4 +55,4 @@ curl -X POST "https://us-35031.api.gong.io/v2/calls/transcript" \
 
 **Required Body Parameters:**
 
-- `callid` (string) - Gong Id of the call for which the transcript is needed.
+- **callid** (string) - Gong Id of the call for which the transcript is needed.
