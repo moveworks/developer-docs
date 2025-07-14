@@ -1,6 +1,10 @@
 ---
+availability: VALIDATED
 description: A plugin that allows a user to rename a Slack channel.
 difficulty_level: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: GUIDE
 installation_asset_uuid: 01f3bcba-e3b4-45ef-a527-e465687edf99
 name: Rename Slack Channel

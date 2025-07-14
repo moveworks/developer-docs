@@ -2,12 +2,17 @@
 accreditations:
 - tporter-moveworks
 - DEFAULT
+agent_functionality:
+- Polling Required
+availability: VALIDATED
 custom_tags:
 - Polling Required
 description: A plugin that nudges assignees about tickets that haven't been updated
   in a given time period.
 design_pattern_id: 10
 difficulty_level: INTERMEDIATE
+domain:
+- IT
 drop_accreditations:
 - ajaymerchia
 fidelity: GUIDE

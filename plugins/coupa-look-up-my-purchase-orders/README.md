@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to look up the details of your purchase orders.
 difficulty_level: BEGINNER
+domain:
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: 4672def5-adf8-41e3-a4a7-55466b35f0a2
 name: Look Up My Purchase Orders

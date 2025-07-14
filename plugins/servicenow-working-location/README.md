@@ -1,5 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that lets you look up your primary working location.
+domain:
+- HR
+- HR - Employee Records
 fidelity: IDEA
 name: Look up Working Location
 num_implementations: 1

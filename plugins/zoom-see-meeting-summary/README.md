@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows users to view summaries of their past Zoom meetings.
 difficulty_level: BEGINNER
+domain:
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: d9efd1f7-347d-47e6-86ac-d3efa09d5a01
 name: Lookup meeting summary

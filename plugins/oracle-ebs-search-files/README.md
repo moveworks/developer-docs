@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that allows a user to find files within the Oracle EBS.
 fidelity: BUILT_IN
 name: Search Files

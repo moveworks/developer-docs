@@ -1,7 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows employees to review all expense entries associated
   with a specific report.
 difficulty_level: BEGINNER
+domain:
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 1e095457-ea60-44e2-94bc-938fb6c40c60
 name: View Expense Entries For Report

@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows updating the priority of multiple issues assigned
   to you in Jira.
 difficulty_level: INTERMEDIATE
+domain:
+- IT
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: b04413de-89e5-4030-94c0-44679363d56f
 name: Update Bulk Issue Priority

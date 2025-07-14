@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows users to look up incidents assigned to them.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Ticketing
 fidelity: TEMPLATE
 installation_asset_uuid: d851e4a3-98b9-41db-8f90-df36c5c51701
 name: Get Incidents Assigned to Me

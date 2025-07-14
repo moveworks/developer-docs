@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that allows an individual to create a ticket.
 fidelity: BUILT_IN
 name: Create Ticket

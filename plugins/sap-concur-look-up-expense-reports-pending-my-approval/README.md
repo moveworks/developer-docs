@@ -1,8 +1,11 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to look up expense reports pending your approval.
 difficulty_level: BEGINNER
+domain:
+- Finance - Expense Management
 fidelity: TEMPLATE
 installation_asset_uuid: 242b45f2-429a-4109-b56d-c220b2a7ad7c
 name: Look Up Expense Reports Pending My Approval

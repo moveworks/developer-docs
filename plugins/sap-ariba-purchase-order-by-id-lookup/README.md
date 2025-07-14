@@ -1,6 +1,9 @@
 ---
+availability: VALIDATED
 description: A plugin that allows you to look up SAP purchase orders by providing
   the PO number.
+domain:
+- Finance
 fidelity: VALIDATED
 name: Look up Purchase Order by ID
 num_implementations: 1

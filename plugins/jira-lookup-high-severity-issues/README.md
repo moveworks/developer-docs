@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows looking up high-severity issues created within a
   specified period.
 difficulty_level: INTERMEDIATE
+domain:
+- IT
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 51207307-9427-4500-abbd-ab6d0ba31a5b
 name: Lookup High-Severity Issues

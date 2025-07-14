@@ -1,7 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows for the user to keep their contact information up
   to date.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Employee Records
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 7ea954b6-e558-451c-a486-dce959028166
 name: Update Contact Information

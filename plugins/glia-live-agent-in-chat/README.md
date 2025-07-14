@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that lets a user communicate directly with a live agent in chat.
 fidelity: BUILT_IN
 name: 'Live Agent: In Chat'

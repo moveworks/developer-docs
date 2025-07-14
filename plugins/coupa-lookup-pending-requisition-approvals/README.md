@@ -1,9 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to look up purchase requisitions pending your
   approval.
 difficulty_level: BEGINNER
+domain:
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 595700e6-1e8c-4011-8ece-ca58ff3e1eb6
 name: Look Up Purchase Requisitions Pending My Approval
