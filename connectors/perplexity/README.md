@@ -1,4 +1,5 @@
 ---
+availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
 name: Perplexity

@@ -1,8 +1,8 @@
 ---
+availability: VALIDATED
+difficulty_level: INTERMEDIATE
 fidelity: GUIDE
 name: Okta
-difficulty_level: INTERMEDIATE
-time_in_minutes: 30
 num_implementations: 0
 time_in_minutes: 15
 ---

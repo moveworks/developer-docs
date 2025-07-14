@@ -1,11 +1,12 @@
 ---
+availability: VALIDATED
 description: Connect to Palo Alto Networks PAN OS.
 difficulty_level: INTERMEDIATE
 fidelity: GUIDE
-time_in_minutes: 30
 name: Palo Alto Networks
-
+time_in_minutes: 30
 ---
+
 # Introduction
 
 Integrating Palo Alto Networks' PAN-OS with Agent Studio unlocks powerful network automation and monitoring capabilities through XML API access. By authenticating with an API key and setting the appropriate admin roles, you can retrieve system information, execute operational commands, and manage firewall configurations in an automated, repeatable way.

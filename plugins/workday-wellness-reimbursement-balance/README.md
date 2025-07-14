@@ -1,6 +1,10 @@
 ---
+availability: IDEA
 description: A plugin that allows employees to see the total amount allocated as part
   of their wellness allocation and specifically how much credit is available.
+domain:
+- HR
+- HR - Benefits
 fidelity: IDEA
 name: View Wellness Reimbursement Balance
 num_implementations: 1

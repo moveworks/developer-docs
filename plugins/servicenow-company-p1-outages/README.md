@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that swiftly shows any outages or service disruptions for employees
   to be aware of.
 difficulty_level: INTERMEDIATE
+domain:
+- IT
+- Engineering
 fidelity: TEMPLATE
 installation_asset_uuid: b4908f1f-6e7a-4be8-8891-7cf213955fcf
 name: Find Company p1 Outages

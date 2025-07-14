@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables an employee to request time off in SAP SuccessFactors.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: 3d755982-e50b-4237-9bc8-f9272584f859
 name: Request Time Off

@@ -1,9 +1,13 @@
 ---
-name: Microsoft Graph
+accreditations:
+- sswiderek-moveworks
+- ajaymerchia
+- DEFAULT
+availability: VALIDATED
 difficulty_level: INTERMEDIATE
 fidelity: GUIDE
+name: Microsoft Graph
 time_in_minutes: 30
-accreditations: [sswiderek-moveworks, ajaymerchia, DEFAULT]
 ---
 
 # Introduction

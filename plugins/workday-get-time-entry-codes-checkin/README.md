@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to lookup the time entry codes in order to check
   in.
 difficulty_level: INTERMEDIATE
+domain:
+- HR - Time & Absence
+- HR
 fidelity: TEMPLATE
 installation_asset_uuid: ce548da4-8dbb-4255-94d5-1babd7cb4616
 name: View Check-In Time Entry Code

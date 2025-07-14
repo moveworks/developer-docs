@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to view your tax elections in Workday.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
 fidelity: TEMPLATE
 installation_asset_uuid: 15156ef9-62fb-413f-a19d-3c926d1f1f0f
 name: View Tax Elections

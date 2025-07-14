@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows users to quickly review account renewal information.
 difficulty_level: INTERMEDIATE
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 91404c5a-3d6e-4bfe-b3b1-3e8c692a5a51
 name: Look Up Account Renewal Information

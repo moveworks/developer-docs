@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you get all the tasks from a project.
 difficulty_level: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 51cd18fd-f659-4e47-b006-86943b6ab24e
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=d75da91a-6480-4957-9df8-95f9a91ad51d

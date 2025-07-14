@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that lets a designated employee reopen a ticket that was previously
   closed.
 fidelity: BUILT_IN

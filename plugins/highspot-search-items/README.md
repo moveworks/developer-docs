@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to search for items in Highspot.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: b52a0a88-8e01-4695-a61e-960901d35897
 name: Search Items

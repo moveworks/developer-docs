@@ -1,4 +1,5 @@
 ---
+availability: BUILT_IN
 description: A plugin that lets concerned employees to receive relevant communications
   about a ticket.
 fidelity: BUILT_IN

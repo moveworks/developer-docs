@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that enables users to check-out for the day.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: b7985817-441d-4098-a262-2d7e73ed40e3
 name: Check-out in Workday

@@ -1,6 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that provides the employe's unique ID when prompted.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: f4f5280a-ef0e-41ae-abb8-1d09b2f10a8d
 name: Check Employee ID

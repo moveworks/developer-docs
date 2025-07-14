@@ -1,6 +1,13 @@
 ---
+availability: INSTALLABLE
 description: A plugin that retrieves a user's total compensation for easy refrence.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Employee Records
+- Finance
+- Finance - Payroll
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 00a9ae03-00c8-4096-b4c5-0611f10afbb5
 name: View Total Compensation
