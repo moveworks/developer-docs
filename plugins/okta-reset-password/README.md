@@ -1,5 +1,8 @@
 ---
+availability: IDEA
 description: A plugin that helps a user reset their password in okta.
+domain:
+- IT
 fidelity: IDEA
 name: Reset Password
 num_implementations: 1

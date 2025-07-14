@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to add a user to a spot in Highspot.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 7afb6dc9-dc81-4e80-b3e2-b6b40c38a3d1
 name: Add a User to a Spot
@@ -41,7 +44,7 @@ For the **Add User to Share Spot You Own** plugin, ensure the connector includes
 
 Once the connector is configured, continue with the standard plugin installation process in Agent Studio.
 
-[Visit our plugin installation documentation →](https://help.moveworks.com/docs/ai-agent-marketplace)
+[Visit our plugin installation documentation →](https://help.moveworks.com/docs/ai-agent-marketplace-installation)
 
 ## Customization Options
 

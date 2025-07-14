@@ -1,9 +1,13 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to streamline the approval process for Coupa
   expense reports.
 difficulty_level: BEGINNER
+domain:
+- Finance
+- Approvals
 fidelity: TEMPLATE
 installation_asset_uuid: f1e3f1b5-610f-4c12-aff7-86569ef9acfd
 name: Approve or Reject an Expense Report
@@ -39,7 +43,7 @@ We recommend creating the connector for Coupa first, prior to installing this pl
 
 - User » Standard role for all users who need to create and/or approve expense reports
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

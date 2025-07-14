@@ -1,4 +1,5 @@
 ---
+availability: INSTALLABLE
 description: A Plugin that allows agents and support admins to identify tickets that
   have breached or are nearing their SLA deadlines.
 difficulty_level: BEGINNER
@@ -38,7 +39,7 @@ We recommend creating the connector for ServiceNow first, prior to installing th
 - Read access to `task_sla` table
 - Read access to `incident` table
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Customization Options (optional)
 

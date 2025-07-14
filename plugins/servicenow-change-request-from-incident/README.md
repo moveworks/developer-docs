@@ -1,7 +1,7 @@
 ---
+availability: IDEA
 description: A plugin that allows the creation of appropriate change requests from
   incidents.
-fidelity: GUIDE
 name: Create a Change Request from an Incident
 difficulty_level: BEGINNER
 time_in_minutes: 20

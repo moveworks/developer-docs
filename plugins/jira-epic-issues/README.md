@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows efficient searching for JIRA issues linked to a
   specific EPIC, helping improve project tracking.
 difficulty_level: BEGINNER
+domain:
+- Engineering
+- IT
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 971404c1-a937-4775-aaeb-3ae24da9fa1d
 name: Look up JIRA Issues for an Epic
@@ -39,7 +44,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # Installation Steps
 
-We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Appendix
 

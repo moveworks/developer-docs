@@ -1,5 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that looks up Ariba PRs through the PR number.
+domain:
+- Finance
+- Finance - Procurement
 fidelity: IDEA
 name: Look up Purchase Requisition
 num_implementations: 1

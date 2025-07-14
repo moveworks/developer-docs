@@ -1,7 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows a user to identify which epics have been rolled
   over to a new sprint.
 difficulty_level: BEGINNER
+domain:
+- Project Management
+- IT
+- Engineering
 fidelity: TEMPLATE
 installation_asset_uuid: 38885b68-bff3-4ab1-b497-8d84119ec8c1
 name: Look up Delayed Epics
@@ -38,7 +43,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # Installation Steps
 
-We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Appendix
 

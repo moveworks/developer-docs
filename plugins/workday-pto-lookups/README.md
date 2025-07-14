@@ -3,10 +3,14 @@ accreditations:
 - indrapaul24
 - sarthaksrinivas
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows employees to retrieve their time off balance from
   Workday.
 design_pattern_id: 28
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Time & Absence
 fidelity: TEMPLATE
 installation_asset_uuid: 44d2b992-7b09-447f-bb42-e7623b646875
 name: View Time Off Balance
@@ -45,7 +49,7 @@ We recommend creating the connector for Workday first, prior to installing this 
 
 - Assign `Worker Data: Leave of Absence`, `Worker Data: Time Off`, `Worker Data: Time Off(Time Off Balances)` and `Worker Data: Time Off(Time Off Balances Manager View)` domain permissions with both **View** and **Get** permissions access.
 
-Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

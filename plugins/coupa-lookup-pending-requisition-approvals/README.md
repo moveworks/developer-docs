@@ -1,9 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to look up purchase requisitions pending your
   approval.
 difficulty_level: BEGINNER
+domain:
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 595700e6-1e8c-4011-8ece-ca58ff3e1eb6
 name: Look Up Purchase Requisitions Pending My Approval
@@ -37,7 +40,7 @@ We recommend creating the connector for Coupa first, prior to installing this pl
 
 - User » Standard role for all users who need to create and/or approve requisitions
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

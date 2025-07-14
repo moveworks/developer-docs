@@ -1,9 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to streamline the approval process for purchase
   requisitions in Coupa.
 difficulty_level: BEGINNER
+domain:
+- Finance
 fidelity: TEMPLATE
 installation_asset_uuid: 6068a9a3-886a-40dc-a170-a97b90c4e9cb
 name: Approve or Reject a Purchase Requisition
@@ -39,7 +42,7 @@ We recommend creating the connector for Coupa first, prior to installing this pl
 
 - User » Standard role for all users who need to create and/or approve requisitions
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

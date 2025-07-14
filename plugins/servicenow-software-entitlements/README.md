@@ -1,4 +1,5 @@
 ---
+availability: IDEA
 description: A plugin that allows users to quickly access their software entitlements.
 fidelity: IDEA
 name: Look Up My Software Entitlements

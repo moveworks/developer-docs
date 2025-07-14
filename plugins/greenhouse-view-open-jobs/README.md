@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an employee to identify open roles at the company.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: 8c348433-9e5b-4233-a99a-222c0c7f846d
 name: View Open Jobs
@@ -35,7 +39,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # Installation Steps
 
-We recommend creating the connector for Greenhouse first, prior to installing this plugin. Please follow the [Greenhouse connector](https://developer.moveworks.com/creator-studio/resources/connector?id=greenhouse) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+We recommend creating the connector for Greenhouse first, prior to installing this plugin. Please follow the [Greenhouse connector](https://developer.moveworks.com/creator-studio/resources/connector?id=greenhouse) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Customization Options
 

@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that integrates with Service Now Software Asset Management (SAM)
   and allows a team member to look up license inventory.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Finance
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: 4448c494-e659-4269-b237-9bf964b895c8
 name: Check Software License Inventory
@@ -39,7 +44,7 @@ We recommend creating the connector for ServiceNow first, prior to installing th
 
 - **sam_user (Software Asset Management user)** role. More details [here](https://www.servicenow.com/docs/bundle/vancouver-it-asset-management/page/product/software-asset-management2/reference/r_SAMRoles.html).
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

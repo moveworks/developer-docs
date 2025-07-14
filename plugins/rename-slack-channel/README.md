@@ -1,6 +1,10 @@
 ---
+availability: VALIDATED
 description: A plugin that allows a user to rename a Slack channel.
 difficulty_level: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: GUIDE
 installation_asset_uuid: 01f3bcba-e3b4-45ef-a527-e465687edf99
 name: Rename Slack Channel
@@ -38,7 +42,7 @@ We recommend creating the connector for Slack first, prior to installing this pl
 
 - Assign the `channels:write`, `groups:write`, `im:write` and `mpim:write` scopes to the User token that is being used.
 
-Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Customization Options
 

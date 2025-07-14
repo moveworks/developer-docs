@@ -2,10 +2,14 @@
 accreditations:
 - indrapaul24
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows employees to access and review their own expense
   reports and relative statuses.
 design_pattern_id: 28
 difficulty_level: BEGINNER
+domain:
+- Approvals
+- Finance
 drop_accreditations:
 - ajaymerchia
 fidelity: TEMPLATE
@@ -42,7 +46,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-We recommend creating the connector for SAP Concur first, prior to installing this plugin. Please follow the [SAP Concur connector](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+We recommend creating the connector for SAP Concur first, prior to installing this plugin. Please follow the [SAP Concur connector](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Appendix
 

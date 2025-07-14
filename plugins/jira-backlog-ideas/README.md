@@ -1,8 +1,13 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows retrieving ideas from your backlog in Jira.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Project Management
+- Approvals
 fidelity: TEMPLATE
 installation_asset_uuid: a3e60d56-5302-4777-bc51-7879c32bcff0
 name: Lookup Backlog Ideas
@@ -39,7 +44,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Appendix
 

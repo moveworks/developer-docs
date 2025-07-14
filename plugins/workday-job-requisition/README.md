@@ -1,6 +1,10 @@
 ---
+availability: IDEA
 description: A plugin that allows a manager to submit job requisitions for a role
   they're looking to fill and enables them to take the next step.
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: IDEA
 name: Submit Job Requisition
 num_implementations: 1

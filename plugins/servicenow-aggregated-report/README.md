@@ -1,4 +1,5 @@
 ---
+availability: INSTALLABLE
 description: A Plugin that provides a summary of incident metrics over time, including
   Tickets Raised, Resolved, Avg. First Response & Resolution Time, First Contact Resolution
   Rate, Reopen Rate, and SLA Adherence %.
@@ -37,7 +38,7 @@ We recommend creating the connector for ServiceNow first, prior to installing th
 
 - **Read access to the `incident` &`task_sla` table in ServiceNow**
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Customization Options
 

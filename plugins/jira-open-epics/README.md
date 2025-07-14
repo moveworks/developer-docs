@@ -1,7 +1,12 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows looking up assigned epics in Jira that are still
   in progress.
 difficulty_level: BEGINNER
+domain:
+- Project Management
+- IT
+- Engineering
 fidelity: TEMPLATE
 installation_asset_uuid: c8c1aa79-1867-4cdb-b761-fb22ec1b6879
 name: Lookup Open Epics
@@ -36,7 +41,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Appendix
 

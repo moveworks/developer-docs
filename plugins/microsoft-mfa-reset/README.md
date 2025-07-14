@@ -2,8 +2,11 @@
 accreditations:
 - smartzee797
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows users to reset their Microsoft MFA device.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: ee4c234e-9573-411f-a1e2-b9ded2dad2ae
 name: Reset Microsoft MFA
@@ -40,7 +43,7 @@ We recommend creating the connector for Microsoft Graph first, prior to installi
 
 - Assign the following **Application Permissions:** `UserAuthenticationMethod.Read.All` and `UserAuthenticationMethod.ReadWrite.All`
 
-Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+Once the connector is configured, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

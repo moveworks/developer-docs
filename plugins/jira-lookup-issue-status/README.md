@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows retrieving all possible workflow statuses for a
   specific issue.
 difficulty_level: BEGINNER
+domain:
+- Engineering
+- IT
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 5631157d-c2c2-4c96-a754-c141cb35c12f
 name: Lookup Issue Status
@@ -39,7 +44,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # Installation Steps
 
-We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the [**Jira** **connector**](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Appendix
 

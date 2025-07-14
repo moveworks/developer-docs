@@ -1,9 +1,14 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows a user to query their associated assets such as
   laptops, headphones etc.
 difficulty_level: BEGINNER
+domain:
+- IT
+- Finance
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: b5a0d33a-e374-4f1a-9c80-a058d6e4050a
 name: Look Up My Assets
@@ -41,7 +46,7 @@ We recommend creating the connector for ServiceNow first, prior to installing th
 
 - **asset (Asset Manager)** role. More details [here](https://www.servicenow.com/docs/bundle/xanadu-it-service-management/page/product/asset-management/reference/r_InstalledWithAssetManagement.html).
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

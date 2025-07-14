@@ -2,9 +2,12 @@
 accreditations:
 - indrapaul24
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to retrieve customer data from Salesforce.
 design_pattern_id: 28
 difficulty_level: BEGINNER
+domain:
+- Sales
 drop_accreditations:
 - ajaymerchia
 fidelity: TEMPLATE
@@ -38,7 +41,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 We recommend creating the connector for Salesforce first, prior to installing this plugin. Please follow the [Salesforce Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=salesforce) guide to create the connector.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

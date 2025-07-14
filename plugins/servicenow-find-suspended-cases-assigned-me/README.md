@@ -1,6 +1,10 @@
 ---
+availability: IDEA
 description: A plugin that efficiently searches for and lists all suspended cases
   assigned to an employee to optimize case management.
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: IDEA
 name: Find Suspended Cases Assigned To Me
 num_implementations: 1

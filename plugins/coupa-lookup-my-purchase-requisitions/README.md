@@ -1,8 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to look up the details of your purchase requisitions.
 difficulty_level: BEGINNER
+domain:
+- Finance
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: 8e3bf4e8-0f0f-49e6-9a51-6b988f593919
 name: Look Up My Purchase Requisitions Details
@@ -37,7 +41,7 @@ We recommend creating the connector for Coupa first, prior to installing this pl
 
 - User » Standard role for all users who need to create and/or approve requisitions
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

@@ -2,14 +2,18 @@
 accreditations:
 - wdavis-moveworks
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that can find the birthdays of your teammates in Workday.
 difficulty_level: BEGINNER
+domain:
+- HR
 drop_accreditations:
 - ajaymerchia
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: 6534edfc-abd3-4abd-9fbf-46ba153f6a23
 name: Look up Birthdays
 num_implementations: 1
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ECan+you+tell+me+of+any+upcoming+birthdays%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3EGET+call+to+WorkDay+RaaS+report+for+upcoming+birthdays%3Cbr%3E%3Cbr%3EResponse%3A%3Cbr%3E%7B%3Cbr%3E%5Ct%5C%22Report_Entry%5C%22%3A+%5B%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-17%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Emma+Hobson%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-17%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Enrique+Vasquez%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-18%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Min-gyu+Kang+%EF%BC%88%EA%B0%95%EB%AF%BC%EA%B7%9C%EF%BC%89%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-19%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Maximilian+Schneider%5C%22%3Cbr%3E%5Ct%5Ct%7D%3Cbr%3E%5Ct%5D%3Cbr%3E%7D%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3ESure%2C+here+are+some+upcoming+birthdays%3A%3Cbr%3E%3Cbr%3E-+Emma+Hobson%27s+birthday+is+on+January+17th+%3Cbr%3E-+Enrique+Vasquez%27s+birthday+is+also+on+January+17th+%3Cbr%3E-+Min-gyu+Kang%27s+birthday+is+on+January+18th+%3Cbr%3E-+Maximilian+Schneider%27s+birthday+is+on+January+19th+%3Cbr%3E%3Cbr%3ELet+me+know+if+you+need+information+on+more+birthdays.%3C%2Fp%3E%22%7D%5D%7D%5D%7D
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Can+you+tell+me+of+any+upcoming+birthdays%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%3Cstrong%3EUpcoming+Birthdays%3A%3Cbr%3E%5Cn%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%3Cp%3E1.+April+9%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Robin+Sanders%3Cbr%3E%5Cn%26nbsp%3B-+Mason+Webb%3Cbr%3E%5Cn%26nbsp%3B-+Xaviere+Francois%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E2.+April+10%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Oliver+Reynolds%3Cbr%3E%5Cn%26nbsp%3B-+Kristin+Sanderson%3Cbr%3E%5Cn%26nbsp%3B-+Jonathan+Quinn%3Cbr%3E%5Cn%26nbsp%3B-+Andrea+Hillis%3Cbr%3E%5Cn%26nbsp%3B-+Hanna+Salo%3Cbr%3E%5Cn%26nbsp%3B-+Bryan+Nagallo%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E3.+April+11%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Pricila+Amiel%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E4.+April+12%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Laurie+Jenkins%3Cbr%3E%5Cn%26nbsp%3B-+Meredith+Baxter%3Cbr%3E%5Cn%26nbsp%3B-+Carme+Granell+Parellada%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E5.+April+14%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Bruce+Morton%3Cbr%3E%5Cn%26nbsp%3B-+Leslie+Boudreau%3Cbr%3E%5Cn%26nbsp%3B-+Juha+Niemi%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E6.+April+15%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Isabel+Arguello%3Cbr%3E%5Cn%26nbsp%3B-+Tom+Kerr%3Cbr%3E%5Cn%26nbsp%3B-+Matilda+Thompson+%5BC%5D%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E7.+April+16%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Willem+Berkenbosch%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E8.+April+18%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Emily+Mills%3Cbr%3E%5Cn%26nbsp%3B-+Jordan+Hsia%3Cbr%3E%5Cn%26nbsp%3B-+Kumar+Chopra%3Cbr%3E%5Cn%26nbsp%3B-+Audrey+Novak%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E9.+April+19%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Annika+Nilsson%3Cbr%3E%5Cn%26nbsp%3B-+Lucy+Collins%3Cbr%3E%5Cn%26nbsp%3B-+Nora+Berg%3Cbr%3E%5Cn%26nbsp%3B-+Katalinka+Varga%3Cbr%3E%5Cn%26nbsp%3B-+Sak+Ressam%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - HR
 systems:
@@ -18,151 +22,69 @@ time_in_minutes: 10
 video: https://youtu.be/PRSnrXB4XHk
 ---
 
-# **Introduction**
+# Introduction
 
-Workday's Reports-as-a-Service (RaaS) is a powerful feature that revolutionizes data access and integration in the Workday ecosystem. By allowing custom reports to be exposed as web services, RaaS facilitates seamless data interactions with external systems. 
+The **Look Up Birthdays** plugin enables teams to effortlessly retrieve upcoming employee birthdays from Workday using the Moveworks AI Assistant. Powered by Workday’s **Reports-as-a-Service (RaaS)**, this plugin connects to a pre-built custom report and delivers birthday information through a conversational interface — making it easier than ever to celebrate and engage with your colleagues.
 
-By bringing these reports into Creator Studio, we can add a conversational interface to them, making it easier than ever for your users to get access to the data that lies within Workday.
+This guide will walk you through how to call RaaS from Agent Studio and integrate it into your Moveworks experience. Let’s get started!
 
-In this tutorial, we will explore how to call RaaS from Creator Studio. To guide us, we will be using a pre-built report that gets the upcoming birthdays.
+# Prerequisites
 
-Let's get started!
+- Access to Agent Studio
 
 # What are we building?
 
-## Conversation Design
+## Agent Design
 
-[This purple chat](https://developer.moveworks.com/creator-studio/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A7525%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22Can+you+tell+me+of+any+upcoming+birthdays%3F%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3EGET+call+to+WorkDay+RaaS+report+for+upcoming+birthdays%3Cbr%3E%3Cbr%3EResponse%3A%3Cbr%3E%7B%3Cbr%3E%5Ct%5C%22Report_Entry%5C%22%3A+%5B%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-17%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Emma+Hobson%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-17%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Enrique+Vasquez%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-18%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Min-gyu+Kang+%EF%BC%88%EA%B0%95%EB%AF%BC%EA%B7%9C%EF%BC%89%5C%22%3Cbr%3E%5Ct%5Ct%7D%2C%3Cbr%3E%5Ct%5Ct%7B%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Next_Birthday%5C%22%3A+%5C%222024-01-19%5C%22%2C%3Cbr%3E%5Ct%5Ct%5Ct%5C%22Worker%5C%22%3A+%5C%22Maximilian+Schneider%5C%22%3Cbr%3E%5Ct%5Ct%7D%3Cbr%3E%5Ct%5D%3Cbr%3E%7D%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3ESure%2C+here+are+some+upcoming+birthdays%3A%3Cbr%3E%3Cbr%3E-+Emma+Hobson%27s+birthday+is+on+January+17th+%3Cbr%3E-+Enrique+Vasquez%27s+birthday+is+also+on+January+17th+%3Cbr%3E-+Min-gyu+Kang%27s+birthday+is+on+January+18th+%3Cbr%3E-+Maximilian+Schneider%27s+birthday+is+on+January+19th+%3Cbr%3E%3Cbr%3ELet+me+know+if+you+need+information+on+more+birthdays.%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Can+you+tell+me+of+any+upcoming+birthdays%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%3Cstrong%3EUpcoming+Birthdays%3A%3Cbr%3E%5Cn%3C%2Fstrong%3E%3C%2Fp%3E%5Cn%3Cp%3E1.+April+9%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Robin+Sanders%3Cbr%3E%5Cn%26nbsp%3B-+Mason+Webb%3Cbr%3E%5Cn%26nbsp%3B-+Xaviere+Francois%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E2.+April+10%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Oliver+Reynolds%3Cbr%3E%5Cn%26nbsp%3B-+Kristin+Sanderson%3Cbr%3E%5Cn%26nbsp%3B-+Jonathan+Quinn%3Cbr%3E%5Cn%26nbsp%3B-+Andrea+Hillis%3Cbr%3E%5Cn%26nbsp%3B-+Hanna+Salo%3Cbr%3E%5Cn%26nbsp%3B-+Bryan+Nagallo%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E3.+April+11%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Pricila+Amiel%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E4.+April+12%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Laurie+Jenkins%3Cbr%3E%5Cn%26nbsp%3B-+Meredith+Baxter%3Cbr%3E%5Cn%26nbsp%3B-+Carme+Granell+Parellada%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E5.+April+14%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Bruce+Morton%3Cbr%3E%5Cn%26nbsp%3B-+Leslie+Boudreau%3Cbr%3E%5Cn%26nbsp%3B-+Juha+Niemi%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E6.+April+15%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Isabel+Arguello%3Cbr%3E%5Cn%26nbsp%3B-+Tom+Kerr%3Cbr%3E%5Cn%26nbsp%3B-+Matilda+Thompson+%5BC%5D%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E7.+April+16%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Willem+Berkenbosch%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E8.+April+18%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Emily+Mills%3Cbr%3E%5Cn%26nbsp%3B-+Jordan+Hsia%3Cbr%3E%5Cn%26nbsp%3B-+Kumar+Chopra%3Cbr%3E%5Cn%26nbsp%3B-+Audrey+Novak%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E9.+April+19%2C+2025%3A%3Cbr%3E%5Cn%26nbsp%3B-+Annika+Nilsson%3Cbr%3E%5Cn%26nbsp%3B-+Lucy+Collins%3Cbr%3E%5Cn%26nbsp%3B-+Nora+Berg%3Cbr%3E%5Cn%26nbsp%3B-+Katalinka+Varga%3Cbr%3E%5Cn%26nbsp%3B-+Sak+Ressam%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
 
-**This use case is made up of:**
+# Installation Steps
 
-✨ **Triggers:** Natural Language
+We recommend creating the connector for Workday first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=workday) guide to create the connector.
 
-🤲 **Slots**: None
+**Note**: For **Look up Birthdays** functionality, you will need to also add the following permission (the connector guide will walk you through how to add domain permissions): 
 
-🏃‍♂️ **Actions:** Retrieve data from workday report
+- Assign the `Public Profile Preferences: Birthday` domain permission with **Get** access.
 
-📜 **Response Data:** The data from a RaaS report
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
-📚 **Guidelines:** Select fields to render from RaaS report
+# Customization Options
 
-Based on the needs of this use case, we should build a [Static Query](https://developer.moveworks.com/creator-studio/resources/design-pattern?id=static-query)
+After installing the plugin from the marketplace, you must **update the API endpoint** in the plugin configuration with your organization's Workday report URL.You can find this URL by following the steps below. This ensures the plugin fetches birthday data from your tenant-specific Workday report.The final URL will look like:
+https://your-domain.com/ccx/service/customreport2/<tenant>/<username>/Alert_-_Birthdays_for_this_week_and_next?format=json
 
-## API Design
+### **Get the URL for the Report**
 
-There’s only 1 API needed to build this use case.
+In this step, we will get the URL for the report we want to run within Agent Studio. We are using a inbuilt report as part of this example but you can call any report that already exists or that you create using these steps.
 
-### API #1: Get RaaS Report
+We are going to use the `*Alert - Birthdays for this week and next*` report to get the upcoming birthdays for this example.
 
-Since we want to get a RaaS report, we only need to reference the report in our API call and get the results from the report to display within Creator Studio.
-
-# **Prerequisites**
-
-- A connection to Workday, [follow our guide.](../../connectors/workday/README.md)
-- A user login to Workday.
-
-# **Walkthrough**
-
-## **Step 1: Get the URL for the Report**
-
-In this step, we will get the URL for the report we want to run within Creator Studio. We are using a pre-made report as part of this example but you can call any report that already exists or that you create using these steps.
-
-We are going to use the *Alert - Birthdays for this week and next* report to get the upcoming birthdays for this example.
-
-1. Login to Workday and search for “All Custom Reports” in the search bar.
+1. Login to Workday and search for “**All Custom Reports**” in the search bar.
     
-    ![Search for all custom reports in workday](images/Untitled.png)
+    ![step1.png](Look%20up%20Birthdays%20ae22eca697bb41648f5201f85bb0fbea/step1.png)
     
-2. Filter *Custom Report Name* by “Birthday”.
-3. Check the box next to “Alert - Birthdays for this week and next” and filter.
+2. Filter *Custom Report Name* by “Birthday”.
+3. Check the box next to “**Alert - Birthdays for this week and next**” and filter.
     
-    ![choose the "Alert - birthdays for this week and next"](images/Untitled%201.png)
+    ![step2.png](Look%20up%20Birthdays%20ae22eca697bb41648f5201f85bb0fbea/step2.png)
     
 4. Click on the link for “Alert - Birthdays for this week and next”.
     
-    ![shows the report from the search results](images/Untitled%202.png)
+    ![step3.png](Look%20up%20Birthdays%20ae22eca697bb41648f5201f85bb0fbea/0ff66ab3-61f4-4f52-a23f-8640faec9711.png)
     
-5. From the ellipse drop-down, go to *Web Service → View URLs.*
+5. From the ellipsis drop-down, go to **Custom Report → Edit**. Navigate to the **Share** section, select **"Share with specific authorized groups and users"** as the **Report Definition Sharing Option** and then add your Security Group and API Client names under **Authorized Groups** and **Authorized Users**, respectively.
     
-    ![the ellipse for the report to show custom actions](images/Untitled%203.png)
+    ![Screenshot 2025-04-21 at 3.28.05 PM.png](Look%20up%20Birthdays%20ae22eca697bb41648f5201f85bb0fbea/Screenshot_2025-04-21_at_3.28.05_PM.png)
     
-6. You will get a dialogue to sign in, press cancel and copy the URL after *[wd2-impl-services1.workday.com](http://wd2-impl-services1.workday.com)* 
+6. From the ellipse drop-down, go to *Web Service → View URLs.*
     
-    ![browser window showing url](images/Untitled%204.png)
+    ![step4.png](Look%20up%20Birthdays%20ae22eca697bb41648f5201f85bb0fbea/step4.png)
     
-    which should look something like this: `/ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next`
+7. You will see a dialog prompting you to sign in—press **Cancel** and copy the URL after [*wd2-impl-services1.workday.com](http://wd2-impl-services1.workday.com/) which should look something like this:* 'https://your-domain.com/*/ccx/service/customreport2/[your_tenant]/[your user_name]/Alert_-_Birthdays_for_this_week_and_next’.* This will be your API endpoint to fetch upcoming birthday data.
     
-
+    ```bash
+    curl 'https://your-domain.com/ccx/service/customreport2/<INSTANCE>/<your *user_name*>/Alert_-_Birthdays_for_this_week_and_next?format=json'
+    --user '<api_key>:'
+    ```
     
-    **Note**: Don’t copy the *format* parameter on the end, we will put this in manually within Creator Studio. Your report may have other parameters as well if you have chosen one that takes inputs. Make note of these parameters and the format so you can call them in the next step.
-    
-
-## **Step 2: Build in Creator Studio**
-
-We will now go into Creator Studio to create the query. You can follow [our guides](https://developer.moveworks.com/creator-studio/quickstart/queries/) for more complex setup however we will go into the specific areas of note for our sample report in the following.
-
-1. Under Queries, click *CREATE* to create a new query.
-    
-    ![create button highlighted in creator studio queries page](images/Untitled%205.png)
-    
-2. Give it a name and description.
-    
-    ![basic info page of creating a query in creator studio](images/Untitled%206.png)
-    
-    **Note:** The description will be part of how Moveworks finds the query when a user is searching so try to use a description that makes sense.
-    
-    Click *Next.*
-    
-3. Choose the connector you created previously, [follow our guide](../../connectors/workday/README.md) if you haven’t already done so.
-    
-    ![choose a system with workday as the chosen system](images/Untitled%207.png)
-    
-    Click *Next*
-    
-4. Paste the URL you copied earlier and add any parameter(s) from earlier under *Query parameters*. In this example report, we only had one parameter - *format -* which had a value of “rss”. “rss” isn’t a format we support but “json” is, so we will use this in place.
-    
-    ![api connection parameters ](images/Untitled%208.png)
-    
-    Click *Next.*
-    
-5. Click *Test* to test the report call to ensure this will work as expected, you should see something similar to the following:
-    
-    ![additional query parameters for api connection](images/Untitled%209.png)
-    
-    Click *Next.*
-    
-6. Now we will choose the values of the json that we want to display when running this query. In this example, we only have two return values so our setup is quite simple however you can follow [our guides](https://developer.moveworks.com/creator-studio/quickstart/queries/) if your example is more complex and you want to understand the nuances of this screen.
-    
-    ![choose fields to return to the copilot](images/Untitled%2010.png)
-    
-    Click *Next.*
-    
-7. We have no follow up actions so just click *Next.*
-    
-    ![follow up actions is empty](images/Untitled%2011.png)
-    
-8. Fill in your sample utterances so we understand how we want to call this. I put in three:
-    - What are the upcoming birthdays?
-    - Who has the next birthday?
-    - When is the next birthday in workday?
-    
-    ![utterances to trigger](images/Untitled%2012.png)
-    
-    Click *Next.*
-    
-9. From a testing perspective, you may want to launch to yourself first or you can launch to all users. Don’t forget to click the checkbox!
-    
-    ![launch screen showing launch to all users](images/Untitled%2013.png)
-    
-    Click *Launch.*
-    
-
-## Step 3: See it in action!
-
-Trigger the use case by asking for it from your Copilot. 
-
-![real image of copilot in action showing the query and upcoming birthdays](images/Untitled%2014.png)
-
-# Congratulations!
-
-Without having to write a line of code, you just added a RaaS report to query Workday from within your copilot! Now you might want to look at some of your other reports to apply what you have learned and pull even more data and use cases.
+    ![step5.png](Look%20up%20Birthdays%20ae22eca697bb41648f5201f85bb0fbea/step5.png)

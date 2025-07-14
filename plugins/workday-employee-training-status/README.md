@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows a manager to see who has not completed their required
   trainings yet and enables them to send a prompting message.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Learning & Development
 fidelity: TEMPLATE
 installation_asset_uuid: b8c2fbfa-de63-429f-b99f-4877a86e4194
 name: Check Employee Training Status

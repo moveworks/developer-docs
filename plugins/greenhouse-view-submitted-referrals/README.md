@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows recruiters or HR to query the bot for a list of
   job referrals submitted by employees.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: f2e06341-096d-489a-b7b2-a81d83c0e859
 name: View Submitted Referrals
@@ -36,7 +40,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # Installation Steps
 
-We recommend creating the connector for Greenhouse first, prior to installing this plugin. Please follow the [Greenhouse connector](https://developer.moveworks.com/creator-studio/resources/connector?id=greenhouse) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+We recommend creating the connector for Greenhouse first, prior to installing this plugin. Please follow the [Greenhouse connector](https://developer.moveworks.com/creator-studio/resources/connector?id=greenhouse) guide to create the connector. After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 **Launch Configuration**
 

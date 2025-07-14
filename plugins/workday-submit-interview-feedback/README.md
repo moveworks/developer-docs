@@ -1,5 +1,9 @@
 ---
+availability: INSTALLABLE
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
 installation_asset_uuid: 9ed054a6-b357-4a97-996e-f465000c3764
 name: Submit Interview Feedback
