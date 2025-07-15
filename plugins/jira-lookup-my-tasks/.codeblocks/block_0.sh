@@ -1,4 +1,4 @@
-curl --request GET \
-  --url 'https://<YOUR_INSTANCE>/rest/api/3/search?fields=summary,status,project,assignee&jql=assignee = "<EMAIL_ID>" AND statusCategory != "Done"&maxResults=100' \
-  --user 'email@example.com:<api_token>' \
-  --header 'Accept: application/json'
+curl --request GET
+--location 'https://<YOUR_DOMAIN>/rest/api/3/search?jql=assignee="{{email}}" AND statusCategory != Done &fields=summary,status,project,key,duedate' \
+--header 'Authorization: Basic <API_TOKEN>' \
+--header 'Accept: application/json' \
