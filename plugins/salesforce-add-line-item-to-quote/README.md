@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that adds a line item a quote for a qualified opportunity.
 difficulty_level: INTERMEDIATE
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: 977ac086-f008-495d-b90b-0cda407bb656
 name: Add a Line Item to a Quote

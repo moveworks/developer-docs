@@ -1,6 +1,10 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to update a task status or details.
 difficulty_level: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: ab689642-2c5c-4fb7-9871-31590a780d95
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=e5495a05-5901-4e0f-bed4-f075ac33b1b4

@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin which tells employees about which learning and development courses
   they have yet to complete to keep them on track.
 difficulty_level: INTERMEDIATE
+domain:
+- HR
+- HR - Learning & Development
 fidelity: TEMPLATE
 installation_asset_uuid: 81de2268-8007-4a3e-bed5-9db3446ab711
 name: Look up Assigned Trainings

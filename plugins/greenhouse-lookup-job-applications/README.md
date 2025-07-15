@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows hiring managers or recruiters to retrieve candidate
   applications for a specific job.
 difficulty_level: BEGINNER
+domain:
+- HR - Recruiting & Talent
+- HR
 fidelity: TEMPLATE
 installation_asset_uuid: 42fb6e17-8122-4eb7-8237-8c374eb90d57
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=42fb6e17-8122-4eb7-8237-8c374eb90d57

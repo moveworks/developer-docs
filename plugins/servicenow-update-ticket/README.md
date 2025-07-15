@@ -1,4 +1,5 @@
 ---
+availability: VALIDATED
 description: Update/Bulk update ticket status, and other applicable ticket fields.
 difficulty_level: BEGINNER
 fidelity: VALIDATED

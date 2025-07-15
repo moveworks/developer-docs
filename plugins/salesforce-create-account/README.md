@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that creates an account in salesforce.
 difficulty_level: BEGINNER
+domain:
+- Sales
 fidelity: TEMPLATE
 installation_asset_uuid: d57ca950-bb78-4122-beca-bf1c692153d5
 name: Create an Account

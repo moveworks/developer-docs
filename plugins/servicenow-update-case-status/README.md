@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows an agent to update the status of a given case.
 difficulty_level: BEGINNER
+domain:
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: 59b3482e-8485-4794-aeb2-0b8fbb8e547f
 name: Update Status of a Case

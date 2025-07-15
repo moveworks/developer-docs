@@ -1,6 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that lookups employee workday information.
 difficulty_level: BEGINNER
+domain:
+- HR
+- HR - Employee Records
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 16dede59-86a9-46cd-b441-c0b6cf23b0bf
 name: Look up Personal Employee Information

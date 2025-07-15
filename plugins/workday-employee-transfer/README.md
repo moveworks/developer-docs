@@ -2,10 +2,16 @@
 accreditations:
 - sarthaksrinivas
 - DEFAULT
+agent_functionality:
+- Polling Required
+availability: VALIDATED
 custom_tags:
 - Polling Required
 description: A plugin which allows employees to remain aware of promotions, location
   changes, or othere.
+domain:
+- HR
+- HR - Employee Records
 fidelity: VALIDATED
 name: Notify on Employee Transfer
 num_implementations: 1

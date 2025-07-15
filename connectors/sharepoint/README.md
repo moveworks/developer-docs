@@ -1,8 +1,8 @@
 ---
+availability: VALIDATED
 fidelity: VALIDATED
 name: SharePoint
 num_implementations: 0
-
 ---
 
 # Introduction

@@ -1,6 +1,11 @@
 ---
+Jira_Lookup_My_Jira_Tasks
 description: A plugin that allows looking up various tasks assigned to you in Jira — including overdue, upcoming due, and recently updated tasks — in a single view.
+main
 difficulty_level: BEGINNER
+domain:
+- Project Management
+- IT
 fidelity: TEMPLATE
 installation_asset_uuid: a66c2809-b4af-4032-9afc-09fcea294cf1
 name: Look Up My Tasks
