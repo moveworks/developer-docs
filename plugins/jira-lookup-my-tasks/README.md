@@ -1,6 +1,5 @@
 ---
-description: A plugin that allows looking up issues assigned to you in Jira without
-  manually filtering them.
+description: A plugin that allows looking up various tasks assigned to you in Jira — including overdue, upcoming due, and recently updated tasks — in a single view.
 difficulty_level: BEGINNER
 fidelity: TEMPLATE
 installation_asset_uuid: a66c2809-b4af-4032-9afc-09fcea294cf1
@@ -42,8 +41,6 @@ Once the connector is successfully configured, follow our [plugin installation 
 
 ## API #1: Lookup My Jira Tasks
 
-The **Lookup My Jira Tasks** API retrieves overdue and upcoming tasks that assigned to user.
-
 ```bash
 curl --request GET
 --location 'https://<YOUR_DOMAIN>/rest/api/3/search?jql=assignee="{{email}}" AND statusCategory != Done AND duedate is not EMPTY ORDER BY duedate ASC&fields=summary,status,project,key,duedate' \
@@ -53,4 +50,4 @@ curl --request GET
 
 **Query Parameters**
 
-- `email` (string) – The email address of the user whose overdue tasks and upcoming tasks need to be retrieved.
+- `email` (string) – The email address of the user whose tasks need to be retrieved.
