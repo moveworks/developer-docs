@@ -1,6 +1,6 @@
 ---
 availability: INSTALLABLE
-description: A plugin that allows looking up various tasks assigned to you in Jira — including overdue, upcoming due, and recently updated tasks — in a single view
+description: A plugin that allows looking up various tasks assigned to you in Jira — including overdue, upcoming due, and recently updated tasks — in a single view.
 difficulty_level: INTERMEDIATE
 domain:
 - IT
