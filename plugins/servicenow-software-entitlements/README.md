@@ -10,8 +10,7 @@ systems:
 - servicenow
  
 ---
-# Look Up My Software Entitlements
- 
+
 ## Introduction
  
 The “Look Up My Software Entitlements” plugin allows users to retrieve and view a list of software licenses assigned to them directly through the Moveworks AI Assistant. By removing the need to navigate ServiceNow manually, this plugin simplifies access to software entitlement data, enabling employees to quickly check what software they are licensed to use and make informed decisions about tool usage or requests.
