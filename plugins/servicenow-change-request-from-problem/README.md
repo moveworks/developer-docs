@@ -13,7 +13,6 @@ systems:
 - servicenow
 time_in_minutes: 20
 ---
-
 ## Introduction
 
 The **“Create Change Request from Problem”** plugin empowers IT teams to quickly generate a **Change Request** in **ServiceNow** directly from an existing **Problem record** using the Moveworks AI Assistant. This streamlines the change management process by eliminating manual steps, ensuring better tracking, and enabling faster resolution of issues that require infrastructure or process changes.
@@ -41,10 +40,24 @@ Once the connector is successfully configured, follow our [plugin installation d
 
 ## **Appendix**
 
-### API #1: Get Problem Records by Description
+### API #1: Get Problem Record by Number
 
 ```bash
-curl --location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=descriptionLIKE{{description}}' \
+curl --location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=number={{problem_number}}&sysparm_fields=sys_id,number,short_description,description,state,problem_state,priority,impact,urgency,category' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Content-Type: application/json'
+```
+
+**Query Parameters:**
+
+- `number` (string) – A specific **Problem number** to search for in the `problem` table.
+- `sysparm_fields` (string) – Fields to include in the response.
+
+### API #2: Get Problem Records by Description
+
+```bash
+curl --location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=descriptionLIKE{{description}}&sysparm_fields=sys_id,number,short_description,description,state,problem_state,priority,impact,urgency,category' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json'
@@ -53,8 +66,9 @@ curl --location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=descr
 **Query Parameters:**
 
 - `description` (string) – A keyword or phrase to match against the problem's description field
+- `sysparm_fields` (string) – Fields to include in the response.
 
-### API #2: Create a Change Request from a Problem
+### API #3: Create a Change Request from a Problem
 
 ```bash
 curl --location 'https://<YOUR_DOMAIN>/api/now/table/change_request' \
