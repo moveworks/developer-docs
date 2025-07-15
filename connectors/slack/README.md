@@ -20,7 +20,7 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 
 1. Go to [Your Apps](https://api.slack.com/apps) on Slack API's website.
 2. Click on `Create New App` and choose `From scratch`.
-3. Name your app (e.g., `Agent Studio Bot`) and select your Slack workspace.
+3. Name your app (e.g., `Creator Studio Bot`) and select your Slack workspace.
     
     ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Untitled.png)
     
