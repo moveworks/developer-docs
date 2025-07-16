@@ -84,27 +84,32 @@ Example API: Get All Projects
         
     - Send the Request and Verify the Response:
         - Send the request and upon success, you will receive list of all projects in your Jira instance, including their key, name, type, links and metadata.
+        
+## Step 4: Connect to Agent Studio
 
-## **Step 4: Connect Jira to Agent Studio**
+1. In Agent Studio, create a new **HTTP Action** and Test it.
+   - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
 
-- In Agent Studio, create a new connector with the following configuration:
-    - **Base URL**: `https://<your-site>.atlassian.net`
-    - Name : Name accordingly
-    - Description : Give a suitable description.
-    - **Auth Config**: Basic Auth
-    - **Username**: username from previous steps
-    - **Password**: password from previous steps
+      ![Untitled](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic.png)
 
-      ![Pasted_Graphic.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic.png)
-      ![Pasted_Graphic_1.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_1.png)
-      ![Pasted_Graphic_2.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_2.png)
-      
+      ![Untitled](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_1.png)
+   
+   - Click on **Create New Connector** and fill the following information.
+        - **Base URL**: `https://<your-site>.atlassian.net`
+        - Name : Name accordingly
+        - Description : Give a suitable description.
+        - **Auth Config**: Basic Auth
+        - **Username**: username from previous steps
+        - **Password**: password from previous steps
 
-- Test your Connector by clicking on the Test button and check if the connector setup is successfull.
+        [Pasted_Graphic_2.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_2.png)
+   
+3. Add your API details and Test.
+    - Fill the endpoint as : **/rest/api/3/project**
+    - Click Test
+   
+      [Pasted_Graphic_3.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_3.png)
 
-    ![Pasted_Graphic_3.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_3.png)
-      
-    
 # Congratulations!
 
 You've successfully integrated Jira’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
