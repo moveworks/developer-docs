@@ -59,7 +59,7 @@ Integrating Zoom with Agent Studio allows seamless incorporation of virtual meet
       ![Untitled](Zoom%201b5588d8909f80eab403e031bd13a14e/Pasted%20Graphic%201.png)
    
    - Click on **Create New Connector** and fill the following information.
-        - Base Url: **https://graph.microsoft.com/v1.0**
+        - Base Url: **https://api.zoom.us/v2**
         - Name: Name Accordingly
         - Description: Give a Suitable Description.
         - Auth Config: **Oauth2**
