@@ -29,7 +29,7 @@ Integrating Zoom with Agent Studio allows seamless incorporation of virtual meet
     
     ![image.png](Zoom%201b5588d8909f80eab403e031bd13a14e/image%202.png)
     
-4. After naming your app you will be brought to this page, make sure to save your `Account ID`, `Client ID`, and `Client Secret`. Click **Continue** after saving these values.
+4. After naming your app you will be brought to this page, make sure to save your **Account ID**, **Client ID**, and **Client Secret**. Click **Continue** after saving these values.
     
     ![Screenshot 2025-03-17 at 1.27.17 PM.png](Zoom%201b5588d8909f80eab403e031bd13a14e/Screenshot_2025-03-17_at_1.27.17_PM.png)
     
