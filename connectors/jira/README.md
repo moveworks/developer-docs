@@ -102,13 +102,13 @@ Example API: Get All Projects
         - **Username**: username from previous steps
         - **Password**: password from previous steps
 
-        [Pasted_Graphic_2.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_2.png)
+        ![Pasted_Graphic_2.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_2.png)
    
 3. Add your API details and Test.
     - Fill the endpoint as : **/rest/api/3/project**
     - Click Test
    
-      [Pasted_Graphic_3.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_3.png)
+      ![Pasted_Graphic_3.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_3.png)
 
 # Congratulations!
 
