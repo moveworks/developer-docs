@@ -34,7 +34,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we do recommend that you create a gong connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Gong Connector Guide](http://developer.moveworks.com/marketplace/package?id=gong&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a gong connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Gong Connector Guide](http://developer.moveworks.com/marketplace/package?id=gong&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to get your plugin installed in minutes.
 
 # Appendix
 

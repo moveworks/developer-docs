@@ -17,15 +17,15 @@ time_in_minutes: 30
 
 # **Introduction**
 
-****The **Databricks AI/BI Genie Plugin** allows your users to interact with Databricks's advanced AI and BI functionalities seamlessly through the Moveworks AI Assistant. This plugin enables users to effortlessly submit queries and gather insightful analytics directly from their Databricks data.
+The **Databricks AI/BI Genie Plugin** allows your users to interact with Databricks's advanced AI and BI functionalities seamlessly through the Moveworks AI Assistant. This plugin enables users to effortlessly submit queries and gather insightful analytics directly from their Databricks data.
 
 This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
-- Databricks Connector set up in Creator Studio
-- Your SQL Warehouse selected for this Genie Space **must** be running in order for the plugin to function
+- Access to Agent Studio.
+- [Databricks Connector](https://developer.moveworks.com/marketplace/package?id=databricks&hist=home%2Cbrws) set up in Agent Studio.
+- Your SQL Warehouse selected for this Genie Space **must** be running in order for the plugin to function.
 
 # **What are we building?**
 

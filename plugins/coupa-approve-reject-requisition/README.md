@@ -28,7 +28,7 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 # Prerequisites
 
 - Access to Agent Studio
-- Access to the ‘Look Up Purchase Requisitions Pending My Approval’ plugin. The Approve or Reject plugin works after the previous plugin has been called, allowing the user to Approve or Reject a requisition pending their approval.
+- Access to the [**Look Up Purchase Requisitions Pending My Approval**](https://developer.moveworks.com/marketplace/plugin?id=coupa-lookup-pending-requisition-approvals&hist=home%2Cbrws) plugin. The Approve or Reject plugin works after the previous plugin has been called, allowing the user to Approve or Reject a requisition pending their approval.
 
 # What are we building?
 

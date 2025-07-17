@@ -29,7 +29,7 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 ## Prerequisites
 
 - Access to Agent Studio
-- Access to the ‘Look Up Expense Reports Pending My Approval’ plugin. The Approve or Reject plugin works after the previous plugin has been called, allowing the user to Approve or Reject an expense report pending their approval.
+- Access to the [**Look Up Expense Reports Pending My Approval**](https://developer.moveworks.com/marketplace/plugin?id=coupa-view-pending-expense-approvals&hist=home%2Cbrws) plugin. The Approve or Reject plugin works after the previous plugin has been called, allowing the user to Approve or Reject an expense report pending their approval.
 
 # What are we building?
 
