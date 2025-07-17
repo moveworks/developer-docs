@@ -18,7 +18,7 @@ systems:
 ---
 ## **Introduction:-**
 
-The **“Issues Pending Approval”** plugin helps users efficiently identify Jira issues that are awaiting approval—directly through the Moveworks AI Assistant. By automatically filtering and retrieving issues in the pending approval status, users can quickly gain visibility into bottlenecks without manual searching. This streamlined approach improves workflow transparency, accelerates decision-making, and ensures timely progress across Jira projects.
+The **“Lookup Issues Pending Approval”** plugin helps users efficiently identify Jira issues that are awaiting approval—directly through the Moveworks AI Assistant. By automatically filtering and retrieving issues in the pending approval status, users can quickly gain visibility into bottlenecks without manual searching. This streamlined approach improves workflow transparency, accelerates decision-making, and ensures timely progress across Jira projects.
 
 This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
 
@@ -74,7 +74,6 @@ curl --request GET \
 This filters and retrieves only those issues that are currently in the **"Waiting for approval"** status.
 
 <aside>
-💡
 
 **Important Note:** If your Jira project uses a different status name (e.g., "Pending approval", "Awaiting sign-off", etc.), you **must update the status value in the JQL** accordingly. The status name is **case-sensitive** and must exactly match the status used in your Jira workflow.
 
