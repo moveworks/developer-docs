@@ -27,7 +27,7 @@ This guide will help you install and configure the plugin in **Agent Studio** wi
 # Prerequisites
 
 - Access to Agent Studio
-- [Asana Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=asana) built in Creator Studio (follow the Asana Authentication guide to create your connector)
+- [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) built in Agent Studio.
 - [Get a List of my Projects](https://developer.moveworks.com/creator-studio/resources/plugin?id=asana-list-projects) Plugin
 
 # What are we building?
@@ -38,13 +38,13 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **Asana Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **Asana Get Tasks from Project** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) to do so. Once completed, follow our plugin installation documentation to install the **Asana Get Tasks from Project** plugin in minutes.
 
 For **Asana Get Tasks from Project**, you will also need to add the following permissions:
 
 **Required Scopes:**
 
-- `tasks:read` – Allows reading task details from a project
+- ***tasks:read*** – Allows reading task details from a project
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 

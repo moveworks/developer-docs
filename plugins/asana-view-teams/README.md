@@ -21,14 +21,14 @@ time_in_minutes: 30
 
 The **List Teams in a Workspace** plugin allows users to retrieve and view a list of all teams within a workspace in Asana. By leveraging Asana’s API, this plugin simplifies workspace management by quickly fetching key details—such as team names, descriptions, and members.
 
-This guide walks you through adding the **View All Teams** feature to your bot using Creator Studio.
+This guide walks you through adding the **View All Teams** feature to your bot using Agent Studio.
 
 Let’s get started!
 
 # Prerequisites
 
-- [Postman](https://www.postman.com/) or an API Testing Tool
-- [Asana Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=asana) built in Creator Studio (follow the Asana Authentication guide to create your connector)
+- [Postman](https://www.postman.com/) or an API Testing Tool.
+- [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) built in Agent Studio.
 
 # **What are we building?**
 
@@ -36,7 +36,7 @@ Let’s get started!
 
 This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Can+you+give+me+a+list+of+all+the+teams+present+in+my+workspace%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Here+is+a+list+of+all+the+teams+present+in+your+%3Cb%3EMoveworks%3C%2Fb%3E+workspace%3A%22%7D%2C%7B%22richText%22%3A%22%3Cp%3E1.+Engineering+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E2.+Marketing+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E3.+Sales+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E4.+Product+Team%3C%2Fp%3E%5Cn%3Cp%3E5.+Customer+Success+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E6.+Finance+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E7.+Human+Resources%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E8.+IT+Support%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E9.+Legal+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E10.+Operations+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E11.+Data+Science+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E12.+Design+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E13.+Research+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E14.+QA+Team%26nbsp%3B%3C%2Fp%3E%5Cn%3Cp%3E15.+Security+Team%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22If+you+need+more+information+about+any+specific+team%2C+feel+free+to+ask%21%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
 
-# Creator Studio Components
+# Agent Studio Components
 
 - **Triggers**:
     1. Natural Language
@@ -88,7 +88,7 @@ curl --request GET \
 
 - Define your API actions for fetching all the tasks:
     1. **Get teams in workspace**
-        - In Creator Studio, create a new Plugin.
+        - In Agent Studio, create a new Plugin.
             - Navigate to `Plugins` section > `Actions` tab
             - Click on `CREATE` to create a new plugin
         - Set up your API Connection to configure the API endpoint based on the following:

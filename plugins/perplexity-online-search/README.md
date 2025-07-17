@@ -19,7 +19,7 @@ video: https://youtu.be/krteejLKJUQ
 
 [Perplexity](https://www.perplexity.ai/) is a search engine that continuously indexes the web and allows you to access LLMs that have access to that content. 
 
-In this tutorial, we will demonstrate how to retrieve online search results from Perplexity through Creator Studio.
+In this tutorial, we will demonstrate how to retrieve online search results from Perplexity through Agent Studio.
 
 Let's get started!
 
@@ -29,7 +29,7 @@ Let's get started!
 
 [This purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder/?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A6159%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EWho+won+the+Superbowl+2024%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3EMoveworks+rephrases+query+to+%5C%22Who+won+the+Superbowl+in+2024%5C%22%3Cbr%3E%3Cbr%3ERequest+to+Perplexity+%28abbrievated%29%3A%3Cbr%3E%7B%3Cbr%3E%5C%22prompt%5C%22%3A+%5C%22Who+won+the+Superbowl+in+2024%5C%22%3Cbr%3E%7D%3Cbr%3E%3Cbr%3EOutbound+Response+%28abbrievated%29%3A%3Cbr%3E%7B%3Cbr%3E%5C%22result%5C%22%3A+%5C%22The+Kansas+City+Chiefs+won+Super+Bowl+LVIII+in+the+year+2024%2C+defeating+the+San+Francisco+49ers+with+a+final+score+of+25-22+in+overtime.%5C%22%3Cbr%3E%7D%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EThe+Kansas+City+Chiefs+won+Super+Bowl+LVIII+in+the+year+2024%2C+defeating+the+San+Francisco+49ers+with+a+final+score+of+25-22+in+overtime.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EWho+was+the+QB+for+the+opposing+team%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22ANNOTATION%22%2C%22text%22%3A%22%3Cp%3EMoveworks+rephrases+query+to+%5C%22Who+was+the+quarterback+for+the+San+Francisco+49ers+in+Super+Bowl+LVIII+in+2024%3F%5C%22%3Cbr%3E%3Cbr%3ERequest+to+Perplexity+%28abbrievated%29%3A%3Cbr%3E%7B%3Cbr%3E%5C%22prompt%5C%22%3A+%5C%22Who+was+the+quarterback+for+the+San+Francisco+49ers+in+Super+Bowl+LVIII+in+2024%3F%5C%22%3Cbr%3E%7D%3Cbr%3E%3Cbr%3EOutbound+Response+%28abbrievated%29%3A%3Cbr%3E%7B%3Cbr%3E%5C%22result%5C%22%3A+%5C%22Brock+Purdy%5C%22%3Cbr%3E%7D%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EThe+quarterback+for+the+San+Francisco+49ers+in+Super+Bowl+LVIII%2C+which+was+held+in+2024%2C+was+Brock+Purdy%3Cbr%3E%3C%2Fp%3E%22%7D%5D%7D%7D%5D%7D) shows the experience we are going to build.
 
-## Creator Studio Components
+## Agent Studio Components
 
 - Triggers:
     1. Natural language
@@ -54,7 +54,7 @@ Based on the [Supported Models](https://docs.perplexity.ai/guides/model-cards) d
 
 # Steps
 
-## Step 1: Build in Creator Studio
+## Step 1: Build in Agent Studio
 
 ### Setup use case
 
@@ -120,7 +120,7 @@ Based on the [Supported Models](https://docs.perplexity.ai/guides/model-cards) d
         | --- | --- |
         | accept | application/json |
         | content-type | application/json |
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ![Untitled](Use%20Case%20Tutorial%20Perplexity%20Online%20Search%20f1697b887ee94a45a422a1c4e988bada/Untitled%201.png)
     

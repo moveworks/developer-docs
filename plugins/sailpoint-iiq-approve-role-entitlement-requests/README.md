@@ -53,9 +53,9 @@ Please review the [SailPoint IIQ Connector](https://developer.moveworks.com/cre
 > **Important**: You need to install the Moveworks for Sailpoint Plugin and set up an OAuth Client as mentioned in the above guide to authorize the API requests described below.
 > 
 
-# **For Creator Studio Developers**
+# **For Agent Studio Developers**
 
-## **Step 1: Check if you have built a Creator Studio Connector for your middleware / APIM tool**
+## **Step 1: Check if you have built a Agent Studio Connector for your middleware / APIM tool**
 
 This step was outlined in the [Prerequisites section](#prerequisites) above, and should be completed before you begin building your plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
 
@@ -709,9 +709,9 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
 
-## **Step 4: Build in Creator Studio**
+## **Step 4: Build in Agent Studio**
 
-1. Create a new Event in Creator Studio named "🎫 Entitlement Request Approvals in SailPoint IIQ".
+1. Create a new Event in Agent Studio named "🎫 Entitlement Request Approvals in SailPoint IIQ".
     - Choose to add a follow-up action so that you can approve or reject the ticket.
     
     ![Screenshot 2024-09-20 at 7.16.07 PM.png](Approve%20Reject%20Role%20Entitlement%20Requests%209efceba376ca450bbfbbd350be83bcfc/Screenshot_2024-09-20_at_7.16.07_PM.png)
@@ -731,7 +731,7 @@ if __name__ == "__main__":
     
     ![Screenshot 2024-09-20 at 7.18.53 PM.png](Approve%20Reject%20Role%20Entitlement%20Requests%209efceba376ca450bbfbbd350be83bcfc/Screenshot_2024-09-20_at_7.18.53_PM.png)
     
-5. Follow our [Quickstart Guide](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/) to build an event with followup actions in Creator Studio, which can be called from your middleware.
+5. Follow our [Quickstart Guide](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/) to build an event with followup actions in Agent Studio, which can be called from your middleware.
 
 # **Congratulations!**
 

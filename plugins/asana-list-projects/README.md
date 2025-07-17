@@ -22,12 +22,12 @@ time_in_minutes: 30
 
 The **Get Projects in a Team** plugin enables users to find and retrieve all projects assigned to a specific team in Asana. By leveraging Asana’s API, this feature simplifies project management by quickly identifying and listing the relevant projects within a team.
 
-This guide will walk you through adding this functionality to your bot using Creator Studio.
+This guide will walk you through adding this functionality to your bot using Agent Studio.
 
 # **Prerequisites**
 
 - [Postman](https://www.postman.com/) or an API Testing Tool
-- [Asana Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=asana) set up in Creator Studio
+- [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) set up in Agent Studio
 - [List Teams in a Workspace](https://developer.moveworks.com/creator-studio/resources/plugin/?id=asana-view-teams) Plugin
 - An Asana Personal Access Token (PAT)
 
@@ -37,7 +37,7 @@ This guide will walk you through adding this functionality to your bot using Cre
 
 This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22List+Asana+projects+for+the+Marketing+team.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EChecks+for+available+teams+in+Asana.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EMultiple+teams+with+names+similar+to+%27Marketing%27+were+found.+Which+team+do+you+want+to+list+projects+for%3F%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3ETeam+1%3A+Global+Marketing+Team%3C%2Fp%3E%3C%2Fb%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3ETeam+2%3A+Product+Marketing+Team%3C%2Fp%3E%3C%2Fb%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3ETeam+3%3A+Brand+Marketing+Team%3C%2Fp%3E%3C%2Fb%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EGlobal+Marketing+Team%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Filters+projects+in+the+%27Global+Marketing+Team%27+workspace+for+the+%27Marketing%27+team.%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EListing+projects+in+%27Global+Marketing+Team%27+workspace+for+the+Marketing+team%3A%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EProject%3A+Social+Media+Campaign%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3EStatus%3A+In+Progress%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EProject%3A+Email+Marketing+Automation%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3EStatus%3A+Planning%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EProject%3A+Influencer+Partnership%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3EStatus%3A+Launched%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
 
-# **Creator Studio Components**
+# **Agent Studio Components**
 
 - **Triggers:**
     1. Natural Language (e.g., "Find projects for the Product Development team")

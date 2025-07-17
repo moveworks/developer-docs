@@ -24,8 +24,7 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 # Prerequisites
 
 - Access to Agent Studio
-- [Zoom Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=zoom&commit_id=280a6873f0354f3c7bd834c823295c3af2fc7086) set up in Creator Studio
-- View Zoom Meetings Plugin
+- [Zoom Connector](https://developer.moveworks.com/marketplace/package?id=zoom&hist=home%2Cbrws#how-to-implement) set up in Agent Studio.
 
 # What are we building?
 
@@ -35,21 +34,21 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our Zoom **Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Zoom Connector Guide](https://developer.moveworks.com/marketplace/package?id=zoom&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to get your plugin installed in minutes.
+
 
 **Scopes Needed:**
-
-- `meeting:read:past_meeting:admin`
-- `meeting:read:meeting:admin`
-- `user:read:user:admin`
-- `meeting:read:summary:admin`
+- **meeting:read:past_meeting:admin**
+- **meeting:read:meeting:admin**
+- **user:read:user:admin**
+- **meeting:read:summary:admin**
 - For more information : [https://developers.zoom.us/docs/integrations/oauth-scopes-overview/](https://developers.zoom.us/docs/integrations/oauth-scopes-overview/)
 
 # Appendix
 
 ## A combination of 3 APIs makes this possible:
 
-- The first API call is designed to fetch all the calls that a user participated in within a specified date range.
+- **API #1** [Get a meeting activities report​](https://developers.zoom.us/docs/api/meetings/#tag/reports/GET/report/meeting_activities): This API call is designed to fetch all the calls that a user participated in within a specified date range.
     
     ```bash
     curl --request GET \
@@ -58,10 +57,10 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`user_id`**: Unique identifier for the user whose meetings are being fetched.
-        - **`from_date`**: The start date for the range within which calls should be retrieved.
-        - **`to_date`**: The end date for the range within which calls should be retrieved.
-- The second API call is designed to fetch the UUID of a specific meeting. This is done by using the meeting ID obtained from the response of the previous API call.
+        - **user_id**: Unique identifier for the user whose meetings are being fetched.
+        - **from_date**: The start date for the range within which calls should be retrieved.
+        - **to_date**: The end date for the range within which calls should be retrieved.
+- **API #2** [Get past meeting details​​](https://developers.zoom.us/docs/api/meetings/#tag/meetings/GET/past_meetings/{meetingId}): This API call is designed to fetch the UUID of a specific meeting. This is done by using the meeting ID obtained from the response of the previous API call.
     
     ```bash
     curl --request GET \
@@ -70,8 +69,8 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`meeting_id`**: Unique identifier for the meeting whose meeting summary is being fetched. This will obtained from the above api’s response.
-- The third API is responsible for retrieving the meeting summary using the UUID obtained from the previous API call.
+        - **meeting_id**: Unique identifier for the meeting whose meeting summary is being fetched. This will obtained from the above api’s response.
+- **API #3** [Get a meeting summary​​](https://developers.zoom.us/docs/api/meetings/#tag/meetings/GET/meetings/{meetingId}/meeting_summary): This API is responsible for retrieving the meeting summary using the UUID obtained from the previous API call.
     
     ```bash
     curl --request GET \
@@ -80,4 +79,4 @@ While you can create a connector during plugin installation, we do recommend tha
     ```
     
     - Required parameters:
-        - **`meeting_uuid`**: Unique identifier for the meeting whose meeting summary is being fetched. This will obtained from the above api’s response.
+        - **meeting_uuid**: Unique identifier for the meeting whose meeting summary is being fetched. This will obtained from the above api’s response.

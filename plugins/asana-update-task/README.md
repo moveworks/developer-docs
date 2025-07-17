@@ -27,7 +27,7 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 # Prerequisites
 
 - Access to Agent Studio
-- [Asana Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=asana) set up in Creator Studio
+- [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) set up in Agent Studio.
 - The user must have permission to edit tasks in the relevant project
 
 # What are we building?
@@ -38,11 +38,11 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Asana Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes. For **Update Task**, you will also need to add the following permissions:
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [Asana Connector Guide](https://developer.moveworks.com/marketplace/package?id=asana&hist=home%2Cbrws#how-to-implement) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes. For **Update Task**, you will also need to add the following permissions:
 
 **Permissions Needed:**
 
-- `tasks:write` – Allows modifying task attributes
+- ***tasks:write*** – Allows modifying task attributes
 
 After you have configured the connector, please refer to our installation documentation for more information on how to install a plugin.
 
@@ -60,19 +60,19 @@ curl --request PUT \
      --header 'accept: application/json' \
      --header 'authorization: Bearer {personal_access_token}' \
      --header 'content-type: application/json' \
-     --data '
-{
-  "data": {
-    "name": "New Task Name",
-    "completed": true
-  }
-}
-'
+     --data 
+          '{
+            "data": 
+              {
+                "name": "New Task Name",
+                "completed": true
+              }
+          }'
 ```
 
 **Optional Body Parameters:**
 
-- `name`: The new name for the task.
-- `due_on`: The new due date for the task.
-- `assignee`: The user ID of the new assignee.
-- `completed`: Updates the task status.
+- **name**: The new name for the task.
+- **due_on**: The new due date for the task.
+- **assignee**: The user ID of the new assignee.
+- **completed**: Updates the task status.

@@ -31,8 +31,8 @@ Let’s dive in!
 2. Use [Moveworks Setup](https://help.moveworks.com/docs/ingest-users) to synchronize your employees' work email from your IDAM to Moveworks.
     - Follow [this guide](https://help.moveworks.com/docs/ingest-users#configuring-user-ingestions) to configure your connector and ingestion settings in [Moveworks Setup](https://help.moveworks.com/docs/ingest-users)
 3. [Enable Requisitions for External Approvals](#enable-requisitions-for-external-approvals-required)
-4. Review [how to implement a Creator Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide).
-5. Connect your middleware and APIM tools with Creator Studio using a [connector](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
+4. Review [how to implement a Agent Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide).
+5. Connect your middleware and APIM tools with Agent Studio using a [connector](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
 
 # **Conversation Design**
 
@@ -82,9 +82,9 @@ Once done, you should see the package on the home screen of the Intelligent Conf
 For more information, you can check out the **How to configure your procurement solution to use the Document Approval API** section of SAP’s [Document Approval API documentation](https://help.sap.com/doc/913d7efbe6054024b721feab8cff9843/cloud/en-US/e97e7e3d636d4549bbe1f04368a92dbf.pdf#page=6) (pages 6-7).
     
 
-# **For Creator Studio Developers**
+# **For Agent Studio Developers**
 
-## **Step 1: Check if you have built a Creator Studio Connector for your middleware / APIM tool**
+## **Step 1: Check if you have built a Agent Studio Connector for your middleware / APIM tool**
 
 This step was outlined in the [Prerequisites section](#prerequisites) above, and should be completed before you begin building your plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
 
@@ -187,9 +187,9 @@ The high level overview of the architecture for your middleware code would be:
     - If you don't do this, your employees will get notified every time you poll for new records
 5. Actioning on the approvals based on the chosen action (approve/send back)
 
-## **Step 4: Build in Creator Studio**
+## **Step 4: Build in Agent Studio**
 
-1. Create a new Event in Creator Studio named "SAP Ariba Purchase Requisition Approvals".
+1. Create a new Event in Agent Studio named "SAP Ariba Purchase Requisition Approvals".
     - Choose to add a follow-up action so that you can approve or deny the purchase requisition.
 2. Configure the API Connection:
     - Import the cURL command for the Middleware APIs that you have deployed.
@@ -198,7 +198,7 @@ The high level overview of the architecture for your middleware code would be:
     - Ask if the user wants to view pending approvals.
     - Display the requisition details for approval.
     - Provide options to approve or deny.
-4. Follow our [Quickstart Guide](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/) to build an event with followup actions in Creator Studio, which can be called from your middleware.
+4. Follow our [Quickstart Guide](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/) to build an event with followup actions in Agent Studio, which can be called from your middleware.
 
 # **Congratulations!**
 
