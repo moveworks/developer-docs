@@ -37,7 +37,7 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
 ### Grant Permissions
 
 1. Open [App Registrations in the Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
-2. Register a **Agent Studio** app, or select an existing one.
+2. Register an **Agent Studio** app, or select an existing one.
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/image.png)
     
