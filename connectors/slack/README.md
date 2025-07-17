@@ -19,10 +19,10 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 ## **Step 1: Set Up Your Slack App**
 
 1. Go to [Your Apps](https://api.slack.com/apps) on Slack API's website.
-2. Click on `Create New App` and choose `From scratch`.
-3. Name your app (e.g., `Creator Studio Bot`) and select your Slack workspace.
+2. Click on **Create New App** and choose **From scratch**.
+3. Name your app (e.g., **Agent Studio Bot**) and select your Slack workspace.
     
-    ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Untitled.png)
+    ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/image.png)
     
 
 ## **Step 2: Obtain API Credentials**
@@ -35,15 +35,15 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
 
 ### **Add Permissions**
 
-1. In your app settings, navigate to `OAuth & Permissions`.
-2. Under `Bot Token Scopes`, add necessary permissions like `channels:manage` to create channels.
+1. In your app settings, navigate to **OAuth & Permissions**.
+2. Under **Bot Token Scopes**, add necessary permissions like **channels:manage** to create channels.
     
     ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Untitled%202.png)
     
 
 ### **Install App to Workspace**
 
-1. Click `Install App to Workspace`.
+1. Click **Install App to Workspace**.
 
 ## **Step 3: Integrate with Agent Studio**
 
@@ -55,14 +55,14 @@ Slack's API provides a powerful way to automate tasks in your Slack workspace. T
       ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%201.png)
    
    - Click on **Create New Connector** and fill the following information.
-        - Base Url: `https://slack.com/api`
-        - Name: Name Accordingly
-        - Description: Give a Suitable Description
-        - Auth Config: `Api Key Auth`
-        - Api Key Auth Auth Type: `Header Auth`
-        - Header Auth Key: `Authorization`
-        - Header Auth Value Pattern: `Bearer %s`
-        - Api Key: `{{xoxb_your_bot_access_token}}`
+        - **Base Url**: https://slack.com/api
+        - **Name**: Name Accordingly
+        - **Description**: Give a Suitable Description
+        - **Auth Config**: Api Key Auth
+        - **Api Key Auth Auth Type**: Header Auth
+        - **Header Auth Key**: Authorization
+        - **Header Auth Value Pattern**: Bearer %s
+        - **Api Key**: {{xoxb_your_bot_access_token}}
   
         ![Untitled](Authentication%20Guide%20Slack%20API%203f2aff0ceb4041d697444d8585eb3357/Pasted%20Graphic%206.png)   
     

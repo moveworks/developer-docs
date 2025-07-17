@@ -37,15 +37,15 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
 ### Grant Permissions
 
 1. Open [App Registrations in the Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
-2. Register a `Creator Studio` app, or select an existing one.
+2. Register a **Agent Studio** app, or select an existing one.
     
-    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%201.png)
+    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/image.png)
     
-3. Under `API permissions`, click `Add a permission`, then add the permissions you identified in the previous step.
+3. Under **API permissions**, click **Add a permission**, then add the permissions you identified in the previous step.
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%202.png)
     
-4. Click `Grant admin consent for {Tenant}`. This formally assigns the entitlements to your API key.
+4. Click **Grant admin consent for {Tenant}**. This formally assigns the entitlements to your API key.
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%203.png)
     
@@ -74,13 +74,13 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
     --data-urlencode 'grant_type=client_credentials'
     ```
     
-2. Import to Postman (using `Import`)
+2. Import to Postman (using **Import**)
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%206.png)
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%207.png)
     
-3. Execute the API call and get an `access_token`. You’ll use this to authenticate the actual actions you want to take.
+3. Execute the API call and get an **access_token**. You’ll use this to authenticate the actual actions you want to take.
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%208.png)
     
