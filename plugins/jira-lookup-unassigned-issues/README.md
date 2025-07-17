@@ -42,14 +42,14 @@ After you have configured the connector, Please refer to our [plugin installati
 
 ## **Appendix**
 
-### **API #1: Jira Get Unassigned Issues By Project Name**
+### **API #1: Jira Get Unassigned Issues By Project Key**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>.atlassian.net/rest/api/3/search?jql=project%3D<PROJECT_NAME>+AND+assignee+IS+EMPTY&fields=key%2Csummary%2Cstatus&maxResults=100' \
+curl --location 'https://<YOUR_INSTANCE>.atlassian.net/rest/api/3/search?jql=project%3D<PROJECT_KEY>+AND+assignee+IS+EMPTY&fields=key%2Csummary%2Cstatus&maxResults=100' \
 --header 'Authorization: Basic <YOUR_CREDENTIALS>' \
 --header 'Accept: application/json' 
 ```
 
 **Query Parameters:**
 
-- `PROJECT_NAME` (string) – The Name of the Jira project in which to search for unassigned issues (e.g., `JMAT`).
+- `PROJECT_KEY` (string) – The Key of the Jira project in which to search for unassigned issues (e.g., `JMAT`).
