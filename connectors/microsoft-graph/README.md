@@ -27,7 +27,7 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
 
 1. Open the [Graph API Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
 2. Find the APIs you want to use. 
-3. Click on the `Modify permissions` tab. There, you’ll see the permissions you need to create an API key for.
+3. Click on the **Modify permissions** tab. There, you’ll see the permissions you need to create an API key for.
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled.png)
     
@@ -43,7 +43,7 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
     
 3. Under **API permissions**, click **Add a permission**, then add the permissions you identified in the previous step.
     
-    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%202.png)
+    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/image%20copy.png)
     
 4. Click **Grant admin consent for {Tenant}**. This formally assigns the entitlements to your API key.
     
@@ -52,13 +52,13 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
 
 ### Create Key
 
-1. Create a client secret and jot it down.
+1. Create a **client secret** and jot it down.
     
-    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%204.png)
+    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/image%20copy%202.png)
     
 2. Note the app & tenant IDs from your App Overview
     
-    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%205.png)
+    ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/image%20copy%203.png)
     
 
 ## Step 3: Test in Postman
@@ -99,16 +99,16 @@ In this guide, we will demonstrate how to authenticate with the Microsoft Graph 
       ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic%201.png)
    
    - Click on **Create New Connector** and fill the following information.
-        - Base Url: `https://graph.microsoft.com/v1.0`
-        - Name: Name Accordingly
-        - Description: Give a Suitable Description.
-        - Auth Config: `Oauth2`
-        - OAuth Grant Type: `Client Credentials Grant`
-        - Client ID: `{{application_id}}`
-        - Client Secret: `{{client_secret}}`
-        - OAuth Token Url: `https://login.microsoftonline.com/{{tenant_id}}/oauth2/token`
-        - OAuth2 Client Authorization: `OAuth 2.0 with Request Body`
-        - Oauth2 Custom Oauth Request Options Additional Request Data:
+        - **Base Url:** https://graph.microsoft.com/v1.0
+        - **Name:** Name Accordingly
+        - **Description:** Give a Suitable Description.
+        - **Auth Config:** Oauth2
+        - **OAuth Grant Type:** Client Credentials Grant
+        - **Client ID:** {{application_id}}
+        - **Client Secret:** {{client_secret}}
+        - **OAuth Token Url:** https://login.microsoftonline.com/{{tenant_id}}/oauth2/token
+        - **OAuth2 Client Authorization:** OAuth 2.0 with Request Body
+        - **Oauth2 Custom Oauth Request Options Additional Request Data:**
             - resource : https://graph.microsoft.com
             - grant_type : client_credentials
   
