@@ -39,9 +39,9 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
         
       ![Screenshot 2024-12-03 at 9.50.29 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-03_at_9.50.29_PM.png)
         
-    - Name the token (e.g., "Creator Studio").
+    - Name the token (e.g., "Agent Studio").
         
-        ![Screenshot 2024-12-03 at 9.58.40 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-03_at_9.58.40_PM.png)
+        ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image.png)
         
     - Click Create and copy the generated API token.
     
