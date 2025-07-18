@@ -8,7 +8,7 @@ time_in_minutes: 30
 
 # **Introduction**
 
-Integrating Zoom with Creator Studio allows seamless incorporation of virtual meeting data and collaboration insights to enhance your workflows. By leveraging Zoom's robust REST API and using appropriate authentication mechanisms, you can automate meeting data management and enhance your collaborative processes. This guide provides a step-by-step process to connect your Zoom instance to Creator Studio and test the integration for efficient meeting management and collaboration.
+Integrating Zoom with Agent Studio allows seamless incorporation of virtual meeting data and collaboration insights to enhance your workflows. By leveraging Zoom's robust REST API and using appropriate authentication mechanisms, you can automate meeting data management and enhance your collaborative processes. This guide provides a step-by-step process to connect your Zoom instance to Agent Studio and test the integration for efficient meeting management and collaboration.
 
 # **Prerequisites**
 
@@ -29,7 +29,7 @@ Integrating Zoom with Creator Studio allows seamless incorporation of virtual me
     
     ![image.png](Zoom%201b5588d8909f80eab403e031bd13a14e/image%202.png)
     
-4. After naming your app you will be brought to this page, make sure to save your `Account ID`, `Client ID`, and `Client Secret`. Click **Continue** after saving these values.
+4. After naming your app you will be brought to this page, make sure to save your **Account ID**, **Client ID**, and **Client Secret**. Click **Continue** after saving these values.
     
     ![Screenshot 2025-03-17 at 1.27.17 PM.png](Zoom%201b5588d8909f80eab403e031bd13a14e/Screenshot_2025-03-17_at_1.27.17_PM.png)
     
@@ -49,39 +49,40 @@ Integrating Zoom with Creator Studio allows seamless incorporation of virtual me
     
     ![Screenshot 2025-03-17 at 1.53.40 PM.png](Zoom%201b5588d8909f80eab403e031bd13a14e/Screenshot_2025-03-17_at_1.53.40_PM.png)
     
+## Step 2: Connect Zoom to Agent Studio
 
-# **Step 2: Connect Zoom to Creator Studio**
+1. In Agent Studio, create a new **HTTP Action** and Test it.
+   - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
 
-- In Creator Studio, create a new action with the following configuration:
-    - Base URL : [`https://api.zoom.us/v2/`](https://api.zoom.us/v2/)
-    - Auth config : **OAuth2**
-    - OAuth2 Grant Type : **Client Credentials Grant**
-        - Client ID : `Client Id` from the Zoom app you just created.
-        - Client Secret : `Client Secret` from the Zoom app you just created.
-            
-            ![image.png](Zoom%201b5588d8909f80eab403e031bd13a14e/image%206.png)
-            
-    - Leave all other fields as blank.
-    - Fill the ***Oauth2 Custom Oauth Request Options Additional Request Data*** as follows:
-        - `grant_type : account_credentials`
-        - `account_id : {{account id from the zoom app you created}}`
-            
-            ![image.png](Zoom%201b5588d8909f80eab403e031bd13a14e/image%207.png)
-            
-        - Click on Save and Name the connector as **Zoom Connector.**
-            
-            ![image.png](Zoom%201b5588d8909f80eab403e031bd13a14e/image%208.png)
-            
-        - Click on Save.
-- To test your Connector by setting up a demo API action:
-    - Example API: **Retrieve an user :**
-        - `GET /users/{userId}`: View a user's information on a Zoom account.
-    - Fill out the Endpoint URL `/users/{userId}` and pass ***“me”*** or a ***registered email ID*** as `{userID}` .
-    - Click on **Test** to check if the Connector setup was successful and expect a successful response as shown below:
-        
-        ![image.png](Zoom%201b5588d8909f80eab403e031bd13a14e/image%209.png)
-        
+      ![Untitled](Zoom%201b5588d8909f80eab403e031bd13a14e/Pasted%20Graphic.png)
+
+      ![Untitled](Zoom%201b5588d8909f80eab403e031bd13a14e/Pasted%20Graphic%201.png)
+   
+   - Click on **Create New Connector** and fill the following information.
+        - Base Url: **https://api.zoom.us/v2**
+        - Name: Name Accordingly
+        - Description: Give a Suitable Description.
+        - Auth Config: **Oauth2**
+        - OAuth Grant Type: **Client Credentials Grant**
+        - Client ID: **Client Id from the Zoom app you just created**
+        - Client Secret: **Client Secret from the Zoom app you just created**
+        - OAuth Token Url: **https://login.microsoftonline.com/{{tenant_id}}/oauth2/token**
+        - OAuth2 Client Authorization: **OAuth 2.0 with Request Body**
+        - Oauth2 Custom Oauth Request Options Additional Request Data:
+            - account_id : {{account id from the zoom app you created}}
+            - grant_type : account_credentials
+  
+        ![Untitled](Zoom%201b5588d8909f80eab403e031bd13a14e/as1.png)
+   
+        ![Untitled](Zoom%201b5588d8909f80eab403e031bd13a14e/as2.png)
+   
+2. Add your API details and Test.
+    - Fill the endpoint as : **/users/{{userid}}**
+    - Enter **“me”** or a **registered email ID** as **{{userid}}**.
+    - Click Test
+   
+      ![Untitled](Zoom%201b5588d8909f80eab403e031bd13a14e/as3.png)
 
 # Congratulations!
 
-You've successfully integrated Zoom with Creator Studio. This opens up a variety of automation and integration possibilities within your Zoom environment.
+You just connected your Zoom App to Agent Studio.

@@ -12,7 +12,7 @@ time_in_minutes: 10
 
 # **Introduction**
 
-OpenAI offers a comprehensive set of APIs that allow developers to integrate advanced AI capabilities into their applications. To maintain security and ensure only authorized access, OpenAI requires authentication for all API requests. This guide will walk you through the process of authenticating with OpenAI's APIs and test it in Creator Studio.
+OpenAI offers a comprehensive set of APIs that allow developers to integrate advanced AI capabilities into their applications. To maintain security and ensure only authorized access, OpenAI requires authentication for all API requests. This guide will walk you through the process of authenticating with OpenAI's APIs and test it in Agent Studio.
 
 # **Prerequisites**
 
@@ -57,9 +57,9 @@ We will be following the [Authentication method](https://platform.openai.com/doc
     ![Postman Successful Response](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%204.png)
     
 
-## **Step 3: Integrate with Creator Studio**
+## **Step 3: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - Base URL: `https://api.openai.com`
     - Auth Config: `Api Key Auth`
     - Api Key Auth Auth Type: `Header Auth`
@@ -75,11 +75,11 @@ We will be following the [Authentication method](https://platform.openai.com/doc
     
     - Path: `/v1/models`
     - Method: `GET`
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ![Untitled](Authentication%20Tutorial%20OpenAI%20c764b9c442a64a469cc4c80d60f54190/Untitled%205.png)
     
 
 # **Congratulations!**
 
-You've successfully integrated OpenAI’s API with Creator Studio. This opens up a variety of AI automation and integration possibilities within your Moveworks bot.
+You've successfully integrated OpenAI’s API with Agent Studio. This opens up a variety of AI automation and integration possibilities within your Moveworks bot.
