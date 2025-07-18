@@ -9,7 +9,7 @@ design_pattern_id: 28
 difficulty_level: BEGINNER
 domain:
 - Approvals
-- Finance
+- Finance - Other
 drop_accreditations:
 - ajaymerchia
 fidelity: TEMPLATE
@@ -20,7 +20,7 @@ redirects:
 - concur-expense-report-lookup
 solution_tags:
 - Approvals
-- Finance
+- Finance - Other
 systems:
 - sap-concur
 time_in_minutes: 15
