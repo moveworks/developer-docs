@@ -13,11 +13,11 @@ time_in_minutes: 60
 
 **Salesforce** is a leader in cloud-based services, specializing in comprehensive customer relationship management (CRM) solutions, empowering businesses with data-driven decision-making.
 
-This guide will step you through creating a connector within Creator Studio to make API calls to Salesforce's SOQL and sObjects APIs. This guide has been organized into three main sections:
+This guide will step you through creating a connector within Agent Studio to make API calls to Salesforce's SOQL and sObjects APIs. This guide has been organized into three main sections:
 
 1. Set up OAuth Password Grant Flow
 2. Test with Postman
-3. Create a Connector in Creator Studio
+3. Create a Connector in Agent Studio
 
 # **Prerequisites**
 
@@ -26,7 +26,7 @@ This guide will step you through creating a connector within Creator Studio to m
 
 # **Set up Salesforce**
 
-To connect to Salesforce from within Creator Studio, we are going to be using [OAuth2 with Username/Password](https://oauth.net/2/grant-types/password/). This requires the following:
+To connect to Salesforce from within Agent Studio, we are going to be using [OAuth2 with Username/Password](https://oauth.net/2/grant-types/password/). This requires the following:
 
 - Consumer Key
 - Consumer Secret
@@ -34,7 +34,7 @@ To connect to Salesforce from within Creator Studio, we are going to be using [
 - Service Account Password
 - Service Account Security Token
 
-The following will walk you through how to set up a Connected App with a Service Account and necessary Permission Sets so we can set up the connector within Creator Studio.
+The following will walk you through how to set up a Connected App with a Service Account and necessary Permission Sets so we can set up the connector within Agent Studio.
 
 ## **Step 1:** Set up OAuth Password Grant Flow
 
@@ -119,9 +119,9 @@ Once you have all the required credentials from the above process, please move o
 
     ![Untitled](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/Untitled%202.png)
 
-## **Step 3: Integrate with Creator Studio**
+## **Step 3: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
+1. In Agent Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
     - Description: `Connect to Salesforce SOQL APIs`
     - Base URL: `https://{your-salesforce-domain}.my.salesforce.com`
     - Auth Config: `Oauth2`
@@ -148,10 +148,10 @@ Once you have all the required credentials from the above process, please move o
         | Key | Value |
         | --- | --- |
         | q | SELECT Name FROM Contact LIMIT 10 |
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
 
     ![Untitled](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/Untitled%203.png)
 
 # **Congratulations!**
 
-You've successfully integrated Salesforce’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Salesforce instance.
+You've successfully integrated Salesforce’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Salesforce instance.

@@ -1,6 +1,6 @@
 ---
 availability: INSTALLABLE
-description: A plugin that allows an employee to identify open roles at the company.
+description: A plugin that allows an employee to identify external, published roles at the company.
 difficulty_level: BEGINNER
 domain:
 - HR
@@ -19,11 +19,11 @@ time_in_minutes: 20
 
 # **Introduction**
 
-Greenhouse is a leading Applicant Tracking System (ATS) that helps companies streamline their hiring process. The **View Open Jobs** plugin allows employees to easily identify open roles within their organization.
+Greenhouse is a leading Applicant Tracking System (ATS) that helps companies streamline their hiring process. The View Open Jobs plugin enables employees to fetch only external, published job postings from Greenhouse—so they see roles that are live and open to applicants outside the organization.
 
-By integrating this feature into your bot, you enable employees to quickly explore available job opportunities without manually searching through Greenhouse, enhancing internal mobility and referral opportunities.
+By integrating this feature into your bot, you empower employees to quickly explore externally posted job opportunities without manually searching through Greenhouse, enhancing candidate referrals and external recruitment efforts.
 
-This guide walks you through adding the **View Open Jobs** feature to your bot using **Agent Studio**.
+This guide walks you through adding the View Open Jobs feature to your bot using Agent Studio.
 
 Let's get started!
 
