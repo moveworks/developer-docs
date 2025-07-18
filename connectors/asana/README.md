@@ -11,7 +11,7 @@ time_in_minutes: 15
 
 # **Introduction**
 
-Asana's API provides a robust platform to integrate and streamline tasks in your Asana workspace. This guide will demonstrate how to create an Asana Personal Access Token (PAT), authenticate with Asana's API, and test it in Creator Studio. 
+Asana's API provides a robust platform to integrate and streamline tasks in your Asana workspace. This guide will demonstrate how to create an Asana Personal Access Token (PAT), authenticate with Asana's API, and test it in Agent Studio. 
 
 # **Prerequisites**
 
@@ -50,9 +50,9 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
     ![Untitled](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Untitled%203.png)
     
 
-## **Step 3: Integrate with Creator Studio**
+## **Step 3: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - Base URL: `https://app.asana.com/api`
     - Auth Config: `Api Key Auth`
     - Api Key Auth Auth Type: `Header Auth`
@@ -68,7 +68,7 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
     
     - Path: `/1.0/users/me`
     - Method: `GET`
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ```json
     
@@ -85,4 +85,4 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
 
 # **Congratulations!**
 
-You've successfully integrated Asana’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Asana workspace.
+You've successfully integrated Asana’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Asana workspace.
