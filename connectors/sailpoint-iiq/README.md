@@ -4,7 +4,7 @@ accreditations:
 - DEFAULT
 availability: VALIDATED
 description: A connector that connects your SailPoint IIQ instance to Moveworks via
-  Agent Studio.
+  Creator Studio.
 difficulty_level: BEGINNER
 fidelity: GUIDE
 name: Sailpoint IdentityIQ
