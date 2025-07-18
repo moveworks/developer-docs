@@ -11,7 +11,7 @@ time_in_minutes: 30
 
 # **Introduction**
 
-ServiceNow provides granular table-level access to its data as part of its service management capabilities. This guide will walk through how you can connect your ServiceNow instance to Moveworks Creator Studio with basic auth and OAuth 2 credentials, and test it in Creator Studio.
+ServiceNow provides granular table-level access to its data as part of its service management capabilities. This guide will walk through how you can connect your ServiceNow instance to Moveworks Agent Studio with basic auth and OAuth 2 credentials, and test it in Agent Studio.
 
 # **Prerequisites**
 
@@ -61,9 +61,9 @@ Follow steps in our help site to grant the necessary roles/permissions required 
     ![Screenshot 2024-03-07 at 8.29.20 AM.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/Screenshot_2024-03-07_at_8.29.20_AM.png)
     
 
-## **Step 4: Integrate with Creator Studio**
+## **Step 4: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - Base URL: `https://{{instance_name}}.service-now.com`
     - Auth Config: `Basic Auth`
     - Username: `username` from previous steps
@@ -89,7 +89,7 @@ Follow steps in our help site to grant the necessary roles/permissions required 
         | Key | Value |
         | --- | --- |
         | sysparm_limit | 1 |
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ![Untitled](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/Untitled%201.png)
     
@@ -137,9 +137,9 @@ Follow steps in our help site to grant the necessary roles/permissions required 
 
 ![Screenshot 2024-03-07 at 8.42.07 AM.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/Screenshot_2024-03-07_at_8.42.07_AM.png)
 
-## **Step 3: Integrate with Creator Studio**
+## **Step 3: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - Base URL: `https://{{instance_name}}.service-now.com`
     - Auth Config: `OAuth 2.0`
     - Grant Type: `Password Grant`
@@ -153,4 +153,4 @@ Follow steps in our help site to grant the necessary roles/permissions required 
 
 # **Congratulations!**
 
-You've successfully integrated ServiceNow’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your ServiceNow environment.
+You've successfully integrated ServiceNow’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your ServiceNow environment.
