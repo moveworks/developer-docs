@@ -49,16 +49,18 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
     
     - Keep this token secure as it won't be displayed again
 - Note Your Jira Instance URL:
-    - Your Jira URL is in the format: `https://<your-site>.atlassian.net`
+    - Your Jira URL is in the format: **https://<your-site>.atlassian.net**
 
 ## **Step 2: Assign Necessary Permissions**
 
+Ensure that the admin account used to generate the API token for your Jira connector is explicitly added to all Jira projects where the plugins need to operate.
+By default, Jira admins do not have automatic access to every project. To ensure the plugin can view and modify issues as expected:
 - Ensure your account has sufficient permissions to perform the required API operations.
-    - Check User Roles:
-        - Verify that your Jira user has the Administer Projects or other necessary permissions.
-        - For more details, refer to the [Jira Cloud REST API documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/).
-    - Grant Permissions If Needed:
-        - If using a service account, ensure it is granted project and API permissions required for your integration
+    - Check User Roles:Go to Project Settings → People
+    - Add the admin user (the email used to generate the API token)
+    - Assign the role: Administrator (recommended)
+       
+This step ensures the plugin has the required visibility and permissions to access and manage issues across all relevant projects.
 
 ## **Step 3: Test with Postman (or another API client)**
 
