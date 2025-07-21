@@ -29,16 +29,15 @@ This guide will walk you through installing and configuring the plugin in Agent 
 
 ## **Agent Design**
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+create+a+change+request+from+a+ServiceNow+incident%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+can+help+with+that.+What+is+the+incident+number+or+can+you+give+me+a+description+to+search+for%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22It%27s+the+one+about+the+email+server+being+down%2C+I+think+the+number+is+INC0010042%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESearching+for+incidents+matching+a+keyword+%3Ccode%3Eemail+server%3C%2Fcode%3E+and+ID+%3Ccode%3EINC0010042%3C%2Fcode%3E%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFound+one+matching+incident.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I+found+that+incident.+What+type+of+change+request+is+this%3F%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Standard%22%7D%2C%7B%22buttonText%22%3A%22Normal%22%7D%2C%7B%22buttonText%22%3A%22Emergency%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Emergency%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I+will+create+an+%3Cb%3EEmergency%3C%2Fb%3E+change+request+based+on+this+incident.+Here+are+the+details+I%27ve+pulled+from+the+incident%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EShort+Description%3A%3C%2Fb%3E+Email+server+is+down%3C%2Fli%3E%3Cli%3E%3Cb%3EDescription%3A%3C%2Fb%3E+Users+are+reporting+that+they+are+unable+to+send+or+receive+emails.+The+issue+appears+to+have+started+at+2%3A00+PM+EST.+The+mail+queue+is+backed+up+and+not+processing.%3C%2Fli%3E%3Cli%3E%3Cb%3EConfiguration+Item%3A%3C%2Fb%3E+outlook-prod-mail-server-01%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EDoes+this+look+right%3F%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Create+Change+Request%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Create+Change+Request%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ECreating+a+new+change+request+in+ServiceNow%2C+linking+it+to+incident+INC0010042%2C+and+assigning+it+to+the+Database+team.%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESuccessfully+created+change+request.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EDone.+I%27ve+created+the+change+request+%3Cb%3ECHG0030001%3C%2Fb%3E+and+linked+it+to+the+original+incident.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22CHG0030001%3A+Email+server+is+down%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+create+a+change+request+from+a+ServiceNow+incident%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+can+help+with+that.+What+is+the+incident+number+or+can+you+give+me+a+description+to+search+for%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22It%27s+the+one+about+the+email+server+being+down%2C+I+think+the+number+is+INC0010042%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESearching+for+incidents+matching+a+keyword+%3Ccode%3Eemail+server%3C%2Fcode%3E+and+ID+%3Ccode%3EINC0010042%3C%2Fcode%3E%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFound+one+matching+incident.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I+found+that+incident.+What+type+of+change+request+is+this%3F%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Standard%22%7D%2C%7B%22buttonText%22%3A%22Normal%22%7D%2C%7B%22buttonText%22%3A%22Emergency%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Emergency%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I+will+create+an+%3Cb%3EEmergency%3C%2Fb%3E+change+request+based+on+this+incident.+Here+are+the+details+I%27ve+pulled+from+the+incident%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EShort+Description%3A%3C%2Fb%3E+Email+server+is+down%3C%2Fli%3E%3Cli%3E%3Cb%3EDescription%3A%3C%2Fb%3E+Users+are+reporting+that+they+are+unable+to+send+or+receive+emails.+The+issue+appears+to+have+started+at+2%3A00+PM+EST.+The+mail+queue+is+backed+up+and+not+processing.%3C%2Fli%3E%3Cli%3E%3Cb%3EConfiguration+Item%3A%3C%2Fb%3E+outlook-prod-mail-server-01%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EDoes+this+look+right%3F%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Create+Change+Request%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Create+Change+Request%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ECreating+a+new+change+request+in+ServiceNow%2C+linking+it+to+incident+INC0010042%2C+and+assigning+it+to+the+Database+team.%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESuccessfully+created+change+request.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EDone.+I%27ve+created+the+change+request+%3Cb%3ECHG0030001%3C%2Fb%3E+and+linked+it+to+the+original+incident.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22CHG0030001%3A+Email+server+is+down%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [ServiceNow Connector](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) [**Guide**](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our **[ServiceNow Connector Guide](https://marketplace.moveworks.com/connectors/servicenow)** for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the ServiceNow integration user has the following required permissions:
 
-- **Read** access to the **Incident** (`incident`) table – for fetching incident details
-- **Update** access to the **Incident** (`incident`) table – for linking a Change Request back to an Incident
+- **Read** and **Update** access to the **Incident** (`incident`) table – for fetching incident details and linking a Change Request back to the incident
 - **Create** access to the **Change Request** (`change_request`) table – for submitting new change requests
 - **Read** access to the **Change Model** (`chg_model`) table – for retrieving change model types
 
@@ -49,7 +48,7 @@ After configuring the connector, refer to our [**plugin installation documentat
 ### **API #1: Get Incident Details by Short Description**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?sysparm_query=short_descriptionLIKE<KEYWORD>&sysparm_limit=5&sysparm_fields=number%2Cshort_description' \
+curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?sysparm_query=short_descriptionLIKE<SHORT_DESCRIPTION>&sysparm_limit=5&sysparm_fields=number%2Cshort_description' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' 
 
@@ -57,7 +56,7 @@ curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?
 
 **Query Parameters:**
 
-- `KEYWORD` – Filters incidents where the short description contains the specified keyword .
+- `SHORT_DESCRIPTION` – Filters incidents where the short description contains the specified keyword .
 
 ### **API #2: Get Incident Details by Incident Number**
 
@@ -93,7 +92,6 @@ curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/change_re
 --data '{
   "chg_model": "<CHANGE_MODEL_SYS_ID>",
    "short_description": "<SHORT_DESCRIPTION>",
-   "description": "<DESCRIPTION>",
    "cmdb_ci": "<CONFIGURATION_ITEM>"
    }'
 ```
@@ -102,7 +100,6 @@ curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/change_re
 
 - `CHANGE_MODEL_SYS_ID` **(string)** – The Change Model Sys ID. This defines the type of change
 - `short_description` **(string)** – Short description of the Incident for creating the Change Request.
-- `description` **(string)** – Description of the Incident for creating the Change Request.
 - `CONFIGURATION_ITEM` **(string)** – ****Configuration Item ****of the Incident for creating the Change Request.
 
 ### **API #5: Link a Change Request to an Incident**
@@ -113,7 +110,7 @@ curl --location --request PATCH 'https://<YOUR_INSTANCE>.service-now.com/api/now
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "caused_by": "<CHANGE_REQUEST_SYS_ID>"
+  "rfc": "<CHANGE_REQUEST_SYS_ID>"
 }'
 
 ```

@@ -3,6 +3,6 @@ curl --location --request PATCH 'https://<YOUR_INSTANCE>.service-now.com/api/now
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "caused_by": "<CHANGE_REQUEST_SYS_ID>"
+  "rfc": "<CHANGE_REQUEST_SYS_ID>"
 }'
 
