@@ -47,7 +47,7 @@ Let's get started!
 
 Because we are notifying a user of information that requires action, we will be following the [Actionable Updates](https://developer.moveworks.com/creator-studio/design-patterns/dp-10) design pattern.
 
-## Creator Studio Components
+## Agent Studio Components
 
 ✨ **Triggers:**
 

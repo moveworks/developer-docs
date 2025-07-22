@@ -32,9 +32,9 @@ Let's dive in!
 1. Use [Moveworks Setup](https://help.moveworks.com/docs/ingest-users) to synchronize your employees' work email from your IDAM to Moveworks.
     - Follow [this guide](https://help.moveworks.com/docs/ingest-users#configuring-user-ingestions) to configure your connector and ingestion settings in [Moveworks Setup](https://help.moveworks.com/docs/ingest-users)
 2. Ensure that your SAP Concur instance uses the same work email as your IDAM.
-3. Review [how to implement a Creator Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide).
+3. Review [how to implement a Agent Studio guide with your team](https://developer.moveworks.com/creator-studio/program-management/planning/#how-to-implement-a-creator-studio-guide).
 4. Ensure that your SAP Concur administrator has the necessary permissions to configure API access.
-5. Connect your middleware and APIM tools with Creator Studio using a [connector](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
+5. Connect your middleware and APIM tools with Agent Studio using a [connector](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
 
 # Conversation Design
 
@@ -48,12 +48,12 @@ Let's dive in!
 
 # **SAP Concur Configuration**
 
-Please review the [Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) to set up a new connector in Creator Studio that connects to your SAP Concur instance for using the Expense [Reports v3](https://developer.concur.com/api-reference/expense/expense-report/v3.reports.html) and [Reports v4](https://developer.concur.com/api-reference/expense/expense-report/v4.reports.html) APIs.
+Please review the [Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=sap-concur) to set up a new connector in Agent Studio that connects to your SAP Concur instance for using the Expense [Reports v3](https://developer.concur.com/api-reference/expense/expense-report/v3.reports.html) and [Reports v4](https://developer.concur.com/api-reference/expense/expense-report/v4.reports.html) APIs.
 
 
-# **For Creator Studio Developers**
+# **For Agent Studio Developers**
 
-## **Step 1: Check if you have built a Creator Studio Connector for your middleware / APIM tool**
+## **Step 1: Check if you have built a Agent Studio Connector for your middleware / APIM tool**
 
 This step was outlined in the [Prerequisites section](#prerequisites) above, and should be completed before you begin building your plugin. If you do not have a connector for your middleware tool, you can learn more about how to build one in our [Connector Configuration Guide](https://developer.moveworks.com/creator-studio/integrations/outbound/connector-configuration/).
 
@@ -132,7 +132,7 @@ This diagram describes the flow we will build in this guide.
 
   ![image.png](./architecture.png)
 
-There are four steps to support Concur Expense Report approvals using Creator Studio:
+There are four steps to support Concur Expense Report approvals using Agent Studio:
 
 1. Setup polling for new approvals (by default, every 60 seconds)
     - This is required to retrieve newly submitted expense reports
@@ -548,9 +548,9 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
 
-## Step 4: Build in Creator Studio
+## Step 4: Build in Agent Studio
 
-1. Create a new Event in Creator Studio named "Concur Expense Report Approvals".
+1. Create a new Event in Agent Studio named "Concur Expense Report Approvals".
     - Choose to add a followup action so that you can approve or send back the expense report.
 2. Configure the API Connection:
     - Import the cURL command for the Middleware APIs that you have deployed.
@@ -559,7 +559,7 @@ if __name__ == "__main__":
     - Ask if the user wants to view pending approvals.
     - Display expense report details for approval.
     - Provide options to approve, reject, or view more details.
-4. Follow our [Quickstart Guide](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/) to build an event with followup actions in Creator Studio, which can be called from your middleware.
+4. Follow our [Quickstart Guide](https://developer.moveworks.com/creator-studio/quickstart/event-triggered-paths/) to build an event with followup actions in Agent Studio, which can be called from your middleware.
 
 # Congratulations!
 

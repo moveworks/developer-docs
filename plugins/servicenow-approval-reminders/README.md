@@ -57,7 +57,7 @@ By following these steps, you'll be able to streamline your approval system.
 
 Based on the needs of this use case, we will be building an **Information Updates** design pattern.
 
-## Creator Studio Components
+## Agent Studio Components
 
 ✨ **Triggers:** 
 
