@@ -1,15 +1,19 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows someone to look up the ID of a cost center.
 difficulty_level: BEGINNER
+domain:
+- Finance - Other
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: 28c429a8-ba01-4b41-b1e6-1546073d7f98
 name: Look Up a Cost Center ID by its Name
 num_implementations: 1
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWhat+is+the+cost+center+ID+for+Finance%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%9C%85+Working+on+ID%3Cb%3E+of+Finance+Cost+Center%3C%2Fb%3E%3Cbr%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ELookup+Cost+Center%3C%2Fb%3E%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EThe+cost+center+ID+for+%3Cb%3EFinance%3C%2Fb%3E+is+%3Cb%3EACN00003%3C%2Fb%3E.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Cost+Center%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
-- Finance
+- Finance - Other
 - Finance - Procurement
 systems:
 - servicenow
@@ -39,7 +43,7 @@ We recommend creating the connector for ServiceNow first, prior to installing th
 
 - read access to the Cost Center table (cmn_cost_center).
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

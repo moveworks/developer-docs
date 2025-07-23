@@ -1,15 +1,20 @@
 ---
+availability: INSTALLABLE
 description: A plugin that looks up an employees benefits information.
 difficulty_level: INTERMEDIATE
+domain:
+- HR - Other
+- HR - Benefits
+- HR - Onboarding
 fidelity: TEMPLATE
-installation_asset_uuid: d25af2af-0e6b-4ee0-816b-947899a6bad2
+installation_asset_uuid: 9a015612-5551-4fa2-8d86-d75d13c4814a
 name: View Benefit Elections
 num_implementations: 0
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22What+are+my+healthcare+benefits+elections+again%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EChecking+your+benefits+details+in+Workday.%3Cbr%3E%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHere+are+your+benefits+details%3A%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3E%3Cb%3EHealth+Insurance%3C%2Fb%3E%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EPlan%3A%3C%2Fb%3E+Family+Coverage%3Cbr%3E%3Cb%3EEnrollment+Status%3A%3C%2Fb%3E+Active%3Cbr%3E%3Cb%3EDeductible%3A%3C%2Fb%3E+%241%2C200%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Benefits+Enrollment%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
-- HR
 - HR - Benefits
 - HR - Onboarding
+- HR - Other
 systems:
 - workday
 time_in_minutes: 20

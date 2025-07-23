@@ -1,4 +1,5 @@
 ---
+availability: VALIDATED
 description: Gong Connector.
 fidelity: GUIDE
 name: Gong
@@ -6,7 +7,7 @@ name: Gong
 
 # **Introduction**
 
-Integrating Gong with Creator Studio allows seamless integration of conversation intelligence and sales insights to enhance your workflows. By leveraging Gong's robust REST API and using appropriate authentication mechanisms, you can automate call data management and enhance your sales processes. This guide provides a step-by-step process to connect your Gong instance to Creator Studio and test the integration for efficient sales collaboration.
+Integrating Gong with Agent Studio allows seamless integration of conversation intelligence and sales insights to enhance your workflows. By leveraging Gong's robust REST API and using appropriate authentication mechanisms, you can automate call data management and enhance your sales processes. This guide provides a step-by-step process to connect your Gong instance to Agent Studio and test the integration for efficient sales collaboration.
 
 Let’s get started!
 
@@ -34,31 +35,33 @@ To authenticate the Gong Connector, you'll need to obtain API credentials from y
     
 3. Use these credentials to authenticate the connector within Moveworks.
 
-## **Step 2: Connect Gong to Creator Studio**
+## Step 2: Connect Gong to Agent Studio
 
-- In Creator Studio, create a new action with the following configuration:
-    - **Base URL**: Base url received by Gong
-    - **Auth Config**: Basic Auth
-    - **Username**: username from previous steps
-    - **Password**: password from previous steps
-        
-        ![Screenshot 2025-03-06 at 11.41.31 PM.png](Gong%20182588d8909f80689fd6cafe7586de60/Screenshot_2025-03-06_at_11.41.31_PM.png)
-        
-    - Click on Save and Name the connector as **Gong.**
-        
-        ![Screenshot 2025-03-06 at 11.44.38 PM.png](Gong%20182588d8909f80689fd6cafe7586de60/Screenshot_2025-03-06_at_11.44.38_PM.png)
-        
-    - Click on Save.
-    
-- To test your Connector by setting up a demo API action
-    - Example API: **Retrieve all users**
-        - The GET /v2/users Lists all of the company's users. This is a simple endpoint for testing authentication and retrieving all the users of a company without needing any query parameters.
-    - Fill out the Endpoint URL: /v2/users
-    - Click on **Test** to check if the Connector setup was successful and expect a successful response as shown below:
-        
-        ![Screenshot 2025-03-02 at 12.15.25 PM.png](Gong%20182588d8909f80689fd6cafe7586de60/Screenshot_2025-03-02_at_12.15.25_PM.png)
-        
+1. In Agent Studio, create a new **HTTP Action** and Test it.
+   - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
+
+      ![Untitled](Gong%20182588d8909f80689fd6cafe7586de60/Pasted%20Graphic.png)
+
+      ![Untitled](Gong%20182588d8909f80689fd6cafe7586de60/Pasted%20Graphic%201.png)
+   
+   - Click on **Create New Connector** and fill the following information.
+        - Base Url: Base url received by Gong (for eg. https://us-12345.api.gong.io)
+        - Name: Name Accordingly
+        - Description: Give a Suitable Description.
+        - Auth Config: **Basic Auth**
+        - OAuth Grant Type: **Client Credentials Grant**
+        - **Username**: Your Access Key from the previous step.
+        - **Password**: Your client secret.
+  
+        ![Untitled](Gong%20182588d8909f80689fd6cafe7586de60/as1.png)
+   
+   
+2. Add your API details and Test.
+    - Fill the endpoint as : **/v2/users**
+    - Click Test
+   
+      ![Untitled](Gong%20182588d8909f80689fd6cafe7586de60/as2.png)
 
 # Congratulations!
 
-You've successfully integrated Gong’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Gong environment.
+You just connected your Gong App to Agent Studio.

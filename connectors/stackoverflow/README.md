@@ -1,13 +1,14 @@
 ---
+availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
-time_in_minutes: 30
 name: Stack Overflow
-
+time_in_minutes: 30
 ---
+
 # **Introduction**
 
-Integrating Stack Overflow with Creator Studio enables seamless access to valuable programming knowledge and collaboration insights, enhancing your development workflows. By leveraging Stack Overflow's robust API and utilizing appropriate authentication mechanisms, you can automate the retrieval of questions, answers, and discussions to improve your team's problem-solving capabilities. This guide provides a step-by-step process to connect your Stack Overflow instance to Creator Studio and test the integration, ensuring efficient access to expert solutions and streamlined collaboration within your coding projects.
+Integrating Stack Overflow with Agent Studio enables seamless access to valuable programming knowledge and collaboration insights, enhancing your development workflows. By leveraging Stack Overflow's robust API and utilizing appropriate authentication mechanisms, you can automate the retrieval of questions, answers, and discussions to improve your team's problem-solving capabilities. This guide provides a step-by-step process to connect your Stack Overflow instance to Agent Studio and test the integration, ensuring efficient access to expert solutions and streamlined collaboration within your coding projects.
 
 # **Prerequisites**
 

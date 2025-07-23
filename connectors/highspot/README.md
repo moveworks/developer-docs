@@ -1,4 +1,5 @@
 ---
+availability: VALIDATED
 description: Connect your Moveworks Copilot to Highspot.
 difficulty_level: BEGINNER
 fidelity: GUIDE

@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows users to send envelopes to be signed using pre-defined
   templates.
 difficulty_level: BEGINNER
+domain:
+- Legal
+- HR - Onboarding
 fidelity: TEMPLATE
 installation_asset_uuid: 531b6e58-06f0-4664-8927-4e1dba351a5c
 name: Send an Envelope Using a Template
@@ -36,7 +40,7 @@ We recommend creating the connector for Docusign first, prior to installing this
 
 - DS Sender: More details [here](https://support.docusign.com/s/document-item?language=en_US&_gl=1*1jinp81*_gcl_au*MzM2MjUzNjg0LjE3NDc5ODkzNzguODAxMjkzMTMuMTc0ODI1MTA5Ni4xNzQ4MjUxMTc0&bundleId=pik1583277475390&topicId=pof1583277362435.html&_LANG=enus).
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 Update the **organizationID** with your organization ID ****in the Docusign_Get_User_By_Email_ID action. More details [here](https://support.docusign.com/s/document-item?language=en_US&bundleId=rrf1583359212854&topicId=tif1583359135245.html&_LANG=enus). 
 

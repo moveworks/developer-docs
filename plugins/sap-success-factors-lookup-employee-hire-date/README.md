@@ -1,55 +1,65 @@
 ---
+availability: INSTALLABLE
 description: A plugin that fetches the hiring date of an employee.
 difficulty_level: BEGINNER
-fidelity: TEMPLATE
-installation_asset_uuid: e89ecd89-dd13-4a97-ab24-dbd4eb976c2b
-name: Lookup Employee Hire Date
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Hey+Copilot%2C+can+you+tell+me+the+hire+date+for+another+employee%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+can+help+with+that.+Let+me+first+check+if+you+have+the+necessary+permissions+to+view+other+employees%27+hire+dates.%3C%2Fp%3E%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Checking+user+role...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22It+looks+like+you+have+the+appropriate+permissions.+Could+you+please+provide+the+employee%27s+name+or+ID%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I%27d+like+to+know+the+hire+date+for+John+Doe.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Fetching+the+hire+date+for+John+Doe.+One+moment%2C+please.%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Retrieving+employee+hire+date...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22John+Doe%27s+hire+date+is+%3Cb%3EJanuary+15%2C+2018%3C%2Fb%3E.%22%7D%2C%7B%22richText%22%3A%22Is+there+anything+else+I+can+help+you+with%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
-solution_tags:
-- HR
+domain:
+- HR - Other
 - HR - Employee Records
+fidelity: TEMPLATE
+installation_asset_uuid: 8beda148-ad77-46fb-9c59-8830283926ea
+name: Lookup Employee Hire Date
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I%27d+like+to+know+the+hire+date+for+John+Doe.%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFetching+John+Doe%27s+Email+from+People+Directory%26nbsp%3B%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22%3Cp%3EFound+multiple+John+Doe%27s%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFound+Multiple+John+Doe%27s%2C+Which+one+do+you+want+me+to+fetch+the+information+for%3F+%3Cbr%3E%5Cn%3Cbr%3E%5Cn1.+John+M.+Doe%E2%80%93+Senior+Software+Engineer+I%2C+Machine+Learning.+Email%3A+%3Ca+href%3D%5C%22mailto%3Arnatarajan%40moveworks.ai%5C%22+rel%3D%5C%22noopener+noreferrer%5C%22+target%3D%5C%22_blank%5C%22%3E%3Cu%3Ejohn.doe%40example.com%3C%2Fu%3E%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E2.+John+Doe+%E2%80%93+Product+Analyst%2C+Product+Management.+Email%3A+%3Ca+href%3D%5C%22mailto%3Arthakur%40moveworks.ai%5C%22+rel%3D%5C%22noopener+noreferrer%5C%22+target%3D%5C%22_blank%5C%22%3E%3Cu%3Ejohn.d%40example.com%3C%2Fu%3E%3C%2Fa%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E1%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFetching+the+hire+date+for+John+M.+Doe.+One+moment%2C+please.%3C%2Fp%3E%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Retrieving+employee+hire+date...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22John+Doe%27s+hire+date+is+%3Cb%3EJanuary+15%2C+2018%3C%2Fb%3E.%22%7D%2C%7B%22richText%22%3A%22Is+there+anything+else+I+can+help+you+with%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
+solution_tags:
+- HR - Employee Records
+- HR - Other
 systems:
 - sap-success-factors
 time_in_minutes: 10
 ---
 
-# **Introduction :**
+## **Introduction :**
 
-The **Employee Hire Date** plugin allows users to retrieve the hire date of an employee from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review the hire date information for any employee.
+The **“Employee Hire Date”** plugin allows users to retrieve the hire date of an employee from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review the hire date information for any employee.
 
 This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
 
-# Prerequisites :
+## Prerequisites :
 
 - Access to Agent Studio
-- [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) built in Creator Studio (follow the SAP  Successfactors  Authentication guide to create your connector)
 
-# What are we building?
+## What are we building?
 
-## **Agent Design**
+### Agent Design
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Hey+Copilot%2C+can+you+tell+me+the+hire+date+for+another+employee%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+can+help+with+that.+Let+me+first+check+if+you+have+the+necessary+permissions+to+view+other+employees%27+hire+dates.%3C%2Fp%3E%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Checking+user+role...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22It+looks+like+you+have+the+appropriate+permissions.+Could+you+please+provide+the+employee%27s+name+or+ID%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I%27d+like+to+know+the+hire+date+for+John+Doe.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Fetching+the+hire+date+for+John+Doe.+One+moment%2C+please.%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Retrieving+employee+hire+date...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22John+Doe%27s+hire+date+is+%3Cb%3EJanuary+15%2C+2018%3C%2Fb%3E.%22%7D%2C%7B%22richText%22%3A%22Is+there+anything+else+I+can+help+you+with%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I%27d+like+to+know+the+hire+date+for+John+Doe.%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFetching+John+Doe%27s+Email+from+People+Directory%26nbsp%3B%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22%3Cp%3EFound+multiple+John+Doe%27s%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFound+Multiple+John+Doe%27s%2C+Which+one+do+you+want+me+to+fetch+the+information+for%3F+%3Cbr%3E%5Cn%3Cbr%3E%5Cn1.+John+M.+Doe%E2%80%93+Senior+Software+Engineer+I%2C+Machine+Learning.+Email%3A+%3Ca+href%3D%5C%22mailto%3Arnatarajan%40moveworks.ai%5C%22+rel%3D%5C%22noopener+noreferrer%5C%22+target%3D%5C%22_blank%5C%22%3E%3Cu%3Ejohn.doe%40example.com%3C%2Fu%3E%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3E%3Cbr%3E%3C%2Fp%3E%5Cn%3Cp%3E2.+John+Doe+%E2%80%93+Product+Analyst%2C+Product+Management.+Email%3A+%3Ca+href%3D%5C%22mailto%3Arthakur%40moveworks.ai%5C%22+rel%3D%5C%22noopener+noreferrer%5C%22+target%3D%5C%22_blank%5C%22%3E%3Cu%3Ejohn.d%40example.com%3C%2Fu%3E%3C%2Fa%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E1%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFetching+the+hire+date+for+John+M.+Doe.+One+moment%2C+please.%3C%2Fp%3E%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Retrieving+employee+hire+date...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22John+Doe%27s+hire+date+is+%3Cb%3EJanuary+15%2C+2018%3C%2Fb%3E.%22%7D%2C%7B%22richText%22%3A%22Is+there+anything+else+I+can+help+you+with%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
 
-# **Installation Steps**
+## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) Guide to do so. Once completed, follow our plugin installation documentation to install the  **Employee Hire Date** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) Guide to configure the connection.
 
-After configuring the connector, refer to our installation documentation for more details on completing the setup.
+Note: To enable the Lookup Employee Hire Date functionality, ensure the SAP SuccessFactors integration user has the necessary permission scopes.
 
-# **Appendix**
+**Required Scopes:**
 
-## API #1: **Fetch Manager’s UserId using User Email**
+- `View` access to the **employee records** entity
 
-The **Employee Hire Date** API retrieves a hireDate using user’s diaplayName.
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
+
+## **Appendix**
+
+### API #1: **Get Hire Date by Email**
+
+The **Employee Hire Date** API retrieves a hireDate using user’s email.
 
 ```bash
 curl --request GET
---location 'https://<API_SERVER>/odata/v2/User?%24top=30&%24filter=displayName%20eq%20%27<displayName>%27&%24select=hireDate' \
+--location 'https://<API_SERVER_DOMAIN>/odata/v2/User?%24top=30&%24filter=email%20eq%20%27<email>%27&%24select=hireDate' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 ```
 
-**Path Parameters:**
+**Query Parameters:**
 
-- `<displayName>` (string) – The displayName of the user whose hire date you want to retrieve. This will provide the hire date of the employee.
+- `<email>` (string) – The email of the user whose hire date you want to retrieve. This will provide the hire date of the employee.
+- `$select` (string) – Specifies which properties to return.

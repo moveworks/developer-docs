@@ -1,6 +1,9 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows you to look up the details of your purchase orders.
 difficulty_level: BEGINNER
+domain:
+- Finance - Procurement
 fidelity: TEMPLATE
 installation_asset_uuid: 4672def5-adf8-41e3-a4a7-55466b35f0a2
 name: Look Up My Purchase Orders
@@ -34,7 +37,7 @@ We recommend creating the connector for Coupa first, prior to installing this pl
 
 - User » Standard role for all users who need to create and/or approve requisitions
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

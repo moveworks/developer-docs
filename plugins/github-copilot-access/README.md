@@ -1,6 +1,9 @@
 ---
+availability: IDEA
 description: A plugin that allows employees to get a license to their GitHub copilot
   instance.
+domain:
+- IT
 fidelity: IDEA
 name: Get GitHub Copilot Access
 num_implementations: 1

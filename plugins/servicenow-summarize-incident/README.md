@@ -1,8 +1,12 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that provides a quick summary of an incident.
 difficulty_level: BEGINNER
+domain:
+- Ticketing
+- Productivity
 fidelity: TEMPLATE
 installation_asset_uuid: 298f075c-ac6b-41aa-a3d8-0fdc901fa6d1
 name: Summarize an Incident
@@ -35,7 +39,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 We recommend creating the connector for **ServiceNow** first, prior to installing this plugin. Please follow the [ServiceNow Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=servicenow) to create the connector.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin.
 
 # Customization Options
 

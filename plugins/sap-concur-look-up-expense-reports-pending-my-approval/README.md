@@ -1,8 +1,11 @@
 ---
 accreditations:
 - DEFAULT
+availability: INSTALLABLE
 description: A plugin that allows you to look up expense reports pending your approval.
 difficulty_level: BEGINNER
+domain:
+- Finance - Expense Management
 fidelity: TEMPLATE
 installation_asset_uuid: 242b45f2-429a-4109-b56d-c220b2a7ad7c
 name: Look Up Expense Reports Pending My Approval
@@ -44,7 +47,7 @@ We recommend creating the connector for SAP Concur first, prior to installing th
 
 Refer to [SAP Concur Scope Usage](https://developer.concur.com/api-reference/expense/expense-report/v4.reports.html#scope-usage) for full details.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace) for more information on how to install a plugin. 
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more information on how to install a plugin. 
 
 # Appendix
 

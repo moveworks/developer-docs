@@ -1,16 +1,17 @@
 ---
+accreditations:
+- indrapaul24
+- DEFAULT
+availability: VALIDATED
 difficulty_level: ADVANCED
 fidelity: GUIDE
 name: Snowflake
 time_in_minutes: 60
-accreditations:
-- indrapaul24
-- DEFAULT
 ---
 
 # **Introduction**
 
-Connecting Snowflake to Creator Studio allows for robust data management, analysis, and integration capabilities by leveraging Snowflake's powerful cloud data platform within Creator Studio's automation and workflow environment. This guide will walk you through the process of using OAuth for secure authentication, detailing how to configure OAuth clients in Snowflake, obtain necessary credentials, and establish a secure connection within Creator Studio. By following these steps, you'll enable seamless data workflows that optimize your data-driven projects with efficiency and security.
+Connecting Snowflake to Agent Studio allows for robust data management, analysis, and integration capabilities by leveraging Snowflake's powerful cloud data platform within Agent Studio's automation and workflow environment. This guide will walk you through the process of using OAuth for secure authentication, detailing how to configure OAuth clients in Snowflake, obtain necessary credentials, and establish a secure connection within Agent Studio. By following these steps, you'll enable seamless data workflows that optimize your data-driven projects with efficiency and security.
 
 # **Prerequisites**
 
@@ -26,7 +27,7 @@ Snowflake supports the [OAuth 2.0](https://oauth.net/2/) protocol for authenti
 - [Snowflake OAuth](https://docs.snowflake.com/en/user-guide/oauth-snowflake-overview)
 - [External OAuth](https://docs.snowflake.com/en/user-guide/oauth-ext-overview)
 
-For this tutorial, we are going to use the [Custom client integration](https://docs.snowflake.com/en/user-guide/oauth-custom) under the Snowflake OAuth to connect Creator Studio to your Snowflake instance.
+For this tutorial, we are going to use the [Custom client integration](https://docs.snowflake.com/en/user-guide/oauth-custom) under the Snowflake OAuth to connect Agent Studio to your Snowflake instance.
 
 ## **Step 1: Preparing Snowflake for OAuth**
 
@@ -155,9 +156,9 @@ For this tutorial, we are going to use the [Custom client integration](https://d
     The `access_token` here is the one you can use to authenticate further API calls to your Snowflake instance.
     
 
-## **Step 3: Integrate with Creator Studio**
+## **Step 3: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - Base URL:
         - This will be your Snowflake account URL
         - For example, you might use the endpoints `https://myorg-account_xyz.snowflakecomputing.com/oauth/authorize` and `https://myorg-account_xyz.snowflakecomputing.com/oauth/token-request`
@@ -199,7 +200,7 @@ For this tutorial, we are going to use the [Custom client integration](https://d
         | Key | Value |
         | --- | --- |
         | Accept | application/json |
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ```json
     
@@ -225,4 +226,4 @@ For this tutorial, we are going to use the [Custom client integration](https://d
 
 # **Congratulations!**
 
-You've successfully integrated Snowflake’s API with Creator Studio. This opens up a variety of integration possibilities within your Snowflake workspace.
+You've successfully integrated Snowflake’s API with Agent Studio. This opens up a variety of integration possibilities within your Snowflake workspace.

@@ -1,10 +1,11 @@
 ---
+availability: VALIDATED
+difficulty_level: INTERMEDIATE
 fidelity: GUIDE
 name: Pagerduty
-difficulty_level: INTERMEDIATE
 time_in_minutes: 30
-
 ---
+
 # Introduction:
 
 **PagerDuty** is a leading incident management platform that empowers teams to detect, respond to, and resolve critical incidents in real-time. It enables organizations to reduce downtime, enhance reliability, and maintain seamless digital operations by integrating alerting, on-call scheduling, automation, and escalation policies.

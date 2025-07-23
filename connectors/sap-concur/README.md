@@ -1,20 +1,20 @@
 ---
-name: SAP Concur
-fidelity: GUIDE
-time_in_minutes: 20
-difficulty_level: BEGINNER
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A3423%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+just+spent+%2423.43+on+lunch+while+waiting+at+the+airport.+Can+you+add+it+to+my+expense+report%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EOkay%2C+I+can+help+you+add+an+expense+entry.%3Cbr%3E%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3EPlease+confirm+your+request+%3Cbr%3E%3C%2Fp%3E%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3EAmount%3C%2Fb%3E%3A+%2423.43%3Cbr%3E%3Cb%3EDescription%3C%2Fb%3E%3A+Airport+Lunch%3Cbr%3E%3Cb%3ECategory%3C%2Fb%3E%3A+MEALS_AND_ENTERTAINMENT%3Cbr%3E%3Cb%3EExpense+Report%3C%2Fb%3E%3A+89230-2834%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Yes%22%7D%2C%7B%22text%22%3A%22Get+Help%22%7D%2C%7B%22text%22%3A%22Cancel%22%7D%5D%7D%5D%7D%5D%7D%7D%5D%7D
 accreditations:
 - indrapaul24
 - DEFAULT
+availability: VALIDATED
+difficulty_level: BEGINNER
 drop_accreditations:
 - ajaymerchia
+fidelity: GUIDE
+name: SAP Concur
+purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat-builder?workspace=%7B%22title%22%3A%22My+Workspace%22%2C%22botSettings%22%3A%7B%7D%2C%22mocks%22%3A%5B%7B%22id%22%3A3423%2C%22title%22%3A%22Mock+1%22%2C%22transcript%22%3A%7B%22settings%22%3A%7B%22colorStyle%22%3A%22LIGHT%22%2C%22startTime%22%3A%2211%3A43+AM%22%2C%22defaultPerson%22%3A%22GWEN%22%2C%22editable%22%3Atrue%7D%2C%22messages%22%3A%5B%7B%22from%22%3A%22USER%22%2C%22text%22%3A%22%3Cp%3EI+just+spent+%2423.43+on+lunch+while+waiting+at+the+airport.+Can+you+add+it+to+my+expense+report%3F%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22from%22%3A%22BOT%22%2C%22text%22%3A%22%3Cp%3EOkay%2C+I+can+help+you+add+an+expense+entry.%3Cbr%3E%3C%2Fp%3E%22%2C%22cards%22%3A%5B%7B%22title%22%3A%22%3Cp%3EPlease+confirm+your+request+%3Cbr%3E%3C%2Fp%3E%22%2C%22text%22%3A%22%3Cp%3E%3Cb%3EAmount%3C%2Fb%3E%3A+%2423.43%3Cbr%3E%3Cb%3EDescription%3C%2Fb%3E%3A+Airport+Lunch%3Cbr%3E%3Cb%3ECategory%3C%2Fb%3E%3A+MEALS_AND_ENTERTAINMENT%3Cbr%3E%3Cb%3EExpense+Report%3C%2Fb%3E%3A+89230-2834%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22PRIMARY%22%2C%22text%22%3A%22Yes%22%7D%2C%7B%22text%22%3A%22Get+Help%22%7D%2C%7B%22text%22%3A%22Cancel%22%7D%5D%7D%5D%7D%5D%7D%7D%5D%7D
+time_in_minutes: 20
 ---
-
 
 # **Introduction**
 
-SAP Concur is a leading provider of integrated travel, expense, and invoice management solutions. This guide will demonstrate how to create an **OAuth Client** in SAP Concur, authenticate with SAP Concur’s API, and test it in Creator Studio.
+SAP Concur is a leading provider of integrated travel, expense, and invoice management solutions. This guide will demonstrate how to create an **OAuth Client** in SAP Concur, authenticate with SAP Concur’s API, and test it in Agent Studio.
 
 # **Prerequisites**
 
@@ -23,7 +23,7 @@ SAP Concur is a leading provider of integrated travel, expense, and invoice mana
 
 # Walkthrough
 
-You will be authenticating your Concur system with Creator Studio via the **Company Request Token Method**. This lets us generate a 1-time Company Request Token (valid for 24 hours) followed by refreshable access tokens which we’ll use to authenticate any interactions.
+You will be authenticating your Concur system with Agent Studio via the **Company Request Token Method**. This lets us generate a 1-time Company Request Token (valid for 24 hours) followed by refreshable access tokens which we’ll use to authenticate any interactions.
 
 > **Refresh token expiration**
 > 
@@ -44,7 +44,7 @@ You will be authenticating your Concur system with Creator Studio via the **Com
 3. Fill in the following details:
     1. App Name: `Moveworks Integration Application`
     2. App Type: `Client`
-    3. App Description: `Moveworks' Creator Studio uses this application to authenticate API calls to your Concur instance`
+    3. App Description: `Moveworks' Agent Studio uses this application to authenticate API calls to your Concur instance`
     4. Allowed Grants: `refresh_token`, `password`, & `client_credentials`
     5. Allowed Scopes: `openid`, `EXPRPT`, `expense.report.read`, etc (Based on your requirement for the use case you are trying to build)
 4. ❗Note down the generated `Client ID` & `Client Secret`
@@ -111,9 +111,9 @@ You will be authenticating your Concur system with Creator Studio via the **Com
     
 4. Replace the values and execute this API. You would see the same response as previous but now we will use the `access_token` we got from this API to authenticate our API calls
 
-## **Step 4: Integrate with Creator Studio**
+## **Step 4: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
+1. In Agent Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
     - Description: `Connect to Concur APIs`
     - Base URL: `https://us2.api.concursolutions.com`
     - Auth Config: `Oauth2`
@@ -148,11 +148,11 @@ You will be authenticating your Concur system with Creator Studio via the **Com
         | --- | --- |
         | user | ALL |
         | limit | 1 |
-3. Test your setup in Creator Studio and look for a successful execution (Response code: 200)
+3. Test your setup in Agent Studio and look for a successful execution (Response code: 200)
     
     ![Untitled](Authentication%20Tutorial%20SAP%20Concur%20e3dd2cd5964a448fa351c31b5d30c23d/Untitled%201.png)
     
 
 # **Congratulations!**
 
-You've successfully integrated Concur’s API with Creator Studio. This opens up a variety of automation and integration possibilities within your Concur instance.
+You've successfully integrated Concur’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Concur instance.

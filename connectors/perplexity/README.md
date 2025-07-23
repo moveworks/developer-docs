@@ -1,4 +1,5 @@
 ---
+availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
 name: Perplexity
@@ -7,7 +8,7 @@ time_in_minutes: 5
 
 # **Introduction**
 
-Perplexity’s API hosts LLMs that have access to information scraped from the web. This guide will demonstrate how to create a Perplexity API Key, authenticate with the Perplexity API, and test in Creator Studio
+Perplexity’s API hosts LLMs that have access to information scraped from the web. This guide will demonstrate how to create a Perplexity API Key, authenticate with the Perplexity API, and test in Agent Studio
 
 # **Prerequisites**
 
@@ -39,9 +40,9 @@ Perplexity’s API hosts LLMs that have access to information scraped from the w
     ![Untitled](Authentication%20Guide%20Perplexity%20e925c5c4cdb443b28e7c28bb26e8245e/Untitled%203.png)
     
 
-## **Step 3: Integrate with Creator Studio**
+## **Step 3: Integrate with Agent Studio**
 
-1. In Creator Studio, create a new connector with the following configuration:
+1. In Agent Studio, create a new connector with the following configuration:
     - Base URL: `https://api.perplexity.ai`
     - Auth Config: `Api Key Auth`
     - Api Key Auth Auth Type: `Header Auth`
@@ -99,11 +100,11 @@ Perplexity’s API hosts LLMs that have access to information scraped from the w
         | --- | --- |
         | accept | application/json |
         | content-type | application/json |
-3. Test your setup in Creator Studio and look for a successful execution.
+3. Test your setup in Agent Studio and look for a successful execution.
     
     ![Untitled](Authentication%20Guide%20Perplexity%20e925c5c4cdb443b28e7c28bb26e8245e/Untitled%204.png)
     
 
 # **Congratulations!**
 
-You've successfully integrated Perplexity’s API with Creator Studio. You can now access their LLMs from Creator Studio.
+You've successfully integrated Perplexity’s API with Agent Studio. You can now access their LLMs from Agent Studio.

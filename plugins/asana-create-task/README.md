@@ -1,7 +1,11 @@
 ---
+availability: INSTALLABLE
 description: Plugin to create a task for an user and assign projects, start date,
   due date.
 diffuculty: BEGINNER
+domain:
+- Productivity
+- Project Management
 fidelity: TEMPLATE
 installation_asset_uuid: 83e4acde-61c5-4f93-b617-b0b968b2945a
 name: Create a Task

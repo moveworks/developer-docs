@@ -1,160 +1,77 @@
 ---
+availability: INSTALLABLE
 description: A plugin that allows employees to see what current job postings are available.
 difficulty_level: INTERMEDIATE
+domain:
+- HR - Other
+- HR - Recruiting & Talent
 fidelity: TEMPLATE
-installation_asset_uuid: d0150d49-1997-4079-985a-a8a3134fe10b
+installation_asset_uuid: fb03c05b-914e-4ee6-b94c-4cc4bb25a25b
 name: View Open Job Postings
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Can+I+see+the+current+job+postings%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESure%2C+here%27s+the+latest+list+from+Workday%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ESoftware+Engineer%3C%2Fb%3E%3Cbr%3EJoin+our+tech+team+and+work+on+innovative+projects.+Ideal+for+those+passionate+about+coding+and+technology.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EMarketing+Specialist%3C%2Fb%3E%3Cbr%3EHelp+us+enhance+our+brand+presence+and+engage+our+audience.+Perfect+for+creative+and+strategic+thinkers.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EProduct+Manager%3C%2Fb%3E%3Cbr%3ELead+the+development+of+our+next+product+line.+Suitable+for+visionary+leaders+with+a+knack+for+product+development.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EHR+Coordinator%3C%2Fb%3E%3Cbr%3ESupport+our+team+in+creating+a+great+workplace.+Great+for+individuals+passionate+about+people+and+culture.%22%7D%5D%7D%5D%7D
 solution_tags:
-- HR
+- HR - Other
 - HR - Recruiting & Talent
 systems:
 - workday
 time_in_minutes: 20
 ---
 
-# **Introduction :**
+# **Introduction:**
 
-Workday is a leading enterprise management platform, and the **“View Open Jobs”** feature allows users to access current job openings. Integrating this functionality into your bot enables users to seamlessly browse job listings, enhancing efficiency and organization.
+The **View Open Jobs** plugin provides real-time access to Workday’s active job postings through the Moveworks AI Assistant. Recruiters, hiring managers, and employees can instantly search open positions by department, location, or job family—all within chat.
 
-This guide provides step-by-step instructions for incorporating the **View Open Jobs** feature into your bot using Creator Studio.
+This guide covers the step-by-step setup to enable job lookup functionality.
 
-Let's get started!
+# **Prerequisites :**
 
-# Prerequisites :
+- Access to Agent Studio
 
-- [Postman](https://www.postman.com/) or an API Testing Tool
-- Follow the [Workday Connector guide](https://developer.moveworks.com/creator-studio/resources/connector?id=workday) to set up your Creator Studio Connector.
+# **What are we building?**
 
-# What are we building?
+### **Agent Design**
 
-## **Conversation Design**
+This [purple chat]( https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Can+I+see+the+current+job+postings%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESure%2C+here%27s+the+latest+list+from+Workday%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ESoftware+Engineer%3C%2Fb%3E%3Cbr%3EJoin+our+tech+team+and+work+on+innovative+projects.+Ideal+for+those+passionate+about+coding+and+technology.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EMarketing+Specialist%3C%2Fb%3E%3Cbr%3EHelp+us+enhance+our+brand+presence+and+engage+our+audience.+Perfect+for+creative+and+strategic+thinkers.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EProduct+Manager%3C%2Fb%3E%3Cbr%3ELead+the+development+of+our+next+product+line.+Suitable+for+visionary+leaders+with+a+knack+for+product+development.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EHR+Coordinator%3C%2Fb%3E%3Cbr%3ESupport+our+team+in+creating+a+great+workplace.+Great+for+individuals+passionate+about+people+and+culture.%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Can+I+see+the+current+job+postings%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESure%2C+here%27s+the+latest+list+from+Workday%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ESoftware+Engineer%3C%2Fb%3E%3Cbr%3EJoin+our+tech+team+and+work+on+innovative+projects.+Ideal+for+those+passionate+about+coding+and+technology.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EMarketing+Specialist%3C%2Fb%3E%3Cbr%3EHelp+us+enhance+our+brand+presence+and+engage+our+audience.+Perfect+for+creative+and+strategic+thinkers.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EProduct+Manager%3C%2Fb%3E%3Cbr%3ELead+the+development+of+our+next+product+line.+Suitable+for+visionary+leaders+with+a+knack+for+product+development.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EHR+Coordinator%3C%2Fb%3E%3Cbr%3ESupport+our+team+in+creating+a+great+workplace.+Great+for+individuals+passionate+about+people+and+culture.%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
+# **Installation Steps**
 
-# **Creator Studio Components**
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**Workday Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
-- **Triggers**:
-    1. Natural Language
-- **Slots**:
-    1. Fetch open job posting.
-- **Actions**:
-    1. **Fetch open jobs:**
-        - The process of retrieving a list of current job openings from a system.
-- **Guidelines:**
-    1. None
+For this plugin, ensure the Workday integration system user has the following permissions:
 
-# **API Research**
+## **Required Permissions:**
 
-To build this use case, we will utilize one API. Since our goal is to fetch the current job openings, we will focus on workday-related APIs. Only a single API call is required to achieve this.
+- Get access ****to reference data: **Recruiting**
+- View access to worker data: **Positions**
+- View access ****to reference data: **Job Requisitions**
 
-![image.png](image.png)
+> Note: Requires "Staffing" domain permissions in Workday.
+> 
 
-## API #1: **Fetch open jobs**
+**Tenant Configuration:**
 
-The **Get Job openings** API enables users to retrieve comprehensive details about open job postings from Workday. By leveraging Workday's reporting and APIs, this functionality ensures efficient and precise data retrieval, even in environments with a large number of job openings.
+All Workday API endpoints in this plugin use`<TENANT>`as a placeholder. After installation, replace`<TENANT>`in the action definitions with your actual Workday tenant name.
 
-- **Purpose**: Retrieves detailed job requisition data, including: **Job Title, Job Description**
-- **Features**: Job listings based on **Job Title, Job Description**, ensuring accurate and relevant results, even in large datasets.
-- **Example**: Fetch job requisition details based on specific criteria such as **Job Title, Job Description**
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after`workday.com/`, e.g.:
     
-    ```bash
-    curl --request GET
-    --location 'https://<DOMAIN>.myworkday.com/api/recruiting/v3/<INSTANCE>/jobPostings' \
-    --header 'Content-Type: application/json'
-    ```
+    `https://impl.workday.com/**your_tenant**/...`
     
 
-# **Steps**
+Make sure to update this across all actions that reference the Workday API.
 
-## **Step 1: Build HTTP Action**
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
-Define your HTTP Actions for fetching all the backlog ideas of a specific project :
+# **Appendix**
 
-### **1. Fetch open jobs**
+## **API #1: Fetch open jobs**
 
-- In Creator Studio, create a new Action.
-    - Navigate to plugin section > Actions tab
-    - Click on CREATE to define a new action
-        
-        ![m1.png](m1.png)
-        
-- Click on the  IMPORT CURL option and paste the following cURL command:
-    
-    ```bash
-    curl --request GET
-    --location 'https://<DOMAIN>.myworkday.com/api/recruiting/v3/<INSTANCE>/jobPostings' \
-    --header 'Content-Type: application/json'
-    ```
-    
-- Click on Use Existing Connector > select the Workday [](https://developer.moveworks.com/creator-studio/resources/connector/?id=jira)connector that you just created > Click on Apply. This will populate the Base URL and the Authorization section of the API Editor.
-- Click on Test to check if the Connector setup was successful and expect a successful response as shown below. You will see the request response on the left side and the generated output schema on the right. If the output schema does not match the API response or fails to populate automatically, kindly click the GENERATE FROM RESPONSE button to refresh and align the schema with the API response.
-    
-    ![image.png](image%201.png)
-    
-- Add the **API Name** and **API Description** as shown below, then click the Save button
-    
-    ![image.png](image%202.png)
-    
+The **Get Job openings** API enables users to retrieve comprehensive details about open job postings from Workday. By leveraging Workday's reporting and APIs, this functionality ensures efficient and precise data retrieval, even in environments with a large number of job openings.
 
-## **Step 2: Build Compound Action**
-
-
-- Head over to the **Compound Actions** tab and click **CREATE**
-    
-    ![m2.png](m2.png)
-    
-- Give your Compound Action a **Name** and **Description** , then click Next Note: Name only letters, numbers, and underscores. We suggest using snake case or camel case formatting (e.g. Workflow_name or workflowName )
-    
-    ![image.png](image%204.png)
-    
-- Click on the Script editor tab. Here you will be able to build your compound action using the YAML syntax. At a high-level, this syntax provides actions (HTTP Request, APIthon Scripts) and workflow logic (switch statements, for each loops, return statements, parallel, try/catch). See the [Compound Action Syntax](https://developer.moveworks.com/creator-studio/reference/compound_actions_syntax/) Reference for more info.
-    
-    ```yaml
-    steps:
-      - action:
-          action_name: View_Jobs
-          progress_updates:
-            on_complete: Retrieved job postings
-            on_pending: Retrieving postings
-          output_key: View_Jobs_result
-      - return:
-          output_mapper:
-            list:
-              MAP():
-                converter:
-                  title: item.title
-                  jobDescription: item.jobDescription
-                items: data.View_Jobs_result.data
-    ```
-    
-
-## **Step 3: Publish Workflow to Plugin**
-
-- Head over to the Compound Actions tab and click on the kebab menu ( ︙ )
-- Next, click on Publish Workflow to Plugin
-- First, verify your Plugin **Name** & **Short description** . This is autofilled from the name & description of your compound action.
-    
-    ![image.png](image%205.png)
-    
-- Next, consider whether to select the User consent required before execution? checkbox. Enabling this option prompts the user to confirm all slot values before executing the plugin, which is widely regarded as a best practice.
-    
-    ![image.png](image%206.png)
-    
-- Click Next and set up your positive and negative triggering examples. This ensures that the bot triggers your plugin given a relevant utterance.
-    - See our [guide](https://developer.moveworks.com/creator-studio/conversation-design/triggers/natural-language-triggers/#how-to-write-good-triggering-examples) on Triggering
-- Lastly, click Next and set the **Launch Rules** you want your plugin to abide by.
-    - See our [guide](https://developer.moveworks.com/creator-studio/administration/launch-options/) on Launch Rules
-
-## **Step 4: See it in action!**
-
-- After clicking the final Submit button, your plugin will be published to the bot and triggerable based on your **Launch Rules.**
-- You should wait up to **5 minutes** after making changes before trying to test in your bot!
-- If you run into an issue:
-    1. Check our [troubleshooting guides](https://developer.moveworks.com/creator-studio/troubleshooting/support/)
-    2. Understand your issue using Logs
-    3. Reach out to Support
-
-# **Congratulations!**
-
-You've just added the **"View Open Jobs"** feature inside your workday to your Copilot! Explore our other guides for more inspiration on what to build next.
+```bash
+curl --request GET
+--location 'https://<DOMAIN>.myworkday.com/api/recruiting/v3/<INSTANCE>/jobPostings' \
+--header 'Content-Type: application/json'
+```
