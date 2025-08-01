@@ -21,7 +21,7 @@ time_in_minutes: 20
 ---
 ## **Introduction**
 
-The “View My Stock Grant Summary” plugin enables employees to quickly access their stock grant details directly through the Moveworks AI Assistant. By pulling data from Workday, this plugin provides a seamless way to view the number of shares granted, the current value per share, and the total stock value.
+The **View My Stock Grant Summary** plugin enables employees to quickly access their stock grant details using the Moveworks AI Assistant. By pulling data from Workday, this plugin provides a seamless way to view the number of shares granted, the current value per share, and the total stock value.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
