@@ -54,6 +54,34 @@ Make sure to update this across all actions that reference the Workday API.
 
 After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
+## **Customization Process**
+
+We are using a calculated field named **`cf_sharesGrantedGrantPrice`**, which is derived by multiplying the values of `sharesGranted` and `grantPrice`. If you already have a similar field, you can update your integration logic to use your existing one.
+
+Below are the steps you can follow to create this calculated field in Workday.
+
+## **Steps to Create ‘cf_sharesGrantedGrantPrice’ Calculated Field in Workday**
+
+1. **Open Create Calculated Field**
+    - In the Workday search bar, type **"Create Calculated Field"** and select the task.
+2. **Fill Out Initial Details**
+    - In the **Field Name**, enter: `sharesGrantedGrantPrice`
+    - For **Business Object**, select: `Stock Grant`
+    - For **Function**, choose: `Arithmetic Calculation`
+    - Click **OK**
+3. **Build the Arithmetic Formula**
+    - On the next screen, in the **Expression Editor**:
+        - Select the **`sharesGranted`** field.
+        - Click the  operator for multiplication.
+        - Select the **`grantPrice`** field.
+    - The formula should look like:
+        
+        `sharesGranted * grantPrice`
+        
+4. **Save the Field**
+    - Click **Test** to validate your formula.
+    - If it passes, click **OK** to save the calculated field.
+
 ## **Appendix**
 
 ### **API #1: Get Worker ID by Email**
