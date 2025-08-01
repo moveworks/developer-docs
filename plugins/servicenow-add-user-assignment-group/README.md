@@ -60,7 +60,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=us
 ### **API #2: Get User Id by User Name**
 
 ```bash
-curl --location "https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=nameLIKE{{USER_NAME}}" \
+curl --location "https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=first_nameLIKE{{USER_NAME}}%5EORlast_nameLIKE{{USER_NAME}}%5EORemailLIKE{{USER_NAME}}%5EORnameLIKE{{USER_NAME}}" \
 --header "Authorization: Bearer <ACCESS_TOKEN>" \
 --header "Accept: application/json"
 
@@ -68,7 +68,7 @@ curl --location "https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=na
 
 **Query Parameters:**
 
-- `USER_NAME`(string) –  Name of the user to retrieve `user_id`.
+- `USER_NAME`(string) –  Full or partial name or email used to search and retrieve the corresponding `user_id`.
 
 ### **API #3: Add a User to an Assignment Group**
 
