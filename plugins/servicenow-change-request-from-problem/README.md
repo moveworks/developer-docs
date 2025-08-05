@@ -13,7 +13,6 @@ systems:
 - servicenow
 time_in_minutes: 20
 ---
-
 ## Introduction
 
 The **“Create Change Request from Problem”** plugin empowers IT teams to quickly generate a **Change Request** in **ServiceNow** directly from an existing **Problem record** using the Moveworks AI Assistant. This streamlines the change management process by eliminating manual steps, ensuring better tracking, and enabling faster resolution of issues that require infrastructure or process changes.
@@ -41,10 +40,24 @@ Once the connector is successfully configured, follow our [plugin installation d
 
 ## **Appendix**
 
-### API #1: Get Problem Records by Description
+### API #1: Get Problem Record by Number
 
 ```bash
-curl --location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=descriptionLIKE{{description}}' \
+curl --location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=number={{problem_number}}&sysparm_fields=sys_id,number,short_description,description,state,problem_state,priority,impact,urgency,category' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Content-Type: application/json'
+```
+
+**Query Parameters:**
+
+- `number` (string) – A specific **Problem number** to search for in the `problem` table.
+- `sysparm_fields` (string) – Fields to include in the response.
+
+### API #2: Get Problem Records by Description
+
+```bash
+curl --location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=descriptionLIKE{{description}}&sysparm_fields=sys_id,number,short_description,description,state,problem_state,priority,impact,urgency,category' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json'
@@ -53,8 +66,9 @@ curl --location 'https://<YOUR_DOMAIN>/api/now/table/problem?sysparm_query=descr
 **Query Parameters:**
 
 - `description` (string) – A keyword or phrase to match against the problem's description field
+- `sysparm_fields` (string) – Fields to include in the response.
 
-### API #2: Create a Change Request from a Problem
+### API #3: Create a Change Request from a Problem
 
 ```bash
 curl --location 'https://<YOUR_DOMAIN>/api/now/table/change_request' \
@@ -64,10 +78,8 @@ curl --location 'https://<YOUR_DOMAIN>/api/now/table/change_request' \
 --data '{
   "short_description": "{{short_description}}",
   "reason": "{{reason}}",
-  "implementation_plan": "{{implementation_plan}}",
-  "u_problem": "{{u_problem_sys_id}}"
+  "implementation_plan": "{{implementation_plan}}"
 }'
-
 ```
 
 **Request Body Fields:**
@@ -75,4 +87,43 @@ curl --location 'https://<YOUR_DOMAIN>/api/now/table/change_request' \
 - `short_description` (string) – A brief summary of the change request
 - `reason` (string) – The reason for initiating the change
 - `implementation_plan` (string) – The plan detailing how the change will be implemented
-- `u_problem` (string) – The `sys_id` of the related problem record
+
+### **API #4: Link Change Request with Problem**
+
+```bash
+curl --request PATCH --url 'https://<YOUR_DOMAIN>/api/now/table/change_request/{{change_req_sys_id}}' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--data-raw '{
+  "parent": "{{problem_sys_id}}"
+}'
+```
+
+**Path Parameters:**
+
+- `change_req_sys_id` (string) – Sys ID of the Change Request record to link.
+
+**Request Body Parameters:**
+
+- `problem_sys_id` (string) – Sys ID of the **Problem** record to associate as the parent of the change request
+
+### API #5: Link Problem with Change Request
+
+```bash
+curl --request PATCH --url 'https://dev265898.service-now.com/api/now/table/problem/{{problem_sys_id}}' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--data-raw '{
+  "rfc": "{{change_req_sys_id}}"
+}'
+```
+
+**Path Parameters:**
+
+- `problem_sys_id` (string) – Sys ID of the **Problem** record to update.
+
+**Request Body Parameters:**
+
+- `rfc` (string) – Sys ID of the **Change Request** to link with the Problem.
