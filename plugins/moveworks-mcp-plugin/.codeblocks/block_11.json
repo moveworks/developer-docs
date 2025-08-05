@@ -1,0 +1,8 @@
+[
+  {
+    "name": "tool_name",
+    "description": "Tool description",
+    "parameters": { "key": "type" }
+  },
+  ...
+]
