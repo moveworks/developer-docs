@@ -7,6 +7,7 @@ difficulty_level: INTERMEDIATE
 time_in_minutes: 30
 ---
 
+# Jamf
 
 ## **Introduction:**
 
@@ -95,7 +96,7 @@ After the app is registered:
     - **`Client Secret`**
 - These will be used in Agent Studio for authentication
 
-### Step 6**: Request an Access Token**
+### Step 6: Request an Access Token
 
 After successfully creating an **API Client** in **Jamf Pro** and retrieving the required credentials (`client_id` and `client_secret`), you can request an **access token**. This token is used to authenticate API requests securely.
 
@@ -131,7 +132,9 @@ To complete the integration between ServiceNow and Agent Studio using OAuth 2.0,
         - `https://<your-jamf-url>/api/oauth/token`
 5. Click on **Save** to submit the credentials, and your connector will be ready
 
-### Step 8**: Integrate Jamf API in Agent Studio**
+![image (3).png](image_(3).png)
+
+### Step 8: Integrate Jamf API in Agent Studio
 
 - Add your API details below to integrate with the **Jamf Pro** API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy).
 
