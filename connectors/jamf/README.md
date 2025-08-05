@@ -1,11 +1,12 @@
 ---
-availability: IDEA
+availability: VALIDATED
 description: Connect your Moveworks Copilot to Jamf.
+difficulty_level: INTERMEDIATE
 fidelity: GUIDE
 name: Jamf
-difficulty_level: INTERMEDIATE
 time_in_minutes: 30
 ---
+
 ## **Introduction:**
 
 **Jamf Pro** is a cloud-based Apple device management solution, enabling organizations to streamline deployment, security, and lifecycle management of Apple devices across their workforce.
