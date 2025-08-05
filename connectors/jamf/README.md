@@ -6,9 +6,6 @@ name: Jamf
 difficulty_level: INTERMEDIATE
 time_in_minutes: 30
 ---
-
-# Jamf
-
 ## **Introduction:**
 
 **Jamf Pro** is a cloud-based Apple device management solution, enabling organizations to streamline deployment, security, and lifecycle management of Apple devices across their workforce.
@@ -132,7 +129,7 @@ To complete the integration between ServiceNow and Agent Studio using OAuth 2.0,
         - `https://<your-jamf-url>/api/oauth/token`
 5. Click on **Save** to submit the credentials, and your connector will be ready
 
-![image (3).png](image_(3).png)
+![image.png](image%207.png)
 
 ### Step 8: Integrate Jamf API in Agent Studio
 
