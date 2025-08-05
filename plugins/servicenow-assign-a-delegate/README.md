@@ -63,7 +63,21 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=em
 - `USER_EMAIL`(string) – Email address is used to retrieve the user details.
 - `sysparm_fields`(string) – Fields to include in the response
 
-### **API #2: Assign a Delegate**
+
+### **API #2: Get Delegate Details by User name or email**
+
+```bash
+curl --location "https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=first_nameLIKE{{SEARCHTERM}}%5EORlast_nameLIKE{{SEARCHTERM}}%5EORemailLIKE{{SEARCHTERM}}%5EORnameLIKE{{SEARCHTERM}}" \
+--header "Authorization: Bearer <ACCESS_TOKEN>" \
+--header "Accept: application/json"
+
+```
+
+**Query Parameters:**
+
+- `SEARCHTERM`(string) –  Full or partial name or email used to search and retrieve the corresponding `user_id`.
+
+### **API #3: Assign a Delegate**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user_delegate' \
