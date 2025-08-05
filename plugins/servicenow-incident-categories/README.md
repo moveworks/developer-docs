@@ -39,22 +39,6 @@ We recommend creating the connector for Servicenow first, prior to installing t
 
 After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
-## **Customization Process:**
-
-We use the **Category** and **Subcategory** fields to classify requests. Since both fields already exist in your instance, you can simply add them to the form layout by following the steps below:
-
-### Steps to Add **Category** and **Subcategory** Fields in _Requested Item_:
-
-1. Navigate to **All → Requested Item** and open any record.
-2. Click the **three horizontal bars** (also known as the "hamburger menu") next to the _Requested Item_ header.
-3. Go to **Configure → Form Layout**.
-4. In the layout screen, you'll see two columns:
-   - **Available** (fields not currently on the form)
-   - **Selected** (fields currently on the form)
-5. Look for the fields `Category` and `Subcategory` in the **Available** column:
-   - If found, move both to the **Selected** column.
-6. Click **Save** to apply the changes.
-
 ## **Appendix:**
 
 **API # 1 : Get Incident By Number**
