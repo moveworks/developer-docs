@@ -32,12 +32,16 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 We recommend setting up **ServiceNow** before installing this plugin. Please follow the [ServiceNow Connector](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) guide to configure the connection.
 
-For this plugin, ensure the user has the following permissions:
+For this plugin, ensure the user has the following permissions and roles:
 
 **Table Access**:
 
 - `Read` access to the `sys_user` and `sys_user_group` tables.
 - `Read` and `Create` access to the `sys_user_grmember` table.
+
+**Roles Required**:
+- `user_admin`
+- `security_admin`
 
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
@@ -57,10 +61,10 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=us
 - `USER_EMAIL`(string) –  Email address of the user to retrieve `group_id`.
 - `sysparm_fields`(string) – Fields to include in the response
 
-### **API #2: Get User Id by User Name**
+### **API #2: Get User Id by User name or email**
 
 ```bash
-curl --location "https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=first_nameLIKE{{USER_NAME}}%5EORlast_nameLIKE{{USER_NAME}}%5EORemailLIKE{{USER_NAME}}%5EORnameLIKE{{USER_NAME}}" \
+curl --location "https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=first_nameLIKE{{SEARCHTERM}}%5EORlast_nameLIKE{{SEARCHTERM}}%5EORemailLIKE{{SEARCHTERM}}%5EORnameLIKE{{SEARCHTERM}}" \
 --header "Authorization: Bearer <ACCESS_TOKEN>" \
 --header "Accept: application/json"
 
@@ -68,7 +72,7 @@ curl --location "https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=fi
 
 **Query Parameters:**
 
-- `USER_NAME`(string) –  Full or partial name or email used to search and retrieve the corresponding `user_id`.
+- `SEARCHTERM`(string) –  Full or partial name or email used to search and retrieve the corresponding `user_id`.
 
 ### **API #3: Add a User to an Assignment Group**
 
