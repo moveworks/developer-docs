@@ -13,7 +13,7 @@ time_in_minutes: 40
 
 # Introduction
 
-This tutorial demonstrates how to connect Agent Studio to the Model Context Protocol (MCP) using a custom proxy server client. Since Agent Studio does not natively support MCP, we’ll build a proxy to bridge HTTP requests from Agent Studio to an MCP server. This proof-of-concept (POC) showcases how to integrate Plugins with MCP, enabling AI agents to interact with external tools and services in a standardized way. By the end, you’ll have a working setup where Agent Studio communicates with an MCP server through the proxy.
+This tutorial demonstrates how to connect Agent Studio to the Model Context Protocol (MCP) using a custom proxy server client. We will build a proxy to bridge HTTP requests from Agent Studio to an MCP server. This proof-of-concept (POC) showcases how to integrate Plugins with MCP, enabling AI agents to interact with external tools and services in a standardized way. By the end, you’ll have a working setup where Agent Studio communicates with an MCP server through the proxy.
 
 ![CleanShot 2025-08-05 at 10.05.57@2x.png](MCP%20Plugin%20246588d8909f8088985ef68dbca3ad75/7ddcf60a-8cde-4641-ba38-4d135d7095d4.png)
 
