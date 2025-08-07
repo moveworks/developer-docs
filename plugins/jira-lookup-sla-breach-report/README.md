@@ -61,19 +61,18 @@ Please follow the steps below to create the SLA field:
 - Navigate to the **Jira Service Management project** where you want to add the SLA.
 - Click on **Project settings** (bottom left corner of the project sidebar).
 
----
+
 
 **2.** **Open SLA Configuration**
 
 - In the left-hand sidebar under **Project settings**, click on **SLAs**.
 
----
+
 
 **3.** **Create a New SLA**
 
 - Click the **"Add SLA"** button at the top-right corner.
 
----
 
 **4. Define SLA Goal Name**
 
@@ -83,7 +82,7 @@ Please follow the steps below to create the SLA field:
 
 - Name: **Time to First Response**
 
----
+
 
 **5. Set Up SLA Start and Stop Conditions**
 
@@ -94,7 +93,7 @@ Please follow the steps below to create the SLA field:
 - **Start counting time**: When **Issue Created**
 - **Stop counting time**: When **Comment is added (from an agent)**
 
----
+
 
 **6. Set SLA Goals by Condition**
 
@@ -123,7 +122,7 @@ Then set the goal:
 - JQL is applied in the **Add goal section**.
 - Each JQL defines **when a specific SLA time goal applies**.
 
----
+
 
 **7. Set the Calendar (Working Hours)**
 
@@ -132,7 +131,6 @@ This determines **when the SLA clock is active**.
 - Select an existing **calendar** or create a new one (e.g., 9am–5pm weekdays).
 - This is important to avoid counting weekends/non-working hours.
 
----
 
 **8. Save the SLA**
 
