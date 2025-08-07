@@ -1,4 +1,3 @@
-curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=user.email=<USER_EMAIL>&sysparm_fields=group,sys_id,user.email&sysparm_display_value=all' \
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user?sysparm_query=email={{EMAIL}}&sysparm_fields=sys_id,name,email' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Accept: application/json'
-
