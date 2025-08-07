@@ -51,4 +51,4 @@ curl --location 'https://<YOUR_INSTANCE>.atlassian.net/rest/api/3/search?jql=pro
 
 **Query Parameters:**
 
-- `PROJECT_KEY` (string) – The Key of the Jira project in which to search for unassigned issues (e.g., `JMAT`).
+- `PROJECT_KEY` **(string)** – The **key** or **name** of the Jira project in which to search for unassigned issues. You can provide either the project key (e.g., `JMAT`) or the full project name (e.g., `Jira Marketing Team`).
