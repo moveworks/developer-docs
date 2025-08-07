@@ -48,7 +48,7 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use `<TENANT>` as a placeholder. After installation, replace `<TENANT>` in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use **`{{TENANT}}`** as a placeholder. After installation, replace **`{{TENANT}}`** in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
@@ -70,7 +70,7 @@ The **Get Workday ID By Email** API retrieves the workday ID by Email of an us
 
 ```bash
 curl --request POST\
---location 'https://<DOMAIN>.myworkday.com/ccx/api/wql/v1/<TENANT>/data' \
+--location 'https://<DOMAIN>.myworkday.com/ccx/api/wql/v1/{{TENANT}}/data' \
 --header 'Authorization: Bearer <ACCESS TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -88,7 +88,7 @@ The **Get Worker Direct Reports** API retrieves the direct reports of a manage
 
 ```bash
 curl --request GET \
---location 'https://<DOMAIN>.myworkday.com/api/v1/<TENANT>/workers/<WORKER_ID>/directReports' \
+--location 'https://<DOMAIN>.myworkday.com/api/v1/{{TENANT}}/workers/<WORKER_ID>/directReports' \
 --header 'Authorization: Bearer <Access token>' \
 --header 'Content-Type: application/json' \
 ```
@@ -103,7 +103,7 @@ The **Workday Add Personal Goals** API is used to set goals for the direct rep
 
 ```bash
 curl --request POST \
---location 'https://<DOMAIN>.myworkday.com/service/<TENANT>/Performance_Management/v42.1' \
+--location 'https://<DOMAIN>.myworkday.com/service/{{TENANT}}/Performance_Management/v42.1' \
 --header 'Authorization: Bearer <ACCESS TOKEN>' \
 --header 'Content-Type: text/xml' \
 --data '<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"

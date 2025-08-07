@@ -1,5 +1,5 @@
 curl --request POST\
---location 'https://<DOMAIN>.myworkday.com/ccx/api/wql/v1/<TENANT>/data' \
+--location 'https://<DOMAIN>.myworkday.com/ccx/api/wql/v1/{{TENANT}}/data' \
 --header 'Authorization: Bearer <ACCESS TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{

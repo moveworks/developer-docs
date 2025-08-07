@@ -1,5 +1,5 @@
 curl --request POST \
---location 'https://<DOMAIN>.myworkday.com/service/<TENANT>/Performance_Management/v42.1' \
+--location 'https://<DOMAIN>.myworkday.com/service/{{TENANT}}/Performance_Management/v42.1' \
 --header 'Authorization: Bearer <ACCESS TOKEN>' \
 --header 'Content-Type: text/xml' \
 --data '<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
