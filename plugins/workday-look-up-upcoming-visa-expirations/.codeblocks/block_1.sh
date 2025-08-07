@@ -1,4 +1,4 @@
-curl --location 'https://<your-instance>/ccx/api/wql/v1/<TENANT>/data' \
+curl --location 'https://<your-instance>/ccx/api/wql/v1/{{TENANT}}/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <your-access-token>' \
 --data '{

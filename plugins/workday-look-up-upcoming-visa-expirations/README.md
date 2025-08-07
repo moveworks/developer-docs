@@ -17,6 +17,7 @@ systems:
 - workday
 
 ---
+# LookUp Upcoming Visa Expirations
 
 ## **Introduction**
 
@@ -47,7 +48,7 @@ Specifically, ensure the following domain permissions are assigned with both **V
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use `<TENANT>` as a placeholder. After installation, replace `<TENANT>` in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use `{{TENANT}}` as a placeholder. After installation, replace `{{TENANT}}` in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
@@ -63,15 +64,15 @@ After you have configured the connector, Please refer to our [plugin installati
 ### **API #1 : Validate HR Access by Email**
 
 ```bash
-curl --location 'https://<your-instance>/ccx/api/wql/v1/<TENANT>/data' \
+curl --location 'https://<your-instance>/ccx/api/wql/v1/{{TENANT}}/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <your-access-token>' \
 --data-raw '{
-"query": "SELECT worker, jobFamilyGroup, email_PrimaryWorkOrPrimaryHome, workdayID FROM allActiveEmployees WHERE jobFamilyGroup = \"<jobFamilyGroup-ID>\" AND email_PrimaryWorkOrPrimaryHome = \"<email>\""
+"query": "SELECT worker, jobFamilyGroup, email_PrimaryWorkOrPrimaryHome, workdayID FROM allActiveEmployees WHERE jobFamilyGroup = \"jobFamilyGroup-ID}}\" AND email_PrimaryWorkOrPrimaryHome = \"{{email}}\""
 }'
 ```
 
-### Steps to Get jobFamilyGroup ID in Workday
+**Steps to Get jobFamilyGroup ID in Workday**
 
 - **Search** for **Job Family Group** in the Workday search bar and select it.
 - **Open** the specific group Human Resources.
@@ -83,13 +84,13 @@ curl --location 'https://<your-instance>/ccx/api/wql/v1/<TENANT>/data' \
 
 **Query Parameters:**
 
-- `"<jobFamilyGroup-ID>”`  - A unique ID used to filter employees by department or job function.
-- `"<email>"` - A unique email used to identify and filter a specific HR user.
+- `"{{jobFamilyGroup-ID}}”`  - A unique ID used to filter employees by department or job function.
+- `"{{email}}"` - A unique email used to identify and filter a specific HR user.
 
 ### **API #2 : Get Employee Visa Expiration Details**
 
 ```bash
-curl --location 'https://<your-instance>/ccx/api/wql/v1/<TENANT>/data' \
+curl --location 'https://<your-instance>/ccx/api/wql/v1/{{TENANT}}/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <your-access-token>' \
 --data '{
