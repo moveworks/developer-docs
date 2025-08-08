@@ -42,6 +42,9 @@ Ensure the following permissions are granted:
 - `Read` access to the `sys_user`, `sys_user_group`, and `incident` tables
 - `Read` and `Create` access to the `sys_user_grmember` table (required to add users to groups)
 
+**User Permissions:**:
+- You must be the `Group Admin` of the respective assignment group in order to add users.
+
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
 ## **Appendix**
