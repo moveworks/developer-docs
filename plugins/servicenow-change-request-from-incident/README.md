@@ -33,7 +33,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our **[ServiceNow Connector Guide](https://marketplace.moveworks.com/connectors/servicenow)** for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our **[ServiceNow Connector Guide](https://marketplace.moveworks.com/connectors/servicenow#how-to-implement)** for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the ServiceNow integration user has the following required permissions:
 
@@ -68,21 +68,22 @@ curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/incident?
 
 **Query Parameters:**
 
-- `INCIDENT_NUMBER`  – The unique identifier for the incident
+- `INCIDENT_NUMBER`  – The unique incident number
 
-### **API #3: Get Change Model ID by Type**
+### **API #3 Get Change Model List**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/chg_model?sysparm_query=nameLIKE<MODEL_NAME>' \
+
+curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/chg_model?sysparm_fields=sys_name%2Csys_id' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
-### **Query Parameters:**
+**Query Parameters:**
 
-- `MODEL_NAME` – Type of the change mode
+- `sysparm_fields`(string) – Fields to include in the response
 
-### **API #4: Create a Change Request**
+**API #4: Create a Change Request**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/change_request' \
@@ -99,8 +100,7 @@ curl --location 'https://<YOUR_INSTANCE>.service-now.com/api/now/table/change_re
 **Query Parameters:**
 
 - `CHANGE_MODEL_SYS_ID` **(string)** – The Change Model Sys ID. This defines the type of change
-- `short_description` **(string)** – Short description of the Incident for creating the Change Request.
-- `description` **(string)** – Description of the Incident for creating the Change Request.
+- `SHORT_DESCRIPTION` **(string)** – Short description of the Incident for creating the Change Request.
 - `CONFIGURATION_ITEM` **(string)** – ****Configuration Item ****of the Incident for creating the Change Request.
 
 ### **API #5: Link a Change Request to an Incident**
@@ -116,7 +116,10 @@ curl --location --request PATCH 'https://<YOUR_INSTANCE>.service-now.com/api/now
 
 ```
 
-**Query Parameters:**
+**Request Body Parameters:**
 
 - `CHANGE_REQUEST_SYS_ID`  **(string)** – The Sys ID of the change request that caused this incident. This creates a relationship between the incident and the change request.
+
+**Path Parameters:**
+
 - `INCIDENT_SYS_ID` **(string)** – The Sys ID of the incident
