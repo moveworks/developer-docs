@@ -43,7 +43,6 @@ We recommend creating the connector for Jira first, prior to installing this pl
 
 Specifically, ensure the following domain permissions are assigned with both **View** and **Get** access:
 
-- Worker Profile
 - Passport and Visa Information
 
 **Tenant Configuration:**
@@ -61,33 +60,7 @@ After you have configured the connector, Please refer to our [plugin installati
 
 ## **Appendix:-**
 
-### **API #1 : Validate HR Access by Email**
-
-```bash
-curl --location 'https://<your-instance>/ccx/api/wql/v1/{{TENANT}}/data' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer <your-access-token>' \
---data-raw '{
-"query": "SELECT worker, jobFamilyGroup, email_PrimaryWorkOrPrimaryHome, workdayID FROM allActiveEmployees WHERE jobFamilyGroup = \"jobFamilyGroup-ID}}\" AND email_PrimaryWorkOrPrimaryHome = \"{{email}}\""
-}'
-```
-
-**Steps to Get jobFamilyGroup ID in Workday**
-
-- **Search** for **Job Family Group** in the Workday search bar and select it.
-- **Open** the specific group Human Resources.
-- **Click** the three-dot menu → select **Integration ID** → copy the **Workday ID** shown.
-
-**Note :** 
-
-- **The `jobFamilyGroup` ID is instance-specific**—it may differ between environments or tenants. Since organizations may use different naming conventions for HR roles, using a static `jobFamilyGroup` ID is a consistent and reliable method to identify HR users.
-
-**Query Parameters:**
-
-- `"{{jobFamilyGroup-ID}}”`  - A unique ID used to filter employees by department or job function.
-- `"{{email}}"` - A unique email used to identify and filter a specific HR user.
-
-### **API #2 : Get Employee Visa Expiration Details**
+### **API #1 : Get Employee Visa Expiration Details**
 
 ```bash
 curl --location 'https://<your-instance>/ccx/api/wql/v1/{{TENANT}}/data' \
