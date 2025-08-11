@@ -37,7 +37,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 ## **Installation Steps**
 
-We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the  [Workday Connector](https://marketplace.moveworks.com/connectors/workday?hist=home%2Cbrws#how-to-implement) guide to set up the connector.
+We recommend creating the connector for Workday first, prior to installing this plugin. Please follow the  [Workday Connector](https://marketplace.moveworks.com/connectors/workday?hist=home%2Cbrws#how-to-implement) guide to set up the connector.
 
 **Note :** For the **Look Up Upcoming Visa Expirations** functionality, make sure your Workday integration system user has the necessary domain permissions.
 
