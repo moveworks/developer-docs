@@ -100,6 +100,5 @@ curl --location --request PATCH 'https://<API_SERVER_DOMAIN>/api/now/table/sysap
  
 - `state` (string) – Updates the state of the approval.
 - `comments`(string)– Text notes added to the approval record. Used to provide context or feedback for the approval decision.
-AI Agent Marketplace: Add AI Agents to your Assistant in minutes
-Customize your Moveworks AI Assistant with over 100+ installable agents from the AI Agent Marketplace. Innovate enterprise-wide with Moveworks.
+
  
