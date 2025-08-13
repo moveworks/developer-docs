@@ -20,7 +20,7 @@ systems:
 
 ## Introduction
 
-The **“Lookup Time-in-Status Metrics”** plugin allows teams to easily view **time-in-status metrics**—such as the **average and total time** issues spend in a specific Jira status—within a selected time range. Using the Moveworks AI Assistant, teams can quickly analyze workflow performance, identify bottlenecks, and optimize processes based on real-time issue data.
+The “Lookup Time-in-Status Metrics” plugin allows users to retrieve and analyze how long Jira issues have remained in a specific status within a chosen time range, directly through the Moveworks AI Assistant. By eliminating the need to manually extract and calculate these metrics in Jira, this plugin provides quick visibility into workflow performance—helping teams identify bottlenecks, measure efficiency, and make data-driven decisions to optimize processes.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
 
@@ -41,31 +41,17 @@ We recommend setting up the **Jira Connector** before installing this plugin. Pl
 Ensure the following permissions are granted:
 
 - **Worklog Access**: `Read` access to view time entries (including **Clockwork** logs), retrieved via the `worklogDate` and `timespent` fields
-- **Project Access**: `Browse Projects` permission to allow access to issues in the target project(s)
+- **Project Access:** Ability to view and manage issues in the target Jira projects.
 - **Issue Access**: `View Issues` permission, including access to fields like `summary`, `status`, and `timetracking`
 
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
-### **Setting Up Time Tracking in Jira**
+### **Setting Up Time Tracking**
 
-To ensure accurate time-in-status metrics, you must have the **Time Tracking** field enabled and visible on the issue types in your Jira project.
-
-- **Time Tracking** must be enabled in your Jira project and added to the relevant issue types
-- Users must log time in the issues (issues with empty/unfilled time tracking fields will be ignored)
-
-If this isn’t already set up, follow the steps below:
-
-### **How to Enable Time Tracking in Jira**
-
-1. Go to **Jira Settings** > **Issues** > **Time Tracking**.
-2. Click **Activate** or **Configure** to enable time tracking for your instance.
-3. Next, make sure the **Time Tracking** field is added to the issue types you use:
-    - Go to **Project Settings** > **Screens**.
-    - Select the screen used when creating or updating issues (e.g., "Default Issue Screen").
-    - Click **Add Field**, and select **Time Tracking**.
-4. Save the changes.
-
-If you’re unsure which screen to edit, your Jira admin can help identify the correct screen for your project.
+- Enable **Time Tracking** in **Jira Settings** > **Issues** > **Time Tracking** (click **Activate** or **Configure**).
+- In **Project Settings** > **Screens**, add the **Time Tracking** field to create/update screens.
+- Ensure team members log time (issues with no time logged are ignored).
+- Ask your Jira admin if you’re unsure which screen to edit.
 
 ## **Appendix**
 
