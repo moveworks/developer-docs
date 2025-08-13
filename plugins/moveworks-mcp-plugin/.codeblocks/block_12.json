@@ -1,0 +1,4 @@
+{
+  "tool": "tool_name",
+  "parameters": { "key": "value" }
+}
