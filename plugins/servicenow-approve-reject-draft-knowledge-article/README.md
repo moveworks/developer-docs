@@ -99,6 +99,7 @@ curl --location --request PATCH 'https://<API_SERVER_DOMAIN>/api/now/table/sysap
 **Request Body Fields:**
  
 - `state` (string) – Updates the state of the approval.
-- `comments`(string)–Text notes added to the approval record. Used to provide context or feedback for the approval decision.
+- `comments`(string)– Text notes added to the approval record. Used to provide context or feedback for the approval decision.
+
 
  
