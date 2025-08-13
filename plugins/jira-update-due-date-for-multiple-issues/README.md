@@ -20,7 +20,7 @@ systems:
 
 ## **Introduction**
 
-The **“Update Due Dates for Multiple Issues”** plugin allows teams to automatically **update the due dates of multiple Jira issues at once** using the **Moveworks AI Assistant**. This ensures that timelines are adjusted efficiently, helping teams stay on track and meet deadlines.
+The **Update Due Dates for Multiple Issues** plugin enables teams to efficiently update the due dates of multiple **Jira** issues at once, filtered by a selected issue type within a specified project, using the **Moveworks AI Assistant**. This targeted approach ensures that only relevant issues—such as bugs, tasks, or stories—are updated, helping teams keep their timelines aligned and projects on track
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
