@@ -30,7 +30,7 @@ This guide will walk you through setting up and customizing the plugin in Agent 
 
 ### **Agent Design:-**
 
-This [purple chat](https://marketplace.moveworks.com/plugins/jira-lookup-issues-pending-approval) shows the experience we are going to build.
+This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Show+me+all+the+issues+pending+my+approval.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Searching+%3Cb%3EJira%3C%2Fb%3E+for+issues+assigned+to+you+with+%3Ccode%3Estatus%3C%2Fcode%3E+as+%27Pending+Approval%27.%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI+found+3+issues+in+%3Cb%3EJira%3C%2Fb%3E+waiting+for+your+approval%3A%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22PROJ-456%3A+Request+for+new+staging+environment%22%2C%22connectorName%22%3A%22jira%22%7D%2C%7B%22citationTitle%22%3A%22WEB-881%3A+Content+update+for+homepage+Q3%22%2C%22connectorName%22%3A%22jira%22%7D%2C%7B%22citationTitle%22%3A%22SEC-102%3A+Grant+temporary+database+access+to+contractor%22%2C%22connectorName%22%3A%22jira%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou+can+select+an+issue+to+see+more+details%2C+or+approve%2Freject+them+directly+from+here.%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
 
 ## **Installation Steps**
 
@@ -44,7 +44,7 @@ We recommend creating the connector for Jira first, prior to installing this pl
 
 **Note:**
 
-- The **"Waiting for approval"** status is available only in the **IT Service Management** template, which requires a **Jira Premium or Enterprise** plan
+- This plugin requires a **Jira Premium or Enterprise plan**, as the "**Waiting for approval**" status, used to identify issues pending approval, is only available in **IT Service Management projects** within these plans.
 
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
@@ -56,15 +56,22 @@ Please follow the steps below to create the template and to add the ‘Waiting f
 
 ### **Steps to Create “Waiting for approval" in Jira Service Management**
 
-1. **Create Project**
-    - Go to **Projects → Create project**.
-    - Select the **IT Service Management** template.
-    - Name the project **IT Support Access Desk**.
-2. **Add "Waiting for approval" to Workflow**
-    - Go to **Project settings → Workflows**.
-    - Edit the relevant workflow.
-    - Add the built-in **Waiting for approval** status via a transition.
-    - Publish the workflow.
+1. **Create a JSM Project**
+    - Navigate to **Projects → Create project**
+    - Choose the **IT Service Management** template
+    - Name the project, for example, **IT Support Access Desk**, and click Create
+2. **Add “Waiting for approval” Status to the Workflow**
+    - Go to your new project → **Project settings → Workflows**
+    - Identify and edit the workflow tied to the issue types that need approvals, such as ****Service Request
+    - Click Add status and choose the built-in **Waiting for approval** status
+    - Connect it with appropriate transitions, such as from Open to **Waiting for approval**
+    - Configure the transition to trigger an approval step if needed
+    - Click **Publish Draft** to apply changes to the live workflow
+3. **Configure Approval Rules (Optional but Recommended)**
+    - Go to **Project settings → Request types**
+    - Select the request type, such as **Access Request**, and configure its workflow
+    - Under **Approvals**, set who should approve, such as Manager, specific user, or group
+    - Click **Save** to apply the configuration
 
 **Note:** 
 
