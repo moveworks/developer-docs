@@ -46,6 +46,8 @@ This permission is required to retrieve user-related data and perform advanced s
 
 Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
 
+**Note:** This plugin identifies users by their email address to determine the username. Depending on your company's policy, you may need to adjust this configuration.
+
 ## **Appendix**
 
 ### **API #1:  Get Username By Email**
@@ -60,7 +62,7 @@ curl --location 'https://<YOUR_INSTANCE>/JSSResource/users/email/{{email}}' \
 
 - `email` (string) – Returns the details assigned to the specific users.
 
-**Note:** This plugin identifies users by their email address to determine the username. Depending on your company's policy, you may need to adjust this configuration.
+
 
 ### **API #2: Get All Users Devices via Name**
 
