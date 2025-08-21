@@ -41,6 +41,9 @@ We recommend setting up Jamf before installing this plugin. Please follow the [J
 Specifically, confirm that the following privilege is granted:
 
 - **Read User**
+- **Read Computers**
+- **Read Mobile Devices**
+
 
 This permission is required to retrieve user-related data and perform advanced searches within the Jamf Pro environment using the API.
 
