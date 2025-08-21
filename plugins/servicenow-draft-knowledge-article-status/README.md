@@ -2,8 +2,10 @@
 availability: IDEA
 description: A plugin that allows users to get the current status of a draft Knowledge
   Article and next steps in the workflow.
-fidelity: IDEA
+fidelity: GUIDE
 name: Look Up Status and Next Steps of a Draft Knowledge Article
+difficulty_level: BEGINNER
+time_in_minutes: 15
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ECan+you+get+me+the+status+of+a+draft+Knowledge+Article+in+ServiceNow%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Yes%2C+I+can.+Please+provide+the+Knowledge+Article+number+or+a+short+description+of+the+article.%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22It%27s+the+one+about+setting+up+a+new+VPN%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Searching+ServiceNow+for+knowledge+articles+matching+%5C%22setting+up+a+new+VPN%5C%22...%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22I+found+a+few+articles+that+match+your+description.+Which+one+are+you+looking+for%3F%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22KB0010024%3A+How+to+set+up+a+new+VPN+connection%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22KB0010028%3A+Troubleshooting+common+VPN+issues%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22KB0010035%3A+VPN+access+for+new+employees%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22KB0010024%3A+How+to+set+up+a+new+VPN+connection%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Retrieving+status+for+KB0010024+in+ServiceNow...%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EThe+knowledge+article+%3Cb%3EHow+to+set+up+a+new+VPN+connection%3C%2Fb%3E+is+currently+in+the+%3Cb%3EReview%3C%2Fb%3E+stage.%3C%2Fp%3E%3Cp%3EThe+next+step+is+for+it+to+be+approved+by+the+Knowledge+Management+team+lead%2C+Sarah+Jenkins.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22KB0010024%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 systems:
 - servicenow
@@ -29,6 +31,13 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 We recommend setting up **ServiceNow** before installing this plugin. Please follow the [ServiceNow Connector](https://marketplace.moveworks.com/connectors/servicenow#how-to-implement) guide to configure the connection.
 
+**Specifically, confirm the following permissions are granted:**
+
+- **Table Access:**
+    - `Read` access to the **kb_knowledge** table.
+- **Field Access:**
+    - `Read` access to the **short_description**, **number**, **workflow_state**, and **knowledge_base** fields.
+
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
 ## **Appendix**
@@ -36,7 +45,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 ### **API #1: Get Knowledge Article By Short Description:**
 
 ```bash
-curl --location --request GET 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_query=short_descriptionLIKE{{short_desc}}?&sysparm_fields=short_description,workflow_state,author.name,sys_updated_on,kb_knowledge_base,number" ' \
+curl --location --request GET 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_query=short_descriptionLIKE{{short_desc}}&sysparm_fields=short_description,workflow_state,author.name,sys_updated_on,kb_knowledge_base,number" ' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 ```
@@ -46,7 +55,7 @@ curl --location --request GET 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledg
 ### **API #2: Get Knowledge Article By Number:**
 
 ```bash
-curl --location --request GET 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_query=number={{article_number}}?&sysparm_fields=short_description,workflow_state,author.name,sys_updated_on,kb_knowledge_base,number" ' \
+curl --location --request GET 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_query=number={{article_number}}&sysparm_fields=short_description,workflow_state,author.name,sys_updated_on,kb_knowledge_base,number" ' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 ```
