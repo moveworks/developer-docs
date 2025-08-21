@@ -70,7 +70,7 @@ curl --location 'https://<your-instance>/services/data/vXX.X/sobjects/Task/' \
 }'
 ```
 
-**** **Request Body Parameters:**
+ **Request Body Parameters:**
 
 - `{{Subject}}`  - The user can provide the subject name for the task.
 - `{{LeadId}}`  - Retrieves the active lead based on the user’s input and fetches its ID.
