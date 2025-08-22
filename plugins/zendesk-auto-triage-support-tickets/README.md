@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: Critical issues often sit idle while support teams work to understand
   whether it's urgent and what exactly is broken. Ambient agents can instantly triage
   new support tickets which involves classifying the issue, checking system status,

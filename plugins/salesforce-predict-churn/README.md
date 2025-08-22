@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: When an account's health score drops, this agent alerts the assigned
   CSM and provides context to guide proactive engagement.
 domain:

@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: "When a severe incident is created in ServiceNow, this agent identifies\
   \ impacted systems, notifies the on-call engineer, requests temporary access from\
   \ their director, and grants access automatically \u2014 enabling a faster time\

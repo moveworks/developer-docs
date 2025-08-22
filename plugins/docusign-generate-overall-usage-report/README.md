@@ -2,8 +2,6 @@
 agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: A plugin that provides a consolidated report of your organization's key
   DocuSign performance metrics over a specified time period.
 domain:

@@ -2,8 +2,6 @@
 agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: "This plugin analyzes an SDR's assigned accounts and ranks them based\
   \ on recent engagement (calls, emails, meetings from Salesloft) only if there's\
   \ no open opportunity in Salesforce. It helps new SDRs decide who to reach out to\
