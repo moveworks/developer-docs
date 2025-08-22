@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: An Ambient agent that spots product usage spikes, surfaces key context,
   and helps CS teams act fast on upsell opportunities, boosting revenue and retention.
 domain:

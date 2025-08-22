@@ -2,8 +2,6 @@
 agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: A plugin that, it calculates the ratio of the associated Travel & Entertainment
   (T&E) expenses to the total contract value for closed deals. It then aggregates
   this data to find the average expense-to-revenue ratio for each sales representative.

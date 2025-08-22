@@ -2,8 +2,6 @@
 agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: "Compares performance of control vs. variant groups in an A/B test \u2014\
   \ using metrics like conversion rate \u2014 and calculates lift, helping teams make\
   \ data-backed product and design decisions."

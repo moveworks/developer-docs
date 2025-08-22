@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: An Ambient agent that instantly enriches new strategic leads with insights
   from multiple sources, giving sales teams the context they need to engage faster,
   personalize outreach, and close deals more effectively.

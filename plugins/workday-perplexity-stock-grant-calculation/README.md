@@ -2,8 +2,6 @@
 agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: Looks UP stock options from Workday and the current stock price from
   a market data API to calculate the grant's current value.
 domain:
