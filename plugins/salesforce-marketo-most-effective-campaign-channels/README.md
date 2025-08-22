@@ -1,5 +1,5 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
 custom_tags:

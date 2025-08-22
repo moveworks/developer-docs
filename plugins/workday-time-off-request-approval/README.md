@@ -1,5 +1,5 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Polling Required
 availability: VALIDATED
 custom_tags:

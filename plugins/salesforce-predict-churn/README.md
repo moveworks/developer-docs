@@ -1,5 +1,5 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Ambient Agent
 availability: IDEA
 custom_tags:
