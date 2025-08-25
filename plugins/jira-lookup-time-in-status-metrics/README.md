@@ -46,12 +46,23 @@ Ensure the following permissions are granted:
 
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
-### **Setting Up Time Tracking**
+### Setting Up Time Tracking in Jira
 
-- Enable **Time Tracking** in **Jira Settings** > **Issues** > **Time Tracking** (click **Activate** or **Configure**).
-- In **Project Settings** > **Screens**, add the **Time Tracking** field to create/update screens.
-- Ensure team members log time (issues with no time logged are ignored).
-- Ask your Jira admin if you’re unsure which screen to edit.
+Follow these steps to enable and configure time tracking so your team can log work effectively:
+
+1. **Turn On Time Tracking**
+    - Navigate to **Jira Settings → Issues → Time Tracking**.
+    - Select **Activate** (or choose **Configure** if it’s already active).
+2. **Add Time Tracking to Screens**
+    - Go to **Project Settings → Screens**.
+    - Edit the relevant screens (such as **Create** and **Edit**).
+    - Include the **Time Tracking** field so users can record their work.
+3. **Log Time on Issues**
+    - Team members should log their work on issues.
+    - Issues without logged time will not appear in time-tracking reports.
+4. **Test the Setup (Optional)**
+    - Create a sample issue and log some work.
+    - Verify that the time displays correctly under the **Time Tracking** section of the issue.
 
 ## **Appendix**
 
