@@ -2,8 +2,6 @@
 agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: A plugin that groups incidents by assignment_group over the past year
   and calculates the month-over-month growth rate.
 domain:

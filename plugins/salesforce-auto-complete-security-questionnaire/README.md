@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: When a new RFP or security questionnaire is uploaded to your CRM this
   agent retrieves your latest SOC2, policies, and security answers and fills out inbound
   security questionnaires automatically. It then pings a security expert for quick

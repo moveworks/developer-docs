@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: Each morning, this agent summarizes support ticket activity and notifies
   relevant stakeholders to keep everyone aligned.
 domain:

@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: When a competitor is mentioned on a Gong call, this agent shares relevant
   battle cards or positioning resources with the sales team in real time.
 domain:

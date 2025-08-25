@@ -2,8 +2,6 @@
 agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: A plugin that looks up activate candidates for a department, grouped
   by interview stages.
 domain:

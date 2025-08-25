@@ -2,8 +2,6 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: 'An ambient agent that monitors the finance system for outstanding items:
   incomplete journal entries, missing reconciliations, or unsubmitted reports. It
   automatically reaches out to the respective leaders with the specific details needed,
