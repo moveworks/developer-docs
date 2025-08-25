@@ -22,7 +22,7 @@ systems:
 
 The “Lookup Time-in-Status Metrics” plugin allows users to retrieve and analyze how long Jira issues have remained in a specific status within a chosen time range, directly through the Moveworks AI Assistant. By eliminating the need to manually extract and calculate these metrics in Jira, this plugin provides quick visibility into workflow performance—helping teams identify bottlenecks, measure efficiency, and make data-driven decisions to optimize processes.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started
 
 ## Prerequisites
 
@@ -69,7 +69,7 @@ Follow these steps to enable and configure time tracking so your team can log wo
 ### **API #1: Lookup Jira Issues for Time-in-Status Metrics**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>.atlassian.net/rest/api/3/search?jql=project={{project_name}}%20AND%20issuetype={{issuetype}}%20AND%20status%20changed%20TO%20%22{{state}}%22%20AND%20worklogDate%20>=%20%22{{time_filter}}%22%20AND%20timespent%20is%20not%20EMPTY&fields=summary%2Cstatus%2Ctimetracking' \
+curl --location 'https://<YOUR_INSTANCE>.atlassian.net/rest/api/3/search/jql?jql=project={{project_name}}%20AND%20issuetype={{issuetype}}%20AND%20status%20changed%20TO%20%22{{state}}%22%20AND%20worklogDate%20>=%20%22{{time_filter}}%22%20AND%20timespent%20is%20not%20EMPTY&fields=summary%2Cstatus%2Ctimetracking' \
 --header 'Authorization: Basic <ACCESS_TOKEN>' \
 --header 'Accept: application/json'
 ```
