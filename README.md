@@ -1,13 +1,11 @@
-# Plugin Library
+# AI Agent Marketplace
 
-Welcome to the source for our [Plugin Library](https://developer.moveworks.com/creator-studio/plugin-library/). It helps you discover and add new plugins to your copilot.
+Welcome to the source for our [Marketplace](https://marketplace.moveworks.com). It helps you discover and add new AI Agents to your Assistant.
 
-In the Plugin Library, you will find...
+In the AI Agent Marketplace, you will find...
 
-1. **Plugins** (`./plugins`): Example plugins that you can add to your copilot
+1. **Plugins** (`./plugins`): Example plugins that you can add to your Assistant
 3. **Connectors** (`./connectors`): Documentation on business systems and how to authenticate with them.
-
-You can search all our guides [on our developer site](https://developer.moveworks.com/creator-studio/resources/) for a better experience.
 
 ## Closing Thoughts
 
