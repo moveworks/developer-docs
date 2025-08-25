@@ -11,7 +11,7 @@ time_in_minutes: 30
 
 **Jamf Pro** is a cloud-based Apple device management solution, enabling organizations to streamline deployment, security, and lifecycle management of Apple devices across their workforce.
 
-This guide walks you through the process of creating a connector within **Agent Studio** to make API calls to **Jamf Pro**, using **OAuth Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
+This guide walks you through the process of creating a connector within Agent Studio to make API calls to **Jamf Pro**, using **OAuth Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
 
 1. **Set up OAuth Client Credentials Flow**
 2. **Create a Connector in Agent Studio**
@@ -31,7 +31,7 @@ This guide walks you through registering an OAuth 2.0 client in Jamf Pro, genera
 
 ### Step 1: Log in to Jamf  Instance with Username and Password
 
-- Go to [https://moveworksnfr.jamfcloud.com/](https://moveworksnfr.jamfcloud.com/)
+- Go to **`https://<your-instance>/`** (Replace `<your-instance>` with your organization’s Jamf cloud tenant name, for example [https://acme.jamfcloud.com/](https://acme.jamfcloud.com/)).
 
 ![image.png](image.png)
 
@@ -101,16 +101,16 @@ After successfully creating an **API Client** in **Jamf Pro** and retrieving the
 To request an access token, use the following `curl` command:
 
 ```bash
-curl --location --request POST 'https://<API_SERVER_DOMAIN>/api/oauth/token' \
+curl --location --request POST 'https://<your-instance>/api/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=client_credentials' \
 --data-urlencode 'client_id=YOUR_CLIENT_ID' \
 --data-urlencode 'client_secret=YOUR_CLIENT_SECRET'
 ```
 
-### Enter your specific values below:
+Enter your specific values below:
 
-- `<API_SERVER_DOMAIN>` – Your Jamf Pro instance domain
+- `<your-instance>` – Your Jamf Pro instance domain
 - `YOUR_CLIENT_ID` – The client ID generated from your API Client
 - `YOUR_CLIENT_SECRET` – The client secret associated with the API Client
 
@@ -118,38 +118,55 @@ curl --location --request POST 'https://<API_SERVER_DOMAIN>/api/oauth/token' \
 
 To complete the integration between Jamf and Agent Studio using OAuth 2.0, follow the steps below:
 
-1. **Auth Config:**
+1. **Connector Name :**
+    - `jamf`
+2. **Base Url:**
+    - `https://<your-instance>/`
+3. **Auth Config:**
     - `Oauth2`
-2. **OAuth2 Grant Type(**which is **static** and cannot be changed**):**
+4. **OAuth2 Grant Type(**which is **static** and cannot be changed**):**
     - `Client Credentials`
-3. **Client ID:**
-    - Enter the **`Client ID`** you received when registering your jamf app.
-4. **Client Secret**
+5. **Client ID:**
+    - Enter the **`Client ID`** you received when registering your Jamf app.
+6. **Client Secret**
     - Enter the **`Client Secret`** corresponding to your app’s Client ID.
-    1. **OAuth2 Token URL:**
-        - `https://<your-jamf-url>/api/oauth/token`
-5. Click on **Save** to submit the credentials, and your connector will be ready
+7. **OAuth2 Token URL:**
+    - `https://<your-instance>/api/oauth/token`
+8. Click on **Save** to submit the credentials, and your connector will be ready
 
-![image.png](image%207.png)
+![jamf photo edited.png](jamf_photo_edited.png)
+
+![save jamf.png](save_jamf.png)
 
 ### Step 8: Integrate Jamf API in Agent Studio
 
-- Add your API details below to integrate with the **Jamf Pro** API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy).
+Add your API details below to integrate with the **Jamf Pro** API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy)
 
-```bash
-curl --location 'hhttps://<API_SERVER_DOMAIN>/api/v1/computers-inventory' \
---header 'Authorization: Bearer {{access_token}}' \
---header 'Accept: application/json'
-```
+1. Go to **Agent Studio**.
+2. Navigate to **Actions → Create New Action**.
+3. Select **Inherit from Existing Connector** and choose **Jamf**.
+4. In the API configuration, provide the following details:
+    - **API Endpoint Path:**
+    
+    ```bash
+    https://<your-instance>/api/v1/computers-inventory
+    ```
+    
+    - **Method:**
+    
+    ```sql
+     GET 
+    ```
+    
+    - **Permissions Required:**
+        - The API account must have the **View Inventory** scope, which allows the user to access and review computer inventory details.
+    
+    **Note**: The API account must have **Read access to Computers** in Jamf Pro.
+    
+5. Save the action
+6. Test the connector by running the action to confirm the integration is working.
 
-- **API Endpoint Path:**
-    - [https://<API_SERVER_DOMAIN>/api/v1/computers-inventory](https://moveworksnfr.jamfcloud.com/api/v1/computers-inventory)
-- **Method:**
-    
-    `GET` 
-    
-    ![Untitled design.png](Untitled_design.png)
-    
+![Untitled design.png](Untitled_design.png)
 
 # **Congratulations!**
 
