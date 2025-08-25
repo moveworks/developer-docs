@@ -116,7 +116,7 @@ Enter your specific values below:
 
 ### ****Step 7**: Integrate with Agent Studio**
 
-To complete the integration between ServiceNow and Agent Studio using OAuth 2.0, follow the steps below:
+To complete the integration between Jamf and Agent Studio using OAuth 2.0, follow the steps below:
 
 1. **Connector Name :**
     - `jamf`
@@ -127,7 +127,7 @@ To complete the integration between ServiceNow and Agent Studio using OAuth 2.0,
 4. **OAuth2 Grant Type(**which is **static** and cannot be changed**):**
     - `Client Credentials`
 5. **Client ID:**
-    - Enter the **`Client ID`** you received when registering your ServiceNow app.
+    - Enter the **`Client ID`** you received when registering your jamf app.
 6. **Client Secret**
     - Enter the **`Client Secret`** corresponding to your app’s Client ID.
 7. **OAuth2 Token URL:**
