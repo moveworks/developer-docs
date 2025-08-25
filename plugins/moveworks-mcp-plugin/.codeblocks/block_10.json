@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"timezone\": \"America/New_York\",\n  \"datetime\": \"2025-06-26T12:21:26-04:00\",\n  \"is_dst\": true\n}"
+    }
+  ]
+}
+

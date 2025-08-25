@@ -19,10 +19,9 @@ systems:
 - workday
 time_in_minutes: 20
 ---
-
 ## **Introduction**
 
-The “View My Stock Grant Summary” plugin enables employees to quickly access their stock grant details directly through the Moveworks AI Assistant. By pulling data from Workday, this plugin provides a seamless way to view the number of shares granted, the current value per share, and the total stock value.
+The **View My Stock Grant Summary** plugin enables employees to quickly access their stock grant details using the Moveworks AI Assistant. By pulling data from Workday, this plugin provides a seamless way to view the number of shares granted, the current value per share, and the total stock value.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
@@ -49,7 +48,7 @@ Specifically, the following domain permissions must be granted with both **View*
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use `<TENANT>` as a placeholder. After installation, replace `<TENANT>` in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
@@ -59,6 +58,34 @@ To find your tenant name:
 Make sure to update this across all actions that reference the Workday API.
 
 After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
+
+## **Customization Process**
+
+We are using a calculated field named **`cf_sharesGrantedGrantPrice`**, which is derived by multiplying the values of `sharesGranted` and `grantPrice`. If you already have a similar field, you can update your integration logic to use your existing one.
+
+Below are the steps you can follow to create this calculated field in Workday.
+
+## **Steps to Create ‘cf_sharesGrantedGrantPrice’ Calculated Field in Workday**
+
+1. **Open Create Calculated Field**
+    - In the Workday search bar, type **"Create Calculated Field"** and select the task.
+2. **Fill Out Initial Details**
+    - In the **Field Name**, enter: `sharesGrantedGrantPrice`
+    - For **Business Object**, select: `Stock Grant`
+    - For **Function**, choose: `Arithmetic Calculation`
+    - Click **OK**
+3. **Build the Arithmetic Formula**
+    - On the next screen, in the **Expression Editor**:
+        - Select the **`sharesGranted`** field.
+        - Click the  operator for multiplication.
+        - Select the **`grantPrice`** field.
+    - The formula should look like:
+        
+        `sharesGranted * grantPrice`
+        
+4. **Save the Field**
+    - Click **Test** to validate your formula.
+    - If it passes, click **OK** to save the calculated field.
 
 ## **Appendix**
 

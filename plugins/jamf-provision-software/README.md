@@ -1,6 +1,6 @@
 ---
 availability: IDEA
-description: A plugin that provisions software based on device type using Jamf.
+description: A plugin that provisions software for computers using Jamf.
 domain:
 - IT
 fidelity: IDEA

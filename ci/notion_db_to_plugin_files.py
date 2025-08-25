@@ -39,7 +39,7 @@ class NotionColumns(Enum):
     INSTALLATION_ASSET_UUID = 'installation_asset_uuid'
     AVAILABILITY = "Availability"
     DOMAIN = "Domain"
-    AGENT_FUNCTIONALITY = "Agent_Functionality"
+    AGENT_CAPABILITIES = "Agent Capabilities"
 
 
 TEMPLATE_MAP = {Fidelity.IDEA: "idea.txt", Fidelity.VALIDATED: 'validated.txt'}
@@ -146,8 +146,8 @@ class Record:
         return self.get_csv_prop(NotionColumns.DOMAIN)
     
     @property
-    def agent_functionality(self) -> List[str]:
-        return self.get_csv_prop(NotionColumns.AGENT_FUNCTIONALITY)
+    def agent_capabilities(self) -> List[str]:
+        return self.get_csv_prop(NotionColumns.AGENT_CAPABILITIES)
     
     @property
     def availability(self) -> Availability:
@@ -181,7 +181,7 @@ class Record:
                 "installation_asset_uuid": self.installation_asset_uuid,
                 "availability": self.availability.name,
                 "domain": self.domain,
-                "agent_functionality": self.agent_functionality,
+                "agent_capabilities": self.agent_capabilities,
             }
         else:
             raise NotImplementedError(f"No Front Matter for {self.content_type}")
