@@ -56,14 +56,14 @@ Once the connector is successfully configured, follow our [**plugin installation
 ### **API #1:  Get Username By Email**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/JSSResource/users/email/{{email}}' \
+curl --location 'https://<YOUR_INSTANCE>/JSSResource/users/email/{{user_email}}' \
 --header 'authorization: Bearer <ACCESS_TOKEN>' \
 --header 'accept: application/json' \
 ```
 
 **Path Parameters:**
 
-- `email` (string) – Returns the details assigned to the specific users.
+- `user_email` (string) – Returns the details assigned to the specific users.
 
 
 
