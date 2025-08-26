@@ -18,12 +18,12 @@ This guide walks you through the process of creating a connector within Agent St
 
 ## **Prerequisites:**
 
-- Ensure you have **admin privileges** in your **Jamf Pro instance** to create and configure **OAuth 2.0 clients**.
+- Ensure you have **admin privileges** in your **Jamf Pro instance** to create and configure **OAuth 2.0 Clients**.
 - Detailed instructions on OAuth token generation and integration are available in the official Jamf Pro documentation [**here**](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html).
 
 ## **Set up Jamf Pro**
 
-To connect **Jamf Pro** with **Agent Studio**, we’ll use **OAuth 2.0 authentication**. This method allows backend systems like Agent Studio to securely authenticate using a **client ID and secret.**
+To connect **Jamf Pro** with **Agent Studio**, we’ll use **OAuth 2.0 authentication**. This method allows backend systems like Agent Studio to securely authenticate using a **Client ID and Secret.**
 
 This guide walks you through registering an OAuth 2.0 client in Jamf Pro, generating an access token using the **Client Credentials Flow**, and configuring the connector in Agent Studio for seamless access to Jamf Pro APIs.
 
@@ -72,12 +72,12 @@ Select the required API privileges based on what actions your integration needs 
 - **Display Name**:
     Enter a name that clearly identifies the purpose of this Client.
     
-- **API roles**:
+- **API Roles**:
  Choose the API Role you created earlier.
-- Click the **Enable API client** button
+- Click the **Enable API Client** button
 - Click **Save**
 - After saving, you'll see the **Client ID** displayed.
-- Click the **Generate client secret** button to obtain the **Client Secret** (copy and store it securely)
+- Click the **Generate Client Secret** button to obtain the **Client Secret** (copy and store it securely)
 
 ![image.png](image%205.png)
 
@@ -109,8 +109,8 @@ curl --location --request POST 'https://{{your-instance}}/api/oauth/token' \
 Enter your specific values below:
 
 - `{{your-instance}}` – Your Jamf Pro instance domain
-- `YOUR_CLIENT_ID` – The client ID generated from your API Client
-- `YOUR_CLIENT_SECRET` – The client secret associated with the API Client
+- `YOUR_CLIENT_ID` – The Client ID generated from your API Client
+- `YOUR_CLIENT_SECRET` – The Client Secret associated with the API Client
 
 ### ****Step 7**: Integrate with Agent Studio**
 
