@@ -1,1 +1,1 @@
-https://<your-instance>/api/v1/computers-inventory
+https://{{your-instance}}/api/v1/computers-inventory

@@ -31,7 +31,7 @@ This guide walks you through registering an OAuth 2.0 client in Jamf Pro, genera
 
 ### Step 1: Log in to Jamf  Instance with Username and Password
 
-- Go to **`https://<your-instance>/`** (Replace `<your-instance>` with your organization’s Jamf cloud tenant name, for example [https://acme.jamfcloud.com/](https://acme.jamfcloud.com/)).
+- Go to **https://{{your-instance}}/** (Replace `{{your-instance}}` with your organization’s Jamf cloud tenant name, for example [https://acme.jamfcloud.com/](https://acme.jamfcloud.com/)).
 
 ![image.png](image.png)
 
@@ -55,7 +55,6 @@ This guide walks you through registering an OAuth 2.0 client in Jamf Pro, genera
 
 - Once you click **+ New** on the API Roles page, you’ll be brought to the **New API Role** configuration screen.
 - **Display Name**:
-    
     Enter a name that clearly identifies the purpose of this role.
     
 - **Privileges**:
@@ -71,10 +70,9 @@ Select the required API privileges based on what actions your integration needs 
 - In the **API Roles and Clients** section, click on the **API Clients** tab.
 - Click the **+ New** button in the top-right corner.
 - **Display Name**:
-    
     Enter a name that clearly identifies the purpose of this Client.
     
-- API roles:
+- **API roles**:
  Choose the API Role you created earlier.
 - Click the **Enable API client** button
 - Click **Save**
@@ -101,7 +99,7 @@ After successfully creating an **API Client** in **Jamf Pro** and retrieving the
 To request an access token, use the following `curl` command:
 
 ```bash
-curl --location --request POST 'https://<your-instance>/api/oauth/token' \
+curl --location --request POST 'https://{{your-instance}}/api/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=client_credentials' \
 --data-urlencode 'client_id=YOUR_CLIENT_ID' \
@@ -110,7 +108,7 @@ curl --location --request POST 'https://<your-instance>/api/oauth/token' \
 
 Enter your specific values below:
 
-- `<your-instance>` – Your Jamf Pro instance domain
+- `{{your-instance}}` – Your Jamf Pro instance domain
 - `YOUR_CLIENT_ID` – The client ID generated from your API Client
 - `YOUR_CLIENT_SECRET` – The client secret associated with the API Client
 
@@ -121,7 +119,7 @@ To complete the integration between Jamf and Agent Studio using OAuth 2.0, follo
 1. **Connector Name :**
     - `jamf`
 2. **Base Url:**
-    - `https://<your-instance>/`
+    - `https://{{your-instance}}/`
 3. **Auth Config:**
     - `Oauth2`
 4. **OAuth2 Grant Type(**which is **static** and cannot be changed**):**
@@ -131,7 +129,7 @@ To complete the integration between Jamf and Agent Studio using OAuth 2.0, follo
 6. **Client Secret**
     - Enter the **`Client Secret`** corresponding to your app’s Client ID.
 7. **OAuth2 Token URL:**
-    - `https://<your-instance>/api/oauth/token`
+    - `https://{{your-instance}}/api/oauth/token`
 8. Click on **Save** to submit the credentials, and your connector will be ready
 
 ![jamf photo edited.png](jamf_photo_edited.png)
@@ -149,7 +147,7 @@ Add your API details below to integrate with the **Jamf Pro** API. You can read 
     - **API Endpoint Path:**
     
     ```bash
-    https://<your-instance>/api/v1/computers-inventory
+    https://{{your-instance}}/api/v1/computers-inventory
     ```
     
     - **Method:**
