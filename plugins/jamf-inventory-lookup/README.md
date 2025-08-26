@@ -36,7 +36,8 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 We recommend setting up Jamf before installing this plugin. Please follow the [Jamf-Connector](https://marketplace.moveworks.com/connectors/jamf?hist=home#how-to-implement) guide to configure the connection.
 
-**Note:** To enable access to Jamf Pro API endpoints, ensure that the appropriate privileges are assigned to the user via **Settings → API Roles and Clients → API Roles → Tokens**.
+**Note:** To enable access to Jamf Pro API endpoints, ensure that the following API roles are assigned to the API Client  **Settings → API Roles and Clients → API Roles → [Your API Role]**.
+
 
 Specifically, confirm that the following privilege is granted:
 
