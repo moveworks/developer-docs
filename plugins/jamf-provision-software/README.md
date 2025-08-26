@@ -36,7 +36,7 @@ This [purple chat](https://marketplace.moveworks.com/plugins/jamf-provision-sof
 While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [JAMF Connector](https://marketplace.moveworks.com/connectors/jamf?#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup  efficiently.
 **Note:** To enable access to Jamf Pro API endpoints, ensure that the following API roles are assigned to the API Client **Settings → API Roles and Clients → API Roles → [Your API Role]**.
 
-For this plugin, ensure the JAMF integration user has the following permissions:
+For this plugin, ensure the JAMF integration Client has the following permissions:
 
 - `Read Computers` – Allows the user to view device inventory and details.
 - `Create Policies` – Grants the ability to provision software by creating and applying policies to target devices.
