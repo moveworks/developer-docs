@@ -16,7 +16,7 @@ systems:
 - jamf
 
 ---
-**Introduction**
+## **Introduction**
 
 The **“Inventory Look Up”** plugin enables users to quickly view detailed information about devices assigned to individuals within the Jamf Pro environment. It allows for efficient inventory searches by username, making it easy to locate the necessary devices.
 
