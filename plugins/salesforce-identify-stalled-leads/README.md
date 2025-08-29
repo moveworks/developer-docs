@@ -37,34 +37,22 @@ We recommend creating the connector for **Salesforce** first, prior to installi
 
 Specifically, confirm the following permissions are granted:
 
-- **Object Access**: `Read` access to the **Lead, User** object.
+- **Object Access**: `Read` access to the **Lead** object.
 - Ensure the user has permission to view lead records relevant to their team or territory.
 
 After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
 ## **Appendix**
 
-### **API #1: Get User Details By Email**
+### **API #1: Get Stalled Leads By Email and Time Range**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT Id,Name,Email FROM User WHERE Email='{{email}}'' \
+curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT Id, Name, Title, Company, Email, Phone, Street, City, State, PostalCode, Country, Status, OwnerId, Owner.Name, Owner.Email, CreatedDate, LastActivityDate FROM Lead WHERE Owner.Email = '{{email}}' AND (LastActivityDate = null OR LastActivityDate < LAST_N_DAYS:{{days}}) ORDER BY LastActivityDate ASC LIMIT 50' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
 **Query Parameters:**
 
-- `{{email}}` - Retrieves user by email
-
-### **API #2: Get Stalled Leads By Time Range**
-
-```bash
-curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT Id,Name,Company,Status,OwnerId,CreatedDate,LastActivityDate FROM Lead WHERE OwnerId='{{owner_id}}' AND LastActivityDate < LAST_N_DAYS:{{days}} ORDER BY LastActivityDate ASC LIMIT 10' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer <ACCESS_TOKEN>'
-```
-
-**Query Parameters:**
-
+- `{{email}}` - Retrieves user by email.
 - `{{days}}`  - Number of inactive days to check for stalled leads.
-- `{{owner_id}}`  - ID of the lead owner to filter leads by user.
