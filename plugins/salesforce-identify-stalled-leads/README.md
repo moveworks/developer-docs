@@ -44,7 +44,7 @@ After you have configured the connector, please refer to our [plugin installati
 
 ## **Appendix**
 
-### **API #1: Get Stalled Leads By Email and Time Range**
+### **API #1: Retrieve Stalled Leads By Email and Time Range**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT Id, Name, Title, Company, Email, Phone, Street, City, State, PostalCode, Country, Status, OwnerId, Owner.Name, Owner.Email, CreatedDate, LastActivityDate FROM Lead WHERE Owner.Email = '{{email}}' AND (LastActivityDate = null OR LastActivityDate < LAST_N_DAYS:{{days}}) ORDER BY LastActivityDate ASC LIMIT 50' \
