@@ -18,10 +18,9 @@ systems:
 - jira
 time_in_minutes: 10
 ---
-
 ## **Introduction**
 
-The **Update Due Dates for Multiple Issues** plugin enables teams to efficiently update the due dates of multiple **Jira** issues at once, filtered by a selected issue type within a specified project, using the **Moveworks AI Assistant**. This targeted approach ensures that only relevant issues—such as bugs, tasks, or stories—are updated, helping teams keep their timelines aligned and projects on track
+The **“Update Due Dates for Multiple Issues”** plugin allows users to update the due dates for multiple issues assigned to them at once using the **Moveworks AI Assistant**. This ensures that timelines are adjusted efficiently, helping teams stay on track and meet deadlines.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
@@ -43,7 +42,7 @@ We recommend setting up **Jira** before installing this plugin. Please follow 
 
 - **Admin Access**: Required to archive issues using the Jira API
 - **Project Access**: Ability to view and manage issues in the target Jira projects
-- **Field Access**: Permission to read and update the **due date** field.
+- **Field Access**: Permission to read and update the **Priority**, **Assignee**, and **Resolution Date** fields
 
 **Note:**
 
@@ -56,8 +55,7 @@ Once the connector is successfully configured, follow our [**plugin installatio
 ### **API #1 : Get projects by name**
 
 ```bash
-curl --location 'https://<your-instance>/rest/api/3/search?jql=project%20%3D%20%22<project-key>%22%20AND%20issuetype%20%3D%20<issue-type>%20AND%20status%20!%3D%20Done&startAt=0&maxResults=100' \
---header 'Accept: application/json' \
+curl --location 'https://<your-instance>/rest/api/3/search/jql?jql=project%3D%22{{project-key}}%22%20AND%20issuetype%3D{{issue-type}}%20AND%20status!%3D%22Done%22%20AND%20assignee%3D%22{{assignee-email}}%22&fields=key%2Csummary&maxResults=100' \
 --header 'Authorization: Basic <your-credentials>'
 ```
 
@@ -69,29 +67,32 @@ curl --location 'https://<your-instance>/rest/api/3/search?jql=project%20%3D%20%
     
     - Project Key: `PHX`
     - Project Name: `"Phoenix Project"`
-    - Project Id: `19768`
+    - Project Id: 19768
+- `assignee-email` (String) - Use the exact **issues** by the specific user.
 - `issue-type` (String) - Use the exact **issue type** for the Jira issues you want to target.
     
     **Examples:**
     
     - Issue-type: `Epic`, `Task`, `Bug`, `Story`
+- `fields` - Fields to include in the response.
+- `maxResults=100` – Used to retrieve up to 100 results in a single response.
 
 ### **API #2 : Update issue by id**
 
 ```bash
-curl --location --request PUT 'https://<your-instance>/rest/api/3/issue/<issue-key>' \
+curl --location --request PUT 'https://<your-instance>/rest/api/3/issue/{{issue-key}}' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Basic <your-credentials>' \
 --data '{
   "fields": {
-    "duedate": "<YYYY-MM-DD>"
+    "duedate": "{{YYYY-MM-DD}}"
   }
 }'
 ```
 
 **Query Parameters:**
 
-- `issue-key` - Use the exact **issue type** for the Jira issues you want to target.
+- `issue-id or issue-key`-Replace this with the **full issue ID or issue key** of the Jira ticket you want to update.
 
 **Example:**
 
