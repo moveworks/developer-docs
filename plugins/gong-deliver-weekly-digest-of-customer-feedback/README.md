@@ -1,9 +1,7 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: Each week, this agent compiles customer feedback from Gong, Salesforce,
   and Zendesk into a digest and sends it to product teams.
 domain:

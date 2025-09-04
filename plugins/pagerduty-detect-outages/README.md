@@ -1,9 +1,7 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: This agent continuously monitors for incident signals in PagerDuty and
   alerts IT teams when a potential outage is detected.
 domain:
@@ -15,5 +13,6 @@ solution_tags:
 - Engineering
 systems:
 - pagerduty
+video: https://vimeo.com/1107903820/a651a58ab6?share=copy
 
 ---

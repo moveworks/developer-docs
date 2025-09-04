@@ -1,6 +1,4 @@
 ---
-agent_functionality:
-- Polling Required
 availability: IDEA
 custom_tags:
 - Polling Required

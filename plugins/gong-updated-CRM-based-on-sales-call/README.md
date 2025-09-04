@@ -1,9 +1,7 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Ambient Agent
 availability: IDEA
-custom_tags:
-- Ambient Agent
 description: When a sales intro call completes in Gong, this agent prompts the rep
   to log notes and update the opportunity in Salesforce, ensuring pipeline accuracy.
 domain:
