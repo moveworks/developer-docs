@@ -18,13 +18,14 @@ systems:
 
 ---
 
-## Introduction
+
+## **Introduction**
 
 The “Lookup Time-in-Status Metrics” plugin allows users to retrieve and analyze how long Jira issues have remained in a specific status within a chosen time range, directly through the Moveworks AI Assistant. By eliminating the need to manually extract and calculate these metrics in Jira, this plugin provides quick visibility into workflow performance—helping teams identify bottlenecks, measure efficiency, and make data-driven decisions to optimize processes.
 
 This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started
 
-## Prerequisites
+## **Prerequisites**
 
 - Access to Agent Studio
 
@@ -44,34 +45,36 @@ Ensure the following permissions are granted:
 - **Project Access:** Ability to view and manage issues in the target Jira projects.
 - **Issue Access**: `View Issues` permission, including access to fields like `summary`, `status`, and `timetracking`
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
 
-### Setting Up Time Tracking in Jira
+**Enabling the Time Tracking Field in Jira Projects:** 
+You don’t need to be a Jira site administrator to enable the Time Tracking field. If you can create projects or are assigned as a Project Administrator, you already have the required access. Steps to Enable Time Tracking for an Issue Type:
 
-Follow these steps to enable and configure time tracking so your team can log work effectively:
+1. Log in to Jira.
+2. Navigate to Projects and select the project where you want to enable time tracking.
+3. Click the more options (⋮) menu next to the project name, then select Project settings.
+4. In the sidebar, go to Issue types (or Work types, depending on your Jira version).
+5. Select the issue type where you want to enable time tracking.
+6. In the right-hand Fields panel, locate Time tracking and drag it onto the issue layout.
+7. Repeat these steps for other issue types, if required.
 
-1. **Turn On Time Tracking**
-    - Navigate to **Jira Settings → Issues → Time Tracking**.
-    - Select **Activate** (or choose **Configure** if it’s already active).
-2. **Add Time Tracking to Screens**
-    - Go to **Project Settings → Screens**.
-    - Edit the relevant screens (such as **Create** and **Edit**).
-    - Include the **Time Tracking** field so users can record their work.
-3. **Log Time on Issues**
-    - Team members should log their work on issues.
-    - Issues without logged time will not appear in time-tracking reports.
-4. **Test the Setup (Optional)**
-    - Create a sample issue and log some work.
-    - Verify that the time displays correctly under the **Time Tracking** section of the issue.
+**Important Notes:**
+
+1. Project Administrators of any project (including ones created by others) can enable the field.
+2. The bot will only retrieve time-tracking data if:
+    1. The Time Tracking field is added to the issue type/s, and
+    2. Users manually enter time values in this field.
+
+**Permissions Required to Log Time:** Adding the field only makes it available. To actually log work against an issue, a user must also have the Work On Issues project permission. Without this permission, the Time Tracking field will be visible but not editable.
 
 ## **Appendix**
 
 ### **API #1: Lookup Jira Issues for Time-in-Status Metrics**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>.atlassian.net/rest/api/3/search/jql?jql=project={{project_name}}%20AND%20issuetype={{issuetype}}%20AND%20status%20changed%20TO%20%22{{state}}%22%20AND%20worklogDate%20>=%20%22{{time_filter}}%22%20AND%20timespent%20is%20not%20EMPTY&fields=summary%2Cstatus%2Ctimetracking' \
---header 'Authorization: Basic <ACCESS_TOKEN>' \
---header 'Accept: application/json'
+curl --location 'https://<YOUR_INSTANCE>.atlassian.net/rest/api/3/search/jql?jql=project%3D%22{{project_name}}%22%20AND%20issuetype%3D{{issuetype}}%20AND%20status%20changed%20TO%20%22{{state}}%22%20AFTER%20%22{{time_filter}}%22%20AND%20timespent%20is%20not%20EMPTY&fields=summary%2Cstatus%2Ctimetracking&maxResults=500' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic {{access_token}}'
 ```
 
 **Query Parameters:**
@@ -80,3 +83,4 @@ curl --location 'https://<YOUR_INSTANCE>.atlassian.net/rest/api/3/search/jql?jql
 - `issuetype`(string) – The type of issue to filter (e.g., `Task`, `Bug` etc.)
 - `state`(string) – The target status to evaluate (e.g., `In Progress`, `Done`)
 - `time_filter`(string, date) – Start date to evaluate status transition from (format: `YYYY-MM-DD`, e.g., `2025-07-01`)
+- `maxResults` (integer) – The maximum number of issues to return (default: `50`, maximum allowed: `1000`, e.g., `500`)
