@@ -1,4 +1,6 @@
 ---
+agent_capabilities:
+- Structured Data Analyzer
 availability: IDEA
 domain:
 - Sales
