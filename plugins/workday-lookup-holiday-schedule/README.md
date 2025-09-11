@@ -39,7 +39,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our [Workday Connector Guide](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) to do so. Once completed, follow our plugin installation documentation to install the  **Look Up Holiday Schedule** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [Workday Connector Guide](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement)  to do so. Once completed, follow our plugin installation documentation to install the  **Look Up Holiday Schedule** plugin in minutes.
 
 For **Look Up Holiday Schedule**, you will also need to ensure the following permissions are in place:
 
@@ -48,7 +48,19 @@ For **Look Up Holiday Schedule**, you will also need to ensure the following pe
 - `User Profile Access`
 - `Employee Data Access`
 
-After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation)  for more details on completing the setup.
+**Tenant Configuration:**
+
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
+
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
+    
+
+Make sure to update this across all actions that reference the Workday API.
+
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 # **Appendix**
 
@@ -66,7 +78,7 @@ curl --request GET
 
 **Query Parameters :**
 
-- `<full_name>`  (string) – The fullname of the user whose worker id you want to retrieve.
+- `full_name` (string) – The fullname of the user whose worker id you want to retrieve.
 
 ## API #2: Holiday_Schedule_Workday
 
@@ -82,4 +94,4 @@ curl --request GET
 
 **Query Parameters :**
 
-- `<Worker_id>`  (string) – The Worker_id of the user whose holiday schedule you want to retrieve.
+- `Worker_id` (string) – The Worker_id of the user whose holiday schedule you want to retrieve.

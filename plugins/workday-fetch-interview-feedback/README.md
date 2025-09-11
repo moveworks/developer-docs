@@ -20,7 +20,7 @@ time_in_minutes: 15
 
 # **Introduction:**
 
-The **Fetch Interview Feedback** plugin enables hiring teams to retrieve candidate evaluation data directly from Workday through the Moveworks AI Assistant. Recruiters and interviewers can instantly access completed feedback forms, ratings, and comments—without manual follow-ups.
+The **Look Up Interview Feedback** plugin enables hiring teams to retrieve candidate evaluation data directly from Workday through the Moveworks AI Assistant. Recruiters and interviewers can instantly access completed feedback forms, ratings, and comments—without manual follow-ups.
 
 This guide outlines the quick setup to activate feedback lookups.
 
@@ -50,14 +50,12 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use`<TENANT>`as a placeholder. After installation, replace`<TENANT>`in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
 - Log into Workday.
-- Check the URL in your browser — the tenant name appears after`workday.com/`, e.g.:
-    
-    `https://impl.workday.com/**your_tenant**/...`
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
     
 
 Make sure to update this across all actions that reference the Workday API.
@@ -71,10 +69,9 @@ After configuring the connector and updating your tenant, refer to our [plugin 
 The **Retrieve Interviews** API retrieves the list of interviews associated with a candidate, based on the provided criteria.
 
 ```bash
-curl --location 'https://<YOUR_DOMAIN>/api/recruiting/v3/<INSTANCE_ID>/interviews\
+curl --location 'https://<YOUR_DOMAIN>/api/recruiting/v3/<TENANT>/interviews'\
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>'
-
 ```
 
 ### **API #2: Fetch Interview Feedback**
@@ -82,7 +79,10 @@ curl --location 'https://<YOUR_DOMAIN>/api/recruiting/v3/<INSTANCE_ID>/interview
 The **Fetch Interview Feedback** API allows you to fetch feedback for a specific interview in Workday using the Interview id .
 
 ```bash
-curl --location 'https://<YOUR_DOMAIN>/ccx/api/recruiting/v4/<INSTANCE>/interviews/<interview_id>/feedback' \
-\
---header 'Authorization: Bearer <ACCESS_TOKEN>' \
+curl --location 'https://<YOUR_DOMAIN>/ccx/api/recruiting/v4/<TENANT>/interviews/<interview_id>/feedback'\
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
+**Path Parameters:**
+
+- `Interview_id` (string) – The unique identifier of the interview 
