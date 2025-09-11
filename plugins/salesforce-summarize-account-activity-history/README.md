@@ -17,7 +17,7 @@ systems:
 ---
 ## Introduction
 
-The **Summarize Recent Activity History for an Account** plugin allows users to instantly view a consolidated summary of recent activities related to a specific account, directly from Salesforce using the Moveworks AI Assistant. This enables teams to efficiently understand account activity, monitor progress, and stay coordinated without having to go through multiple Salesforce reports.
+The “**Summarize Recent Activity History for an Account”** plugin allows users to instantly view a consolidated summary of recent activities related to a specific account, directly from Salesforce using the Moveworks AI Assistant. This enables teams to efficiently understand account activity, monitor progress, and stay coordinated without having to go through multiple Salesforce reports.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
@@ -57,7 +57,19 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT+Id%
 
 - `EMAIL` (string) – The email address of the contact.
 
-### API #2: Get Recent Tasks & Events for an Account
+### **API #2 : Get Account ID by Account Name**
+
+```bash
+curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT+Id%2CName%2CAccountNumber%2CAccountSource%2CType%2CWebsite%2COwner.Name%2CIndustry%2CNumberOfEmployees%2CPhone+FROM+Account+WHERE+Name+LIKE+%27%{{ACCOUNT_NAME}}%%27+ORDER+BY+CreatedDate+DESC' \\
+
+--header 'Authorization: Bearer <ACCESS_TOKEN>'
+```
+
+**Query Parameters:**
+
+- `ACCOUNT_NAME` (String) - Used to filter the similar Accounts by Account name.
+
+### API #3: Get Recent Tasks & Events for an Account
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/composite/batch' \
@@ -113,6 +125,3 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/composite/batch' \
 
 - `ACCOUNT_ID` (string) – Salesforce Account Id for which activities are being fetched.
 - `TIME_RANGE` (integer) – Specifies how many previous days’ records should be retrieved.
-
-
-
