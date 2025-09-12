@@ -21,7 +21,7 @@ systems:
 
 ## Introduction
 
-The “Delete Contact Inside Account” plugin allows users to easily remove outdated or incorrect contacts from Salesforce accounts directly through the Moveworks AI Assistant. By eliminating the need to manually locate and delete records within Salesforce, this plugin helps maintain a clean and accurate CRM—ensuring teams work with reliable data, reduce clutter, and improve overall customer relationship management efficiency.
+The “Delete a Contact” plugin allows users to easily remove outdated or incorrect contacts from Salesforce accounts directly through the Moveworks AI Assistant. By eliminating the need to manually locate and delete records within Salesforce, this plugin helps maintain a clean and accurate CRM—ensuring teams work with reliable data, reduce clutter, and improve overall customer relationship management efficiency.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
 
