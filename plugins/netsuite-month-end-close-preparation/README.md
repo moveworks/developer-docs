@@ -18,6 +18,5 @@ systems:
 - netsuite
 - coupa
 - sap-concur
-- navan
 
 ---
