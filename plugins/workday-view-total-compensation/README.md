@@ -89,7 +89,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "query": "PARAMETERS prompt_Date2 = \"{{currentdate}}\" SELECT employeeID, compensationGrade, cf_NewTotalBasePayAmount AS Base_Salary, lastBonusOrOne_TimePayment_Amount AS Last_Bonus_Amount FROM workersForHCMReporting (dataSourceFilter = allActiveWorkers) WHERE employeeID = \"{{employee_id}}\""
+  "query": "PARAMETERS prompt_Date2 = \"{{currentdate}}\" SELECT employeeID, compensationGrade, cf_NewTotalBasePayAmount AS Base_Salary, lastBonusOrOne_TimePayment_Amount AS Last_Bonus_Amount FROM workersForHCMReporting (dataSourceFilter = allActiveWorkers) WHERE employeeID = \"{{employee_id}}\" LIMIT 1000"
 }'
 ```
 
@@ -105,7 +105,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "query": "SELECT email_PrimaryWork, benefitElections { benefitPlan, coverage, dependents, beneficiaries_All, coverageBeginDateForBenefitPlan, deductionBeginDateForBenefitPlan, employerContributionPerBenefitPlanFrequency, employeeCostPerBenefitPlanFrequency } FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = true, isActive = false) WHERE employeeID = \"{{employee_id}}\""
+  "query": "SELECT email_PrimaryWork, benefitElections { benefitPlan, coverage, dependents, beneficiaries_All, coverageBeginDateForBenefitPlan, deductionBeginDateForBenefitPlan, employerContributionPerBenefitPlanFrequency, employeeCostPerBenefitPlanFrequency } FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = true, isActive = false) WHERE employeeID = \"{{employee_id}}\" LIMIT 1000"
 }'
 ```
 
