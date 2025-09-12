@@ -21,7 +21,7 @@ systems:
 ---
 ## **Introduction**
 
-The Salesforce **“Look Up Opportunities Influenced by a Campaign”** plugin helps users quickly identify and review the opportunities associated with specific campaigns. By selecting a campaign, the plugin fetches and displays all related opportunities along with key details such as amount, stage, and account, making it easier to track campaign impact on revenue.
+The Salesforce **“Look Up Opportunities Influenced by a Marketing Campaign”** plugin helps users quickly identify and review the opportunities associated with specific campaigns. By selecting a campaign, the plugin fetches and displays all related opportunities along with key details such as amount, stage, and account, making it easier to track campaign impact on revenue.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
