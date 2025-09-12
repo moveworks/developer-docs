@@ -47,7 +47,7 @@ Specifically, ensure the following domain permissions are assigned with both **V
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use `<TENANT>` as a placeholder. After installation, replace `<TENANT>` in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
@@ -57,6 +57,28 @@ To find your tenant name:
 Make sure to update this across all actions that reference the Workday API.
 
 After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
+
+## **Customization Process**
+
+We have used specific **completionStatus ID values** directly in the second API call to filter training records (e.g., for “In Progress” and “Not Started” statuses).
+
+**Steps to Get completionStatus ID in Workday:**
+
+To retrieve the internal Workday IDs for learning completion statuses like "In Progress", "Completed", and "Not Started", follow these steps:
+
+- Search for “Learning Admin” in the Workday search bar and select it.
+
+- Navigate to the "Usage" tab (under Learning Admin).
+
+- Look for the section titled “Course Completion Status” — it will include a pie chart and table listing statuses like “In Progress”, “Completed”, and “Not Started”.
+
+- Locate the status you want (e.g., "Not Started").
+
+- Click the three-dot menu (⋮) next to the status.
+
+- Select Integration IDs → View IDs.
+
+You’ll now see the Workday ID, which is the internal completionStatus ID to use in your WQL queries.
 
 ## **Appendix**
 
@@ -82,9 +104,8 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "query": "SELECT enrolledContent as Course, learner, registrationStatus, completionStatus, learningAssignment{dueDate1} as learningAssignment FROM learningEnrollments WHERE completionStatus IN (\"<status_id_1>\", \"<status_id_2>\") AND learner = \"{{worker_id}}\""
+  "query": "SELECT enrolledContent as Course, learner, registrationStatus, completionStatus, learningAssignment{dueDate1} as learningAssignment FROM learningEnrollments WHERE learner = \"{{worker_id}} AND completionStatus IN (\"<status_id_1>\", \"<status_id_2>\") \""
 }'
-
 ```
 
 **Query Parameters:**
