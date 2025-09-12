@@ -97,6 +97,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 
 - `employee_id` (string) - The specific employee's ID.
 - `currentdate` (string) - The current date used as a dynamic parameter.
+- `LIMIT`(integer) – Specifies the maximum number of records that can be returned in the query results.
 
 ### **API #3: Retrieve Compensation Benefits of the Employee**
 
@@ -112,3 +113,4 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 **Query Parameters:**
 
 - `employee_id` (string) - The specific employee's ID.
+- `LIMIT`(integer) – Specifies the maximum number of records that can be returned in the query results.
