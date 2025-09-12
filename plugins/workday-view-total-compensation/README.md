@@ -85,11 +85,11 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 ### **API #2: Fetch Compensation Bonus and Base Salary of the Employee**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data?limit=1000' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "query": "PARAMETERS prompt_Date2 = \"{{currentdate}}\" SELECT employeeID, compensationGrade, cf_NewTotalBasePayAmount AS Base_Salary, lastBonusOrOne_TimePayment_Amount AS Last_Bonus_Amount FROM workersForHCMReporting (dataSourceFilter = allActiveWorkers) WHERE employeeID = \"{{employee_id}}\" LIMIT 1000"
+  "query": "PARAMETERS prompt_Date2 = \"{{currentdate}}\" SELECT employeeID, compensationGrade, cf_NewTotalBasePayAmount AS Base_Salary, lastBonusOrOne_TimePayment_Amount AS Last_Bonus_Amount FROM workersForHCMReporting (dataSourceFilter = allActiveWorkers) WHERE employeeID = \"{{employee_id}}\""
 }'
 ```
 
@@ -97,20 +97,20 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 
 - `employee_id` (string) - The specific employee's ID.
 - `currentdate` (string) - The current date used as a dynamic parameter.
-- `LIMIT`(integer) – Specifies the maximum number of records that can be returned in the query results.
+- `limit`(integer) – Specifies the maximum number of records that can be returned in the query results.
 
 ### **API #3: Retrieve Compensation Benefits of the Employee**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data?limit=1000' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-  "query": "SELECT email_PrimaryWork, benefitElections { benefitPlan, coverage, dependents, beneficiaries_All, coverageBeginDateForBenefitPlan, deductionBeginDateForBenefitPlan, employerContributionPerBenefitPlanFrequency, employeeCostPerBenefitPlanFrequency } FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = true, isActive = false) WHERE employeeID = \"{{employee_id}}\" LIMIT 1000"
+  "query": "SELECT email_PrimaryWork, benefitElections { benefitPlan, coverage, dependents, beneficiaries_All, coverageBeginDateForBenefitPlan, deductionBeginDateForBenefitPlan, employerContributionPerBenefitPlanFrequency, employeeCostPerBenefitPlanFrequency } FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = true, isActive = false) WHERE employeeID = \"{{employee_id}}\""
 }'
 ```
 
 **Query Parameters:**
 
 - `employee_id` (string) - The specific employee's ID.
-- `LIMIT`(integer) – Specifies the maximum number of records that can be returned in the query results.
+- `limit`(integer) – Specifies the maximum number of records that can be returned in the query results.
