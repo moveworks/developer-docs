@@ -1,9 +1,7 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: "Analyzes all Closed-Won deals in the current fiscal year and breaks\
   \ down revenue by New Business vs. Expansion \u2014 helping GTM leaders understand\
   \ growth mix."

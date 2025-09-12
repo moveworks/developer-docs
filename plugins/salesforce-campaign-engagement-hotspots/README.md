@@ -1,9 +1,7 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: Analyzes leads generated from a campaign to find which industries and
   regions have the highest average engagement scores, helping marketers double down
   on what's working.

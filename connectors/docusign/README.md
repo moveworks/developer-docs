@@ -1,6 +1,6 @@
 ---
 availability: VALIDATED
-description: A jwt based connector for Docusign.
+description: A JWT based connector for Docusign.
 difficulty_level: BEGINNER
 fidelity: GUIDE
 name: Docusign

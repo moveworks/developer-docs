@@ -1,9 +1,7 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: Analyzes campaign performance by grouping leads and meetings by channel
   (e.g., Email, Events, LinkedIn Ads) to highlight which channels drive the most impact
   for sales.

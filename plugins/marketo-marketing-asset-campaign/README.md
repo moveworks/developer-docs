@@ -1,8 +1,11 @@
 ---
+agent_capabilities:
+- Ambient Agent
 availability: IDEA
-description: A plugin that monitors content performance and triggers a workflow once
-  an asset hits a defined threshold. It then generates a follow-up sequence in Marketo,
-  helping marketing teams engage customers at the right time, keeping audiences engaged.
+description: An Ambient agent that monitors content performance and triggers a workflow
+  once an asset hits a defined threshold. It then generates a follow-up sequence in
+  Marketo, helping marketing teams engage customers at the right time, keeping audiences
+  engaged.
 domain:
 - Marketing
 fidelity: IDEA

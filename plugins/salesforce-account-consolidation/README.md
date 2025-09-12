@@ -1,9 +1,7 @@
 ---
-agent_functionality:
+agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-custom_tags:
-- Structured Data Analyzer
 description: This plugin uses intelligent fuzzy matching to find all related customer
   accounts (e.g., "acme corp," "acme corp EU," "acme corp APAC") and instantly aggregates
   their open opportunities, giving sales reps a complete 360-degree view for their
