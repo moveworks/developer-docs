@@ -1,8 +1,11 @@
 ---
-availability: IDEA
-description: A plugin that allows employees to securely and instantly retrieve and
+availability: VALIDATED
+description: 'A plugin that allows employees to securely and instantly retrieve and
+
   view their payslips. This eliminates the need to navigate through different disconnected
-  payslips, providing a seamless, self-service experience.
+
+  payslips, providing a seamless, self-service experience.'
+difficulty_level: BEGINNER
 domain:
 - HR - Other
 - Finance - Payroll
@@ -16,9 +19,9 @@ solution_tags:
 - HR - Other
 systems:
 - sap-success-factors
-difficulty_level: BEGINNER
 time_in_minutes: 30
 ---
+
 # **Introduction**
 
 The **Look Up Payslips** plugin enables employees to instantly access their historical payslips from SAP SuccessFactors directly through the Moveworks AI Assistant. Users can quickly retrieve key details such as pay period, gross pay, deductions, and net pay, with the option to download the full payslip document when needed. This eliminates the hassle of logging into the SAP portal, ensuring employees have fast, secure, and convenient access to their payroll information anytime.
