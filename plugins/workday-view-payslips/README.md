@@ -23,7 +23,7 @@ time_in_minutes: 15
 
 ## Introduction
 
-The “View Payslips” plugin allows employees to securely access their payslips for any pay period directly through the Moveworks AI Assistant. This provides a convenient and efficient way to review salary details and net pay without navigating through Workday manually.
+The **“View Payslips”** plugin allows employees to securely access their payslips for any pay period directly through the Moveworks AI Assistant. This provides a convenient and efficient way to review salary details and net pay without navigating through Workday manually.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
@@ -48,7 +48,19 @@ For this plugin, ensure the Workday integration system user has the following pe
 - `View and Get access` to Worker Data: Payroll (Payslips)
 - `Get access` to Reports: Pay Calculation Results for Worker
 
-Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+**Tenant Configuration:**
+
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
+
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
+    
+
+Make sure to update this across all actions that reference the Workday API.
+
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 

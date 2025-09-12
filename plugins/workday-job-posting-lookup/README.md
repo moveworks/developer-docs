@@ -19,7 +19,7 @@ time_in_minutes: 20
 
 # **Introduction:**
 
-The **View Open Jobs** plugin provides real-time access to Workday’s active job postings through the Moveworks AI Assistant. Recruiters, hiring managers, and employees can instantly search open positions by department, location, or job family—all within chat.
+The **View Open Job Postings** plugin provides real-time access to Workday’s active job postings through the Moveworks AI Assistant. Recruiters, hiring managers, and employees can instantly search open positions by department, location, or job family—all within chat.
 
 This guide covers the step-by-step setup to enable job lookup functionality.
 
@@ -41,23 +41,21 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 ## **Required Permissions:**
 
-- Get access ****to reference data: **Recruiting**
-- View access to worker data: **Positions**
-- View access ****to reference data: **Job Requisitions**
+- Get access **to reference data: Recruiting**
+- View access **to worker data: Positions**
+- View access **to reference data: Job Requisitions**
 
 > Note: Requires "Staffing" domain permissions in Workday.
 > 
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use`<TENANT>`as a placeholder. After installation, replace`<TENANT>`in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
 - Log into Workday.
-- Check the URL in your browser — the tenant name appears after`workday.com/`, e.g.:
-    
-    `https://impl.workday.com/**your_tenant**/...`
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
     
 
 Make sure to update this across all actions that reference the Workday API.

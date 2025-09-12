@@ -49,14 +49,12 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use`<TENANT>`as a placeholder. After installation, replace`<TENANT>`in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
 - Log into Workday.
-- Check the URL in your browser — the tenant name appears after`workday.com/`, e.g.:
-    
-    `https://impl.workday.com/**your_tenant**/...`
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
     
 
 Make sure to update this across all actions that reference the Workday API.
@@ -69,34 +67,33 @@ After configuring the connector and updating your tenant, refer to our [plugin 
 
 ```bash
 curl --request POST \
-curl --location 'https://<DOMAIN>.myworkday.com/api/wql/v1/<TENANT>/data?offset=0&limit=1' \
+curl --location 'https://<YOUR_DOMAIN>/api/wql/v1/<TENANT>/data?offset=0&limit=1' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
-    "query": "SELECT workdayID, fullName,businessTitle, email_PrimaryWorkOrPrimaryHome,employeeID FROM allWorkers WHERE email_PrimaryWorkOrPrimaryHome = '{{email_PrimaryWorkOrPrimaryHome}}'"
-}
-'
-
+    "query": "SELECT workdayID, fullName,businessTitle, email_PrimaryWorkOrPrimaryHome,employeeID FROM allWorkers WHERE email_PrimaryWorkOrPrimaryHome = '{{email}}'"
+}'
 ```
 
 **Request Body Fields :**
 
-- email(string) – The email address of the user whose worker id and timezone want to retrieve.
+- `email` (string) – The email address of the user whose worker id and timezone want to retrieve.
 
 ## **API #2: Retrieve Timesheet Information using WQL**
 
 ```bash
-curl --location https://'<YOUR_DOMAIN>'/ccx/api/wql/v1/<INSTANCE>/data' \
+curl --location 'https://<YOUR_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer 
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
-
-  "query": " SELECT allTimesheetDaysAreWithinTheActivityDateRange, costCenterForWorkerFromTimesheet, criticalValidationExists, eventTarget_01, excludeWeekends, isApproved, isJobExempt, isPayrollTimesheet, isProjectTimesheet, isProjectWorksheet, isTimeInTimeOutTimesheet, lockedInWorkday, moreThan24HoursWorkedInADay, multi_WorkerTimesheetForTimesheet, payrollProcessing, payrollTimesheetLinesAreMissingACostCenter, payrollTimesheetLinesAreMissingAPosition, periodIsInUseByAnotherProjectTimesheetForThisWorker, positionsFilledByWorkerAsOfTimesheetPeriodEndDate, projectTimesheetDefaultDefaultHoursPerDay, projectTimesheetDefaultsSumOfDefaultsHours, projectTimesheetIsDuplicateOfPriorProjectTimesheet, projectTimesheetLinesForTimesheet, referenceID1, savedCustomValidationResult, supervisoryOrganizationOfMulti_WorkerTimesheetForWorkerTimeCard, timeInTimeOut, timesheet, timesheetApprovalDateTime, timesheetDays, timesheetDefaultLinesForTimesheet, timesheetLinesForTimesheet, timesheetPeriod, timesheetPeriodEndDate, timesheetPeriodStartDate, timesheetStatus, totalBillableProjectHoursLogged, totalDaysOffRequestedForTimesheetPeriod, totalHoursLoggedForTimeInTimeOutTimesheetIncludesUnapproved, totalHoursLoggedForTimesheet, totalHoursLoggedForTimesheetApproved, totalHoursOffRequestedForTimesheetPeriod, totalNon_BillableProjectHoursLogged, validationErrorsAndWarnings, workerDefaultWeeklyHours, workerOnTimesheet, workerScheduledWeeklyHours, worksheetLinesAreMissingTheTask, worksheetTotalTimeAllocationPercent, worktagsFromTimesheetDefaultLines FROM timesheets (periodStartDate = '\''{{periodStartDate}}'\'', periodEndDate = '\'{{periodEndDate}}'\'' ) WHERE workerOnTimesheet = '\'{{'workeronTimesheet'}}'\''"
-
-}
-'
+  "query": "SELECT allTimesheetDaysAreWithinTheActivityDateRange, costCenterForWorkerFromTimesheet, criticalValidationExists, eventTarget_01, excludeWeekends, isApproved, isJobExempt, isPayrollTimesheet, isProjectTimesheet, isProjectWorksheet, isTimeInTimeOutTimesheet, lockedInWorkday, moreThan24HoursWorkedInADay, multi_WorkerTimesheetForTimesheet, payrollProcessing, payrollTimesheetLinesAreMissingACostCenter, payrollTimesheetLinesAreMissingAPosition, periodIsInUseByAnotherProjectTimesheetForThisWorker, positionsFilledByWorkerAsOfTimesheetPeriodEndDate, projectTimesheetDefaultDefaultHoursPerDay, projectTimesheetDefaultsSumOfDefaultsHours, projectTimesheetIsDuplicateOfPriorProjectTimesheet, projectTimesheetLinesForTimesheet, referenceID1, savedCustomValidationResult, supervisoryOrganizationOfMulti_WorkerTimesheetForWorkerTimeCard, timeInTimeOut, timesheet, timesheetApprovalDateTime, timesheetDays, timesheetDefaultLinesForTimesheet, timesheetLinesForTimesheet, timesheetPeriod, timesheetPeriodEndDate, timesheetPeriodStartDate, timesheetStatus, totalBillableProjectHoursLogged, totalDaysOffRequestedForTimesheetPeriod, totalHoursLoggedForTimeInTimeOutTimesheetIncludesUnapproved, totalHoursLoggedForTimesheet, totalHoursLoggedForTimesheetApproved, totalHoursOffRequestedForTimesheetPeriod, totalNon_BillableProjectHoursLogged, validationErrorsAndWarnings, workerDefaultWeeklyHours, workerOnTimesheet, workerScheduledWeeklyHours, worksheetLinesAreMissingTheTask, worksheetTotalTimeAllocationPercent, worktagsFromTimesheetDefaultLines \
+  FROM timesheets (periodStartDate = '{{periodStartDate}}', periodEndDate = '{{periodEndDate}}') \
+  WHERE workerOnTimesheet = '{{workerOnTimesheet}}'"
+}'
 ```
 
 **Request Body Fields :**
 
-- workeronTimesheet(string) – The  worker id of the worker which want to retrieve.
+- `workeronTimesheet` (string) – The  worker id of the worker which want to retrieve.
+- `periodStartDate` (string) – Start date of the timesheet period in YYYY-MM-DD format.
+- `periodEndDate` (string) – End date of the timesheet period in YYYY-MM-DD format.

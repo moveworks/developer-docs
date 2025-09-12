@@ -53,7 +53,7 @@ All Workday API endpoints in this plugin use **TENANT** as a placeholder. After 
 To find your tenant name:
 
 - Log into Workday.
-- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [`https://impl.workday.com/**your_tenant**/...`](https://impl.workday.com/**your_tenant**/...)
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
 
 Make sure to update this across all actions that reference the Workday API.
 

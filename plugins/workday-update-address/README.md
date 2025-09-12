@@ -46,7 +46,19 @@ We recommend creating the connector for **Workday** first, prior to installing
 - **Modify**, **Get**, **Put** access to `Person Data: Home Contact Information`
 - **Get**, **Put** access to `Person Data: Home Address`
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+**Tenant Configuration:**
+
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
+
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
+    
+
+Make sure to update this across all actions that reference the Workday API.
+
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## Appendix
 

@@ -20,7 +20,7 @@ time_in_minutes: 20
 
 # **Introduction:**
 
-The **Time Entry Code** plugin provides instant access to Workday time tracking codes through the Moveworks AI Assistant. Employees and managers can quickly lookup valid time codes, categories, and project identifiers - enabling accurate time entry without switching systems.
+The **View Check-In Time Entry Code** plugin provides instant access to Workday time tracking codes through the Moveworks AI Assistant. Employees and managers can quickly lookup valid time codes, categories, and project identifiers - enabling accurate time entry without switching systems.
 
 This guide outlines the simple setup to enable time code lookups in minutes.
 
@@ -50,14 +50,12 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use`<TENANT>`as a placeholder. After installation, replace`<TENANT>`in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
 - Log into Workday.
-- Check the URL in your browser — the tenant name appears after`workday.com/`, e.g.:
-    
-    `https://impl.workday.com/**your_tenant**/...`
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
     
 
 Make sure to update this across all actions that reference the Workday API.

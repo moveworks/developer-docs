@@ -51,7 +51,19 @@ Specifically, ensure the following domain permissions are assigned with both **V
 - Bonus
 - Benefits
 
-Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+**Tenant Configuration:**
+
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
+
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
+    
+
+Make sure to update this across all actions that reference the Workday API.
+
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 
@@ -73,7 +85,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 ### **API #2: Fetch Compensation Bonus and Base Salary of the Employee**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data?limit=1000' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
@@ -85,11 +97,12 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 
 - `employee_id` (string) - The specific employee's ID.
 - `currentdate` (string) - The current date used as a dynamic parameter.
+- `limit`(integer) – Specifies the maximum number of records that can be returned in the query results.
 
 ### **API #3: Retrieve Compensation Benefits of the Employee**
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
+curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data?limit=1000' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>' \
 --data '{
@@ -100,3 +113,4 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 **Query Parameters:**
 
 - `employee_id` (string) - The specific employee's ID.
+- `limit`(integer) – Specifies the maximum number of records that can be returned in the query results.
