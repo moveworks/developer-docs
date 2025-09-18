@@ -1,12 +1,12 @@
 ---
-availability: INSTALLABLE
+availability: VALIDATED
 description: A plugin that allows employees to securely access and retrieve their
   eligible time off plans based on their Workday profile.
 difficulty_level: BEGINNER
 domain:
 - HR - Other
 - HR - Time & Absence
-fidelity: TEMPLATE
+fidelity: GUIDE
 installation_asset_uuid: faf5ea87-0989-4bb1-9aed-7a680a4e9cf7
 installation_link: https://my.moveworks.com/agent-studio/plugin-workspace/plugins?externalAssetId=37e61096-bd69-41f1-8864-de0b36463b0d
 name: "Look up User\u2019s Time Off Eligibility"
