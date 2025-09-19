@@ -1,3 +1,4 @@
-curl --location --request GET 'https://us2.api.concursolutions.com/api/v3.0/expense/reports?user=ALL&submitDateAfter={modified_date_after}&ApprovalStatusCode=A_PEND' \
---header 'Accept: application/json' \
---header 'Authorization: Bearer {auth_token}' \
+curl --request GET \
+  --url 'https://<YOUR_INSTANCE>/expensereports/vX/users/{manager_id}/context/MANAGER/reportsToApprove' \
+  --header 'Accept: application/json' \
+  --header 'Authorization: Bearer {{ACCESS_TOKEN}}'
