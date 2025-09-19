@@ -1,0 +1,3 @@
+curl --location 'https://<your-instance>/services/data/v59.0/query/?q=SELECT+Id%2C+ContactId%2C+OpportunityId%2C+Role%[2C+Opportunity.Name](http://2c+opportunity.name/)%[2C+Opportunity.Account.Name](http://2c+opportunity.account.name/)%2C+Opportunity.StageName%2C+Opportunity.Amount%2C+Opportunity.CloseDate%[2C+Opportunity.Owner.Name](http://2c+opportunity.owner.name/)%2C+Opportunity.NextStep%2C+Opportunity.Type%2C+Opportunity.LeadSource+FROM+OpportunityContactRole+WHERE+ContactId%3D%27{{contact_data}}%27+ORDER+BY+LastModifiedDate+DESC+LIMIT+100' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <your-access-token>'
