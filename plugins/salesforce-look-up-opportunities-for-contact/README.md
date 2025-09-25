@@ -1,22 +1,23 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
 description: A plugin that allows you to know the full picture by instantly seeing
   all opportunities tied to any contact to prioritize better and close deals faster.
+difficulty_level: BEGINNER
 domain:
 - Sales
 - Productivity
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: b0a5f6be-f743-4e28-85f3-513a3f829172
 name: Look Up Opportunities for a Contact
-difficulty_level: BEGINNER
-time_in_minutes: 20
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+want+to+view+opportunities+for+a+contact.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Okay%2C+I+can+help+you+with+that.+Can+you+specify+if+you+would+like+to+view+opportunities+for+any+contacts+assigned+to+you%2C+a+specific+contact%2C+or+a+contact+within+an+account%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22John+within+Stark+Industries.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+for+contacts+named+%27John%27+within+the+%27Stark+Industries%27+account+in+Salesforce...%22%7D%5D%7D%2C%7B%22richText%22%3A%22I+found+multiple+contacts+for+%27John%27+within+%27Stark+Industries%27.+Which+one+would+you+like+to+view+opportunities+for%3F%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3EJohn+Doe%3C%2Fli%3E%3Cli%3EJohn+Smith%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22John+Doe%22%7D%2C%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22John+Smith%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22for+John+Doe.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Retrieving+opportunities+associated+with+John+Doe+from+Stark+Industries+in+Salesforce...%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here+are+the+opportunities+for+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EJohn+Doe%3C%2Fb%3E+at+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EStark+Industries%3C%2Fb%3E%3A%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cb%3EOpportunity%3A%3C%2Fb%3E+Arc+Reactor+Integration%3Cul%3E%3Cli%3E%3Cb%3EStage%3A%3C%2Fb%3E+Qualification%3C%2Fli%3E%3Cli%3E%3Cb%3EAmount%3A%3C%2Fb%3E+%241%2C200%2C000%3C%2Fli%3E%3Cli%3E%3Cb%3EARR%3A%3C%2Fb%3E+%24200%2C000%3C%2Fli%3E%3Cli%3E%3Cb%3EProduct%3A%3C%2Fb%3E+Arc+Reactor+v2%3C%2Fli%3E%3Cli%3E%3Cb%3EType%3A%3C%2Fb%3E+New+Business%3C%2Fli%3E%3Cli%3E%3Cb%3EClose+Date%3A%3C%2Fb%3E+2024-12-31%3C%2Fli%3E%3Cli%3E%3Cb%3ELead+Source%3A%3C%2Fb%3E+Web%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Cb%3EOpportunity%3A%3C%2Fb%3E+Iron+Man+Suit+Components%3Cul%3E%3Cli%3E%3Cb%3EStage%3A%3C%2Fb%3E+Negotiation%2FReview%3C%2Fli%3E%3Cli%3E%3Cb%3EAmount%3A%3C%2Fb%3E+%243%2C500%2C000%3C%2Fli%3E%3Cli%3E%3Cb%3EARR%3A%3C%2Fb%3E+%24500%2C000%3C%2Fli%3E%3Cli%3E%3Cb%3EProduct%3A%3C%2Fb%3E+Mark+L+Suit+Parts%3C%2Fli%3E%3Cli%3E%3Cb%3EType%3A%3C%2Fb%3E+Existing+Business%3C%2Fli%3E%3Cli%3E%3Cb%3EClose+Date%3A%3C%2Fb%3E+2024-11-15%3C%2Fli%3E%3Cli%3E%3Cb%3ELead+Source%3A%3C%2Fb%3E+Referral%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Cb%3EOpportunity%3A%3C%2Fb%3E+Repulsor+Technology+Licensing%3Cul%3E%3Cli%3E%3Cb%3EStage%3A%3C%2Fb%3E+Closed+Won%3C%2Fli%3E%3Cli%3E%3Cb%3EAmount%3A%3C%2Fb%3E+%24800%2C000%3C%2Fli%3E%3Cli%3E%3Cb%3EARR%3A%3C%2Fb%3E+%24150%2C000%3C%2Fli%3E%3Cli%3E%3Cb%3EProduct%3A%3C%2Fb%3E+Repulsor+Ray+Tech%3C%2Fli%3E%3Cli%3E%3Cb%3EType%3A%3C%2Fb%3E+Existing+Business%3C%2Fli%3E%3Cli%3E%3Cb%3EClose+Date%3A%3C%2Fb%3E+2024-06-30%3C%2Fli%3E%3Cli%3E%3Cb%3ELead+Source%3A%3C%2Fb%3E+Partner%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22Stark+Industries%22%7D%2C%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22Arc+Reactor+Integration%22%7D%2C%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22Iron+Man+Suit+Components%22%7D%2C%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22Repulsor+Technology+Licensing%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
 - Productivity
 - Sales
 systems:
 - salesforce
-
+time_in_minutes: 20
 ---
+
 ## **Introduction**
 
 The **“Look Up Opportunities for a Contact”** plugin helps users easily find all Opportunities associated with a specified contact—directly through the Moveworks AI Assistant. This plugin allows users to instantly retrieve opportunities linked to a contact by searching through the **contact name**, **contacts assigned to them**, or **contacts within an account**. It streamlines sales tracking, supports timely follow-ups, and enhances overall CRM efficiency without the need for manual searches.
