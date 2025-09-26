@@ -18,7 +18,7 @@ Integrating DocuSign with Agent Studio allows for seamless incorporation of elec
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image.png)
     
-- Your users belong to the same verified **email domain(eg. name@’moveworks.ai’)** registered under your DocuSign Organization (for domain-wide consent).
+- Your users belong to the same verified **email domain(eg. name@’[moveworks.ai](https://www.moveworks.com/)’)** registered under your DocuSign Organization (for domain-wide consent).
 - Your account plan must support Organizations (some advanced features require specific plans).
 
 # **Step 1: Setup your organization**
@@ -151,7 +151,11 @@ Additional Resources
 
 # **Step 3: Agent** Studio
 
-1. Go to **Agent Studio → Actions → HTTP actions** 
+We need to create two connectors because there are two different base URLs used in this integration.
+
+### Connector 1:
+
+1. Go to **Agent Studio → HTTP Connector**
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2016.png)
     
@@ -160,7 +164,7 @@ Additional Resources
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2017.png)
     
 3. Fill up the information:
-    1. Base URL
+    1. Base URL - [https://api-d.docusign.net](https://api-d.docusign.net/)
     2. Name
     3. Description 
     
@@ -183,19 +187,52 @@ Additional Resources
     | JWT Auth Algorithm | JWT_ALGORITHM_RS256 | Use RS256 (RSA SHA-256) as the signing algorithm. This is required by DocuSign for JWT tokens. |
     | Jwt Auth Claims Expiry Seconds | 3600 (or less, e.g., 3600) | Token expiration time in seconds from issuance (iat). Max is 1 hour (3600 seconds). |
     | Jwt Auth Claims Issuer | Your Integration Key (Client ID) | The Integration Key (a GUID) assigned to your app in DocuSign Admin, which we saved earlier. |
-    | Jwt Auth Claims Audience | account.docusign.com  | The OAuth token endpoint host you are requesting the token from (audience). |
+    | Jwt Auth Claims Audience | account.docusign.com - (for live/production) account-d.docusign.com -(for demo/developer)  | The OAuth token endpoint (audience) must match the host of the Token URL you are using. |
     | Jwt Auth Claims Subject | The User ID (GUID) of the admin | The DocuSign userId (not email) of the admin. |
     | Jwt Auth Additional Claims | Key : scope, value : signature impersonation organization_read user_read user_write group_read permission_read domain_read identity_provider_read | Scopes required for accessing Api endpoints. Space delimited. |
-
+    | Token URL | [https://account.docusign.com/oauth/token](https://account.docusign.com/oauth/token) - (for live/production)  [https://account-d.docusign.com/oauth/token](https://account-d.docusign.com/oauth/token) - (for demo/developer) | Endpoint where the JWT assertion will be exchanged for an access token. |
+    | Custom Grant Scope | urn:ietf:params:oauth:grant-type:jwt-bearer | Required value for using the JWT Bearer Grant OAuth 2.0 flow. |
     
-6. Go to **input args** and put the **accountId** value from **Apps and keys** as **example value**. Check **Required** and **Save.**
+6. Go to **Input Args**
+- Add the following fields:
+    - `user_email`
+    - `organization_id`
+- **Where to find values:**
+    - `user_email`: The email address of the admin or an authorized user.
+    - `organization_id`:
+        - Navigate to **Admin → Account Profile → Organization ID**
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2022.png)
     
+    
+7. Enter these as values, check Required, click Save, and then click Test to verify if the connector setup is successful. You should receive a valid response confirming the configuration.
+    
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2023.png)
     
-7. Click on **Test** to check if the Connector setup was successful and expect a successful response as shown below:
-    
-    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2024.png)
-    
-    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2025.png)
+### Connector 2:
+
+1. Go to **Agent Studio → HTTP Connector**
+
+ ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2016.png)
+
+2. Click on **Create**
+
+ ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2017.png)
+
+3. Fill up the information:
+    - Base URL - [https://demo.docusign.net](https://demo.docusign.net/)
+    - Name
+    - Description
+ 
+  ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2026.png)
+
+4. **Repeat Steps 4 and 5** from Connector 1 (RSA key setup and JWT authentication configuration).
+5. Go to **Input Args**:
+- Add the `accountId` field.
+- Use the **sandbox Account ID** from **Apps and Keys** as the example value.
+
+![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2024.png)
+
+6. Enter these as **values**, check **Required**, click **Save**, and then click **Test** to verify if the connector setup is successful. You should receive a valid response confirming the configuration.
+
+![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2025.png)
