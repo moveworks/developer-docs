@@ -64,6 +64,7 @@ The [Get Workspaces API](https://developers.asana.com/reference/getworkspaces) r
 curl --request GET \
      --url https://app.asana.com/api/1.0/workspaces \
      --header 'accept: application/json'
+     --header 'authorization: Bearer {{personal_access_token}}'
 ```
 
 **Response:** Returns all workspaces the authenticated integration has access to. No filters required.
@@ -76,6 +77,7 @@ The [Get Teams for a User API](https://developers.asana.com/reference/getteamsfo
 curl --request GET \
      --url https://app.asana.com/api/1.0/users/{{user_gid}}/teams?workspace={{workspace_gid}} \
      --header 'accept: application/json'
+     --header 'authorization: Bearer {{personal_access_token}}'
 ```
 
 **Path Parameters:**
@@ -94,6 +96,7 @@ The [Get Projects API](https://developers.asana.com/reference/getprojectsforteam
 curl --request GET \
      --url 'https://app.asana.com/api/1.0/projects?workspace={{workspace_gid}}&team={{team_gid}}' \
      --header 'accept: application/json'
+     --header 'authorization: Bearer {{personal_access_token}}'
 ```
 
 **Query Parameters:**
@@ -109,6 +112,7 @@ The [Get Tasks from a Project](https://developers.asana.com/reference/gettasksfo
 curl --request GET \
      --url 'https://app.asana.com/api/1.0/projects/{{project_gid}}/tasks?opt_fields=gid,name,notes,assignee.gid,assignee.name,assignee.email,completed,completed_at,created_at,modified_at,due_on,start_on,projects.name,tags.name,followers.name,workspace.name,dependencies.name,dependents.name,subtasks.name,subtasks.completed,subtasks.assignee.name,subtasks.due_on,subtasks.notes' \
      --header 'accept: application/json'
+     --header 'authorization: Bearer {{personal_access_token}}'
 ```
 
 **Path Parameters:**
