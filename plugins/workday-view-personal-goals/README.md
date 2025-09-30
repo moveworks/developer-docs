@@ -49,19 +49,17 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use `<TENANT>` as a placeholder. After installation, replace `<TENANT>` in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
 
 To find your tenant name:
 
 - Log into Workday.
-- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.:
-    
-    `https://impl.workday.com/**your_tenant**/...`
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
     
 
 Make sure to update this across all actions that reference the Workday API.
 
-After configuring the connector and updating your tenant, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 

@@ -1,0 +1,2 @@
+curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT+Id%2C+Name%2C+Type%2C+LeadSource%2C+CreatedDate%2C+StageName%2C+Amount%2C+LastActivityDate%2C+Account.Name%2C+IsClosed%2C+OwnerId%2C+Owner.Id%2C+Owner.Name%2C+(SELECT+Product2.Name%2C+Quantity%2C+TotalPrice+FROM+OpportunityLineItems)+FROM+Opportunity+WHERE+IsClosed%3Dfalse+AND+OwnerId%3D%27{{USER_ID }}%27+AND+(LastActivityDate%3C{{TIME_RANGE}}+OR+LastActivityDate+%3D+null)' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>'

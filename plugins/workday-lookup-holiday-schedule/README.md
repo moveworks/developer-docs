@@ -8,7 +8,7 @@ domain:
 - HR - Time & Absence
 - HR - Onboarding
 fidelity: TEMPLATE
-installation_asset_uuid: b100d397-c27a-45b4-a16f-dbaf958e4d2e
+installation_asset_uuid: 0747a27d-ff0a-4e14-b843-60df1230296f
 name: Look Up Holiday Schedule
 num_implementations: 1
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22What%27s+the+holiday+schedule%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EFetching+%3Cstrong%3EHoliday+Schedule%3C%2Fstrong%3E%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EFor+US+employees%2C+the+holiday+schedule+includes%3A%3Cbr%3E%5Cn-+New+Year%27s+Day%3Cbr%3E%5Cn-+Memorial+Day%3Cbr%3E%5Cn-+Independence+Day%3Cbr%3E%5Cn-+Labor+Day%3Cbr%3E%5Cn-+Thanksgiving+Day+and+the+following+Friday%3Cbr%3E%5Cn-+Christmas+Day%3Cbr%3E%5CnEmployees+are+also+eligible+for+two+floating+holidays+per+year.+Is+there+anything+else+you+need+assistance+with%3F%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%222024+US+Holiday+Calendar%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
@@ -39,7 +39,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our [Workday Connector Guide](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) to do so. Once completed, follow our plugin installation documentation to install the  **Look Up Holiday Schedule** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [Workday Connector Guide](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement)  to do so. Once completed, follow our plugin installation documentation to install the  **Look Up Holiday Schedule** plugin in minutes.
 
 For **Look Up Holiday Schedule**, you will also need to ensure the following permissions are in place:
 
@@ -48,7 +48,19 @@ For **Look Up Holiday Schedule**, you will also need to ensure the following pe
 - `User Profile Access`
 - `Employee Data Access`
 
-After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation)  for more details on completing the setup.
+**Tenant Configuration:**
+
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
+
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
+    
+
+Make sure to update this across all actions that reference the Workday API.
+
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 # **Appendix**
 
@@ -66,7 +78,7 @@ curl --request GET
 
 **Query Parameters :**
 
-- `<full_name>`  (string) – The fullname of the user whose worker id you want to retrieve.
+- `full_name` (string) – The fullname of the user whose worker id you want to retrieve.
 
 ## API #2: Holiday_Schedule_Workday
 
@@ -82,4 +94,4 @@ curl --request GET
 
 **Query Parameters :**
 
-- `<Worker_id>`  (string) – The Worker_id of the user whose holiday schedule you want to retrieve.
+- `Worker_id` (string) – The Worker_id of the user whose holiday schedule you want to retrieve.
