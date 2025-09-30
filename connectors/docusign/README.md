@@ -173,33 +173,33 @@ We need to create two connectors because there are two different base URLs used 
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2021.png)
 
-**Fill in the following values:**
+  **Fill in the following values:**
 
-- **JWT Auth Algorithm:**
+   - **JWT Auth Algorithm:**
     
     `JWT_ALGORITHM_RS256`
     
     - Use RS256 (RSA SHA-256) as the signing algorithm. This is required by DocuSign for JWT tokens.
-- **JWT Auth Claims Expiry Seconds:**
+   - **JWT Auth Claims Expiry Seconds:**
     
     `3600` (or less, e.g., 3600)
     
     - Token expiration time in seconds from issuance (`iat`). Maximum allowed is 1 hour (3600 seconds).
-- **JWT Auth Claims Issuer:**
+   - **JWT Auth Claims Issuer:**
 
     Your Integration Key (Client ID)
     
     - The Integration Key (a GUID) assigned to your app in DocuSign Admin.
-- **JWT Auth Claims Audience:**
+   - **JWT Auth Claims Audience:**
     - `account.docusign.com` → for live/production accounts
     - `account-d.docusign.com` → for demo/developer accounts
     - The OAuth token endpoint (audience) **must match** the host of the Token URL you are using.
-- **JWT  Auth Claims Subject:**
+   - **JWT  Auth Claims Subject:**
     
     The User ID (GUID) of the admin
     
     - The unique `userId` of the admin (not the email address). You can find this in the admin → Users section.
-- **JWT Auth Additional Claims:**
+   - **JWT Auth Additional Claims:**
     
     Key: `scope`,
     
@@ -208,23 +208,23 @@ We need to create two connectors because there are two different base URLs used 
     `signature impersonation organization_read user_read user_write group_read permission_read domain_read identity_provider_read`
     
     - Scopes required for accessing DocuSign API endpoints. Values must be space delimited.
-- **Token URL:**
+   - **Token URL:**
     - `https://account.docusign.com/oauth/token` → for live/production
     - `https://account-d.docusign.com/oauth/token` → for demo/developer
     - Endpoint where the JWT assertion will be exchanged for an access token.
-- **Custom Grant Scope:**
+   - **Custom Grant Scope:**
     
     `urn:ietf:params:oauth:grant-type:jwt-bearer`
     
     - Required value for using the JWT Bearer Grant OAuth 2.0 flow.
-    
+
 6. Go to **Input Args**
-- Add the following fields:
-    - `user_email`
-    - `organization_id`
-- **Where to find values:**
-    - `user_email`: The email address of the admin or an authorized user.
-    - `organization_id`:
+    - Add the following fields:
+     - `user_email`
+     - `organization_id`
+    - **Where to find values:**
+     - `user_email`: The email address of the admin or an authorized user.
+     - `organization_id`:
 
          **How to find your Organization ID:**
          
@@ -232,8 +232,7 @@ We need to create two connectors because there are two different base URLs used 
              Admin → Account Profile → Organization ID
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2022.png)
-    
-    
+     
 7. Enter these as values, check Required, click Save, and then click Test to verify if the connector setup is successful. You should receive a valid response confirming the configuration.
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2023.png)
@@ -242,26 +241,27 @@ We need to create two connectors because there are two different base URLs used 
 
 1. Go to **Agent Studio → HTTP Connector**
 
- ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2016.png)
+    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2016.png)
 
 2. Click on **Create**
 
- ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2017.png)
+    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2017.png)
 
 3. Fill up the information:
     - Base URL - [https://demo.docusign.net](https://demo.docusign.net/)
     - Name
     - Description
  
-  ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2026.png)
+    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2026.png)
 
 4. **Repeat Steps 4 and 5** from Connector 1 (RSA key setup and JWT authentication configuration).
+
 5. Go to **Input Args**:
 - Add the `accountId` field.
 - Use the **sandbox Account ID** from **Apps and Keys** as the example value.
 
-![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2024.png)
+    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2024.png)
 
 6. Enter these as **values**, check **Required**, click **Save**, and then click **Test** to verify if the connector setup is successful. You should receive a valid response confirming the configuration.
 
-![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2025.png)
+    ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2025.png)
