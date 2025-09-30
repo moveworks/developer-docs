@@ -173,33 +173,33 @@ We need to create two connectors because there are two different base URLs used 
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2021.png)
 
-  **Fill in the following values:**
+    **Fill in the following values:**
 
-   - **JWT Auth Algorithm:**
+    - **JWT Auth Algorithm:**
     
     `JWT_ALGORITHM_RS256`
     
-    - Use RS256 (RSA SHA-256) as the signing algorithm. This is required by DocuSign for JWT tokens.
-   - **JWT Auth Claims Expiry Seconds:**
+      - Use RS256 (RSA SHA-256) as the signing algorithm. This is required by DocuSign for JWT tokens.
+    - **JWT Auth Claims Expiry Seconds:**
     
     `3600` (or less, e.g., 3600)
     
-    - Token expiration time in seconds from issuance (`iat`). Maximum allowed is 1 hour (3600 seconds).
-   - **JWT Auth Claims Issuer:**
+      - Token expiration time in seconds from issuance (`iat`). Maximum allowed is 1 hour (3600 seconds).
+    - **JWT Auth Claims Issuer:**
 
     Your Integration Key (Client ID)
     
-    - The Integration Key (a GUID) assigned to your app in DocuSign Admin.
-   - **JWT Auth Claims Audience:**
-    - `account.docusign.com` → for live/production accounts
-    - `account-d.docusign.com` → for demo/developer accounts
-    - The OAuth token endpoint (audience) **must match** the host of the Token URL you are using.
-   - **JWT  Auth Claims Subject:**
+      - The Integration Key (a GUID) assigned to your app in DocuSign Admin.
+    - **JWT Auth Claims Audience:**
+      - `account.docusign.com` → for live/production accounts
+      - `account-d.docusign.com` → for demo/developer accounts
+      - The OAuth token endpoint (audience) **must match** the host of the Token URL you are using.
+    - **JWT  Auth Claims Subject:**
     
     The User ID (GUID) of the admin
     
-    - The unique `userId` of the admin (not the email address). You can find this in the admin → Users section.
-   - **JWT Auth Additional Claims:**
+      - The unique `userId` of the admin (not the email address). You can find this in the admin → Users section.
+    - **JWT Auth Additional Claims:**
     
     Key: `scope`,
     
@@ -207,24 +207,24 @@ We need to create two connectors because there are two different base URLs used 
     
     `signature impersonation organization_read user_read user_write group_read permission_read domain_read identity_provider_read`
     
-    - Scopes required for accessing DocuSign API endpoints. Values must be space delimited.
-   - **Token URL:**
-    - `https://account.docusign.com/oauth/token` → for live/production
-    - `https://account-d.docusign.com/oauth/token` → for demo/developer
-    - Endpoint where the JWT assertion will be exchanged for an access token.
-   - **Custom Grant Scope:**
+      - Scopes required for accessing DocuSign API endpoints. Values must be space delimited.
+    - **Token URL:**
+      - `https://account.docusign.com/oauth/token` → for live/production
+      - `https://account-d.docusign.com/oauth/token` → for demo/developer
+      - Endpoint where the JWT assertion will be exchanged for an access token.
+    - **Custom Grant Scope:**
     
     `urn:ietf:params:oauth:grant-type:jwt-bearer`
     
-    - Required value for using the JWT Bearer Grant OAuth 2.0 flow.
+      - Required value for using the JWT Bearer Grant OAuth 2.0 flow.
 
 6. Go to **Input Args**
     - Add the following fields:
-     - `user_email`
-     - `organization_id`
+      - `user_email`
+      - `organization_id`
     - **Where to find values:**
-     - `user_email`: The email address of the admin or an authorized user.
-     - `organization_id`:
+      - `user_email`: The email address of the admin or an authorized user.
+      - `organization_id`:
 
          **How to find your Organization ID:**
          
@@ -257,8 +257,8 @@ We need to create two connectors because there are two different base URLs used 
 4. **Repeat Steps 4 and 5** from Connector 1 (RSA key setup and JWT authentication configuration).
 
 5. Go to **Input Args**:
-- Add the `accountId` field.
-- Use the **sandbox Account ID** from **Apps and Keys** as the example value.
+   - Add the `accountId` field.
+   - Use the **sandbox Account ID** from **Apps and Keys** as the example value.
 
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2024.png)
 
