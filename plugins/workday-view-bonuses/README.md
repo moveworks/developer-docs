@@ -7,7 +7,7 @@ domain:
 - Finance - Payroll
 - Finance - Other
 fidelity: TEMPLATE
-installation_asset_uuid: 4fa98f9b-4ec0-4d09-8ea3-ac05526ae6dc
+installation_asset_uuid: 4b1ca1f6-ebbd-42ec-b730-44a384bcfebe
 name: View Bonuses
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Can+I+see+my+bonus+history%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ERetrieve+bonus+payment+records%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22%3Cp%3EPresenting+your+bonus+history%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Sure%2C+here%27s+a+summary+of+your+bonus+payments+over+the+years+%F0%9F%91%87%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EBonus+History%3C%2Fb%3E%3Cbr%3EYour+bonus+payments+are+as+follows%3A%3Cbr%3E%3Cb%3E2023%3A%3C%2Fb%3E+%245%2C000%3Cbr%3E%3Cb%3E2022%3A%3C%2Fb%3E+%244%2C500%3Cbr%3E%3Cb%3E2021%3A%3C%2Fb%3E+%244%2C000%3Cbr%3EFor+detailed+information+and+bonus+criteria%2C+you+can+click+below.%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Bonus+History%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
@@ -45,7 +45,19 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 - `View access` to Bonus Details
 
-After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup
+**Tenant Configuration:**
+
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
+
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
+    
+
+Make sure to update this across all actions that reference the Workday API.
+
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 

@@ -23,7 +23,7 @@ time_in_minutes: 15
 
 ## Introduction
 
-The “Find Start Date” plugin enables employees to instantly access their official start date with the company through the Moveworks AI Assistant. By removing the need to search through Workday or contact HR, this plugin provides a quick and seamless way to retrieve employment details.
+The **Find Start Date** plugin enables employees to instantly access their official start date with the company through the Moveworks AI Assistant. By removing the need to search through Workday or contact HR, this plugin provides a quick and seamless way to retrieve employment details.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
@@ -47,7 +47,19 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 - View access to `Worker Data: Service Dates`
 
-Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+**Tenant Configuration:**
+
+All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
+
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.: [https://impl.workday.com/**your_tenant**/...](https://impl.workday.com/**your_tenant**/...)
+    
+
+Make sure to update this across all actions that reference the Workday API.
+
+After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
 ## **Appendix**
 

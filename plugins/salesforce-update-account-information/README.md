@@ -1,0 +1,18 @@
+---
+availability: IDEA
+description: A plugin that allows you to update account details like the name, phone
+  number, website, addresses and other info, ensuring your CRM data is always current
+  and accurate.
+domain:
+- Sales
+- Productivity
+fidelity: IDEA
+name: Update Account Information
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+want+to+update+details+for+an+account+on+salesforce.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Okay%2C+I+can+help+you+with+that.+Can+you+specify+if+you+want+to+update+an+account+assigned+to+you%2C+or+a+specific+account%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22account+ACME+assigned+to+me%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Moveworks+identifies+the+user%27s+request+to+find+accounts+assigned+to+them+and+initiates+a+search+within+Salesforce+for+accounts+matching+%27ACME%27+linked+to+the+current+user.%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here+are+the+ACME+accounts+assigned+to+you%3A%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22ACME+%28US%29%22%7D%2C%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22ACME+Corp+%28Canada%29%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22ACME+%28US%29%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Okay%2C+for+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EACME+%28US%29%3C%2Fb%3E%2C+what+details+would+you+like+to+update%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22update+account+owner+to+John+Smith+and+website+to+%3Ca+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22+rel%3D%5C%22noopener+noreferrer+nofollow%5C%22+class%3D%5C%22editor-link%5C%22+href%3D%5C%22http%3A%2F%2Fwww.acme.corp.us%5C%22%3Ewww.acme.corp.us%3C%2Fa%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Moveworks+parses+the+user%27s+input+to+identify+the+specific+fields+and+values+to+be+updated+for+the+selected+Salesforce+account.%22%7D%5D%7D%2C%7B%22richText%22%3A%22Okay%2C+just+to+confirm%2C+you+want+to+update+the+following+for+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EACME+%28US%29%3C%2Fb%3E%3A%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cb%3EAccount+Owner%3A%3C%2Fb%3E+John+Smith%3C%2Fli%3E%3Cli%3E%3Cb%3EWebsite%3A%3C%2Fb%3E+%3Ca+href%3D%5C%22http%3A%2F%2Fwww.acme.corp.us%5C%22%3Ewww.acme.corp.us%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EDoes+this+look+correct%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Yes%2C+that%27s+correct.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Moveworks+initiates+an+update+call+to+the+Salesforce+API+to+modify+the+specified+fields+for+the+ACME+%28US%29+account.%22%7D%5D%7D%2C%7B%22richText%22%3A%22Great%21+I%27ve+updated+the+account+details+for+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EACME+%28US%29%3C%2Fb%3E.%22%7D%5D%7D%5D%7D
+solution_tags:
+- Productivity
+- Sales
+systems:
+- salesforce
+
+---

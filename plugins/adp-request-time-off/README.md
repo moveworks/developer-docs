@@ -1,6 +1,6 @@
 ---
 availability: IDEA
-description: A plugin that books time off in Dayforce.
+description: A plugin that books time off in ADP.
 domain:
 - HR - Other
 - HR - Time & Absence
