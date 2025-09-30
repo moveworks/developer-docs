@@ -133,5 +133,3 @@ curl --request DELETE \
 **Path Parameters:**
 
 - `task_gid` (string) – The GID of the task you want to delete.
-
-**Response:** Returns a confirmation that the task was successfully deleted.
