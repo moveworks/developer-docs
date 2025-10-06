@@ -15,13 +15,13 @@ time_in_minutes: 20
 
 **SailPoint IdentityIQ** is a prominent leader in enterprise identity governance solutions, providing businesses with the necessary tools to manage digital identities securely and effectively.
 
-This guide will step you through creating a connector within Agent Studio to establish a stable connection to your SailPoint IIQ instance and make API calls to it. This guide has been organized into four main sections:
+This guide will demonstrate how to connect Sailpoint IdentityIQ to Agent Studio. In doing so, there are two ways you can proceed:
+1. [Webhook](https://marketplace.moveworks.com/connectors/sailpoint-iiq#Webhook-Connection) - This is best when building ambient agents that are trigged from a system event inside of Sailpoint IIQ. 
+2. [Oauth 2.0 with Client Credentials](https://marketplace.moveworks.com/connectors/sailpoint-iiq#OAuth-2.0-with-Client-Credentials) - This is best when you want to build user trigged agents that connect to SalpointIIQ.
 
-1. (Optional) Install the Moveworks for Sailpoint Plugin
-2. Set up OAuth API Client
-3. Test with Postman
-4. Integrate with Agent Studio
+# Webhook Connection
 
+# OAuth 2.0 with Client Credentials
 # Prerequisites
 
 - Sailpoint IIQ account with Admin privileges to create a new service account and setup API Authentication
