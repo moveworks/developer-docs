@@ -10,11 +10,14 @@ time_in_minutes: 40
 
 SAP SuccessFactors is a cloud-based human resources (HR) management solution, empowering businesses with data-driven insights to optimize talent management, employee engagement, and overall workforce performance.
 
-This guide will walk you through the process of creating a connector within Agent Studio to make API calls to SAP SuccessFactors, using **OAuth Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
+This guide will demonstrate how to connect SAP Success Factors to Agent Studio. In doing so, there are two ways you can proceed:
+1. [Webhook Connection](https://marketplace.moveworks.com/connectors/sap-success-factors#Webhook-Connection) - This is best when building ambient agents that are trigged from a system event inside of SAP Success Factors. 
+2. [OAuth 2.0 Client Credentials](https://marketplace.moveworks.com/connectors/sap-success-factors#Client-Credentials) - This is best when you want to build user trigged agents that connect to SAP Success Factors.
 
-1. **Set up OAuth Client Credentials Flow**
-2. **Create a Connector in Agent Studio**
 
+# Webhook Connection
+
+# Client Credentials
 # **Prerequisites:**
 
 - Ensure you have **admin privileges** in SAP SuccessFactors to create an OAuth application and manage permissions.
