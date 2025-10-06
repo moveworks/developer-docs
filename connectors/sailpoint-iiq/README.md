@@ -20,16 +20,74 @@ This guide will demonstrate how to connect Sailpoint IdentityIQ to Agent Studio.
 2. [Oauth 2.0 with Client Credentials](https://marketplace.moveworks.com/connectors/sailpoint-iiq#OAuth-2.0-with-Client-Credentials) - This is best when you want to build user trigged agents that connect to SalpointIIQ.
 
 # Webhook Connection
+![Mermaid-Chart](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/Sailpoint-Mermaid.png)
+
+## What you’re connecting
+
+- **SailPoint Event Triggers** fire and forget HTTP POSTs to a URL you provide secured with a Moveworks Bearer Token).
+    - [SailPoint Event Trigger Documentation](https://documentation.sailpoint.com/saas/help/common/event_triggers.html)
+    - [Sailpoint Developer Trigger Documentation](https://developer.sailpoint.com/docs/api/beta/triggers)
+- **Moveworks Listener** is your HTTPS endpoint where you’ll enforce auth (e.g., Bearer), optionally add payload validation/deduping, and route to a plugin/Compound Action. The Listener docs include verification, filtering, dedupe, and schema options.
+    - [Moveworks Webhook Documentation](https://help.moveworks.com/docs/webhooks-listener)
+
+## Step 1: Create the Moveworks Listener
+
+In **Agent Studio → Listeners → Create new listener** :
+
+1. **Open your Listener**
+    - Copy your Webhook URL
+    - In the Listener config page, scroll to **Verification**.
+    - Check **Enable Credential Verification** (purple checkbox in the screenshot).
+
+![Create-Listener](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/Sailpoint-Create-Listener.png)
+
+2. **Create the credential (API token)**
+    - Click **Create a New Credential** (link on the right of the Verification section) or go to **moveworks setup** → credentials
+    - In the credential dialog:
+        - **Type:** API Key
+        - **Name:** something explicit, e.g. `sailpoint_webhook_bearer_prod`.
+        - Submit
+    - **Copy the token value now.** Many tenants show it only once. Store it in your secret manager if you need a backup.
+
+![Create-Credential](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/Sailpoint-Create-Credential.png)
+
+## Step 2: Subscribe in SailPoint (UI method)
+
+**In SailPoint Admin → Event Triggers**
+
+1. Pick a trigger → review its **Type**, **Input Schema** 
+    
+    ![Sailpoint-Trigger](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/Sailpoint-Create-Trigger.png)
+    
+2. **+ Subscribe** → **Subscription Type: HTTP**.
+3. **Integration URL**: paste your Moveworks Listener URL.
+4. **Authentication Type**: choose **Bearer Token** and paste the long-lived token you created in moveworks.
+5. For **Request-Response** triggers, select **Response Type** (SYNC/ASYNC/DYNAMIC) and, if ASYNC, set **Response Deadline** in ISO-8601 (e.g., `PT1H`). SYNC is fixed at **10s**. We aren’t using this so SYNC is fine; for more advanced use cases you may use async and respond in your compound action logic.
+6. (Optional) **Filter** with **Jayway JSONPath** to reduce noise (e.g., only identities in a business unit).
+7. **Save** and **Enable**. You can **Test Subscription** from the UI. 
+
+## Step 3: Subscribe via API (if you prefer code)
+- **List triggers** to find the `triggerId`: `GET /triggers`.
+- **Create subscription**: `POST /trigger-subscriptions` (HTTP subs include an `httpConfig` block in the POST).
+- **Start a test event** (customizable): `POST /trigger-invocations/test`.
+- **Monitor invocations**: `GET /trigger-invocations/status` (recent successes 24h, failures 48h, max 2000).
+
+## Congratulations
+
+You have successfully created a webhook connection between SailPoint IIQ and Agent Studio. This opens up a variety of automation and integration possibilities using your SailPoint IIQ instance.
+
+
+---
 
 # OAuth 2.0 with Client Credentials
-# Prerequisites
+## Prerequisites
 
 - Sailpoint IIQ account with Admin privileges to create a new service account and setup API Authentication
 - Your Sailpoint instance must be of version **8.1 or more** for our plugin to work correctly
 - Your Sailpoint instance must either be deployed to Cloud or you should make the API endpoints available/accessible to Moveworks
 - [Install Postman](https://www.postman.com/downloads/) for testing the API connection
 
-# Set up SailPoint IIQ
+## Set up SailPoint IIQ
 
 Authentication with SailPoint’s API endpoints is done over an OAuth client whose capabilities are bound to the same permissions as our proxy user ([see Sailpoint’s docs](https://community.sailpoint.com/t5/IdentityIQ-Wiki/OAuth-2-0-client-credentials-as-a-token-based-protocol-for-API/ta-p/77630#toc-hId--1185039208)).
 
@@ -141,6 +199,6 @@ Once you have all the required credentials from the above process, please move o
         ![Screenshot 2024-09-25 at 7.18.05 PM.png](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/Screenshot_2024-09-25_at_7.18.05_PM.png)
         
 
-# Congratulations
+## Congratulations
 
 You have successfully integrated SailPoint IIQ’s APIs with Agent Studio. This opens up a variety of automation and integration possibilities using your SailPoint IIQ instance.
