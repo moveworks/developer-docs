@@ -23,12 +23,13 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
 - **Moveworks Listener** is your HTTPS endpoint. What you will configure
   1. A **one-time challenge handler** that detects Asana’s handshake and **echoes** `X-Hook-Secret` back in the response headers.
   2. **Signature verification** (HMAC-SHA256) of regular deliveries using the **same secret**. [Moveworks Webhook Documentation](https://help.moveworks.com/docs/webhooks-listener#/)
-     ![Untitled diagram _ Mermaid Chart-2025-09-18-211453.png](attachment:1df988b4-a5d8-4be8-82b1-cc20eca288e5:Untitled_diagram___Mermaid_Chart-2025-09-18-211453.png)
+    ![Asana-Mermaid](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Mermaid-Diagram-Asana-Webhook.png)
+    
 
 ## Walk Through
 ### Step 1: In Agent Studio → **Listeners**:
 1. **Create listener** → copy the **Webhook URL** (you’ll paste into Asana’s `target`). 
-    ![Screenshot 2025-09-17 at 8.22.14 PM.png](attachment:319be1c9-2277-4688-9154-dcbb6ca7e2ef:Screenshot_2025-09-17_at_8.22.14_PM.png)
+    ![Create-Listener](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Create-Asana-Listener.png)
 2. **Verification → Add New → One-Time Verification Challenge**
     - **Challenge Detection (DSL):**
         ```
@@ -48,7 +49,7 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
         
         This satisfies Asana’s handshake: it sends `X-Hook-Secret`; you must return the **same** header with 200/204. 
         
-![Screenshot 2025-09-18 at 11.33.05 AM.png](attachment:e3bf468a-3fed-4a66-91a7-96a1ffbf1e37:Screenshot_2025-09-18_at_11.33.05_AM.png)
+![Asana-Verification](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Asana-Listener-Verfication.png)
 
 ### Step 3: Create the Asana Webhook
 Use a Personal Access Token or OAuth token. For this you will likely use a PAT. Please reference [our guide below on how to create a PAT](https://marketplace.moveworks.com/connectors/asana#walkthrough). Store the PAT securely in an enviornment variable, secret store, etc.
@@ -156,7 +157,7 @@ References for creation + filters + handshake semantics: creating webhooks, hand
         ```
         
     
-    ![Screenshot 2025-09-18 at 11.16.28 AM.png](attachment:cd8e4a13-b240-4ecc-84d2-800214089550:Screenshot_2025-09-18_at_11.16.28_AM.png)
+    ![Listener-Validation](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Asana-Hook-Secret.png)
     
     Asana signs each delivery with HMAC-SHA256 of the **raw request body** using the handshake’s secret and sends that as `X-Hook-Signature`. Moveworks will compute and compare.
 
