@@ -12,8 +12,8 @@ time_in_minutes: 15
 # **Introduction**
 
 Asana's API provides a robust platform to integrate and streamline tasks in your Asana workspace. This guide will demonstrate how to connect Asana to Agent Studio. In doing so, there are two ways you can proceed:
-1. [Asana Webhook Connection][https://marketplace.moveworks.com/connectors/asana#Asana-Webhook-Connection] - This is best when building ambient agents that are trigged from a system event inside of Asana. 
-2. [Personal Access Token][https://marketplace.moveworks.com/connectors/asana#Asana-Personal-Access-Token-Connection] - This is best when you want to build user trigged agents that connect to Asana.
+1. [Asana Webhook Connection](https://marketplace.moveworks.com/connectors/asana#Asana-Webhook-Connection) - This is best when building ambient agents that are trigged from a system event inside of Asana. 
+2. [Personal Access Token](https://marketplace.moveworks.com/connectors/asana#Asana-Personal-Access-Token-Connection) - This is best when you want to build user trigged agents that connect to Asana.
 
 
 # Asana Webhook Connection
