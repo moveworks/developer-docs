@@ -32,7 +32,7 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
     ![Create-Listener](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Create-Asana-Listener.png)
 2. **Verification → Add New → One-Time Verification Challenge**
     - **Challenge Detection (DSL):**
-        ```
+        ```bash
         headers["X-Hook-Secret"]
         ```
         
@@ -40,7 +40,7 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
         - **HTTP Status:** `200 OK`
         - **Response Headers:** set
             
-            ```
+            ```bash
             X-Hook-Secret: headers["X-Hook-Secret"]
             
             ```
@@ -151,7 +151,7 @@ References for creation + filters + handshake semantics: creating webhooks, hand
     - **Verification Payload:** `raw_body`
     - **Verification Received Signature:**
         
-        ```
+        ```bash
         headers["X-Hook-Signature"]
         
         ```
