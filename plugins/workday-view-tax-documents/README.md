@@ -20,7 +20,7 @@ systems:
 ---
 ## Introduction
 
-The **“View Tax Document”** plugin enables employees to conveniently access their tax documents directly within **Workday** through the Moveworks AI Assistant. This eliminates the need to manually search through Workday, allowing users to quickly retrieve important tax-related information with ease and efficiency.
+The **“View Tax Documents”** plugin enables employees to conveniently access their tax documents directly within **Workday** through the Moveworks AI Assistant. This eliminates the need to manually search through Workday, allowing users to quickly retrieve important tax-related information with ease and efficiency.
 
 This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
 
@@ -30,7 +30,7 @@ This guide will walk you through installing and configuring the plugin in **Agen
 
 ### Agent Design
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Where+can+I+find+my+tax+forms%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22The+user+is+asking+for+their+tax+documents.%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22Looking+up+user+profile...%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22Searching+for+tax+documents+for+indrashis.paul%40moveworks.ai+in+Workday...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EThe+tax+document+link+is+available.+You+can+access+it+directly+here%3A%3C%2Fp%3E%5Cn%3Cp%3E%3Ca+href%3D%5C%22%23%5C%22%3EView+Tax+Document%3C%2Fa%3E%3C%2Fp%3E%5Cn%3Cp%3EIf+you+need+further+assistance+or+have+another+request%2C+please+let+me+know%21%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Tax+Documents+-+Indrashis+Paul%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D) shows the experience we are going to build.
+This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Where+can+I+find+my+tax+forms%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22The+user+is+asking+for+their+tax+documents.%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Looking+up+user+profile...%22%7D%2C%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22Searching+for+tax+documents+for+the+user+in+Workday...%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EThe+tax+document+link+is+available.+You+can+access+it+directly+here%3A%3C%2Fp%3E%5Cn%3Cp%3E%3Ca+href%3D%5C%22%23%5C%22%3EView+Tax+Documents%3C%2Fa%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22View+Tax+Documents%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EIf+you+need+further+assistance+or+have+another+request%2C+please+let+me+know%21%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
 
 ## Installation Steps
 
@@ -78,7 +78,7 @@ To ensure the plugin provides the correct URL that opens the employee’s **Tax 
 
 5. **In your plugin’s content activity, remove the placeholder `{{tab_task_id}}` and replace it with your TAB TASK ID** (towards the end of your deep link).
 
-![image.png](baae3bfe-7e8d-4af7-bf62-0cc36d67cfb5.png)
+![image.png](Image%201987.png)
 
 After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
 
