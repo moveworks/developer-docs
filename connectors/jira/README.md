@@ -19,9 +19,9 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
     - How it works / settings & payload shape, timeouts, success criteria, async behavior.
     - Allowlist (a.k.a. whitelist) requirement & how to add URLs.
 
-![image.png](attachment:97f4d156-62d1-4912-b210-7cb593f515a2:image.png)
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Jira-Then.png)
 
-![image.png](attachment:3bead939-8f75-4296-9184-e73e909c4c19:image.png)
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Jira-WebHook.png)
 
 [JIRA Service Desk webhook docs](https://developer.atlassian.com/server/jira/platform/jira-service-desk-webhooks/)
 
@@ -29,7 +29,7 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
 
 ---
 
-## 2) Create the Moveworks Listener
+## Step 1: Create the Moveworks Listener
 
 In **Agent Studio → Listeners → Create new listener** :
 
@@ -38,7 +38,7 @@ In **Agent Studio → Listeners → Create new listener** :
 1. **Open your Listener** and **s**ave your webhook URL to use in the next section.
 2.  In the Listener config page, scroll to **Verification** and check **Enable Credential Verification**.
     
-    ![Screenshot 2025-09-23 at 11.21.14 AM.png](attachment:0b17502b-62bb-4209-85ae-3b947ab4a6ca:Screenshot_2025-09-23_at_11.21.14_AM.png)
+    ![Screenshot 2025-09-23 at 11.21.14 AM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Jira-Listener.png)
     
 3. **Create the credential (API token)**
 - Click **Create a New Credential** (from Verification) or go to **moveworks setup → credentials**.
@@ -46,7 +46,7 @@ In **Agent Studio → Listeners → Create new listener** :
 - **Name:** e.g., `jira_webhook_bearer_prod`.
 - **Save** and **copy** the token value now; store it in your secret manager.
 
-![image.png](attachment:e707efa4-dae5-4e4a-be55-ac0757c33283:image.png)
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Jira-Credentials.png)
 
 You’ll paste this token into Jira as an **Authorization: Bearer** header (below).
 
@@ -60,7 +60,7 @@ You’ll paste this token into Jira as an **Authorization: Bearer** header (belo
     
     Pick the trigger (e.g., *Issue created, Issue transitioned, SLA threshold breached*) and add any conditions you want.
     
-    ![image.png](attachment:7b54786a-e6cd-4e79-ae6a-6d53ea4459d6:image.png)
+    ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Jira-UI.png)
     
 2. **THEN → Send web request** (webhook action)
     
@@ -83,8 +83,13 @@ You’ll paste this token into Jira as an **Authorization: Bearer** header (belo
     
 
 **Operational behavior to expect (Data Center 10+):** executions are queued and processed **asynchronously**; **success = 2xx**; **~5s connect / 20s response** timeouts; **no retries** if the endpoint is unavailable.
+## Congratulations!
 
-# **Prerequisites**
+You've successfully created a Webhook Connection between Jira and Agent Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
+
+
+# Basic Auth
+## **Prerequisites**
 
 - **Access to a Jira Instance**: Ensure you have access to either a **Sandbox or Production** Jira instance, depending on your testing environment.
 - **Install Postman**: Download and install Postman or another API testing tool to interact with Jira's REST API.
@@ -93,8 +98,6 @@ You’ll paste this token into Jira as an **Authorization: Bearer** header (belo
     - Update issue statuses
     - Assign users
     - Create or delete issues, if required
-
-# **Connect with Basic Authentication**
 
 ## **Step 1: Get Your Jira API Token**
 
@@ -186,6 +189,6 @@ Example API: Get All Projects
    
       ![Pasted_Graphic_3.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic_3.png)
 
-# Congratulations!
+## Congratulations!
 
 You've successfully integrated Jira’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
