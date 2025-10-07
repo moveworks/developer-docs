@@ -60,23 +60,23 @@ This **TAB TASK ID** refers to the employee's **'Pay'** worklet, where they can 
 
 To ensure the plugin provides the correct URL that opens the employee’s **Tax Documents** tab in Workday, follow the configuration steps below:
 
-1. Open the **Worker Summary** page for the user.
+- Open the **Worker Summary** page for the user.
 
 ![image.png](image.png)
 
-2. Click the **'Pay'** worklet under the **Worker Profile**.
+-  Click the **'Pay'** worklet under the **Worker Profile**.
 
 ![image.png](image%201.png)
 
-3. Select **'Tax Documents'** to access the tax forms.
+-  Select **'Tax Documents'** to access the tax forms.
 
 ![image.png](image%202.png)
 
-4. **Get the TAB TASK ID** from the URL or interface element.
+-  **Get the TAB TASK ID** from the URL or interface element.
 
 ![image.png](image%203.png)
 
-5. **In your plugin’s content activity, remove the placeholder `{{tab_task_id}}` and replace it with your TAB TASK ID** (towards the end of your deep link).
+-  **In your plugin’s content activity, remove the placeholder `{{tab_task_id}}` and replace it with your TAB TASK ID** (towards the end of your deep link).
 
 ![image.png](Image%201987.png)
 
