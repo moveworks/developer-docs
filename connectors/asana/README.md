@@ -138,7 +138,7 @@ JSON
       }
     ]
   },
-  "X-Hook-Secret": "b537207f20cbfa02357cf448134da559e8bd39d61597dcd5631b8012eae53e81"
+  "X-Hook-Secret": "Your-X-Hook-Secret"
 }
 ``
 
