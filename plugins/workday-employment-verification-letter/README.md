@@ -69,13 +69,13 @@ To ensure that the bot gives the URL that opens the employees' documents tab in 
     
     In the top-right corner of your Workday home page, click your **profile photo or initials** to open your profile menu.
     
-    ![image (1).png](image_(1).png)
+    ![image 1.png](image1.png)
     
 - **Select “Personal”**
     
     Under your profile image, click on **Personal** to open your personal information section.
     
-    ![image.png](image.png)
+    ![image2.png](image2.png)
     
 - **Open “Documents”**
     
@@ -83,7 +83,7 @@ To ensure that the bot gives the URL that opens the employees' documents tab in 
     
     This will display all documents associated with your profile, including your **Employment Verification Letter**.
     
-    ![image (3).png](image_(3).png)
+    ![image3.png](image3.png)
     
 - **Locate the URL**
     
@@ -92,12 +92,12 @@ To ensure that the bot gives the URL that opens the employees' documents tab in 
     The link will look similar to this:
     `https://impl.xxx.myworkday.com/<TENANT>/d/inst/X$XX/XX$XX.htmld#TABTASKID={{TAB_TASK_ID}}`
     
-    ![image (2).png](image_(2).png)
+    ![image4.png](image4.png)
     
 - **Copy the** `TAB_TASK_ID` , this is the **unique task identifier** that can be used to reference the Worker Documents page for your tenant.
 - **In your plugin’s content activity, remove the placeholder `{{tab_task_id}}` and replace it with your TAB TASK ID** (towards the end of your deep link).
     
-    ![image (7).png](image_(7).png)
+    ![image5.png](image5.png)
     
 
 After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
