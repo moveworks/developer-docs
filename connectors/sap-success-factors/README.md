@@ -10,19 +10,90 @@ time_in_minutes: 40
 
 SAP SuccessFactors is a cloud-based human resources (HR) management solution, empowering businesses with data-driven insights to optimize talent management, employee engagement, and overall workforce performance.
 
-This guide will walk you through the process of creating a connector within Agent Studio to make API calls to SAP SuccessFactors, using **OAuth Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
+This guide will demonstrate how to connect SAP Success Factors to Agent Studio. In doing so, there are two ways you can proceed:
+1. [Webhook Connection](https://marketplace.moveworks.com/connectors/sap-success-factors#Webhook-Connection) - This is best when building ambient agents that are trigged from a system event inside of SAP Success Factors. 
+2. [OAuth 2.0 Client Credentials](https://marketplace.moveworks.com/connectors/sap-success-factors#Client-Credentials) - This is best when you want to build user trigged agents that connect to SAP Success Factors.
 
-1. **Set up OAuth Client Credentials Flow**
-2. **Create a Connector in Agent Studio**
 
-# **Prerequisites:**
+# Webhook Connection
+## What you’re connecting
+
+- **SAP SuccessFactors Intelligent Services (ISC)** can publish external event notifications to an **endpoint URL** you provide, using an **Event Connector** (inside the event’s flow) or **Event Subscription Management**. Payloads are sent as **SOAP over HTTP(S)**; you can choose **Auth will choose OAuth2 Client Credentials** on the SAP side.
+    - In ISC: Event → Flows → **Event Connector** → set **Endpoint URL** and **Authentication**, save. Only **name + endpoint URL** are mandatory; data is sent to your URL as **SOAP**.
+    - Alternatively, you can manage subscriptions globally in **Event Subscription Management** (same endpoint/auth choices), with audit/monitoring and auto-deactivation after prolonged failures.
+    - If your tenant blocks unknown HTTPS targets, set trust in **Outbound Trust Manager**.
+- **Moveworks Listener** is your HTTPS webhook endpoint. You’ll create a listener URL and secure it with OAuth 2.0 credentials.
+
+[SuccessFactors (ISC) Webhook Documentation](https://help.sap.com/docs/successfactors-platform/implementing-and-managing-intelligent-services/configuring-connection-to-third-party-subscriber)
+
+---
+
+## Step 1: Create a Moveworks Listener (UI steps)
+
+In **Agent Studio → Listeners**:
+
+1. **Create Listener** → copy the **Webhook URL** (you’ll paste this into SAP’s **Endpoint URL**). 
+2. **Verification (secure your listener)**
+    - **Credential Verification** → Check **Enable Credential Verification** (purple checkbox in the screenshot).
+        
+        ![Create-Listener](SAPSF-Listener.png)
+        
+3. **Create the credential (OAuth 2.0)**
+    - Click **Create a New Credential** (link on the right of the Verification section) or go to **Moveworks setup** → credentials
+    - In the credential dialog:
+        - **Type:** OAuth 2.0.
+        - **Name:** something explicit, e.g. `SAP_SuccessFactors_Token`.
+        - Submit
+    
+    ![Create-Credentials](SAPSF-Credential.png)
+    
+    - **Copy the client id and secret now.** It is only shown once. Store it in your secret manager if you need a backup.
+
+---
+
+## Step 2: Configure SuccessFactors (ISC) to call Moveworks
+
+**Option A — Event Connector on a specific event (recommended for quick start)**
+Admin Center → **Intelligent Services Center** → open your event → **Flows** tab → **Event Connector** → **Create / Select**:
+
+- **Name/Description**: (anything)
+- **Endpoint URL**: paste your Moveworks Listener URL
+- **Authentication settings**: choose one
+    - **OAuth2 Client Credentials** → set
+        - **Token URL:** https://api.moveworks.ai/oauth/v1/token
+        - **Client ID:** The client id you generated in step 2.
+        - **Client Secret:** The secret you generated in step 2.
+        - **Scope**: leave it blank
+        - (SAP will fetch and include `Authorization: Bearer <token>` on every POST)
+- Save. This connector now fires for all flows on that event.
+
+**Option B — Event Subscription Management (global)**
+Admin Center → **Event Subscription Management** → **Add** subscription → pick **Event**, set **Endpoint URL** + **Authentication** (same choices as above) → Save. Max six subscriptions per event; mirrored with ISC UI.
+
+**If HTTPS trust blocks delivery**: Admin Center → **Outbound Trust Manager** → allow outbound request servers (all or the specific target).
+
+---
+
+## Step 3: What Moveworks will receive (and how to handle it)
+
+- **HTTP POST** with **SOAP/XML** body to your listener URL (content-type usually `text/xml` or `application/soap+xml`). SAP may include only **business keys**; if you need full data, your plugin can call back to SAP via OData using those keys.
+- In Moveworks, your plugin can inspect **`raw_body`** (XML) and headers, then parse accordingly with script actions or data mapper;
+
+> Want JSON instead of SOAP? Use Integration Center with ISC to produce REST output from an event and send JSON to the listener. [Integration Center Documentation](https://help.sap.com/docs/integration-suite/sap-integration-suite/create-webhook-subscription)
+>
+## **Congratulations!**
+
+You've successfully created a webhook connection between **SAP SuccessFactors API** and Agent Studio.
+
+# Client Credentials
+## **Prerequisites:**
 
 - Ensure you have **admin privileges** in SAP SuccessFactors to create an OAuth application and manage permissions.
 - Detailed instructions on generating an OAuth access token are available in the official SAP SuccessFactors documentation [here](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/restricting-access).
 - Ensure you are using **Java 8 or later** for generating the SAML Assertion. If you encounter errors, update your JDK or install the Sap Machine JDK from [here](https://sap.github.io/SapMachine/#download).
 - **Apache Maven** downloaded and extracted to your local drive (e.g., extracted to the C drive). You can download it from [here](https://maven.apache.org/download.cgi).
 
-# **Set up SAP SuccessFactors**
+## **Set up SAP SuccessFactors**
 
 To connect SAP SuccessFactors with Agent Studio, we’ll use OAuth2 with the Client Credentials Flow. You’ll need to register an application in SAP SuccessFactors and obtain the following credentials:
 
@@ -236,6 +307,6 @@ curl --location 'https://<API_SERVER_DOMAIN>/rest/timemanagement/absence/v1/time
 
 ![image.png](f6f23e43-fc51-4cb5-b9d8-b4a1442486e2.png)
 
-# **Congratulations!**
+## **Congratulations!**
 
 You've successfully integrated the **SAP SuccessFactors API** with Agent Studio. You can now start using it for your specific use cases
