@@ -1,2 +1,0 @@
- headers["X-Hook-Signature"]
-        
