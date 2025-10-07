@@ -8,7 +8,81 @@ time_in_minutes: 15
 
 # **Introduction**
 
-Connecting Jira to Agent Studio allows seamless integration of project management and issue tracking capabilities. By leveraging Jira's robust REST API and using Basic Authentication, you can automate ticket management and enhance workflows. This guide provides a step-by-step process to connect your Jira instance to Agent Studio and test the integration for efficient project collaboration.
+Connecting Jira to Agent Studio allows seamless integration of project management and issue tracking capabilities. This guide provides a step-by-step process to connect your Jira instance to Agent Studio in two ways:
+1. [Webhook Connection](https://marketplace.moveworks.com/connectors/jira#Webhook-Connection)
+2. [Basic Auth](https://marketplace.moveworks.com/connectors/jira#Basic-Auth)
+
+# Webhook Connection
+## What you’re connecting
+
+- **Jira Service Management “Send web request” (webhook) action.**  A Jira Automation **THEN** action that POSTs events to a URL you provide. You can send the full **Jira issue payload** or a **custom JSON** body with smart values.
+    - How it works / settings & payload shape, timeouts, success criteria, async behavior.
+    - Allowlist (a.k.a. whitelist) requirement & how to add URLs.
+
+![image.png](attachment:97f4d156-62d1-4912-b210-7cb593f515a2:image.png)
+
+![image.png](attachment:3bead939-8f75-4296-9184-e73e909c4c19:image.png)
+
+[JIRA Service Desk webhook docs](https://developer.atlassian.com/server/jira/platform/jira-service-desk-webhooks/)
+
+- **Moveworks Listener** — Your HTTPS endpoint where you’ll enforce auth (e.g., **Bearer**).
+
+---
+
+## 2) Create the Moveworks Listener
+
+In **Agent Studio → Listeners → Create new listener** :
+
+### Steps
+
+1. **Open your Listener** and **s**ave your webhook URL to use in the next section.
+2.  In the Listener config page, scroll to **Verification** and check **Enable Credential Verification**.
+    
+    ![Screenshot 2025-09-23 at 11.21.14 AM.png](attachment:0b17502b-62bb-4209-85ae-3b947ab4a6ca:Screenshot_2025-09-23_at_11.21.14_AM.png)
+    
+3. **Create the credential (API token)**
+- Click **Create a New Credential** (from Verification) or go to **moveworks setup → credentials**.
+- **Type:** API Key
+- **Name:** e.g., `jira_webhook_bearer_prod`.
+- **Save** and **copy** the token value now; store it in your secret manager.
+
+![image.png](attachment:e707efa4-dae5-4e4a-be55-ac0757c33283:image.png)
+
+You’ll paste this token into Jira as an **Authorization: Bearer** header (below).
+
+---
+
+## 3) Configure in Jira (UI method)
+
+**Project settings → Automation → Create rule** (or edit an existing one):
+
+1. **WHEN / IF**
+    
+    Pick the trigger (e.g., *Issue created, Issue transitioned, SLA threshold breached*) and add any conditions you want.
+    
+    ![image.png](attachment:7b54786a-e6cd-4e79-ae6a-6d53ea4459d6:image.png)
+    
+2. **THEN → Send web request** (webhook action)
+    
+    Configure:
+    
+    - **URL:** paste your Moveworks Listener URL.
+        - If you’re on Jira Service Management **4.6+**, ensure the Listener URL is on the Jira **allowlist** (Admin → System → **Allowlist**)
+    - **HTTP method:** `POST`. (This is how Automation webhooks send data.)
+    - **Headers (optional but recommended):**
+        - `Authorization: Bearer <your_mw_api_token>`
+            
+            Jira Automation’s *Send web request* supports **custom headers** (use this to pass your Moveworks token)
+            
+    - **Body:** choose one of:
+        - **Send Jira issue payload** — Jira attaches a JSON body with `issue`, `fields`, etc. (see example payload shape on the Atlassian page).
+        - **Custom data** — Build your own JSON using smart values (e.g., `${issue.key}`, `${issue.fields.priority.name}`), or enable **Encode as form** if the endpoint expects form-encoded data.
+3. **Save** and **Turn rule on**.
+    
+    Use the rule’s **Audit log** to verify executions.
+    
+
+**Operational behavior to expect (Data Center 10+):** executions are queued and processed **asynchronously**; **success = 2xx**; **~5s connect / 20s response** timeouts; **no retries** if the endpoint is unavailable.
 
 # **Prerequisites**
 
