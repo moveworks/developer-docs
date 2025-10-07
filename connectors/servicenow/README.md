@@ -22,6 +22,82 @@ ServiceNow provides granular table-level access to its data as part of its servi
 - [Install Postman](https://www.postman.com/downloads/)
 
 # Webhook Connection
+## What you’re connecting & installing
+
+- **ServiceNow** **Workflow Studio (Flow Designer)** can send REST API calls to an endpoint URL you provide, using our Moveworks Webhook Action. Payloads are sent as **REST over HTTP(S);** you can choose between two types of auth methods.
+    - API Key
+    - OAuth 2.0
+- **Moveworks Listener** is your HTTPS webhook endpoint. You’ll create a listener URL and secure it with an API Key.
+- Install the update set in your ServiceNow instance.
+    
+    [moveworks-webhook-action.xml](https://github.com/moveworks/developer-docs/connectors/servicenow/Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/moveworks-webhook-action.xml)
+    
+
+## 2) Create a Moveworks Listener (UI steps)
+
+In **Agent Studio → Listeners**:
+
+1. **Create Listener** → copy the **Webhook URL** (you’ll paste this into SAP’s **Endpoint URL**). 
+2. **Verification (secure your listener)**
+    - **Credential Verification** → Check **Enable Credential Verification** (purple checkbox in the screenshot).
+    
+    ![CleanShot 2025-10-05 at 16.36.23@2x.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-Verification.png)
+    
+3. **Create the credential (API Key)**
+    - Click **Create a New Credential** (link on the right of the Verification section) or go to **Moveworks setup** → credentials
+    - In the credential dialog:
+        - **Type:** API Key.
+        - **Name:** something explicit, e.g. `ServiceNow_API_Key`.
+        - Submit
+        
+        ![CleanShot 2025-10-05 at 16.34.13@2x.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-credential.png)
+        
+    - Copy the API Key. It is only shown once
+
+## 3) Configure Service Workflow Studio to call Moveworks
+
+## Set  Up Credentials
+
+### Create Credential Alias
+
+1. Head to **IntegrationHub → Connection & Credentials → Connection & Credentials Aliases**
+2. Click on **New**  to create a new credential
+3. Fill the fields:
+    1. Name: `Moveworks Credentials`
+    2. Type: `Credential`
+4. Submit
+
+![CleanShot 2025-10-05 at 16.42.18@2x.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-cred2.png)
+
+### Create Credential inside Alias
+
+1. Click on your newly created alias `Moveworks Credentials`
+2. Click **New** in the credentials table within the alias record
+    
+    ![CleanShot 2025-10-05 at 16.44.51@2x.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-alias.png)
+    
+3. Select **API Key Credentials**
+4. Fill the fields:
+    1. Name: `Moveworks_API_Key`
+    2. API Key: **`PASTE YOUR API KEY`**
+5. Submit
+
+![CleanShot 2025-10-05 at 16.51.18@2x.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/Snow-submit.png)
+
+## Set up Moveworks Action in your flow
+
+In your Workflow Studio Flow:
+
+1. Add the `Moveworks Webhook Sender` Action installed by the update set
+    
+    ![CleanShot 2025-10-05 at 16.55.15@2x.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-action.png)
+    
+2. Enter the information in the fields
+    1. URL: `YOUR_LISTENER_URL`
+    2. Payload: `YOUR_CUSTOM_PAYLOAD`
+    3. Credential: `YOUR_CREDENTIAL_ALIAS`
+
+![CleanShot 2025-10-05 at 16.59.58@2x.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-fields.png)
 
 # **Connect with Basic Authentication**
 
