@@ -45,11 +45,13 @@ For **Summarize Total Compensation**, ensure the following permissions are enabl
 - `View Employee Bonus Information`
 - `User Profile View Access`
 
-After configuring the connector, refer to our plugin installation documentation for more details on completing the setup
+Note: Equity, stock, or RSU details are not available as standard SAP SuccessFactors entities and cannot be queried using the OData APIs. Please refer to the [**SAP SuccessFactors OData API documentation**](https://api.sap.com/) for more information.
+
+After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup
 
 ## **Appendix**
 
-### **API #1: GET_USER_ID_BY_EMAIL**
+### **API #1: GET USER ID BY EMAIL**
 
 ```bash
 curl --request GET \
@@ -63,7 +65,7 @@ curl --request GET \
 - `$filter` (string) – Filters users based on the provided email address.
 - `$select` (string) – Specifies which properties to return
 
-### **API #2: GET_EMPLOYEE_COMPENSATION (Salary & Bonus)**
+### **API #2: GET EMPLOYEE COMPENSATION (Salary & Bonus)**
 
 ```bash
 curl --request GET \
