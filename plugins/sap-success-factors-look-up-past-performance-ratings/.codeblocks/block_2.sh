@@ -1,0 +1,3 @@
+curl --location 'https://<YOUR_INSTANCE>>/odata/v2/FormFolder?%24filter=userId%20eq%20%27{{USER_ID}}%27%20and%20folderName%20eq%20%27Completed%27%20and%20forms%2FformHeader%2FformReviewEndDate%20ge%20datetime%27{{START_DATE}}%27%20and%20forms%2FformHeader%2FformReviewEndDate%20le%20datetime%27{{END_DATE}}%27&%24expand=forms%2C%20forms%2FformHeader&%24select=userId%2CfolderName%20%2Cforms%2FformHeader%2Frating%2Cforms%2FformHeader%2FformTitle%2Cforms%2FformHeader%2FformTemplateType%2Cforms%2FformHeader%2FformReviewStartDate%2Cforms%2FformHeader%2FformReviewEndDate%2Cforms%2FformHeader%2FisRated' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>>' \
