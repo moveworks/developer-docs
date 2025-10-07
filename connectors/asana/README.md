@@ -32,18 +32,18 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
     ![Create-Listener](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Create-Asana-Listener.png)
 2. **Verification → Add New → One-Time Verification Challenge**
     - **Challenge Detection (DSL):**
-        ```bash
+        ``
         headers["X-Hook-Secret"]
-        ```
+        ``
         
     - **Challenge Response:**
         - **HTTP Status:** `200 OK`
         - **Response Headers:** set
             
-            ```bash
+            ``
             X-Hook-Secret: headers["X-Hook-Secret"]
             
-            ```
+            ``
             
         - **Response Body:** *(empty)*
         
@@ -67,7 +67,7 @@ Make the call via curl, postman, or any tool to initiate the call to the Asana A
 
 **cURL template**
 
-```bash
+``
 # --- inputs ---
 # PAT or use an OAuth access token
 ASANA_PAT="Place PAT or OAuth here" 
@@ -96,7 +96,7 @@ curl -sS -X POST "https://app.asana.com/api/1.0/webhooks" \
 }
 JSON
 
-```
+``
 
 **What happens next (handshake):**
 
@@ -106,7 +106,7 @@ JSON
     - **Make sure to record** **the** one time **“X-Hook-Secret”** and save it securely to input into the verification configuration in the Moveworks Listener in the next step.
     - Example response payload from webhook creation via curl, postman, etc below.
 
-```json
+``
 {
   "data": {
     "gid": "12345",
@@ -140,7 +140,7 @@ JSON
   },
   "X-Hook-Secret": "b537207f20cbfa02357cf448134da559e8bd39d61597dcd5631b8012eae53e81"
 }
-```
+``
 
 References for creation + filters + handshake semantics: creating webhooks, handshake, resources/actions, signature. ([developers.asana.com](https://developers.asana.com/reference/createwebhook))
 
@@ -151,10 +151,10 @@ References for creation + filters + handshake semantics: creating webhooks, hand
     - **Verification Payload:** `raw_body`
     - **Verification Received Signature:**
         
-        ```bash
+        ``
         headers["X-Hook-Signature"]
         
-        ```
+        ``
         
     
     ![Listener-Validation](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Asana-Hook-Secret.png)
