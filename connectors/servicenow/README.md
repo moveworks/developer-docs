@@ -11,12 +11,17 @@ time_in_minutes: 30
 
 # **Introduction**
 
-ServiceNow provides granular table-level access to its data as part of its service management capabilities. This guide will walk through how you can connect your ServiceNow instance to Moveworks Agent Studio with basic auth and OAuth 2 credentials, and test it in Agent Studio.
+ServiceNow provides granular table-level access to its data as part of its service management capabilities. This guide will walk through how you can connect your ServiceNow instance to Moveworks Agent Studio through:
+1. [Webhook Connection](https://marketplace.moveworks.com/connectors/servicenow#connect-with-basic-authentication)
+2. [Basic Auth](https://marketplace.moveworks.com/connectors/servicenow#connect-with-basic-authentication)
+3. [OAuth 2 credentials](https://marketplace.moveworks.com/connectors/servicenow#connect-with-oauth-2-0)
 
 # **Prerequisites**
 
 - Access to a ServiceNow Instance (Sandbox or Production)
 - [Install Postman](https://www.postman.com/downloads/)
+
+# Webhook Connection
 
 # **Connect with Basic Authentication**
 
