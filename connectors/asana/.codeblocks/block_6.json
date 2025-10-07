@@ -1,0 +1,33 @@
+{
+  "data": {
+    "gid": "12345",
+    "resource_type": "webhook",
+    "active": false,
+    "resource": {
+      "gid": "12345",
+      "resource_type": "task",
+      "name": "Bug Task"
+    },
+    "target": "https://example.com/receive-webhook/7654",
+    "created_at": "2012-02-22T02:06:58.147Z",
+    "last_failure_at": "2012-02-22T02:06:58.147Z",
+    "last_failure_content": "500 Server Error\\n\\nCould not complete the request",
+    "last_success_at": "2012-02-22T02:06:58.147Z",
+    "delivery_retry_count": 3,
+    "next_attempt_after": "2012-02-22T02:06:58.147Z",
+    "failure_deletion_timestamp": "2012-02-22T02:06:58.147Z",
+    "filters": [
+      {
+        "resource_type": "task",
+        "resource_subtype": "milestone",
+        "action": "changed",
+        "fields": [
+          "due_at",
+          "due_on",
+          "dependencies"
+        ]
+      }
+    ]
+  },
+  "X-Hook-Secret": "b537207f20cbfa02357cf448134da559e8bd39d61597dcd5631b8012eae53e81"
+}
