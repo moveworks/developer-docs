@@ -2,8 +2,12 @@
 agent_capabilities:
 - Ambient Agent
 availability: IDEA
-description: When an account's health score drops, this agent alerts the assigned
-  CSM and provides context to guide proactive engagement.
+description: "When an account's health score drops the agent compiles a risk assessment\
+  \ and identifies the top drivers with evidence e.g., \u201CUsage down 35% in last\
+  \ 60 days\u201D or \u201CTwo P1 incidents unresolved.\u201D The agent then alerts\
+  \ the assigned customer success manager with context and proposes proactive actions\
+  \ such as offering a renewal incentive. All insights are logged back into the CRM\
+  \ for tracking."
 domain:
 - Sales
 fidelity: IDEA
@@ -13,5 +17,7 @@ solution_tags:
 - Sales
 systems:
 - salesforce
+- gainsight
+- zendesk
 
 ---
