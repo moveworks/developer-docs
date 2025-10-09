@@ -51,6 +51,21 @@ To find your tenant name:
 
 Make sure to update this across all actions that reference the Workday API.
 
+### Creation of custom field 'cf_TenureInYears' and its purpose:
+
+This field is created to calculate employee tenure in years for reporting and analysis.
+
+Steps to Create cf_TenureInYears:
+
+- In Workday, search for **Create Calculated Field**.
+- For **Business Object**, choose **Worker**.
+- Set **Name = TenureInYears**.
+- For the **Function**, choose **Date Difference**.
+- Set **Parameters:**
+    - **Start Date = Hire Date**
+    - **End Date = Current Date**
+- Click **OK** → **Save**.
+
 After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
 ## **Appendix:-**
@@ -73,7 +88,7 @@ curl --location 'https://<your-instance>/ccx/api/wql/v1/{{TENANT}}/data' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <your-access-token>' \
 --data '{
-"query": "SELECT AVG(cf_TenureInYears) AS avg_tenure_years FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = false, isActive = false) WHERE supervisoryOrganization='{{SUPERVISORY_ORG_ID}}'"
+"query": "SELECT AVG(cf_TenureInYears) AS avg_tenure_years FROM indexedAllWorkers (dataSourceFilter = indexedAllWorkersFilter, includeSubordinateOrganizations = true) WHERE supervisoryOrganization='{{SUPERVISORY_ORG_ID}}'"
 }'
 ```
 
