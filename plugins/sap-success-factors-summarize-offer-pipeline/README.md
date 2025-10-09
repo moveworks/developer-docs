@@ -45,7 +45,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 
 ## **Appendix**
 
-### **API #1: Get All Job Title and Job Requisition Id**
+### **API #1: Get All Job Titles and Job Requisition Ids**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobRequisition?$expand=recruiter,jobReqLocale&$filter=recruiter/email eq '{{email}}'&$select=jobReqId,jobReqLocale/jobTitle&$top=30' \
