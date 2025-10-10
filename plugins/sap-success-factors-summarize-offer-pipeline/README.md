@@ -1,22 +1,23 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
 description: A plugin that helps recruiters and HR Managers view a summarized breakdown
   of candidate offers across statuses.
+difficulty_level: INTERMEDIATE
 domain:
 - HR - Talent Management
 - HR - Recruiting & Talent
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: 2886baf2-3536-4a1a-8d62-7c82df74581b
 name: Summarize Offer Pipeline
-difficulty_level: INTERMEDIATE
-time_in_minutes: 15
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22summarize+job+offers%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Recognizing+request+to+summarize+job+offers.%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Retrieving+active+requisitions+from+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ESAP+SuccessFactors%3C%2Fb%3E+for+the+current+recruiter.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EWhich+requisition+would+you+like+to+see+job+offer+summaries+for%3F+Here+are+some+active+requisitions%3A%3C%2Fp%3E%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cb%3EREQ-1234%3C%2Fb%3E%3A+Senior+Software+Engineer%3C%2Fli%3E%3Cli%3E%3Cb%3EREQ-5678%3C%2Fb%3E%3A+Product+Manager%2C+AI%3C%2Fli%3E%3Cli%3E%3Cb%3EREQ-9101%3C%2Fb%3E%3A+UX+Designer+%28Contract%29%3C%2Fli%3E%3C%2Ful%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EPlease+select+one+to+view+its+offers.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22sap-successfactors%22%2C%22citationTitle%22%3A%22REQ-1234%3A+Senior+Software+Engineer%22%7D%2C%7B%22connectorName%22%3A%22sap-successfactors%22%2C%22citationTitle%22%3A%22REQ-5678%3A+Product+Manager%2C+AI%22%7D%2C%7B%22connectorName%22%3A%22sap-successfactors%22%2C%22citationTitle%22%3A%22REQ-9101%3A+UX+Designer+%28Contract%29%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Senior+Software+Engineer%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Filtering+by+requisition%3A+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ESenior+Software+Engineer+%28REQ-1234%29%3C%2Fb%3E.%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Retrieving+detailed+offer+information+for+this+requisition+from+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ESAP+SuccessFactors%3C%2Fb%3E.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EHere%27s+a+summary+of+job+offers+for+the+%3Cb%3ESenior+Software+Engineer+%28REQ-1234%29%3C%2Fb%3E+requisition%3A%3C%2Fp%3E%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cb%3EAccepted+Offers%3C%2Fb%3E%3A%3Cul%3E%3Cli%3ESarah+Chen%3C%2Fli%3E%3Cli%3EMichael+Lee%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Cb%3EPending+Offers%3C%2Fb%3E%3A%3Cul%3E%3Cli%3EDavid+Kim%3C%2Fli%3E%3Cli%3EEmily+White%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Cb%3EDeclined+Offers%3C%2Fb%3E%3A%3Cul%3E%3Cli%3EJessica+Brown%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22sap-successfactors%22%2C%22citationTitle%22%3A%22Offer%3A+Sarah+Chen+%28Senior+Software+Engineer%29%22%7D%2C%7B%22connectorName%22%3A%22sap-successfactors%22%2C%22citationTitle%22%3A%22Offer%3A+Michael+Lee+%28Senior+Software+Engineer%29%22%7D%2C%7B%22connectorName%22%3A%22sap-successfactors%22%2C%22citationTitle%22%3A%22Offer%3A+David+Kim+%28Senior+Software+Engineer%29%22%7D%2C%7B%22connectorName%22%3A%22sap-successfactors%22%2C%22citationTitle%22%3A%22Offer%3A+Emily+White+%28Senior+Software+Engineer%29%22%7D%2C%7B%22connectorName%22%3A%22sap-successfactors%22%2C%22citationTitle%22%3A%22Offer%3A+Jessica+Brown+%28Senior+Software+Engineer%29%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
 - HR - Recruiting & Talent
 - HR - Talent Management
 systems:
 - sap-success-factors
-
+time_in_minutes: 15
 ---
+
 ## **Introduction**
 
 The **Summarize Offer Pipeline** plugin streamlines the tracking and management of job offers throughout the recruitment process. Users can view all offers associated with their accessible job requisitions, see details such as candidate information, status, and job title, and monitor the progress of each offer. This ensures that the recruiters can quickly access accurate offer data, make informed decisions, and maintain a clear overview of the hiring pipeline.

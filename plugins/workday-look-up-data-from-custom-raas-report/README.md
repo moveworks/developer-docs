@@ -1,7 +1,7 @@
 ---
 availability: IDEA
 description: A plugin that allows employees and managers query any Workday custom
-  RaaS (Report-as-a-Service) report.
+  RaaS (Report-as-a-Service) report in their purview.
 domain:
 - HR - Other
 - Workday
