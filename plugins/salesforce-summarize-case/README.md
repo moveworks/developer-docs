@@ -21,7 +21,7 @@ systems:
 ---
 ## **Introduction**
 
-The “Summarize a Case” plugin helps users quickly view detailed information about specific cases—directly through the Moveworks AI Assistant. This plugin allows users to instantly retrieve case details by searching using a case number, subject name, cases assigned to them, or cases assigned to the groups they belong to. It streamlines case management, supports faster resolution, and enhances overall efficiency without the need for manual searches.
+The “Summarize a Case” plugin helps users quickly view detailed information about specific cases—directly through the Moveworks AI Assistant. This plugin allows users to instantly retrieve case details by searching using a case number, subject name, or cases assigned to them. It streamlines case management, supports faster resolution, and enhances overall efficiency without the need for manual searches.
 
 This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
 
