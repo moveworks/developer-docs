@@ -1,24 +1,25 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
 description: A plugin that dynamically looks up an employment verification letter
   URL for a user when requested.
+difficulty_level: BEGINNER
 domain:
 - HR - Other
 - HR - Employee Records
 - HR - Onboarding
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: 822113ba-8272-4c81-abfd-00a9a693c99f
 name: Look Up Employment Verification Letter
-difficulty_level: BEGINNER
-time_in_minutes: 10
-purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+an+employment+verification+letter+for+an+upcoming+trip.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ECreate+Employment+Verification+Letter%3C%2Fb%3E%3Cbr%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYour+employment+verification+letter+has+been+successfully+generated.%3Cbr%3E%3Cbr%3EYou+can+view+it+%3Ca+target%3D%5C%22_blank%5C%22+rel%3D%5C%22noopener+noreferrer+nofollow%5C%22+class%3D%5C%22editor-link%5C%22+href%3D%5C%22https%3A%2F%2Ftenant.workday.com%2Ffiles%2F24532%5C%22%3Ehere%3C%2Fa%3E.%3Cbr%3E%3C%2Fp%3E%22%7D%5D%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Look+up+employment+verification+letter%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Looking+up+details+for+an+employment+verification+letter+in+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EWorkday%3C%2Fb%3E.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EHere+is+the+link+to+view+or+download+your+latest+Employment+Verification+Letter%3A%3C%2Fp%3E%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cp%3EGo+to+this+%3Ca+rel%3D%5C%22noopener+noreferrer%5C%22+class%3D%5C%22editor-link+c-link%5C%22+href%3D%5C%22https%3A%2F%2Fapp.moveworks.ai%2Fr%3Fv2_employment_verification_letter_example%5C%22%3EView+Employment+Verification+Letter%3C%2Fa%3E+page+in+Workday+to+directly+access+the+required+information.%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EIf+you+need+help+with+anything+else+related+to+employment+documents+or+Workday%2C+let+me+know%21%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22Employment+Verification+Letter%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
 - HR - Employee Records
 - HR - Onboarding
 - HR - Other
 systems:
 - workday
-
+time_in_minutes: 10
 ---
+
 ## Introduction
 
 The **“Look Up Employee Verification Letter”** plugin enables employees to instantly access their employment verification letter directly through the Moveworks AI Assistant. It simplifies the process by eliminating the need to navigate multiple HR portals, allowing users to quickly view or download their verification letter in real time.

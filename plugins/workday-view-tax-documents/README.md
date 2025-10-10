@@ -1,23 +1,24 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
 description: A plugin that allows a user to view/ fetch their tax documents.
+difficulty_level: BEGINNER
 domain:
 - HR - Other
 - Finance - Payroll
 - Finance - Other
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: 7144a56c-cbb1-4564-abbe-89fa00d125e5
 name: View Tax Documents
-difficulty_level: BEGINNER
-time_in_minutes: 15
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Where+can+I+find+my+tax+forms%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22You+can+access+and+download+your+tax+forms+directly+from+here.+The+most+recent+ones+are+available+below+%F0%9F%91%87%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EAvailable+Tax+Forms%3C%2Fb%3E%3Cbr%3ESelect+a+tax+form+to+view+or+download%3A%3Cbr%3E%3Cb%3E2023+W-2+Form%3C%2Fb%3E%3Cbr%3E%3Cb%3E2022+W-2+Form%3C%2Fb%3E%3Cbr%3E%3Cb%3E2021+W-2+Form%3C%2Fb%3E%3Cbr%3EFor+older+forms%2C+please+visit+the+archive.%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22Download+2023+W-2+Form%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Download+2022+W-2+Form%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Download+2021+W-2+Form%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Visit+Archive%22%7D%5D%7D%5D%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Where+can+I+find+my+tax+forms%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22The+user+is+asking+for+their+tax+documents.%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Looking+up+user+profile...%22%7D%2C%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22Searching+for+tax+documents+for+the+user+in+Workday...%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EThe+tax+document+link+is+available.+You+can+access+it+directly+here%3A%3C%2Fp%3E%5Cn%3Cp%3E%3Ca+href%3D%5C%22%23%5C%22%3EView+Tax+Documents%3C%2Fa%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22View+Tax+Documents%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EIf+you+need+further+assistance+or+have+another+request%2C+please+let+me+know%21%3C%2Fp%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - Finance - Other
 - Finance - Payroll
 - HR - Other
 systems:
 - workday
-
+time_in_minutes: 15
 ---
+
 ## Introduction
 
 The **“View Tax Documents”** plugin enables employees to conveniently access their tax documents directly within **Workday** through the Moveworks AI Assistant. This eliminates the need to manually search through Workday, allowing users to quickly retrieve important tax-related information with ease and efficiency.
