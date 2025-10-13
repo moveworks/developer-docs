@@ -17,16 +17,20 @@ time_in_minutes: 30
 Workday is a cloud-based software vendor that specializes in human capital management (HCM), enterprise resource planning (ERP), and financial management applications.
 
 Workday supports various kinds of web service technologies including the ReST API, SOAP API and the RaaS API.
-- **SOAP Web Services API**: Workday Web Services (WWS) provide a programmatic public API for Workday's business management services. The SOAP-based interface is targeted for import and export of large volume of data needed for integration with enterprise business systems external to Workday. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/soap-web-services-api.html).
+
+- **SOAP Web Services API**: Workday Web Services (WWS) provide a programmatic public API for Workday's business management services. The SOAP-based interface is targeted for import and export of large volumes of data needed for integration with enterprise business systems external to Workday. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/soap-web-services-api.html).
+
 - **ReST API**: The Workday REST API is an addition to the SOAP APIs supported by Workday. It is targeted for applications that do small, typically self-service, transactions initiated by users and provides a subset of Workday functionality crafted for that specific enterprise audience. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/rest-api.html).
+
 - **Reports as a Service (RaaS) API**: The RaaS API enables us to access advanced and search reports as web services. These reports can be built in the Workday Portal and further consumed via the RaaS API for fetching data. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/reports-as-a-service-raas-/dan1370796320263.html).
-- **Workday Query Language**: Workday Query Language (WQL) enables you to use SQL-like syntax to access Workday data using data sources and fields instead of reports. WQL enables you to query Workday for data and explore - Data sources, Data source filters, Fields. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/workday-query-language-wql-/aht1611188422513.html?toc=1.20.0).
+
+- **Workday Query Language**: Workday Query Language (WQL) enables you to use SQL-like syntax to access Workday data using data sources and fields instead of reports. WQL enables you to query Workday for data and explore data sources, data source filters, and fields. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/workday-query-language-wql-/aht1611188422513.html?toc=1.20.0).
 
 
 This guide will walk you through creating a connector within Agent Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. We have separated this guide into three main sections:
 - [Prerequisites](#prerequisites)
 - [Set up Workday](#set-up-workday)
-- [Create a Connector in Agent Studio](#create-a-connector-and-test-in-creator-studio)
+- [Create a Connector in Agent Studio](#create-a-connector-and-test-in-agent-studio)
 
 
 
@@ -95,7 +99,7 @@ Assign the ISU to the ISSG
 
 ## Step 4: Add Domain Security Policies to the Integration Systems Security Group
 
-We need to give the apporpriate permissions to this security group so that we can call the api and any reports therein. By default, we just add everything but you may want to limit your api calls to only certain aspects of Workday.
+We need to give the appropriate permissions to this security group so that we can call the api and any reports therein. By default, we just add everything but you may want to limit your api calls to only certain aspects of Workday.
 
 Navigate to the ISSG using the **`View Security Group`** Report
 
@@ -127,7 +131,7 @@ Universal search for **`Register API Client for Integrations`**
 
 Set the name to **Moveworks** and add the scopes required.
 
-![https://developer.moveworks.com/static/4c87b5210013217701570e0558eec348/c6bbc/registration.png](https://developer.moveworks.com/static/4c87b5210013217701570e0558eec348/c6bbc/registration.png)
+![Register API Client](images/register_api_client.png)
 
 Note your **`Client ID`** & **`Client Secret`**
 
@@ -169,7 +173,7 @@ We will use Postman to run these queries.
 
 ### Get a Bearer Token in Postman
 
-1. Set up your request to import into Postman with your `CLIENT_ID`, `CLIENT_SECRET` and `REFRESH_TOKEN`.
+1. Set up your request to import into Postman with your `CLIENT_ID`, `CLIENT_SECRET` and `REFRESH_TOKEN`.Feel free to replace the base URL with your instance's base URL.
     
     ```bash
     curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=refresh_token&refresh_token=YOUR_REFRESH_TOKEN" https://wd2-impl-services1.workday.com/ccx/oauth2/YOUR_TENANT_NAME/token
@@ -183,7 +187,7 @@ We will use Postman to run these queries.
 
     ![Alt text](images/image-1.png)
     
-4. If the execution is successful, yous hould see the an access_token in the response.
+4. If the execution is successful, you should see an access_token in the response.
 
 ![Alt text](images/image-2.png)
     
@@ -200,7 +204,7 @@ This query works because you gave our user access to Workday Query Language and 
 
 ---
 
-1. Set up your request to import into Postman with your `TENANT_NAME` and `BEARER_TOKEN` in the below with the values from previous steps:
+1. Set up your request to import into Postman with your `TENANT_NAME` and `BEARER_TOKEN` in the below with the values from previous steps. Feel free to replace the base URL with your instance's base URL:
 
 ```bash
 curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENANT_NAME/data?limit=5&offset=0' \
@@ -223,52 +227,50 @@ Next, let's take the above and create a connector within Agent Studio so we can 
 
 # Create a Connector and Test in Agent Studio
 
-Now that we have created everything within Workday and we have tested with our curl command, we can create duplicate our test in Agent Studio.
+Now that we have created everything within Workday and Postman, we can configure the connector on Agent Studio.
 
-## Create a Connector
+## Create a Connector (Oauth 2.0)
 
-Since we are going to be running a query to test, we can start the connector creation from there. 
+1. Go to HTTP Connectors and click on Create.
 
-1. Let's start by going into the Queries workspace and creating a new query. You can follow the steps for creating a new query [here](https://developer.moveworks.com/creator-studio/quickstart/queries/) only instead of choosing an existing connector, choose to create a new one.
+2. Create a new connector 'Workday' with the following configurations:
 
-![Create a new connector](images/2024-01-05_21-49-22.png)
-
-2. In your API editor, create a new connector. You can read more about the supported auth types on [our connector reference](https://developer.moveworks.com/creator-studio/connector-configuration/). 
-Fill in the following for the connection information while replacing YOUR_CLIENT_ID, YOUR_CLIENT_SECRET, YOUR_REFRESH_TOKEN and YOUR_TENANT_NAME with the values from the above steps where you set up the Workday connection.
-
-    - Base Url: `https://wd2-impl-services1.workday.com`
+    - Base Url: `YOUR_BASE_URL` (Example: https://wd2-impl-services1.workday.com`)
     - Auth Config: `Oauth2`
     - Oauth2 Grant Type: `Refresh Token Grant`
     - Client ID: `YOUR_CLIENT_ID`
     - Client Secret: `YOUR_CLIENT_SECRET`
     - Refresh Token Grant Refresh Token: `YOUR_REFRESH_TOKEN`
-    - Oauth2 Token Url: `https://wd2-impl-services1.workday.com/ccx/oauth2/YOUR_TENANT/token`
+    - Oauth2 Token Url: `YOUR_TOKEN_URL` (Example : https://wd2-impl-services1.workday.com/ccx/oauth2/YOUR_TENANT/token)
 
+    ![Agent Studio Image](images/agent_studi.png)
+    
+    Fill in the above for the connection information while replacing YOUR_BASE_URL, YOUR_CLIENT_ID, YOUR_CLIENT_SECRET, YOUR_REFRESH_TOKEN, YOUR_TOKEN_URL and YOUR_TENANT_NAME with the values from the above steps where you set up the Workday connection.
 
-
-Click Save
+3. Click Save
 
 ## Test the Connection
 
-1. You can continue following the guide [here](https://developer.moveworks.com/creator-studio/quickstart/queries/) to create your query with the newly created connector. To test the same command from curl, you can enter the following on the `API Connection` screen.
+1. To test the connector, let's create a HTTP Action in Agent Studio. Navigate to HTTP Actions and click on Create. You can find more details on HTTP Actions [here](https://help.moveworks.com/docs/http-actions).
 
-API endpoint path: `/ccx/api/wql/v1/YOUR_TENANT/data`
-Method: `POST`
-Request body: `{
-    "query": "SELECT worker, fullName, employeeID  FROM allActiveEmployees"
-}`
-Headers: `Content-Type` : `application/json`
-Query parameters: `limit` : `5`
+2. To test the same command from the eariler section, you can import the curl command in the HTTP Action. Replace <YOUR_TENANT_NAME> with your tenant in the action.
 
-![Untitled](images/2024-01-06_06-52-59-1.png)
+    ```bash
+    curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENANT_NAME/data?limit=5&offset=0' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+    --data '{
+        "query": "SELECT worker, fullName, employeeID  FROM allActiveEmployees"
+    }'
+    ```
 
-![Untitled](images/2024-01-06_06-53-17.png)
+    ![Import Curl](images/import_curl.png)
+    
+3. Under connector, click on 'Inherit from Existing Connector' and choose the newly created Workday connector.
 
-![Untitled](images/2024-01-05_21-49-22.png)
+    ![HTTP Action](images/http_action.png)
 
-
-
-2. Click test, if you get the same output from your curl command, you have sucessfully created a connector into Workday and tested it! 
+4. Click test. If you get the same output from your curl command, you have successfully created a connector into Workday and tested it! 
 
 # **Congratulations!**
 
