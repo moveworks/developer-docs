@@ -255,19 +255,20 @@ Now that we have created everything within Workday and Postman, we can configure
 
 2. To test the same command from the eariler section, you can import the curl command in the HTTP Action. Replace <YOUR_TENANT_NAME> with your tenant in the action.
 
-```bash
-curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENANT_NAME/data?limit=5&offset=0' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
---data '{
-    "query": "SELECT worker, fullName, employeeID  FROM allActiveEmployees"
-}'
-```
-![Import Curl](images/import_curl.png)
+    ```bash
+    curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENANT_NAME/data?limit=5&offset=0' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+    --data '{
+        "query": "SELECT worker, fullName, employeeID  FROM allActiveEmployees"
+    }'
+    ```
 
+    ![Import Curl](images/import_curl.png)
+    
 3. Under connector, click on 'Inherit from Existing Connector' and choose the newly created Workday connector.
 
-![HTTP Action](images/http_action.png)
+    ![HTTP Action](images/http_action.png)
 
 4. Click test. If you get the same output from your curl command, you have successfully created a connector into Workday and tested it! 
 
