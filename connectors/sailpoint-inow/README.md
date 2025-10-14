@@ -1,11 +1,11 @@
 ---
-availability: IDEA
-fidelity: GUIDE
-name: Sailpoint INow
+availability: VALIDATED
 difficulty_level: BEGINNER
+fidelity: GUIDE
+name: Sailpoint iNow
 time_in_minutes: 20
-
 ---
+
 # **Introduction:**
 
 **SailPoint IdentityNow** is a cloud-based identity governance and administration platform that helps organizations manage the full user lifecycle — from onboarding and access changes to offboarding — across applications and systems. It enables automated provisioning, enforces access policies, supports compliance through access reviews, and provides self-service access requests.
