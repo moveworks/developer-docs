@@ -47,7 +47,7 @@ We recommend setting up **ServiceNow** before installing this plugin. Please fol
 
 **Your Instance Configuration:**
 
-All ServiceNow API endpoints in this plugin use `<YOUR_INSTANCE>` as a placeholder. After installation, replace `<YOUR_INSTANCE>` in the action definitions with your actual ServiceNow instance name.
+All ServiceNow API endpoints in this plugin use `YOUR_INSTANCE` as a placeholder. After installation, replace `YOUR_INSTANCE` in the API calls with your actual ServiceNow instance name.
 
 To find your instance name:
 
