@@ -72,7 +72,8 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user_has_role?sysparm
 
 **Query Parameters:**
 
-- `{{email}}` (string)– Filters user by email address.
+- `{{email}}` (string) – Filters user by email address.
+- `sysparm_fields` (string) - Lists all fields to return (e.g., `role.name`).
 
 ### **API #2:** Look Up CMDB Items
 
@@ -84,6 +85,6 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/cmdb_ci?sysparm_query=sys
 
 **Query Parameters:**
 
-- `{{cmdb_table}}` (string)– Filters results by the specified CMDB class/table (e.g., `cmdb_ci_server`).
-- `{{search_term}}` (string)– Searches for configuration items whose name contains the given keyword.
-- `sysparm_fields` (string)- Lists all fields to return (e.g., `name`, `status`, `owner`, `environment`, `updated_on`, etc.).
+- `{{cmdb_table}}` (string) – Filters results by the specified CMDB class/table (e.g., `cmdb_ci_server`).
+- `{{search_term}}` (string) – The keyword provided by the user to search for configuration items whose names contain the specified term.
+- `sysparm_fields` (string) - Lists all fields to return (e.g., `name`, `status`, `owner`, `environment`, `updated_on`, etc.).
