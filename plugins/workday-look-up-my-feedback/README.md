@@ -19,7 +19,7 @@ systems:
 - workday
 
 ---
-## **Introduction**
+## Introduction
 
 The “**Look Up My Feedback**” plugin allows employees to easily review feedback they’ve received in Workday through the **Moveworks AI** Assistant. It dynamically retrieves feedback history, providing quick visibility into performance insights without navigating through multiple Workday pages.
 
@@ -43,15 +43,28 @@ For this plugin, ensure the Workday integration system user has the following pe
 
 **Required Permissions:**
 
-- `View access` to feedback details
+- `Self-Service: Anytime Feedback` – View Own / View All
+- `Worker Data: Anytime Feedback` – View Own / View All
+
+**Required Scopes:**
+
+- `Performance Enablement`
+- `Worker Profile and Skills`
 
 **Tenant Configuration:**
 
-All Workday API endpoints in this plugin use `TENANT` as a placeholder. After installation, replace `TENANT` in the action definitions with your actual Workday tenant name.
+All Workday API endpoints in this plugin use `TENANT` and `API_SERVER_DOMAIN` as a placeholder. After installation, replace `TENANT` and `API_SERVER_DOMAIN` in the action definitions with your actual Workday domain and tenant name.
 
-To find your tenant name:
+To find your **API server domain**:
 
 - Log into Workday.
+- Check the URL in your browser — The **API server domain** appears after `https://`, e.g.:
+    
+    In this case, `impl.workday.com` is your `API_SERVER_DOMAIN`.
+    
+
+To find your **tenant name**:
+
 - Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.:
     
     `https://impl.workday.com/your_tenant/...`
@@ -74,9 +87,11 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
 }'
 ```
 
-**Query Parameters:**
+**Body Parameters:**
 
 - `EMAIL` (string) – The primary home email address of the user to look up their Workday ID
+
+**Note:**  The **`wql` endpoint** is not available in all tenants — it must be **enabled** in Workday **Public Web Services (PWS)**
 
 ### API#2: Get Feedback By Workday ID
 
@@ -89,3 +104,5 @@ curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/performanceEnablement/v5/<T
 **Query Parameters:**
 
 - `WORKER_ID` (string) – The unique Workday ID of the user to retrieve their feedback received.
+
+**Note:** Some tenants expose it under v4 instead of v5. If you receive a `404` error, try version `v4` instead of `v5` .
