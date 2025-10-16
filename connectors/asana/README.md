@@ -239,3 +239,8 @@ You’ve successfully setup an Asana Webhook inside of Agent Studio. This opens 
 ### **Congratulations!**
 
 You've successfully integrated Asana’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Asana workspace.
+
+Test Log-In Details:
+Username: johndoe@gmail.com
+password: y7p8i+tu2UWr
+API KEY: puqA0lxlC0PophOThOfrowru0iyaSiJesP
