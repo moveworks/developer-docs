@@ -66,7 +66,7 @@ curl --location 'https://<YOUR_INSTANCE>/odata/v2/BenefitEnrollment?$expand=bene
 ### **API #2: Get Specific Benefit Details**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/odata/v2/BenefitEnrollment?$filter=workerIdNav/email eq '{{userEmail}}' and benefit eq '{{benefitId}}'&$orderby=createdDateTime desc&$expand=benefitNav,workerIdNav,benefitInsurancePlanEnrollmentDetails,benefitInsurancePlanEnrollmentDetails/planNav,benefitInsurancePlanEnrollmentDetails/coverageNav,benefitInsurancePlanEnrollmentDetails/providerNav,schedulePeriodNav,currencyNav' \
+curl --location 'https://<YOUR_INSTANCE>/odata/v2/BenefitEnrollment?$filter=workerIdNav/email eq '{{userEmail}}' and benefit eq '{{benefitId}}'&$orderby=effectiveStartDate desc&$expand=benefitNav,workerIdNav,benefitInsurancePlanEnrollmentDetails,benefitInsurancePlanEnrollmentDetails/planNav,benefitInsurancePlanEnrollmentDetails/coverageNav,benefitInsurancePlanEnrollmentDetails/providerNav,schedulePeriodNav,currencyNav' \
 --header 'Authorization: Bearer ACCESS_TOKEN' \
 --header 'Accept: application/json'
 ```
@@ -76,4 +76,4 @@ curl --location 'https://<YOUR_INSTANCE>/odata/v2/BenefitEnrollment?$filter=work
 - **`$filter`** (string) – Filters benefit enrollments based on the **employee’s email** (`{{userEmail}}`) and the **benefit ID** (`{{benefitId}}`).
 - **`$select`** (string) – Specifies which fields to return, such as **id**, **effectiveStartDate**, **effectiveStatus**, **benefit**, **externalName**, and **workerIdNav/email**.
 - **`$expand`** (string) – Expands related entities like **benefitNav**, **workerIdNav**, **benefitInsurancePlanEnrollmentDetails**, **planNav**, **coverageNav**, **providerNav**, **schedulePeriodNav**, and **currencyNav** to include detailed benefit and employee information.
-- **`$orderby`** (string) – Orders results by fields such as **createdDateTime desc** to get the most recent enrollment first.
+- **`$orderby`** (string) – Orders results by fields such as **effectiveStartDate desc** to get the most recent enrollment first.
