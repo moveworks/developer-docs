@@ -51,13 +51,15 @@ Specifically, confirm the following permissions are granted:
 - Read access to all Salesforce objects used in the report (e.g. Accounts, Opportunities, Cases, Leads, Custom Objects, etc.)
 - Read access to all fields used in the report’s columns and filters.
 
-Note: This plugin supports data retrieval for up to 100K records. Reports exceeding this limit will not be processed or fetched through the plugin.
+Note: Please keep the report size under 4 MB, as there are limitations on how much data the plugin can process from a single API call.
 
 After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
 
 ## **Appendix**
 
 ### **API #1: Fetch Reports by User Email**
+
+This API retrieves a list of Salesforce reports owned by a specific user based on their email address. It allows users to identify the Report ID, folder, and owner information before fetching report data.
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT Id,Name,FolderName,Owner.Name,Owner.Email,OwnerId FROM Report WHERE Owner.Email = '{{email}}'' \
@@ -67,9 +69,13 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT Id,
 
 **Query Parameters**
 
-- `{{email}}` – Retrieves Report ID by email.
+
+- `SELECT` – Specifies which fields to return. For example: Id, Name, FolderName, Owner.Name, Owner.Email, OwnerId.
+- `{{email}}` – Filters reports to only those owned by the specified user email.
 
 ### **API #2: Retrieve Report Data**
+
+This API retrieves the data and metadata of a specific Salesforce report using its Report ID. Users can get report columns, rows, aggregates, and applied filters.
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.0/analytics/reports/{{report_id}}' \
