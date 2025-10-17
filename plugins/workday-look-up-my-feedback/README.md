@@ -1,9 +1,9 @@
 ---
 availability: IDEA
-description: "A plugin that allows employees to easily review feedback they've received\
-  \ in Workday through the Moveworks AI Assistant. It provides quick visibility into\
-  \ feedback history \u2014 including who provided it, when it was shared, and any\
-  \ associated comments."
+description: A plugin that allows employees to easily review feedback they've received
+  in Workday through the Moveworks AI Assistant. It provides quick visibility into
+  feedback history including who provided it, when it was shared, and any associated
+  comments.
 domain:
 - HR - Employee Records
 - HR - Other
