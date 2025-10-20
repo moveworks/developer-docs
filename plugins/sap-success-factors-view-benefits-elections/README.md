@@ -3,7 +3,7 @@ availability: IDEA
 description: A plugin that allows employees to view their current benefit elections
   (e.g. health, retirement, insurance plans).
 difficulty_level: INTERMEDIATE
-time_in_minutes: 20
+time_in_minutes: 30
 domain:
 - HR - Other
 - HR - Benefits
@@ -40,7 +40,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 We recommend setting up SAP SuccessFactors before installing this plugin. Please follow the [SAP SuccessFactors connector](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) guide to configure the connection.
 
-You will also need to add the following permission:
+**Scopes:**
 
 - **`Read access`** to **BenefitEnrollment** and **User** objects.
 
@@ -60,8 +60,8 @@ curl --location 'https://<YOUR_INSTANCE>/odata/v2/BenefitEnrollment?$expand=bene
 
 - **`$filter`** (string) – Filters benefit enrollments based on the **employee’s email** (`{{userEmail}}`) and optionally the **benefit type** (`{{benefitType}}`).
 - **`$select`** (string) – Specifies which fields to return, such as **id**, **effectiveStartDate**, **effectiveStatus**, **benefit**, **externalName**, and **workerIdNav/email**.
-- **`$expand`** (string) – Expands related entities like **benefitNav** and **workerIdNav** to include benefit type details and employee information.
-- **`$orderby`** (string) – Orders results, e.g., by **effectiveStartDate desc** to get the most recent enrollment first.
+- **`$expand`** (string) – Expands related entities like **benefitNav** and **workerIdNav** to include benefit type details and employee information (navigational properties).
+- **`$orderby`** (string) – Orders results, e.g., by **effectiveStartDate desc** to get the most recent benefit election first.
 
 ### **API #2: Get Specific Benefit Details**
 
@@ -76,4 +76,4 @@ curl --location 'https://<YOUR_INSTANCE>/odata/v2/BenefitEnrollment?$filter=work
 - **`$filter`** (string) – Filters benefit enrollments based on the **employee’s email** (`{{userEmail}}`) and the **benefit ID** (`{{benefitId}}`).
 - **`$select`** (string) – Specifies which fields to return, such as **id**, **effectiveStartDate**, **effectiveStatus**, **benefit**, **externalName**, and **workerIdNav/email**.
 - **`$expand`** (string) – Expands related entities like **benefitNav**, **workerIdNav**, **benefitInsurancePlanEnrollmentDetails**, **planNav**, **coverageNav**, **providerNav**, **schedulePeriodNav**, and **currencyNav** to include detailed benefit and employee information.
-- **`$orderby`** (string) – Orders results by fields such as **effectiveStartDate desc** to get the most recent enrollment first.
+- **`$orderby`** (string) – Orders results by fields such as **effectiveStartDate desc** to get the most recent benefit election first.
