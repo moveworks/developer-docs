@@ -39,10 +39,10 @@ Note: To enable the Look Up CMDB Items functionality, ensure the ServiceNow inte
 
 Specifically, confirm the following permissions are granted:
 
-- **Table Access**: `Read` access to the `cmdb_ci_server`, `cmdb_ci_service`, `cmdb_ci_appl`, `cmdb_ci_database`, `cmdb_ci_network`, and `cmdb_ci_computer` tables.
+- **Table Access**: `Read` access to the `cmdb_ci_server`, `cmdb_ci_service`, `cmdb_ci_appl`, `cmdb_ci_database`, `cmdb_ci_network`, and `cmdb_ci_computer` tables (plus other CMDB tables that will be configured in the plugin).
 - **End Users:** **`cmdb_read`** – Read-only access to CMDB tables.
 
-**Callout:** ITIL users do not have a standard defined CMDB scope on ServiceNow, so access to CI tables may vary by instance. Do not assume all ITIL users can access every CMDB table. If your organization has additional classes in the CMDB, please modify the static resolver and description accordingly.
+**Callout:** ITIL users do not have a standard defined CMDB scope on ServiceNow, so access to CI tables may vary by instance. Do not assume all ITIL users can access every CMDB table. If your organization has additional classes in the CMDB, please modify the static resolver and description accordingly. Organizations can also configure additional custom CMDB classes in the plugin based on their tenant setup — all subclasses under the main tables will automatically be included in the lookup.
 
 **Tenant Configuration:**
 
@@ -88,4 +88,4 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/cmdb_ci?sysparm_query=sys
 - `{{search_term}}` (string)– Searches for configuration items whose name contains the given keyword.
 - `sysparm_fields` (string)- Lists all fields to return (e.g., `name`, `status`, `owner`, `environment`, `updated_on`, etc.).
 
-**Note:** This API dynamically retrieves configuration items from both **CMDB classes and their subclasses**, ensuring comprehensive results. Organizations can also configure additional CMDB classes in the plugin based on their tenant setup — all subclasses under these classes will automatically be included in the lookup.
+**Note:** In accordance with the CMDB hierarchy in ServiceNow, this API dynamically retrieves configuration items from both **CMDB classes and their subclasses**, ensuring comprehensive results.
