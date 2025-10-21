@@ -56,7 +56,7 @@ After configuring the connector, refer to our **plugin installation documentatio
 
 **Your Instance Configuration:**
 
-All Sailpoint iNow API endpoints in this plugin use `<YOUR_INSTANCE>` as a placeholder. After installation, replace `<YOUR_INSTANCE>` in the action definitions with your actual Sailpoint iNow instance name.
+All Sailpoint iNow API endpoints in this plugin use `YOUR_INSTANCE` as a placeholder. After installation, replace `YOUR_INSTANCE` in the action definitions with your actual Sailpoint iNow instance name.
 
 To find your instance name:
 
@@ -95,5 +95,5 @@ curl --location 'https://<YOUR_INSTANCE>.api.identitynow.com/v3/search' \
     - You can filter by **user email or displayname**.
     - Example filters:
         - `email:"john.doe@sailpointdemo.com"` → Returns the user with that specific email address.
-        - /.* John .*/ → wrap the value in a regex pattern to allow partial matches. This returns the list of all users with name containing John.
+        - `/.* John .*/` → wrap the value in a regex pattern to allow partial matches. This returns the list of all users with name containing John.
 - **`queryResultFilter` : (object)** – Used to select specific fields to be returned in the API response.
