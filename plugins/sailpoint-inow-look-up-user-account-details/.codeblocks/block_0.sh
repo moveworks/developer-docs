@@ -8,6 +8,6 @@ curl --location 'https://<YOUR_INSTANCE>.api.identitynow.com/v3/search' \
     "query": "{{filter_query}}"
   },
   "queryResultFilter": {
-    "includes": ["field1", "field2",..."fieldn"]
+    "includes": ["field1", "field2",...]
   }
 }'
