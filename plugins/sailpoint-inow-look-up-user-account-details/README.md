@@ -95,5 +95,5 @@ curl --location 'https://<YOUR_INSTANCE>.api.identitynow.com/v3/search' \
     - You can filter by **user email or displayname**.
     - Example filters:
         - `email:"john.doe@sailpointdemo.com"` → Returns the user with that specific email address.
-        - `John` → This returns the list of all users with name containing John.
+        - /.* John .*/ → wrap the value in a regex pattern to allow partial matches. This returns the list of all users with name containing John.
 - **`queryResultFilter` : (object)** – Used to select specific fields to be returned in the API response.
