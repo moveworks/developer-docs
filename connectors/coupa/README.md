@@ -69,14 +69,14 @@ Coupa is a cloud-based platform that streamlines business spend management. It p
 ### **Step 3: Integrate with Agent Studio**
 
 1. In Agent Studio, create a new connector with the following configuration:
-    - Connection Name**:** Coupa Connector
+    - Connection Name: Coupa Connector
     - Base URL: **`https://{{INSTANCE_DOMAIN}}`** (For example: **`https://moveworks-usa-coupalink-demo.coupacloud.com`**)
     - Auth Config: **`Oauth2`**
     - Oauth2 Grant Type: **`Client Credentials Grant`**
     - Client ID: **`{{Identifier}}`**
     - Client Secret: **`{{Secret}}`**
     - Client Credentials Grant Scope: **`{{SPACE_SEPARATED_LIST_OF_SCOPES}}`**
-    - Oauth2 Token Url: **`https://{{INSTANCE_DOMAIN}}/oauth2/token`**Click on **`Save`** to submit the credentials and your connector will be ready.
+    - Oauth2 Token URL: `https://{{INSTANCE_DOMAIN}}/oauth2/token` Click on **`Save`** to submit the credentials and your connector will be ready.
 2. Add your API details. You can read more about setting up API actions from our [**API configuration reference**](https://marketplace.moveworks.com/creator-studio/integrations/outbound/api-configuration/).
     
     ```bash
@@ -87,14 +87,9 @@ Coupa is a cloud-based platform that streamlines business spend management. It p
     
     - API endpoint Path: **`/api/expense_reports`**
     - Method: **`GET`**
-    - Headers:
-        | Key           | Value             |
-        |---------------|-----------------|
-        | Content-Type  | application/json |
-    - Query parameters:
-        | Key           | Value             |
-        |---------------|-----------------|
-        | limit  | 1 |
+    - Headers: 
+      - Add parameters as key–value pairs:
+      - Content-Type : application/json
 3. Test your setup in Agent Studio and look for a successful execution.
     
     ![Untitled 2.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%202.png)
@@ -181,9 +176,8 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
     - API endpoint Path: `/api/approvals`
     - Method: **`GET`**
     - Headers:
-        | Key           | Value             |
-        |---------------|-----------------|
-        | Content-Type  | application/json |
+         - Add parameters as key–value pairs:
+      - Content-Type : application/json
 3. Test your setup by creating and running an Action in Agent Studio.
     - Import your cURL, add the **User Consent Auth Connector**, and click **Test → Generate New Access Token**. Make sure you are acting on behalf of the intended user before generating the token; only then will it return the approvals assigned to that user.
         
