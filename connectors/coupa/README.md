@@ -25,7 +25,7 @@ Coupa is a cloud-based platform that streamlines business spend management. It p
 
 ## **OAuth 2.0 with Client Credentials Grant Setup:**
 
-### **Walkthrough**
+### **Walk Through**
 
 ### **Step 1: OAuth Client creation and scope assignment**
 
@@ -41,7 +41,7 @@ Coupa is a cloud-based platform that streamlines business spend management. It p
     
     ![https://compass.coupa.com/Import/Integrate/Technical_Documentation/API/OAuth_Transition/01_Transition_Guide/create_client.jpg](https://compass.coupa.com/Import/Integrate/Technical_Documentation/API/OAuth_Transition/01_Transition_Guide/create_client.jpg)
     
-4. Once you save the Client, you will get the Client credentials: **Identifier**, **Secret**, **Oidc Scopes**.
+4. Once you save the Client, you will get the Client credentials: **Identifier**, **Secret**, **OIDC Scopes**.
     
     Copy all three of them and store in a secure place. We will need these later to generate the OAuth Token.
     
@@ -88,7 +88,8 @@ Coupa is a cloud-based platform that streamlines business spend management. It p
     - API endpoint Path: **`/api/expense_reports`**
     - Method: **`GET`**
     - Headers: 
-      - Add parameters as key–value pairs:
+    
+      Add parameters as key–value pairs:
       - Content-Type : application/json
 3. Test your setup in Agent Studio and look for a successful execution.
     
@@ -101,7 +102,7 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
 
 ## **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
 
-### **Walkthrough**
+### **Walk Through**
 
 ### **Step 1: OAuth Client creation and scope assignment**
 
@@ -117,7 +118,7 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
         - To find your `org-domain`
             - Log in to agent studio
             - Check the URL in your browser — The `org-domain` appears after `https://`  For example,In this case, `https://{{org-domain}}/agent-studio` is your `org-domain`.
-    - **Scopes →** Select the scopes based on your use case. For example, to fetch approvals, choose the `core.approval.read` scope, **scroll down, and save it**. The Coupa user account used for testing must have basic access permissions — such as the ability to log in and view their own profile, requisitions, approvals, invoices, and expenses. The user should belong to roles like **Employee** or **Approver**, as the UCA token only allows access to what the user can see in Coupa.
+    - **Scopes** → Select the scopes based on your use case. For example, to fetch approvals, choose the `core.approval.read` scope, **scroll down, and save it**. To allow users to access their own data, include the following scopes: `core.user.read` to view their own profile, `core.requisition.read` to view their requisitions, `core.approval.read` to view their pending approvals, `core.invoice.read` to view their invoices, and `core.expense.read` to view their expense reports. The Coupa user account used for testing must have basic access permissions — such as the ability to log in and view their own profile, requisitions, approvals, invoices, and expenses. The user should belong to roles like Employee or Approver, as the UCA token only allows access to what the user can see in Coupa.
     
     **Note:** Coupa roles and scopes may vary across instances. The above are baseline permissions; assign additional scopes (e.g., **core.supplier.read**, **core.invoice.write**) as required for other object types
 ![image2.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/image2.png)
@@ -141,28 +142,10 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
     - **Client ID:** `{{Identifier}}`
     - **Client Secret:** `{{Secret}}`
     - **Authorization Code Grant Scope:** `{{SPACE_SEPARATED_LIST_OF_SCOPES}}`
-    - **Authorization Request Query Parameters:**
-        
-        Add both parameters as key–value pairs:
-        
-        - `response_type`: `code`
-        - `redirect_uri`: `https://{{org_domain}}.moveworks.com/auth/oauthCallback`
-    - **Method:** `POST`
     - **OAuth2 Token URL:** `https://{{INSTANCE_DOMAIN}}/oauth2/token`
     - **OAuth2 Client Authentication:** `OAuth 2.0 with Request Body`
     - **OAuth2 Custom OAuth Response Type:** Enable as `JSON`
-    - **OAuth2 Custom OAuth Request Options – Additional Headers:**
-        - `Content-Type`: `application/x-www-form-urlencoded`
-    - **OAuth2 Custom OAuth Request Options – Additional Request Data:**
-        
-        Add the following as key–value pairs:
-        
-        - `client_id`
-        - `client_secret`
-        - `response_code`
-        - `redirect_uri`
-        - `scope`
-        - `grant_type`
+    
     - Click **Save** to submit the credentials and finalize the connector setup.
 2. Add your API details. You can read more about setting up API actions from our [**API configuration reference**](https://marketplace.moveworks.com/creator-studio/integrations/outbound/api-configuration/).
     - Use the following API to verify that the User Consent Authorization (UCA) is functioning correctly. This call helps confirm that the authentication is working as expected and that approvals are being fetched at the **user level only** (based on the logged-in user’s access permissions)
@@ -176,7 +159,8 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
     - API endpoint Path: `/api/approvals`
     - Method: **`GET`**
     - Headers:
-         - Add parameters as key–value pairs:
+
+         Add parameters as key–value pairs:
       - Content-Type : application/json
 3. Test your setup by creating and running an Action in Agent Studio.
     - Import your cURL, add the **User Consent Auth Connector**, and click **Test → Generate New Access Token**. Make sure you are acting on behalf of the intended user before generating the token; only then will it return the approvals assigned to that user.
@@ -186,7 +170,9 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
     - Establish a connection between your UCA connector and Agent Studio
         ![image5.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/image5.png)
     - Next, you will be redirected to the Coupa login page. If you log in as an admin, you will have access to all data. If you log in as a regular user, you will only be able to access data assigned to you. After logging in successfully, click **Allow** to generate the authorization code.
-        ![image4.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/image4.png)
+      - Once you click the '**Allow**' button, you will receive a notification from the Moveworks bot that it has got the access to perform actions on your behalf. 
+
+      ![image4.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/image4.png)
         
     - Click **“Test”** to verify that UCA is working correctly. The action (e.g., *Fetch My Pending Approvals*) should use the logged-in user’s token to return only their pending approvals, confirming that user-specific consent and permissions are set up properly.
         ![image7.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/image7.png)
