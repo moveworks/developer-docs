@@ -43,13 +43,18 @@ To enable access to Jamf Pro API endpoints, ensure that the appropriate privileg
 
  **Settings → API Roles and Clients → API Roles → Tokens**.
 
-Specifically, confirm that the following privilege is granted:
+**Required Privileges:**
+
+As an admin, ensure that the following **privileges are granted** to the API user to successfully install and use this plugin:
 
 - **Read Computers**
 
 This permission is required to retrieve user-related data and perform advanced searches within the Jamf Pro environment using the API.
 
-**Callout:** The Jamf Pro **`/mobile-devices`** endpoint does not support filtering or partial search. Filtering using `filter=` parameters is supported **only for the `/computers-inventory`** endpoint.
+**Endpoint Guidelines:**
+
+- The **Jamf Pro `/mobile-devices` endpoint does not support filtering or partial search**.
+- Filtering using `filter=` parameters is supported **only for the `/computers-inventory` endpoint**.
 
 **Tenant Configuration:**
 
@@ -80,17 +85,18 @@ curl --location 'https://<YOUR_INSTANCE>/api/v1/computers-inventory?section=USER
 **Query Parameters**
 
 - `{{filter_query}}` – A **dynamic RSQL filter** constructed based on the user’s input or search context.
-
-**API Filters:**
-
-1. All orphaned devices **-** `userAndLocation.username=='' or userAndLocation.username==null`
-2. Partial search by device name **-** `general.name=='*{{device_name}}*'`
-3. Orphaned devices by device id -  `(id=='{{device_id}}') and (userAndLocation.username=='' or userAndLocation.username==null)`
-
-**Query Parameters:**
-
 - `{{device_name}}` – The partial or full name of the device to match against Jamf inventory records.
 - `{{device_id}}` – The unique identifier (ID) of the device in Jamf Pro used for an exact match.
+
+
+
+**RSQL Filtering Notes:**
+- Use **RSQL syntax** in the `filter_query` parameter to filter on different objects/conditions.
+- Common examples:
+    - All orphaned devices: `userAndLocation.username=='' or userAndLocation.username==null`
+    - Partial search by device name: `general.name=='*{{device_name}}*'`
+    - Orphaned devices by device id:  `(id=='{{device_id}}') and (userAndLocation.username=='' or userAndLocation.username==null)`
+
 
 **Note:** 
 
