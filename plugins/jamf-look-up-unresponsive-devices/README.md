@@ -31,66 +31,101 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## **Installation Steps**
 
-We recommend setting up Jamf connector before installing this plugin. Please follow the [Jamf Connector](https://marketplace.moveworks.com/connectors/jamf?hist=home#how-to-implement) guide to configure the connection.
+While you can create a connector during plugin installation, we **recommend setting up the Jamf connector in Agent Studio beforehand** to simplify the process. Follow the [Jamf Connector Guide](https://marketplace.moveworks.com/connectors/jamf?hist=home#how-to-implement) for detailed instructions.
 
-**Note:** To enable access to Jamf Pro API endpoints, ensure that the appropriate privileges are assigned to the API user via **Settings → API Roles and Clients → API Roles → Tokens**.
+Once completed, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to install the **Look Up Responsive Devices** plugin in minutes.
 
-Specifically, confirm that the following privilege is granted:
+**Required Privileges:**
+
+As an admin, ensure that the following **privileges are granted** to the API user to successfully install and use this plugin:
 
 - **Read Computers**
 - **Read Computer Check-In**
 
-This permission is required to retrieve computer details, including last check-in times, and to identify devices that are currently responsive within the Jamf Pro environment using the API.
+**Note:** These privileges allow the plugin to retrieve computer details, including last check-in times, and identify devices that are currently responsive. Make sure the API user has **only these privileges** to minimize security risks.
 
-**Callout:** The **Jamf Pro `/mobile-devices` endpoint does not support filtering or partial search**. Filtering using `filter=` parameters is supported **only for the `/computers-inventory`** endpoint.
+**Endpoint Guidelines:**
 
-Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on installing and activating the **Look Up Responsive Devices** plugin in Agent Studio.
+- The **Jamf Pro `/mobile-devices` endpoint does not support filtering or partial search**.
+- Filtering using `filter=` parameters is supported **only for the `/computers-inventory` endpoint**.
 
-## **Appendix**
+**Your Instance Configuration:**
+
+All Jamf API endpoints in this plugin use **`{{YOUR_INSTANCE}}`** as a placeholder. After installation, replace **`{{YOUR_INSTANCE}}`** in the action definitions with your actual Jamf instance name.
+
+To find your instance name:
+
+1. Log in to your Jamf Pro account.
+2. Check the URL in your browser — the instance name appears before `.jamfcloud.com`
+    - e.g., `https://your_instance.jamfcloud.com` → instance name = **`{{YOUR_INSTANCE}}`**
+
+Make sure to update this across all actions that reference the Jamf API.
+
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on installing and activating the plugin in Agent Studio.
 
 ### **API #1: Search Devices by Criteria**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/api/v1/computers-inventory?section=USER_AND_LOCATION,HARDWARE,GENERAL&filter={{filter_query}}' \
+curl --location 'https://{{YOUR_INSTANCE}}/api/v1/computers-inventory?section=USER_AND_LOCATION,HARDWARE,GENERAL&filter={{filter_query}}' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer <ACCESS_TOKEN>'
-```
-
-**Query Parameters**
-
-- `{{filter_query}}` – A **dynamic RSQL filter** constructed based on the user’s input or search context.
-
-**1. Search by Device Name**
-
-```bash
-$CONCAT(["general.name==*", data.devicename, "*;","(general.lastContactTime=ge='", data.start_time,"' and general.lastContactTime=le='", data.end_time, "')"])
-```
-
-**2. Search by Username**
-
-```bash
-$CONCAT(["userAndLocation.username==*", data.username, "*;","(general.lastContactTime=ge='", data.start_time,"' and general.lastContactTime=le='", data.end_time, "')"])
-```
-
-Note: **Username is mandatory in JAMF** for filtering; full names cannot be used. If the username is unavailable, provide **email** instead
-
-**3. Search by Email**
-
-```bash
-$CONCAT(["userAndLocation.email==", data.email, ";","(general.lastContactTime=ge='",data.start_time,"' and general.lastContactTime=le='", data.end_time, "')"])
-```
-
-**4. All Responsive Devices**
-
-```bash
-$CONCAT(["(general.lastContactTime=ge='", data.start_time, "' and general.lastContactTime=le='", data.end_time, "')"])
+--header 'Authorization: Bearer {{ACCESS_TOKEN}}'
 ```
 
 **Query Parameters:**
 
-- `data.devicename` – Partial or full device name to match against Jamf inventory.
-- `data.username` – Username of the device owner.
-- `data.email` – Email of the device owner.
-- `data.start_time` / `data.end_time` – Defines the timeframe to filter last contact times.
+- `filter_query` → A dynamic RSQL filter applied to search or narrow results based on user-defined criteria.
+- `devicename` → Partial or full device name to match in Jamf inventory.
+- `username` → Username of the device owner (**required** for username-based search).
+- `email` → Email of the device owner (used when username is unavailable).
+- `start_time` / `end_time` → Time range used to filter devices by their last contact times.
 
-**Note:** This single API structure supports broad or targeted searches — by device name, username, email or responsive devices— while also filtering based on last contact times.
+**RSQL Filtering Notes:**
+
+- Use **RSQL syntax** in the `filter_query` parameter to filter on different objects/conditions.
+- Common examples:
+    - **Device Name:** `general.name==*{{devicename}}*`
+    - **Username:** `userAndLocation.username==*{{username}}*`
+    - **Email:** `userAndLocation.email=={{email}}`
+    - **Last Contact Time Range:** `general.lastContactTime=ge='{{start_time}}' and general.lastContactTime=le='{{end_time}}'`
+- Filters can be **combined** using:
+    - `;` → AND
+    - `,` → OR
+
+**Example of a Compound RSQL Filter:**
+
+```bash
+userAndLocation.username==*{{username}}*;general.lastContactTime=ge='{{start_time}}' and general.lastContactTime=le='{{end_time}}'
+
+```
+
+**Example Response:**
+
+```bash
+{
+  "totalCount": 7,
+  "results": [
+    {
+      "id": "XX",
+      "general": {
+        "name": "XXXX",
+        "lastContactTime": "YYYY-MM-DDTHH-MM-SS",
+        "assetTag": "XXX",
+        "platform": "XXX"
+      },
+      "hardware": {
+        "serialNumber": "XXXXX",
+        "make": "XXX",
+        "model": "XXX"
+      },
+      "userAndLocation": {
+        "username": "XXX"
+      }
+    }
+  ]
+}
+```
+
+**Notes:**
+
+- This single API endpoint supports **flexible searches**, allowing filtering by device attributes, user details, and last contact times.
+- **Last contact time** indicates when a device was last checked in with Jamf Pro and is used to identify **currently unresponsive devices**.

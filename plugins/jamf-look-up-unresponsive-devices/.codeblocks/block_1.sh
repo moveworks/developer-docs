@@ -1,1 +1,2 @@
-$CONCAT(["general.name==*", data.devicename, "*;","(general.lastContactTime=ge='", data.start_time,"' and general.lastContactTime=le='", data.end_time, "')"])
+userAndLocation.username==*{{username}}*;general.lastContactTime=ge='{{start_time}}' and general.lastContactTime=le='{{end_time}}'
+

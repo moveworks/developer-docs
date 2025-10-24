@@ -1,1 +1,22 @@
-$CONCAT(["userAndLocation.username==*", data.username, "*;","(general.lastContactTime=ge='", data.start_time,"' and general.lastContactTime=le='", data.end_time, "')"])
+{
+  "totalCount": 7,
+  "results": [
+    {
+      "id": "XX",
+      "general": {
+        "name": "XXXX",
+        "lastContactTime": "YYYY-MM-DDTHH-MM-SS",
+        "assetTag": "XXX",
+        "platform": "XXX"
+      },
+      "hardware": {
+        "serialNumber": "XXXXX",
+        "make": "XXX",
+        "model": "XXX"
+      },
+      "userAndLocation": {
+        "username": "XXX"
+      }
+    }
+  ]
+}
