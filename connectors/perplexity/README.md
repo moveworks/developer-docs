@@ -2,6 +2,7 @@
 availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
+logo: https://raw.githubusercontent.com/moveworks/developer-docs/main/authentication-guides/perplexity/logo.png
 name: Perplexity
 time_in_minutes: 5
 ---

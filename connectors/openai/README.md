@@ -6,6 +6,7 @@ accreditations:
 availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
+logo: https://raw.githubusercontent.com/moveworks/developer-docs/main/authentication-guides/openai/logo.png
 name: OpenAI
 time_in_minutes: 10
 ---
