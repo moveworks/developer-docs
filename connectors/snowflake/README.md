@@ -5,6 +5,7 @@ accreditations:
 availability: VALIDATED
 difficulty_level: ADVANCED
 fidelity: GUIDE
+logo: https://raw.githubusercontent.com/moveworks/developer-docs/main/authentication-guides/snowflake/logo.png
 name: Snowflake
 time_in_minutes: 60
 ---

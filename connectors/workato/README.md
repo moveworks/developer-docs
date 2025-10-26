@@ -5,6 +5,7 @@ accreditations:
 availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
+logo: https://raw.githubusercontent.com/moveworks/developer-docs/main/authentication-guides/workato/logo.png
 name: Workato
 time_in_minutes: 30
 ---
