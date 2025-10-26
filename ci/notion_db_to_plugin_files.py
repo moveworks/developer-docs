@@ -159,6 +159,7 @@ class Record:
             return {
                 "name": self.title,
                 "description": self.description,
+                "logo": self.img_url,
                 "fidelity": self.fidelity.name,
                 "num_implementations": self.num_implementations,
                 "video": self.video_link,
@@ -263,21 +264,6 @@ def clear_directory(directory):
 def validate_record(record: Record):
     if not record.slug:
         return
-    
-    # Download/prepare the Connector image url if needed
-    image_content = None
-    if record.content_type == ContentTypes.CONNECTOR and record.img_url and record.fidelity != Fidelity.IMPOSSIBLE:
-        try:
-            response = requests.get(record.img_url)
-            
-            # Check if the response was successful (status code 200)
-            if response.status_code != 200:
-                print(f"{record.slug} - Error fetching image: HTTP status {response.status_code}")
-                image_content = None
-            else:
-                image_content = response.content
-        except Exception as e:
-            print(f"Failed to download image for {record.slug}: {e}")
 
     if record.fidelity in [
         Fidelity.GUIDE,
@@ -288,17 +274,7 @@ def validate_record(record: Record):
         # Create directory if needed
         if not os.path.exists(record.record_directory):
             os.makedirs(record.record_directory)
-        
-        # Write image if its not already there or if it has changed
-        if image_content and not os.path.exists(record.img_path):
-            print(f"Adding image for {record.slug}")
-            open(record.img_path, "wb+").write(image_content)
-        elif image_content and os.path.exists(record.img_path):
-            existing_image = open(record.img_path, "rb").read()
-            if existing_image != image_content:
-                print(f"Updating image for {record.slug}")
-                open(record.img_path, "wb+").write(image_content)
-        
+
         # Check if README exists
         if not os.path.exists(record.record_readme):
             open(record.record_readme, "w+").write(record.render_template())
@@ -312,23 +288,9 @@ def validate_record(record: Record):
         validate_file_consistent_with_notion(record)
 
     elif record.fidelity in [Fidelity.IDEA]:
-        existing_image = None
-        if os.path.exists(record.img_path):
-            existing_image = open(record.img_path, "rb").read()
-
         clear_directory(record.record_directory)
         os.makedirs(record.record_directory)
         open(record.record_readme, "w+").write(record.render_template())
-        # Add the logo
-        if record.content_type == ContentTypes.CONNECTOR:
-            if image_content:
-                print(f"Updating image for {record.slug}")
-                open(record.img_path, "wb+").write(image_content)
-            elif existing_image:
-                print(f"Preserving existing image for {record.slug}")
-                open(record.img_path, "wb+").write(existing_image)
-            else:
-                raise ValueError(f"No Image for Connector: {record.slug}")
 
     elif record.fidelity in [Fidelity.IMPOSSIBLE]:
         clear_directory(record.record_directory)

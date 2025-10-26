@@ -2,6 +2,7 @@
 availability: VALIDATED
 difficulty_level: INTERMEDIATE
 fidelity: GUIDE
+logo: https://seeklogo.com/images/P/pagerduty-logo-5D4CB81758-seeklogo.com.png
 name: Pagerduty
 time_in_minutes: 30
 ---
