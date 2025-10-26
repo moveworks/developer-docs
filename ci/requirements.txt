@@ -1,4 +1,1 @@
-markdown-it-py==2.0.1
-Pygments==2.8.1
 chevron==0.14.0
-pandas==1.5.0
