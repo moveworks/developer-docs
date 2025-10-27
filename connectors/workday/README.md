@@ -297,7 +297,7 @@ Follow these steps to set up and validate your connection:
 
 - Go to the Workday login page and sign in with your credentials.
 
-![image.png](images/imageUCA.png)
+![image.png](images/image%2019.png)
 
 ## **Step 2: Register API Client**
 
