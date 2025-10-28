@@ -37,7 +37,7 @@ While you can create a connector during plugin installation, we **recommend sett
 
 To enable access to Jamf Pro API endpoints, ensure that the appropriate privileges are assigned to the user via:
 
-- **Settings → API Roles and Clients → API Roles → Tokens**.
+- **Settings → API Roles and Clients → API Roles → [API Role]**.
 
 **Required Privileges:**
 
