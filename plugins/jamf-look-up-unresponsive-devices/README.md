@@ -33,7 +33,11 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 While you can create a connector during plugin installation, we **recommend setting up the Jamf connector in Agent Studio beforehand** to simplify the process. Follow the [Jamf Connector Guide](https://marketplace.moveworks.com/connectors/jamf?hist=home#how-to-implement) for detailed instructions.
 
-Once completed, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to install the **Look Up Responsive Devices** plugin in minutes.
+**Note:** 
+
+To enable access to Jamf Pro API endpoints, ensure that the appropriate privileges are assigned to the user via:
+
+- **Settings → API Roles and Clients → API Roles → Tokens**.
 
 **Required Privileges:**
 
@@ -42,7 +46,7 @@ As an admin, ensure that the following **privileges are granted** to the API use
 - **Read Computers**
 - **Read Computer Check-In**
 
-**Note:** These privileges allow the plugin to retrieve computer details, including last check-in times, and identify devices that are currently responsive. Make sure the API user has **only these privileges** to minimize security risks.
+**Note:** These privileges allow the plugin to retrieve computer details, including last check-in times, and identify devices that are currently unresponsive. Make sure the API user has **only these privileges** to minimize security risks.
 
 **Endpoint Guidelines:**
 
