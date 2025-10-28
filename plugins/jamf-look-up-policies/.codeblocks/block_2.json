@@ -1,0 +1,17 @@
+{
+  "totalCount": 1,
+  "results": [
+    {
+      "id": "XX",
+      "name": "XX",
+      "enabled": false,
+      "triggerCheckin": true,
+      "triggerManual": "XX",
+      "updateInventory": false,
+      "executionFrequency": "XX",
+      "categoryId": "XX",
+      "networkRequirements": "XX"
+    }
+  ]
+}
+
