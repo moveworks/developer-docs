@@ -89,6 +89,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/v1/computers-inventory?section=HARD
 - `username` : Username of the device owner (**required** for username-based search).
 - `email` : Email of the device owner (used when username is unavailable).
 - `serial_number` : Unique hardware ID used to find the exact device in Jamf.
+- `inventory_id` : Unique Jamf inventory record ID used to directly identify a specific device.
 
 **RSQL Filtering Notes:**
 
@@ -98,6 +99,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/v1/computers-inventory?section=HARD
     - **Username:** `userAndLocation.username=='*{{username}}*'`
     - **Email:** `userAndLocation.email=='{{email}}'`
     - **Serial Number:** `hardware.serialNumber=='{{serial_number}}'`
+    - **Inventory ID:** `id=='{{inventory_id}}'`
 
 **Note:** 
 
