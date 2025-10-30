@@ -36,9 +36,23 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 ## **Installation Steps**
 
 We recommend setting up **Coupa** before installing this plugin. Please follow the [Coupa Connector](https://marketplace.moveworks.com/connectors/coupa) guide to configure the connection.
-For this plugin, ensure the Coupa integration user has the following permissions:
 
-- `Read` access to the **Invoice** and **Supplier** objects
+For this plugin, ensure the Coupa system user has the following scopes:
+
+- core.supplier.read
+- core.invoice.read
+
+**Your Instance Configuration:**
+
+All Coupa API endpoints in this plugin use **`{{YOUR_INSTANCE}}`** as a placeholder. After installation, replace **`{{YOUR_INSTANCE}}`** in the action definitions with your actual Coupa instance name.
+
+To find your instance name:
+
+1. Log in to your Coupa environment.
+2. Check the URL in your browser — the instance name appears before `.coupacloud.com`
+    - e.g., [https://your_instance.coupacloud.com](https://your_instance.coupacloud.com/) → instance name = **`{{YOUR_INSTANCE}}`**
+
+Make sure to update this across all actions that reference the Coupa API
 
 Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
 
@@ -47,9 +61,9 @@ Once the connector is successfully configured, follow our [**plugin installation
 ### **API #1: Get All Suppliers**
 
 ```bash
-curl --location 'https://<your-instance>.coupacloud.com/api/suppliers?limit=50&offset=0&fields=["id","name"]' \
+curl --location 'https://<YOUR_INSTANCE>.coupacloud.com/api/suppliers?limit=50&offset=0&fields=["id","name"]' \
 --header 'Accept: application/json' \
---header 'Authorization: Bearer <your-access-token>'
+--header 'Authorization: Bearer <YOUR-ACCESS-TOKEN>'
 ```
 
 **Query Parameters:**
@@ -61,9 +75,9 @@ curl --location 'https://<your-instance>.coupacloud.com/api/suppliers?limit=50&o
 ### **API #2: Get Invoice Details by Supplier Name**
 
 ```bash
-curl --location 'https://<your-instance>.coupacloud.com/api/invoices?offset=0&limit=50&fields=["invoice-number","total-with-taxes","status","invoice-date","net-due-date",{"supplier":["name"]}]&supplier[name]={{supplierName}}' \
+curl --location 'https://<YOUR_INSTANCE>.coupacloud.com/api/invoices?offset=0&limit=50&fields=["invoice-number","total-with-taxes","status","invoice-date","net-due-date",{"supplier":["name"]}]&supplier[name]={{supplierName}}' \
 --header 'Accept: application/json' \
---header 'Authorization: Bearer <your-access-token>'
+--header 'Authorization: Bearer <YOUR-ACCESS-TOKEN>'
 ```
 
 **Query Parameters:**
@@ -75,9 +89,9 @@ curl --location 'https://<your-instance>.coupacloud.com/api/invoices?offset=0&li
 ### **API #3: Get Invoice Details by Invoice Number**
 
 ```bash
-curl --location 'https://<your-instance>.coupacloud.com/api/invoices?invoice-number={{invoiceNumber}}&fields=["invoice-number","total-with-taxes","status","invoice-date","net-due-date",{"supplier":["name"]}]' \
+curl --location 'https://<YOUR_INSTANCE>.coupacloud.com/api/invoices?invoice-number={{invoiceNumber}}&fields=["invoice-number","total-with-taxes","status","invoice-date","net-due-date",{"supplier":["name"]}]' \
 --header 'Accept: application/json' \
---header 'Authorization: Bearer <your-access-token>'
+--header 'Authorization: Bearer <YOUR-ACCESS-TOKEN>'
 ```
 
 **Query Parameters:**
@@ -87,9 +101,9 @@ curl --location 'https://<your-instance>.coupacloud.com/api/invoices?invoice-num
 ### **API #4: Get Invoices by Status**
 
 ```bash
-curl --location 'https://<your-instance>.coupacloud.com/api/invoices?status={{status}}&limit=50&offset=0&fields=["invoice-number","total-with-taxes","status","invoice-date","net-due-date",{"supplier":["name"]}]' \
+curl --location 'https://<YOUR_INSTANCE>.coupacloud.com/api/invoices?status={{status}}&limit=50&offset=0&fields=["invoice-number","total-with-taxes","status","invoice-date","net-due-date",{"supplier":["name"]}]' \
 --header 'Accept: application/json' \
---header 'Authorization: Bearer <your-access-token>'
+--header 'Authorization: Bearer <YOUR-ACCESS-TOKEN>'
 ```
 
 **Query Parameters:**
@@ -101,9 +115,9 @@ curl --location 'https://<your-instance>.coupacloud.com/api/invoices?status={{st
 ### **API #5: Get Invoices by Date**
 
 ```bash
-curl --location 'https://<your-instance>.coupacloud.com/api/invoices?invoice-date[gt]={{startDate}}&invoice-date[lt]={{endDate}}&limit=50&offset=0&fields=["invoice-number","total-with-taxes","net-due-date","status","invoice-date",{"supplier":["name"]}]' \
+curl --location 'https://<YOUR_INSTANCE>.coupacloud.com/api/invoices?invoice-date[gt]={{startDate}}&invoice-date[lt]={{endDate}}&limit=50&offset=0&fields=["invoice-number","total-with-taxes","net-due-date","status","invoice-date",{"supplier":["name"]}]' \
 --header 'Accept: application/json' \
---header 'Authorization: Bearer <your-access-token>'
+--header 'Authorization: Bearer <YOUR-ACCESS-TOKEN>'
 ```
 
 **Query Parameters:**
