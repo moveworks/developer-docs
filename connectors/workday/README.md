@@ -25,8 +25,8 @@ Workday supports various kinds of web service technologies including the ReST AP
 
 This guide will walk you through creating a connector within Agent Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. The guide has two main sections:
 
-- **OAuth 2.0 with Client Credentials Grant Setup**
-- **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
+- [**OAuth 2.0 with Client Credentials Grant Setup**](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Client-Credentials-Grant-Setup)
+- [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)
 
 # **Prerequisites**
 
@@ -296,6 +296,9 @@ Follow these steps to set up and validate your connection:
 ## **Step 1: Log in to Workday**
 
 - Go to the Workday login page and sign in with your credentials.
+- Ensure you log in with an Admin account — only admins can register OAuth clients.
+
+Note: OAuth client registration must be performed by a Workday admin.
 
 ![image.png](images/image%2019.png)
 
@@ -314,7 +317,13 @@ In the **Register API Client** form, fill in the following details:
 - **Access Token Type:** Choose **Bearer**.
 - **Redirect URI:** Enter your Moveworks redirect URL, for example `{{YOUR_REDIRECT_URI}}`.
 - **Refresh Token Timeout (Days):** Set this to **100**.
-- **Scope:** Define the scope based on your integration requirement (for example, `workday:core`).
+- **Scope:** Select the scopes based on your use case. For example, to fetch - Supplier Invoice Requests (supplierInvoiceRequests), include the Workday scopes that allow the user to view supplier invoices and related procurement data.
+
+Here are some example scopes:
+
+- **Supplier Accounts** – allows viewing supplier account-related information.
+- **Suppliers** – allows viewing supplier profiles and related data.
+- **Procurement** – allows viewing procurement objects such as supplier-related transactions.
 
 Click **OK** after filling in all required details to save the configuration.
 
@@ -396,9 +405,9 @@ Once all fields are completed, click **Save** to create and store your connector
 
 Set up your API. You can read more about setting up API actions from our **API Configuration Reference**.
 
-Use the following API to verify that the **User Consent Authorization (UCA)** is functioning correctly.
+Use this API call to make sure **User Consent Authorization (UCA)** is working and that data is returned based on the logged-in user’s Workday access.
 
-This call helps confirm that authentication is working as expected and that the data is being fetched at the **user level only** — based on the logged-in user’s access permissions in **Workday**.
+Note : While testing the connector, make sure to log in as a regular Workday user instead of the admin to validate UCA behavior.
 
 ```bash
 curl --location 'https://{API_SERVER_DOMAIN}/ccx/api/accountsPayable/v1/{{TENANT}}/supplierInvoiceRequests' \
