@@ -1,3 +1,3 @@
 curl --request GET \
-  --url 'https://api.zoom.us/v2/report/users/{{user_id}}/meetings?from={{from_date}}&to={{to_date}}' \
+  --url 'https://<Zoom_Host_Name>/v2/report/users/{{email}}/meetings' \
   --header 'Authorization: Bearer YOUR_SECRET_TOKEN'
