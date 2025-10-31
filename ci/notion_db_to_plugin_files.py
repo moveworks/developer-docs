@@ -1,13 +1,14 @@
 import os
 
-import pandas as pd
 import requests
 import re
 import sys
 from typing import Optional
+from ci.csv_utils import read_csv, find_records, count_values
+
 CSV_FILE = 'Plugin Research df47317a8eb449178020d6bf3dec4b23_all.csv'
 
-df = pd.read_csv(CSV_FILE)
+records = read_csv(CSV_FILE)
 from enum import Enum
 from ci.data_utils import (
     load_yaml_data,
@@ -158,6 +159,7 @@ class Record:
             return {
                 "name": self.title,
                 "description": self.description,
+                "logo": self.img_url,
                 "fidelity": self.fidelity.name,
                 "num_implementations": self.num_implementations,
                 "video": self.video_link,
@@ -262,21 +264,6 @@ def clear_directory(directory):
 def validate_record(record: Record):
     if not record.slug:
         return
-    
-    # Download/prepare the Connector image url if needed
-    image_content = None
-    if record.content_type == ContentTypes.CONNECTOR and record.img_url and record.fidelity != Fidelity.IMPOSSIBLE:
-        try:
-            response = requests.get(record.img_url)
-            
-            # Check if the response was successful (status code 200)
-            if response.status_code != 200:
-                print(f"{record.slug} - Error fetching image: HTTP status {response.status_code}")
-                image_content = None
-            else:
-                image_content = response.content
-        except Exception as e:
-            print(f"Failed to download image for {record.slug}: {e}")
 
     if record.fidelity in [
         Fidelity.GUIDE,
@@ -287,17 +274,7 @@ def validate_record(record: Record):
         # Create directory if needed
         if not os.path.exists(record.record_directory):
             os.makedirs(record.record_directory)
-        
-        # Write image if its not already there or if it has changed
-        if image_content and not os.path.exists(record.img_path):
-            print(f"Adding image for {record.slug}")
-            open(record.img_path, "wb+").write(image_content)
-        elif image_content and os.path.exists(record.img_path):
-            existing_image = open(record.img_path, "rb").read()
-            if existing_image != image_content:
-                print(f"Updating image for {record.slug}")
-                open(record.img_path, "wb+").write(image_content)
-        
+
         # Check if README exists
         if not os.path.exists(record.record_readme):
             open(record.record_readme, "w+").write(record.render_template())
@@ -311,23 +288,9 @@ def validate_record(record: Record):
         validate_file_consistent_with_notion(record)
 
     elif record.fidelity in [Fidelity.IDEA]:
-        existing_image = None
-        if os.path.exists(record.img_path):
-            existing_image = open(record.img_path, "rb").read()
-
         clear_directory(record.record_directory)
         os.makedirs(record.record_directory)
         open(record.record_readme, "w+").write(record.render_template())
-        # Add the logo
-        if record.content_type == ContentTypes.CONNECTOR:
-            if image_content:
-                print(f"Updating image for {record.slug}")
-                open(record.img_path, "wb+").write(image_content)
-            elif existing_image:
-                print(f"Preserving existing image for {record.slug}")
-                open(record.img_path, "wb+").write(existing_image)
-            else:
-                raise ValueError(f"No Image for Connector: {record.slug}")
 
     elif record.fidelity in [Fidelity.IMPOSSIBLE]:
         clear_directory(record.record_directory)
@@ -340,7 +303,7 @@ def main():
 
     all_stored_slugs = sum(map(lambda t: os.listdir(DIRECTORY_MAP[t]), ContentTypes), [])
     all_stored_slugs = list(filter(lambda x: x not in ['.DS_Store'], all_stored_slugs))
-    slugs_not_in_notion = list(filter(lambda slug: df[df[NotionColumns.SLUG.value] == slug].empty, all_stored_slugs))
+    slugs_not_in_notion = list(filter(lambda slug: not find_records(records, NotionColumns.SLUG.value, slug), all_stored_slugs))
 
     if slugs_not_in_notion:
         for s in slugs_not_in_notion:
@@ -351,12 +314,12 @@ def main():
         raise ValueError(f'Found directories not stored in Notion. Please add them to notion or remove them. {slugs_not_in_notion}')
 
     # Complain if there are any duplicate slugs.
-    slug_counts = df[NotionColumns.SLUG.value].value_counts()
-    if max(slug_counts.values) > 1:
+    slug_counts = count_values(records, NotionColumns.SLUG.value)
+    if slug_counts and max(slug_counts.values()) > 1:
         raise ValueError("Found duplicate slugs in CSV.", slug_counts)
 
 
-    for _, record in df.iterrows():
+    for record in records:
         record = Record(record=record)
         try:
             validate_record(record)

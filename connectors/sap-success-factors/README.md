@@ -2,6 +2,7 @@
 availability: VALIDATED
 difficulty_level: INTERMEDIATE
 fidelity: GUIDE
+logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/sap-integration-logo-primary.svg
 name: SAP Success Factors
 time_in_minutes: 40
 ---
