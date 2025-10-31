@@ -67,7 +67,7 @@ Make sure to update this across all actions that reference the Jamf API.
 
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on installing and activating the plugin in Agent Studio.
 
-### **API #1: Search Devices by Criteria**
+### **API #1: Search Computer Devices by Criteria**
 
 ```bash
 curl --location 'https://{{YOUR_INSTANCE}}/api/v1/computers-inventory?section=USER_AND_LOCATION,HARDWARE,GENERAL&filter={{filter_query}}' \
@@ -82,6 +82,7 @@ curl --location 'https://{{YOUR_INSTANCE}}/api/v1/computers-inventory?section=US
 - `username` → Username of the device owner (**required** for username-based search).
 - `email` → Email of the device owner (used when username is unavailable).
 - `start_time` / `end_time` → Time range used to filter devices by their last contact times.
+- `section` : Specifies the broad data categories to include in the response (for example: GENERAL, HARDWARE,USER_AND_LOCATION).
 
 **RSQL Filtering Notes:**
 
