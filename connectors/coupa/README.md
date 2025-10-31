@@ -43,7 +43,7 @@ Coupa is a cloud-based platform that streamlines business spend management. It p
 
    ![https://compass.coupa.com/Import/Integrate/Technical_Documentation/API/OAuth_Transition/01_Transition_Guide/create_client.jpg](https://compass.coupa.com/Import/Integrate/Technical_Documentation/API/OAuth_Transition/01_Transition_Guide/create_client.jpg)
 
-4. Once you save the Client, you will get the Client credentials: **Identifier**, **Secret**, **Oidc Scopes**.
+4. Once you save the Client, you will get the Client credentials: **Identifier**, **Secret**, **OIDC Scopes**.
 
    Copy all three of them and store in a secure place. We will need these later to generate the OAuth Token.
 
