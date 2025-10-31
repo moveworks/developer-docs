@@ -12,36 +12,34 @@ name: Workday
 num_implementations: 2
 time_in_minutes: 30
 ---
-
-# Introduction
+# **Introduction**
 
 Workday is a cloud-based software vendor that specializes in human capital management (HCM), enterprise resource planning (ERP), and financial management applications.
 
 Workday supports various kinds of web service technologies including the ReST API, SOAP API and the RaaS API.
 
-- **SOAP Web Services API**: Workday Web Services (WWS) provide a programmatic public API for Workday's business management services. The SOAP-based interface is targeted for import and export of large volumes of data needed for integration with enterprise business systems external to Workday. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/soap-web-services-api.html).
+- **SOAP Web Services API**: Workday Web Services (WWS) provide a programmatic public API for Workday's business management services. The SOAP-based interface is targeted for import and export of large volumes of data needed for integration with enterprise business systems external to Workday. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/soap-web-services-api.html).
+- **REST API**: The Workday REST API is an addition to the SOAP APIs supported by Workday. It is targeted for applications that do small, typically self-service, transactions initiated by users and provides a subset of Workday functionality crafted for that specific enterprise audience. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/rest-api.html).
+- **Reports as a Service (RaaS) API**: The RaaS API enables us to access advanced and search reports as web services. These reports can be built in the Workday Portal and further consumed via the RaaS API for fetching data. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/reports-as-a-service-raas-/dan1370796320263.html).
+- **Workday Query Language (WQL)**: WQL enables you to use SQL-like syntax to access Workday data using data sources and fields instead of reports. It allows you to query Workday for data and explore data sources, filters, and fields. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/workday-query-language-wql-/aht1611188422513.html?toc=1.20.0).
 
-- **ReST API**: The Workday REST API is an addition to the SOAP APIs supported by Workday. It is targeted for applications that do small, typically self-service, transactions initiated by users and provides a subset of Workday functionality crafted for that specific enterprise audience. Learn more about it [here](https://community-content.workday.com/en-us/reference/products/platform-and-product-extensions/integrations/rest-api.html).
+This guide will walk you through creating a connector within Agent Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. The guide has two main sections:
 
-- **Reports as a Service (RaaS) API**: The RaaS API enables us to access advanced and search reports as web services. These reports can be built in the Workday Portal and further consumed via the RaaS API for fetching data. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/reports-as-a-service-raas-/dan1370796320263.html).
+- [**OAuth 2.0 with Client Credentials Grant Setup**](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Client-Credentials-Grant-Setup)
+- [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)
 
-- **Workday Query Language**: Workday Query Language (WQL) enables you to use SQL-like syntax to access Workday data using data sources and fields instead of reports. WQL enables you to query Workday for data and explore data sources, data source filters, and fields. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/workday-query-language-wql-/aht1611188422513.html?toc=1.20.0).
+# **Prerequisites**
 
-
-This guide will walk you through creating a connector within Agent Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. We have separated this guide into three main sections:
-- [Prerequisites](#prerequisites)
-- [Set up Workday](#set-up-workday)
-- [Create a Connector in Agent Studio](#create-a-connector-and-test-in-agent-studio)
-
-
-
-# Prerequisites
 - Workday account with admin privileges so we can create an API account
-- [Install Postman](https://www.postman.com/downloads/) for testing the API connection
+- [Install Postman](https://www.postman.com/downloads/) for testing the API connection
 
-# Set up Workday
-To connect to Workday from within Agent Studio, we are going to be using [OAuth2 with the Refresh Token](https://oauth.net/2/grant-types/refresh-token/). This requires a client_id, a client_secret and a refresh_token. The following will walk you through how to set up a user and create the necessary ids so we can set up the connector within Agent Studio.
+# OAuth 2.0 with Client Credentials Grant Setup
 
+To connect to Workday from within Agent Studio, we are going to be using [OAuth2 with the Refresh Token](https://oauth.net/2/grant-types/refresh-token/). This requires a client_id, a client_secret and a refresh_token. 
+
+### Walkthrough
+
+The following steps will guide you through setting up a user and generating the necessary credentials to configure the connector in Agent Studio:
 
 1. Create an Integration Systems User (ISU)
 2. Create Security Group
@@ -276,3 +274,211 @@ Now that we have created everything within Workday and Postman, we can configure
 # **Congratulations!**
 
 You've successfully integrated Workday's API with Agent Studio. This opens up a variety of automation and integration possibilities to Workday.
+
+
+# **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
+
+To connect to Workday from within **Agent Studio** using user-consent-based authentication, configure the **OAuth 2.0 with Authorization Code (User Consent)** flow.
+
+This ensures that Workday users explicitly authorize Moveworks before API actions are performed on their behalf.
+
+## **Walkthrough**
+
+Follow these steps to set up and validate your connection:
+
+1. Log in to Workday
+2. Register a new API Client
+3. Configure API Client Details
+4. Generate Authorization Code
+5. Integrate with Agent Studio
+6. Test the Connector in Agent Studio
+
+## **Step 1: Log in to Workday**
+
+- Go to the Workday login page and sign in with your credentials.
+- Ensure you log in with an Admin account — only admins can register OAuth clients.
+
+Note: OAuth client registration must be performed by a Workday admin.
+
+![image.png](images/image%2019.png)
+
+## **Step 2: Register API Client**
+
+- In the Workday search bar, search for **`Register API Client`** and click on the task to open the registration form
+
+![image.png](images/image%201.png)
+
+## **Step 3: Configure API Client Details**
+
+In the **Register API Client** form, fill in the following details:
+
+- **Client Name:** Enter a unique name, for example `{{YOUR_CLIENT_NAME}}`.
+- **Client Grant Type:** Select **Authorization Code Grant**.
+- **Access Token Type:** Choose **Bearer**.
+- **Redirect URI:** Enter your Moveworks redirect URL, for example `{{YOUR_REDIRECT_URI}}`.
+- **Refresh Token Timeout (Days):** Set this to **100**.
+- **Scope:** Select the scopes based on your use case. For example, to fetch - Supplier Invoice Requests (supplierInvoiceRequests), include the Workday scopes that allow the user to view supplier invoices and related procurement data.
+
+Here are some example scopes:
+
+- **Supplier Accounts** – allows viewing supplier account-related information.
+- **Suppliers** – allows viewing supplier profiles and related data.
+- **Procurement** – allows viewing procurement objects such as supplier-related transactions.
+
+Click **OK** after filling in all required details to save the configuration.
+
+![image.png](images/image%202.png)
+
+- Workday will generate your **Client ID** and **Client Secret** — make sure to save them safely for later use.
+
+![image.png](images/image%203.png)
+
+## **Step 4: Generate Authorization Code**
+
+To obtain the **authorization code**, use the following URL structure:
+
+```bash
+https://{AUTH_DOMAIN}/{TENANT}/authorize?
+response_type=code&
+client_id={{CLIENT_ID}}&
+redirect_uri={{REDIRECT_URI}}&
+scope=openid%20workday:read
+```
+
+### How to Retrieve the Authorization Code:
+
+1. Open the above URL in your browser.
+2. Log in using your Workday credentials.
+3. Approve the consent request for Moveworks Agent Studio.
+4. You’ll be redirected to your configured **Redirect URI** with a `code` parameter, for example:
+
+![image.png](images/4ae66ecd-f6b6-4168-9e15-271d3f942ef8.png)
+
+5. Copy the **authorization code** (for example, `{{authorization_code}}`) — you’ll use this in the connector setup within **Agent Studio**
+
+After obtaining the **authorization code**, make sure to **save it securely** together with your **Client ID**, **Client Secret**, and **Redirect URI**, as these will be required when setting up the **Workday User Consent Authentication Connector** in **Agent Studio**
+
+## **Step 5: Integrate with Agent Studio**
+
+In **Agent Studio**, create a new connector with the following configuration:
+
+**Connector Name:** `{{Connector_Name}}`
+
+**Display Name:** `{{Display_Name}}`
+
+**Display Description:** This connector facilitates secure, user-authorized access to the Workday API using User Consent Authentication.
+
+**Base URL:** `https://{WORKDAY_BASE_URL}`
+
+**Auth Config:** OAuth2
+
+**OAuth2 Grant Type:** Authorization Code Grant
+
+**Authorization URL:** `https://{WORKDAY_AUTH_URL}/{{CLIENT_NAME}}/authorize`
+
+**Client ID:** `{{CLIENT_ID}}`
+
+**Client Secret:** `{{CLIENT_SECRET}}`
+
+**Authorization Code Grant Scope:** `openid workday:read`
+
+**OAuth2 Token URL:** `https://{WORKDAY_AUTH_URL}/ccx/oauth2/{{CLIENT_NAME}}/token`
+
+**OAuth2 Client Authentication:** OAuth 2.0 with Request Body
+
+**OAuth2 Custom OAuth Response Type:** JSON
+
+**Additional Headers:** `Content-Type: application/x-www-form-urlencoded`
+
+**Additional Request Data:**
+
+- `client_id`: `{{CLIENT_ID}}`
+- `client_secret`: `{{CLIENT_SECRET}}`
+- `redirect_uri`: `{{REDIRECT_URI}}`
+- `grant_type`: `authorization_code`
+- `response_code`: `code`
+- `scope`: `openid workday:read`
+
+Once all fields are completed, click **Save** to create and store your connector configuration.
+
+## **Step 6: Test the Connector in Agent Studio**
+
+Set up your API. You can read more about setting up API actions from our **API Configuration Reference**.
+
+Use this API call to make sure **User Consent Authorization (UCA)** is working and that data is returned based on the logged-in user’s Workday access.
+
+Note : While testing the connector, make sure to log in as a regular Workday user instead of the admin to validate UCA behavior.
+
+```bash
+curl --location 'https://{API_SERVER_DOMAIN}/ccx/api/accountsPayable/v1/{{TENANT}}/supplierInvoiceRequests' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer {{generated_bearer_token}}'
+
+```
+
+**API Endpoint Path:**
+
+`/ccx/api/accountsPayable/v1/{{TENANT}}/supplierInvoiceRequests`
+
+**Method:**
+
+`GET`
+
+**Headers:**
+
+- `Content-Type`: `application/json`
+- `Accept`: `application/json`
+
+**Tenant Configuration:**
+
+All Workday API endpoints in this plugin use **`TENANT`** as a placeholder. After installation, replace **`TENANT`** in the action definitions with your actual Workday tenant name.
+
+To find your tenant name:
+
+- Log into Workday.
+- Check the URL in your browser — the tenant name appears after `workday.com/`, e.g.:
+    
+    `https://impl.workday.com/**your_tenant**/...`
+    
+
+### **Test Your Setup:**
+
+1. In **Agent Studio**, create and run a new **Action**.
+2. Import the above **cURL command**.
+3. Add the **Workday User Consent Auth Connector**.
+4. Click **Test → Generate New Access Token**.
+    - Ensure you are acting on behalf of the **intended user** before generating the token.
+    - Only then will it return data specific to that user’s Workday permissions.
+    
+    ![image.png](images/image%204.png)
+    
+
+### **Establish a Connection Between Your UCA Connector and Agent Studio**
+
+- Integrate Your UCA Connector with Agent Studio
+
+![image.png](images/image%205.png)
+
+- Next, you will be redirected to the **Workday login page**.
+
+![image (1).jpg](images/d10667b7-c132-4ef3-aba8-b3d89e8eb53a.png)
+
+- If you log in as an **admin**, you’ll have access to all request data, while a **regular user** will only see data assigned to them
+- After logging in successfully, click **Allow** to generate the **authorization code**.
+
+![image.png](images/9c99c71a-a93f-4406-8a9c-9034e326ba61.png)
+
+- Once you click **Allow**, you will receive a notification from the **Moveworks bot** confirming that it has access to perform actions on your behalf
+
+![image.png](images/image%206.png)
+
+### **Verify UCA Functionality**
+
+- Click **Test** to verify that **User Consent Authentication (UCA)** is working correctly.
+- The action (e.g., Get Supplier Invoice Requests) should use the logged-in user’s token to return only the records accessible to that user — confirming that **user-specific consent and permissions** are set up properly within Workday.
+
+![image.png](images/image%207.png)
+
+# **Congratulations!**
+
+You’ve successfully integrated **Workday’s API** with **Agent Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Workday data based on user consent within your Workday instance
