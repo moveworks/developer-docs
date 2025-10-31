@@ -51,9 +51,11 @@ While you can create a connector during plugin installation, we do recommend tha
 
 ## **Appendix**
 
-#### A combination of 2 APIs makes this possible:
+**A combination of 2 APIs makes this possible:**
 
-- The first API call is designed to fetch all the meetings that a user participated in within a specified date range, via their email address.
+**API #1 Get a User's Meetings**
+
+- The first API call (Report AI) is designed to fetch all the meetings that a user participated in within a specified date range, via their email address.
     
     ```bash
     curl --request GET \
@@ -65,6 +67,8 @@ While you can create a connector during plugin installation, we do recommend tha
         - **`from_date`**: The start date for the range within which calls should be retrieved.
         - **`to_date`**: The end date for the range within which calls should be retrieved.
         - **`type`**: pastJoined
+
+**API #2 Get Summary for a Meeting**
 
 - The second API call is designed to fetch the meeting summary of a specific meeting via the UUID from the previous call
     
