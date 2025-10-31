@@ -17,7 +17,7 @@ time_in_minutes: 30
 
 ## **Introduction**
 
-The **Look Up Meeting Summary** plugin allows your users to view summaries of thier Zoom recorded meetings directly through the Moveworks AI Assistant. Users can easily access key meeting details, key discussion points, and action items, all within their chat interface, ensuring streamlined information access and enhanced meeting insights.
+The **Look Up Meeting Summary** plugin allows your users to view summaries of their Zoom recorded meetings directly through the Moveworks AI Assistant. Users can easily access key meeting details, key discussion points, and action items, all within their chat interface, ensuring streamlined information access and enhanced meeting insights.
 
 This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
 
@@ -41,13 +41,13 @@ While you can create a connector during plugin installation, we do recommend tha
 - `report:read:user:admin`
 - `meeting:read:meeting:admin`
 - `meeting:read:summary:admin`
-- For more information : [Zoom Ouath Scopes Overview](https://developers.zoom.us/docs/integrations/oauth-scopes-overview/)
+- For more information: [Zoom OAuth Scopes Overview](https://developers.zoom.us/docs/integrations/oauth-scopes-overview/)
 
 **Note**
 
 1. The user of this plugin can only access meeting summaries of the meetings they own (hosted). They can’t view summaries for meetings where the user was just a participant, guest, or external attendee. This is a Zoom API limitation.
 2. Zoom places a limitation on the first API call in the appendix: the from and to date range should not exceed 1 month. The plugin enforces this via the slot description.
-3. The Zoom Reports API also has a stanadrd data retention policy of 12 months for paid accounts, after which data becomes inaccessible. 
+3. The Zoom Reports API also has a standard data retention policy of 12 months for paid accounts, after which data becomes inaccessible. 
 
 ## **Appendix**
 
