@@ -42,7 +42,7 @@ We recommend setting up **Jamf** **Connector** before installing this plugin. Pl
 
 To enable access to Jamf Pro API endpoints, ensure that the appropriate privileges are assigned to the user via:
 
- **Settings → API Roles and Clients → API Roles → Tokens**.
+ **Settings → API Roles and Clients → API Roles → [API Role]**.
 
 **Required Privileges:**
 
@@ -77,7 +77,7 @@ Once the connector is successfully configured, follow our [**plugin installatio
 
 ## **Appendix**
 
-### **API #1: Search for Computers Based on a Given Criteria**
+### **API #1: Search for Computers Based on Given Criteria**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/api/v1/computers-inventory?section=USER_AND_LOCATION,HARDWARE,GENERAL&filter={{filter_query}}' \
