@@ -43,11 +43,12 @@ While you can create a connector during plugin installation, we do recommend tha
 - `meeting:read:summary:admin`
 - For more information: [Zoom OAuth Scopes Overview](https://developers.zoom.us/docs/integrations/oauth-scopes-overview/)
 
-**Note**
+**Notes**
 
 1. The user of this plugin can only access meeting summaries of the meetings they own (hosted). They can’t view summaries for meetings where the user was just a participant, guest, or external attendee. This is a Zoom API limitation.
 2. Zoom places a limitation on the first API call in the appendix: the from and to date range should not exceed 1 month. The plugin enforces this via the slot description.
 3. The Zoom Reports API also has a standard data retention policy of 12 months for paid accounts, after which data becomes inaccessible. 
+4. This plugin uses meta_info.user.timezone attribute to convert the meeting times in the API response (present in UTC) to the user's timezone. Please make sure that this attribute is set for your users. 
 
 ## **Appendix**
 
