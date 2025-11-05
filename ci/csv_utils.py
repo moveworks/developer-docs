@@ -10,7 +10,7 @@ def read_csv(filepath: str) -> List[Dict[str, Any]]:
     :param filepath: Path to the CSV file
     :return: List of dictionaries, where each dict represents a row
     """
-    with open(filepath, 'r', encoding='utf-8') as file:
+    with open(filepath, 'r', encoding='utf-8-sig') as file:
         reader = csv.DictReader(file)
         return list(reader)
 
