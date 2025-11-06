@@ -16,8 +16,8 @@ time_in_minutes: 15
 
 Coupa is a cloud-based platform that streamlines business spend management. It provides comprehensive tools for procurement, invoicing, and expense management. This guide will walk you through how to connect Coupa to Agent Studio. There are two ways you can proceed:
 
-- [**OAuth 2.0 with Client Credentials Grant Setup**](#oauth-20-with-client-credentials-grant-setup) – Best suited for organization-wide integrations where authentication and data access are centrally managed by an admin.
-- [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](#oauth-20-with-authorization-code-user-consent-auth-setup) – Ideal for user-specific integrations where each user authenticates individually to access their Coupa data securely.
+- [**OAuth 2.0 with Client Credentials Grant Setup**](https://marketplace.moveworks.com/connectors/coupa#OAuth-2.0-with-Client-Credentials-Grant-Setup) – Best suited for organization-wide integrations where authentication and data access are centrally managed by an admin.
+- [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/coupa#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup) – Ideal for user-specific integrations where each user authenticates individually to access their Coupa data securely.
 
 ## **Prerequisites**
 
