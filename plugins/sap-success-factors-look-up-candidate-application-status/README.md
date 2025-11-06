@@ -67,7 +67,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 
 ## **Appendix**
 
-### **API #1: Get Job Requisition By Recruiter's Email**
+### **API #1: Get a Recruiter's Authorized Job Requisitions**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobRequisition?$expand=recruiter,jobReqLocale&$filter=recruiter/email eq '{{email}}'&$select=jobReqId,jobReqLocale/jobTitle&$top=30' \
@@ -86,7 +86,7 @@ curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobRequisition?$expand=recruit
 - $expand (string) – Additional field to be included to view details like recruiter.
 - **`optional_fields`**(string) – Specify additional fields to include in the response, such as $top.
 
-### **API #2: Get Candidate Name By Job Requisition Id**
+### **API #2: Get Candidates for a Job Requisition**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobApplication?$select=firstName,lastName,candidateId,jobReqId&$expand=jobAppStatus,candidate&$filter=jobReqId eq {{job_reqid}}' \
