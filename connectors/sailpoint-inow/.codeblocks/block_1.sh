@@ -1,5 +1,3 @@
-https://{AUTH_DOMAIN}/oauth/authorize?
-response_type=code&
-client_id={{CLIENT_ID}}&
-redirect_uri={{REDIRECT_URI}}&
-scope=idn:sources:read
+curl --location 'https://{API_SERVER_DOMAIN}/v2025/accounts' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer {{generated_bearer_token}}'

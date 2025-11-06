@@ -13,9 +13,9 @@ time_in_minutes: 20
 
 This guide walks you through the process of creating a connector within **Agent Studio** to make API calls to **SailPoint IdentityNow**, using the **OAuth 2.0 Client Credentials Flow** for secure authentication. The guide is organized into three main sections:
 
-1. **Set up OAuth Client Credentials Flow**
-2. **Create a Connector in Agent Studio**
-3. **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
+1. [**Set up OAuth Client Credentials Flow**](https://marketplace.moveworks.com/connectors/sailpoint-identitynow#Set-up-OAuth-Client-Credentials-Flow)
+2. [**Create a Connector in Agent Studio**](https://marketplace.moveworks.com/connectors/sailpoint-identitynow#Create-a-Connector-in-Agent-Studio)
+3. [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/sailpoint-identitynow#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)
 
 # **Prerequisites:**
 
@@ -205,32 +205,7 @@ Click **Create** after filling in all required details to save the configurati
 
 ![image_11.png](image_11.png)
 
-# **Step 3: Generate Authorization Code**
-
-To obtain the **authorization code**, use the following URL structure:
-
-```bash
-https://{AUTH_DOMAIN}/oauth/authorize?
-response_type=code&
-client_id={{CLIENT_ID}}&
-redirect_uri={{REDIRECT_URI}}&
-scope=idn:sources:read
-```
-
-### **How to Retrieve the Authorization Code:**
-
-1. Open the above URL in your browser.
-2. Log in using your SailPoint IdentityNow credentials.
-3. Approve the consent request for Moveworks Agent Studio.
-4. You’ll be redirected to your configured **Redirect URI** with a **`code`** parameter, for example:
-
-![image_12.png](image_12.png)
-
-1. Copy the **authorization code** (for example, **`{{authorization_code}}`**) — you’ll use this in the connector setup within **Agent Studio**
-
-After obtaining the **authorization code**, make sure to **save it securely** together with your **Client ID**, **Client Secret**, and **Redirect URI**, as these will be required when setting up the **SailPoint IdentityNow User Consent Authentication Connector** in **Agent Studio.**
-
-# **Step 4: Integrate with Agent Studio**
+# **Step 3: Integrate with Agent Studio**
 
 In **Agent Studio**, create a new connector with the following configuration:
 
@@ -241,6 +216,8 @@ In **Agent Studio**, create a new connector with the following configuration:
 **Display Description:** This connector facilitates secure, user-authorized access to the Sailpoint iNow API using User Consent Authentication.
 
 **Base URL:** **`https://{SailPoint_IdentityNow_BASE_URL}`**
+- **Note:** When specifying the **Base URL**, make sure to **include** the `api` segment in your base URL.
+- **Example**:  `https://{{your-tenant}}.api.identitynow-demo.com`
 
 **Auth Config:** OAuth2
 
@@ -262,7 +239,7 @@ In **Agent Studio**, create a new connector with the following configuration:
 
 Once all fields are completed, click **Save** to create and store your connector configuration.
 
-# **Step 5: Test the Connector in Agent Studio**
+# **Step 4: Test the Connector in Agent Studio**
 
 Set up your API. You can read more about setting up API actions from our **API Configuration Reference**.
 
