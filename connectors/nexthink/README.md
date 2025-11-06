@@ -6,7 +6,7 @@ accreditations:
 availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
-logo: https://raw.githubusercontent.com/moveworks/developer-docs/main/authentication-guides/nexthink/logo.png
+logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/nexthink/logo.png
 name: Nexthink
 time_in_minutes: 15
 ---

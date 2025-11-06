@@ -1,7 +1,7 @@
 ---
 availability: IDEA
 fidelity: IDEA
-logo: https://avatars.githubusercontent.com/u/59389925?s=200&v=4
+logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/twelve-data/logo.png
 name: Twelve Data
 
 ---

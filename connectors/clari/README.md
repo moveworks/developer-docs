@@ -2,7 +2,7 @@
 availability: IDEA
 description: Connect your Moveworks Copilot to Clari.
 fidelity: IDEA
-logo: https://assets.stickpng.com/images/629e2b7e974c5f2c1ceaa62d.png
+logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/clari/logo.png
 name: Clari
 
 ---

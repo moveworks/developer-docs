@@ -5,7 +5,7 @@ accreditations:
 availability: VALIDATED
 difficulty_level: BEGINNER
 fidelity: GUIDE
-logo: https://github.com/moveworks/developer-docs/blob/main/connectors/asana/logo.png
+logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/asana-integration-logo-primary.svg
 name: Asana
 time_in_minutes: 15
 ---

@@ -16,6 +16,5 @@ solution_tags:
 - Engineering
 systems:
 - github
-- ''
 
 ---
