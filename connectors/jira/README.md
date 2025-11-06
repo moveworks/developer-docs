@@ -207,10 +207,9 @@ Follow these steps to set up and validate your connection:
 
 1. Log in to the **Atlassian Developer Console**
 2. Register a new **OAuth 2.0 App**
-3. Configure **Callback URL**, **Scopes**, and **Authorization URL**
-4. Generate **Authorization Code**
-5. Integrate with **Agent Studio**
-6. Test the Connector in **Agent Studio**
+3. Configure **Callback URL** and **Scopes**
+4. Integrate with **Agent Studio**
+5. Test the Connector in **Agent Studio**
 
 ## **Step 1: Log in to Atlassian Developer Console**
 
@@ -231,7 +230,7 @@ Follow these steps to set up and validate your connection:
 
 ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%202.png)
 
-## **Step 3: Configure Callback URL, Scopes, and Authorization URL**
+## **Step 3: Configure Callback URL and Scopes**
 
 In your newly created app, follow these steps to complete the OAuth 2.0 (3LO) setup:
 
@@ -262,14 +261,21 @@ In your newly created app, follow these steps to complete the OAuth 2.0 (3LO) se
 
 ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%208.png)
 
-- **Recommended Scopes to Add:**
+- Configure the scopes by editing your action under the classic scopes:
 
-```bash
-read:jira-work
-manage:jira-configuration
-read:jira-user
-write:jira-work
-```
+  - read:jira-work: Allows the app to read issues and projects (e.g., fetch issues, view project details).
+
+  - write:jira-work: Allows the app to create or update issues (e.g., add comments, change statuses).
+
+  - manage:jira-configuration: Allows the app to manage Jira configurations (e.g., update workflows, boards).
+
+  - read:jira-user: Allows the app to read user information (e.g., fetch profiles, assign issues).
+
+- Note: Add more scopes depending on your integration needs. 
+    - Examples: 
+        - offline_access → For refresh tokens 
+        - manage:jira-project → Modify projects
+        - manage:jira-automation → Manage automation rules
 
 - After clicking **Save**, a confirmation message will appear.
 
@@ -285,37 +291,7 @@ write:jira-work
 
 - Copy and store these credentials securely, as they will be required later while configuring the connector in **Agent Studio**.
 
-## **Step 4: Generate Authorization Code**
-
-Use the following **authorization URL** to initiate user consent:
-
-```bash
-https://auth.atlassian.com/authorize?
-audience=api.atlassian.com&
-client_id={{CLIENT_ID}}&
-scope=read%3Ajira-work%20manage%3Ajira-configuration%20read%3Ajira-user%20write%3Ajira-work&
-redirect_uri={{REDIRECT_URI}}&
-state=xyz123&
-response_type=code&
-prompt=consent
-```
-
-### **How to Retrieve the Authorization Code:**
-
-1. Open the above URL in your browser.
-2. Sign in with your **Atlassian Jira account**.
-3. Approve the consent request for **Moveworks Agent Studio**.
-- Once approved, you’ll be redirected to your configured callback URL containing the authorization code, for example:
-
-```bash
-{{REDIRECT_URI}}?state=xyz123&code={{AUTH_CODE}}.
-```
-
-![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2012.png)
-
-- Copy the `{{AUTH_CODE}}` — this will be required during the connector setup in **Agent Studio**
-
-## **Step 5: Integrate with Agent Studio**
+## **Step 4: Integrate with Agent Studio**
 
 In **Agent Studio**, create a new connector with the following configuration:
 
@@ -361,7 +337,7 @@ This connector facilitates secure, user-authorized access to the Jira API using 
 
 Once all fields are completed, click **Save** to create and store your connector configuration.
 
-## **Step 6: Test the Connector in Agent Studio**
+## **Step 5: Test the Connector in Agent Studio**
 
 Set up your API. You can read more about configuring and testing API actions from our **API Configuration Reference**.
 
@@ -389,13 +365,13 @@ curl --location 'https://<YOUR_INSTANCE_DOMAIN>/oauth/token/accessible-resources
 
 **Your Instance Configuration**
 
-All Jira API endpoints in this plugin use `{{**YOUR INSTANCE DOMAIN}}**` as a placeholder.
+All Jira API endpoints in this plugin use **`{{YOUR_INSTANCE_DOMAIN}}`** as a placeholder.
 
 Follow the steps below to update it correctly after installation:
 
 1. Go to your **Jira Cloud** instance settings.
 2. Locate your **API base domain** (this will be your organization’s Jira Cloud domain).
-3. Replace `{{**YOUR INSTANCE DOMAIN}}**` with your actual Jira Cloud API domain in all **action definitions** within the connector.
+3. Replace **`{{YOUR INSTANCE DOMAIN}}`** with your actual Jira Cloud API domain in all **action definitions** within the connector.
 4. Save your configuration to ensure that all API requests are routed to your Jira Cloud instance.
 
 ### **Test Your Setup:**
