@@ -420,7 +420,7 @@ Follow the steps below to update it correctly after installation:
 
 ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2013.png)
 
-- If you log in as an **admin**, you’ll have access to all project and issue data, while a **regular user** will only see data that they have permissions for.
+- If you log in as an **admin**, you’ll have access to all project and issue data, while a **regular user** will only see data that they have permissions for
 - After logging in successfully, click **Accept** to generate the **authorization code**.
 
 ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2014.png)
