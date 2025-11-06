@@ -11,10 +11,11 @@ time_in_minutes: 20
 
 **SailPoint IdentityNow** is a cloud-based identity governance and administration platform that helps organizations manage the full user lifecycle — from onboarding and access changes to offboarding — across applications and systems. It enables automated provisioning, enforces access policies, supports compliance through access reviews, and provides self-service access requests.
 
-This guide walks you through the process of creating a connector within **Agent Studio** to make API calls to **SailPoint IdentityNow**, using the **OAuth 2.0 Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
+This guide walks you through the process of creating a connector within **Agent Studio** to make API calls to **SailPoint IdentityNow**, using the **OAuth 2.0 Client Credentials Flow** for secure authentication. The guide is organized into three main sections:
 
 1. **Set up OAuth Client Credentials Flow**
 2. **Create a Connector in Agent Studio**
+3. **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
 
 # **Prerequisites:**
 
