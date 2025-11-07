@@ -145,7 +145,7 @@ curl --request GET \
     
     Example:
     
-    `$top=200` → Returns up to 200 records.
+    `$top=200` → Returns up to 200 records
     
 - $orderby (string) – Specifies the sorting order of results.
     
