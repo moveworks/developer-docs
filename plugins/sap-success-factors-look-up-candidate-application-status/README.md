@@ -87,10 +87,10 @@ curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobRequisition?$expand=recruit
 - $orderby(string) – Sorts results by a specific field.
 - **`optional_fields`**(string) – Specify additional fields to include in the response, such as $top.
 
-### **API #2: Get Job Requisition Id By Candidate Name**
+### **API #2: Get Candidate Name By Job Requisition Id**
 
 ```bash
-	curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobApplication?$select=firstName,lastName,candidateId,jobReqId&$expand=jobAppStatus,candidate&$filter=jobReqId eq {{job_reqid}}&$orderby=lastModifiedDateTime desc&$top=200' \
+curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobApplication?$select=firstName,lastName,candidateId,jobReqId&$expand=jobAppStatus,candidate&$filter=jobReqId eq {{job_reqid}}&$orderby=lastModifiedDateTime desc&$top=200' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 ```
