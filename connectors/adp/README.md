@@ -1,7 +1,7 @@
 ---
 availability: IDEA
 fidelity: IDEA
-logo: https://dwglogo.com/wp-content/uploads/2016/07/ADP-logo-02.png
+logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/adp-integration-logo-primary.svg
 name: ADP
 
 ---
