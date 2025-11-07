@@ -6,7 +6,7 @@ description: A plugin that allows recruiters and hiring managers to instantly lo
 difficulty_level: INTERMEDIATE
 domain:
 - HR - Recruiting & Talent
-fidelity: GUIDE
+fidelity: TEMPLATE
 installation_asset_uuid: 27cab595-3a37-4b6c-ad62-be38b0c5f4c1
 name: Look Up Candidate Application Status
 difficulty_level: INTERMEDIATE
