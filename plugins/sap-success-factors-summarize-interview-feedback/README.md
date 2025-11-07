@@ -78,31 +78,31 @@ Once the connector is successfully configured, follow our [plugin installation d
 
 ```bash
 curl --request GET \
-  --url 'https://<YOUR_INSTANCE>/odata/v2/JobRequisition?$filter=hiringManager/userNav/email eq '{{HIRING_MANAGER_EMAIL}}'&$select=jobReqId,jobReqLocale/jobTitle&$expand=jobReqLocale&$top=200&$format=json' \
+  --url 'https://<YOUR_INSTANCE>/odata/v2/JobRequisition?$filter=hiringManager/userNav/email eq '{{email}}' and status/status eq 'ACTIVE'&$select=jobReqId,jobReqLocale/jobTitle,hiringManager/userNav/email,status&$expand=jobReqLocale,hiringManager/userNav,status&$top=200&$orderby=lastModifiedDateTime desc&$format=json' \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer <ACCESS_TOKEN>'
-
 ```
 
-### Query Parameters
+### Query Parameter
 
 - $filter (string) – Filter job requisitions based on the hiring manager’s email.
     
     Example filter:
     
-    `hiringManager/userNav/email eq '{{HIRING_MANAGER_EMAIL}}'` → Returns all job requisitions where the hiring manager’s email matches the provided value.
+    `hiringManager/userNav/email eq '{{HIRING_MANAGER_EMAIL}}'and status/status eq 'ACTIVE’` → 
+     Returns all **active** job requisitions for the specified hiring manager.
     
 - $select (string) – Specifies which fields to be included in the response.
     
     Example:
     
-    `jobReqId, jobReqLocale/jobTitle` → Returns the job requisition ID and its localized job title.
+    `jobReqId, jobReqLocale/jobTitle, hiringManager/userNav/email, status` → Returns the job requisition ID and its localized job title.
     
 - $expand (string) – Expands related entities to include additional data.
     
     Example:
     
-    `jobReqLocale` → Expands the locale-specific fields (e.g., job title and description).
+    `jobReqLocale, hiringManager/userNav, status` → Expands the locale-specific fields (e.g., job title and description).
     
 - $top (integer) – Defines the maximum number of records to return.
     
@@ -110,12 +110,18 @@ curl --request GET \
     
     `$top=200` → Returns up to 200 records.
     
+- $orderby (string) – Specifies the sorting order of results.
+    
+    Example:
+    
+    `$orderby=lastModifiedDateTime desc` → Sorts results by the most recently modified job requisitions first.
+    
 
 ### API 2: Get Candidates by Job Requisition ID
 
 ```bash
 curl --request GET \
-  --url "https://<YOUR_INSTANCE>/odata/v2/JobApplication?\$filter=jobReqId eq {{JOB_REQ_ID}} and substringof('Interview', jobAppStatus/appStatusName)&\$select=candidateId,firstName,lastName,applicationId,currentTitle&\$format=json" \
+  --url "https://<YOUR_INSTANCE>/odata/v2/JobApplication?\$filter=jobReqId eq {{JOB_REQ_ID}} and substringof('Interview', jobAppStatus/appStatusName)&\$select=candidateId,firstName,lastName,applicationId,currentTitle&\$top=200&\$orderby=lastModifiedDateTime desc&\$format=json" \
   --header 'Accept: application/json' \
   --header 'Authorization: Bearer <ACCESS_TOKEN>'
 
@@ -134,6 +140,18 @@ curl --request GET \
     Example:
     
     `candidateId, firstName, lastName, applicationId, currentTitle` → Returns the candidate ID, first and last name, application ID, and current title.
+    
+- $top (integer) – Defines the maximum number of records to return.
+    
+    Example:
+    
+    `$top=200` → Returns up to 200 records.
+    
+- $orderby (string) – Specifies the sorting order of results.
+    
+    Example:
+    
+    `$orderby=lastModifiedDateTime desc` → Sorts results by the most recently modified job requisitions first.
     
 
 ### API 3: Get Job Application by Candidate and Job Requisition IDs
