@@ -2,7 +2,7 @@
 availability: VALIDATED
 difficulty_level: INTERMEDIATE
 fidelity: GUIDE
-logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/okta-integration-logo-primary.svg
+logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/okta/logo.png
 name: Okta
 num_implementations: 0
 time_in_minutes: 15

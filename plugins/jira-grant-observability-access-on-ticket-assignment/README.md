@@ -13,6 +13,5 @@ solution_tags:
 - Engineering
 systems:
 - jira
-- ''
 
 ---
