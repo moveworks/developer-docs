@@ -1,4 +1,4 @@
-curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobRequisition?$expand=recruiter,jobReqLocale&$filter=recruiter/email eq '{{email}}'&$select=jobReqId,jobReqLocale/jobTitle&$top=30' \
+curl --location 'https://<YOUR_INSTANCE>/odata/v2/JobRequisition?$expand=recruiter,jobReqLocale,status&$filter=recruiter/email eq '{{email}}'and status/status eq 'ACTIVE'&$select=jobReqId,jobReqLocale/jobTitle,status&$top=30&$orderby=lastModifiedDateTime desc' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 
