@@ -153,7 +153,7 @@ curl --request GET \
     `$orderby=lastModifiedDateTime desc` → Sorts results by the most recently modified job requisitions first.
     
 
-### API 3: Get Job Application by Candidate and Job Requisition IDs
+### API 3: Get Job Application Details by Candidate and Job Requisition ID
 
 ```bash
 curl --request GET \
