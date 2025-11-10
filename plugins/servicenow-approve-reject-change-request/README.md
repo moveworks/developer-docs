@@ -62,7 +62,7 @@ Once the connector is successfully configured, follow our [plugin installation 
 
 2. The API in this plugin fetches all pending Change Request approvals assigned directly to a user using the filter approver.email={{email}}. 
 In most ServiceNow environments, this also includes group approvals, because modern workflows use expanded group approvals (each group member gets their own approval record).
-A few legacy or customized instancess might still use collapsed group approvals (a single approval record for the whole group). In those cases, modifications to the API filters will be needed.
+A few legacy or customized instances might still use collapsed group approvals (a single approval record for the whole group). In those cases, modifications to the API filters will be needed.
 
 ## **Appendix**
 
@@ -91,7 +91,7 @@ curl --location --request PATCH 'https://<API_SERVER_DOMAIN>/api/now/table/sysap
 --header 'Content-Type: application/json' \
 --data '{
   "state": "{{state}}",
-  "comments": "{{action_comment}}
+  "comments": "{{action_comment}}"
 }'
 ```
 Path Parameters:
