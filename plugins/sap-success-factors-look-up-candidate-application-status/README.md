@@ -15,7 +15,6 @@ solution_tags:
 - HR - Recruiting & Talent
 systems:
 - sap-success-factors
-time_in_minutes: 15
 ---
 
 ## **Introduction**
