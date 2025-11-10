@@ -73,7 +73,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 
 ## Appendix
 
-### API 1: Get Job Requisitions by Hiring Manager
+### API 1: Get Authorized Job Requisitions for a Hiring Manager
 
 ```bash
 curl --request GET \
@@ -116,7 +116,7 @@ curl --request GET \
     `$orderby=lastModifiedDateTime desc` → Sorts results by the most recently modified job requisitions first.
     
 
-### API 2: Get Candidates by Job Requisition ID
+### API 2: Get Candidates who have Interviewed for a Job Requisition
 
 ```bash
 curl --request GET \
@@ -153,7 +153,7 @@ curl --request GET \
     `$orderby=lastModifiedDateTime desc` → Sorts results by the most recently modified job requisitions first.
     
 
-### API 3: Get Job Application Details by Candidate and Job Requisition ID
+### API 3: Get Job Application Details for a Job Requisition and Candidate
 
 ```bash
 curl --request GET \
