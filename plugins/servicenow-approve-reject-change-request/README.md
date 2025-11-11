@@ -56,35 +56,33 @@ For this plugin, ensure the user has the following permissions:
 
 Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
+## Notes
+
+1. When approving or rejecting a Change Request, approvers can optionally include a comment or reason for their decision. Since this integration currently uses client-credentials authentication, comments are technically performed under the integration user’s account (e.g., admin or api_integration). To preserve clarity and audit accuracy, the actual approver’s name is included inside the comment text itself. This field can be removed as well if needed. 
+
+2. The API in this plugin fetches all pending Change Request approvals assigned directly to a user using the filter approver.email={{email}}. 
+In most ServiceNow environments, this also includes group approvals, because modern workflows use expanded group approvals (each group member gets their own approval record).
+A few legacy or customized instances might still use collapsed group approvals (a single approval record for the whole group). In those cases, modifications to the API filters will be needed.
+
 ## **Appendix**
 
-### API #1 : Get Pending Approval Tasks For A Change Request
+### API #1 : Get Pending Approval Tasks For Change Requests
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/api/now/table/sysapproval_approver?sysparm_query=state=requested^approver.email=<USER_EMAIL>^sysapproval.table=change_request&sysparm_fields=sys_id,approver,sysapproval,state' \
+curl --location 'https://<API_SERVER_DOMAIN>/api/now/table/sysapproval_approver' \
 --header 'Authorization: Bearer <Your_Access_Token>' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json'
 ```
+With the following query parameters:
 
-**Query Parameters:**
+1. sysparm_query: state=requested^approver.email={{email}}^source_table=change_request^ORDERBYDESCsys_created_on
+2. sysparm_fields: sys_id, state, source_table, due_date, expected_start, group, sysapproval.short_description, sysapproval.risk, sysapproval.category, sysapproval.assignment_group, sysapproval.requested_by, sysapproval.opened_by, sysapproval.start_date, sysapproval.end_date, sysapproval.justification, sysapproval.implementation_plan, sysapproval.backout_plan, sysapproval.assigned_to, sysapproval, sysapproval.impact, sysapproval.business_service, sysapproval.number, sysapproval.cmdb_ci, sysapproval.state, sysapproval.priority, sysapproval.description, sysapproval.type
+3. sysparm_display_value: true
+4. sysparm_limit: 100
 
-- `USER_EMAIL` (string) – Email address of the approver to retrieve pending change request approvals from the `sysapproval_approver` table.
 
-### API #2 : Get Change Request Via Approver Task
-
-```bash
-curl --location 'https://<API_SERVER_DOMAIN>/api/now/table/sysapproval_approver/<SYS_ID>' \
---header 'Authorization: Bearer <Your_Access_Token>' \
---header 'Accept: application/json' \
---header 'Content-Type: application/json'
-```
-
-**Path Parameters:**
-
-- `SYS_ID` (string) – Unique ID of the approval record to retrieve.
-
-### **API #3: Approve Or Reject Change Request Via Approver Task**
+### **API #2: Approve Or Reject Change Request**
 
 ```bash
 curl --location --request PATCH 'https://<API_SERVER_DOMAIN>/api/now/table/sysapproval_approver/<SYS_ID>' \
@@ -92,14 +90,15 @@ curl --location --request PATCH 'https://<API_SERVER_DOMAIN>/api/now/table/sysap
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --data '{
-  "state": "{{state}}"
+  "state": "{{state}}",
+  "comments": "{{action_comment}}"
 }'
 ```
+Path Parameters:
 
-**Path Parameters:**
+1. `SYS_ID` (string) – The unique ID of the approval record in the `sysapproval_approver` table used to update the approval status (Approve or Reject).
 
-- `SYS_ID` (string) – The unique ID of the approval record in the `sysapproval_approver` table used to update the approval status (Approve or Reject).
+Request Body Fields:
 
-**Request Body Field:**
-
-- `state` (string) – Updates the state of the approval.
+1. `state` (string) – Updates the state of the approval (approved/rejected)
+2. `comments` (string) - Comment for action
