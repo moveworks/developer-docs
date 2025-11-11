@@ -7,7 +7,7 @@ description: A connector that connects your SailPoint IIQ instance to Moveworks 
   Creator Studio.
 difficulty_level: BEGINNER
 fidelity: GUIDE
-logo: https://yt3.googleusercontent.com/NWmnILK9J0wIIvMovo8CW2ror6OsnxWxNEXr5dIqC-qjpgnBuYTczRGmRBNS8PuwOnOg3alW=s900-c-k-c0x00ffffff-no-rj
+logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/sailpoint-iiq/logo.png
 name: Sailpoint IdentityIQ
 time_in_minutes: 20
 ---

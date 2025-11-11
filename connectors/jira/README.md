@@ -4,14 +4,16 @@ difficulty_level: BEGINNER
 fidelity: GUIDE
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/jira-integration-logo-primary.svg
 name: Jira
-time_in_minutes: 15
+time_in_minutes: 25
 ---
 
 # **Introduction**
 
-Connecting Jira to Agent Studio allows seamless integration of project management and issue tracking capabilities. This guide provides a step-by-step process to connect your Jira instance to Agent Studio in two ways:
+Connecting Jira to Agent Studio allows seamless integration of project management and issue tracking capabilities. This guide provides a step-by-step process to connect your Jira instance to Agent Studio in three ways:
+
 1. [Webhook Connection](https://marketplace.moveworks.com/connectors/jira#Webhook-Connection)
 2. [Basic Auth](https://marketplace.moveworks.com/connectors/jira#Basic-Auth)
+3. [OAuth 2.0 with Authorization Code (User Consent Auth) Setup](https://marketplace.moveworks.com/connectors/jira#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)
 
 # Webhook Connection
 ## What you’re connecting
@@ -193,3 +195,223 @@ Example API: Get All Projects
 ## Congratulations!
 
 You've successfully integrated Jira’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
+# OAuth 2.0 with Authorization Code (User Consent Auth) Setup
+
+To connect **Jira Cloud** to **Agent Studio** using **user-consent-based authentication**, configure the **OAuth 2.0 with Authorization Code** flow.
+
+This ensures Jira users explicitly authorize Moveworks before any API actions are performed on their behalf.
+
+## **Walkthrough**
+
+Follow these steps to set up and validate your connection:
+
+1. Log in to the **Atlassian Developer Console**
+2. Register a new **OAuth 2.0 App**
+3. Configure **Callback URL** and **Scopes**
+4. Integrate with **Agent Studio**
+5. Test the Connector in **Agent Studio**
+
+## **Step 1: Log in to Atlassian Developer Console**
+
+- Go to [developer.atlassian.com/console](https://developer.atlassian.com/console)
+- Log in using your **Atlassian admin account**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2019.png)
+
+## **Step 2: Register a New OAuth 2.0 (3LO) App**
+
+-  Click **“Create” → OAuth 2.0 Integration**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%201.png)
+
+-  Enter your app details:
+    - **App Name:** `{{YOUR_APP_NAME}}`
+-  Click **Create**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%202.png)
+
+## **Step 3: Configure Callback URL and Scopes**
+
+In your newly created app, follow these steps to complete the OAuth 2.0 (3LO) setup:
+
+-  From the **left-side menu**, navigate to the **Authorization** tab.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%203.png)
+
+-  Under **Authorization Type**, select **OAuth 2.0 Integration**.
+-  Click **Add Action** and enter the following **Callback URL** (for example: `https://example.com/auth/oauthCallback`).
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%204.png)
+
+-  Click **Save Changes**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%205.png)
+
+-  After saving, go back and open the **Authorization URL Generator** section.
+    - Add the relevant **API** to this section.
+    
+    ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%206.png)
+    
+-  Next, you need to configure the **Scopes**:
+- In the same **Authorization** section, locate your action and click **Configure**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%207.png)
+
+- Click **Edit Scopes**, then select the scopes you want to add from the available list.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%208.png)
+
+- Configure the scopes by editing your action under the classic scopes:
+
+  - read:jira-work: Allows the app to read issues and projects (e.g., fetch issues, view project details).
+
+  - write:jira-work: Allows the app to create or update issues (e.g., add comments, change statuses).
+
+  - manage:jira-configuration: Allows the app to manage Jira configurations (e.g., update workflows, boards).
+
+  - read:jira-user: Allows the app to read user information (e.g., fetch profiles, assign issues).
+
+- Note: Add more scopes depending on your integration needs. 
+    - Examples: 
+        - offline_access → For refresh tokens 
+        - manage:jira-project → Modify projects
+        - manage:jira-automation → Manage automation rules
+
+- After clicking **Save**, a confirmation message will appear.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%209.png)
+
+- The message indicates that the scopes have been successfully added.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2010.png)
+
+- After saving the configuration, go to **Settings** to view your **Client ID** and **Client Secret**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2011.png)
+
+- Copy and store these credentials securely, as they will be required later while configuring the connector in **Agent Studio**.
+
+## **Step 4: Integrate with Agent Studio**
+
+In **Agent Studio**, create a new connector with the following configuration:
+
+**Connector Name:** `{{Connector_Name}}`
+
+**Display Name:** `{{Display_Name}}`
+
+**Display Description:**
+
+This connector facilitates secure, user-authorized access to the Jira API using User Consent Authentication.
+
+**Base URL:** `https://{JIRA_BASE_URL}`
+
+**Auth Config:** OAuth2
+
+**OAuth2 Grant Type:** Authorization Code Grant
+
+**Authorization URL:** `https://{JIRA_AUTH_DOMAIN}/authorize`
+
+**Client ID:** `{{CLIENT_ID}}`
+
+**Client Secret:** `{{CLIENT_SECRET}}`
+
+**Authorization Code Grant Scope:** `read:jira-work write:jira-work offline_access read:jira-user`
+
+**Authorization Request Query Parameters:**
+
+- `audience`: `api.atlassian.com`
+
+**OAuth2 Token URL:** `https://{JIRA_AUTH_DOMAIN}/oauth/token`
+
+**OAuth2 Client Authentication:** OAuth 2.0 with Request Body
+
+**OAuth2 Custom OAuth Response Type:** JSON
+
+**Additional Headers:** `Content-Type: application/json`
+
+**Header Auth Key:** `Authorization`
+
+**Header Auth Value Pattern:** `Bearer %s`
+
+**Custom Grant Type:** `authorization_code`
+
+Once all fields are completed, click **Save** to create and store your connector configuration.
+
+## **Step 5: Test the Connector in Agent Studio**
+
+Set up your API. You can read more about configuring and testing API actions from our **API Configuration Reference**.
+
+Use the following API to verify that the **User Consent Authentication (UCA)** setup for **Jira Cloud** is functioning correctly.
+
+This call helps confirm that authentication is working as expected and that the data is being fetched at the **user level only** — based on the logged-in user’s access permissions in **Jira**.
+
+```bash
+curl --location 'https://<YOUR_INSTANCE_DOMAIN>/oauth/token/accessible-resources' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer {{ACCESS_TOKEN}}'
+```
+
+**API Endpoint Path:**
+
+`/oauth/token/accessible-resources`
+
+**Method:**
+
+`GET`
+
+**Headers:**
+
+- `Accept`: `application/json`
+
+**Your Instance Configuration**
+
+All Jira API endpoints in this plugin use **`{{YOUR_INSTANCE_DOMAIN}}`** as a placeholder.
+
+Follow the steps below to update it correctly after installation:
+
+1. Go to your **Jira Cloud** instance settings.
+2. Locate your **API base domain** (this will be your organization’s Jira Cloud domain).
+3. Replace **`{{YOUR INSTANCE DOMAIN}}`** with your actual Jira Cloud API domain in all **action definitions** within the connector.
+4. Save your configuration to ensure that all API requests are routed to your Jira Cloud instance.
+
+### **Test Your Setup:**
+
+1. In **Agent Studio**, create and run a new **Action**.
+2. Import the above **cURL command**.
+3. Add the **Jira User Consent Auth Connector**.
+4. Click **Test → Generate New Access Token**.
+    - Ensure you are acting on behalf of the **intended Jira user** before generating the token.
+    - The returned data will reflect only what that user has permission to access in **Jira Cloud**.
+    
+    ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/183e028d-82b8-4293-a5e5-cb89b33a8913.png)
+    
+
+### **Establish a Connection Between Your UCA Connector and Agent Studio**
+
+- Integrate your **UCA Connector** with **Agent Studio**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/94a73570-6fe1-4702-a726-ee4cd63f5348.png)
+
+- Next, you will be redirected to the **Atlassian login page**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2013.png)
+
+- If you log in as an **admin**, you’ll have access to all project and issue data, while a **regular user** will only see data that they have permissions for
+- After logging in successfully, click **Accept** to generate the **authorization code**.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2014.png)
+
+- Once you click **Accept**, you will receive a notification from the **Moveworks bot** confirming that it has access to perform actions on your behalf.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2015.png)
+
+### **Verify UCA Functionality**
+
+- Click **Test** to verify that **User Consent Authentication (UCA)** is working correctly.
+- The action (for example, *Get Accessible Resources*) should use the logged-in user’s token to return only the Jira Cloud resources accessible to that user — confirming that **user-specific consent and permissions** are configured correctly.
+
+![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2016.png)
+
+# **Congratulations!**
+
+You’ve successfully integrated **Jira Cloud** with **Agent Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Jira Cloud data based on user consent within your Atlassian instance.

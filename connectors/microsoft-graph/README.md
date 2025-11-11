@@ -6,7 +6,7 @@ accreditations:
 availability: VALIDATED
 difficulty_level: INTERMEDIATE
 fidelity: GUIDE
-logo: https://raw.githubusercontent.com/moveworks/developer-docs/main/authentication-guides/microsoft-graph-api/logo.png
+logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/microsoft-graph/logo.png
 name: Microsoft Graph
 time_in_minutes: 30
 ---

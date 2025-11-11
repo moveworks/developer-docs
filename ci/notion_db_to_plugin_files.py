@@ -288,9 +288,21 @@ def validate_record(record: Record):
         validate_file_consistent_with_notion(record)
 
     elif record.fidelity in [Fidelity.IDEA]:
+        # For connectors, preserve the existing logo.png before clearing
+        existing_logo = None
+        if record.content_type == ContentTypes.CONNECTOR and os.path.exists(record.img_path):
+            with open(record.img_path, "rb") as f:
+                existing_logo = f.read()
+
         clear_directory(record.record_directory)
         os.makedirs(record.record_directory)
         open(record.record_readme, "w+").write(record.render_template())
+
+        # Restore the logo.png for connectors if it existed
+        if existing_logo:
+            with open(record.img_path, "wb") as f:
+                f.write(existing_logo)
+            print(f"Preserved logo.png for {record.slug}")
 
     elif record.fidelity in [Fidelity.IMPOSSIBLE]:
         clear_directory(record.record_directory)
