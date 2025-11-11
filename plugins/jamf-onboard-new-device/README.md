@@ -131,8 +131,8 @@ curl --location 'https://<YOUR_INSTANCE>.jamfcloud.com/JSSResource/computerinvit
 - `{{Serial_Number}}`  - Serial number of the device
 - `{{Username}}`  - Username of the assigned user
 - `{{expiration_date}}`  - Expiration date/time of the invitation (e.g., 2025-10-31 23:59:59)
-- `{{username}}`  - username for enrollment
-- `{{password}}`  - password for enrollment
+ - `{{username}}`  - username for enrollment (The values are **not actually used during the enrollment process**. You can safely provide **mock data).**
+- `{{password}}`  - password for enrollment (The values are **not actually used during the enrollment process**. You can safely provide **mock data).**
 - `{{site_name}}` - Site Name (e.g., None)
 - `{{site_id}}` - Site ID (e.g., -1)
 
