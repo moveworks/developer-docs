@@ -207,7 +207,7 @@ Follow these steps to set up and validate your connection:
 
 1. Log in to the **Atlassian Developer Console**
 2. Register a new **OAuth 2.0 App**
-3. Configure **Callback URL** and **Scopes**
+3. Configure **Callback URL**,**Scopes** and **Distribution Settings**
 4. Integrate with **Agent Studio**
 5. Test the Connector in **Agent Studio**
 
@@ -290,6 +290,29 @@ In your newly created app, follow these steps to complete the OAuth 2.0 (3LO) se
 ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2011.png)
 
 - Copy and store these credentials securely, as they will be required later while configuring the connector in **Agent Studio**.
+
+ **Make the App Public (Distribution Settings):**
+  - By default, your OAuth 2.0 app is set to Private, meaning only you (the creator) can authorize and use it.
+- To make the app accessible to other users, follow these steps:
+
+  - From the left-side menu, go to the Distribution tab in your app’s settings.
+  - Click Edit distribution controls.
+
+ ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%20281.png)
+
+  - Under Sharing, change the setting from Not sharing to Sharing.
+
+- Fill in the required fields under Vendor & Security Details:
+  - Vendor name: Use your own or your organization’s name.
+  - Privacy policy: https://example.com/privacy
+  - Terms of service: https://example.com/terms
+  - Customer support contact: john@gmail.com
+  - Personal Data Declaration: Select No if you don’t store user data, otherwise select Yes.
+  - Click Save changes.
+
+ ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%20282.png)
+
+- Once saved, your app will become Public, allowing others to install and authorize it.
 
 ## **Step 4: Integrate with Agent Studio**
 
