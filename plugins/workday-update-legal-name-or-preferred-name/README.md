@@ -1,0 +1,17 @@
+---
+availability: IDEA
+description: A plugin that allows employees to update their Legal Name or Preferred
+  Name in Workday via the Moveworks AI Assistant. The Assistant helps users choose
+  which name to update and securely updates Workday, with HR approval required for
+  legal name updates, and direct updates allowed for preferred names.
+domain:
+- HR - Employee Records
+fidelity: IDEA
+name: Update Legal Name or Preferred Name
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22update+my+name+in+workday%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Understanding+the+request+to+update+a+name+in+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EWorkday%3C%2Fb%3E.%22%7D%5D%7D%2C%7B%22richText%22%3A%22Would+you+like+to+update+your+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ELegal+Name%3C%2Fb%3E+or+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EPreferred+Name%3C%2Fb%3E%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+want+to+change+my+legal+name+to+Ashtyn+Lincoln%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Parsing+the+new+name+and+preparing+for+confirmation+of+a+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ELegal+Name%3C%2Fb%3E+update+in+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EWorkday%3C%2Fb%3E.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EOkay%2C+I+can+update+your+Legal+Name+in+%3Cb%3EWorkday%3C%2Fb%3E.%3C%2Fp%3E%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cb%3ECurrent+Legal+Name%3C%2Fb%3E%3A+Ashtyn+Smith%3C%2Fli%3E%3Cli%3E%3Cb%3ENew+Legal+Name%3C%2Fb%3E%3A+Ashtyn+Lincoln%3C%2Fli%3E%3C%2Ful%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EPlease+note+that+legal+name+updates+require+HR+review+and+approval+before+changes+are+applied+in+Workday.%3C%2Fp%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cb%3EDoes+this+look+right%3F%3C%2Fb%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Confirm%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Yes%2C+that%27s+correct.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Submitting+the+legal+name+update+request+for+Ashtyn+Lincoln+to+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EWorkday%3C%2Fb%3E+for+HR+approval.%22%7D%5D%7D%2C%7B%22richText%22%3A%22Your+legal+name+update+request+for+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EAshtyn+Lincoln%3C%2Fb%3E+has+been+sent+to+HR+for+review+and+approval.+You%27ll+be+notified+once+it%27s+processed.%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22Legal+Name+Change+Request%22%7D%5D%7D%5D%7D%5D%7D
+solution_tags:
+- HR - Employee Records
+systems:
+- workday
+
+---
