@@ -37,7 +37,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**SailPoint iNow Connector Guide**](https://marketplace.moveworks.com/connectors/sailpoint-inow#how-to-implement) for detailed instructions. 
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**SailPoint iNow Connector Guide**](https://marketplace.moveworks.com/connectors/sailpoint-inow#how-to-implement) for detailed instructions (setup the connector for **User Consent Authentication** - Oauth 2.0 with Authorization Code Grant). 
 
 As an admin, ensure that the following scopes are enabled for your user to successfully install and use this plugin.
 
@@ -45,7 +45,7 @@ As an admin, ensure that the following scopes are enabled for your user to succe
 
 - ****`idn:sources:read`
 
-**Note:** These scopes allow the plugin to read user activity and application details, so ensure the connector has only these scopes to minimize security risks.
+**Note:** This plugin requires User Consent Authentication (Oauth 2.0 with Authorization Code Grant). These scopes allow the plugin to read user activity and application details, so ensure the connector has only these scopes to minimize security risks.
 
 **Your Instance Configuration:**
 
