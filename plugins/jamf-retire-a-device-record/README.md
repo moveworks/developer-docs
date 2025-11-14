@@ -90,28 +90,54 @@ You can filter by **device id**, **device name**, **device model name**, **usern
     - `general.reportDate>"2025-10-01T00:00:00.000Z"` → Returns devices with a report date later than that timestamp.
 - `section` : Specifies the broad data categories to include in the response (for example: GENERAL, HARDWARE,USER_AND_LOCATION).
     
-    ### API #2: Update Lifecycle State
-    
-    ```bash
-    curl --location --request PUT 'https://<YOUR_INSTANCE>/JSSResource/computers/id/{{device_id}}' \
-    --header 'Content-Type: application/xml' \
-    --header 'Accept: application/xml' \
-    --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
-    --data '<computer>
-        <general>
-          <remote_management>
+### API #2: Update Lifecycle Status
+
+```bash
+curl --location --request PUT 'https://<YOUR_INSTANCE>/JSSResource/computers/id/<device_id>' \
+--header 'Content-Type: application/xml' \
+--header 'Accept: application/xml' \
+--header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
+--data '
+<computer>
+    <general>
+        <remote_management>
             <managed>false</managed>
-          </remote_management>
-        </general>
-        <extension_attributes>
-          <extension_attribute>
+        </remote_management>
+    </general>
+    <extension_attributes>
+        <extension_attribute>
             <name>Lifecycle Status</name>
             <value>Retired</value>
-          </extension_attribute>
-        </extension_attributes>
-      </computer>'
-    ```
+        </extension_attribute>
+    </extension_attributes>
+</computer>'
+```
+
+**Query Parameters:**
+
+`device_id` : (string) - Updates the life cycle status.
+
+**Request Body Parameters:**
+
+`computer` – Root object representing the computer record that will be updated.
+
+`general` – General information section of the computer object (parent container).
+
+`remote_management` – Remote Management configuration block containing management status.
+
+`managed` – Indicates whether the device is managed by Jamf.
+
+- Example: `false` (marks the computer as unmanaged).
+
+`extension_attributes` – Parent container for all extension attributes associated with the device.
+
+`extension_attribute` – A single extension attribute entry that you want to modify.
+
+`name` – Name of the Extension Attribute you are updating.
+
+- Example: `Lifecycle Status`.
+
+`value` – New value that should be assigned to the Extension Attribute.
+
+- Example: `Terminated`.
     
-    **Query Parameters:**
-    
-    `device_id` : (string) - Updates the life cycle state.
