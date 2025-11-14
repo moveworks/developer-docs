@@ -52,31 +52,19 @@ Once the connector is successfully configured, follow our [**plugin installatio
 
 ## **Appendix**
 
-### **API #1 : Search User By User Name**
+### **API #1 : Search User By User filter**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/JSSResource/users/name/{{username}}' \
+curl --location 'https://<YOUR_INSTANCE>/JSSResource/users/name/{{user_filter}}' \
 --header 'Authorization: Bearer {{access_token}}' \
 --header 'Accept: application/json'
 ```
 
 **Query Parameters:**
 
-**`username`** (string) – The full name of the user to search for in Jamf.
+**`user_filter` (string)** – The value used to search for a user in Jamf; can be either a username or an email address.
 
-### **API #2 : Search User By User Email**
-
-```bash
-curl --location 'https://<YOUR_INSTANCE>/JSSResource/users/name/{{user_email}}' \
---header 'Authorization: Bearer {{access_token}}' \
---header 'Accept: application/json'
-```
-
-**Query Parameters:**
-
-**`user_email`** (string) – The Email address of the user to search for in Jamf.
-
-### **API #3 : Get Unassigned Computer Inventory**
+### **API #2  : Get Unassigned Computer Inventory**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/v2/computers-inventory?section={{section}}&filter={{filter}}' \
@@ -89,7 +77,7 @@ curl --location 'https://<YOUR_INSTANCE>/v2/computers-inventory?section={{sectio
 - **`section`** (string) – Section of the inventory to return, e.g., `USER_AND_LOCATION`.
 - **`filter`** (string) – Filter expression to limit results, e.g., `(userAndLocation.username==" " or userAndLocation.username==null)` for unassigned devices.
 
-### **API #4 : Assign User To A Device**
+### **API #3: Assign User To A Device**
 
 ```bash
 curl --location --request PATCH 'https://<YOUR_INSTANCE>/api/v1/computers-inventory-detail/{{computer_id}}' \
