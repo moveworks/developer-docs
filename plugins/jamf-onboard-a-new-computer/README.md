@@ -19,7 +19,7 @@ systems:
 ---
 ## **Introduction**
 
-The **“Onboard a New Computer”** plugin helps IT admins easily add new computers to Jamf through the Moveworks AI Assistant. It lets you register a computer by entering details such as the computer name, serial number, owner email, and department—all in one step. The plugin automatically creates an enrollment invitation, assigns ownership, applies initial policies, and ensures the computer is properly configured and compliant.
+The **“Onboard a New Computer”** plugin helps IT admins easily onboard new computers to Jamf through the Moveworks AI Assistant. The plugin automatically creates an enrollment invitation, assigns ownership, applies initial policies, and ensures the computer is properly configured and compliant.
 
 This guide will show you how to set up and customize the plugin in Agent Studio in just a few minutes.
 
