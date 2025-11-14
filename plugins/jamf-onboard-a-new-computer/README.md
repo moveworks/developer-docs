@@ -71,14 +71,34 @@ Once the connector is successfully configured, follow our [**plugin installatio
 **Query Parameters:**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/api/v2/computers-inventory?section=USER_AND_LOCATION,HARDWARE,GENERAL&filter=general.remoteManagement.managed==false and userAndLocation.username==null or userAndLocation.username==''' \
+curl --location '[https://<YOUR_INSTANCE>/api/v2/computers-inventory?](https://moveworksnfr.jamfcloud.com/api/v2/computers-inventory?filter=general.remoteManagement.managed%3D%3Dfalse%20and%20userAndLocation.username%3D%3Dnull%20or%20userAndLocation.username%3D%3D%27%27)section=USER_AND_LOCATION,HARDWARE,GENERAL&filter=general.remoteManagement.managed==false and userAndLocation.username==null or userAndLocation.username==''' \
 --header 'Accept: application/json' \
---header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
+--header 'Authorization: Bearer <YOUR_BEARER>' \
 ```
 
 • **`section`** : Specifies the broad data categories to include in the response (for example: GENERAL, HARDWARE,USER_AND_LOCATION).
 
-### API #2: Generate Enrollment Invitation
+### API #2: Get Users By Name or Email
+
+- This action is used to retrieve a user based on their username or email.
+
+```bash
+curl --location 'https://<YOUR_INSTANCE>/JSSResource/users/{{filter_query}}' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
+```
+
+**Path Parameters:**
+
+**$filter_query : (string)** – Filter users by specific property values.
+
+You can filter by **user name** or **user email**.
+
+- Example filters:
+    - `name/username` → Returns the user with that exact username (eg., name/john).
+    - `email/useremail` → Returns the user with that specific useremail (eg., email/john@example.com).
+
+### API #3: Generate Enrollment Invitation
 
 - This action generates a computer enrollment invitation.
 
@@ -137,7 +157,7 @@ curl --location 'https://<YOUR_INSTANCE>.jamfcloud.com/JSSResource/computerinvit
 
 **Note**: In Jamf Pro, specifying `0` in the invitation endpoint is the standard way to **create a new computer invitation**.
 
-### API #3: Get Jamf Instance URL
+### API #4: Get Jamf Instance URL
 
 - This action is used to retrieve the Jamf instance URL and pass it to generate the enrollment link.
 
