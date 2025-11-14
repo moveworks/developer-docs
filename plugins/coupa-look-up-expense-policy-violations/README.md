@@ -74,7 +74,7 @@ To find your instance name:
 
 1. Log in to your Coupa account.
 2. Check the URL in your browser — the instance name appears before `.coupacloud.com`
-    - e.g., [https://your_instance.coupacloud.com](https://your_instance.jamfcloud.com/) → instance name = `{{YOUR_INSTANCE}}`
+    - e.g., [https://your_instance.coupacloud.com](https://your_instance.coupacloud.com/) → instance name = `{{YOUR_INSTANCE}}`
 
 Make sure to update this across all actions that reference the Coupa API.
 
