@@ -107,21 +107,14 @@ curl --location --request PATCH 'https://<YOUR_INSTANCE>/api/v1/computers-invent
 - **`position`** (string) – Job title or role of the new owner.
 - **`phone`** (string) – Contact number of the new owner.
 
-### **User Identification in Jamf**
 
-In Jamf, **Username** is the only mandatory user field — **Full Name** is optional and cannot be used for filtering.
+**Some important considerations:**
 
-When using the **Moveworks chatbot** for this plugin:
-
+- In Jamf, **Username** is the only mandatory user field — **Full Name** is optional and cannot be used for filtering.
 - If the **Username** is provided, it will be used for an **exact search** via the Jamf Users API (`/JSSResource/users/name/{{username}}`).
 - If the **Username** is not available, the user can provide their **Email**, which will also be used for an **exact search** via the same API.
 - Searches based on **Full Name** are **not supported**.
-
-This ensures the bot can reliably identify users using either **Username** or **Email**.
-
-### **Important Notes**
-
 - We can **only assign a device to a user**, not assign a user to a device.
 - This process **does not update the extension attributes** for a device.
-- Instead, it **updates the “User and Location” section** of a device, which is the **standard approach** in Jamf.
+- Instead, it updates the **User and Location** section of a device, which is the recommended standard approach in Jamf.
 - Other related user details and metadata are also updated accordingly to maintain consistency.
