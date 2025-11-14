@@ -1,22 +1,22 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
 description: A plugin that allows Coupa administrators and finance approvers to identify,
   summarize, and review expense policy breaches directly through the Moveworks AI
   Assistant.
+difficulty_level: BEGINNER
 domain:
 - Finance - Other
 - Finance - Expense Management
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: 5d2b4884-0057-4fb6-bae9-cb3e3613271c
 name: Look Up Expense Policy Violations
-difficulty_level: BEGINNER
-time_in_minutes: 15
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3Elist+expense+policy+violations+for+last+month%2C+I+want+to+view+Duplicate+Receipt+violations+since+there+has+been+a+surge+recently%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22%3Cp%3ERetrieving+expense+reports+with+%27Duplicate+Receipt%27+violations+in+%3Cstrong%3ECoupa%3C%2Fstrong%3E+for+the+last+month...%3C%2Fp%3E%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESuccessfully+retrieved+7+expense+policy+violations+for+the+last+month.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I%27ve+confirmed+you+want+to+see+%3Cstrong%3EDuplicate+Receipt%3C%2Fstrong%3E+violations+from+last+month+%28January+1+-+January+31%2C+2024%29.%3C%2Fp%3E%3Cp%3EHere%27s+a+summary+of+the+violations%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3E%3Cstrong%3ETotal+Violations+Found%3C%2Fstrong%3E%3A+7%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EEmployees+with+Violations%3C%2Fstrong%3E%3A+3%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3ETotal+Amount+Flagged%3C%2Fstrong%3E%3A+%24525.00%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EBelow+are+some+of+the+recent+violations%3A%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00123+%28Duplicate+Receipt%29%22%7D%2C%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00130+%28Duplicate+Receipt%29%22%7D%2C%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00142+%28Duplicate+Receipt%29%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EWould+you+like+to+view+more+details+for+any+of+these+expense+violations%3F%3C%2Fp%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - Finance - Expense Management
 - Finance - Other
 systems:
 - coupa
-
+time_in_minutes: 15
 ---
 
 ## Introduction
