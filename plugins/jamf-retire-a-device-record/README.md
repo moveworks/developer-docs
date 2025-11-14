@@ -114,4 +114,4 @@ You can filter by **device id**, **device name**, **device model name**, **usern
     
     **Query Parameters:**
     
-    `device_id` : (string) - Updates the life cycle state.
+    `device_id` : (string) - Updates the lifecycle state.
