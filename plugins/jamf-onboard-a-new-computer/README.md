@@ -19,7 +19,7 @@ systems:
 ---
 ## **Introduction**
 
-The **“Onboard a New Computer”** plugin helps IT admins easily onboard new computers to Jamf through the Moveworks AI Assistant. The plugin automatically creates an enrollment invitation, assigns ownership, applies initial policies, and ensures the computer is properly configured and compliant.
+The **“Onboard a New Computer”** plugin enables IT admins to seamlessly onboard new computers to Jamf using the Moveworks AI Assistant. This automation streamlines the process by creating an enrollment invitation for the new computer.
 
 This guide will show you how to set up and customize the plugin in Agent Studio in just a few minutes.
 
@@ -64,7 +64,7 @@ Once the connector is successfully configured, follow our [**plugin installatio
 
 ## **Appendix**
 
-### API #1: Get Unmanaged and Unassigned Computer Device
+### API #1: Get Unmanaged and Unassigned Computer Devices
 
 - This action is used to retrieve the list of unmanaged and unassigned computers.
 
@@ -98,7 +98,7 @@ You can filter by **user name** or **user email**.
     - `name/username` → Returns the user with that exact user name (eg., name/john).
     - `email/useremail` → Returns the user with that specific user email (eg., email/john@example.com).
 
-### API #3: Generate Enrollment Invitation
+### API #3: Generate Enrollment Invitation for a Computer
 
 - This action generates a computer enrollment invitation for an administrator (not a user).
 
