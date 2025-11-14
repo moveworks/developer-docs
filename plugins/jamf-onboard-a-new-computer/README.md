@@ -95,12 +95,12 @@ curl --location 'https://<YOUR_INSTANCE>/JSSResource/users/{{filter_query}}' \
 You can filter by **user name** or **user email**.
 
 - Example filters:
-    - `name/username` → Returns the user with that exact username (eg., name/john).
-    - `email/useremail` → Returns the user with that specific useremail (eg., email/john@example.com).
+    - `name/username` → Returns the user with that exact user name (eg., name/john).
+    - `email/useremail` → Returns the user with that specific user email (eg., email/john@example.com).
 
 ### API #3: Generate Enrollment Invitation
 
-- This action generates a computer enrollment invitation.
+- This action generates a computer enrollment invitation for an administrator (not a user).
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/JSSResource/computerinvitations/invitation/0' \
@@ -150,8 +150,8 @@ curl --location 'https://<YOUR_INSTANCE>/JSSResource/computerinvitations/invitat
 - `{{Serial_Number}}`  - Serial number of the device
 - `{{Username}}`  - Username of the assigned user
 - `{{expiration_date}}`  - Expiration date/time of the invitation (e.g., 2025-10-31 23:59:59)
-- `{{username}}`  - username for enrollment (The values are **not actually used during the enrollment process**. You can safely provide **mock data).**
-- `{{password}}`  - password for enrollment (The values are **not actually used during the enrollment process**. You can safely provide **mock data).**
+- `{{username}}`  - username for enrollment (not actually used for enrollment, you can safely provide mock data)
+- `{{password}}`  - password for enrollment (not actually used for enrollment, you can safely provide mock data)
 - `{{site_name}}` - Site Name (e.g., None)
 - `{{site_id}}` - Site ID (e.g., -1)
 
@@ -159,8 +159,8 @@ curl --location 'https://<YOUR_INSTANCE>/JSSResource/computerinvitations/invitat
 
 ### API #4: Get Jamf Instance URL
 
-- This action is used to retrieve the Jamf instance URL and pass it to generate the enrollment link.
-
+- This action retrieves the Jamf instance URL for your tenant and uses it to generate the enrollment link for a computer.
+  
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/api/v1/jamf-pro-server-url' \
 --header 'Accept: application/json' \
