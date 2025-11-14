@@ -6,9 +6,11 @@ description: A plugin that allows Coupa administrators and finance approvers to 
 domain:
 - Finance - Other
 - Finance - Expense Management
-fidelity: IDEA
+fidelity: GUIDE
 name: Look Up Expense Policy Violations
-purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22list+expense+policy+violations%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22Validating+user+permissions+for+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ECoupa%3C%2Fb%3E...%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22User+has+required+%27finance+approver%27+role+in+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ECoupa%3C%2Fb%3E.+Proceeding+with+data+collection.%22%7D%2C%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22Searching+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ECoupa%3C%2Fb%3E+for+available+policy+types...%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Found+3+policy+types.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EI+can+help+you+with+that.+To+narrow+down+the+results%2C+please+tell+me+the+%3Cb%3Etime+period%3C%2Fb%3E%2C+%3Cb%3Epolicy+type%3C%2Fb%3E%2C+and+%3Cb%3Edepartment+name%3C%2Fb%3E+you%27re+interested+in.%3C%2Fp%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EFor+the+%3Cb%3Etime+period%3C%2Fb%3E%2C+you+can+say+%27last+month%27%2C+%27this+quarter%27%2C+or+%27specific+dates%27.%3C%2Fp%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EFor+the+%3Cb%3Epolicy+type%3C%2Fb%3E%2C+please+choose+from%3A%3C%2Fp%3E%3Col+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3EDuplicate+Receipt%3C%2Fli%3E%3Cli%3EOver-Limit+Expense%3C%2Fli%3E%3Cli%3EMissing+Receipt%3C%2Fli%3E%3C%2Fol%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EFor+the+%3Cb%3Edepartment+name%3C%2Fb%3E%2C+you+can+type+a+full+or+partial+name+%28e.g.%2C+%27Marketing%27%29.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Show+me+for+last+month%2C+policy+type+Duplicate+Receipt%2C+and+department+Marketing.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Interpreting+%27last+month%27+as+the+period+from+the+1st+of+the+previous+month+to+the+last+day+of+the+previous+month.%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Identified+%27Duplicate+Receipt%27+as+the+selected+policy+type.%22%7D%2C%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22Searching+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ECoupa%3C%2Fb%3E+for+departments+matching+%27Marketing%27...%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Found+multiple+departments+matching+%27Marketing%27.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EMultiple+departments+found+for+%27Marketing%27.+Please+select+one%3A%3C%2Fp%3E%3Col%3E%3Cli%3E%3Cp%3EMarketing+-+US%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3EMarketing+-+EMEA%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3EMarketing+-+APAC%3C%2Fp%3E%3C%2Fli%3E%3C%2Fol%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Marketing+-+US%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Confirmed+%27Marketing+-+US%27+as+the+selected+department.%22%7D%2C%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22Retrieving+expense+reports+with+%27Duplicate+Receipt%27+violations+for+the+%27Marketing+-+US%27+department+in+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ECoupa%3C%2Fb%3E+for+the+last+month...%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Successfully+retrieved+7+expense+policy+violations+for+the+Marketing+-+US+department+last+month.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EOkay%2C+I%27ve+confirmed+you+want+to+see+%3Cb%3EDuplicate+Receipt%3C%2Fb%3E+violations+for+the+%3Cb%3EMarketing+-+US%3C%2Fb%3E+department+from+last+month+%28January+1+-+January+31%2C+2024%29.%3C%2Fp%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EHere%27s+a+summary+of+the+violations%3A%3C%2Fp%3E%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cb%3ETotal+Violations+Found%3C%2Fb%3E%3A+7%3C%2Fli%3E%3Cli%3E%3Cb%3EEmployees+with+Violations%3C%2Fb%3E%3A+3%3C%2Fli%3E%3Cli%3E%3Cb%3ETotal+Amount+Flagged%3C%2Fb%3E%3A+%24525.00%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EBelow+are+some+of+the+recent+violations%3A%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00123+%28Duplicate+Receipt%29%22%7D%2C%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00130+%28Duplicate+Receipt%29%22%7D%2C%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00142+%28Duplicate+Receipt%29%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EWould+you+like+to+see+a+detailed+list%2C+or+filter+further+by+employee%3F%3C%2Fp%3E%22%7D%5D%7D%5D%7D
+difficulty_level: BEGINNER
+time_in_minutes: 15
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3Elist+expense+policy+violations+for+last+month%2C+I+want+to+view+Duplicate+Receipt+violations+since+there+has+been+a+surge+recently%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22%3Cp%3ERetrieving+expense+reports+with+%27Duplicate+Receipt%27+violations+in+%3Cstrong%3ECoupa%3C%2Fstrong%3E+for+the+last+month...%3C%2Fp%3E%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESuccessfully+retrieved+7+expense+policy+violations+for+the+last+month.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I%27ve+confirmed+you+want+to+see+%3Cstrong%3EDuplicate+Receipt%3C%2Fstrong%3E+violations+from+last+month+%28January+1+-+January+31%2C+2024%29.%3C%2Fp%3E%3Cp%3EHere%27s+a+summary+of+the+violations%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3E%3Cstrong%3ETotal+Violations+Found%3C%2Fstrong%3E%3A+7%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EEmployees+with+Violations%3C%2Fstrong%3E%3A+3%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3ETotal+Amount+Flagged%3C%2Fstrong%3E%3A+%24525.00%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EBelow+are+some+of+the+recent+violations%3A%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00123+%28Duplicate+Receipt%29%22%7D%2C%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00130+%28Duplicate+Receipt%29%22%7D%2C%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00142+%28Duplicate+Receipt%29%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EWould+you+like+to+view+more+details+for+any+of+these+expense+violations%3F%3C%2Fp%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - Finance - Expense Management
 - Finance - Other
@@ -16,3 +18,83 @@ systems:
 - coupa
 
 ---
+
+## Introduction
+
+The “**Look Up Expense Policy Violations**” plugin enables Coupa administrators and finance approvers to identify and review expense policy breaches directly through the Moveworks AI Assistant. It helps streamline compliance by detecting anomalies such as duplicate receipts, over-limit claims, and missing receipts.
+
+This guide will help you install and configure the plugin in **Agent Studio** within minutes. Let’s get started!
+
+## **Prerequisites**
+
+- Access to Agent Studio
+
+## **What are we building?**
+
+### Agent Design
+
+This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3Elist+expense+policy+violations+for+last+month%2C+I+want+to+view+Duplicate+Receipt+violations+since+there+has+been+a+surge+recently%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22pending%22%2C%22richText%22%3A%22%3Cp%3ERetrieving+expense+reports+with+%27Duplicate+Receipt%27+violations+in+%3Cstrong%3ECoupa%3C%2Fstrong%3E+for+the+last+month...%3C%2Fp%3E%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESuccessfully+retrieved+7+expense+policy+violations+for+the+last+month.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I%27ve+confirmed+you+want+to+see+%3Cstrong%3EDuplicate+Receipt%3C%2Fstrong%3E+violations+from+last+month+%28January+1+-+January+31%2C+2024%29.%3C%2Fp%3E%3Cp%3EHere%27s+a+summary+of+the+violations%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3E%3Cstrong%3ETotal+Violations+Found%3C%2Fstrong%3E%3A+7%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EEmployees+with+Violations%3C%2Fstrong%3E%3A+3%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3ETotal+Amount+Flagged%3C%2Fstrong%3E%3A+%24525.00%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EBelow+are+some+of+the+recent+violations%3A%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00123+%28Duplicate+Receipt%29%22%7D%2C%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00130+%28Duplicate+Receipt%29%22%7D%2C%7B%22connectorName%22%3A%22coupa%22%2C%22citationTitle%22%3A%22Expense+Report+ER-2024-00142+%28Duplicate+Receipt%29%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EWould+you+like+to+view+more+details+for+any+of+these+expense+violations%3F%3C%2Fp%3E%22%7D%5D%7D%5D%7D) shows the experience we are going to build.
+
+## **Installation Steps**
+
+While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**Coupa Connector Guide**](https://marketplace.moveworks.com/connectors/coupa#how-to-implement) for detailed instructions. Be sure to follow the **User Consent Authentication setup** guide to ensure proper user-level access control for expense policy violations. Once completed, proceed to install the plugin and complete the setup efficiently.
+
+### **User Consent Authentication Benefits:**
+
+With **User Consent Authentication (UCA)** enabled for Coupa, users can securely connect their Coupa accounts to Moveworks—allowing the bot to retrieve and analyze expense reports and policy violations using each user’s own Coupa permissions.
+
+This ensures that all expense data accessed or displayed by the bot complies with user-specific access rights and Coupa’s data security standards.
+
+**Benefits:**
+
+- **Enhanced security** – No shared credentials or admin tokens.
+- **User-level access** – Each user can only view and analyze expense reports they have access to in Coupa.
+- **Seamless experience** – Users authenticate once through Coupa and can interact naturally within Moveworks.
+- **Compliance-friendly** – All actions respect Coupa’s role-based permissions and audit policies.
+
+**Required Permissions**
+
+Ensure that the **Coupa Integration User** (or the authenticated user via UCA) has the following Role permissions in Coupa
+
+- `Expense User` ****– View Expense Reports
+
+If your organization uses **custom expense policy configurations**, ensure equivalent permissions are applied to access the relevant reports and violation data.
+
+**Required Scopes:**
+
+The following API scopes must be granted for the Coupa Integration or UCA connection:
+
+- `core.expense.read` - Allows to view expenses
+
+**Your Instance Configuration:**
+
+All Coupa API endpoints in this plugin use `{{YOUR_INSTANCE}}` as a placeholder. After installation, replace `{{YOUR_INSTANCE}}` in the action definitions with your actual Coupa instance name.
+
+To find your instance name:
+
+1. Log in to your Coupa account.
+2. Check the URL in your browser — the instance name appears before `.coupacloud.com`
+    - e.g., [https://your_instance.coupacloud.com](https://your_instance.coupacloud.com/) → instance name = `{{YOUR_INSTANCE}}`
+
+Make sure to update this across all actions that reference the Coupa API.
+
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on installing and activating the plugin in Agent Studio.
+
+## **Appendix**
+
+### **API #1: Get Expense Reports with Policy Violations**
+
+```bash
+curl --location 'https://<YOUR_INSTANCE>/api/expense_reports?created-at[gt_or_eq]={{START_DATE}}T00:00:00Z&created-at[lt_or_eq]={{END_DATE}}T23:59:59Z&fields=["id","title","total","audit-score","status","updated-at","created-at",{"expense_lines":["id","description","amount","expense-date",{"expense_category":["name"]}]},{"expensed_by":["id","firstname","lastname"]},{"expense_policy_violations":["id","limit-exceeded","receipt-missing"]},{"expense_violations":["id","limit-exceeded","receipt-missing",{"violator":["id","expense-report-id","description","amount","expense-date",{"expense_category":["name"]}]},{"violable":["id","expense-report-id","description","amount","expense-date",{"expense_category":["name"]}]}]}]&limit=100' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>' \
+--header 'Accept: application/json'
+```
+
+**Query Parameters:**
+
+- `START_DATE` (string) - Used to specify the start date for retrieving expense reports.
+    - Mapped to `created-at[gt_or_eq]` → Returns reports created **on or after** this date.
+- `END_DATE` (string) - Used to specify the end date for retrieving expense reports.
+    - Mapped to `created-at[lt_or_eq]` → Returns reports created **on or before** this date.
+- `fields` (array) – Specifies attributes and related entities to include (e.g., expense lines, violations, submitter).
+- `limit` (integer) – Maximum number of records to return (recommended: 100).
