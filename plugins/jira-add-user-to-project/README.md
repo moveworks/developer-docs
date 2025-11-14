@@ -18,6 +18,5 @@ solution_tags:
 - Project Management
 systems:
 - jira
-video: https://www.loom.com/share/17fca2c65162465885e60289ce073e62?sid=a82d23c2-53db-4820-b9ab-d88069e6877f
 
 ---

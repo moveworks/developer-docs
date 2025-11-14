@@ -1,23 +1,24 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
 description: A plugin that allows IT administrators to quickly assign or reprovision
   managed apple computers to new owners in Jamf directly through the Moveworks AI
   Assistant.
+difficulty_level: INTERMEDIATE
 domain:
 - IT
 - Access Management
-fidelity: GUIDE
+fidelity: TEMPLATE
+installation_asset_uuid: 8facc845-6741-4c64-8a95-33401c155711
 name: Assign a Computer to a New Owner
-difficulty_level: INTERMEDIATE
-time_in_minutes: 15
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+want+to+assign+a+Macbook+Pro+device+to+a+new+person%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWho+should+this+device+be+assigned+to+%E2%80%94+please+provide+the+employee%E2%80%99s+name+or+email%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22John%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EJamf%3C%2Fb%3E+for+users+matching+%5C%22John%5C%22...%22%7D%5D%7D%2C%7B%22richText%22%3A%22I+found+2+users+matching+%27John%27%3A+%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cb%3EJohn+Doe%3C%2Fb%3E+%28john.doe%40company.com%2C+IT+Department%29%3C%2Fli%3E%3Cli%3E%3Cb%3EJohn+Adams%3C%2Fb%3E+%28john.adams%40company.com%2C+Sales+Department%29%3C%2Fli%3E%3C%2Ful%3EWhich+one+do+you+mean%3F%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22jamf%22%2C%22citationTitle%22%3A%22John+Doe%22%7D%2C%7B%22connectorName%22%3A%22jamf%22%2C%22citationTitle%22%3A%22John+Adams%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22John+Doe%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EJamf%3C%2Fb%3E+for+%27Macbook+Pro%27+devices+that+are+currently+unassigned+and+available+for+assignment...%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+the+new+owner+will+be+John+Doe.+I+found+the+following+Macbook+Pro+devices.+Which+one+do+you+want+to+assign+to+John+Doe%3F%3C%2Fp%3E%3Col%3E%3Cli%3E%3Cp%3E%3Cstrong%3EMacBook+Pro%3C%2Fstrong%3E+%28Serial+C02XXX123%2C+macOS+14.1%2C+currently+unassigned%29%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EMacBook+Pro%3C%2Fstrong%3E+%28Serial+ABCDEF456%2C+macOS+14.2%2C+currently+unassigned%29%3C%2Fp%3E%3C%2Fli%3E%3C%2Fol%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22jamf%22%2C%22citationTitle%22%3A%22MacBook+Pro+C02XXX123%22%7D%2C%7B%22connectorName%22%3A%22jamf%22%2C%22citationTitle%22%3A%22MacBook+Pro+ABCDEF456%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22The+one+owned+by+Alex+Martinez%2C+serial+C02XXX123.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I+can+assign+the+device+%3Cstrong%3EMacbook+Pro+%28C02XXX123%29%3C%2Fstrong%3E+to+%3Cstrong%3EJohn+Doe+%28john.doe%40company.com%29%3C%2Fstrong%3E.+The+updated+fields+will+include+username%2C+full+name%2C+email%2C+and+department.+%3Cstrong%3EDoes+this+look+correct%3F%3C%2Fstrong%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Confirm%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Confirm%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESuccessfully+assigned+%3Cstrong%3EMacbook+Pro+%28Serial+C02XXX123%29%3C%2Fstrong%3E+to+%3Cstrong%3EJohn+Doe%3C%2Fstrong%3E.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22jamf%22%2C%22citationTitle%22%3A%22Macbook+Pro+C02XXX123%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
 - Access Management
 - IT
 systems:
 - jamf
-
+time_in_minutes: 15
 ---
+
 ## Introduction
 
 The **“Assign a Device to a New Owner”** plugin enables IT administrators to efficiently assign or reassign managed devices (computers) to new owners in Jamf through the Moveworks AI Assistant. This automation allows admins to search for users by name or email, view matching user profiles and available devices, and complete the reassignment in a single step. The plugin automatically updates ownership details—including username, full name, email, and department—ensuring accurate asset records and streamlining device handoffs.
