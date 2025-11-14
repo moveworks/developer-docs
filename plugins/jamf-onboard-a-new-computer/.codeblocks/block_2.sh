@@ -1,4 +1,4 @@
-curl --location 'https://<YOUR_INSTANCE>.jamfcloud.com/JSSResource/computerinvitations/invitation/0' \
+curl --location 'https://<YOUR_INSTANCE>/JSSResource/computerinvitations/invitation/0' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Content-Type: application/xml; charset=utf-8' \
 --header 'Accept: application/xml' \

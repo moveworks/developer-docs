@@ -71,7 +71,7 @@ Once the connector is successfully configured, follow our [**plugin installatio
 **Query Parameters:**
 
 ```bash
-curl --location '[https://<YOUR_INSTANCE>/api/v2/computers-inventory?](https://moveworksnfr.jamfcloud.com/api/v2/computers-inventory?filter=general.remoteManagement.managed%3D%3Dfalse%20and%20userAndLocation.username%3D%3Dnull%20or%20userAndLocation.username%3D%3D%27%27)section=USER_AND_LOCATION,HARDWARE,GENERAL&filter=general.remoteManagement.managed==false and userAndLocation.username==null or userAndLocation.username==''' \
+curl --location 'https://<YOUR_INSTANCE>/api/v2/computers-inventory?section=USER_AND_LOCATION,HARDWARE,GENERAL&filter=general.remoteManagement.managed==false and userAndLocation.username==null or userAndLocation.username==''' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <YOUR_BEARER>' \
 ```
@@ -103,7 +103,7 @@ You can filter by **user name** or **user email**.
 - This action generates a computer enrollment invitation.
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>.jamfcloud.com/JSSResource/computerinvitations/invitation/0' \
+curl --location 'https://<YOUR_INSTANCE>/JSSResource/computerinvitations/invitation/0' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Content-Type: application/xml; charset=utf-8' \
 --header 'Accept: application/xml' \
