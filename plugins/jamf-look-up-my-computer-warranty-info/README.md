@@ -75,7 +75,7 @@ Once the connector is successfully configured, follow our [**plugin installatio
 
 # **Appendix**
 
-## API #1: Jamf_Get_Assigned_Devices_by_Email
+## API #1: Jamf Get Assigned Devices for a User
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/api/v1/computers-inventory?section=GENERAL,USER_AND_LOCATION,HARDWARE, DISK_ENCRYPTION,PURCHASING&filter=userAndLocation.email=="{{email}}"' \
