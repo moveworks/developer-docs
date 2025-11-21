@@ -91,53 +91,53 @@ You can filter by **device id**, **device name**, **device model name**, **usern
     
     **`section`** : Specifies the broad data categories to include in the response (for example: GENERAL, HARDWARE,USER_AND_LOCATION).
     
-    ### API #2: Update Lifecycle Status
+### API #2: Update Lifecycle Status
     
-    ```bash
-    curl --location --request PUT 'https://<YOUR_INSTANCE>/JSSResource/computers/id/<DEVICE_ID>' \
-    --header 'Content-Type: application/xml' \
-    --header 'Accept: application/xml' \
-    --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
-    --data '
-    <computer>
-      <general>
-        <remote_management>
-          <managed>false</managed>
-        </remote_management>
-      </general>
-      <extension_attributes>
-        <extension_attribute>
-          <name>Lifecycle Status</name>
-          <value>Retired</value>
-        </extension_attribute>
-      </extension_attributes>
-    </computer>'
-    ```
+```bash
+curl --location --request PUT 'https://<YOUR_INSTANCE>/JSSResource/computers/id/<DEVICE_ID>' \
+--header 'Content-Type: application/xml' \
+--header 'Accept: application/xml' \
+--header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
+--data '
+  <computer>
+    <general>
+      <remote_management>
+        <managed>false</managed>
+      </remote_management>
+    </general>
+    <extension_attributes>
+      <extension_attribute>
+        <name>Lifecycle Status</name>
+        <value>Retired</value>
+      </extension_attribute>
+    </extension_attributes>
+  </computer>'
+```
     
-    **Path Parameters:**
+**Path Parameters:**
     
-    `device_id` : (string) - Updates the life cycle status.
+`device_id` : (string) - Updates the life cycle status.
     
-    **Requested Body Parameters:**
+**Requested Body Parameters:**
     
-    `computer` – Root object representing the computer record that will be updated.
+`computer` – Root object representing the computer record that will be updated.
     
-    `general` – General information section of the computer object (parent container).
+`general` – General information section of the computer object (parent container).
     
-    `remote_management` – Remote Management configuration block containing management status.
+`remote_management` – Remote Management configuration block containing management status.
     
-    `managed` – Indicates whether the device is managed by Jamf.
+`managed` – Indicates whether the device is managed by Jamf.
     
-    - Example: `false` (marks the computer as unmanaged).
+  - Example: `false` (marks the computer as unmanaged).
     
-    `extension_attributes` – Parent container for all extension attributes associated with the device.
+`extension_attributes` – Parent container for all extension attributes associated with the device.
     
-    `extension_attribute` – A single extension attribute entry that you want to modify.
+`extension_attribute` – A single extension attribute entry that you want to modify.
     
-    `name` – Name of the Extension Attribute you are updating.
+`name` – Name of the Extension Attribute you are updating.
     
-    - Example: `Lifecycle Status`.
+  - Example: `Lifecycle Status`.
     
-    `value` – New value that should be assigned to the Extension Attribute.
+`value` – New value that should be assigned to the Extension Attribute.
     
-    - Example: `Terminated`.
+  - Example: `Terminated`.
