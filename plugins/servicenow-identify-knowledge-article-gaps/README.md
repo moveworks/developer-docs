@@ -97,6 +97,6 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_quer
 - **`workflow_state=published`**
     - Only returns KB articles that are officially published.
 - **`valid_to>=today`**
-    - Ensures only KBs that are still valid (not expired) are considered.
+    - Ensures only KBs that are still valid are considered.
 - **`sysparm_fields=short_description,text,kb_category,category,sys_id`**
     - Returns only essential fields needed for content analysis and matching.
