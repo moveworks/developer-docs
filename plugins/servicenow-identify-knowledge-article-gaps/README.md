@@ -73,10 +73,30 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=ac
 
 `time_range` :  (string) - Represents the start date from which incidents should be retrieved.
 
-### **API #2: Get Knowledge Article:**
+**Key Query Parameters:**
+
+- **`active=true`**
+    - Retrieves only active incidents.
+- **`opened_at>={{time_range}}`**
+    - Returns incidents created on or after the user-specified time range.
+- **`knowledge=false`**
+    - Filters out incidents that already have a linked KB article.
+- **`sysparm_fields=short_description,category,subcategory,cmdb_ci,assignment_group,knowledge,sys_id`**
+    - Limits output to the relevant fields needed for clustering and analysis.
+
+### **API #2: Retrieve Up To Date Knowledge Articles:**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_query=workflow_state=published^valid_to>=today&sysparm_fields=short_description,text,kb_category,category,sys_id' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 ```
+
+**Key Query Parameters:**
+
+- **`workflow_state=published`**
+    - Only returns KB articles that are officially published.
+- **`valid_to>=today`**
+    - Ensures only KBs that are still valid (not expired) are considered.
+- **`sysparm_fields=short_description,text,kb_category,category,sys_id`**
+    - Returns only essential fields needed for content analysis and matching.
