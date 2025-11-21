@@ -64,7 +64,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 ### **API #1: Get Incidents**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=active=true^opened_at>={{time_range}}^knowledge=false&sysparm_fields=short_description,category,subcategory,cmdb_ci,assignment_group,knowledge,sys_id&sysparm_limit=500' \
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=active=true^opened_at>={{time_range}}^knowledge=false^ORDERBYDESCopened_at&sysparm_fields=short_description,category,subcategory,cmdb_ci,assignment_group,knowledge,sys_id&sysparm_limit=500' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 ```
@@ -83,11 +83,13 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=ac
     - Filters out incidents that already have a linked KB article.
 - **`sysparm_fields=short_description,category,subcategory,cmdb_ci,assignment_group,knowledge,sys_id`**
     - Limits output to the relevant fields needed for clustering and analysis.
+- **`ORDERBYDESCopened_at`**
+    - Sorts incident records **from latest to oldest,** ensuring latest incidents are considered for analysis.
 
 ### **API #2: Retrieve Up To Date Knowledge Articles:**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_query=workflow_state=published^valid_to>=today&sysparm_fields=short_description,text,kb_category,category,sys_id' \
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_query=workflow_state=published^valid_to>=today^ORDERBYDESCsys_created_on&sysparm_fields=short_description,text,kb_category,category,sys_id&sysparm_limit=1000' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Accept: application/json' \
 ```
@@ -100,3 +102,5 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/kb_knowledge?sysparm_quer
     - Ensures only KBs that are still valid (not expired) are considered.
 - **`sysparm_fields=short_description,text,kb_category,category,sys_id`**
     - Returns only essential fields needed for content analysis and matching.
+- **`ORDERBYDESCsys_created_on`**
+    - Sorts KB articles **from latest to oldest**, ensuring the most recently created knowledge articles are evaluated first.
