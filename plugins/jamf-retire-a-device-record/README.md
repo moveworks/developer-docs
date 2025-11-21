@@ -50,6 +50,29 @@ Specifically, confirm that the following privileges are granted:
 
 These permissions are required to retrieve user-related data and perform advanced searches in the Jamf Pro environment using the API.
 
+**Create Required Extension Attribute: Lifecycle Status**
+
+Before using this plugin, you must create an Extension Attribute in Jamf for tracking device lifecycle status (e.g., *Active*, *Retired*, etc.).
+
+Follow these steps:
+
+1. **Navigate to:**
+
+    `Jamf Pro → Settings → Computer Management → Extension Attributes`
+
+2. Click **New** (or **Add**).
+
+3. Fill in the details:
+
+   - **Name:** `Lifecycle Status`
+   - **Data Type:** String
+   - **Input Type:** Text Field (recommended)
+   - **Inventory Display:** Choose the appropriate section (Default: Extension Attributes)
+
+4. Click **Save**.
+
+This Extension Attribute is required because the plugin updates the device’s Lifecycle Status using the Jamf API.
+
 **Your Instance Configuration:**
 
 All Jamf API endpoints in this plugin use **`'YOUR_INSTANCE'`** as a placeholder. After installation, replace **`'YOUR_INSTANCE'`** in the action definitions with your actual Jamf instance name.
@@ -115,29 +138,29 @@ curl --location --request PUT 'https://<YOUR_INSTANCE>/JSSResource/computers/id/
 ```
     
 **Path Parameters:**
-    
+
 `device_id` : (string) - Updates the life cycle status.
-    
+
 **Requested Body Parameters:**
-    
-`computer` – Root object representing the computer record that will be updated.
-    
-`general` – General information section of the computer object (parent container).
-    
-`remote_management` – Remote Management configuration block containing management status.
-    
-`managed` – Indicates whether the device is managed by Jamf.
-    
-  - Example: `false` (marks the computer as unmanaged).
-    
-`extension_attributes` – Parent container for all extension attributes associated with the device.
-    
-`extension_attribute` – A single extension attribute entry that you want to modify.
-    
-`name` – Name of the Extension Attribute you are updating.
-    
-  - Example: `Lifecycle Status`.
-    
-`value` – New value that should be assigned to the Extension Attribute.
-    
-  - Example: `Terminated`.
+
+- `computer` – Root object representing the computer record that will be updated.
+
+- `general` – General information section of the computer object (parent container).
+
+- `remote_management` – Remote Management configuration block containing management status.
+
+- `managed` – Indicates whether the device is managed by Jamf.
+
+    - Example: `false` (marks the computer as unmanaged).
+
+- `extension_attributes` – Parent container for all extension attributes associated with the device.
+
+- `extension_attribute` – A single extension attribute entry that you want to modify.
+
+- `name` – Name of the Extension Attribute you are updating.
+
+    - Example: `Lifecycle Status`.
+
+- `value` – New value that should be assigned to the Extension Attribute.
+
+    - Example: `Terminated`.
