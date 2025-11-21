@@ -1,9 +1,10 @@
 ---
 availability: IDEA
-description: This plugin allows employees and support agents to quickly generate AI-driven
-  summaries of ServiceNow cases through the Moveworks AI Assistant. Users can retrieve
-  cases by number, subject, description, or ownership, and instantly receive a concise
-  summary that highlights the issue, resolution progress, and current status.
+description: A plugin that allows employees and support agents to quickly generate
+  AI-driven summaries of ServiceNow cases through the Moveworks AI Assistant. Users
+  can retrieve cases by number, subject, description, or ownership, and instantly
+  receive a concise summary that highlights the issue, resolution progress, and current
+  status.
 domain:
 - IT
 fidelity: IDEA
