@@ -14,18 +14,29 @@ time_in_minutes: 60
 
 **Salesforce** is a leader in cloud-based services, specializing in comprehensive customer relationship management (CRM) solutions, empowering businesses with data-driven decision-making.
 
-This guide will step you through creating a connector within Agent Studio to make API calls to Salesforce's SOQL and sObjects APIs. This guide has been organized into three main sections:
+This guide will step you through creating a connector within Agent Studio to make API calls to Salesforce's SOQL and sObjects APIs. The guide is now organized into **two main authentication sections**:
 
-1. Set up OAuth Password Grant Flow
-2. Test with Postman
-3. Create a Connector in Agent Studio
+- **OAuth 2.0 with Password Grant Flow**
+- **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
 
 # **Prerequisites**
 
 - Salesforce account with Admin privileges so we can create a new Connected App and manage User and Permissions
 - [Install Postman](https://www.postman.com/downloads/) for testing the API connection
 
-# **Set up Salesforce**
+# **OAuth 2.0 with Password Grant Flow Setup**
+
+To connect **Salesforce** to **Agent Studio** using **service-account-based authentication**, configure the **OAuth 2.0 with Username/Password (Password Grant) flow**.
+
+This flow allows API access using a dedicated service account without requiring user interaction
+
+## **Walkthrough**
+
+Follow these steps to set up and validate your connection:
+
+1. Set up the OAuth Password Grant Flow.
+2. Test the connection using Postman.
+3. Create a Connector in Agent Studio.
 
 To connect to Salesforce from within Agent Studio, we are going to be using [OAuth2 with Username/Password](https://oauth.net/2/grant-types/password/). This requires the following:
 
@@ -156,3 +167,192 @@ Once you have all the required credentials from the above process, please move o
 # **Congratulations!**
 
 You've successfully integrated Salesforce’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Salesforce instance.
+
+# **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
+
+To connect **Salesforce** to **Agent Studio** using **user-consent-based authentication**, configure the **OAuth 2.0 with Authorization Code** flow.
+
+This ensures Salesforce users explicitly authorize Moveworks before any API actions are performed on their behalf.
+
+## **Walkthrough**
+
+Follow these steps to set up and validate your connection:
+
+1. Log in to Salesforce Setup
+2. Create a New Connected App
+3. Retrieve Client ID and Client Secret
+4. Integrate with Agent Studio
+5. Test the Connector in Agent Studio
+
+## Step 1: Log in to Salesforce Setup
+
+- Go to the Salesforce login page and sign in with your admin credentials.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image.png)
+
+- Click the Gear icon in the top-right corner and select Setup
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%201.png)
+
+- From Setup, search for **Apps** in the Home page search bar, then go to:
+    - **Apps→ External Client Apps → Settings**
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%202.png)
+
+## Step 2: Create a New Connected App
+
+- Click New Connected App. Enable “Allow creation of connected apps”
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%203.png)
+
+- **Connected App Name:** `{{CONNECTED_APP_NAME}}`
+- **API Name:** `{{API_NAME}}`
+- **Contact Email:** `{{CONTACT_EMAIL}}`
+- **Enable OAuth Settings:** Check **Enable OAuth Settings**
+- **Callback URL:** Enter your callback URL (e.g., `{{CALLBACK_URL}}`)
+- Select the required scopes by moving them from Available OAuth Scopes to Selected OAuth Scopes using the right-arrow icon:
+    - `Manage user data via APIs (api)`: Allows the app to read and update user data through Salesforce REST, SOAP, and Bulk APIs.
+    - `Perform requests at any time (refresh_token, offline_access)`: Provides refresh tokens so the app can stay authenticated and make API calls even when the user is not actively logged in
+- Note: Add more scopes depending on your integration needs.
+  - Examples:
+
+    - **`openid`**: Used to retrieve basic identity information for the logged-in user
+    - **`profile`**: Provides access to extended user profile details (e.g., name, email, locale) via the UserInfo endpoint.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%204.png)
+
+- **Uncheck the following options** (they are selected by default):
+    - Require Proof Key for Code Exchange (PKCE)
+    - Require Secret for Web Server Flow
+    - Require Secret for Refresh Token Flow
+- Click **Save** to continue.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%205.png)
+
+- After clicking **Save**, click **Continue**
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%206.png)
+
+- The Connected App will then be successfully saved.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%207.png)
+
+## Step 3: Retrieve Client ID and Client Secret
+
+- In the **Connected App** detail page, click **Manage Consumer Details**.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%208.png)
+
+- Copy the **Consumer Key** (Client ID) and **Consumer Secret** (Client Secret).
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%209.png)
+
+- Store these credentials securely, as they will be used for **Agent Studio** integration.
+
+## Step 4: Integrate with Agent Studio
+
+- In **Agent Studio**, create a new connector with the following configuration:
+    - **Connector Name:** `{{Connector_Name}}`
+    - **Display Name:** `{{Display_Name}}`
+    - **Display Description:** This connector enables secure, user-authorized access to Salesforce APIs using OAuth2 Authorization Code Grant.
+    - **Base URL:** `https://{SALESFORCE_BASE_URL}`
+    - **Auth Config:** OAuth2
+    - **OAuth2 Grant Type:** Authorization Code Grant
+    - **Authorization URL:** `https://{SALESFORCE_AUTH_DOMAIN}/authorize`
+    - **Client ID:** `{{CLIENT_ID}}`
+    - **Client Secret:** `{{CLIENT_SECRET}}`
+    - **Authorization Code Grant Scope:** `api refresh_token offline_access`
+    - **Authorization Request Query Parameters:**
+        - `response_type`: `code`
+        - `prompt`: `login`
+        - `prompt` : `consent`
+    - **OAuth2 Token URL:** `{{Token_URL}}`
+    - **OAuth2 Client Authentication:** OAuth 2.0 with Request Body
+    - **OAuth2 Custom OAuth Response Type:** JSON
+    - **Header Auth Key:** `Authorization`
+    - **Header Auth Value Pattern:** `Bearer %s`
+    - **Custom Grant Type:** `authorization_code`
+    - **Additional Headers:** `Content-Type: application/json`
+
+Once all fields are completed, click **Save** to create and store your connector configuration.
+
+## Step 4: Test the Connector in Agent Studio
+
+Set up your API. You can read more about configuring and testing API actions from our **API Configuration Reference**.
+
+Use the following API to verify that the **User Consent Authentication (UCA)** setup for **Salesforce** is functioning correctly.
+
+This call helps confirm that authentication is working as expected and that the data is being fetched at the **user level only** — based on the logged-in user’s access permissions in **Salesforce**.
+
+```bash
+curl --location 'https://<YOUR_INSTANCE_DOMAIN>/services/oauth2/userinfo' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer {{ACCESS_TOKEN}}'
+```
+
+**API Endpoint Path:**
+
+`/services/oauth2/userinfo`
+
+**Method:**
+
+`GET`
+
+**Headers:**
+
+- `Accept`: `application/json`
+
+**Your Instance Configuration**
+
+All Salesforce API endpoints in this plugin use `{{YOUR_INSTANCE_DOMAIN}}` as a placeholder.
+
+Follow the steps below to update it correctly after installation:
+
+1. Go to your **Salesforce Setup**.
+2. In the **Quick Find** box, search for **My Domain** and select it.
+3. Locate your **Salesforce org’s My Domain URL** (e.g., `yourcompany.my.salesforce.com`).
+4. Replace `{{YOUR_INSTANCE_DOMAIN}}` with your actual My Domain URL in all **action definitions** within the connector.
+5. Ensure all API requests use **HTTPS** and leverage **OAuth 2.0 authentication**.
+6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance
+
+### **Test Your Setup:**
+
+1. In **Agent Studio**, create and run a new **Action**.
+2. Import the above **cURL command**.
+3. Add the **Salesforce User Consent Auth Connector**.
+4. Click **Test → Generate New Access Token**.
+    - Ensure you are acting on behalf of the **intended Salesforce user** before generating the token.
+    - The returned data will reflect only what that user has permission to access in **Salesforce**.
+    
+    ![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%2010.png)
+    
+
+### **Establish a Connection Between Your UCA Connector and Agent Studio**
+
+- Integrate your **UCA Connector** with **Agent Studio**.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/a13e2960-82a9-4bf0-bdba-57126ce871c3.png)
+
+- Next, you will be redirected to the **Salesforce login page**.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%2011.png)
+
+- If you log in as an **admin**, you’ll have access to all data, while a **regular user** will only see data they have permissions for.
+- After logging in successfully, click **Allow** to generate the **authorization code**.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%2012.png)
+
+- Once you click **Allow**, you will receive a notification from the **Moveworks bot** confirming that it has access to perform actions on your behalf.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%2013.png)
+
+### **Verify UCA Functionality**
+
+- Click **Test** to verify that **User Consent Authentication (UCA)** is working correctly.
+- The action should call the /services/oauth2/userinfo endpoint with the logged-in user’s token, returning only the data that user is allowed to access — confirming **user-specific consent and permissions**.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%2014.png)
+
+# **Congratulations!**
+
+You’ve successfully integrated **Salesforce** with **Agent Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Salesforce data based on user consent within your Salesforce instance.
