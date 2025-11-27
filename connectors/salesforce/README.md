@@ -208,23 +208,40 @@ Follow these steps to set up and validate your connection:
 - **Connected App Name:** `{{CONNECTED_APP_NAME}}`
 - **API Name:** `{{API_NAME}}`
 - **Contact Email:** `{{CONTACT_EMAIL}}`
+  - This email is used by Salesforce to communicate about the Connected App, including notifications about OAuth issues, security updates, or app usage alerts.
+  - Use a monitored admin or integration owner email (e.g., integration-team@yourcompany.com).
 - **Enable OAuth Settings:** Check **Enable OAuth Settings**
-- **Callback URL:** Enter your callback URL (e.g., `{{CALLBACK_URL}}`)
+- **Callback URL:** `{{CALLBACK_URL}}`
+    - The Callback URL is where Salesforce sends the OAuth authorization code after a user authorizes the app.
+    - Ensure it matches your tenant/org configuration. For example:
+      ```bash
+        https://<org-tenant-name>.moveworks.com/auth/oauthCallback
+      ```
+    - Replace <org-tenant-name> with your actual org/tenant name.
+    - The URL must exactly match the one registered in Salesforce to avoid OAuth redirect errors.
 - Select the required scopes by moving them from Available OAuth Scopes to Selected OAuth Scopes using the right-arrow icon:
     - `Manage user data via APIs (api)`: Allows the app to read and update user data through Salesforce REST, SOAP, and Bulk APIs.
     - `Perform requests at any time (refresh_token, offline_access)`: Provides refresh tokens so the app can stay authenticated and make API calls even when the user is not actively logged in
+    - `Access unique user identifiers (openid)`: Required to retrieve basic identity information for the authenticated Salesforce user, including a stable user ID for clean identity mapping
+
 - Note: Add more scopes depending on your integration needs.
   - Examples:
 
-    - **`openid`**: Used to retrieve basic identity information for the logged-in user
-    - **`profile`**: Provides access to extended user profile details (e.g., name, email, locale) via the UserInfo endpoint.
+    - **`Access the identity URL service (id, profile, email, address, phone):`**: Provides access to the Salesforce Identity Service, allowing the app to retrieve a user’s identity details (such as name, email, profile info, address, and phone) from the Identity URL.
 
-![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%204.png)
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/newone.png)
 
-- **Uncheck the following options** (they are selected by default):
-    - Require Proof Key for Code Exchange (PKCE)
-    - Require Secret for Web Server Flow
-    - Require Secret for Refresh Token Flow
+For this connector, the following options need to be disabled to support the Authorization Code Grant flow:
+
+ - Require Proof Key for Code Exchange (PKCE) – Disabled to allow this flow.
+
+ - Require Secret for Web Server Flow – Disabled if the integration cannot safely store a client secret.
+
+ - Require Secret for Refresh Token Flow – Disabled only if your integration cannot safely store a client secret
+
+Note: Disabling these options is specific to this connector setup. For general Salesforce OAuth 2.0 guidance, see [Salesforce Authorization Code Flow documentation](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_authenticate.htm&type=5)
+
+
 - Click **Save** to continue.
 
 ![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%205.png)
@@ -284,6 +301,9 @@ Use the following API to verify that the **User Consent Authentication (UCA)** s
 
 This call helps confirm that authentication is working as expected and that the data is being fetched at the **user level only** — based on the logged-in user’s access permissions in **Salesforce**.
 
+**1. Verify UCA Setup Using Salesforce User Info API**
+ - Use this API call to ensure that OAuth and UCA authentication are functioning correctly:
+
 ```bash
 curl --location 'https://<YOUR_INSTANCE_DOMAIN>/services/oauth2/userinfo' \
 --header 'Accept: application/json' \
@@ -301,6 +321,35 @@ curl --location 'https://<YOUR_INSTANCE_DOMAIN>/services/oauth2/userinfo' \
 **Headers:**
 
 - `Accept`: `application/json`
+
+This confirms that the connector is authenticated and returning information for the logged-in Salesforce user only.
+
+**2. Test the Connector with a Standard Salesforce Object**
+- Query the Account object to confirm that UCA is working correctly and that data is returned according to the user’s access permissions
+
+```bash
+curl --location 'https://<YOUR_INSTANCE_DOMAIN>/services/data/vXX.0/query/?q=SELECT+Id,+Name,+Industry,+Type+FROM+Account' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer {{ACCESS_TOKEN}}'
+```
+
+**API Endpoint Path:**
+
+`/services/data/vXX.0/query`
+
+**Query Parameter:**
+
+`q=SELECT Id, Name, Industry, Type FROM Account`
+
+**Method:**
+
+`GET`
+
+**Headers:**
+
+- `Accept`: `application/json`
+
+This returns all Accounts the logged-in user has permission to access, confirming that the connector is authenticated properly and that Salesforce data is being retrieved based on the user’s own access level only.
 
 **Your Instance Configuration**
 
@@ -353,6 +402,9 @@ Follow the steps below to update it correctly after installation:
 
 ![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%2014.png)
 
+- The action should call the /services/data/v62.0/query/?q=SELECT+Id,+Name+FROM+Account+WHERE+OwnerId='me' endpoint with the logged-in user’s token, returning only the Accounts that the user owns or is authorized to view — confirming **user-specific access and permissions**.
+
+![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/new%201.png)
 # **Congratulations!**
 
 You’ve successfully integrated **Salesforce** with **Agent Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Salesforce data based on user consent within your Salesforce instance.
