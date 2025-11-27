@@ -281,7 +281,6 @@ Note: Disabling these options is specific to this connector setup. For general S
     - **Authorization Code Grant Scope:** `api refresh_token offline_access`
     - **Authorization Request Query Parameters:**
         - `response_type`: `code`
-        - `prompt`: `login`
         - `prompt` : `consent`
     - **OAuth2 Token URL:** `{{Token_URL}}`
     - **OAuth2 Client Authentication:** OAuth 2.0 with Request Body
