@@ -16,8 +16,8 @@ time_in_minutes: 60
 
 This guide will step you through creating a connector within Agent Studio to make API calls to Salesforce's SOQL and sObjects APIs. The guide is now organized into **two main authentication sections**:
 
-- **OAuth 2.0 with Password Grant Flow**
-- **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
+- [**OAuth 2.0 with Password Grant Flow**](https://marketplace.moveworks.com/connectors/salesforce#OAuth-2.0-with-password-grant-flow)
+- [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/salesforce#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)
 
 # **Prerequisites**
 
