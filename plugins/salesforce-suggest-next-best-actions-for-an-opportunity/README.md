@@ -1,0 +1,21 @@
+---
+availability: IDEA
+description: A plugin that recommends the next best actions to help sales representatives
+  move an opportunity forward through the Moveworks AI Assistant. It analyzes opportunity
+  details, stage, recent activities, and related notes to suggest actionable next
+  steps, such as scheduling meetings, following up with key contacts, or updating
+  opportunity information. This helps sales teams stay proactive, shorten deal cycles,
+  and improve win rates.
+domain:
+- Sales
+- Productivity
+fidelity: IDEA
+name: Suggest Next Best Actions for an Opportunity
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22What+are+the+next+steps+for+an+opportunity%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ETo+help+me+find+the+right+opportunity%2C+could+you+please+provide+some+details%3F+You+can+specify+the%3A%3C%2Fp%3E%3Col%3E%3Cli%3E%3Cp%3E%3Cb%3EOpportunity+Name%3C%2Fb%3E%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cb%3EOpportunities+you+own%3C%2Fb%3E%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cb%3EAssociated+Account+Name%3C%2Fb%3E%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cb%3EStage%2FStatus%3C%2Fb%3E+%28e.g.%2C+%27negotiation-stage+deal%27%29.%3C%2Fp%3E%3C%2Fli%3E%3C%2Fol%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22opportunities+for+ACME+account%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+%3Cb%3ESalesforce%3C%2Fb%3E+for+opportunities+associated+with+%27ACME%27...%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Found+multiple+opportunities+for+ACME.+Please+select+one+to+get+next+steps.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI+found+a+few+opportunities+related+to+%27ACME%27.+Which+one+are+you+interested+in%3F%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EAcme+Corp+Renewal%3C%2Fb%3E+%28%24120K%2C+Stage%3A+Proposal+Review%29+-+Owned+by+Jane+Doe%3C%2Fli%3E%3Cli%3E%3Cb%3EAcme+Technologies+New+Project%3C%2Fb%3E+%28%2450K%2C+Stage%3A+Qualification%29+-+Owned+by+John+Smith%3C%2Fli%3E%3Cli%3E%3Cb%3EAcme+Solutions+Upgrade%3C%2Fb%3E+%28%2475K%2C+Stage%3A+Negotiation%29+-+Owned+by+Jane+Doe%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EPlease+specify+the+full+name+or+amount.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22the+Acme+Corp+Renewal%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Retrieving+details+for+%27Acme+Corp+Renewal%27+from+%3Cb%3ESalesforce%3C%2Fb%3E...%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Analyzing+opportunity+details%2C+stage%2C+recent+activities%2C+and+notes+to+suggest+next+best+actions.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EHere+are+the+next+steps+for+%3Cb%3EAcme+Corp+Renewal%3C%2Fb%3E+%28%24120K%2C+Stage%3A+Proposal+Review%29.+This+opportunity+has+been+in+%27Proposal+Review%27+for+%3Cb%3E15+days%3C%2Fb%3E.%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EFollow-up+with+Jane+Smith+%28Decision+Maker%29%3A%3C%2Fb%3E+Last+interaction+%3Cb%3E10+days+ago%3C%2Fb%3E+%28%3Ci%3Eemail+about+revised+pricing%3C%2Fi%3E%29.+Schedule+a+call+to+confirm+receipt+and+address+any+questions+about+the+%3Cb%3EEnterprise+Tier%3C%2Fb%3E+proposal.%3C%2Fli%3E%3Cli%3E%3Cb%3EUpdate+Proposal+Document%3A%3C%2Fb%3E+The+current+proposal+%28v1.2%29+expires+next+week.+Create+a+new+version+incorporating+the+%3Cb%3E15%25+discount%3C%2Fb%3E+discussed+internally%2C+and+upload+it.%3C%2Fli%3E%3Cli%3E%3Cb%3ELog+Recent+Meeting+Notes%3A%3C%2Fb%3E+There+is+an+unlogged+meeting+from+%3Cb%3EJuly+15th+with+the+procurement+team%3C%2Fb%3E.+Summarize+key+discussion+points+and+agreed-upon+next+steps+regarding+implementation+timelines.%3C%2Fli%3E%3C%2Ful%3E%3Cp%3E%3Ci%3ERecommendation%3A%3C%2Fi%3E+Consider+moving+this+opportunity+to+the+%27Negotiation%27+stage+to+reflect+active+discussions+and+improve+forecast+accuracy.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22salesforce%22%2C%22citationTitle%22%3A%22Acme+Corp+Renewal%22%7D%5D%7D%5D%7D%5D%7D
+solution_tags:
+- Productivity
+- Sales
+systems:
+- salesforce
+
+---
