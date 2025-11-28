@@ -120,8 +120,8 @@ curl --location --request PATCH 'https://<YOUR_INSTANCE>/api/now/table/alm_asset
 
 **Query Parameters:**
 
-- `ASSET_SYS_ID` (string) – The unique ID of the asset to update ownership.
+- `ASSET_SYS_ID` (string) – The unique ID of an asset in ServiceNow.
 
 Body Parameters:
 
-- `user_sys_id`  (string) - The unique ID of the user.
+- `USER_SYS_ID`  (string) - The unique ID of a user in ServiceNow.
