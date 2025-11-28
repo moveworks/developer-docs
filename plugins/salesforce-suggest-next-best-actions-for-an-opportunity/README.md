@@ -27,11 +27,14 @@ The **“Suggest Next Best Actions for an Opportunity”** plugin enables sales 
 
 This guide walks you through how to configure and customize the plugin within Agent Studio so you can deliver these insights in just a few minutes. Let’s get started!
 
+
 ## **Prerequisites**
 
 - Access to Agent Studio
 
+
 ## **What are we building?**
+
 
 ### **Agent Design**
 
@@ -41,11 +44,13 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 We recommend setting up the **Salesforce connector** before installing this plugin. Please follow the [**Salesforce Connector**](https://marketplace.moveworks.com/connectors/salesforce#how-to-implement--give) guide to configure the connection.
 
+
 **User Consent Authentication Benefits:**
 
 With OAuth 2.0 User Consent Authentication enabled, users can securely access their own Salesforce data—such as opportunities, tasks, activities, notes, and related records—through Moveworks without sharing credentials. By authenticating once through Salesforce’s login page, each user allows the bot to securely access and retrieve opportunity details on their behalf. 
 
 This ensures data privacy, role-based access control, and a seamless self-service experience where users only see the data they are authorized to view.
+
 
 **Required Salesforce Permissions:**
 
@@ -53,11 +58,13 @@ To enable access to the Salesforce API endpoints used in this plugin, ensure you
 
 - **Setup → App Manager → Connected Apps → [Your Connected App]**
 
+
 **Required OAuth Scope:**
 
 - **Access and manage your data (api)**
 
 This scope is essential for retrieving Opportunities, Opportunity History, Tasks, Events, Notes, and related records via Salesforce REST APIs.
+
 
 **Required Object Permissions:**
 
@@ -71,6 +78,7 @@ Ensure the integration user (via profile or permission sets) has **read access**
 - Opportunity Contact Roles
 
 These permissions are required to retrieve opportunity details and generate accurate Next Best Action recommendations.
+
 
 **Your Instance Configuration:**
 
@@ -86,6 +94,7 @@ Follow the steps below to update it correctly after installation:
 6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance
 
 After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for details on installing the plugin in Agent Studio.
+
 
 ### **API #1: Search Opportunities by Criteria**
 
