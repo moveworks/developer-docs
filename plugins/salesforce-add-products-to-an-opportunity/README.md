@@ -86,7 +86,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 ### **API #1: Get Opportunity Details**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT+Id%2C+Name%2C+StageName%2C+Amount%2C+CloseDate%2C+LastActivityDate+FROM+Opportunity+WHERE+{{FILTER_QUERY}}+ORDER+BY+LastModifiedDate+DESC+LIMIT+50' \
+curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT+Id%2C+Name%2C+StageName%2C+Amount%2C+CloseDate%2C+LastActivityDate+FROM+Opportunity+WHERE+{{filter_query}}+AND+IsClosed+%3D+false+ORDER+BY+LastModifiedDate+DESC+LIMIT+50' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 ```
@@ -101,6 +101,7 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT+Id%
             - **`StageName LIKE '%{{stage_name}}%'`** → Returns opportunities in the “Closed Won” stage.
             - **`'{{owner_email}}'`** → Returns opportunities owned by the specific user.
 - **`limit`**: Maximum number of opportunities to return.
+- **`IsClosed = false`** – Filters the results to return **only active (open) opportunities**, excluding both "Closed Won" and "Closed Lost" records.
 - **`order_by`**: Defines the field used to sort results (e.g., **`LastModifiedDate DESC`**).
 - **`fields`**: Comma-separated list of Opportunity fields to return: **`Id, Name, Amount, StageName, Owner.Name, Owner.Email, AccountId, Account.Name, CreatedDate`**.
 
