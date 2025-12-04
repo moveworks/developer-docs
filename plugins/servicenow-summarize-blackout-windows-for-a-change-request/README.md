@@ -61,7 +61,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 ### **API #1: Get User Assignment Groups by Email**
 
 ```bash
-curl --location 'https://<your_instance>/api/now/table/sys_user_grmember?sysparm_display_value=all&sysparm_query=user.email={{user_email}}&sysparm_fields=group' \
+curl --location 'https://<your_instance>/api/now/table/sys_user_grmember?sysparm_display_value=all&sysparm_query=user.email={{user_email}}^ORDERBYDESCsys_created_on&sysparm_fields=group,sys_created_on&sysparm_limit=100' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {{ACCESS_TOKEN}}'
 ```
@@ -69,11 +69,15 @@ curl --location 'https://<your_instance>/api/now/table/sys_user_grmember?sysparm
 **Query Parameter:**
 
 - **`user_email`** : The email of the user whose assignment groups you want to retrieve.
+- **`ORDERBYDESCsys_created_on`** : Sorts results by newest created first.
+- **`sysparm_limit`** : Limits the number of results returned (e.g., 100)
+- **`sysparm_display_value`** : Returns both display value and sys_id
+- **`sysparm_fields`** : Comma-separated list of fields to return
 
 ### **API #2: Search Change Requests by Criteria**
 
 ```bash
-curl --location 'https://<your_instance>/api/now/table/change_request?sysparm_query={{filter_query}}&sysparm_fields=sys_id,number,short_description,assigned_to,planned_start_date,planned_end_date,state' \
+curl --location 'https://<your_instance>/api/now/table/change_request?sysparm_query={{filter_query}}^ORDERBYDESCsys_created_on&sysparm_fields=sys_id,number,short_description,assigned_to,planned_start_date,planned_end_date,sys_created_on,state&sysparm_limit=100' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {{ACCESS_TOKEN}}'
 ```
@@ -85,7 +89,9 @@ curl --location 'https://<your_instance>/api/now/table/change_request?sysparm_qu
 - **`change_number`** : Retrieves a specific change request by its number.
 - **`short_desc`** : Finds change requests using partial or full short description.
 - **`user_email`** : Filters change requests either **assigned to** or **opened by** a specific user email.
-- **`sysparm_fields`**: Comma-separated list of fields to return in the response. Example: `sys_id, number, short_description, assigned_to, planned_start_date, planned_end_date, state`
+- **`sysparm_limit`** : Limits the number of results returned (e.g., 100).
+- **`ORDERBYDESCsys_created_on`** : Sorts results by newest created first.
+- **`sysparm_fields`**: Comma-separated list of fields to return in the response. Example: `sys_id, number, short_description, assigned_to, planned_start_date, planned_end_date, state, sys_created_on`
 
 **RSQL Filtering Notes:**
 
@@ -144,7 +150,7 @@ short_descriptionLIKE{{short_desc}}^assignment_groupIN{{assignment_group_id}}
 ### **API #3: Get Blackout Windows / Conflicts for a Change Request**
 
 ```bash
-curl --location 'https://<your_instance>/api/now/table/conflict?sysparm_query=change={{change_sys_id}}^type=blackout&sysparm_fields=change,type,change.conflict_status,schedule,schedule.name,change.start_date,change.end_date,schedule.time_zone,schedule.description,last_checked,schedule.label,schedule.calendar_name,configuration_item.name,impacted_service' \
+curl --location 'https://<your_instance>/api/now/table/conflict?sysparm_query=change={{change_sys_id}}^type=blackout^ORDERBYDESCsys_created_on&sysparm_fields=change,type,change.conflict_status,schedule,schedule.name,change.start_date,change.end_date,schedule.time_zone,schedule.description,last_checked,schedule.label,schedule.calendar_name,configuration_item.name,impacted_service,sys_created_on&sysparm_limit=50' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {{ACCESS_TOKEN}}'
 ```
@@ -152,4 +158,7 @@ curl --location 'https://<your_instance>/api/now/table/conflict?sysparm_query=ch
 **Query Parameters:**
 
 - **`change_sys_id`** : The **sys_id of the change request** you want to check for blackout windows.
+- **`type`** : Filters for blackout windows only, used in sysparm_query as **type=blackout**
+- **`ORDERBYDESCsys_created_on`** : Sorts results by newest created first.
+- **`sysparm_limit`** : Limits the number of results returned (e.g., 100)
 - **`sysparm_fields`** : Comma-separated list of fields to return
