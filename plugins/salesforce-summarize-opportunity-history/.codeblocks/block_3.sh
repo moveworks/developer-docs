@@ -6,7 +6,7 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.0/composite' \
   "compositeRequest": [
     {
       "method": "GET",
-      "url": "/services/data/v64.0/sobjects/Opportunity/{{opportunity_id}",
+      "url": "/services/data/v64.0/sobjects/Opportunity/{{opportunity_id}}",
       "referenceId": "Opportunity"
     },
     {
@@ -31,14 +31,13 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.0/composite' \
     },
     {
       "method": "GET",
-      "url": "/services/data/v64.0/query/?q=SELECT+Id,Subject,Status,ActivityDate,CreatedDate,Owner.Name,Description+FROM+Task+WHERE+WhatId='\''{{opportunity_id}}'\''+ORDER+BY+CreatedDate+DESC+LIMIT+200",
+      "url": "/services/data/v64.0/query/?q=SELECT+Id,Subject,Status,ActivityDate,CreatedDate,Owner.Name,Description+FROM+Task+WHERE+WhatId='\''{{opportunity_id}}'\''+ORDER+BY+CreatedDate+DESC+LIMIT+50",
       "referenceId": "Tasks"
     },
     {
       "method": "GET",
-      "url": "/services/data/v64.0/query/?q=SELECT+Id,Subject,StartDateTime,EndDateTime,CreatedDate,Owner.Name,Description+FROM+Event+WHERE+WhatId='\''{{opportunity_id}}'\''+ORDER+BY+CreatedDate+DESC+LIMIT+200",
+      "url": "/services/data/v64.0/query/?q=SELECT+Id,Subject,StartDateTime,EndDateTime,CreatedDate,Owner.Name,Description+FROM+Event+WHERE+WhatId='\''{{opportunity_id}}'\''+ORDER+BY+StartDateTime+DESC+LIMIT+50",
       "referenceId": "Events"
     }
   ]
 }'
-
