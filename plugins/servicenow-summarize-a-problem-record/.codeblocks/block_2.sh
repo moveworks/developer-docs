@@ -1,0 +1,2 @@
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=problem_id%3D{{PROBLEM_SYS_ID}}%5EORDERBYsys_created_on&sysparm_display_value=true&sysparm_fields=number%2Cstate%2Cimpact%2Cpriority%2Cshort_description%2Cdescription%2Cwork_notes%2Ccomments%2Cassigned_to.name%2Cassignment_group.name%2Csys_id%2Curgency%2Cincident_state%2Ccompany.name%2Cdue_date&sysparm_limit=100' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>'
