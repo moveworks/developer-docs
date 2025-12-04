@@ -42,15 +42,15 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 ## **Installation Steps**
 
-We recommend setting up the **Salesforce connector** before installing this plugin. Please follow the [**Salesforce Connector**](https://marketplace.moveworks.com/connectors/salesforce#how-to-implement--give) guide to configure the connection.
+We recommend using user consent auth (authorization grant type). This plugin was made with APIs using authorization code grant type flow. You'll find the required permissions for User consent auth under the 'Required Salesforce Permissions'.
 
+Before installing this plugin, make sure the **Salesforce connector** is set up. You can follow the instructions in the [**Salesforce Connector**](https://marketplace.moveworks.com/connectors/salesforce#how-to-implement--give) guide to complete the configuration.
 
 **User Consent Authentication Benefits:**
 
 With OAuth 2.0 User Consent Authentication enabled, users can securely access their own Salesforce data—such as opportunities, tasks, activities, notes, and related records—through Moveworks without sharing credentials. By authenticating once through Salesforce’s login page, each user allows the bot to securely access and retrieve opportunity details on their behalf. 
 
 This ensures data privacy, role-based access control, and a seamless self-service experience where users only see the data they are authorized to view.
-
 
 **Required Salesforce Permissions:**
 
@@ -78,20 +78,6 @@ Ensure the integration user (via profile or permission sets) has **read access**
 - Opportunity Contact Roles
 
 These permissions are required to retrieve opportunity details and generate accurate Next Best Action recommendations.
-
-
-**Your Instance Configuration:**
-
-All Salesforce API endpoints in this plugin use `{{YOUR_INSTANCE_DOMAIN}}` as a placeholder.
-
-Follow the steps below to update it correctly after installation:
-
-1. Go to your **Salesforce Setup**.
-2. In the **Quick Find** box, search for **My Domain** and select it.
-3. Locate your **Salesforce org’s My Domain URL** (e.g., `yourcompany.my.salesforce.com`).
-4. Replace `{{YOUR_INSTANCE_DOMAIN}}` with your actual My Domain URL in all **action definitions** within the connector.
-5. Ensure all API requests use **HTTPS** and leverage **OAuth 2.0 authentication**.
-6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance
 
 After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for details on installing the plugin in Agent Studio.
 
