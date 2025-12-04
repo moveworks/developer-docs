@@ -86,10 +86,10 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/problem?sysparm_query={{F
 - `FILTER_QUERY` **(string)** – Filter assets by specific property values.
     - You can filter by **Problem number**, **Problem short description, Assignment group or Assigned to the user**.
         - Example filters:
-            - `^assignment_groupIN{{assignment_group_id}}`→ Returns problems by assignment group id.
-            - `number={{problem_number}}^assignment_groupIN{{assignment_group_id}}`→ Returns problems by problem number from specific assignment group.
-            - `short_descriptionLIKE{{short_description}}^assignment_groupIN{{assignment_group_id}}` → Returns problems by problem short description from specific assignment group
-            - `assigned_to.email={{user_email}}` → Returns only the problems assigned to the user.
+            - `^assignment_groupIN{{assignment_group_id}}` – Returns problems by assignment group id.
+            - `number={{problem_number}}^assignment_groupIN{{assignment_group_id}}` – Returns problems by problem number from specific assignment group.
+            - `short_descriptionLIKE{{short_description}}^assignment_groupIN{{assignment_group_id}}` – Returns problems by problem short description from specific assignment group
+            - `assigned_to.email={{user_email}}` – Returns only the problems assigned to the user.
 - `sysparm_fields` (string) – Fields to include in the response.
 
 **Note:** This workflow utilizes a Dynamic Resolver Strategy with **Context Passing** to automatically retrieve **Problem records** filtered by the value selected in the 'assignment_groups' slot.
@@ -103,7 +103,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=pr
 
 **Query Parameters:**
 
-- `PROBLEM_SYS_ID` → Returns specific problems linked incidents.
+- `PROBLEM_SYS_ID` – Returns specific problems linked incidents.
 - `sysparm_fields` (string) – Fields to include in the response.
 
 ### **API #4 :  Get Change Requests By Problem Sys ID**
@@ -115,7 +115,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/change_request?sysparm_qu
 
 **Query Parameters:**
 
-- `PROBLEM_SYS_ID` → Returns specific problems change requests.
+- `PROBLEM_SYS_ID` – Returns specific problems change requests.
 - `sysparm_fields` (string) – Fields to include in the response.
 
 ### **API #5 :  Get Related Tasks By Problem Sys ID**
@@ -127,5 +127,5 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/task?sysparm_query=parent
 
 **Query Parameters:**
 
-- `PROBLEM_SYS_ID` → Returns specific problems change requests.
+- `PROBLEM_SYS_ID` – Returns specific problems change requests.
 - `sysparm_fields` (string) – Fields to include in the response.
