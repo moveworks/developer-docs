@@ -77,7 +77,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user_grmember?sysparm
 ### **API #2 : Get Problems**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/api/now/table/problem?sysparm_query={{FILTER_QUERY}}&sysparm_display_value=true&sysparm_fields=number%2Cstate%2Csys_created_by%2Cknowledge%2Cmajor_problem%2Cimpact%2Cpriority%2Cbusiness_duration%2Cshort_description%2Cconfirmed_at%2Cassigned_to.name%2Cupon_approval%2Ccause_note%2Cdescription%2Ccalendar_duration%2Cclose_notes%2Csys_id%2Cresolution_code%2Curgency%2Ccompany%2Capproval%2Cdue_date%2Cproblem_state%2Ccategory%2Cfix_notes%2Cassignment_group.name' \
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/problem?sysparm_query={{FILTER_QUERY}}%5EORDERBYsys_created_on&sysparm_display_value=true&sysparm_fields=number%2Cstate%2Csys_created_by%2Cimpact%2Cpriority%2Cshort_description%2Cdescription%2Cassigned_to.name%2Cassignment_group.name%2Csys_id%2Curgency%2Ccompany%2Capproval%2Cdue_date%2Ccategory&sysparm_limit=100' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
@@ -97,7 +97,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/problem?sysparm_query={{F
 ### **API #3 : Get Linked Incidents By Problem Sys ID**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=problem_id%3D{{PROBLEM_SYS_ID}}&sysparm_display_value=true&sysparm_fields=made_sla%2Cupon_reject%2Cchild_incidents%2Chold_reason%2Cnumber%2Cskills%2Capproval_history%2Cstate%2Croute_reason%2Cknowledge%2Corder%2Cdelivery_plan%2Cimpact%2Cactive%2Cwork_notes%2Cpriority%2Cshort_description%2Cassignment_group.name%2Ccause%2Cdescription%2Cnotify%2Csys_id%2Cincident_state%2Curgency%2Cproblem_id%2Ccompany%2Creassignment_count%2Cassigned_to.name%2Cseverity%2Ccomments%2Capproval%2Csla_due%2Cdue_date%2Cescalation%2Cupon_approval%2Clocation%2Ccategory' \
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=problem_id%3D{{PROBLEM_SYS_ID}}%5EORDERBYsys_created_on&sysparm_display_value=true&sysparm_fields=number%2Cstate%2Cimpact%2Cpriority%2Cshort_description%2Cdescription%2Cwork_notes%2Ccomments%2Cassigned_to.name%2Cassignment_group.name%2Csys_id%2Curgency%2Cincident_state%2Ccompany.name%2Cdue_date&sysparm_limit=100' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
@@ -109,7 +109,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=pr
 ### **API #4 :  Get Change Requests By Problem Sys ID**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/api/now/table/change_request?sysparm_query=problem_id%3D{{PROBLEM_SYS_ID}}&sysparm_display_value=true&sysparm_fields=reason%2Cupron_reject%2Ctype%2Ctype%2Capproval_history%2Cskills%2Cnumber%2Ctest_plan%2Cstate%2Cknowledge%2Cphase%2C%2Cdelivery_plan%2Cimpact%2Cactive%2Cpriority%2Creview_date%2Cchange_plan%2Capproval_set%2Cimplementation_plan%2Cshort_description%2Cwork_start%2Coutside_maintanence_schedule%2Csys_class_name%2Creassignment_count%2Cassigned_to.name%2Csla_due%2Ccomments_and_work_notes%2Cescalation%2Cupon_approval%2Cmade_sla%2Cbackout_plan%2Cconflict_status%2Ctask_effective_number%2Con_hold_task%2Ctime_worked%2Cwork_end%2Cphase_state%2Cclose_code%2Cassignment_group.name%2Cdescription%2Cclose_notes%2Csys_id%2Curgency%2Cscope%2Ccompany%2Capproval%2Ccomments%2Cdue_date%2Crisk%2Ccategory%2Crisk_impact_analysis' \
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/change_request?sysparm_query=problem_id%3D{{PROBLEM_SYS_ID}}%5EORDERBYsys_created_on&sysparm_display_value=true&sysparm_fields=number%2Cstate%2Cshort_description%2Cdescription%2Cimpact%2Cpriority%2Cwork_start%2Cwork_end%2Cassigned_to.name%2Cassignment_group.name%2Csys_id%2Curgency%2Ccompany.name%2Ccomments%2Cclose_notes%2Crisk%2Ccategory&sysparm_limit=100' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
@@ -121,7 +121,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/change_request?sysparm_qu
 ### **API #5 :  Get Related Tasks By Problem Sys ID**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/api/now/table/task?sysparm_query=parent%3D{{PROBLEM_SYS_ID}}&sysparm_display_value=true&sysparm_fields=parent%2Cmade_sla%2Cupon_reject%2Cnumber%2Cstate%2Croute_reason%2Corder%2Cdelivery_plan%2Cimpact%2Cactive%2Cpriority%2Ctime_worked%2Cwork_notes%2Cshort_description%2Cdelivery_task%2Cassignment_group.name%2Cdescription%2Cclose_notes%2Cservice_offering%2Csys_id%2Curgency%2Ccompany%2Creassignment_count%2Cassigned_to.name%2Ccomments%2Capproval%2Csla_due%2Ccomments_and_work_notes%2Cdue_date%2Cescalation%2Cupon_approval' \
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/task?sysparm_query=parent%3D{{PROBLEM_SYS_ID}}%5EORDERBYsys_created_on&sysparm_display_value=true&sysparm_fields=number%2Cstate%2Cshort_description%2Cdescription%2Cpriority%2Cimpact%2Curgency%2Cassignment_group.name%2Cassigned_to.name%2Csys_id%2Cwork_notes%2Ccomments%2Cdue_date%2Ccompany.name&sysparm_limit=100' \
 --header 'Authorization: Bearer <ACCESS_TOKEN>'
 ```
 
