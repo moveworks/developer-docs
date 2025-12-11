@@ -1,6 +1,6 @@
 ---
 availability: IDEA
-description: A plugin that allows IT administrators to instantly trigger a device
+description: A plugin that allows IT admins to instantly trigger a device
   check-in and policy refresh in Jamf through the Moveworks AI Assistant.
 domain:
 - IT
