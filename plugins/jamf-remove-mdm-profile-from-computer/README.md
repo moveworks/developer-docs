@@ -1,6 +1,6 @@
 ---
 availability: IDEA
-description: A plugin that allows authorized IT administrators to remotely remove
+description: A plugin that allows authorized IT admins to remotely remove
   a Mobile Device Management (MDM) profile from a Mac computer device using the Moveworks
   AI Assistant.
 domain:
