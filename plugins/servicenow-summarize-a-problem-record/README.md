@@ -74,10 +74,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/sys_user_grmember?sysparm
 - `sysparm_fields` – Returns only the assignment group reference.
 - `sysparm_display_value=all` – Includes both display values and sys_ids for referenced fields.
 
-### **API #2 : Get Problems
--sysparm_display_value=true – Returns human-readable display values.
-
-sysparm_limit=100 – Limits the response to 100 records. Based on Dynamic Filters**
+### **API #2 : Get Problems**
 
 ```bash
 curl --location 'https://<YOUR_INSTANCE>/api/now/table/problem?sysparm_query={{FILTER_QUERY}}%5EORDERBYsys_created_on&sysparm_display_value=true&sysparm_fields=number%2Cstate%2Csys_created_by%2Cimpact%2Cpriority%2Cshort_description%2Cdescription%2Cassigned_to.name%2Cassignment_group.name%2Csys_id%2Curgency%2Ccompany%2Capproval%2Cdue_date%2Ccategory&sysparm_limit=100' \
@@ -108,7 +105,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/incident?sysparm_query=pr
 
 **Query Parameters:**
 
-- `PROBLEM_SYS_ID` – Sys ID of the problem used to retrieve all related incidents..
+- `PROBLEM_SYS_ID` – Sys ID of the problem used to retrieve all related incidents.
 - `sysparm_fields` – Returns incident details such as state, priority, assignment, and notes.
 - `sysparm_display_value=true` – Returns human-readable display values.
 - `sysparm_limit=100` – Limits the response to 100 incidents.
