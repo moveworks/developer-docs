@@ -88,7 +88,7 @@ curl --location 'https://<YOUR_INSTANCE>/api/now/table/problem?sysparm_query={{F
         - Example filters:
             - `^assignment_groupIN{{assignment_group_id}}` – Returns problems by assignment group id.
             - `number={{problem_number}}^assignment_groupIN{{assignment_group_id}}` – Returns problems by problem number from specific assignment group.
-            - `short_descriptionLIKE{{short_description}}^assignment_groupIN{{assignment_group_id}}` – Returns problems by problem short description from specific assignment group
+            - `short_descriptionLIKE{{short_description}}^assignment_groupIN{{assignment_group_id}}` – Returns problems by short description from a specific assignment group
             - `assigned_to.email={{user_email}}` – Returns only the problems assigned to the user.
 - `sysparm_fields` – Fields to include in the response.
 - `sysparm_display_value=true` – Returns human-readable display values.
