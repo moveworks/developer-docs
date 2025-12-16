@@ -1,0 +1,2 @@
+curl --location 'https://<YOUR_INSTANCE>/api/now/table/problem?sysparm_query={{FILTER_QUERY}}%5EORDERBYsys_created_on&sysparm_display_value=true&sysparm_fields=number%2Cstate%2Csys_created_by%2Cimpact%2Cpriority%2Cshort_description%2Cdescription%2Cassigned_to.name%2Cassignment_group.name%2Csys_id%2Curgency%2Ccompany%2Capproval%2Cdue_date%2Ccategory&sysparm_limit=100' \
+--header 'Authorization: Bearer <ACCESS_TOKEN>'
