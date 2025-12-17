@@ -46,7 +46,7 @@ For this plugin, ensure the user has the following permissions:
 
 **Your Instance Configuration:**
 
-All ServiceNow API endpoints in this plugin use `<YOUR_INSTANCE>` as a placeholder. After installation, replace `<YOUR_INSTANCE>` in the action definitions with your actual ServiceNow instance name.
+All ServiceNow API endpoints in this plugin use `YOUR_INSTANCE` as a placeholder. After installation, replace `YOUR_INSTANCE` in the action definitions with your actual ServiceNow instance name.
 
 To find your instance name:
 
