@@ -5,7 +5,7 @@
     {
       "attributes": {
         "type": "Opportunity",
-        "url": "/services/data/v64.0/sobjects/Opportunity/{{opportunity_id}}"
+        "url": "/services/data/vXX.X/sobjects/Opportunity/{{opportunity_id}}"
       },
       "Id": "{{opportunity_id}}",
       "IsDeleted": false,

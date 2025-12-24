@@ -39,7 +39,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 ## **Installation Steps**
 
-We recommend using user consent auth (authorization grant type). This plugin was made with APIs using authorization code grant type flow. You'll find the required permissions for User consent auth under the 'Required Salesforce Permissions'.
+We recommend using user consent auth (authorization grant type). Please follow our [Salesforce UCA Connector](https://marketplace.moveworks.com/connectors/salesforce#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup) Guide for detailed instructions. This plugin was made with APIs using authorization code grant type flow. You'll find the required permissions for User consent auth under the 'Required Salesforce Permissions'. 
 
 **User Consent Authentication Benefits:**
 
@@ -117,7 +117,7 @@ Once the connector is successfully configured, follow our [plugin installation d
 ### API #1: **Search Opportunities by Criteria**
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT FIELDS(ALL) FROM Opportunity WHERE {{{filter_query}}} ORDER BY CreatedDate DESC LIMIT 200' \
+curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT FIELDS(ALL) FROM Opportunity WHERE {{{filter_query}}} ORDER BY CreatedDate DESC LIMIT 200' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 ```
@@ -165,7 +165,7 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT FIE
     {
       "attributes": {
         "type": "Opportunity",
-        "url": "/services/data/v64.0/sobjects/Opportunity/{{opportunity_id}}"
+        "url": "/services/data/vXX.X/sobjects/Opportunity/{{opportunity_id}}"
       },
       "Id": "{{opportunity_id}}",
       "IsDeleted": false,
@@ -240,7 +240,7 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT FIE
 ### API #2: Get Opportunities by Team Manager Email
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT Id, Name, Email, UserRoleId, UserRole.Name FROM User WHERE Email = '{{email}}'' \
+curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT Id, Name, Email, UserRoleId, UserRole.Name FROM User WHERE Email = '{{email}}'' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 ```
@@ -264,7 +264,7 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT Id,
 ### API #4: Get Opportunities by Owner Id
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT Id, Name, StageName, CloseDate, Amount, CreatedDate, OwnerId, Owner.Name FROM Opportunity WHERE OwnerId IN ({{owner_id}}) AND CreatedDate >= {{from_date}} AND CreatedDate <= {{to_date}} ORDER BY CreatedDate DESC LIMIT 200' \
+curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/query/?q=SELECT Id, Name, StageName, CloseDate, Amount, LastModifiedDate, CreatedDate, OwnerId, Owner.Name FROM Opportunity WHERE OwnerId IN ({{owner_id}}) AND CreatedDate >= {{from_date}} AND CreatedDate <= {{to_date}} ORDER BY CreatedDate DESC LIMIT 200' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 ```
@@ -274,11 +274,13 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/query/?q=SELECT Id,
 - `owner_id` **(string)** – Salesforce User IDs of opportunity owners to filter opportunities.
 - `order_by` – Field to sort by
 - `limit` – Maximum records
+- `from_date` (string) – Start date to filter opportunities by created date.
+- `to_date` (string) – End date to filter opportunities by created date.
 
 ### API #5: Get Opportunities, Tasks, Events, and Opportunity by Opportunity IDs
 
 ```bash
-curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/composite' \
+curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/composite' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -312,7 +314,7 @@ curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/composite' \
 **Request Body Parameters**
 
 - `opportunity_id` – Comma-separated list of Salesforce Opportunity IDs.
-- `LIMIT` – Optional: Maximum number of records to return per object query
+- `LIMIT` – Optional: Maximum number of records to return per object query.
 
 **Batch Components Returned**
 

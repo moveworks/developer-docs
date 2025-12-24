@@ -1,4 +1,4 @@
-curl --location 'https://<YOUR_INSTANCE>/services/data/v64.0/composite' \
+curl --location 'https://<YOUR_INSTANCE>/services/data/vXX.X/composite' \
 --header 'Authorization: Bearer <YOUR_ACCESS_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data '{
