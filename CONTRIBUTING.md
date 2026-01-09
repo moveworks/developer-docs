@@ -80,6 +80,29 @@
    - **Option A:** Run locally: `python -m ci.validate_v3`
    - **Option B:** Push your branch, open a PR to `main`, and CI will post validation results as comments
 
+## Submitting Your Changes
+
+1. **Fork the repository** (use a personal GitHub account - GitHub EMU accounts cannot be used)
+2. **Create a branch** for your changes
+   ```bash
+   git checkout -b add-my-plugin
+   ```
+3. **Commit your changes**
+   ```bash
+   git add .
+   git commit -m "Add [plugin/connector name]"
+   ```
+4. **Push to your fork**
+   ```bash
+   git push origin add-my-plugin
+   ```
+5. **Open a pull request** to the `main` branch
+   - Go to the original repository on GitHub
+   - Click "New Pull Request"
+   - Select your fork and branch
+   - Fill in the PR description with details about your plugin/connector
+   - CI will automatically run validation and post results as comments
+
 ## Valid Values Reference
 
 See [ci/config.yaml](ci/config.yaml) for all valid enum values:
