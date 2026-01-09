@@ -1,4 +1,4 @@
 **/.DS_Store
 **/*.csv
 **/__pycache__
-.vscode
+.vscodeci/cleanup_report.txt
