@@ -9,48 +9,7 @@ In the AI Agent Marketplace, you will find...
 
 ## Contributing
 
-We welcome contributions to the AI Agent Marketplace. Whether you're adding a new plugin, connector, or improving existing documentation, please follow our guidelines to ensure quality and consistency.
-
-### V3 Schema
-
-This repository uses the V3 schema, which enforces strict validation rules to maintain consistency across all content. Key requirements include:
-
-- **Strict Field Validation**: Only allowed fields are accepted (unknown fields will fail validation)
-- **Kebab-case Slugs**: Directory names must be lowercase with hyphens (e.g., `sap-concur`)
-- **Required Fields**: All required fields must be present (varies by content type)
-- **Enum Validation**: Field values must match those defined in [ci/config.yaml](ci/config.yaml)
-- **Format Rules**: Descriptions must end with periods, purple chat links are plugins-only, etc.
-
-### Quick Start
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for complete step-by-step instructions on adding plugins and connectors, including:
-- Copy-paste frontmatter templates
-- Field explanations with examples
-- Logo requirements and upload instructions
-- Validation options (local and CI)
-- PR submission workflow
-
-### Running Tests Locally
-
-Before submitting a pull request, run validation locally to catch errors early:
-
-```bash
-python -m ci.validate_v3
-```
-
-This will validate all plugins and connectors against the V3 schema, checking for:
-- Correct frontmatter fields and formats
-- Kebab-case directory names
-- Valid enum values
-- Broken links and images
-- Duplicate slugs and redirects
-
-If validation passes, you'll see:
-```
-✅ ALL VALIDATIONS PASSED!
-```
-
-If validation fails, error messages will indicate what needs to be fixed.
+If you would like to add content, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Closing Thoughts
 
