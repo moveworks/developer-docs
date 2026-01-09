@@ -31,11 +31,17 @@ logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integratio
 
 ## Validation
 
-Run before committing:
+**Option 1: Run locally**
 
 ```bash
 python -m ci.validate_v3
 ```
+
+**Option 2: Let CI run it**
+
+1. Push your branch: `git push origin your-branch-name`
+2. Open a pull request to `main`
+3. Check the PR - CI will run validation and post results as comments if there are issues
 
 ## Valid Values
 
