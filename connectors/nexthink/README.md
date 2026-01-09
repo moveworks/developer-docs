@@ -1,14 +1,7 @@
 ---
-accreditations:
-- indrapaul24
-- sarthaksrinivas
-- DEFAULT
 availability: VALIDATED
-difficulty_level: BEGINNER
-fidelity: GUIDE
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/nexthink/logo.png
 name: Nexthink
-time_in_minutes: 15
 ---
 
 # **Introduction**

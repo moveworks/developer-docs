@@ -1,13 +1,7 @@
 ---
-accreditations:
-- indrapaul24
-- DEFAULT
 availability: VALIDATED
-difficulty_level: INTERMEDIATE
-fidelity: GUIDE
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/salesforce-integration-logo-primary.svg
 name: Salesforce
-time_in_minutes: 60
 ---
 
 # **Introduction**

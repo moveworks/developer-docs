@@ -1,13 +1,7 @@
 ---
-accreditations:
-- ajaymerchia
-- DEFAULT
 availability: VALIDATED
-difficulty_level: BEGINNER
-fidelity: GUIDE
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/perplexity/logo.png
 name: Workato
-time_in_minutes: 30
 ---
 
 # Introduction

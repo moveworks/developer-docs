@@ -1,22 +1,13 @@
 ---
-accreditations:
-- smartzee797
-- DEFAULT
 availability: INSTALLABLE
 description: A plugin that allows users to reset their Microsoft MFA device.
-difficulty_level: BEGINNER
-domain:
-- IT
-fidelity: TEMPLATE
 installation_asset_uuid: ee4c234e-9573-411f-a1e2-b9ded2dad2ae
 name: Reset Microsoft MFA
-num_implementations: 2
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Hi%2C+Can+you+please+help+me+reset+my+Azure+MFA.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Sure%2C+do+you+want+to+proceed+with+resetting+the+MFA+as+this+cannot+be+reverted+%3F%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Yes%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22No%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Inbound+Request+to+Middleware+%5C%22Azure+Functions%5C%22+%5Cn%5Cn%7B%5Cn+%5C%22email%5C%22+%3A+%3Cuser_email%3E%5Cn%7D%5Cn+%5CnProcess%3A%5Cn1.+Generate+Bearer+Token+for+Authentication%5Cn2.+LIST+the+existing+MFA+for+the+user%5Cn3.+Delete+the+MFA+for+the+user%5Cn%5CnOutbound+Response%3A%5Cn%7B%5Cn+++%5C%22Status%5C%22%3A+%5C%22OK+%28200%29%5C%22%5Cn%7D%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22I%27ve+successfully+reset+the+MFA+on+Azure%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Hi%2C+Can+you+please+help+me+reset+my+Azure+MFA.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Sure%2C+do+you+want+to+proceed+with+resetting+the+MFA+as+this+cannot+be+reverted+%3F%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Yes%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22No%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Inbound+Request+to+Middleware+%5C%22Azure+Functions%5C%22+%5Cn%5Cn%7B%5Cn+%5C%22email%5C%22+%3A+%3Cuser_email%3E%5Cn%7D%5Cn+%5CnProcess%3A%5Cn1.+Generate+Bearer+Token+for+Authentication%5Cn2.+LIST+the+existing+MFA+for+the+user%5Cn3.+Delete+the+MFA+for+the+user%5Cn%5CnOutbound+Response%3A%5Cn%7B%5Cn+++%5C%22Status%5C%22%3A+%5C%22OK+%28200%29%5C%22%5Cn%7D%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22I%27ve+successfully+reset+the+MFA+on+Azure%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - IT
 systems:
 - microsoft-graph
-time_in_minutes: 30
 ---
 
 ### **Introduction**

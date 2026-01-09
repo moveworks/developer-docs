@@ -1,22 +1,13 @@
 ---
-accreditations:
-- ajaymerchia
-- DEFAULT
 availability: VALIDATED
 description: A plugin that filters a Sharepoint list on one attribute.
-design_pattern_id: 28
-difficulty_level: INTERMEDIATE
-domain:
-- Productivity
-fidelity: GUIDE
 name: Filter Sharepoint List
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ECan+you+show+me+Critical+priority+customer+feedback%3Cbr%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3EMoveworks+extracts+%5C%22Critical%5C%22+from+natural+language%3A%3Cbr%3E%3Cbr%3EInbound+Request+to+Middleware%3A%3Cbr%3E%3Cbr%3E%7B%3Cbr%3E%5C%22%24filter%5C%22%3A+%5C%22fields%2FPriority+eq+%27Critical%27%5C%22%3Cbr%3E%7D%3Cbr%3E%3Cbr%3EProcess%3A%3Cbr%3E1.+Establish+a+connection+to+Sharepoint+List+over+Graph+API%3Cbr%3E2.+Retrieve+items+matching+the+filter+in+the+Sharepoint+List%3Cbr%3E%3Cbr%3EOutbound+Response%3A%3Cbr%3E%7B%3Cbr%3E%5C%22value%5C%22%3A+%5B%3Cbr%3E++%7B+Item1+%7D%2C%3Cbr%3E++%7B+Item2+%7D%2C%3Cbr%3E++...%3Cbr%3E%5D%3Cbr%3E%7D%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Ci%3EOne+moment%2C+fetching+your+results.+This+may+take+%7E10+seconds%3C%2Fi%3E%5Cn%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3E%3Cb%3EAccount+Login+Failure%3C%2Fb%3E%3A+New%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3E%3Cb%3EWeb+Loading+Issue%3C%2Fb%3E%3A+In+Progress%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%22%7D%5D%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ECan+you+show+me+Critical+priority+customer+feedback%3Cbr%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3EMoveworks+extracts+%5C%22Critical%5C%22+from+natural+language%3A%3Cbr%3E%3Cbr%3EInbound+Request+to+Middleware%3A%3Cbr%3E%3Cbr%3E%7B%3Cbr%3E%5C%22%24filter%5C%22%3A+%5C%22fields%2FPriority+eq+%27Critical%27%5C%22%3Cbr%3E%7D%3Cbr%3E%3Cbr%3EProcess%3A%3Cbr%3E1.+Establish+a+connection+to+Sharepoint+List+over+Graph+API%3Cbr%3E2.+Retrieve+items+matching+the+filter+in+the+Sharepoint+List%3Cbr%3E%3Cbr%3EOutbound+Response%3A%3Cbr%3E%7B%3Cbr%3E%5C%22value%5C%22%3A+%5B%3Cbr%3E++%7B+Item1+%7D%2C%3Cbr%3E++%7B+Item2+%7D%2C%3Cbr%3E++...%3Cbr%3E%5D%3Cbr%3E%7D%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Ci%3EOne+moment%2C+fetching+your+results.+This+may+take+%7E10+seconds%3C%2Fi%3E%5Cn%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3E%3Cb%3EAccount+Login+Failure%3C%2Fb%3E%3A+New%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3E%3Cb%3EWeb+Loading+Issue%3C%2Fb%3E%3A+In+Progress%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - Productivity
 systems:
 - sharepoint
 - microsoft-graph
-time_in_minutes: 30
 video: https://youtu.be/JN1pmdZA8UM
 ---
 

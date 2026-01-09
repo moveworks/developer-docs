@@ -2,23 +2,15 @@
 availability: INSTALLABLE
 description: A plugin that enables a user to ask the exact date they started at a
   company, and the bot replies with the desired information.
-difficulty_level: BEGINNER
-domain:
-- HR - Other
-- HR - Employee Records
-- HR - Onboarding
-fidelity: TEMPLATE
 installation_asset_uuid: 7fd7d567-b314-476e-ac8f-1b7b5145f957
 name: Find Start Date
-num_implementations: 1
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Can+you+tell+me+what+date+I+started+at+the+company%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWorking+on+%3Cstrong%3EDate+started+at+the+company%3C%2Fstrong%3E%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22Your+start+date+with+the+company+was+%3Cb%3EJuly+15th%2C+2019%3C%2Fb%3E.+Is+there+anything+else+you%27d+like+to+know%3F%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22John+Smith%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Can+you+tell+me+what+date+I+started+at+the+company%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWorking+on+%3Cstrong%3EDate+started+at+the+company%3C%2Fstrong%3E%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22Your+start+date+with+the+company+was+%3Cb%3EJuly+15th%2C+2019%3C%2Fb%3E.+Is+there+anything+else+you%27d+like+to+know%3F%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22John+Smith%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - HR - Employee Records
 - HR - Onboarding
 - HR - Other
 systems:
 - workday
-time_in_minutes: 15
 ---
 
 ## Introduction

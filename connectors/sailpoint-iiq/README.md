@@ -1,15 +1,9 @@
 ---
-accreditations:
-- indrapaul24
-- DEFAULT
 availability: VALIDATED
 description: A connector that connects your SailPoint IIQ instance to Moveworks via
   Creator Studio.
-difficulty_level: BEGINNER
-fidelity: GUIDE
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/sailpoint-iiq/logo.png
 name: Sailpoint IdentityIQ
-time_in_minutes: 20
 ---
 
 # Introduction

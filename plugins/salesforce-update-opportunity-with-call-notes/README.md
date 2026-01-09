@@ -1,19 +1,13 @@
 ---
 availability: INSTALLABLE
 description: A plugin that allows you to post an update to an opportunity or add notes.
-difficulty_level: BEGINNER
-domain:
-- Sales
-fidelity: TEMPLATE
 installation_asset_uuid: 0d2d68ae-1c2d-4045-a11b-7941c2329d0a
 name: Update an Opportunity with Call Notes
-num_implementations: 1
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EJust+had+a+productive+call+with+Acme+Corp.+I+need+to+log+this+in+Salesforce.+We+discussed+the+product+roadmap+and+they%27re+interested+in+a+demo+next+week.+%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Gathers+details+for+Salesforce+update%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3ELet%27s+update+Acme+Corp%27s+Salesforce+record.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EConfirm+call+summary+%26+next+actions%3A%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EAccount%3A%3C%2Fb%3E+Acme+Corp%3Cbr%3E%3Cb%3ECall+Summary%3A%3C%2Fb%3E+Discussed+product+updates%2C+showed+strong+interest.%3Cbr%3E%3Cb%3ENext+Steps%3A%3C%2Fb%3E+Schedule+a+product+demo+for+next+week.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Update+in+Salesforce%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Edit+Details%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Acme+Corp%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EJust+had+a+productive+call+with+Acme+Corp.+I+need+to+log+this+in+Salesforce.+We+discussed+the+product+roadmap+and+they%27re+interested+in+a+demo+next+week.+%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Gathers+details+for+Salesforce+update%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3ELet%27s+update+Acme+Corp%27s+Salesforce+record.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EConfirm+call+summary+%26+next+actions%3A%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EAccount%3A%3C%2Fb%3E+Acme+Corp%3Cbr%3E%3Cb%3ECall+Summary%3A%3C%2Fb%3E+Discussed+product+updates%2C+showed+strong+interest.%3Cbr%3E%3Cb%3ENext+Steps%3A%3C%2Fb%3E+Schedule+a+product+demo+for+next+week.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Update+in+Salesforce%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Edit+Details%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Acme+Corp%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - Sales
 systems:
 - salesforce
-time_in_minutes: 10
 ---
 
 ## **Introduction**

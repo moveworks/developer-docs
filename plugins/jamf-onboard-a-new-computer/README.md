@@ -2,11 +2,6 @@
 availability: INSTALLABLE
 description: A plugin that allows IT administrators to quickly onboard new apple computers
   in Jamf through the Moveworks AI Assistant.
-difficulty_level: INTERMEDIATE
-domain:
-- IT
-- Access Management
-fidelity: TEMPLATE
 installation_asset_uuid: dec59c18-d552-4a27-a839-86ec4228731b
 name: Onboard a New Computer
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Onboard+a+new+MacBook+for+John+Doe%2C+serial+C02X123%2C+in+the+Engineering+department.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Identifying+intent+to+onboard+a+device.%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Extracting+device+type%2C+serial+number%2C+owner%2C+and+department+from+the+request.%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Verifying+user+%27John+Doe%27+in+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EJamf%3C%2Fb%3E.%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Verifying+%27Engineering%27+department+in+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EJamf%3C%2Fb%3E.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EGot+it+%E2%80%94+here%E2%80%99s+what+I+understood%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3E%3Cstrong%3EDevice+Type%3A%3C%2Fstrong%3E+Computer+%28MacBook%29%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3ESerial+Number%3A%3C%2Fstrong%3E+C02X123%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EOwner%3A%3C%2Fstrong%3E+John+Doe+%28%3Ca+target%3D%5C%22_blank%5C%22+rel%3D%5C%22noopener+noreferrer+nofollow%5C%22+class%3D%5C%22editor-link%5C%22+href%3D%5C%22mailto%3Ajohn.doe%40company.com%5C%22%3Ejohn.doe%40company.com%3C%2Fa%3E%29%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EDepartment%3A%3C%2Fstrong%3E+Engineering%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EWould+you+like+me+to+create+the+enrollment+invitation+for+John%3F+You+can+enroll+the+device+on+his+behalf.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Yes%2C+go+ahead.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Generating+enrollment+invitation+for+MacBook+with+serial+C02X123+for+John+Doe+in+%3Cb+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EJamf%3C%2Fb%3E.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EEnrollment+link+generated+for+John+Doe%E2%80%99s+MacBook%3A%3Cbr%3E%F0%9F%94%97+%3Ca+target%3D%5C%22_blank%5C%22+rel%3D%5C%22noopener+noreferrer+nofollow%5C%22+class%3D%5C%22editor-link%5C%22+href%3D%5C%22https%3A%2F%2Fjamf.company.com%2Fenroll%3Finvitation%3DABC123%5C%22%3Ehttps%3A%2F%2Fjamf.company.com%2Fenroll%3Finvitation%3DABC123%3C%2Fa%3E%3C%2Fp%3E%3Cp%3EOnce+John+completes+enrollment%2C+i%27ll+start+the+onboarding+process+for+John.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22jamf%22%2C%22citationTitle%22%3A%22John+Doe%22%7D%2C%7B%22connectorName%22%3A%22jamf%22%2C%22citationTitle%22%3A%22MacBook+C02X123%22%7D%5D%7D%5D%7D%5D%7D
@@ -15,7 +10,6 @@ solution_tags:
 - IT
 systems:
 - jamf
-time_in_minutes: 15
 ---
 
 ## **Introduction**

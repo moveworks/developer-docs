@@ -1,11 +1,7 @@
 ---
 availability: VALIDATED
-difficulty_level: INTERMEDIATE
-fidelity: GUIDE
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/okta/logo.png
 name: Okta
-num_implementations: 0
-time_in_minutes: 15
 ---
 
 # Introduction:

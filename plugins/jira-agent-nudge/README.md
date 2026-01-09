@@ -1,28 +1,16 @@
 ---
-accreditations:
-- tporter-moveworks
-- DEFAULT
 agent_capabilities:
-- Polling Required
+- Ambient Agent
+- Ambient Agent
 availability: VALIDATED
-custom_tags:
-- Polling Required
 description: A plugin that nudges assignees about tickets that haven't been updated
   in a given time period.
-design_pattern_id: 10
-difficulty_level: INTERMEDIATE
-domain:
-- IT
-drop_accreditations:
-- ajaymerchia
-fidelity: GUIDE
 name: Nudge Ticket Assignee
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHello+Tyler%21%3Cbr%3EHope+you+had+a+great+weekend.%3Cbr%3E%3Cbr%3EBelow+is+a+list+of+open+tickets+that+haven%27t+received+an+update+in+a+week+or+longer.+Please+prioritize+updating+these+tickets%2C+especially+if+they+are+customer+facing.%3Cbr%3E%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-12345%3C%2Fa%3E+%7C+I+need+access+to+Zoom%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-32352%3C%2Fa%3E+%7C+My+keyboard+isn%27t+working%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-43256%3C%2Fa%3E+%7C+VPN+keeps+disconnecting+from+my+preferred+portal%3Cbr%3E%3Cbr%3EThank+you%21%3C%2Fp%3E%22%7D%5D%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHello+Tyler%21%3Cbr%3EHope+you+had+a+great+weekend.%3Cbr%3E%3Cbr%3EBelow+is+a+list+of+open+tickets+that+haven%27t+received+an+update+in+a+week+or+longer.+Please+prioritize+updating+these+tickets%2C+especially+if+they+are+customer+facing.%3Cbr%3E%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-12345%3C%2Fa%3E+%7C+I+need+access+to+Zoom%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-32352%3C%2Fa%3E+%7C+My+keyboard+isn%27t+working%3Cbr%3E*+%3Ca+href%3D%5C%22https%3A%2F%2Fgoogle.com%5C%22%3EIT-43256%3C%2Fa%3E+%7C+VPN+keeps+disconnecting+from+my+preferred+portal%3Cbr%3E%3Cbr%3EThank+you%21%3C%2Fp%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - IT
 systems:
 - jira
-time_in_minutes: 30
 ---
 
 # Introduction

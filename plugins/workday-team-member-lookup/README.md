@@ -1,20 +1,9 @@
 ---
-accreditations:
-- sarthaksrinivas
-- DEFAULT
 availability: INSTALLABLE
 description: A plugin which allows you to view team members (peers and delegates).
-difficulty_level: INTERMEDIATE
-domain:
-- HR - Other
-- HR - Employee Records
-- HR - Onboarding
-- HR - Time & Absence
-fidelity: TEMPLATE
 installation_asset_uuid: 1d9ae78c-54f8-47d8-989e-1a7f2bb4e373
 name: Look up Team Members
-num_implementations: 1
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWho+is+on+Ellen%27s+team%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESearches+Workday+for+relevant+information+on+the+user%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI+have+found+out+that+there+are+multiple+Ellens+in+your+organization.+For+whom+do+you+want+me+to+fetch+the+team+members+for%3F%3C%2Fp%3E%5Cn%3Cul%3E%5Cn++%3Cli%3EEllen+H%2C+Sales+Director%3C%2Fli%3E%5Cn++%3Cli%3EEllen+M%2C+Engineering+Lead%3C%2Fli%3E%5Cn%3C%2Ful%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+want+to+see+the+team+members+of+Ellen+H+who+is+a+Sales+Director.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESearches+Workday+for+team+members+information%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EHere+are+the+team+members+of+Ellen+H%2C+Sales+Director%3A%3C%2Fp%3E%5Cn%3Cul%3E%5Cn++%3Cli%3EJacob+R%3C%2Fli%3E%5Cn++%3Cli%3ERudolph+J%3C%2Fli%3E%5Cn%3C%2Ful%3E%22%7D%5D%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWho+is+on+Ellen%27s+team%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESearches+Workday+for+relevant+information+on+the+user%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI+have+found+out+that+there+are+multiple+Ellens+in+your+organization.+For+whom+do+you+want+me+to+fetch+the+team+members+for%3F%3C%2Fp%3E%5Cn%3Cul%3E%5Cn++%3Cli%3EEllen+H%2C+Sales+Director%3C%2Fli%3E%5Cn++%3Cli%3EEllen+M%2C+Engineering+Lead%3C%2Fli%3E%5Cn%3C%2Ful%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+want+to+see+the+team+members+of+Ellen+H+who+is+a+Sales+Director.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ESearches+Workday+for+team+members+information%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EHere+are+the+team+members+of+Ellen+H%2C+Sales+Director%3A%3C%2Fp%3E%5Cn%3Cul%3E%5Cn++%3Cli%3EJacob+R%3C%2Fli%3E%5Cn++%3Cli%3ERudolph+J%3C%2Fli%3E%5Cn%3C%2Ful%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - HR - Employee Records
 - HR - Onboarding
@@ -22,7 +11,6 @@ solution_tags:
 - HR - Time & Absence
 systems:
 - workday
-time_in_minutes: 25
 video: https://www.loom.com/share/d2f169b14d2544b5ae3dcacb807232da?sid=1d00d88d-35dd-4377-9ea5-726c18a04787
 ---
 

@@ -23,7 +23,6 @@ from ci.model import (
     README_FILENAME,
     LOGO_FILE,
     KEBAB_CASE_PATTERN,
-    PLUGIN_DESCRIPTION_PREFIX,
     DESCRIPTION_SUFFIX,
     PURPLE_CHAT_URL_PREFIX,
     CONNECTOR_REQUIRED_FIELDS,
@@ -201,20 +200,14 @@ def validate_name_title_case(name: str, file_path: str) -> bool:
 
 
 def validate_description_format(
-    description: str, file_path: str, is_plugin: bool
+    description: str, file_path: str
 ) -> bool:
-    """Validate description format (prefix and suffix)"""
+    """Validate description format (must end with period)"""
     if not description:
         return True
 
-    # Check prefix for plugins
-    if is_plugin:
-        if not description.startswith(PLUGIN_DESCRIPTION_PREFIX):
-            print(
-                f"ERROR: Plugin description in {file_path} must start with "
-                f"'{PLUGIN_DESCRIPTION_PREFIX}'. Got: '{description[:50]}...'"
-            )
-            return False
+    # NOTE: Prefix check disabled - too restrictive for varied plugin types
+    # (ambient agents, scheduled agents, etc. have different phrasings)
 
     # Check suffix (period)
     if not description.strip().endswith(DESCRIPTION_SUFFIX):
@@ -386,8 +379,8 @@ def validate_connector_v3(file_path: str, all_redirects: set) -> bool:
     if not validate_slug_format(file_path):
         return False
 
-    if not validate_name_title_case(data['name'], file_path):
-        return False
+    # NOTE: Title Case validation disabled - too many edge cases and false positives
+    # (8x8, iNow, prepositions, articles, etc.)
 
     if not validate_purple_chat_link(data, file_path, is_plugin=False):
         return False
@@ -397,9 +390,7 @@ def validate_connector_v3(file_path: str, all_redirects: set) -> bool:
 
     # Optional field validations
     if 'description' in data:
-        if not validate_description_format(
-            data['description'], file_path, is_plugin=False
-        ):
+        if not validate_description_format(data['description'], file_path):
             return False
 
     if not validate_redirects(data, file_path, all_redirects):
@@ -454,12 +445,10 @@ def validate_plugin_v3(file_path: str, all_redirects: set) -> bool:
     if not validate_slug_format(file_path):
         return False
 
-    if not validate_name_title_case(data['name'], file_path):
-        return False
+    # NOTE: Title Case validation disabled - too many edge cases and false positives
+    # (8x8, iNow, prepositions, articles, etc.)
 
-    if not validate_description_format(
-        data['description'], file_path, is_plugin=True
-    ):
+    if not validate_description_format(data['description'], file_path):
         return False
 
     if not validate_purple_chat_link(data, file_path, is_plugin=True):
