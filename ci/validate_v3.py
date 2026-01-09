@@ -379,8 +379,8 @@ def validate_connector_v3(file_path: str, all_redirects: set) -> bool:
     if not validate_slug_format(file_path):
         return False
 
-    if not validate_name_title_case(data['name'], file_path):
-        return False
+    # NOTE: Title Case validation disabled - too many edge cases and false positives
+    # (8x8, iNow, prepositions, articles, etc.)
 
     if not validate_purple_chat_link(data, file_path, is_plugin=False):
         return False
@@ -445,8 +445,8 @@ def validate_plugin_v3(file_path: str, all_redirects: set) -> bool:
     if not validate_slug_format(file_path):
         return False
 
-    if not validate_name_title_case(data['name'], file_path):
-        return False
+    # NOTE: Title Case validation disabled - too many edge cases and false positives
+    # (8x8, iNow, prepositions, articles, etc.)
 
     if not validate_description_format(data['description'], file_path):
         return False
