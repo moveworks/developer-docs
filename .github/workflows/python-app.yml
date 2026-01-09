@@ -9,6 +9,8 @@ jobs:
     permissions: read-all
     outputs:
       message: '${{ steps.check_changes.outputs.comment_message }}'
+      validation_message: '${{ steps.validation.outputs.validation_message }}'
+      validation_failed: '${{ steps.validation.outputs.validation_failed }}'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,16 +27,51 @@ jobs:
           GH_SHA_MAIN_HEAD: '${{ github.sha }}'
           GH_SHA_PR_HEAD: '${{ github.event.pull_request.head.sha }}'
       - name: Validate Files V3
-        run: python -m ci.validate_v3
+        id: validation
+        continue-on-error: true
+        run: |
+          if python -m ci.validate_v3 2>&1 | tee validation_output.txt; then
+            echo "validation_failed=false" >> $GITHUB_OUTPUT
+            echo "validation_message=" >> $GITHUB_OUTPUT
+          else
+            echo "validation_failed=true" >> $GITHUB_OUTPUT
+            echo "validation_message<<EOF" >> $GITHUB_OUTPUT
+            echo "## ❌ Validation Failed" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "\`\`\`" >> $GITHUB_OUTPUT
+            cat validation_output.txt >> $GITHUB_OUTPUT
+            echo "\`\`\`" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "Please fix the errors above and push your changes. See [CONTRIBUTING.md](https://github.com/moveworks/developer-docs/blob/main/CONTRIBUTING.md) for documentation." >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            exit 1
+          fi
       - name: Generate Code Blocks
         run: python ci/copy_code_blocks.py
   comment:
     runs-on: ubuntu-latest
     needs: build
+    if: always()
     permissions:
       pull-requests: write
     steps:
-      - name: Add Comment
+      - name: Add Validation Comment
+        if: needs.build.outputs.validation_failed == 'true'
+        uses: actions/github-script@v7
+        env:
+          message: '${{needs.build.outputs.validation_message}}'
+        with:
+          github-token: '${{secrets.GITHUB_TOKEN}}'
+          script: |
+            const issue_number = context.issue.number;
+            const comment_message = process.env.message;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: comment_message
+            });
+      - name: Add Preview Comment
         if: needs.build.outputs.message != ''
         uses: actions/github-script@v7
         env:
