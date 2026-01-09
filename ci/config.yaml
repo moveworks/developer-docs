@@ -1,0 +1,57 @@
+# V3 Schema Configuration
+# This file defines valid enum values for schema fields
+# Validation rules and logic live in validate_v3.py
+
+version: 3
+
+# Valid availability states for plugins and connectors
+availability:
+  - IDEA
+  - VALIDATED
+  - BUILT_IN
+  - INSTALLABLE
+  - IMPOSSIBLE
+
+# Valid agent capabilities (multi-select for plugins)
+# Note: "Polling Required" is being migrated to "Ambient Agent"
+agent_capabilities:
+  - Ambient Agent
+  - Structured Data Analyzer
+
+# Valid solution tags (business categorization, multi-select for plugins)
+# Extracted from existing solution_tags and domain fields across all files
+solution_tags:
+  - Access Management
+  - Approvals
+  - Customer Success
+  - Data Analysis
+  - Engineering
+  - Facilities
+  - Finance - Expense Management
+  - Finance - Other
+  - Finance - Payroll
+  - Finance - Procurement
+  - General
+  - HR - Benefits
+  - HR - Employee Records
+  - HR - Learning & Development
+  - HR - Onboarding
+  - HR - Other
+  - HR - Performance Management
+  - HR - Recruiting & Talent
+  - HR - Talent Management
+  - HR - Time & Absence
+  - HR - Workplace Culture
+  - IT
+  - Legal
+  - Manager
+  - Marketing
+  - Product
+  - Product Management
+  - Productivity
+  - Project Management
+  - Sales
+  - Support
+  - Ticketing
+  - Troubleshoot
+  - Workday
