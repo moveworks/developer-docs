@@ -27,9 +27,9 @@ for file in changed_files.split("\n"):
         # Skip root-level README.md files
         if len(file_parts) < 2:
             continue
-        top_directory = file_parts[0][:-1] # First directory, trimming the "s" at the end
-        second_directory = file_parts[1]
-        comment_message += f"Changes to {file} can be viewed at https://developer.moveworks.com/creator-studio/resources/{top_directory}?id={second_directory}&commit_id={commit_id}; "
+        top_directory = file_parts[0] # Keep the plural form (connectors/plugins)
+        item_name = file_parts[1]
+        comment_message += f"Changes to {file} can be viewed at https://marketplace.moveworks.com/{top_directory}/{item_name}?commit_id={commit_id}; "
 
 print(f"Writing output: '{comment_message}' to {env_file}")
 with open(env_file, "a") as f:
