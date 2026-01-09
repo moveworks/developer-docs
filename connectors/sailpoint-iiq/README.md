@@ -4,6 +4,8 @@ description: A connector that connects your SailPoint IIQ instance to Moveworks 
   Creator Studio.
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/sailpoint-iiq/logo.png
 name: Sailpoint IdentityIQ
+solution_tags:
+- General
 ---
 
 # Introduction

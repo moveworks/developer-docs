@@ -2,6 +2,8 @@
 availability: VALIDATED
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/sap-integration-logo-primary.svg
 name: SAP Success Factors
+solution_tags:
+- General
 ---
 
 # Introduction:

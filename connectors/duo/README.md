@@ -2,4 +2,6 @@
 availability: BUILT_IN
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/duo-integration-logo-primary.svg
 name: Duo
+solution_tags:
+- General
 ---

@@ -2,6 +2,8 @@
 availability: VALIDATED
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/salesforce-integration-logo-primary.svg
 name: Salesforce
+solution_tags:
+- General
 ---
 
 # **Introduction**

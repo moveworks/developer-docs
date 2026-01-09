@@ -3,6 +3,8 @@ availability: VALIDATED
 description: Connect your Moveworks Copilot to Databricks.
 logo: https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png
 name: Databricks
+solution_tags:
+- General
 ---
 
 # Introduction

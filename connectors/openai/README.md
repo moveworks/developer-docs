@@ -2,6 +2,8 @@
 availability: VALIDATED
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/openai/logo.png
 name: OpenAI
+solution_tags:
+- General
 ---
 
 # **Introduction**

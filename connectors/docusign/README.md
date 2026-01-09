@@ -3,6 +3,8 @@ availability: VALIDATED
 description: A JWT based connector for Docusign.
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/docusign-integration-logo-primary.svg
 name: Docusign
+solution_tags:
+- General
 ---
 
 # **Introduction**

@@ -2,6 +2,8 @@
 availability: BUILT_IN
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/freshservice-integration-logo-primary.svg
 name: Freshservice
+solution_tags:
+- General
 ---
 
 # Built-in Connector

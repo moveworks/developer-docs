@@ -3,6 +3,8 @@ availability: VALIDATED
 description: Connect to Palo Alto Networks PAN OS.
 logo: https://images.crunchbase.com/image/upload/c_pad,h_160,w_160,f_auto,b_white,q_auto:eco,dpr_2/tfdu8x1ecbity2d1xpe6
 name: Palo Alto Networks
+solution_tags:
+- General
 ---
 
 # Introduction

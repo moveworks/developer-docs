@@ -2,6 +2,8 @@
 availability: VALIDATED
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/slack-integration-logo-primary.svg
 name: Slack
+solution_tags:
+- General
 ---
 
 # **Introduction**
