@@ -7,6 +7,10 @@ In the AI Agent Marketplace, you will find...
 1. **Plugins** (`./plugins`): Example plugins that you can add to your Assistant
 3. **Connectors** (`./connectors`): Documentation on business systems and how to authenticate with them.
 
+## Contributing
+
+If you would like to add content, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Closing Thoughts
 
 If you need further assistance, please reach out.
