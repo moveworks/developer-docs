@@ -1,0 +1,23 @@
+# V3 Schema Configuration
+# This file defines valid enum values for schema fields
+# Validation rules and logic live in validate_v3.py
+
+version: 3
+
+# Valid availability states for plugins and connectors
+availability:
+  - IDEA
+  - VALIDATED
+  - BUILT_IN
+  - INSTALLABLE
+  - IMPOSSIBLE
+
+# Valid agent capabilities (multi-select for plugins)
+agent_capabilities:
+  - Ambient Agent
+  - Proactive Agent
+  - Conversational Agent
+
+# Valid solution tags (business categorization, multi-select for plugins)
+# NOTE: This will be populated in PR #2 by extracting from existing files
+solution_tags: []
