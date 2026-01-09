@@ -24,8 +24,8 @@ jobs:
         env:
           GH_SHA_MAIN_HEAD: '${{ github.sha }}'
           GH_SHA_PR_HEAD: '${{ github.event.pull_request.head.sha }}'
-      - name: Validate Files V2
-        run: python -m ci.validate_v2
+      - name: Validate Files V3
+        run: python -m ci.validate_v3
       - name: Generate Code Blocks
         run: python ci/copy_code_blocks.py
   comment:
