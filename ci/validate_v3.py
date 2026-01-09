@@ -12,6 +12,7 @@ This module provides strict validation for the V3 schema. Key differences from V
 import os
 import re
 import sys
+from pathlib import Path
 from typing import List, Set
 from collections import defaultdict
 from urllib.parse import urlparse, unquote
@@ -377,8 +378,17 @@ def validate_connector_v3(file_path: str, all_redirects: set) -> bool:
     if not validate_strict_schema(data, file_path, ALL_CONNECTOR_FIELDS):
         return False
 
+    # Check if logo.png exists in the directory
+    connector_dir = Path(file_path).parent
+    has_logo_png = (connector_dir / "logo.png").exists()
+
+    # Determine required fields (logo is optional if logo.png exists)
+    required_fields = CONNECTOR_REQUIRED_FIELDS.copy()
+    if has_logo_png and "logo" not in data:
+        required_fields.discard("logo")
+
     # Check required fields exist
-    missing_fields = CONNECTOR_REQUIRED_FIELDS - set(data.keys())
+    missing_fields = required_fields - set(data.keys())
     if missing_fields:
         print(
             f"ERROR: Missing required fields in {file_path}: {sorted(missing_fields)}\n"
@@ -388,8 +398,10 @@ def validate_connector_v3(file_path: str, all_redirects: set) -> bool:
             print(f"    - {field}: <value>")
         return False
 
-    # Validate field types
-    for field in CONNECTOR_REQUIRED_FIELDS:
+    # Validate field types (only for fields that are present)
+    for field in required_fields:
+        if field not in data:
+            continue  # Already handled in missing_fields check
         value = data[field]
         if field == "name":
             if not isinstance(value, str):

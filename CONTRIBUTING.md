@@ -10,14 +10,24 @@
 
 ## Clone Your Fork
 
+**Option A: GitHub Desktop (Recommended)**
+
+1. Download and install [GitHub Desktop](https://desktop.github.com/)
+2. Sign in with your personal GitHub account
+3. Go to your forked repository on GitHub
+4. Click the green "Code" button
+5. Click "Open with GitHub Desktop"
+6. Choose where to save the repository on your computer
+7. Click "Clone"
+
+GitHub Desktop automatically sets up the upstream remote for you, making it easy to stay in sync with the original repository.
+
+**Option B: Command Line**
+
 ```bash
 git clone https://github.com/YOUR-USERNAME/developer-docs.git
 cd developer-docs
-```
 
-## Set Up Remote
-
-```bash
 # Add upstream remote to stay in sync
 git remote add upstream https://github.com/moveworks/developer-docs.git
 
@@ -35,11 +45,24 @@ pip install -r ci/requirements.txt
 
 ## Plugin
 
-### Create a directory with a kebab-case slug
+### Create a new branch
 
+**Using GitHub Desktop:**
+1. Click "Current Branch" at the top
+2. Click "New Branch"
+3. Name it `add-my-plugin` (or similar)
+4. Click "Create Branch"
+
+**Using Command Line:**
 ```bash
 git checkout -b add-my-plugin
-mkdir plugins/my-new-plugin
+```
+
+### Create a directory with a kebab-case slug
+
+Create a new folder `plugins/my-new-plugin` in your file explorer or use the terminal:
+```bash
+mkdir plugins/my-new-plugin # Replace my-new-plugin with the name of your plugin
 ```
 
 ### Create `README.md` and copy this frontmatter template
@@ -76,11 +99,24 @@ solution_tags:
 
 ## Connector
 
-### Create a directory with a kebab-case slug
+### Create a new branch
 
+**Using GitHub Desktop:**
+1. Click "Current Branch" at the top
+2. Click "New Branch"
+3. Name it `add-my-connector` (or similar)
+4. Click "Create Branch"
+
+**Using Command Line:**
 ```bash
 git checkout -b add-my-connector
-mkdir connectors/my-new-system
+```
+
+### Create a directory with a kebab-case slug
+
+Create a new folder `connectors/my-new-system` in your file explorer or use the terminal:
+```bash
+mkdir connectors/my-new-system # Replace my-new-system with the name of your plugin
 ```
 
 ### Create `README.md` and copy this frontmatter template
@@ -88,8 +124,8 @@ mkdir connectors/my-new-system
 ```yaml
 ---
 name: Your Connector Name
-availability: BUILT_IN
-logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/your-connector-integration-logo-primary.svg
+availability: IDEA
+logo: <insert_url_here>
 ---
 ```
 
@@ -97,7 +133,9 @@ logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integratio
 
 - **Option A:** Add `logo.png` to the directory (logo will be set automatically)
   - Must be a **square image** (same width and height)
-  - **SVG format preferred**
+  - Must be a PNG
+  - Delete the `logo` field.
+
 - **Option B:** Contact the Marketplace team in `#marketplace-content-operations` to upload to Adobe AEM
   - They will provide you with the hosted logo URL
 
@@ -105,7 +143,7 @@ logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integratio
 
 - `name` - Display name (e.g., "SAP Concur")
 - `availability` - One of: `IDEA`, `VALIDATED`, `BUILT_IN`, `INSTALLABLE`, `IMPOSSIBLE`
-- `logo` - URL to hosted logo (if using Option B), or leave as-is if using Option A
+- `logo` - URL to hosted logo (if using Option B), or remove if Option A
 - **DO NOT add** `purple_chat_link` or `systems` (plugins only)
 
 ### Add documentation below the frontmatter (optional but recommended)
@@ -118,7 +156,7 @@ logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integratio
 
 # Submitting Changes
 
-## Validate Your Changes
+## Validate Your Changes (Optional)
 
 **Option A: Run locally**
 ```bash
@@ -130,21 +168,39 @@ python -m ci.validate_v3
 - CI will automatically run validation
 - If validation fails, CI will post error details as a comment on your PR
 
-## Commit Your Changes
+## Commit and Push Your Changes
 
+**Using GitHub Desktop:**
+
+1. Open GitHub Desktop - you'll see your changed files in the left sidebar
+2. Review your changes in the main panel
+3. Check the boxes next to the files you want to commit (or leave all checked)
+4. In the bottom left, add a commit message:
+   - Summary: `Add [plugin/connector name]`
+   - Description (optional): Additional details about your changes
+5. Click "Commit to [your-branch-name]"
+6. Click "Push origin" at the top to push your changes to GitHub
+
+**Using Command Line:**
 ```bash
 git add .
 git commit -m "Add [plugin/connector name]"
-```
-
-## Push to Your Fork
-
-```bash
 git push origin add-my-plugin
 ```
 
 ## Open a Pull Request
 
+**Using GitHub Desktop:**
+1. After pushing, GitHub Desktop will show a "Create Pull Request" button
+2. Click it to open GitHub in your browser
+3. Fill in the PR description with:
+   - What you're adding (plugin or connector name)
+   - Brief description of functionality
+   - Any special setup or configuration notes
+4. Click "Create Pull Request"
+5. CI will automatically run validation and post results
+
+**Using GitHub Website:**
 1. Go to the original repository on GitHub
 2. Click "New Pull Request"
 3. Click "compare across forks"
@@ -170,7 +226,12 @@ git push origin add-my-plugin
 
 See [ci/config.yaml](ci/config.yaml) for all valid enum values:
 
-- **availability**: `IDEA`, `VALIDATED`, `BUILT_IN`, `INSTALLABLE`, `IMPOSSIBLE`
+- **availability**:
+  - `IDEA` - Not yet confirmed that Moveworks can support this integration
+  - `VALIDATED` - Confirmed that Moveworks can support this, but not yet built
+  - `BUILT_IN` - Built into the Moveworks platform and available to customers
+  - `INSTALLABLE` - A template has been created with a full installation guide available on the marketplace
+  - `IMPOSSIBLE` - Cannot be supported by Moveworks
 - **solution_tags**: Finance, HR, Engineering, IT, etc.
 - **agent_capabilities**: `Ambient Agent`, `Structured Data Analyzer`
   - To add new capabilities, modify [ci/config.yaml](ci/config.yaml) and include it in your PR
@@ -187,6 +248,18 @@ See [ci/config.yaml](ci/config.yaml) for all valid enum values:
 ## Staying in Sync
 
 Keep your fork up to date with the upstream repository:
+
+**Using GitHub Desktop:**
+
+1. Switch to the `main` branch:
+   - Click "Current Branch" at the top
+   - Select `main` from the list
+2. Click "Fetch origin" to check for updates
+3. If there are updates from upstream, GitHub Desktop will show "Pull origin"
+4. Click "Pull origin" to get the latest changes
+5. GitHub Desktop automatically syncs with the upstream repository (the original repo you forked from)
+
+**Using Command Line:**
 
 ```bash
 # Fetch latest changes from upstream
