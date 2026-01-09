@@ -2,7 +2,6 @@
 availability: VALIDATED
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/servicenow-integration-logo-primary.svg
 name: ServiceNow
-solution_tags:
 - General
 ---
 

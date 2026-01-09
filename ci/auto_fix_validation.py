@@ -118,8 +118,11 @@ def remove_connector_purple_chat(data: Dict, is_connector: bool) -> bool:
     return False
 
 
-def add_missing_solution_tags(data: Dict, file_path: str) -> bool:
-    """Add solution_tags if missing (best effort)"""
+def add_missing_solution_tags(data: Dict, file_path: str, is_plugin: bool) -> bool:
+    """Add solution_tags if missing (best effort) - plugins only"""
+    if not is_plugin:
+        return False  # Connectors don't have solution_tags
+
     if 'solution_tags' in data:
         return False
 
@@ -168,7 +171,7 @@ def fix_file(file_path: str, dry_run: bool = True) -> Tuple[bool, List[str]]:
     if remove_connector_purple_chat(data, is_connector):
         changes.append("Removed purple_chat_link from connector")
 
-    if add_missing_solution_tags(data, file_path):
+    if add_missing_solution_tags(data, file_path, is_plugin):
         changes.append(
             f"Added solution_tags: {data.get('solution_tags', [])}"
         )

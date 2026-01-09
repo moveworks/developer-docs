@@ -2,7 +2,6 @@
 availability: VALIDATED
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/okta/logo.png
 name: Okta
-solution_tags:
 - General
 ---
 

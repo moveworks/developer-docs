@@ -2,7 +2,6 @@
 availability: VALIDATED
 logo: https://cdn.prod.website-files.com/62fe5b9ef9e612fe4fed7ff1/63bf4122ced9145885a65b12_g-icon-green.png
 name: Greenhouse
-solution_tags:
 - General
 ---
 

@@ -4,6 +4,5 @@ logo: https://google.oit.ncsu.edu/wp-content/uploads/sites/6/2021/01/Google_Cale
 name: Google Calendar
 redirects:
 - googlecalendar
-solution_tags:
 - General
 ---
