@@ -56,15 +56,17 @@
    ---
    ```
 
-3. **Add `logo.png` to the directory**
-   - Must be a **square image** (same width and height)
-   - **SVG format preferred**
-   - To upload to Adobe AEM, submit a request in `#marketplace-content-operations`
+3. **Add connector logo** (choose one option)
+   - **Option A:** Add `logo.png` to the directory (logo will be set automatically)
+     - Must be a **square image** (same width and height)
+     - **SVG format preferred**
+   - **Option B:** Contact the Marketplace team in `#marketplace-content-operations` to upload to Adobe AEM
+     - They will provide you with the hosted logo URL
 
 4. **Fill in the fields**
    - `name` - Display name (e.g., "SAP Concur")
    - `availability` - One of: `IDEA`, `VALIDATED`, `BUILT_IN`, `INSTALLABLE`, `IMPOSSIBLE`
-   - `logo` - URL to the hosted logo (Adobe AEM URL after upload)
+   - `logo` - URL to hosted logo (if using Option B), or leave as-is if using Option A
    - **DO NOT add** `purple_chat_link` or `systems` (plugins only)
 
 5. **Add documentation below the frontmatter** (optional but recommended)
