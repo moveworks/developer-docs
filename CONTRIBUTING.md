@@ -247,7 +247,20 @@ See [ci/config.yaml](ci/config.yaml) for all valid enum values:
 
 ## Staying in Sync
 
-Keep your fork up to date with the upstream repository:
+Keep your fork and local repository up to date with the upstream repository.
+
+### Resync Your Fork on GitHub
+
+**Using GitHub Website:**
+
+1. Go to your forked repository on GitHub
+2. If your fork is behind the upstream repository, you'll see a message like "This branch is X commits behind moveworks:main"
+3. Click "Sync fork"
+4. Click "Update branch" to sync your fork with the latest changes from upstream
+
+### Resync Your Local Repository
+
+After syncing your fork on GitHub, update your local repository:
 
 **Using GitHub Desktop:**
 
@@ -255,18 +268,35 @@ Keep your fork up to date with the upstream repository:
    - Click "Current Branch" at the top
    - Select `main` from the list
 2. Click "Fetch origin" to check for updates
-3. If there are updates from upstream, GitHub Desktop will show "Pull origin"
+3. If there are updates available, GitHub Desktop will show "Pull origin"
 4. Click "Pull origin" to get the latest changes
-5. GitHub Desktop automatically syncs with the upstream repository (the original repo you forked from)
+5. Your local repository is now in sync with your fork
 
 **Using Command Line:**
+
+```bash
+# Switch to main branch
+git checkout main
+
+# Fetch latest changes from your fork
+git fetch origin
+
+# Pull the latest changes into your local main
+git pull origin main
+```
+
+### Alternative: Sync Directly from Upstream (Command Line Only)
+
+If you set up the upstream remote during setup, you can sync directly:
 
 ```bash
 # Fetch latest changes from upstream
 git fetch upstream
 
-# Merge upstream main into your local main
+# Switch to main branch
 git checkout main
+
+# Merge upstream main into your local main
 git merge upstream/main
 
 # Push updates to your fork
