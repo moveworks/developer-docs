@@ -23,24 +23,12 @@ This repository uses the V3 schema, which enforces strict validation rules to ma
 
 ### Quick Start
 
-**Adding a New Plugin**:
-1. Create a directory with a kebab-case slug: `mkdir plugins/my-new-plugin`
-2. Copy the template: `cp PLUGIN_TEMPLATE.md plugins/my-new-plugin/README.md`
-3. Fill in all required fields (name, description, availability, systems, purple_chat_link, solution_tags)
-4. Run validation: `python -m ci.validate_v3`
-
-**Adding a New Connector**:
-1. Create a directory with a kebab-case slug: `mkdir connectors/my-new-system`
-2. Copy the template: `cp CONNECTOR_TEMPLATE.md connectors/my-new-system/README.md`
-3. Add `logo.png` to the directory
-4. Fill in all required fields (name, availability, logo)
-5. Run validation: `python -m ci.validate_v3`
-
-### Documentation
-
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Complete V3 schema guide with validation rules
-- [PLUGIN_TEMPLATE.md](PLUGIN_TEMPLATE.md) - Plugin frontmatter template with field descriptions
-- [CONNECTOR_TEMPLATE.md](CONNECTOR_TEMPLATE.md) - Connector frontmatter template with field descriptions
+See [CONTRIBUTING.md](CONTRIBUTING.md) for complete step-by-step instructions on adding plugins and connectors, including:
+- Copy-paste frontmatter templates
+- Field explanations with examples
+- Logo requirements and upload instructions
+- Validation options (local and CI)
+- PR submission workflow
 
 ### Running Tests Locally
 
