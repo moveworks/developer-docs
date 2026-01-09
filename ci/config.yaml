@@ -19,5 +19,39 @@ agent_capabilities:
   - Conversational Agent
 
 # Valid solution tags (business categorization, multi-select for plugins)
-# NOTE: This will be populated in PR #2 by extracting from existing files
-solution_tags: []
+# Extracted from existing solution_tags and domain fields across all files
+solution_tags:
+  - Access Management
+  - Approvals
+  - Customer Success
+  - Data Analysis
+  - Engineering
+  - Facilities
+  - Finance - Expense Management
+  - Finance - Other
+  - Finance - Payroll
+  - Finance - Procurement
+  - General
+  - HR - Benefits
+  - HR - Employee Records
+  - HR - Learning & Development
+  - HR - Onboarding
+  - HR - Other
+  - HR - Performance Management
+  - HR - Recruiting & Talent
+  - HR - Talent Management
+  - HR - Time & Absence
+  - HR - Workplace Culture
+  - IT
+  - Legal
+  - Manager
+  - Marketing
+  - Product
+  - Product Management
+  - Productivity
+  - Project Management
+  - Sales
+  - Support
+  - Ticketing
+  - Troubleshoot
+  - Workday
