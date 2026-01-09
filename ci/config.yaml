@@ -13,10 +13,10 @@ availability:
   - IMPOSSIBLE
 
 # Valid agent capabilities (multi-select for plugins)
+# Note: "Polling Required" is being migrated to "Ambient Agent"
 agent_capabilities:
   - Ambient Agent
-  - Proactive Agent
-  - Conversational Agent
+  - Structured Data Analyzer
 
 # Valid solution tags (business categorization, multi-select for plugins)
 # Extracted from existing solution_tags and domain fields across all files
