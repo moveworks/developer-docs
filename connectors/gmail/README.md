@@ -1,0 +1,4 @@
+---
+name: Gmail
+availability: VALIDATED
+---
