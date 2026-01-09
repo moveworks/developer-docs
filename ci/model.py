@@ -1,5 +1,5 @@
 from enum import Enum
-import re
+
 
 # V2 Schema Enums (kept for backwards compatibility during migration)
 class Fidelity(Enum):
@@ -30,7 +30,10 @@ class Availability(Enum):
 
 
 # Common constants
-DIRECTORY_MAP = {ContentTypes.CONNECTOR: "connectors", ContentTypes.PLUGIN: "plugins"}
+DIRECTORY_MAP = {
+    ContentTypes.CONNECTOR: "connectors",
+    ContentTypes.PLUGIN: "plugins"
+}
 
 MARKDOWN_EXTENSION = '.md'
 README_FILENAME = f"README{MARKDOWN_EXTENSION}"
@@ -49,7 +52,8 @@ CONFIG_FILE = "ci/config.yaml"
 
 # Regex patterns for V3 validation
 KEBAB_CASE_PATTERN = r'^[a-z0-9]+(?:-[a-z0-9]+)*$'
-TITLE_CASE_PATTERN = r'^[A-Z][a-z]*(?:\s+[A-Z][a-z]*)*$'  # Simplified, actual validation more complex
+# Simplified Title Case pattern - actual validation more complex
+TITLE_CASE_PATTERN = r'^[A-Z][a-z]*(?:\s+[A-Z][a-z]*)*$'
 
 # Description validation constants
 PLUGIN_DESCRIPTION_PREFIX = "A plugin that"
@@ -57,13 +61,15 @@ CONNECTOR_DESCRIPTION_PREFIX = "A connector for"
 DESCRIPTION_SUFFIX = "."
 
 # Purple Chat Link validation
-PURPLE_CHAT_URL_PREFIX = "https://marketplace.moveworks.com/purple-chat?conversation="
+PURPLE_CHAT_URL_PREFIX = (
+    "https://marketplace.moveworks.com/purple-chat?conversation="
+)
 
 # V3 Required Fields by Content Type
 CONNECTOR_REQUIRED_FIELDS = {
-    "name",         # Title Case name
-    "availability", # Enum from config.yaml
-    # Note: logo is required as a file, not a YAML field
+    "name",          # Title Case name
+    "availability",  # Enum from config.yaml
+    "logo",          # Logo URL (required)
 }
 
 PLUGIN_REQUIRED_FIELDS = {
@@ -77,10 +83,9 @@ PLUGIN_REQUIRED_FIELDS = {
 
 # V3 Optional Fields by Content Type
 CONNECTOR_OPTIONAL_FIELDS = {
-    "description",      # Should end with period if present
-    "video",           # Video URL
-    "redirects",       # List of old slugs
-    "num_implementations",  # Integer count
+    "description",  # Should end with period if present
+    "video",        # Video URL
+    "redirects",    # List of old slugs
 }
 
 PLUGIN_OPTIONAL_FIELDS = {
@@ -88,23 +93,9 @@ PLUGIN_OPTIONAL_FIELDS = {
     "installation_asset_uuid",  # UUID for installable plugins
     "video",                    # Video URL
     "redirects",                # List of old slugs
-    "domain",                   # Deprecated but still accepted
-    "num_implementations",      # Integer count
-    "accreditations",           # List of author usernames
-}
-
-# V3 Removed Fields (validation will fail if these are present)
-REMOVED_FIELDS = {
-    "drop_accreditations",  # No longer needed
-    "design_pattern_id",    # Internal field deprecated
-    "installation_link",    # Rare override no longer supported
-    "custom_tags",          # Migrated to agent_capabilities
-    "resources",            # Computed field, not stored
-    "fidelity",             # Removed in V3
-    "difficulty_level",     # Removed in V3
-    "time_in_minutes",      # Removed in V3
 }
 
 # All valid V3 fields (for strict schema validation)
+# Any fields NOT in these sets will cause validation to FAIL
 ALL_CONNECTOR_FIELDS = CONNECTOR_REQUIRED_FIELDS | CONNECTOR_OPTIONAL_FIELDS
 ALL_PLUGIN_FIELDS = PLUGIN_REQUIRED_FIELDS | PLUGIN_OPTIONAL_FIELDS
