@@ -159,9 +159,12 @@ def validate_slug_format(file_path: str) -> bool:
     """Validate slug (directory name) is kebab-case"""
     slug = os.path.basename(os.path.dirname(file_path))
     if not re.match(KEBAB_CASE_PATTERN, slug):
+        # Generate suggested kebab-case slug
+        suggested = re.sub(r'[^a-z0-9]+', '-', slug.lower()).strip('-')
         print(
-            f"ERROR: Slug '{slug}' in {file_path} is not kebab-case. "
-            f"Expected format: lowercase-with-hyphens"
+            f"ERROR: Slug '{slug}' in {file_path} is not kebab-case.\n"
+            f"  Expected format: lowercase-with-hyphens\n"
+            f"  Suggested fix: Rename directory from '{slug}' to '{suggested}'"
         )
         return False
     return True
@@ -176,13 +179,25 @@ def validate_name_title_case(name: str, file_path: str) -> bool:
         'for', 'of', 'to', 'in', 'on', 'at'
     }
 
+    # Generate suggested title case version
+    suggested_words = []
+    for i, word in enumerate(words):
+        if i == 0:
+            suggested_words.append(word[0].upper() + word[1:] if len(word) > 1 else word.upper())
+        elif word.lower() in lowercase_allowed:
+            suggested_words.append(word.lower())
+        else:
+            suggested_words.append(word[0].upper() + word[1:] if len(word) > 1 else word.upper())
+    suggested = ' '.join(suggested_words)
+
     for i, word in enumerate(words):
         if i == 0:
             # First word must be capitalized
             if not word[0].isupper():
                 print(
-                    f"ERROR: Name '{name}' in {file_path} is not Title Case. "
-                    f"First word must start with capital letter."
+                    f"ERROR: Name '{name}' in {file_path} is not Title Case.\n"
+                    f"  First word must start with capital letter.\n"
+                    f"  Suggested fix: Change 'name: {name}' to 'name: {suggested}'"
                 )
                 return False
         elif word.lower() in lowercase_allowed:
@@ -192,8 +207,9 @@ def validate_name_title_case(name: str, file_path: str) -> bool:
             # Other words should start with capital
             if not word[0].isupper():
                 print(
-                    f"ERROR: Name '{name}' in {file_path} is not Title Case. "
-                    f"Word '{word}' should start with capital letter."
+                    f"ERROR: Name '{name}' in {file_path} is not Title Case.\n"
+                    f"  Word '{word}' should start with capital letter.\n"
+                    f"  Suggested fix: Change 'name: {name}' to 'name: {suggested}'"
                 )
                 return False
     return True
@@ -211,9 +227,14 @@ def validate_description_format(
 
     # Check suffix (period)
     if not description.strip().endswith(DESCRIPTION_SUFFIX):
+        suggested = description.strip() + DESCRIPTION_SUFFIX
         print(
-            f"ERROR: Description in {file_path} must end with period. "
-            f"Got: '{description[-20:]}'"
+            f"ERROR: Description in {file_path} must end with period.\n"
+            f"  Current: ...{description[-50:]}\n"
+            f"  Suggested fix:\n"
+            f"  ```yaml\n"
+            f"  description: {suggested}\n"
+            f"  ```"
         )
         return False
 
@@ -268,19 +289,27 @@ def validate_enum_field(
         return True
 
     if isinstance(value, list):
-        for v in value:
-            if v not in valid_values:
-                print(
-                    f"ERROR: Invalid {field_name} value '{v}' in {file_path}. "
-                    f"Valid values: {valid_values}"
-                )
-                return False
+        invalid_values = [v for v in value if v not in valid_values]
+        if invalid_values:
+            print(
+                f"ERROR: Invalid {field_name} value(s) in {file_path}: {invalid_values}\n"
+                f"  Valid values are:\n"
+            )
+            for v in sorted(valid_values):
+                print(f"    - {v}")
+            print(f"  Suggested fix:\n"
+                  f"  ```yaml\n"
+                  f"  {field_name}: [{', '.join(repr(v) for v in value if v in valid_values)}]\n"
+                  f"  ```")
+            return False
     else:
         if value not in valid_values:
             print(
-                f"ERROR: Invalid {field_name} value '{value}' in {file_path}. "
-                f"Valid values: {valid_values}"
+                f"ERROR: Invalid {field_name} value '{value}' in {file_path}\n"
+                f"  Valid values are:\n"
             )
+            for v in sorted(valid_values):
+                print(f"    - {v}")
             return False
 
     return True
@@ -298,9 +327,12 @@ def validate_strict_schema(
 
     if unknown_fields:
         print(
-            f"ERROR: Unknown fields in {file_path}: {unknown_fields}. "
-            f"V3 schema only allows: {allowed_fields}"
+            f"ERROR: Unknown fields in {file_path}: {unknown_fields}\n"
+            f"  V3 schema only allows: {sorted(allowed_fields)}\n"
+            f"  Action required: Remove the following fields from your YAML frontmatter:\n"
         )
+        for field in sorted(unknown_fields):
+            print(f"    - {field}")
         return False
 
     return True
@@ -349,8 +381,11 @@ def validate_connector_v3(file_path: str, all_redirects: set) -> bool:
     missing_fields = CONNECTOR_REQUIRED_FIELDS - set(data.keys())
     if missing_fields:
         print(
-            f"ERROR: Missing required fields in {file_path}: {missing_fields}"
+            f"ERROR: Missing required fields in {file_path}: {sorted(missing_fields)}\n"
+            f"  Action required: Add the following fields to your YAML frontmatter:\n"
         )
+        for field in sorted(missing_fields):
+            print(f"    - {field}: <value>")
         return False
 
     # Validate field types
@@ -415,8 +450,20 @@ def validate_plugin_v3(file_path: str, all_redirects: set) -> bool:
     missing_fields = PLUGIN_REQUIRED_FIELDS - set(data.keys())
     if missing_fields:
         print(
-            f"ERROR: Missing required fields in {file_path}: {missing_fields}"
+            f"ERROR: Missing required fields in {file_path}: {sorted(missing_fields)}\n"
+            f"  Action required: Add the following fields to your YAML frontmatter:\n"
         )
+        for field in sorted(missing_fields):
+            if field == 'description':
+                print(f"    - {field}: Use this plugin to <describe purpose>.")
+            elif field == 'systems':
+                print(f"    - {field}: [<connector-slug>]")
+            elif field == 'solution_tags':
+                print(f"    - {field}: [<tag>]")
+            elif field == 'purple_chat_link':
+                print(f"    - {field}: https://developer.moveworks.com/creator-studio/purple-chat-builder/?workspace=<workspace>")
+            else:
+                print(f"    - {field}: <value>")
         return False
 
     # Validate field types
