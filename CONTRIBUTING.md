@@ -29,7 +29,14 @@
    - `purple_chat_link` - Generate a conversation at [marketplace.moveworks.com/purple-chat](https://marketplace.moveworks.com/purple-chat) and copy the URL
    - `solution_tags` - Pick from [ci/config.yaml](ci/config.yaml) (e.g., `Finance - Procurement`, `HR - Benefits`, `Engineering`)
 
-4. **Validate**
+4. **Add documentation below the frontmatter** (optional but recommended)
+   - Research notes about how the plugin works
+   - API endpoints and authentication requirements
+   - Example use cases and workflows
+   - Images, diagrams, or screenshots
+   - Any additional context for developers
+
+5. **Validate**
    - **Option A:** Run locally: `python -m ci.validate_v3`
    - **Option B:** Push your branch, open a PR to `main`, and CI will post validation results as comments
 
@@ -60,7 +67,14 @@
    - `logo` - URL to the hosted logo (Adobe AEM URL after upload)
    - **DO NOT add** `purple_chat_link` or `systems` (plugins only)
 
-5. **Validate**
+5. **Add documentation below the frontmatter** (optional but recommended)
+   - Setup instructions and authentication steps
+   - API documentation and available endpoints
+   - Configuration requirements
+   - Images or diagrams showing the integration
+   - See [connectors/workday-hcm/](./connectors/workday-hcm/) as an example
+
+6. **Validate**
    - **Option A:** Run locally: `python -m ci.validate_v3`
    - **Option B:** Push your branch, open a PR to `main`, and CI will post validation results as comments
 
