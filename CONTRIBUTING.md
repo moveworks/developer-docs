@@ -82,7 +82,9 @@
 
 ## Valid Values Reference
 
+See [ci/config.yaml](ci/config.yaml) for all valid enum values:
+
 - **availability**: `IDEA`, `VALIDATED`, `BUILT_IN`, `INSTALLABLE`, `IMPOSSIBLE`
-- **solution_tags**: See [ci/config.yaml](ci/config.yaml) for full list (Finance, HR, Engineering, IT, etc.)
+- **solution_tags**: Finance, HR, Engineering, IT, etc.
 - **agent_capabilities**: `Ambient Agent`, `Structured Data Analyzer`
 - **systems**: Must match directory names in [./connectors/](./connectors/)
