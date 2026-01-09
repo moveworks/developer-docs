@@ -10,4 +10,6 @@ solution_tags:
 - Sales
 systems:
 - outlook
+description: A plugin that enables users to find mutual calendar availability and
+  schedule meetings in Outlook.
 ---

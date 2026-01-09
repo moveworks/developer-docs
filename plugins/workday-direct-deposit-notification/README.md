@@ -10,4 +10,6 @@ systems:
 - workday
 agent_capabilities:
 - Ambient Agent
+description: An ambient agent that proactively notifies employees when their paycheck
+  has been deposited.
 ---

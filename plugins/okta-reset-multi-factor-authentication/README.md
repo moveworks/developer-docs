@@ -7,4 +7,6 @@ systems:
 solution_tags:
 - Access Management
 - IT
+description: A plugin that allows users to reset their multi-factor authentication
+  settings in Okta.
 ---

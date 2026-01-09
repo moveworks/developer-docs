@@ -8,6 +8,8 @@ solution_tags:
 - HR - Recruiting & Talent
 systems:
 - workday
+description: A plugin that enables interviewers to submit candidate feedback and ratings
+  directly into Workday.
 ---
 
 ## Introduction

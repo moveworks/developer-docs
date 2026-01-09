@@ -8,4 +8,6 @@ solution_tags:
 - HR - Other
 systems:
 - adp
+description: A plugin that allows employees to view and access their paycheck and
+  payslip information from ADP.
 ---
