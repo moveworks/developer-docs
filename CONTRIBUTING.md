@@ -87,4 +87,5 @@ See [ci/config.yaml](ci/config.yaml) for all valid enum values:
 - **availability**: `IDEA`, `VALIDATED`, `BUILT_IN`, `INSTALLABLE`, `IMPOSSIBLE`
 - **solution_tags**: Finance, HR, Engineering, IT, etc.
 - **agent_capabilities**: `Ambient Agent`, `Structured Data Analyzer`
+  - To add new capabilities, modify [ci/config.yaml](ci/config.yaml) and include it in your PR
 - **systems**: Must match directory names in [./connectors/](./connectors/)
