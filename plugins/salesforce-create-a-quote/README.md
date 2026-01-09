@@ -2,10 +2,6 @@
 availability: INSTALLABLE
 description: A plugin that allows sales representatives to build a quote (configure,
   price, quote) for a customer.
-difficulty_level: INTERMEDIATE
-domain:
-- Sales
-fidelity: TEMPLATE
 installation_asset_uuid: 82fa707a-6ad9-4c85-a4fb-2b406b57c955
 name: Create a Quote
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+build+a+quote+for+Acme+Inc.+for+the+new+X500+SKU+they+are+interested+in+purchasing.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Searches+Salesforce+for+Acme+Inc.+and+SKU+details%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI+found+Acme+Inc.+in+Salesforce.+Please+provide+more+details+to+build+the+quote.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EQuote+Details+Needed%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ECustomer%3A%3C%2Fb%3E+Acme+Inc.%3Cbr%3E%3Cb%3ESKU%3A%3C%2Fb%3E+X500%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Enter+Quantity%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Enter+Pricing%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Specify+Quote+Validity%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EQuantity+is+100+units+at+a+price+of+%24150+each.+Quote+is+valid+for+30+days.%3Cbr%3E%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Validates+provided+details%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EPlease+confirm+the+quote+details+for+Acme+Inc.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EQuote+Confirmation%3Cbr%3E%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ECustomer%3A%3C%2Fb%3E+Acme+Inc.%3Cbr%3E%3Cb%3ESKU%3A%3C%2Fb%3E+X500%3Cbr%3E%3Cb%3EQuantity%3A%3C%2Fb%3E+100+units%3Cbr%3E%3Cb%3EPrice%3A%3C%2Fb%3E+%24150+each%3Cbr%3E%3Cb%3EValidity%3A%3C%2Fb%3E+30+days%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Confirm+and+Build+Quote+in+Salesforce%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Edit+Details%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Okay%2C+building+the+quote...%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Creates+quote+in+Salesforce%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22Okay%2C+I+built+the+quote%21%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Acme+Inc.+Quote%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
@@ -13,7 +9,6 @@ solution_tags:
 - Sales
 systems:
 - salesforce
-time_in_minutes: 30
 ---
 
 ## **Introduction**

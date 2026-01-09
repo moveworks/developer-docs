@@ -1,10 +1,7 @@
 ---
 availability: VALIDATED
-difficulty_level: BEGINNER
-fidelity: GUIDE
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/slack-integration-logo-primary.svg
 name: Slack
-time_in_minutes: 15
 ---
 
 # **Introduction**

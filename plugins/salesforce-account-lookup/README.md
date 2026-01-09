@@ -1,16 +1,6 @@
 ---
-accreditations:
-- indrapaul24
-- DEFAULT
 availability: INSTALLABLE
 description: A plugin that allows you to retrieve customer data from Salesforce.
-design_pattern_id: 28
-difficulty_level: BEGINNER
-domain:
-- Sales
-drop_accreditations:
-- ajaymerchia
-fidelity: TEMPLATE
 installation_asset_uuid: ee80c2e8-81e8-492d-8d2f-8855b479716f
 name: Look up Salesforce Accounts
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22What+is+the+Renewal+date+for+ACME%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Query+Salesforce+Accounts+API+endpoint%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22The+renewal+date+for+ACME+is+on+February+25%2C+2026%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22ACME%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Perfect%2C+thanks%21%22%7D%5D%2C%22role%22%3A%22user%22%7D%5D%7D
@@ -18,7 +8,6 @@ solution_tags:
 - Sales
 systems:
 - salesforce
-time_in_minutes: 5
 ---
 
 # Introduction

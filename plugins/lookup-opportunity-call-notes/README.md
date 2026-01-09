@@ -1,10 +1,6 @@
 ---
 availability: INSTALLABLE
 description: A plugin that allows you fetch the latest call notes from an Opportunity.
-difficulty_level: INTERMEDIATE
-domain:
-- Sales
-fidelity: TEMPLATE
 installation_asset_uuid: fb23771f-9454-4676-bd05-6a9bac2cbb13
 name: Look Up Call Notes from an Opportunity
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+want+to+look+up+the+call+notes+for+the+opportunity+with+XYZ+Inc.%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Calling+Salesforce+API+to+find+opportunity+%27XYZ+Inc%27%22%2C%22status%22%3A%22pending%22%7D%2C%7B%22richText%22%3A%22Opportunity+found%2C+retrieving+call+notes.%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here+are+the+call+notes+for+the+opportunity+with+XYZ+Inc.%3A%3Cbr%3E%3Cb%3EOpportunity+Name%3A%3C%2Fb%3E+XYZ+Inc+Expansion%3Cbr%3E%3Cb%3ELast+Call+Date%3A%3C%2Fb%3E+2023-10-01%3Cbr%3E%3Cb%3ENotes%3A%3C%2Fb%3E+Discussed+project+scope%2C+budget%2C+and+timeline.+Client+interested+in+moving+forward+pending+final+review.%3Cbr%3EWould+you+like+to+take+any+action+on+these+call+notes+in+Salesforce%3F%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Salesforce+-+Opportunity+Call+Notes%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
@@ -12,7 +8,6 @@ solution_tags:
 - Sales
 systems:
 - salesforce
-time_in_minutes: 15
 ---
 
 # **Introduction:**

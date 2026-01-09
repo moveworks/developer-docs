@@ -1,19 +1,9 @@
 ---
-accreditations:
-- npmoran21
-- DEFAULT
 agent_capabilities:
 - Polling Required
+- Ambient Agent
 availability: VALIDATED
-custom_tags:
-- Polling Required
 description: A plugin that notifies users about pending Jira approvals.
-design_pattern_id: 10
-difficulty_level: INTERMEDIATE
-domain:
-- IT
-- Approvals
-fidelity: GUIDE
 name: Approve Jira Issues
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Hi+Neal%2C%5CnYou+have+a+new+pending+approval+in+JIRA.+It+has+been+requested+by+nmoran%40moveworks.us+and+is+of+type+%5C%22Request+a+budget+allocation%5C%22.+Please+view+it+%3Ca+href%3D%5C%22www.jira.com%5C%22%3Ehere%3C%2Fa%3E%22%7D%5D%7D%5D%7D
 solution_tags:
@@ -21,7 +11,6 @@ solution_tags:
 - IT
 systems:
 - jira
-time_in_minutes: 60
 video: https://youtu.be/BLVAH5sg1_M
 ---
 

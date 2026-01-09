@@ -1,9 +1,7 @@
 ---
 availability: VALIDATED
-fidelity: VALIDATED
 logo: https://download.logo.wine/logo/SharePoint/SharePoint-Logo.wine.png
 name: SharePoint
-num_implementations: 0
 ---
 
 # Introduction

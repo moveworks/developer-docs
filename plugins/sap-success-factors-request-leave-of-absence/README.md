@@ -1,10 +1,6 @@
 ---
 availability: IDEA
 description: A plugin that allows an employee to request leave of absence.
-domain:
-- Ticketing
-- HR - Other
-fidelity: IDEA
 name: Request Leave of Absence
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Hey+Copilot%2C+I+need+to+request+a+leave+of+absence.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Hi+%5BUser+Name%5D%21+I+can+help+you+with+that.+Let%27s+get+started+with+your+leave+request.+Can+you+please+provide+the+type+of+leave+you+wish+to+request%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I+would+like+to+request+sick+leave.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Got+it.+For+how+many+days+or+what+dates+do+you+need+the+leave%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+the+leave+from+November+10%2C+2023+to+November+15%2C+2023.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Understood.+So+you+need+sick+leave+from+November+10%2C+2023+to+November+15%2C+2023.+Please+provide+a+reason+or+any+additional+information+you%27d+like+to+include.%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22I+have+a+scheduled+medical+procedure+and+need+time+to+recover.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Thank+you.+Here+is+your+leave+request+summary%3A%22%7D%2C%7B%22apiBlock%22%3A%7B%22code%22%3A%22%7B%5Cn%5C%22Leave+Type%5C%22%3A+%5C%22Sick+Leave%5C%22%2C%5Cn%5C%22Start+Date%5C%22%3A+%5C%22November+10%2C+2023%5C%22%2C%5Cn%5C%22End+Date%5C%22%3A+%5C%22November+15%2C+2023%5C%22%2C%5Cn%5C%22Reason%5C%22%3A+%5C%22Scheduled+medical+procedure+and+recovery+time%5C%22%5Cn%7D%22%2C%22caption%22%3A%22Requesting+leave+of+absence...%22%2C%22connectorName%22%3A%22sap-success-factors%22%2C%22title%22%3A%22Leave+of+Absence%22%7D%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Submit%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Edit+Details%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Yes%2C+please+submit+it.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%3Cem%3ESubmitting+your+request....%3C%2Fem%3E%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22richText%22%3A%22Your+leave+request+has+been+successfully+submitted.+You+will+receive+a+confirmation+email+shortly.%22%7D%2C%7B%22richText%22%3A%22Is+there+anything+else+I+can+help+you+with%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22That%27s+all+for+now%2C+thank+you%21%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EYou%27re+welcome%21+Have+a+great+day%21%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
@@ -12,5 +8,4 @@ solution_tags:
 - Ticketing
 systems:
 - sap-success-factors
-
 ---

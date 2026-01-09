@@ -1,14 +1,7 @@
 ---
-accreditations:
-- sarthaksrinivas
-- indrapaul24
-- DEFAULT
 availability: VALIDATED
-difficulty_level: BEGINNER
-fidelity: GUIDE
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/openai/logo.png
 name: OpenAI
-time_in_minutes: 10
 ---
 
 # **Introduction**

@@ -1,11 +1,8 @@
 ---
 availability: VALIDATED
 description: Connect your Moveworks Copilot to Jamf.
-difficulty_level: INTERMEDIATE
-fidelity: GUIDE
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/jamf-integration-logo-primary.svg
 name: Jamf
-time_in_minutes: 30
 ---
 
 ## **Introduction:**

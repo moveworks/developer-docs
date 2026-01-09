@@ -2,17 +2,12 @@
 agent_capabilities:
 - Structured Data Analyzer
 availability: IDEA
-description: "Analyzes all Closed-Won deals in the current fiscal year and breaks\
-  \ down revenue by New Business vs. Expansion \u2014 helping GTM leaders understand\
-  \ growth mix."
-domain:
-- Sales
-fidelity: IDEA
+description: Analyzes all Closed-Won deals in the current fiscal year and breaks down
+  revenue by New Business vs. Expansion — helping GTM leaders understand growth mix.
 name: New vs. Expansion Business Mix
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22What+percentage+of+our+revenue+this+year+has+come+from+new+logos+versus+expanding+existing+customer+accounts%3F%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ECertainly.+I%27m+analyzing+your+Salesforce+data+to+get+that+breakdown+for+you.%3C%2Fp%3E%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EQuerying+Salesforce+for+all+Closed-Won+opportunities+in+the+current+fiscal+year.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3ERunning+a+Python+script+to+aggregate+the+results+by+business+type.%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22apiBlock%22%3A%7B%22code%22%3A%22%7B%5Cn++%5C%22query%5C%22%3A+%5C%22SELECT+Amount%2C+Type+FROM+Opportunity+WHERE+IsWon+%3D+true+AND+CloseDate+%3D+THIS_FISCAL_YEAR%5C%22%5Cn%7D%22%2C%22caption%22%3A%22action_1%3A+Get+Salesforce+Opportunities%22%2C%22connectorName%22%3A%22salesforce%22%2C%22title%22%3A%22SOQL+Query%22%7D%7D%2C%7B%22apiBlock%22%3A%7B%22code%22%3A%22opportunities+%3D+%7B%7Bactions.action_1.output.records%7D%7D%5Cn%5Cnnew_business_revenue+%3D+0%5Cnexpansion_revenue+%3D+0%5Cn%5Cnfor+opp+in+opportunities%3A%5Cn++if+opp%5B%27Type%27%5D+%3D%3D+%27New+Business%27%3A%5Cn++++new_business_revenue+%2B%3D+opp%5B%27Amount%27%5D%5Cn++elif+opp%5B%27Type%27%5D+%3D%3D+%27Expansion%27%3A%5Cn++++expansion_revenue+%2B%3D+opp%5B%27Amount%27%5D%5Cn%5Cntotal_revenue+%3D+new_business_revenue+%2B+expansion_revenue%5Cn%5Cnif+total_revenue+%3E+0%3A%5Cn++++new_business_percentage+%3D+%28new_business_revenue+%2F+total_revenue%29+*+100%5Cn++++expansion_percentage+%3D+%28expansion_revenue+%2F+total_revenue%29+*+100%5Cnelse%3A%5Cn++++new_business_percentage+%3D+0%5Cn++++expansion_percentage+%3D+0%5Cn%5Cnprint%28%7B%5Cn++++%5C%22new_business_revenue%5C%22%3A+new_business_revenue%2C%5Cn++++%5C%22expansion_revenue%5C%22%3A+expansion_revenue%2C%5Cn++++%5C%22total_revenue%5C%22%3A+total_revenue%2C%5Cn++++%5C%22new_business_percentage%5C%22%3A+new_business_percentage%2C%5Cn++++%5C%22expansion_percentage%5C%22%3A+expansion_percentage%5Cn%7D%29%22%2C%22caption%22%3A%22action_2%3A+Analyze+Revenue+Mix%22%2C%22connectorName%22%3A%22code-interpreter%22%2C%22title%22%3A%22Python+Script%22%7D%7D%2C%7B%22richText%22%3A%22%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EHere+is+the+revenue+breakdown+for+the+current+fiscal+year%3A%3C%2Fp%3E%3Cul+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3E%3Cli%3E%3Cb%3ENew+Business%3A%3C%2Fb%3E+%244%2C500%2C000+%2860%25%29%3C%2Fli%3E%3Cli%3E%3Cb%3EExpansion%3A%3C%2Fb%3E+%243%2C000%2C000+%2840%25%29%3C%2Fli%3E%3C%2Ful%3E%3Cp+xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%5C%22%3EThe+total+revenue+from+Closed-Won+deals+is+%247%2C500%2C000.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22FY24+Closed-Won+Opportunities%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - Sales
 systems:
 - salesforce
-
 ---

@@ -1,10 +1,7 @@
 ---
 availability: VALIDATED
-difficulty_level: BEGINNER
-fidelity: GUIDE
 logo: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/1200px-Stack_Overflow_icon.svg.png
 name: Stack Overflow
-time_in_minutes: 30
 ---
 
 # **Introduction**

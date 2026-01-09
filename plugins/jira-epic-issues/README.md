@@ -1,15 +1,7 @@
 ---
-accreditations:
-- DEFAULT
 availability: INSTALLABLE
 description: A plugin that allows efficient searching for JIRA issues linked to a
   specific EPIC, helping improve project tracking.
-difficulty_level: BEGINNER
-domain:
-- Engineering
-- IT
-- Project Management
-fidelity: TEMPLATE
 installation_asset_uuid: 971404c1-a937-4775-aaeb-3ae24da9fa1d
 name: Look up JIRA Issues for an Epic
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHey%2C+can+you+find+tickets+in+JIRA+that+are+part+of+Creator+Studio+epic%3F%3Cbr%2F%3E%5Cn%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cstrong%3EEPIC+Summary+%3C%2Fstrong%3Efor+%3Cstrong%3ECreator+Studio%3C%2Fstrong%3E+epic%3Cbr%2F%3E%5Cn%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI+found+some+tickets+related+to+Creator+Studio+epic.+Here+they+are%3A%3Cbr%2F%3E%5Cn%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ETICKET-321%3C%2Fb%3E%3Cbr%3EUpdate+login+functionality.+This+involves+enhancements+to+our+current+login+flow+to+increase+security+and+usability.%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22TICKET-321%22%2C%22connectorName%22%3A%22jira%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cb%3ETICKET-322%3C%2Fb%3E%3Cbr%3EDesign+new+user+dashboard.+Goal+is+to+improve+user+engagement+by+redesigning+the+main+dashboard+interface.%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22TICKET-322%22%2C%22connectorName%22%3A%22jira%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cb%3ETICKET-323%3C%2Fb%3E%3Cbr%3ERefactor+backend+for+better+performance.+This+task+focuses+on+backend+improvements+to+enhance+overall+system+performance.%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22TICKET-323%22%2C%22connectorName%22%3A%22jira%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
@@ -19,7 +11,6 @@ solution_tags:
 - Project Management
 systems:
 - jira
-time_in_minutes: 30
 ---
 
 # **Introduction**

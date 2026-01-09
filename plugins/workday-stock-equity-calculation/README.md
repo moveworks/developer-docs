@@ -2,12 +2,6 @@
 availability: INSTALLABLE
 description: A plugin that retrieves your stock grant details from Workday, including
   the number of shares granted, current value per share, and the total stock value.
-difficulty_level: BEGINNER
-domain:
-- HR - Other
-- Finance - Payroll
-- Finance - Other
-fidelity: TEMPLATE
 installation_asset_uuid: 112641e7-1d1e-4ee8-817b-77710b0bddc0
 name: View My Stock Grant Summary
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ECan+you+show+me+my+stock+grant+summary%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ELooking+up+your+stock+grant+information+in+Workday...%3C%2Fp%3E%22%2C%22status%22%3A%22pending%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ELooking+up+your+stock+grant+information+in+Workday...%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22%3Cp%3ERetrieving+current+market+price+for+your+company%27s+stock...%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22%3Cp%3ECalculating+total+value...%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+here+is+your+stock+grant+summary+from+%3Cstrong%3EWorkday%3C%2Fstrong%3E%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cstrong%3EShares+Granted%3A%3C%2Fstrong%3E+5%2C000%3C%2Fli%3E%3Cli%3E%3Cstrong%3ECurrent+Value+Per+Share%3A%3C%2Fstrong%3E+%24125.00%3C%2Fli%3E%3Cli%3E%3Cstrong%3ETotal+Stock+Value%3A%3C%2Fstrong%3E+%24625%2C000.00%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22My+Stock+Grants%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
@@ -17,7 +11,6 @@ solution_tags:
 - HR - Other
 systems:
 - workday
-time_in_minutes: 20
 ---
 ## **Introduction**
 

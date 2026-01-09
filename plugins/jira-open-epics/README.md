@@ -2,15 +2,8 @@
 availability: INSTALLABLE
 description: A plugin that allows looking up assigned epics in Jira that are still
   in progress.
-difficulty_level: BEGINNER
-domain:
-- Project Management
-- IT
-- Engineering
-fidelity: TEMPLATE
 installation_asset_uuid: c8c1aa79-1867-4cdb-b761-fb22ec1b6879
 name: Lookup Open Epics
-num_implementations: 1
 purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E+What+open+epics+are+in+project+Kalistar%3F%3Cbr%3E%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%8F%B3+Calling+Plugin+%3Cb%3ERetrieve+Epics+for+Project%3C%2Fb%3E+for+%5C%22Kalistar%5C%22%3Cbr%3E%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here+are+the+currently+open+epics%3A%3Cbr%3E%3Cb%3EEPIC-111%3A%3C%2Fb%3E+Implement+new+security+protocols%3Cbr%3E%3Cb%3EEPIC-222%3A%3C%2Fb%3E+Upgrade+network+infrastructure%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22EPIC-111%22%2C%22connectorName%22%3A%22jira%22%7D%2C%7B%22citationTitle%22%3A%22EPIC-222%22%2C%22connectorName%22%3A%22jira%22%7D%5D%7D%2C%7B%22richText%22%3A%22Would+you+like+to+visit+JIRA+for+more+details+or+take+any+action+on+these+epics%3F%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - Engineering
@@ -18,7 +11,6 @@ solution_tags:
 - Project Management
 systems:
 - jira
-time_in_minutes: 20
 ---
 
 # Introduction
