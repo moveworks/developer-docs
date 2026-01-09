@@ -1,6 +1,6 @@
 ---
 agent_capabilities:
-- Polling Required
+- Ambient Agent
 - Ambient Agent
 availability: VALIDATED
 description: A plugin that nudges assignees about tickets that haven't been updated

@@ -2,7 +2,6 @@
 availability: VALIDATED
 logo: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/1200px-Stack_Overflow_icon.svg.png
 name: Stack Overflow
-- General
 ---
 
 # **Introduction**

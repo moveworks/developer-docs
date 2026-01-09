@@ -1,6 +1,6 @@
 ---
 agent_capabilities:
-- Polling Required
+- Ambient Agent
 - Ambient Agent
 availability: VALIDATED
 name: Send Purchase Order Approvals

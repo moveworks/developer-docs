@@ -4,5 +4,4 @@ logo: https://images.g2crowd.com/uploads/product/image/social_landscape/social_l
 name: Google Cloud Function
 redirects:
 - googlecloudfunction
-- General
 ---

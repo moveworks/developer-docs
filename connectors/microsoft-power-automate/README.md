@@ -4,5 +4,4 @@ logo: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Microsoft_Power_
 name: Microsoft Power Automate
 redirects:
 - microsoftpowerautomate
-- General
 ---

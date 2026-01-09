@@ -2,7 +2,6 @@
 availability: VALIDATED
 logo: https://download.logo.wine/logo/SharePoint/SharePoint-Logo.wine.png
 name: SharePoint
-- General
 ---
 
 # Introduction

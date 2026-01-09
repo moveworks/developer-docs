@@ -2,7 +2,6 @@
 availability: VALIDATED
 logo: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9z5hcN2KtysURm-z1yV2mhdJUSVD5fslaoUH4xwlr6yxAlosHkw35eqHYIrx87o3E1Us&usqp=CAU
 name: Sailpoint iNow
-- General
 ---
 
 # **Introduction:**

@@ -2,7 +2,6 @@
 availability: VALIDATED
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/coupa-integration-logo-primary.svg
 name: Coupa
-- General
 ---
 
 ## **Introduction**

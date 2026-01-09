@@ -4,8 +4,9 @@ Auto-fix V3 validation errors
 This script automatically fixes common v3 validation errors:
 1. Fix purple_chat_link URLs (convert old base URL to new)
 2. Fix slug format issues (rename directories)
-3. Add missing solution_tags (best effort)
-4. Remove purple_chat_link from connectors
+3. Fix agent_capabilities (replace 'Polling Required' with 'Ambient Agent')
+4. Add missing solution_tags (best effort)
+5. Remove purple_chat_link from connectors
 
 Usage:
     python -m ci.auto_fix_validation --dry-run
@@ -20,7 +21,10 @@ from typing import Dict, List, Tuple
 
 
 # Old and new purple chat URL prefixes
-OLD_PURPLE_CHAT_PREFIX = "https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation="
+OLD_PURPLE_CHAT_PREFIXES = [
+    "https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=",
+    "https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=",
+]
 NEW_PURPLE_CHAT_PREFIX = "https://marketplace.moveworks.com/purple-chat?conversation="
 
 # Slug renames needed
@@ -100,12 +104,13 @@ def fix_purple_chat_url(data: Dict) -> bool:
         return False
 
     link = data['purple_chat_link']
-    if link.startswith(OLD_PURPLE_CHAT_PREFIX):
-        data['purple_chat_link'] = link.replace(
-            OLD_PURPLE_CHAT_PREFIX,
-            NEW_PURPLE_CHAT_PREFIX
-        )
-        return True
+    for old_prefix in OLD_PURPLE_CHAT_PREFIXES:
+        if link.startswith(old_prefix):
+            data['purple_chat_link'] = link.replace(
+                old_prefix,
+                NEW_PURPLE_CHAT_PREFIX
+            )
+            return True
 
     return False
 
@@ -115,6 +120,25 @@ def remove_connector_purple_chat(data: Dict, is_connector: bool) -> bool:
     if is_connector and 'purple_chat_link' in data:
         del data['purple_chat_link']
         return True
+    return False
+
+
+def fix_agent_capabilities(data: Dict) -> bool:
+    """Fix agent_capabilities: replace 'Polling Required' with 'Ambient Agent'"""
+    if 'agent_capabilities' not in data:
+        return False
+
+    if not isinstance(data['agent_capabilities'], list):
+        return False
+
+    if 'Polling Required' in data['agent_capabilities']:
+        # Replace 'Polling Required' with 'Ambient Agent'
+        data['agent_capabilities'] = [
+            'Ambient Agent' if cap == 'Polling Required' else cap
+            for cap in data['agent_capabilities']
+        ]
+        return True
+
     return False
 
 
@@ -170,6 +194,9 @@ def fix_file(file_path: str, dry_run: bool = True) -> Tuple[bool, List[str]]:
 
     if remove_connector_purple_chat(data, is_connector):
         changes.append("Removed purple_chat_link from connector")
+
+    if fix_agent_capabilities(data):
+        changes.append("Fixed agent_capabilities: Polling Required -> Ambient Agent")
 
     if add_missing_solution_tags(data, file_path, is_plugin):
         changes.append(

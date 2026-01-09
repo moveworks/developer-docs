@@ -4,5 +4,4 @@ logo: https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_whit
 name: Twelve Labs
 redirects:
 - twelvelabs
-- General
 ---

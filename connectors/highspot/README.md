@@ -3,7 +3,6 @@ availability: VALIDATED
 description: Connect your Moveworks Copilot to Highspot.
 logo: https://www.acquia.com/sites/default/files/styles/large/public/media/image/2023-08/Highspot%20Logo_Integration.png?itok=jQVq5KVL
 name: Highspot
-- General
 ---
 
 # Introduction

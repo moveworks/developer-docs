@@ -4,5 +4,4 @@ logo: https://us1.discourse-cdn.com/flex020/uploads/alp/original/1X/deeed1b4fee6
 name: Polygon.io
 redirects:
 - polygonio
-- General
 ---
