@@ -9,5 +9,5 @@ solution_tags:
 - Project Management
 - Sales
 systems:
-- sharepoint
+- microsoft-sharepoint
 ---

@@ -8,6 +8,6 @@ redirects:
 solution_tags:
 - Productivity
 systems:
-- sharepoint
+- microsoft-sharepoint
 video: https://youtu.be/Pq0e5kW7Ypg
 ---

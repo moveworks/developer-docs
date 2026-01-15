@@ -8,7 +8,7 @@ redirects:
 solution_tags:
 - Productivity
 systems:
-- sharepoint
+- microsoft-sharepoint
 - microsoft-graph
 video: https://youtu.be/JN1pmdZA8UM
 ---
