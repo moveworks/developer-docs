@@ -11,5 +11,5 @@ solution_tags:
 - Marketing
 - Sales
 systems:
-- sharepoint
+- microsoft-sharepoint
 ---
