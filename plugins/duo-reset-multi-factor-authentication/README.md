@@ -8,4 +8,6 @@ solution_tags:
 - IT
 systems:
 - duo
+redirects:
+- duo-reset-mfa-auth
 ---
