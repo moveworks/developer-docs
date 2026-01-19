@@ -23,6 +23,7 @@ This guide will walk you through installing and configuring the plugin in **Agen
 ## **Prerequisites**
 
 - Access to Agent Studio
+- **Workday connector with OAuth 2.0 Authorization Code authentication** - This plugin requires user-level authentication to retrieve tasks for individual employees. The standard OAuth 2.0 Client Credentials authentication only returns tasks for the integration service account. Configure your Workday connector using the [OAuth 2.0 with Authorization Code (User Consent Auth) Setup](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup) method.
 
 ## **What are we building?**
 
@@ -33,6 +34,8 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 ## **Installation Steps**
 
 We recommend creating the connector for **Workday** first, prior to installing this plugin. Please follow the [Workday Connector](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#step-4-add-domain-security-policies-to-the-integration-systems-security-group) guide to set up the connector.
+
+**Important:** This plugin requires the **OAuth 2.0 Authorization Code (User Consent Auth)** connector configuration. The Workday API endpoint `/workers/{id}/inboxTasks` used by this plugin returns tasks **for the authenticated user only**. If you configure the connector using OAuth 2.0 Client Credentials (standard integration service account), the endpoint will only return tasks for that service account, not for individual employees. See the [OAuth 2.0 with Authorization Code (User Consent Auth) Setup](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup) section of the Workday connector guide for proper configuration.
 
 Note: For the View Assigned Tasks functionality to work correctly, ensure your Workday integration system user has the necessary domain permissions.
 
