@@ -8,7 +8,6 @@ purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B
 solution_tags:
 - HR - Employee Records
 - HR - Performance Management
-- Manager
 systems:
 - sap-success-factors
 ---
