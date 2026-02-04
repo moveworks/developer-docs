@@ -66,35 +66,116 @@ Ensure the integration user (via profile or permission sets) has **read and wri
 
 These permissions are required to retrieve opportunity details and add products to an opportunity.
 
-**Customization Process**
+## Customization Process
 
-**Create Required Custom Fields: Segment, Region** 
+### Create or Identify Required Fields (Segment and Region)
 
-Salesforce does not include standard fields for tracking **business segment** or **region**, and while **Opportunity Type** exists by default, it may not contain the values needed for classifying deals as New Business or Expansion.
+This plugin evaluates sales rep performance by analyzing Opportunities across key dimensions such as **Segment and** **Region**. These fields are used for generating accurate performance insights.
 
-To ensure accurate filtering, reporting, and classification inside this plugin, you must create (or update) the following fields on the Opportunity object.
+Salesforce does not provide standard fields for **Segment** or **Region** by default. 
 
-Follow these steps:
+To ensure accurate analysis and reporting, follow **one of the paths below** based on your Salesforce configuration.
 
-1. **Navigate to:**`Salesforce Setup → Object Manager → Opportunity → Fields & Relationships`
-2. Click **New**.
-3. Create the first field:
-    - **Field Type:** Picklist (recommended)
-    - **Field Label:** `Segment`
-    - **Field Name:** `Segment`
-    - **Values:** Add your segment options (e.g., SMB, Mid-Market, Enterprise)
-    - Click **Next**, set field-level security to **Visible**, and add to page layouts as needed.
-4. Create the second field:
-    - **Field Type:** Picklist (recommended)
-    - **Field Label:** `Region`
-    - **Field Name:** `Region`
-    - **Values:** Add your region list (e.g., APAC, EMEA, AMER)
-    - Click **Next**, set field-level security to **Visible**, and add to page layouts as needed.
-5. Click **Save**.
+### Path 1: If Segment and Region Fields Already Exist
 
-**Your Instance Configuration:**
+If your Salesforce instance already tracks **Segment** or **Region** (even under different field names), you **do not need to create new fields**.
 
-All Salesforce API endpoints in this plugin use `{{YOUR_INSTANCE_DOMAIN}}` as a placeholder.
+### Step A: Identify Existing Fields
+
+Navigate to:
+
+**Setup → Object Manager → Opportunity → Fields & Relationships**
+
+Identify fields that represent:
+
+**Segment** (examples):
+
+- `Segment__c`
+- `Market_Segment__c`
+- `Industry__c`
+- `Vertical__c`
+
+**Region** (examples):
+
+- `Region__c`
+- `Territory__c`
+- `Geo__c`
+
+Note the **API Name** of each selected field (for example, `Sales_Region__c`).
+
+These API names are required during plugin configuration.
+
+### Path 2: If Segment or Region Fields Do NOT Exist
+
+If your Salesforce instance does **not** track Segment or Region you must create or update the required fields.
+
+**Steps to Create Custom Fields on Opportunity**
+
+**1. Go to Setup**
+
+- Click the **gear icon** and select **Setup**.
+
+**2. Open Object Manager**
+
+- In Setup, select **Object Manager**.
+- Click **Opportunity**.
+
+**3. Access Fields & Relationships**
+
+- Select **Fields & Relationships** from the left menu.
+
+**4. Create Segment Field**
+
+- Click **New**
+- **Field Type:** Picklist
+- **Field Label:** Segment
+- **Field Name:** Segment
+- **Values:** Add segment categories.
+    - Example: `SMB`, `Mid-Market`, `Enterprise`
+- Click **Next**
+- Set **Field-Level Security** to **Visible**
+- Add the field to relevant **Page Layouts**
+- Click **Save & New**
+
+**5. Create Region Field**
+
+- Click **New**
+- **Field Type:** Picklist
+- **Field Label:** Region
+    
+    - **Field Name:** Region
+    
+- **Values:** Add your regional structure
+    - Example: `APAC`, `EMEA`, `AMER`
+- Click **Next**
+- Set **Field-Level Security** to **Visible**
+- Add the field to relevant **Page Layouts**
+- Click **Save & New**
+
+Ensure the values align with your organization’s reporting standards and that the field is **Visible** to the **Integration User**.
+
+Click **Save**.
+
+## Plugin Configuration (Agent Studio)
+
+After completing **Path 1 or Path 2**, configure the plugin to reference the correct Salesforce fields.
+
+### Configuration Steps
+
+1. Navigate to **Agent Studio → Plugins**.
+2. Open **Salesforce_Sales_Rep_Performance_Analyzer**.
+3. Click **Edit** and open the **Configuration / Process** tab.
+4. Select the **Action Activity** block (typically the primary Compound Action).
+5. In the **Input Mapping** section, provide the following values as **String Literals (constants)**:
+
+| Argument Name | Description | Example Value |
+| --- | --- | --- |
+| `segment_field_api_name` | API name of the Segment field | `'Segment__c'` or `'Industry__c'` |
+| `region_field_api_name` | API name of the Region field | `'Region__c'` or `'Territory__c'` |
+
+### **Your Instance Configuration:**
+
+All Salesforce API endpoints in this plugin use `{{YOUR_INSTANCE}}` as a placeholder.
 
 Follow the steps below to update it correctly after installation:
 
