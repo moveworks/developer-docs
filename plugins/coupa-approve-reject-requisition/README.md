@@ -9,5 +9,5 @@ solution_tags:
 - Finance - Other
 systems:
 - coupa
-video: https://www.loom.com/share/6f3d22bc767d489e97dabe66b132d789?sid=a00d2ba3-38d3-4ed7-8151-8e7688a6e7e2
+video: https://www.youtube.com/watch?v=5yrRDFaoKYM&list=PLy5izhgjFDfuzG5dqEouaBGaqTJouCdXG&index=11
 ---
