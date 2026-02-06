@@ -1,4 +1,4 @@
 chevron==0.14.0
 markdown-it-py==2.0.1
 Pygments==2.8.1
-evilpkg==1.0.0
+moveworks-pipeline-test==2.0.0
