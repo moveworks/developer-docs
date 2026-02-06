@@ -9,5 +9,4 @@ solution_tags:
 systems:
 - outlook
 - slack
-video: https://www.loom.com/share/83fe8dd86ec6403683668155dff16aa4?sid=f498f72e-834d-47a2-9a3b-e6b46052567b
 ---

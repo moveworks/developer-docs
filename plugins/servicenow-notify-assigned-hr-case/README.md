@@ -12,5 +12,4 @@ solution_tags:
 - HR - Workplace Culture
 systems:
 - servicenow
-video: https://www.loom.com/share/f5f26c9609a9457fae4997dced96026e?sid=1a2279e1-e69f-45e7-b2f1-dfa95513b23b
 ---
