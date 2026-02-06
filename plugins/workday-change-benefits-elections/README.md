@@ -8,5 +8,4 @@ solution_tags:
 - HR - Other
 systems:
 - workday
-video: https://www.loom.com/share/5681bbf82ade4ca786532b14f1ebd318?sid=aaf81be5-0dce-44d7-9615-c7e3f01a594c
 ---
