@@ -10,7 +10,6 @@ solution_tags:
 - HR - Time & Absence
 systems:
 - workday
-video: https://youtu.be/EigPa18rjxo
 ---
 
 # Description
