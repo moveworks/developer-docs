@@ -8,7 +8,6 @@ solution_tags:
 - Sales
 systems:
 - salesforce
-video: https://www.loom.com/share/a9f447190a71408c97176c0d5e965ce8?sid=76d30f18-3dbc-4796-ad10-474f70c89170
 ---
 
 ## **Introduction :**
