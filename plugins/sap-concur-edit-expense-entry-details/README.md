@@ -9,7 +9,6 @@ solution_tags:
 - Finance - Other
 systems:
 - sap-concur
-video: https://www.loom.com/share/66c5a61f154d4b768b7e5be31514511b?sid=26f36307-1ebc-417f-8316-446e2fc6377f
 ---
 
 # **Introduction**
