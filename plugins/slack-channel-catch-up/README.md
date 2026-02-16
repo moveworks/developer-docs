@@ -9,5 +9,4 @@ solution_tags:
 - Productivity
 systems:
 - slack
-video: https://www.loom.com/share/3a5d9d4d7e334e8494298329df98177c?sid=2e5dbf95-1944-4eba-a3a3-ea34b05eb981
 ---

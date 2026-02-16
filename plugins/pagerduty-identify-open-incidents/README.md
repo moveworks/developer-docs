@@ -10,7 +10,6 @@ solution_tags:
 - IT
 systems:
 - pagerduty
-video: https://www.loom.com/share/d75d0a5d724e40b59e9b0f8376a39f78?sid=c0db0449-8c69-4628-86f9-2b3a2c7f9ff5
 ---
 
 # Identify Open Incidents

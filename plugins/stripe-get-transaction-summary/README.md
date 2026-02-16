@@ -9,5 +9,4 @@ solution_tags:
 - Finance - Other
 systems:
 - stripe
-video: https://www.loom.com/share/89f39073f3de469eb1f9596369d691b8?sid=6c6884d1-f89d-44dc-9a20-1a47171b8490
 ---

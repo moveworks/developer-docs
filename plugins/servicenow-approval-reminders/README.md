@@ -13,7 +13,6 @@ solution_tags:
 - IT
 systems:
 - servicenow
-video: https://www.loom.com/share/54b9fb0887104bc8847f3cdd334883db?sid=c3c6ab3f-d049-467c-a07d-da661881c915
 ---
 
 # Introduction
