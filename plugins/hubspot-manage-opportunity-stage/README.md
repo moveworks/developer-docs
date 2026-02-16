@@ -8,5 +8,4 @@ solution_tags:
 - Sales
 systems:
 - hubspot
-video: https://www.loom.com/share/1d4c38a843a441db9b64a4c902039e18?sid=6f531adc-8480-472c-bdf5-ef72feb39984
 ---

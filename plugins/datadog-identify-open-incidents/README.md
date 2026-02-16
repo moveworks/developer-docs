@@ -9,5 +9,4 @@ solution_tags:
 - IT
 systems:
 - datadog
-video: https://www.loom.com/share/7d9fc519c3e6449cbb3b806e0be8bd26?sid=a97703d8-8a66-4b07-ab2d-66706a24f1c4
 ---

@@ -1,0 +1,11 @@
+---
+availability: IDEA
+description: Enables employees to modify existing PTO entries—upcoming or completed—while automatically applying the correct policy, approval, and payroll workflows.
+name: Modify PTO Request
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Can+you+change+the+number+of+hours+for+my+PTO+this+Friday+in+%3Cstrong%3EWorkday%3C%2Fstrong%3E%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+for+approved+PTO+requests+in+%3Cb%3EWorkday%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22PTO-8829%3A+Nov+3%2C+2023%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI+found+your+8-hour+PTO+request+for+%3Cb%3ENov+3%2C+2023%3C%2Fb%3E.+How+many+hours+would+you+like+to+change+it+to%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%224+hours%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I+can+update+the+hours+for+your+%3Cb%3ENov+3rd%3C%2Fb%3E+request+to+%3Cb%3E4+hours%3C%2Fb%3E.+Does+this+look+right%3F%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EYes%2C+submit+it%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Updating+PTO+request+in+%3Cb%3EWorkday%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EDone%21+I%27ve+updated+your+PTO+request+for+%3Cb%3ENov+3rd%3C%2Fb%3E+to+4+hours.%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22PTO-8829%3A+Nov+3%2C+2023%22%7D%5D%7D%5D%7D%5D%7D
+solution_tags:
+- HR - Time & Absence
+- Employee Self-Service
+systems:
+- workday
+---
