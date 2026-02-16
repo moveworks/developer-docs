@@ -416,7 +416,7 @@ steps:
                                           approver: record.approverName
                                           reason: record.shortMessage
 
-                                # 7. Auto-Acknowledge in UKG so that users don't receive the same notification again
+                                # 7. Acknowledge Notification in UKG: Use user-consent auth to mark the notification as acknowledged in UKG, ensuring the user does not receive duplicate notifications.
                                 - action:
                                     action_name: UKG_Acknowledge_Notifications
                                     input_args:
