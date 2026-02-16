@@ -1,0 +1,2 @@
+curl -X GET "https://<tenantURL>/odata/v2/WfRequest({{requestId}})?$expand:wfRequestCommentsNav&$select:wfRequestId,lastModifiedDateTime,lastModifiedBy,createdDateTime,lastModifiedOn,createdBy,status,wfRequestCommentsNav" \
+  -H "Content-Type: application/json"
