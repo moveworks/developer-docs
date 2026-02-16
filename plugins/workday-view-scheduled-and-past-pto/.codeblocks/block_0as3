@@ -1,0 +1,1 @@
+soap:address location="https://<hostname>/ccx/service/<tenant>/..."
