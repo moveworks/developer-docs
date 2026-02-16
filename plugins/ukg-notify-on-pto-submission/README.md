@@ -281,7 +281,7 @@ This Compound Action (CA) performs the following operations:
     - Resolve Moveworks user
         - Built-In Action: `mw.batch_get_users_by_email`
     - Notify the user via Moveworks
-        - Call the conversational process for “UKG - Approve or Reject PTO plugin”
+        - Call the conversational process for “UKG - Approve or Reject" plugin
         - Allow user to Approve/Reject directly from the notification
     - Auto-acknowledge the notification in UKG to prevent duplicates
         - HTTP Action #4: `UKG_Acknowledge_Notifications`
@@ -360,9 +360,9 @@ steps:
                     cases:
                       # Logic: Check for Submitted PTOs that are actionable for managers/approvers
                       - condition: >-
-                          record.type == 'TIME_OFF' AND record.reviewed == false AND (record.status == 'Approved' OR record.status == 'Refused' OR record.status == 'Cancelled') AND disableActions == true AND category == "MYREQUEST"
+                          record.type == 'TIME_OFF' AND record.reviewed == false AND record.status == 'Submitted' AND disableActions == false AND category == "REQUEST"
                         steps:
-                          # 4a. Get User Details (The Manager/Receiver)
+                          # 4a. Get User Details (The Manager/Approver)
                           - action:
                               action_name: UKG_Lookup_User_by_ID
                               input_args:
