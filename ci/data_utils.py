@@ -22,7 +22,17 @@ def load_yaml_data(file_path):
         lines = file.readlines()
 
     try:
-        front_matter = "".join(lines[1 : lines.index("---\n", 1)])
+        # Find closing --- delimiter (with or without newline)
+        closing_index = None
+        for i in range(1, len(lines)):
+            if lines[i] == "---\n" or lines[i] == "---":
+                closing_index = i
+                break
+
+        if closing_index is None:
+            raise ValueError(f"Missing closing --- delimiter")
+
+        front_matter = "".join(lines[1:closing_index])
     except ValueError as ve:
         raise ValueError(f"Missing YAML front matter in {file_path}")
 

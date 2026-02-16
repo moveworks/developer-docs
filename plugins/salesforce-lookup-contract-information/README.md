@@ -2,19 +2,13 @@
 availability: INSTALLABLE
 description: A plugin that lets you get contract data for a specified account through
   Salesforce.
-difficulty_level: BEGINNER
-domain:
-- Sales
-fidelity: TEMPLATE
 installation_asset_uuid: 9f95fdf3-7dae-4c04-a50b-571fa2ea1f6e
 name: Look Up Contract Information
-num_implementations: 1
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHave+a+call+coming+up+-+I+need+the+contract+information+for+IntelliTech.+Please+summarize+the+latest+for+me.+%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Fetching+contract+information+for+IntelliTech+from+Salesforce...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here%27s+the+contract+information+for+IntelliTech+as+stored+in+Salesforce%3A%3Cbr%3E-+%3Cb%3EContract+ID%3A%3C%2Fb%3E+CT-9087%3Cbr%3E-+%3Cb%3EStart+Date%3A%3C%2Fb%3E+2022-01-15%3Cbr%3E-+%3Cb%3EEnd+Date%3A%3C%2Fb%3E+2024-01-14%3Cbr%3E-+%3Cb%3EStatus%3A%3C%2Fb%3E+Active%3Cbr%3E-+%3Cb%3EAnnual+Value%3A%3C%2Fb%3E+%241.2M%3Cbr%3E-+%3Cb%3EAccount+Manager%3A%3C%2Fb%3E+Samantha+Ray%3Cbr%3EDo+you+need+information+on+anything+else%3F%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22IntelliTech+Contract%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EHave+a+call+coming+up+-+I+need+the+contract+information+for+IntelliTech.+Please+summarize+the+latest+for+me.+%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Fetching+contract+information+for+IntelliTech+from+Salesforce...%22%2C%22status%22%3A%22pending%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here%27s+the+contract+information+for+IntelliTech+as+stored+in+Salesforce%3A%3Cbr%3E-+%3Cb%3EContract+ID%3A%3C%2Fb%3E+CT-9087%3Cbr%3E-+%3Cb%3EStart+Date%3A%3C%2Fb%3E+2022-01-15%3Cbr%3E-+%3Cb%3EEnd+Date%3A%3C%2Fb%3E+2024-01-14%3Cbr%3E-+%3Cb%3EStatus%3A%3C%2Fb%3E+Active%3Cbr%3E-+%3Cb%3EAnnual+Value%3A%3C%2Fb%3E+%241.2M%3Cbr%3E-+%3Cb%3EAccount+Manager%3A%3C%2Fb%3E+Samantha+Ray%3Cbr%3EDo+you+need+information+on+anything+else%3F%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22IntelliTech+Contract%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - Sales
 systems:
 - salesforce
-time_in_minutes: 15
 ---
 
 ## Introduction

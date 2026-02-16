@@ -1,15 +1,7 @@
 ---
-accreditations:
-  - indrapaul24
-  - DEFAULT
 availability: VALIDATED
-difficulty_level: BEGINNER
-drop_accreditations:
-  - ajaymerchia
-fidelity: GUIDE
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/coupa-integration-logo-primary.svg
 name: Coupa
-time_in_minutes: 15
 ---
 
 ## **Introduction**

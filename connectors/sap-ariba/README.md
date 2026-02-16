@@ -1,12 +1,7 @@
 ---
-accreditations:
-- DEFAULT
 availability: VALIDATED
-difficulty_level: INTERMEDIATE
-fidelity: GUIDE
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/sap-ariba-integration-logo-.svg
 name: SAP Ariba
-time_in_minutes: 60
 ---
 
 # Introduction

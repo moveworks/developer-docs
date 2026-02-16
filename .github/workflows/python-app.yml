@@ -9,6 +9,10 @@ jobs:
     permissions: read-all
     outputs:
       message: '${{ steps.check_changes.outputs.comment_message }}'
+      validation_message: '${{ steps.validation.outputs.validation_message }}'
+      validation_failed: '${{ steps.validation.outputs.validation_failed }}'
+      codeblock_message: '${{ steps.code_blocks.outputs.codeblock_message }}'
+      codeblock_failed: '${{ steps.code_blocks.outputs.codeblock_failed }}'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,17 +28,118 @@ jobs:
         env:
           GH_SHA_MAIN_HEAD: '${{ github.sha }}'
           GH_SHA_PR_HEAD: '${{ github.event.pull_request.head.sha }}'
-      - name: Validate Files V2
-        run: python -m ci.validate_v2
+      - name: Validate Files V3
+        id: validation
+        continue-on-error: true
+        run: |
+          if python -m ci.validate_v3 2>&1 | tee validation_output.txt; then
+            echo "validation_failed=false" >> $GITHUB_OUTPUT
+            echo "validation_message=" >> $GITHUB_OUTPUT
+          else
+            echo "validation_failed=true" >> $GITHUB_OUTPUT
+            echo "validation_message<<EOF" >> $GITHUB_OUTPUT
+            echo "## ❌ Validation Failed" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "Your pull request has validation errors that need to be fixed. Please review the details below:" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+
+            # Generate summary report
+            cat validation_output.txt | python ci/generate_cleanup_report.py >> $GITHUB_OUTPUT
+
+            echo "" >> $GITHUB_OUTPUT
+            echo "---" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "## 📋 Detailed Error Messages" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "<details>" >> $GITHUB_OUTPUT
+            echo "<summary>Click to expand full validation output with suggested fixes</summary>" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "\`\`\`" >> $GITHUB_OUTPUT
+            cat validation_output.txt >> $GITHUB_OUTPUT
+            echo "\`\`\`" >> $GITHUB_OUTPUT
+            echo "</details>" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "---" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "### 📚 Need Help?" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "- Review our [CONTRIBUTING.md](https://github.com/moveworks/developer-docs/blob/main/CONTRIBUTING.md) guide" >> $GITHUB_OUTPUT
+            echo "- The detailed error output includes suggested fixes you can copy/paste" >> $GITHUB_OUTPUT
+            echo "- Each error shows the exact field to add/remove/change" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            exit 1
+          fi
       - name: Generate Code Blocks
-        run: python ci/copy_code_blocks.py
+        id: code_blocks
+        continue-on-error: true
+        run: |
+          if python ci/copy_code_blocks.py 2>&1 | tee codeblock_output.txt; then
+            echo "codeblock_failed=false" >> $GITHUB_OUTPUT
+            echo "codeblock_message=" >> $GITHUB_OUTPUT
+          else
+            echo "codeblock_failed=true" >> $GITHUB_OUTPUT
+            echo "codeblock_message<<EOF" >> $GITHUB_OUTPUT
+            echo "## ⚠️ Code Block Changes Detected" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "Your pull request contains changes to code blocks that need to be regenerated." >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "### Files with code block changes:" >> $GITHUB_OUTPUT
+            echo "\`\`\`" >> $GITHUB_OUTPUT
+            cat codeblock_output.txt | grep -A 100 "Change detected" >> $GITHUB_OUTPUT
+            echo "\`\`\`" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "### What to do:" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "1. Pull the latest changes from your PR branch" >> $GITHUB_OUTPUT
+            echo "2. The \`.codeblocks/\` directories have been automatically updated" >> $GITHUB_OUTPUT
+            echo "3. Review the changes to ensure they're correct" >> $GITHUB_OUTPUT
+            echo "4. Commit the updated \`.codeblocks/\` files and push" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "Alternatively, run \`python ci/copy_code_blocks.py\` locally to regenerate them." >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            exit 1
+          fi
   comment:
     runs-on: ubuntu-latest
     needs: build
     permissions:
       pull-requests: write
     steps:
-      - name: Add Comment
+      - name: Add Validation Comment
+        if: needs.build.outputs.validation_failed == 'true'
+        uses: actions/github-script@v7
+        env:
+          message: '${{needs.build.outputs.validation_message}}'
+        with:
+          github-token: '${{secrets.GITHUB_TOKEN}}'
+          script: |
+            const issue_number = context.issue.number;
+            const comment_message = process.env.message;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: comment_message
+            });
+      - name: Add Code Block Comment
+        if: needs.build.outputs.codeblock_failed == 'true'
+        uses: actions/github-script@v7
+        env:
+          message: '${{needs.build.outputs.codeblock_message}}'
+        with:
+          github-token: '${{secrets.GITHUB_TOKEN}}'
+          script: |
+            const issue_number = context.issue.number;
+            const comment_message = process.env.message;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue_number,
+              body: comment_message
+            });
+      - name: Add Preview Comment
         if: needs.build.outputs.message != ''
         uses: actions/github-script@v7
         env:

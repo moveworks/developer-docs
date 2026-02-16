@@ -1,18 +1,13 @@
 ---
 availability: INSTALLABLE
 description: A plugin that allows users to quickly review account renewal information.
-difficulty_level: INTERMEDIATE
-domain:
-- Sales
-fidelity: TEMPLATE
 installation_asset_uuid: 91404c5a-3d6e-4bfe-b3b1-3e8c692a5a51
 name: Look Up Account Renewal Information
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Show+renewal+details+for+Vertex+Solutions.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Searches+for+upcoming+renewal+information+for+the+account+%27Vertex+Solutions%27.%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here+are+the+renewal+details+for+Vertex+Solutions%3A%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EAccount+Renewal+Information%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ERenewal+Date%3A%3C%2Fb%3E+June+30%2C+2023%3Cbr%3E%3Cb%3EContract+Terms%3A%3C%2Fb%3E+12+months%2C+auto-renew%3Cbr%3E%3Cb%3EPricing%3A%3C%2Fb%3E+%2420%2C000+annually%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Vertex+Solutions%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43%2BAM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22Show+renewal+details+for+Vertex+Solutions.%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Searches+for+upcoming+renewal+information+for+the+account+%27Vertex+Solutions%27.%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22Here+are+the+renewal+details+for+Vertex+Solutions%3A%22%7D%2C%7B%22richText%22%3A%22%3Cb%3EAccount+Renewal+Information%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ERenewal+Date%3A%3C%2Fb%3E+June+30%2C+2023%3Cbr%3E%3Cb%3EContract+Terms%3A%3C%2Fb%3E+12+months%2C+auto-renew%3Cbr%3E%3Cb%3EPricing%3A%3C%2Fb%3E+%2420%2C000+annually%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22Vertex+Solutions%22%2C%22connectorName%22%3A%22salesforce%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%5D%7D
 solution_tags:
 - Sales
 systems:
 - salesforce
-time_in_minutes: 20
 ---
 
 # **Introduction :**

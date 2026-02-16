@@ -1,15 +1,8 @@
 ---
-accreditations:
-- smartzee797
-- ajaymerchia
-- DEFAULT
 availability: VALIDATED
 description: Integrate with Azure Function Apps using function keys.
-difficulty_level: ADVANCED
-fidelity: GUIDE
 logo: https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/azure-function-app/logo.png
 name: Azure Function Apps
-time_in_minutes: 60
 ---
 
 # Introduction

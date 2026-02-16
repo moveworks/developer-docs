@@ -1,11 +1,7 @@
 ---
 availability: VALIDATED
 description: Connect your Moveworks Copilot to Databricks.
-difficulty_level: BEGINNER
-fidelity: GUIDE
-logo: https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png
 name: Databricks
-time_in_minutes: 10
 ---
 
 # Introduction

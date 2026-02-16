@@ -1,7 +1,10 @@
 ---
-availability: IDEA
-fidelity: IDEA
-logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/logo-int-MS-sharepoint.svg
-name: Microsoft SharePoint
-
+availability: VALIDATED
+name: SharePoint
+redirects:
+- sharepoint
 ---
+
+# Introduction
+
+You can integrate with Sharepoint systems over Microsoft Graph. You can follow [our guide here](../microsoft-graph/README.md).

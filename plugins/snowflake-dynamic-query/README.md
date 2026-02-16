@@ -1,18 +1,13 @@
 ---
 availability: INSTALLABLE
 description: A plugin that dynamically queries snowflake based on a user's request.
-difficulty_level: BEGINNER
-domain:
-- IT
-fidelity: TEMPLATE
 installation_asset_uuid: b6aeead1-84c8-411b-b8cd-3279cd9b1c95
 name: Snowflake Cortex Analyst
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22What+are+the+top+5+clusters+with+the+most+used+space%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+can+run+this+query+on+Snowflake+for+you.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Here+are+the+top+5+clusters+with+the+most+used+space.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+12345%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E500GB%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+67890%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E450GB%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+54321%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E420GB%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+98765%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E400GB%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+78901%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E380GB%3C%2Fp%3E%22%7D%5D%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22What+are+the+top+5+clusters+with+the+most+used+space%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+can+run+this+query+on+Snowflake+for+you.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Here+are+the+top+5+clusters+with+the+most+used+space.%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+12345%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E500GB%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+67890%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E450GB%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+54321%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E420GB%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+98765%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E400GB%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3ECluster+78901%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3EUsed+Space%3A+%3C%2Fb%3E380GB%3C%2Fp%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - IT
 systems:
 - snowflake
-time_in_minutes: 30
 ---
 
 # Dynamic Queries with Snowflake Cortex Analyst

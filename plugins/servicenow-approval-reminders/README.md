@@ -1,21 +1,11 @@
 ---
-accreditations:
-- kevmok
-- DEFAULT
 agent_capabilities:
-- Polling Required
+- Ambient Agent
+- Ambient Agent
 availability: VALIDATED
-custom_tags:
-- Polling Required
 description: A plugin that reminds users about pending ServiceNow approvals.
-design_pattern_id: 10
-difficulty_level: BEGINNER
-domain:
-- IT
-- Approvals
-fidelity: GUIDE
 name: Remind Approvers To Take Action
-purple_chat_link: https://developer.moveworks.com/creator-studio/developer-tools/purple-chat/?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Trigger%3A+System+detects+pending+approvals+in+ServiceNow+for+the+user.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou+have+pending+approvals+in+ServiceNow.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EApprove+Software+Purchase+Request%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ERequester%3A+%3C%2Fb%3EEmily+Clark%3Cbr%3E%3Cb%3ESoftware%3A+%3C%2Fb%3EAdobe+Creative+Cloud%3Cbr%3E%3Cb%3EDepartment%3A+%3C%2Fb%3EMarketing%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22Approve%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Reject%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22View+Details%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EApprove+Network+Access+Change%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ERequester%3A+%3C%2Fb%3EAlan+Smithee%3Cbr%3E%3Cb%3EAccess+Level%3A+%3C%2Fb%3EVPN+Full+Access%3Cbr%3E%3Cb%3EReason%3A+%3C%2Fb%3EProject+Need%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Approve%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Reject%22%7D%2C%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22View+Details%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Action%3A+ServiceNow+%27Approve%27+action+is+triggered+for+the+selected+approval.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EApproval+confirmed.+The+software+purchase+request+for+Adobe+Creative+Cloud+by+Emily+Clark+is+now+approved.%3Cbr%3E%3Cbr%3ETo+see+more+details+in+ServiceNow%2C+click+%3Cb%3Ehere%3C%2Fb%3E.%3C%2Fp%3E%22%7D%5D%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Trigger%3A+System+detects+pending+approvals+in+ServiceNow+for+the+user.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou+have+pending+approvals+in+ServiceNow.%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EApprove+Software+Purchase+Request%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ERequester%3A+%3C%2Fb%3EEmily+Clark%3Cbr%3E%3Cb%3ESoftware%3A+%3C%2Fb%3EAdobe+Creative+Cloud%3Cbr%3E%3Cb%3EDepartment%3A+%3C%2Fb%3EMarketing%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22Approve%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Reject%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22View+Details%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cb%3E%3Cp%3EApprove+Network+Access+Change%3C%2Fp%3E%3C%2Fb%3E%3Cbr%3E%3Cp%3E%3Cb%3ERequester%3A+%3C%2Fb%3EAlan+Smithee%3Cbr%3E%3Cb%3EAccess+Level%3A+%3C%2Fb%3EVPN+Full+Access%3Cbr%3E%3Cb%3EReason%3A+%3C%2Fb%3EProject+Need%3Cbr%3E%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Approve%22%7D%2C%7B%22style%22%3A%22outlined%22%2C%22buttonText%22%3A%22Reject%22%7D%2C%7B%22style%22%3A%22filled%22%2C%22buttonText%22%3A%22View+Details%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Action%3A+ServiceNow+%27Approve%27+action+is+triggered+for+the+selected+approval.%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EApproval+confirmed.+The+software+purchase+request+for+Adobe+Creative+Cloud+by+Emily+Clark+is+now+approved.%3Cbr%3E%3Cbr%3ETo+see+more+details+in+ServiceNow%2C+click+%3Cb%3Ehere%3C%2Fb%3E.%3C%2Fp%3E%22%7D%5D%7D%5D%7D
 redirects:
 - snow-approval-reminders
 solution_tags:
@@ -23,8 +13,6 @@ solution_tags:
 - IT
 systems:
 - servicenow
-time_in_minutes: 45
-video: https://www.loom.com/share/54b9fb0887104bc8847f3cdd334883db?sid=c3c6ab3f-d049-467c-a07d-da661881c915
 ---
 
 # Introduction
