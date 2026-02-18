@@ -1,7 +1,8 @@
 ---
 agent_capabilities:
 - Structured Data Analyzer
-availability: IDEA
+availability: INSTALLABLE
+installation_asset_uuid: 83efdbf3-42ad-4755-a575-4c4e0d1a5b0d
 description: Analyzes all Closed-Won deals in the current fiscal year and breaks down
   revenue by New Business vs. Expansion — helping GTM leaders understand growth mix.
 name: New vs. Expansion Business Mix
