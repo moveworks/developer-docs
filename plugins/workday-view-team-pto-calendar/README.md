@@ -75,7 +75,7 @@ Below mandatory attributes are needed from this user ingestion.
 
 ## **Visual Representation of How the Plugin Works**
 
-![ViewTeamPTORequestsCalendar.svg](Workday%20-%20View%20Team%20PTO%20Requests%20&%20Calendar/ViewTeamPTORequestsCalendar.svg)
+![ViewCalendar.png](Workday%20-%20View%20Team%20PTO%20Requests%20&%20Calendar/ViewCalendar.png)
 
 ## **API Details**
 
