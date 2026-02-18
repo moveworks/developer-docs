@@ -1,7 +1,8 @@
 ---
 agent_capabilities:
 - Structured Data Analyzer
-availability: IDEA
+availability: INSTALLABLE
+installation_asset_uuid: af79ebd2-2f20-48ba-87f8-3a1aaf3aded0
 description: A plugin that allows sales managers to evaluate individual and team-wide
   sales rep performance based on opportunity and activity data. This automation helps
   in understanding productivity, pipeline contribution, win rates, and deal execution
