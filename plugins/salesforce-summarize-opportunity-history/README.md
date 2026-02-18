@@ -1,5 +1,6 @@
 ---
-availability: GUIDE
+availability: INSTALLABLE
+installation_asset_uuid: 90f4899c-2a8d-4f3e-bb8f-369329bd45fe
 description: A plugin that allows sales representatives and managers to instantly
   access a clear, summarized view of an opportunity's history, progress, and key milestones
   through the Moveworks AI Assistant. By surfacing details like stage transitions,

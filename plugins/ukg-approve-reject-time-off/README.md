@@ -11,8 +11,6 @@ systems:
 - ukg
 ---
 
-# UKG - Approve or Reject PTO
-
 # Description
 
 Enables managers to review, gather context, and act on pending PTO requests using natural language. This plugin functions as the fulfillment engine for PTO notifications.

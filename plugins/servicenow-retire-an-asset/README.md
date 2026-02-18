@@ -1,9 +1,10 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
 description: A plugin that allows IT asset managers to identify and retire assets
   in ServiceNow through the Moveworks AI Assistant. This automation retrieves assets
   and enables IT asset managers to mark them as Retired, ensuring asset hygiene, accurate
   lifecycle tracking, and compliance with ServiceNow asset management policies.
+installation_asset_uuid: 78662f6e-1b16-4c50-91e5-b9813a3376a6
 domain:
 - IT
 fidelity: GUIDE
