@@ -1,5 +1,6 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
+installation_asset_uuid: 907ade80-5494-4dcf-aa5e-1e1cdb6b43da
 description: A plugin that allows sales representatives and managers to easily add
   product modules to an Opportunity through the Moveworks AI Assistant. This automation
   streamlines deal configuration, improves product consistency, eliminates manual

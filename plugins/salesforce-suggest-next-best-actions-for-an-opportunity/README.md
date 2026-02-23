@@ -1,11 +1,12 @@
 ---
-availability: IDEA
+availability: INSTALLABLE
 description: A plugin that recommends the next best actions to help sales representatives
   move an opportunity forward through the Moveworks AI Assistant. It analyzes opportunity
   details, stage, recent activities, and related notes to suggest actionable next
   steps, such as scheduling meetings, following up with key contacts, or updating
   opportunity information. This helps sales teams stay proactive, shorten deal cycles,
   and improve win rates.
+installation_asset_uuid: 3bd858d4-2b7a-4b88-b4e6-11d1131125ac
 name: Suggest Next Best Actions for an Opportunity
 difficulty_level: BEGINNER
 time_in_minutes: 15

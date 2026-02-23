@@ -1,7 +1,8 @@
 ---
 agent_capabilities:
 - Structured Data Analyzer
-availability: IDEA
+availability: INSTALLABLE
+installation_asset_uuid: 2641868c-57b7-4fb0-801a-665df65ad97d
 description: A plugin that retrieves opportunity data to evaluate the health, distribution,
   and risk level of the sales pipeline. This automation helps Sales Leaders, Sales
   Managers, and RevOps understand pipeline coverage, stage progression, aging, deal
