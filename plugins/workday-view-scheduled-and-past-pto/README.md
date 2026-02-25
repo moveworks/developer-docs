@@ -133,6 +133,12 @@ curl -X POST -d '{
 }' 'https://<tenantUrl>/ccx/api/wql/v1/<tenantName>/data'
 ```
 
+**Note**
+
+In this API, we filter status by this WorkdayID '0391102bd1b542538d996936c8fa2fa7', which is the ID for the 'Approved' status. This ID might be different for your instance. To find the 'Approved' status ID for your tenant, run the WQL without the "status in (0391102bd1b542538d996936c8fa2fa7) AND" clause. 
+
+This should return PTO with all statuses. You can then find a PTO with an 'Approved' status, note down the corresponding ID and replace it in the above WQL. 
+
 **Query Parameters**
 
 - `ORG_IDS` *(string):* organisation ID of the logged in user fetched from user identity object.
