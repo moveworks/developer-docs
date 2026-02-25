@@ -69,7 +69,7 @@ Below mandatory attributes are needed from this user ingestion.
 
 These attributes are utilized in the input mapping as shown below. Depending on your ingestion configuration, you might need to change these to point to the user's workday_id and Workday org_id.
 
-<img src="image.png" alt="workday_user_identity_attributes" width="600" />
+![workday_user_identity_attributes](image.png)
 
 ## **4. Workday Custom field creation cf_manager**
 
@@ -79,8 +79,7 @@ This is a custom field created under time off entry business object which is use
 
 2. In search, type: **Create Calculated Field**
 
-   <img src="image-1.png" alt="screenshot" width="600" />
-   <br></br>
+   ![screenshot](image-1.png)
 
 3. Enter the below fields as shown in screenshot.
     - **Business Object** → Time Off Entry
