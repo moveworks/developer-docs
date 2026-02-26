@@ -1,7 +1,7 @@
 ---
 availability: INSTALLABLE
 description: Streamlines the time-off request process by allowing employees to submit, validate, and check the status of PTO through the AI Assistant.
-installation_asset_uuid: f5c7f2a3-5c41-4dbd-af7d-097cda2f062f
+installation_asset_uuid: 5dea1307-9b93-4817-b136-e83689150f90
 name: Submit PTO Request
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I%27d+like+to+apply+for+some+leave.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Retrieving+available+leave+types+from+%3Cb%3EWorkday%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22I+can+help+you+with+that.+What+type+of+leave+would+you+like+to+take%3F+Common+types+include%3A%5Cn%3Cul%3E%5Cn++%3Cli%3EVacation%3C%2Fli%3E%5Cn++%3Cli%3ESick+Leave%3C%2Fli%3E%5Cn++%3Cli%3EPersonal+Time%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3EPlease+also+let+me+know+the+%3Cb%3Edates%3C%2Fb%3E+and+if+these+will+be+%3Cb%3Efull+days%3C%2Fb%3E+or+%3Cb%3Epartial+days%3C%2Fb%3E.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I%27ll+take+Vacation+from+October+10th+to+12th.+All+full+days.+My+comment+is+%27Taking+a+long+weekend%27.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Validating+leave+balance+and+drafting+request...%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I%27ve+prepared+your+%3Cb%3EWorkday%3C%2Fb%3E+request%3A%3C%2Fp%3E%5Cn%3Cul%3E%5Cn++%3Cli%3E%3Cb%3EType%3A%3C%2Fb%3E+Vacation%3C%2Fli%3E%5Cn++%3Cli%3E%3Cb%3EDates%3A%3C%2Fb%3E+Oct+10%2C+2024+-+Oct+12%2C+2024%3C%2Fli%3E%5Cn++%3Cli%3E%3Cb%3EDuration%3A%3C%2Fb%3E+3+Full+Days%3C%2Fli%3E%5Cn++%3Cli%3E%3Cb%3EComment%3A%3C%2Fb%3E+Taking+a+long+weekend%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3EDoes+this+look+right%3F%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Submit%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Edit+Details%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Submit+that.+Also%2C+I+need+to+log+1+day+of+sick+leave+for+yesterday+%28Sept+24%29+and+book+annual+leave+for+Nov+20-22.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Submitting+previous+request+and+drafting+new+ones...%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3ESubmitted%21+I+have+now+drafted+two+additional+requests+for+you%3A%3C%2Fp%3E%5Cn%3Cp%3E%3Cb%3ERequest+1%3C%2Fb%3E%3C%2Fp%3E%5Cn%3Cul%3E%5Cn++%3Cli%3E%3Cb%3EType%3A%3C%2Fb%3E+Sick+Leave%3C%2Fli%3E%5Cn++%3Cli%3E%3Cb%3EDate%3A%3C%2Fb%3E+Sept+24%2C+2024+%281+day%29%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3E%3Cb%3ERequest+2%3C%2Fb%3E%3C%2Fp%3E%5Cn%3Cul%3E%5Cn++%3Cli%3E%3Cb%3EType%3A%3C%2Fb%3E+Vacation+%28Annual+Leave%29%3C%2Fli%3E%5Cn++%3Cli%3E%3Cb%3EDates%3A%3C%2Fb%3E+Nov+20%2C+2024+-+Nov+22%2C+2024+%283+days%29%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3EWould+you+like+me+to+submit+both+of+these%3F%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22Time+Off+Request%3A+Oct+10-12%22%7D%5D%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Submit+Both%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Submit+both.+Actually%2C+can+you+also+put+in+a+vacation+request+for+my+report%2C+Sarah+Miller%3F+She%27s+out+Dec+1st.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Finding+direct+report+%3Cb%3ESarah+Miller%3C%2Fb%3E+and+checking+her+calendar...%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI%27ve+submitted+your+requests+and+prepared+a+new+one+for+your+direct+report.%3C%2Fp%3E%5Cn%3Cp%3E%3Cb%3ERequest+for+Sarah+Miller%3C%2Fb%3E%3C%2Fp%3E%5Cn%3Cul%3E%5Cn++%3Cli%3E%3Cb%3EType%3A%3C%2Fb%3E+Vacation%3C%2Fli%3E%5Cn++%3Cli%3E%3Cb%3EDate%3A%3C%2Fb%3E+Dec+1%2C+2024+%28Full+Day%29%3C%2Fli%3E%5Cn%3C%2Ful%3E%5Cn%3Cp%3EReady+to+submit+this+for+her%3F%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22Sarah+Miller%22%7D%5D%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Submit+for+Sarah%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
@@ -25,9 +25,9 @@ Before installing and using the **Submit PTO Request** plugin, please ensure the
 
 ## **1. Workday Connector**
 
-This plugin requires an active Workday connector to communicate with your Workday instance.
+This plugin requires an active Workday connector to communicate with your Workday instance. We recommend creating a connector which utilizes **OAuth 2.0 with Authorization Code Grant Type flow**. 
 
-- If you have not already configured the connector, please follow the [Workday Connector Guide](https://marketplace.moveworks.com/connectors/workday#how-to-implement) available in the Moveworks Marketplace.
+- If you have not already configured the connector, please follow the [Workday Connector Guide](https://marketplace.moveworks.com/connectors/workday#oauth-2-0-with-authorization-code-user-consent-auth-setup) available in the Moveworks Marketplace.
 - The connector must be fully set up and before installing this plugin.
 - Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
 
@@ -45,8 +45,7 @@ At a minimum, employees and managers must have:
 - Access to their own **employee profiles and time account balances**
 - Eligibility to submit PTO requests based on company time-off policies
 
-> Note: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in Workday.
-> 
+Note: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in Workday.
 
 ### **b. End User Permissions (Manager Persona)**
 
@@ -60,21 +59,34 @@ At a minimum, managers must have:
 - Access to their team member profiles and time account balances
 - Eligibility to submit requests for their direct reports based on company time-off policies
 
-> Note: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in Workday.
-> 
+ Note: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in Workday.
 
-### **c. API Permissions (via Integration User)**
+### **c. API Permissions**
 
-The Workday connector uses an Integration Systems User (ISU) to process PTO requests through Workday APIs.
+The Workday connector uses the Workday API Client to process PTO requests through Workday APIs. The API Client must have the following permissions (or their equivalent in your tenant):
 
-That admin/integration user must have permissions to:
+- Organizations and Roles
+- Public Data
+- Staffing
+- System
+- Tenant Non-Configurable
+- Time Off and Leave
+- Worktags
 
-- View Time Off requests on behalf of employees
-- Read Time Off Types and Time Account information
-- Validate employee eligibility and balances (as required by your configuration)
-- Create Time Off requests on behalf of employees or their direct managers
+These permissions are typically configured through the Register API Client task.
 
-These permissions are typically configured through Create Integration System User (ISU) Workday Task.
+## **3. Workday User Identity Ingestion**
+
+This plugin requires User Identity Ingestion from workday in Moveworks. For Moveworks to complete actions across systems on the behalf of a user, it needs to have knowledge of all of the system IDs for the given user.
+Setup information for User identity can be found on https://help.moveworks.com/docs/user-identity.
+
+Below mandatory attributes are needed from this user ingestion.
+
+1. workday ID of the user.
+
+This attribute is utilized in the input mapping of the target_report_id slot's resolver strategy as shown below. Depending on your ingestion configuration, you might need to change this to point to the user's workday_id.
+
+![workday-id-mapping](image.png)
 
 # **Implementation details**
 
@@ -84,9 +96,9 @@ These permissions are typically configured through Create Integration System Use
 
 ## **API Details**
 
-<aside>
+To use the curl examples below be sure to update details for tenantUrl and tenantName. 
 
-To use the curl examples below be sure to update details for <tenantUrl> and <tenantName>.
+**You must update the TENANT placeholder in the API Actions imported during installation.**
 
 As a Workday administrator, obtain these details as follows:
 
@@ -102,8 +114,6 @@ As a Workday administrator, obtain these details as follows:
     
 
 The <hostname> (tenantUrl) and <tenant> (tenantName) in this URL are your **true tenant URL components**.
-
-</aside>
 
 ### **API #1 : Fetch List of Direct Reports**
 
@@ -156,14 +166,6 @@ curl -X POST "https://<tenantUrl>/ccx/service/<tenantName>/Absence_Management/v4
   -d "<soapenv:Envelope
     xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'
     xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
-    <soapenv:Header>
-        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-            <wsse:UsernameToken wsu:Id="UsernameToken-{{USERNAME_PLACEHOLDER_TOKEN}}">
-                <wsse:Username>ISU_TimeOffCorrections@{{tenantName}}</wsse:Username>
-                <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">{{PASSWORD}}</wsse:Password>
-            </wsse:UsernameToken>
-        </wsse:Security>
-    </soapenv:Header>
     <soapenv:Body>
         <bsvc:Enter_Time_Off_Request xmlns:bsvc="urn:com.workday/bsvc" bsvc:version="v42.0">
             <bsvc:Business_Process_Parameters>
