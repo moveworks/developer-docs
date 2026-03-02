@@ -2,7 +2,7 @@
 availability: INSTALLABLE
 description: Enables employees to check their PTO balances across limited leave types, so they can plan time off quickly and confidently.
 name: Check PTO Balance
-installation_asset_uuid: 759557e4-8087-4f26-8662-20815873811b
+installation_asset_uuid: 7eb48245-5ae2-467d-a82c-a565f1317d8f
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+want+to+view+my+PTO+balances%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ERetrieving+current+leave+balances+for+%3Cb%3EAlex+Rivera%3C%2Fb%3E+from+%3Cb%3EUKG%3C%2Fb%3E...%3C%2Fp%3E%22%2C%22connectorName%22%3A%22ukg%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou+have+an+aggregated+balance+of+%3Cb%3E124+hours%3C%2Fb%3E+available+across+all+leave+types%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EVacation%3A%3C%2Fb%3E+80+hours%3C%2Fli%3E%3Cli%3E%3Cb%3ESick+Leave%3A%3C%2Fb%3E+32+hours%3C%2Fli%3E%3Cli%3E%3Cb%3EPersonal+Time%3A%3C%2Fb%3E+12+hours%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22ukg%22%2C%22citationTitle%22%3A%22Alex+Rivera+-+UKG+WFM+Time+Off%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWhat+will+be+my+vacation+balance+as+of+Dec+31%3F+I+am+planning+to+take+a+long+vacation+this+new+year%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ECalculating+projected+accruals+through+December+31%2C+2024+in+%3Cb%3EUKG%3C%2Fb%3E...%3C%2Fp%3E%22%2C%22connectorName%22%3A%22ukg%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EAs+of+December+31%2C+2024%2C+your+%3Cb%3EVacation%3C%2Fb%3E+balance+is+projected+to+be+%3Cb%3E104+hours%3C%2Fb%3E.%3C%2Fp%3E%3Cp%3EThis+includes+your+current+balance+of+80+hours+plus+24+hours+of+projected+accruals%2C+assuming+no+additional+time+is+taken+before+then.%3C%2Fp%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - HR - Other
@@ -114,7 +114,33 @@ curl --request GET \
 
 - `USER_NUMBER` *(string):* This will be the UKG person number fetched from API #1.
 
-### **API #3: Retrieve PTO Balance**
+### **API #3: Retrieve Accrual Codes from Paycodes**
+
+This REST API is used to retrieve **accrual code mappings** for leave paycodes in UKG. It helps determine which paycodes have valid accrual buckets associated with them and filters out non-accrual paycodes (e.g., "Overtime Payout", "EmergencyPaidSick") before attempting to fetch balances.
+
+```bash
+curl --request POST \
+--url 'https://<YOUR_UKG_HOST>/api/v1/timekeeping/paycodes_to_accrual_codes/multi_read' \
+--header 'Authorization: Bearer {{access_token}}' \
+--header 'Content-Type: application/json' \
+--data '{
+  "timeframe_id": "Current_Payperiod",
+  "paycodes": {{{paycodes_payload}}},
+  "employee": {
+    "qualifier": "{{person_number}}"
+  }
+}'
+```
+
+**Body Parameters:**
+
+- `TIMEFRAME_ID` (string): This specifies the timeframe for which accrual mappings should be evaluated. It is typically set to "Current_Payperiod".
+
+- `PAYCODES_PAYLOAD` (array): A dynamically generated JSON array containing paycode qualifiers extracted from the subtypes API (e.g., [{"qualifier": "Vacation"}, {"qualifier": "Sick"}]).
+
+- `PERSON_NUMBER` (string): The unique alphanumeric person number of the employee (e.g., "M140031").
+
+### **API #4: Retrieve PTO Balance**
 
 This API is used to **retrieve PTO balance on behalf of an employee** in UKG based on date, leave sub type and Person Number of the Employee.
 
