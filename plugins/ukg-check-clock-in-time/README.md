@@ -8,5 +8,5 @@ solution_tags:
 - HR - Other
 - HR - Time & Absence
 systems:
-- ukg
+- ukg-pro-wfm
 ---

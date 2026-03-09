@@ -9,5 +9,5 @@ solution_tags:
 - HR - Onboarding
 - HR - Other
 systems:
-- ukg
+- ukg-pro-wfm
 ---

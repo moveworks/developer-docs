@@ -7,5 +7,5 @@ solution_tags:
 - HR - Employee Records
 - HR - Other
 systems:
-- ukg
+- ukg-pro-wfm
 ---
