@@ -1,6 +1,6 @@
 ---
 availability: IDEA
-description: Connect your Moveworks AI Assistant to your UKG Pro WFM (Workforce Management) instance.
+description: Connect your Moveworks AI Assistant to your UKG Pro HCM instance.
 logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/ukg-integration-logo-primary.svg?dewdwkehfbwfrf
-name: UKG Pro WFM
+name: UKG Pro HCM
 ---
