@@ -19,6 +19,8 @@ This guide walks through setting up both User Consent Auth (Interactive) and Cli
 ### UKG Requirements
 
 - Admin privileges in UKG Pro WFM to create OAuth applications and manage permissions
+- ⚠️ **Functional Access Profile (FAP) Required for All End Users (for User Consent Auth Flow)**
+Each user who will interact with UKG through the Moveworks plugins (with User Consent) must have a Functional Access Profile (FAP) assigned in UKG Pro WFM. By default, most tenants only assign FAPs to managers and admins — employees without a FAP will receive a 403 Forbidden error on all API calls, even if OAuth authentication succeeds. Work with your UKG admin to assign an appropriate FAP to all target users before configuring this connector.
 - Access to **Administration > Application Setup > Common Setup > Client Management** (confirms your tenant uses UKG Authentication)
 - [Postman](https://www.postman.com/downloads/) installed for API testing
 
@@ -26,8 +28,8 @@ This guide walks through setting up both User Consent Auth (Interactive) and Cli
 
 - Agent Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
 
-> **Note:** Only tenants configured for UKG Authentication will see the Client Management page. If you don’t see it, your tenant uses a different authentication type. Refer to the [UKG Authentication docs](https://developer.ukg.com/wfm/docs/ukg-authentication-doc) for details.
-> 
+
+**Note:** Only tenants configured for UKG Authentication will see the Client Management page. If you don’t see it, your tenant uses a different authentication type. Refer to the [UKG Authentication docs](https://developer.ukg.com/wfm/docs/ukg-authentication-doc) for details.
 
 ---
 
@@ -62,8 +64,7 @@ Use this flow for actions that are performed in the context of the authenticated
     - **Organization ID**
     - **OAuth URL** (e.g., `https://welcome-eval.ukg.net/authorize?organization=org_XXXXX`)
 
-> **Important:** The Client Secret cannot be recovered after leaving this page. Save it immediately. You can regenerate it later, but you’ll also need to update the Moveworks connector.
-> 
+**Important:** The Client Secret cannot be recovered after leaving this page. Save it immediately. You can regenerate it later, but you’ll also need to update the Moveworks connector.
 
 ### Step 2: Configure the Moveworks HTTP Connector
 
@@ -115,14 +116,16 @@ A `200` response confirms the connector is working. Save the `employeeId` from t
 
 ![image.png](UKG%20Pro%20WFM%20Connector%20Guide/image%206.png)
 
-> **⚠️ Known Limitation:** UKG’s refresh token for User Consent Auth expires every **24 hours**. There is no automatic token refresh — users will need to manually reauthorize once daily if their session has expired within the Moveworks AI Assistant.
-> 
+**⚠️ Known Limitation:** UKG’s refresh token for User Consent Auth expires every **24 hours**. There is no automatic token refresh — users will need to manually reauthorize once daily if their session has expired within the Moveworks AI Assistant.
+
 
 ![image.png](UKG%20Pro%20WFM%20Connector%20Guide/image%207.png)
 
 ![image.png](UKG%20Pro%20WFM%20Connector%20Guide/image%208.png)
 
 ![image.png](UKG%20Pro%20WFM%20Connector%20Guide/image%209.png)
+
+---
 
 ## Option B: Client Credentials Auth (Non-Interactive)
 
@@ -147,8 +150,7 @@ Use this flow for **system-to-system integrations** where actions run on a sched
     - **Organization ID**
     - **OAuth Token URL** (e.g., `https://welcome-eval.ukg.net/oauth/token`)
 
-> **Important:** The Client Secret cannot be recovered after leaving this page. If lost, regenerate it and update the Moveworks connector accordingly.
-> 
+**Important:** The Client Secret cannot be recovered after leaving this page. If lost, regenerate it and update the Moveworks connector accordingly.
 
 ### Step 2: Configure the Moveworks HTTP Connector
 
@@ -183,8 +185,6 @@ curl --request GET \
 A `200` response confirms the connector is working.
 
 ![image.png](UKG%20Pro%20WFM%20Connector%20Guide/image%2011.png)
-
----
 
 ---
 
