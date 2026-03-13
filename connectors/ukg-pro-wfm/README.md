@@ -47,11 +47,11 @@ Use this flow for actions that are performed in the context of the authenticated
     ![image.png](UKG%20Pro%20WFM%20Connector%20Guide/image%201.png)
     
 3. Click **Create** and fill in the following fields:
-    - **Name:** `UKG <> Moveworks Connector` (or your preferred name)
+    - **Name:** `UKG <> Moveworks UCA Connector` (or your preferred name)
     - **Description:** `Connect UKG with Moveworks using user consent auth`
     - **Application Flow:** `Interactive`
     - **Grant Type:** `Authorization Code Flow`
-    - **Redirect URL:** `https://<tenant>.moveworks.com/auth/oauthCallback`
+    - **Redirect URL:** `https://{{tenant-name-on-moveworks}}.moveworks.com/auth/oauthCallback`
     - **Logout Redirect URL:** Same as Redirect URL
         
         ![image.png](UKG%20Pro%20WFM%20Connector%20Guide/image%202.png)
@@ -71,7 +71,7 @@ Use this flow for actions that are performed in the context of the authenticated
 1. In Agent Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
     - **Connector Name:** `UKG_Authcode_Flow` (or your preferred name)
-    - **Base URL:** `https://<ukg_tenant>.cfn.mykronos.com/api` — replace `<ukg_tenant>` with your organization’s UKG tenant hostname
+    - **Base URL:** `https://{{ukg_tenant}}.cfn.mykronos.com/api` — replace `ukg_tenant` with your organization’s UKG tenant hostname
     - **Auth Config:** `Oauth2`
     - **Oauth2 Grant Type:** `Authorization Code Grant`
     - **Authorization URL:** `https://welcome-eval.ukg.net/authorize` *(replace with your OAuth URL)*
@@ -136,7 +136,7 @@ Use this flow for **system-to-system integrations** where actions run on a sched
 1. Log in to UKG as an admin.
 2. Navigate to **Administration → Application Setup → Common Setup → Client Management**.
 3. Click **Create** and fill in the following fields:
-    - **Name:** `UKG <> Moveworks Client Credential Connector`
+    - **Name:** `UKG <> Moveworks Client Credential Connector` (or your preferred name)
     - **Description:** `Connect UKG with Moveworks using client credentials`
     - **Application Flow:** `Non-Interactive`
     - **Function Access Profile:** `Super Access`
@@ -157,7 +157,7 @@ Use this flow for **system-to-system integrations** where actions run on a sched
 1. In Agent Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
     - **Connector Name:** `UKG_Client_Credentials` (or your preferred name)
-    - **Base URL:** `https://<ukg_tenant>.cfn.mykronos.com/api` — replace `<ukg_tenant>` with your organization’s UKG tenant hostname
+    - **Base URL:** `https://{{ukg_tenant}}.cfn.mykronos.com/api` — replace `ukg_tenant` with your organization’s UKG tenant hostname
     - **Auth Config:** `Oauth2`
     - **Oauth2 Grant Type:** `Client Credentials Grant`
     - **Client ID:** Your Client ID from UKG
