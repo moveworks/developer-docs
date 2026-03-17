@@ -19,7 +19,7 @@ This guide will help you install this plugin within minutes in Agent Studio. Let
 # Prerequisites
 
 - Access to Agent Studio
-- [Ms Graph Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=microsoft-graph) set up in Creator Studio
+- [Ms Graph Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=microsoft-graph) set up in Agent Studio
 - View Teams Meetings Plugin
 
 # What are we building?
