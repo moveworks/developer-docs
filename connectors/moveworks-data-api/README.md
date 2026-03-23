@@ -63,12 +63,12 @@ Scopes determine what data the credential can access. You must select at least o
 
 | Scope | Description |
 | --- | --- |
-| **All** | Grants access to all available endpoints |
-| **Conversations** | Access to conversation-level data |
-| **Interactions** | Access to interaction-level data (user messages, AI Assistant responses) |
-| **Plugin Calls** | Access to plugin execution data |
-| **Plugin Resources** | Access to plugin resource metadata |
-| **Users** | Access to user details (IDs, emails, attributes) |
+| All | Grants access to all available endpoints |
+| Conversations | Access to conversation-level data |
+| Interactions | Access to interaction-level data (user messages, AI Assistant responses) |
+| Plugin Calls | Access to plugin execution data |
+| Plugin Resources | Access to plugin resource metadata |
+| Users | Access to user details (IDs, emails, attributes) |
 
 > **Best practice:** Enable only the scopes required for your use case to follow the principle of least privilege.
 > 
@@ -99,8 +99,8 @@ Once credentials are created in Moveworks Setup, configure an HTTP Connector in 
 
 | Environment | URL |
 | --- | --- |
-| US Production | `https://api.moveworks.ai/rest/v1` |
-| EU Production | `https://api.eu.moveworks.ai/rest/v1` |
+| US Production | https://api.moveworks.ai |
+| EU Production | https://api.eu.moveworks.ai |
 
 Use the Base URL that corresponds to your Moveworks tenant's region when configuring the HTTP Connector.
 
@@ -163,11 +163,11 @@ curl --request GET \
 
 | Key | Value | Description |
 | --- | --- | --- |
-| `$skip` | `{{skip}}` | Number of records to skip (for pagination) |
-| `$orderby` | `created_time` | Field to sort results by |
-| `$filter` | `created_time gt '{{start_date}}T00:00:00Z' and created_time lt '{{end_date}}T00:00:00Z'` | Filters interactions within the specified date range |
+| $skip | {{skip}} | Number of records to skip (for pagination) |
+| $orderby | created_time | Field to sort results by |
+| $filter | created_time gt '{{start_date}}T00:00:00Z' and created_time lt '{{end_date}}T00:00:00Z' | Filters interactions within the specified date range |
 
-Replace `{{skip}}`, `{{start_date}}`, and `{{end_date}}` with actual values (e.g., `0`, `2026-01-01`, `2026-03-24`).
+Replace {{skip}}, {{start_date}}, and {{end_date}} with actual values (e.g., 0, 2026-01-01, 2026-03-24).
 
 → The API should return a **200 success code** along with raw interactions data for your org, confirming that the connector is properly configured and ready for use in your plugins.
 
