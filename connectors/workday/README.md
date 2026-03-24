@@ -306,7 +306,8 @@ In the **Register API Client** form, fill in the following details:
 - **Client Name:** Enter a unique name, for example `{{YOUR_CLIENT_NAME}}`.
 - **Client Grant Type:** Select **Authorization Code Grant**.
 - **Access Token Type:** Choose **Bearer**.
-- **Redirect URI:** Enter your Moveworks redirect URL, for example `{{YOUR_REDIRECT_URI}}`.
+- **Redirect URI:** Enter your Moveworks redirect URL. It should be of the following pattern: https://{{tenant}}.moveworks.com/auth/oauthCallback
+(Replace {{tenant}} with your organization's Moveworks tenant name)
 - **Refresh Token Timeout (Days):** Set this to **100**.
 - **Scope:** Select the scopes based on your use case. For example, to fetch - Supplier Invoice Requests (supplierInvoiceRequests), include the Workday scopes that allow the user to view supplier invoices and related procurement data.
 
