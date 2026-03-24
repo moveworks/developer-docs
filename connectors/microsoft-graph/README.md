@@ -6,16 +6,197 @@ name: Microsoft Graph
 
 # Introduction
 
-The Microsoft Graph API allows you to access all your Microsoft data through one unified API. 
+**Microsoft Graph** is Microsoft's unified API endpoint for accessing data and capabilities across Microsoft 365 — including Outlook, Teams, SharePoint, OneDrive, and more.
 
-In this guide, we will demonstrate how to authenticate with the Microsoft Graph API from Agent Studio. We will walk through identifying permissions needed, creating a Microsoft Graph API key with those permissions, testing an endpoint in Postman, and connecting it to Agent Studio.
+Connecting Microsoft Graph to **Moveworks Agent Studio** brings these capabilities directly into the AI assistant — employees can manage calendar events, check availability, book rooms, and more, all through their AI Assistant.
+
+This guide walks through setting up the OAuth 2.0 Authorization Code (User Consent Auth) flow and OAuth 2.0 with Client Credentials Grant flow to connect Microsoft Graph with Agent Studio. For most use cases, we recommend the User Consent Auth connector. For a full list of available API resources, refer to the [Microsoft Graph API documentation](https://learn.microsoft.com/en-us/graph/overview).
+
 
 # Prerequisites
 
-- Admin Access to Microsoft Tenant ([Get an Instant Sandbox](https://developer.microsoft.com/en-US/microsoft-365/dev-program))
-- [Postman](https://www.postman.com/downloads/) or your API tester of choice
+### Microsoft Requirements
 
-# Steps
+- **Azure Active Directory (Azure AD) / Entra ID** admin privileges to register an application and configure API permissions
+- Access to the [Azure Portal](https://portal.azure.com/) — specifically **Microsoft Entra ID → App Registrations**
+- A Microsoft 365 tenant with Outlook/Exchange Online enabled for your users
+
+### Moveworks Requirements
+
+- Agent Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
+
+
+# OAuth 2.0 with Authorization Code (User Consent Auth) Setup
+
+Use this flow for actions performed in the context of the authenticated end user. Each user will authorize the integration once, and Moveworks will act on their behalf using their delegated permissions.
+
+---
+
+### Step 1: Register an Application in Azure AD (Entra ID)
+
+1. Log in to the [Azure Portal](https://portal.azure.com/) as a Global Administrator or Application Administrator.
+2. In the top search bar, search for **App registrations** and select it from the results.
+    
+    ![image.png](MS%20Graph%20Connector/image.png)
+    
+3. Click **+ New Registration**.
+    
+    ![image.png](MS%20Graph%20Connector/image%201.png)
+    
+4. Fill in the following fields:
+    - **Name:** `Moveworks Outlook Connector` (or your preferred name)
+    - **Supported account types:** `Accounts in this organizational directory only (Single tenant)`
+    - **Redirect URI:**
+        - Platform: `Web`
+        - URI: `https://{{tenant}}.moveworks.com/auth/oauthCallback`*(Replace `{{tenant}}` with your organization's Moveworks tenant name)*
+    
+    ![image.png](MS%20Graph%20Connector/image%202.png)
+    
+5. Click **Register**. Azure will create the application and redirect you to its overview page.
+6. Copy and securely store the following values from the **Overview** tab — you'll need them in the next step:
+    - **Application (client) ID**
+    - **Directory (tenant) ID**
+    
+    ![image.png](MS%20Graph%20Connector/image%203.png)
+    
+
+---
+
+### Step 2: Create a Client Secret
+
+1. In the left-hand menu of your newly registered app, navigate to **Manage** → **Certificates & secrets**.
+2. Under the **Client secrets** tab, click **+ New client secret**.
+    
+    ![image.png](MS%20Graph%20Connector/image%204.png)
+    
+3. Fill in:
+    - **Description:** `Moveworks Connector Secret`
+    - **Expires:** Choose an expiration period appropriate for your organization (e.g., 12 or 24 months)
+4. Click **Add**.
+5. **Immediately copy the secret `Value`** — this is only shown once.
+    
+    ![image.png](MS%20Graph%20Connector/image%205.png)
+    
+
+> **Important:** The Client Secret value cannot be retrieved after you leave this page. If lost, you will need to generate a new secret and update your Moveworks connector accordingly.
+> 
+
+---
+
+### Step 3: Configure API Permissions
+
+To allow Moveworks to act on behalf of users, you need to grant the appropriate **delegated permissions** through Microsoft Graph. The permissions you configure will depend on the capabilities you want to enable.
+
+1. In the left-hand menu of your registered app, navigate to **API Permissions**.
+2. Click **+ Add a permission**.
+3. Select **Microsoft Graph → Delegated permissions**.
+4. Search for and add the permissions relevant to your use case. For example, the following are recommended for calendar management:
+    
+    
+    | Permission | Use Case |
+    | --- | --- |
+    | `Calendars.Read.Shared` | Read calendars the user has access to, including shared calendars |
+    | `Calendars.ReadWrite` | Create, update, and delete calendar events |
+    | `MailboxSettings.Read` | Read the user's mailbox settings (e.g., timezone, working hours) |
+    | `Place.Read.All` | Read company location/room data for room booking |
+    | `User.Read` | Read the signed-in user's profile |
+    | `User.Read.All` | Read all users' profiles (e.g., for looking up attendees) |
+    | `offline_access` | Maintain access via refresh tokens |
+    
+    **Note:** Only grant the permissions your use cases actually require. For example, if you only need to read calendars, grant `Calendars.Read.Shared` — not `Calendars.ReadWrite`.
+    
+5. Click **Add permissions** after selecting all required permissions.
+    
+    ![image.png](MS%20Graph%20Connector/image%206.png)
+    
+
+**Note:** 
+
+- By default, each user will be prompted to approve the permissions on their first login — this is the recommended approach for delegated permissions as it keeps users in control of their own data. If your organization prefers to pre-approve permissions for all users, an admin can click **Grant admin consent for [Your Organization]** to skip the individual consent prompt.
+- Some permissions, such as `Place.Read.All`, always require admin consent regardless of your organization's preference. You can see the warning under ‘Status’ for these permissions.
+
+![image.png](MS%20Graph%20Connector/image%207.png)
+
+---
+
+### Step 4: Configure the Authorization URL Parameters
+
+Before setting up the Moveworks connector, confirm your authorization and token endpoint URLs.
+
+Your Microsoft OAuth endpoints follow this pattern based on your **Directory (tenant) ID**:
+
+- **Authorization URL:** `https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/authorize`
+- **Token URL:** `https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token`
+
+Replace `{{tenant_id}}` with the **Directory (tenant) ID** copied from Step 1.
+
+**Tip:** You can also find these URLs in your app's **Overview** page under **Endpoints**.
+
+![image.png](MS%20Graph%20Connector/image%208.png)
+
+---
+
+### Step 5: Configure the Moveworks HTTP Connector
+
+1. In Agent Studio, go to **HTTP Connectors → Create**.
+2. Fill in the connector fields:
+    - **Connector Name:** `Outlook_Authcode_Flow` (or your preferred name)
+    - **Base URL:** `https://graph.microsoft.com/v1.0`
+        
+        ![image.png](MS%20Graph%20Connector/image%209.png)
+        
+    - **Auth Config:** `Oauth2`
+    - **Oauth2 Grant Type:** `Authorization Code Grant`
+    - **Authorization URL:** `https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/authorize`*(Replace `{{tenant_id}}` with your Directory (tenant) ID)*
+    - **Client ID:** Your **Application (client) ID** from Azure
+    - **Client Secret:** Your **Client Secret Value** from Step 2
+    - **Authorization Code Grant Scope:** `https://graph.microsoft.com/Calendars.Read.Shared https://graph.microsoft.com/Calendars.ReadWrite https://graph.microsoft.com/MailboxSettings.Read https://graph.microsoft.com/Place.Read.All https://graph.microsoft.com/User.Read https://graph.microsoft.com/User.Read.All offline_access`
+    *(This example reflects calendar management. Adjust the scope to match the permissions you configured in Step 3.)*
+    
+    ![image.png](MS%20Graph%20Connector/image%2010.png)
+    
+    - **Oauth2 Token URL:** `https://login.microsoftonline.com/{{tenant_id}}/oauth2/v2.0/token`*(Replace `{{tenant_id}}` with your Directory (tenant) ID)*
+    - **Oauth2 Custom Oauth Response Response Type:** `Json`
+        
+        ![image.png](MS%20Graph%20Connector/image%2011.png)
+        
+3. Click **Save**.
+
+---
+
+### Step 6: Test the User Consent Connector
+
+Let’s test if the connector is set up correctly:
+
+1. In Agent Studio, navigate to a new **HTTP Action**
+2. Fill in the following fields:
+    - **Connector:** Select **Inherit from existing connector** and choose the connector you created in Step 5.
+    - **Action Name:** `Get Current User` (or your preferred name)
+    - **Endpoint URL:** `/me`
+    - **Method:** `GET`
+    
+    ![image.png](MS%20Graph%20Connector/image%2012.png)
+    
+3. Click on ‘Test’. You will be asked to Generate New Access Token. Click on it.
+    
+    ![image.png](MS%20Graph%20Connector/image%2013.png)
+    
+4. A Microsoft login window will appear — pick an account or enter your Microsoft 365 user credentials to authenticate.
+    
+    ![image.png](MS%20Graph%20Connector/image%2014.png)
+    
+5. If prompted, review and accept the permission consent screen.
+6. After successful login, you will be redirected back to Moveworks with a confirmation that authentication was successful.
+7. The action is now ready to test. Click on ‘Test’ again. 
+    
+    ![image.png](MS%20Graph%20Connector/image%2015.png)
+    
+    A `200` response confirms the connector is working. 
+    
+
+---
+
+# OAuth 2.0 with Client Credentials Grant Setup
 
 ## Step 1: Identify Permissions Needed
 
