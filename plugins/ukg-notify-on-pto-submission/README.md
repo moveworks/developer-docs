@@ -13,7 +13,7 @@ systems:
 
 # Description
 
-Proactively notifies managers when a direct report submits a PTO request in UKG Pro WFM and enables one-tap approval or rejection.
+Proactively notifies managers and approvers when an employee submits a PTO request in UKG Pro WFM and enables one-tap approval or rejection.
 
 # User Experience Preview
 
