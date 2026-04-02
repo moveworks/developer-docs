@@ -1,7 +1,8 @@
 ---
-availability: GUIDE
-description: Enables employees to receive instant notifications when their PTO requests are approved, rejected, or cancelled/corrected, without chasing manager approvals or checking HR systems.
+availability: INSTALLABLE
+description: Proactively notifies employees when their PTO request in UKG Pro WFM has been approved, refused, or cancelled.
 name: Notify on PTO Decision
+installation_asset_uuid: 559d1bdf-7507-4f25-91f8-d1b55f5c9f18
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%3Cstrong%3EDecision+Taken%3A+PTO+Approved%3C%2Fstrong%3E%3C%2Fp%3E%3Cp%3EYour+Time+Off+request+for+%3Cstrong%3E4%2F12%2F2026%3C%2Fstrong%3E+has+been+%3Cstrong%3EApproved%3C%2Fstrong%3E+by+%3Cstrong%3EPaul+Senior%3C%2Fstrong%3E.%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3E%3Cstrong%3ERequest+Dates%3A%3C%2Fstrong%3E+4%2F12%2F2026+-+4%2F12%2F2026%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3ELeave+Type%3A%3C%2Fstrong%3E+Vacation%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EReason%3A%3C%2Fstrong%3E+Approved+since+we+have+enough+team+coverage+in+this+time+period.%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22ukg%22%2C%22citationTitle%22%3A%22Time+Off%3A+Apr+12%2C+2026%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%3Cstrong%3EDecision+Taken%3A+PTO+Rejected%3C%2Fstrong%3E%3C%2Fp%3E%3Cp%3EYour+Time+Off+request+for+%3Cstrong%3E4%2F13%2F2026+-+4%2F14%2F2026%3C%2Fstrong%3E+has+been+%3Cstrong%3ERejected%3C%2Fstrong%3E+by+%3Cstrong%3EPaul+Senior%3C%2Fstrong%3E.%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3E%3Cstrong%3ERequest+Dates%3A%3C%2Fstrong%3E+4%2F13%2F2026+-+4%2F14%2F2026%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3ELeave+Type%3A%3C%2Fstrong%3E+Vacation%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EReason%3A%3C%2Fstrong%3E+Insufficient+balance%2C+please+apply+in+the+next+cycle.%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22ukg%22%2C%22citationTitle%22%3A%22Time+Off%3A+Apr+13-14%2C+2026%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
 - HR - Other
@@ -12,7 +13,7 @@ systems:
 
 # Description
 
-Enables employees to receive instant notifications when their PTO requests are approved, rejected, or cancelled/corrected, without chasing manager approvals or checking HR systems. It improves visibility, trust, and transparency across the entire leave process.
+Proactively notifies employees when their PTO request in UKG Pro WFM has been approved, refused, or cancelled.
 
 # User Experience Preview
 
@@ -20,417 +21,229 @@ Please refer to the following [**Purple Chat**](https://marketplace.moveworks.co
 
 # Pre-requisites
 
-Before installing and using the **Notify PTO Decision** plugin, please ensure the following requirements are met:
+Before installing and using the **Notify on PTO Decision** plugin, please ensure the following requirements are met:
 
 ## **1. UKG Connector**
 
-This plugin requires an active **UKG connector** - both **user consent auth** and **client credential auth** to communicate with your UKG instance.
+This plugin requires **two active UKG connectors**:
 
-- If you have not already configured the connector, please follow the [**UKG Connector Guide**](https://marketplace.moveworks.com/connectors/ukg) available in the Moveworks Marketplace.
-- The connector must be fully set up before installing this plugin.
-- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+- **Client Credentials Auth (Non-Interactive)** — used for all system-level polling: fetching users, retrieving bulk notifications, and looking up user details.
+- **User Consent Auth (Interactive)** — used for notification acknowledgement on behalf of the employee.
+
+If you have not already configured the connectors, please follow the [**UKG Connector Guide**](https://marketplace.moveworks.com/connectors/ukg) available in the Moveworks Marketplace. Both connectors must be fully set up before installing this plugin.
+
+Once configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
 ## **2. UKG System Requirements**
 
-### **End User Permissions (Employee Persona)**
+### **a. Service Account Permissions (Client Credentials)**
 
-To notify PTO decisions through this plugin, employees must already have permission to view PTO notifications in UKG — the same permissions required to view PTO notifications through the UKG UI.
+The client credentials connector uses a service account to poll notifications across all users. This service account must have:
 
-At a minimum, **client credentials authentication user (service account)** must have:
+- **Function Access Profile (FAP)** set to **Super Access** (or equivalent)
+- Permission to read all employee notification records and person records
 
-- **Time Off permissions** that allow:
-    - Viewing available Time Off Types
-    - Viewing a Time Off request
-    - Viewing and acknowledging PTO notifications
-- **Access to** **all employee notifications** generated by UKG
+### **b. Notification Configuration**
 
-**Note**: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in UKG.
+The UKG tenant must have the following employee-facing notification types enabled — these are the notifications UKG generates when a manager approves, refuses, or cancels an employee's time-off request:
 
-# **Implementation details**
+- **`TOR-Employee Notification`** — generated when a PTO request is approved
+- **`TOR-Refusal`** — generated when a PTO request is refused
+- **`TOR-Employee Status Change`** — generated when a PTO request is cancelled
 
-## Visual Representation of How the Plugin Works
+To verify: go to **Administration > Application Setup > Common Setup > Event Manager** in UKG and confirm these time-off decision notifications are active for employees.
 
-![image.png](Notify%20on%20PTO%20Decision/image.png)
+### **c. Employee Permissions (User Consent)**
 
-**Note:** Please follow the guide below to manually complete the end-to-end installation of this Ambient Agent in your organization’s Agent Studio instance.
+Employees must have permission to view PTO notifications in UKG WFM and a valid UKG User Consent authorization (reauthorized within the last 24 hours) for notification acknowledgement.
 
-## Plugin Triggering
+**Note**: The plugin does not grant new permissions. It respects existing role-based permissions and policies in UKG WFM.
 
-To check for and process notifications, this plugin must be triggered every 30 minutes using a scheduled CRON job (CRON expression: `*/30 * * * *`).
+# **How This Plugin Works**
 
-The plugin uses the client credentials flow for authentication. A service account and a client-credential–based connector are used for all HTTP actions.
+## **Why Polling Instead of Webhooks?**
 
-**Note:** Within this plugin, only the *Notification Acknowledgement* step requires user consent authentication.
+UKG Pro WFM supports webhooks through the [UKG Webhooks Events Catalog](https://developer.ukg.com/hcm/docs/ukg-webhooks-events-catalog). The closest available event is `PTOChangeEvent`, which fires when a PTO request results in a **pay code change** on the employee's timecard. While this event does fire on approval (when the leave pay code is applied to the schedule), it does not cover refusals or cancellations — and the payload does not include the employee-facing notification details needed for a rich notification message.
 
-### **Input Arguments:**
+Instead, the plugin polls UKG's Notifications API, which mirrors exactly what an employee sees in their **Control Center > My Notifications** tile. This approach covers all three decision states (approved, refused, cancelled) with complete notification context. If UKG generates a notification for an employee, the API returns it. If it doesn't, the API won't return it either.
+
+## **Triggering**
+
+This plugin runs on a **scheduled CRON job** every 30 minutes (CRON expression: `*/30 * * * *`), with a 1-hour lookback window to ensure no notifications are missed.
 
 ```bash
-end_date: "$TIME().$FORMAT_TIME('%Y-%m-%dT%H:%M:%S')"
-max_pages:"100"
+# Start of the polling window (1 hour before current time)
 start_date: "($TIME() - 3600).$FORMAT_TIME('%Y-%m-%dT%H:%M:%S')"
+
+# End of the polling window (current time)
+end_date: "$TIME().$FORMAT_TIME('%Y-%m-%dT%H:%M:%S')"
+
+# Number of pages to fetch users from (200 users per page)
+max_pages: "200"
 ```
 
-### **Compound Action:**
+## **Notification Filtering**
 
-This plugin’s compound action runs on a scheduled basis (every 30 minutes) and processes time-off notifications as follows:
+From the raw notification response, the plugin filters for employee-facing PTO decision notifications using:
 
-1. **Retrieve Users (Paginated):** Fetches users via pagination (200 users per page, up to 100 pages per run).
-2. **Fetch Today’s Notifications:** Retrieves bulk notifications generated for the current day.
-3. **Filter Eligible Notifications:** Processes notifications where:
-    - `type = TIME_OFF`
-    - `reviewed = false`
-    - `status ∈ {Approved, Refused, Cancelled}`
-4. **Notify the User**
-    - Look up the user via UKG ID
-    - Extract work email
-    - Resolve Moveworks user profile
-    - Send notification via Moveworks AI Assistant
-    - Auto-acknowledge in UKG to prevent duplicates
+| Field | Value | Reason |
+|-------|-------|--------|
+| `type` | `TIME_OFF` | PTO-related notifications only |
+| `reviewed` | `false` | Not yet seen by the employee |
+| `status` | `Approved`, `Refused`, or `Cancelled` | Decision has been made |
+| `disableActions` | `true` | No further action required — informational only |
+| `category` | `MYREQUEST` | Employee's own request (not a manager approval queue) |
+| `notificationName` | `TOR-Employee Notification`, `TOR-Refusal`, or `TOR-Employee Status Change` | Decision notifications sent to the requesting employee |
 
-### Note
+**Key difference from Notify on PTO Submission:** The PTO Submission plugin filters for `category: REQUEST` and `disableActions: false` (manager-facing, actionable). This plugin filters for `category: MYREQUEST` and `disableActions: true` (employee-facing, informational). These are entirely separate notification objects in UKG — even for the same PTO request, the manager and employee receive different notifications with different `notificationName` values.
 
-- The UKG API returns up to **1,000 notifications per call**.
-- This solution assumes fewer than 1,000 time-off notifications are generated within each 30-minute execution window.
+# **Implementation Details**
+
+## Visual Representation of How the Plugin Works
+ 
+![image.png](Notify%20on%20PTO%20Decision/image.png)
 
 ## API Details
 
-Before running the cURL examples below, replace `<YOUR_UKG_HOST>` with your actual UKG hostname.
+Before running the cURL examples below, replace '<YOUR_UKG_HOST>' with your actual UKG hostname (e.g., `acme-prod.cfn.mykronos.com`).
 
-**Admin Checklist: How to Find Your UKG Hostname**
+### **API #1: Get All UKG Users (Paginated)**
 
-1. Log in to your UKG account.
-2. Check the URL in your browser’s address bar.
-3. Your hostname will follow this format:
-    
-    Examples:
-    
-    - `https://acme-dev.cfn.mykronos.com`
-    - `https://acme-test.cfn.mykronos.com`
-    - `https://acme-uat.cfn.mykronos.com`
-    - `https://acme-prod.cfn.mykronos.com`
+Retrieves all active users from UKG using pagination. Only person IDs are returned to minimize payload size.
 
-Use the full hostname (e.g., `acme-prod.cfn.mykronos.com`) when replacing `<YOUR_UKG_HOST>` in the cURL commands.
-
-### **API #1: Get all UKG Users**
-
-This HTTP action retrieves all users from UKG using the pagination/indexing approach described in the previous sections.
+**Auth:** Client Credentials
 
 ```bash
 curl --request POST \
-     --url https://<YOUR_UKG_HOST>/api/v1/commons/persons/apply_read \
-     --header 'accept: application/json' \
-     --header 'content-type: application/json' \
-     --data '{
+  --url https://<YOUR_UKG_HOST>/api/v1/commons/persons/apply_read \
+  --header 'Authorization: Bearer {{access_token}}' \
+  --header 'Content-Type: application/json' \
+  --data '{
   "count": {{count}},
   "index": {{index}},
   "where": {
-    "employmentStatus": "Not Applicable",
-    "userAccountStatus": "Not Applicable",
-    "returnPersonIdOnly": true,
-    "snapshotDate": "{{date}}"
+    "snapshotDate": "{{date}}",
+    "employmentStatus": "Active",
+    "userAccountStatus": "Active",
+    "returnPersonIdOnly": true
   }
 }'
 ```
 
-**Query Parameters:**
+**Parameters:**
 
-- `COUNT` *(string):* The pagination count of the Retrieve All Persons request.
-- `INDEX` *(string):* The pagination index of the Retrieve All Persons request.
-- `DATE` *(string):* The date of a requested snapshot in ISO_LOCAL_DATE format (YYYY-MM-DD).
+- `count` *(integer):* Users per page (default: 200).
+- `index` *(integer):* Page index starting from 0.
+- `date` *(string):* Today's date in `YYYY-MM-DD` format.
 
-**Key nuances:**
+### **API #2: Fetch Bulk Notifications for Employee List**
 
-- This API will return only UKG person Ids of the users. No other information is being retrieved.
+Retrieves all `TIME_OFF` notifications for a batch of users within a date range. This is the core API that surfaces the same notifications an employee sees in their UKG Control Center.
 
-### **API #2: Fetch Bulk UKG Notifications for a List of Employees**
-
-This HTTP action retrieves all notifications for a specified list of employees within a given date range using admin authentication (no pagination/indexing is applied).
+**Auth:** Client Credentials
 
 ```bash
 curl --request POST \
-     --url https://<YOUR_UKG_HOST>/api/v1/commons/notifications/apply_read \
-     --header 'accept: application/json' \
-     --header 'content-type: application/json' \
-     --data '{
+  --url https://<YOUR_UKG_HOST>/api/v1/commons/notifications/apply_read \
+  --header 'Authorization: Bearer {{access_token}}' \
+  --header 'Content-Type: application/json' \
+  --data '{
   "employees": {
-    "ids": [
-      "{{ids}}"
-    ]
+    "ids": {{ids}}
   },
-  "types": [
-    "TIME_OFF"
-  ],
-  "endDateTime": "{{end_date_time}}",
-  "startDateTime": "{{start_date_time}}"
+  "types": ["TIME_OFF"],
+  "startDateTime": "{{start_date_time}}",
+  "endDateTime": "{{end_date_time}}"
 }'
 ```
 
-**Query Parameters:**
+**Parameters:**
 
-- `IDS`*(string):* The list of person ID of a person, which is the same as employee ID and person key This is not the same as the person number.
-- `START_DATE_TIME`*(string):* The startDateTime of a date range in which the notifications will be fetched, in ISO_LOCAL_DATE_TIME format (yyyy-mm-ddTHH:MM:SS).
-- `END_DATE_TIME`*(string):* The endDateTime of a date range in which the notifications will be fetched, in ISO_LOCAL_DATE_TIME format (yyyy-mm-ddTHH:MM:SS).
+- `ids` *(array of integers):* UKG person IDs (from API #1).
+- `start_date_time` / `end_date_time` *(string):* Date range in `YYYY-MM-DDTHH:MM:SS` format.
 
 **Key nuances:**
 
-- There is a maximum limit is 1000 notifications per call which is why by default we are sending 200 users UKG IDs as input.
+- Maximum of **1,000 notifications per call** ([UKG API Limits](https://developer.ukg.com/wfm/docs/limits-doc)). The plugin handles this by batching 200 user IDs per call.
+- Only returns notifications that UKG has generated — the plugin never creates or infers notifications.
 
-### **API #3: Lookup a UKG User by ID**
+### **API #3: Lookup UKG User by ID**
 
-This HTTP action retrieves a user in UKG based on the person ID fetched in API#1.
+Retrieves the full person record for an employee, used to extract their work email for Moveworks user resolution.
+
+**Auth:** Client Credentials
 
 ```bash
 curl --request GET \
-     --url https://<YOUR_UKG_HOST>/api/v1/commons/persons/{{person_id}} \
-     --header 'accept: application/json'
+  --url https://<YOUR_UKG_HOST>/api/v1/commons/persons/{{personId}} \
+  --header 'Authorization: Bearer {{access_token}}' \
+  --header 'Accept: application/json'
 ```
 
-**Query Parameters:**
+**Parameters:**
 
-- `PERSON_ID`*(string):* An ID that uniquely identifies an employee. This ID is the same as `employeeId` and is not a person number.
+- `personId` *(integer):* The UKG person ID of the employee (from the notification's `employee.id` field).
 
 **Key nuances:**
 
-- This API returns a complex nested user object payload, which needs further processing to fetch a user’s email info.
+- Unlike the Notify on PTO Submission plugin (which uses `receiverId` to look up the manager), this plugin uses `employee.id` to look up the employee who submitted the PTO — since the employee is the notification recipient for decision notifications.
 
 ### **API #4: Acknowledge Notifications in UKG**
 
-This HTTP action is used to mark notifications as acknowledged in UKG, preventing users from receiving duplicate notifications.
+Marks a notification as reviewed in UKG, preventing duplicate delivery on the next polling cycle.
+
+**Auth:** User Consent (the notification recipient must be authenticated)
 
 ```bash
 curl --request POST \
-     --url https://<YOUR_UKG_HOST>/api/v1/commons/notifications/multi_review \
-     --header 'content-type: application/json' \
-     --data '{
-  "messageIds": [
-    "{{ids}}"
-  ]
+  --url https://<YOUR_UKG_HOST>/api/v1/commons/notifications/multi_review \
+  --header 'Authorization: Bearer {{access_token}}' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "messageIds": ["{{uuid}}"]
 }'
 ```
 
-**Query Parameters:**
+**Parameters:**
 
-- `IDS`*(string):* A list of unique IDs for a notification message, such as UUIDs.
+- `uuid` *(string):* The unique notification ID from API #2.
 
-**Key Nuances**
+**Key nuances:**
 
-- User-consent authentication from the notification recipient is required in order to successfully acknowledge a notification in UKG.
-- If the recipient is not authenticated at the time the notification is processed, the notification will continue to be resent. This is a known limitation with agent studio and we will
-- Once the recipient authenticates, the notification will be delivered one final time before it is successfully marked as acknowledged.
+- Requires **user consent authentication** from the employee. Client credentials cannot acknowledge on behalf of another user.
 
 ### API References
 
-This plugin use **UKG WFM Pro Time Management REST APIs** to retrieve employee information, determine eligible PTO time types, and check PTO balance.
+For detailed information on request parameters, response formats, and error handling, refer to the [**official UKG API documentation**](https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workforce-management-api).
 
-For detailed information on request parameters, response formats, error handling, and versioning, please refer to the [**official UKG API documentation**](https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workforce-management-api) provided by UKG.
+# **Known Limitations**
 
-## **Script Action: UKG_Fetch_Email_Using_ID**
+### **Notification Acknowledgement and User Consent Auth**
 
-This script extracts the user’s nested work email address from the response returned by UKG in API #4.
+The acknowledgement step (API #4) requires user consent authentication from the employee. UKG's user consent token expires every 24 hours.
 
-```bash
-# 1. Initialize variables
-# 'ukg_data' is injected automatically because you defined it in Input Args
-safe_data = ukg_data if ukg_data else {}
+If the employee's token has expired when the notification is processed, the notification will still be delivered, but acknowledgement will fail — causing the same notification to be re-delivered on the next polling cycle. Once the employee reauthorizes, the notification is delivered one final time and successfully acknowledged.
 
-# 2. Navigate to the email list safely
-person_info = safe_data.get("personInformation", {})
-emails = person_info.get("emailAddresses", [])
+Support is being built on the Moveworks platform for the AI Assistant to automatically acknowledge notifications once the user has reauthorized — even across sessions.
 
-# 3. Find the email where contactTypeName == 'Work'
-work_email = None
+### **Notification API Limit**
 
-if isinstance(emails, list):
-    for email_obj in emails:
-        if email_obj.get("contactTypeName") == "Work":
-            work_email = email_obj.get("address")
-            break
+The UKG Notifications API returns a maximum of **1,000 notifications per call** ([UKG API Limits](https://developer.ukg.com/wfm/docs/limits-doc)). The plugin handles this by batching 200 user IDs per call. This assumes fewer than 1,000 time-off notifications are generated for any batch of 200 users within each 30-minute window. For organizations with very high PTO volume, the batch size may need to be reduced.
 
-# 4. The last line is the Return Value
-{"work_email": work_email}
-```
+### **Notification Mirroring**
 
-**Input Arguments:**
-
-1. **ukg_data** (type=object)
-    1. Example Value — personInformation payload from API #4 response
-
-## **Compound Action: UKG_Poll_and_Notify_on_PTO_Decision_CA**
-
-This Compound Action (CA) performs the following operations:
-
-1. **Fetch All Users (Paginated)**
-    - HTTP Action #1: `UKG_Get_All_Users`
-2. **Fetch Bulk Notifications for Current User Page**
-    - HTTP Action #2: `UKG_Fetch_Bulk_Notifications_For_Employee_List`
-3. **Filter Eligible Notifications**
-    
-    Processes notifications that are:
-    
-    - **Unreviewed**, and
-    - **Approved, Rejected, or Cancelled**
-4. **Process Each Eligible Notification**
-    - Retrieve user details
-        - HTTP Action #3: `UKG_Lookup_User_by_ID`
-    - Extract work email
-        - Script Action: `UKG_Fetch_Email_Using_ID`
-    - Resolve Moveworks user
-        - Built-In Action: `mw.batch_get_users_by_email`
-    - Notify the user via Moveworks
-    - Auto-acknowledge the notification in UKG to prevent duplicates
-        - HTTP Action #4: `UKG_Acknowledge_Notifications`
-
-**Input Arguments:**
-
-1. **start_date**
-    1. Type → string
-    2. Example Value → 2026-02-05T11:50:00
-    3. Description → Start date of filter date range. Must be in the format YYYY-MM-DDTHH:MM:SS
-2. **end_date**
-    1. Type → string
-    2. Example Value → 2026-02-06T11:50:00
-    3. Description → End date of filter date range. Must be in the format YYYY-MM-DDTHH:MM:SS
-3. **max_pages**
-    1. Type → number
-    2. Example Value → 5
-    3. Description → number of pages to fetch users from
-
-```bash
-steps:
-  - script:
-      output_key: page_indices
-      input_args:
-        max_pages: data.max_pages
-      # Default to 2 if input is missing or 0
-      code: |
-        limit = int(max_pages) if max_pages else 2
-        return list(range(limit))  
-
-  # 1. Fetch All Users via Pagination
-  - parallel:
-      for:
-        each: page
-        index: page_idx
-        in: data.page_indices
-        output_key: paginated_user_responses
-        steps:
-          - action:
-              action_name: UKG_Get_All_Users
-              input_args:
-                index: $TEXT(page)
-                count: '"200"'
-                date: $TIME().$FORMAT_TIME('%Y-%m-%d')
-              output_key: page_data
-
-  # --- OUTER LOOP: BATCH PROCESSING LOOP: Process each page of users ---
-  - for:
-      each: page_response
-      in: data.paginated_user_responses.$FILTER(item => item != null)
-      output_key: batch_response_data
-      steps:
-        # 2. Fetch Bulk Notifications for the current page of users
-        - action:
-            action_name: UKG_Fetch_Bulk_Notifications_For_Employee_List
-            input_args:
-              start_date_time: data.start_date
-              end_date_time: data.end_date
-              ids:
-                EVAL():
-                  expression: ids_list.$STRINGIFY_JSON()
-                  args:
-                    ids_list: page_response.page_data.records.$MAP(item => item.personId)
-            output_key: bulk_notifications_response
-        # --- INNER LOOP: Process Records for this batch ---
-        - parallel:
-            for:
-              each: record
-              in: data.bulk_notifications_response.notifications
-              output_key: records_loop_result
-              steps:
-                # 3. Filter
-                - switch:
-                    cases:
-                      # Logic: Unreviewed AND (Approved OR Rejected OR Cancelled)
-                      - condition: record.type == 'TIME_OFF' AND record.reviewed == false AND (record.status == 'Approved' OR record.status == 'Refused' OR record.status == 'Cancelled')
-                        steps:
-                          # 4a. Get User Details
-                          - action:
-                              action_name: UKG_Lookup_User_by_ID
-                              input_args:
-                                personId: record.employee.id
-                              output_key: ukg_person_details
-
-                          # 4b. Extract Work Email
-                          - action:
-                              action_name: UKG_Fetch_Email_Using_ID
-                              input_args:
-                                ukg_data: data.ukg_person_details
-                              output_key: email_data
-
-                          # 4c. Resolve Moveworks User (Dynamic Email)
-                          - action:
-                              action_name: mw.batch_get_users_by_email
-                              input_args:
-                                user_emails:
-                                  - data.email_data.work_email
-                              output_key: batch_user_info
-
-                          # 5. Safety Check & Notify
-                          - for:
-                              each: recipient
-                              in: data.batch_user_info.user_records
-                              output_key: batch_notification_results
-                              steps:
-                                # 6. Notify the User
-                                - notify:
-                                    output_key: notification_result
-                                    recipient_id: recipient.user.record_id
-                                    message:
-                                      RENDER():
-                                        template: |
-                                          *{{header_text}}*
-
-                                          {{summary_text}}
-                                                
-                                          *Request Dates:* {{dates}}
-                                          *Leave Type:* {{leave_type}}
-                                          *Decision Maker:* {{approver}}
-                                          *Reason / Details:* {{reason}}
-                                        args:
-                                          header_text:
-                                            CONDITIONAL():
-                                              condition: record.changedAtApproval == 'Yes'
-                                              on_pass: '$CONCAT(["Updated: PTO ", record.status])'
-                                              on_fail: '$CONCAT(["Decision Taken: PTO ", record.status])'
-                                          summary_text:
-                                            RENDER():
-                                              template: "Your {{type}} request for {{dates}} has been {{status}} by {{approver}}."
-                                              args:
-                                                type: record.subtype
-                                                dates: record.requestedPeriods
-                                                status: record.status
-                                                approver: record.approverName
-                                          dates: record.requestedPeriods
-                                          leave_type: record.subtype
-                                          approver: record.approverName
-                                          reason: record.shortMessage
-
-                                # 7. Acknowledge Notification in UKG: Use user-consent auth to mark the notification as acknowledged in UKG, ensuring the user does not receive duplicate notifications.
-                                - action:
-                                    action_name: UKG_Acknowledge_Notifications
-                                    input_args:
-                                      ids: record.uuid
-                                    output_key: ack_response
-```
+This plugin only surfaces notifications that **already exist in UKG Pro WFM**. It mirrors the employee's notification center — it does not create or infer notifications. If a notification type is disabled in the UKG tenant, or if the employee's request was not routed through UKG's standard approval workflow, the plugin will not generate any alert.
 
 # **What Is In Scope for This Plugin?**
 
-This plugin supports the following capabilities:
-
-- Notifying PTO decisions for **limited leave types** (e.g., Vacation, Sick Leave, Casual Leave, Earned Leave, Comp Time).
+- Notifying employees when their PTO request has been **approved**, **refused**, or **cancelled**.
+- Surfacing the **decision maker's name**, **requested dates**, **leave type**, and **reason/details** in the notification.
+- Notifying decisions for **limited leave types** (e.g., Vacation, Sick Leave, Casual Leave, Earned Leave, Comp Time).
+- Surfacing **detailed approval chain information** (e.g., which approver in a multi-step chain made the final decision).
+- **Auto-acknowledging** notifications in UKG after delivery to prevent duplicates.
 
 # **What Is Out of Scope for This Plugin?**
 
-This plugin does **not** support the following:
-
 - Notifying PTO decisions for **non-limited or leave-of-absence types**, such as parental leave, FMLA, or long-term disability.
+- Notifying **managers or approvers** about new PTO submissions requiring action (separate use case: Notify on PTO Submission).
+- Notifying on **ESS (Employee Self-Service) submission notifications** — these use a different notification type (`ESS-Employee Submission Notification`) and are not included in the current filter.
