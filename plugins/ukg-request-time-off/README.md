@@ -85,7 +85,7 @@ Customers can modify this behavior within the plugin to match their own PTO poli
  
 ## API Details
  
-Before running the cURL examples below, replace `<YOUR_UKG_HOST>` with your actual UKG hostname.
+Before running the cURL examples below, replace '<YOUR_UKG_HOST>' with your actual UKG hostname.
  
 **Admin Checklist: How to Find Your UKG Hostname**
  
@@ -97,7 +97,7 @@ Before running the cURL examples below, replace `<YOUR_UKG_HOST>` with your actu
     - `https://acme-uat.cfn.mykronos.com`
     - `https://acme-prod.cfn.mykronos.com`
  
-Use the full hostname (e.g., `acme-prod.cfn.mykronos.com`) when replacing `<YOUR_UKG_HOST>` in the cURL commands.
+Use the full hostname (e.g., `acme-prod.cfn.mykronos.com`) when replacing '<YOUR_UKG_HOST>' in the cURL commands.
  
 ### **API #1: Lookup Current User**
  
