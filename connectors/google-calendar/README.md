@@ -106,7 +106,7 @@ In the left-hand menu, navigate to **APIs & Services → OAuth consent screen**.
     | --- | --- | --- |
     | `https://www.googleapis.com/auth/calendar` | Full | If read + write access is required together |
     
-    ![image.png](Google%20Calendar%20Connector/image%206.png)
+![image.png](Google%20Calendar%20Connector/image%206.png)
     
 3. Click **Update**, then **Save**.
 
@@ -128,7 +128,7 @@ In the left-hand menu, navigate to **APIs & Services → OAuth consent screen**.
     | Name | Moveworks Calendar Connector (or your preferred name) |
     | Authorized redirect URIs | `https://{{tenant}}.moveworks.com/auth/oauthCallback` |
     
-    ![image.png](Google%20Calendar%20Connector/image%208.png)
+![image.png](Google%20Calendar%20Connector/image%208.png)
     
 4. Click **Create**.
 5. A dialog will appear showing your **Client ID.** Open the API client again for **the Client Secret**. Copy and securely store both values — you will need them in Step 6.
@@ -173,12 +173,12 @@ Google's OAuth 2.0 endpoints are standardized and do not vary by tenant. Use the
         | access_type | offline |
         | prompt | consent |
         
-        ![image.png](Google%20Calendar%20Connector/image%2011.png)
+    ![image.png](Google%20Calendar%20Connector/image%2011.png)
         
     - **Authorization Code Grant Revoke Access Token Options Revoke Access Token Authentication:** `Revoke access token with Request Body`
     - **Oauth2 Token URL:** `https://oauth2.googleapis.com/token`
         
-        ![image.png](Google%20Calendar%20Connector/image%2012.png)
+    ![image.png](Google%20Calendar%20Connector/image%2012.png)
         
 3. Click **Save**.
 
