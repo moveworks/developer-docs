@@ -173,12 +173,12 @@ Google's OAuth 2.0 endpoints are standardized and do not vary by tenant. Use the
         | access_type | offline |
         | prompt | consent |
         
-    ![image.png](Google%20Calendar%20Connector/image%2011.png)
+![image.png](Google%20Calendar%20Connector/image%2011.png)
         
     - **Authorization Code Grant Revoke Access Token Options Revoke Access Token Authentication:** `Revoke access token with Request Body`
     - **Oauth2 Token URL:** `https://oauth2.googleapis.com/token`
         
-    ![image.png](Google%20Calendar%20Connector/image%2012.png)
+![image.png](Google%20Calendar%20Connector/image%2012.png)
         
 3. Click **Save**.
 
