@@ -21,13 +21,13 @@ Please refer to the following [**Purple Chat**](https://marketplace.moveworks.co
 
 # Pre-requisites
 
-Before installing and using the **PTO Search** plugin, please ensure the following requirements are met:
+Before installing and using the **View PTO Requests & Calendar** plugin, please ensure the following requirements are met:
 
 ## **1. UKG Connector**
 
 This plugin requires an active **UKG connector** and **user consent auth** to communicate with your UKG instance.
 
-- If you have not already configured the connector, please follow the [UKG Connector Guide](https://marketplace.moveworks.com/connectors/ukg) available in the Moveworks Marketplace.
+- If you have not already configured the connector, please follow the [UKG Connector Guide](https://marketplace.moveworks.com/connectors/ukg-pro-wfm) available in the Moveworks Marketplace.
 - The connector must be fully set up before installing this plugin.
 - Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 

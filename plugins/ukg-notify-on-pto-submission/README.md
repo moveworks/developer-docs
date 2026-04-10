@@ -30,7 +30,7 @@ This plugin requires **two active UKG connectors**:
 - **Client Credentials Auth (Non-Interactive)** — used for all system-level polling: fetching users, retrieving bulk notifications, and looking up user details.
 - **User Consent Auth (Interactive)** — used for notification acknowledgement and the approve/reject action performed by the manager.
 
-If you have not already configured the connectors, please follow the [**UKG Connector Guide**](https://marketplace.moveworks.com/connectors/ukg) available in the Moveworks Marketplace. Both connectors must be fully set up before installing this plugin.
+If you have not already configured the connectors, please follow the [**UKG Connector Guide**](https://marketplace.moveworks.com/connectors/ukg-pro-wfm) available in the Moveworks Marketplace. Both connectors must be fully set up before installing this plugin.
 
 Once configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 

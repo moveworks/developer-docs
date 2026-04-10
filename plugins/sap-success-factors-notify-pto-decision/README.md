@@ -159,7 +159,7 @@ This plugin supports the following capabilities:
 - Notifying PTO decisions for approval, rejection and cancellation of PTO request.
 - **Cancellation notifications** are sent when a PTO request is cancelled either by the employee themselves or by another authorized user (for example, a manager).
     - Note : Manager’s ability to Cancel a PTO Request for an Employee is dependent on org’s HRIS configuration. It is not a by-default setup, and hence, customers should enable this workflow/ setting in their HRIS at the time of installation of this plugin.
-- Supports ****notifications for **every leave types** supported by SAP SF.
+- Supports notifications for **all leave types** supported by SAP SF.
 - Supports single and multi level approvals. However, for multi level approvals, notification will be triggered on final approval status change of PTO.
 
 # **What Is Out of Scope for This Plugin?**
