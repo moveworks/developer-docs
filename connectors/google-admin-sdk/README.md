@@ -103,7 +103,7 @@ In the left-hand menu, navigate to **APIs & Services → OAuth consent screen**.
     | --- | --- | --- |
     | `https://www.googleapis.com/auth/admin.directory.resource.calendar.readonly` | Read-only | Read room and building resource data from the Admin Directory |
     
-    ![image.png](Google%20Admin%20SDK%20Connector/image%206.png)
+![image.png](Google%20Admin%20SDK%20Connector/image%206.png)
     
 3. Click **Update**, then **Save**.
 
@@ -125,7 +125,7 @@ In the left-hand menu, navigate to **APIs & Services → OAuth consent screen**.
     | Name | Moveworks Calendar Connector (or your preferred name) |
     | Authorized redirect URIs | `https://{{tenant}}.moveworks.com/auth/oauthCallback` |
     
-    ![image.png](Google%20Admin%20SDK%20Connector/image%208.png)
+![image.png](Google%20Admin%20SDK%20Connector/image%208.png)
     
 4. Click **Create**.
 5. A dialog will appear showing your **Client ID.** Open the API client again for **the Client Secret**. Copy and securely store both values — you will need them in Step 6.
@@ -167,7 +167,7 @@ Google's OAuth 2.0 endpoints are standardized and do not vary by tenant:
         | access_type | offline |
         | prompt | consent |
         
-        ![image.png](Google%20Admin%20SDK%20Connector/image%2010.png)
+![image.png](Google%20Admin%20SDK%20Connector/image%2010.png)
         
     - **Oauth2 Token URL:** `https://oauth2.googleapis.com/token`
     - **Oauth2 Custom Oauth Response Response Type:** `Json`
