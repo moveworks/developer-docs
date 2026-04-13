@@ -1,7 +1,8 @@
 curl --request POST \
-  --url https://<YOUR_UKG_HOST>/api/v1/commons/notifications/multi_review \
+  --url 'https://api.zoom.us/v2/users/me/meetings' \
   --header 'Authorization: Bearer {{access_token}}' \
   --header 'Content-Type: application/json' \
   --data '{
-  "messageIds": ["{{uuid}}"]
-}'
+    "topic": "{{meeting_title}}",
+    "type": 1
+  }'
