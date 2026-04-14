@@ -1,14 +1,14 @@
 curl --request POST \
-     --url https://<YOUR_UKG_HOST>/api/v1/commons/persons/apply_read \
-     --header 'accept: application/json' \
-     --header 'content-type: application/json' \
-     --data '{
+  --url https://<YOUR_UKG_HOST>/api/v1/commons/persons/apply_read \
+  --header 'Authorization: Bearer {{access_token}}' \
+  --header 'Content-Type: application/json' \
+  --data '{
   "count": {{count}},
   "index": {{index}},
   "where": {
-    "employmentStatus": "Not Applicable",
-    "userAccountStatus": "Not Applicable",
-    "returnPersonIdOnly": true,
-    "snapshotDate": "{{date}}"
+    "snapshotDate": "{{date}}",
+    "employmentStatus": "Active",
+    "userAccountStatus": "Active",
+    "returnPersonIdOnly": true
   }
 }'
