@@ -1,6 +1,6 @@
 ---
 availability: VALIDATED
-logo: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/1200px-Stack_Overflow_icon.svg.png
+logo: https://raw.githubusercontent.com/moveworks/developer-docs/de38daebf7d3593f17d565191fc6cc03164e6dac/connectors/stackoverflow/logo.png
 name: Stack Overflow
 ---
 
@@ -11,7 +11,7 @@ Integrating Stack Overflow with Agent Studio enables seamless access to valuable
 # **Prerequisites**
 
 - A **Service account with Admin privileges** is necessary.
-- Stack Overflow Enterprise Plan.
+- Stack Internal (Enterprise) Plan.
 
 ## FOR READ ONLY USECASES (eg. Search questions, answers and comments)
 
