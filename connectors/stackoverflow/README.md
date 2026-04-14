@@ -1,6 +1,6 @@
 ---
 availability: VALIDATED
-logo: https://raw.githubusercontent.com/moveworks/developer-docs/de38daebf7d3593f17d565191fc6cc03164e6dac/connectors/stackoverflow/logo.png
+logo: https://raw.githubusercontent.com/moveworks/developer-docs/refs/heads/main/connectors/stackoverflow/logo.png
 name: Stack Overflow
 ---
 
