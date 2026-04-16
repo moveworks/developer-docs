@@ -25,64 +25,103 @@ Before installing and using the **Submit PTO Request** plugin, please ensure the
 
 ## **1. Workday Connector**
 
-This plugin requires an active Workday connector to communicate with your Workday instance. We recommend creating a connector which utilizes **OAuth 2.0 with Authorization Code Grant Type flow**. 
+This plugin requires an active Workday connector using **OAuth 2.0 with Authorization Code Grant Type (User Consent Auth)** to communicate with your Workday instance. All API calls in this plugin — including WQL queries, REST lookups, and the SOAP PTO submission — execute under the authenticated **employee's or manager's own Workday identity**. No Integration System User (ISU) is required.
 
 - If you have not already configured the connector, please follow the [Workday Connector Guide](https://marketplace.moveworks.com/connectors/workday#oauth-2-0-with-authorization-code-user-consent-auth-setup) available in the Moveworks Marketplace.
-- The connector must be fully set up and before installing this plugin.
-- Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+- The connector must be fully set up before installing this plugin.
+- Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
 
 ## **2. Workday System Requirements**
 
-### **a. End User Permissions (Employee Persona)**
+The following configuration must be completed by a **Workday Administrator** before this plugin can function correctly. These are Workday-side requirements that govern what the authenticated employee or manager is permitted to do via API.
 
-To submit a PTO request through this plugin, employees must already have permission to submit time off in Workday — the same permissions required to submit through the Workday UI.
+> **Note:** The plugin does not grant new permissions. It respects existing role-based permissions and policies already granted to the user in Workday.
 
-At a minimum, employees and managers must have:
+### **a. OAuth 2.0 API Client — Functional Area Scopes**
 
-- **Time Off permissions** that allow:
-    - Viewing available Time Off Types
-    - Creating Time Off / PTO requests
-- Access to their own **employee profiles and time account balances**
-- Eligibility to submit PTO requests based on company time-off policies
+The OAuth 2.0 (Authorization Code Grant) API Client registered in Workday must include the following **Functional Area Scopes**. These are required to look up worker details, retrieve eligible leave types, and submit PTO requests via WQL, REST, and SOAP APIs:
 
-Note: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in Workday.
+- **Staffing**
+- **Time Off and Leave**
+- **System**
+- **Tenant Non-Configurable**
+- **Public Data**
+- **Worktags**
+- **Organizations and Roles** *(required for fetching direct report lists)*
 
-### **b. End User Permissions (Manager Persona)**
+To verify: Search **"Register API Client for Integrations"** in Workday → locate the API Client used by the Moveworks connector → confirm all of the above are listed under **Scope (Functional Areas)**.
 
-To submit PTO request for direct reports through this plugin, managers must already have permission to submit time off in Workday — the same permissions required to submit through the Workday UI.
+### **b. Domain Security — WQL for Workday Extend**
 
-At a minimum, managers must have:
+This plugin uses WQL to look up worker details by email. For employees and managers authenticating via OAuth (User Consent Auth) to run WQL queries through the API, the following access is required:
 
-- Time Off permissions that allow:
-    - Viewing available Time Off Types of their direct reports
-    - Creating Time Off / PTO requests of their direct reports
-- Access to their team member profiles and time account balances
-- Eligibility to submit requests for their direct reports based on company time-off policies
+- **WQL for Workday Extend** domain → under **Integration Permissions**: **Employee As Self** and **Manager** must each have **Get** and **Put** access.
 
- Note: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in Workday.
+To configure:
+1. Search **"Edit Domain Security Policy"** in Workday
+2. Search **"WQL for Workday Extend"**
+3. Under **Integration Permissions**, add **Employee As Self** (Get + Put) and **Manager** (Get + Put)
+4. Save
 
-### **c. API Permissions**
+> **Note:** By default, only ISU/ISSG groups have integration access to this domain. If these security groups are not listed, OAuth-authenticated users will receive 403 errors or empty results on WQL queries.
 
-The Workday connector uses the Workday API Client to process PTO requests through Workday APIs. The API Client must have the following permissions (or their equivalent in your tenant):
+### **c. Domain Security — Worker Data: Public Worker Reports**
 
-- Organizations and Roles
-- Public Data
-- Staffing
-- System
-- Tenant Non-Configurable
-- Time Off and Leave
-- Worktags
+This domain controls access to base worker data (name, email, Workday ID) used to resolve the authenticated user or their direct reports in WQL.
 
-These permissions are typically configured through the Register API Client task.
+- **Worker Data: Public Worker Reports** domain → **All Employees** must have **Report/Task View** access.
+
+To verify: Search **"Domain Security Policy Summary"** in Workday → search **"Worker Data: Public Worker Reports"** → confirm **All Employees** has **Report/Task View** access.
+
+> **Note:** If this permission is missing, WQL queries return zero rows with no error — requests appear to succeed but no worker data is returned.
+
+### **d. Domain Security — Worker Data: Time Off**
+
+This domain controls access to time off plan data and eligibility — required for the plugin to retrieve available leave types and validate balances before submission.
+
+- **Worker Data: Time Off** domain → under **Integration Permissions**:
+  - **Employee As Self** must have **Get** access *(for viewing own leave types and balance)*
+  - **Manager** must have **Get** access *(for viewing direct report data when submitting on behalf of another employee)*
+
+To verify: Search **"Domain Security Policy Summary"** in Workday → search **"Worker Data: Time Off"** → confirm the above groups and access levels under Integration Permissions.
+
+### **e. Business Process Security Policy — Request Time Off**
+
+For PTO submissions to succeed through the SOAP API (API #4), the "Request Time Off" business process must be configured to permit both employee self-service and manager on-behalf-of submissions.
+
+Search **"View Business Process Security Policy"** in Workday → select **"Request Time Off"** under **Time Off and Leave**, then verify the following:
+
+**Section: "Who Can Start the Business Process"**
+
+Look for these initiation actions and confirm the security groups listed under each:
+
+- **"Enter Time Off (Web Service)"** → **Employee As Self** must be listed.
+  This is the initiation path used by the SOAP API when an employee submits their own PTO. If missing, API submissions fail for employees.
+- **"Request Time Off for a Worker"** → **Management Chain** (or **Manager**) must be listed.
+  This allows a manager to submit PTO on behalf of a direct report. Expand "More" if the full list is collapsed.
+- **"Request Time Off for Self"** → **Employee As Self** should be listed.
+  This covers the self-service submission path.
+
+**Section: "Who Can Do Action Steps in the Business Process"**
+
+- **Action Step: "Review Time Off Request"** → **Manager** and/or **Management Chain** must be listed under Security Groups.
+  This is the approval routing step. Without it, submitted PTO requests will not route to the manager for approval. Expand "More" to see the full list.
+
+### **f. Activate Pending Security Policy Changes**
+
+After making any changes to Domain Security Policies or Business Process Security Policies in Workday:
+
+- Search **"Activate Pending Security Policy Changes"** in Workday and run it.
+
+> **Important:** Security changes in Workday do **not** take effect until this step is completed. This is the most common reason for "I changed the permission but it still doesn't work."
 
 ## **3. Workday User Identity Ingestion**
 
-This plugin requires User Identity Ingestion from workday in Moveworks. For Moveworks to complete actions across systems on the behalf of a user, it needs to have knowledge of all of the system IDs for the given user.
-Setup information for User identity can be found on https://help.moveworks.com/docs/user-identity.
+This plugin requires User Identity Ingestion from Workday in Moveworks. For Moveworks to complete actions across systems on behalf of a user, it needs to have knowledge of all system IDs for the given user. Setup information for User Identity can be found on [https://help.moveworks.com/docs/user-identity](https://help.moveworks.com/docs/user-identity).
 
-Below mandatory attributes are needed from this user ingestion.
+The following attribute is required from this user ingestion:
 
-1. workday ID of the user.
+1. Workday ID of the user
 
 This attribute is utilized in the input mapping of the target_report_id slot's resolver strategy as shown below. Depending on your ingestion configuration, you might need to change this to point to the user's workday_id.
 

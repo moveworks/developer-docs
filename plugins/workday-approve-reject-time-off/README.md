@@ -26,55 +26,70 @@ Before installing and using the **Approve or Reject PTO Request** plugin, please
 
 ## **1. Workday Connector**
 
-This plugin requires an active **Workday connector** using **OAuth 2.0 (User consent Auth)** to communicate with your Workday instance.
+This plugin requires an active **Workday connector** using **OAuth 2.0 (User Consent Auth / Authorization Code Grant)** to communicate with your Workday instance. All four API calls in this plugin — including the WQL query, REST event lookup, and SOAP approve/deny actions — execute under the authenticated **manager's own Workday identity**. No Integration System User (ISU) is required.
 
 - If you have not already configured the connector, please follow the [Workday Connector Guide](https://marketplace.moveworks.com/connectors/workday#how-to-implement) available in the Moveworks Marketplace.
-- The connector must be fully set up and before installing this plugin.
-- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+- The connector must be fully set up before installing this plugin.
+- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
-> Note: User ingestion must be configured and operational. Without this step, users will not be able to use the plugin.
-> 
+> **Note:** User ingestion must be configured and operational. Without this step, users will not be able to use the plugin.
 
 ## **2. Workday System Requirements**
 
-### **a. End User Permissions (Manager Persona)**
+The following configuration must be completed by a **Workday Administrator** before this plugin can function correctly. These are Workday-side requirements that govern what the authenticated manager is permitted to do via API.
 
-To approve or reject a PTO request through this plugin, managers must already have permission to approve or reject time off in Workday — the same permissions required to approve or reject through the Workday UI.
+### **a. OAuth 2.0 API Client — Functional Area Scopes**
 
-At a minimum, managers must have:
+The OAuth 2.0 (Authorization Code Grant) API Client registered in Workday must include the following **Functional Area Scopes**. These are required for the manager to query pending PTO requests via WQL (API #1), retrieve event details (API #2), and execute approve/deny actions via SOAP APIs (APIs #3 and #4):
 
-- **Time Off permissions** that allow:
-    - Viewing available Time Off Types
-    - Approving and rejecting Time Off / PTO requests
-- Access to their **team member profiles and time account balances**
-- Eligibility to approve or reject PTO requests based on company time-off policies
+- **Staffing**
+- **Time Off and Leave**
+- **System**
+- **Tenant Non-Configurable**
+- **Public Data**
+- **Worktags**
 
-> Note: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in Workday.
-> 
+To verify: Search **"Register API Client for Integrations"** in Workday → locate the API Client used by the Moveworks connector → confirm all of the above are listed under **Scope (Functional Areas)**.
 
-### **b. API Permissions (via Integration User)**
+### **b. Domain Security — Approve Business Process (Web Service)**
 
-The Workday connector uses an **Integration Systems User (ISU)** to process PTO requests through Workday APIs.
+For managers to approve or reject a PTO request via the SOAP APIs (APIs #3 and #4), the **Manager** security group must have the correct domain security access to the Approve Business Process web service.
 
-That admin/integration user must have permissions to:
+- The **"Approve Business Process (Web Service)"** securable item must grant **Put** access to the Manager security group (or "All Users").
 
-- View Time Off requests on behalf of employees
-- Read Time Off Types and Time Account information
-- Validate employee eligibility and balances (as required by your configuration)
-- Approve or reject Time Off requests on behalf of managers
+To verify:
+1. Search **"View Security for Securable Item"** in Workday
+2. Search for **"Approve"**
+3. Click **"View Security"** on **"Approve Business Process (Web Service) (Web Service Task)"**
+4. Confirm the **Manager** security group (or "All Users") has **Put** access listed
 
-These permissions are typically configured through **Create Integration System User (ISU)** Workday Task.
+### **c. Business Process Security Policy — Request Time Off**
+
+For the manager's approve or reject action to be recognized by Workday's business process engine, the **"Review Time Off Request"** action step in the "Request Time Off" business process must include the Manager and/or Management Chain security groups.
+
+To verify:
+1. Search **"View Business Process Security Policy"** in Workday
+2. Select **"Request Time Off"** under **Time Off and Leave**
+3. Scroll to **"Who Can Do Action Steps in the Business Process"**
+4. Confirm **Manager** and/or **Management Chain** is listed under the **Review** step
+
+### **d. Activate Pending Security Policy Changes**
+
+After making any changes to Domain Security Policies or Business Process Security Policies in Workday:
+
+- Search **"Activate Pending Security Policy Changes"** in Workday and run it.
+
+> **Important:** Security changes in Workday do **not** take effect until this step is completed. If the plugin is not working as expected after configuring permissions above, ensure this step has been run.
 
 ## **3. Workday User Identity Ingestion**
 
-This plugin requires User Identity Ingestion from workday in Moveworks. For Moveworks to complete actions across systems on the behalf of a user, it needs to have knowledge of all of the system IDs for the given user.
-Setup information for User identity can be found on [https://help.moveworks.com/docs/user-identity](https://help.moveworks.com/docs/user-identity).
+This plugin requires User Identity Ingestion from Workday in Moveworks. For Moveworks to complete actions across systems on behalf of a user, it needs to have knowledge of all system IDs for the given user. Setup information for User Identity can be found on [https://help.moveworks.com/docs/user-identity](https://help.moveworks.com/docs/user-identity).
 
-Below mandatory attributes are needed from this user ingestion.
+The following attributes are required from this user ingestion:
 
-1. Workday ID of the user.
-2. Organization id of the user.
-3. Organization managed by the user.
+1. Workday ID of the user
+2. Organization ID of the user
+3. Organization managed by the user
 
 # **Implementation details**
 
@@ -110,6 +125,8 @@ The <hostname> (tenantUrl) and <tenant> (tenantName) in this URL are your **true
 
 This API is used to retrieve details of all PTO requests submitted by direct reports that require attention by the given manager (refer to Query Parameters below).
 
+**Authentication:** User Consent Auth (OAuth 2.0 Authorization Code Grant). The query executes under the manager's own Workday identity — no ISU required.
+
 ```bash
 curl -X POST "https://<tenantUrl>/ccx/api/wql/v1/<tenantName>/data" \
   -H "Content-Type: application/json" \
@@ -143,7 +160,9 @@ curl -X POST "https://<tenantUrl>/ccx/api/wql/v1/<tenantName>/data" \
 
 ### **API #2: Fetches the details of the Event from the Event_Id**
 
-This API retrieves additional details for a specific PTO request. The timeOffEvent value retrieved from API#1 that is passed in as`EVENT_WID` parameter to return the required details.
+This API retrieves additional details for a specific PTO request. The timeOffEvent value retrieved from API#1 that is passed in as `EVENT_WID` parameter to return the required details.
+
+**Authentication:** User Consent Auth (OAuth 2.0 Authorization Code Grant). Executes under the manager's own Workday identity — no ISU required.
 
 ```bash
 curl -X GET "https://<tenantUrl>/api/businessProcess/v1/<tenantName>/events/{{event_wid}}" \
@@ -157,6 +176,8 @@ curl -X GET "https://<tenantUrl>/api/businessProcess/v1/<tenantName>/events/{{ev
 ### **API #3: Approve Action for an Event**
 
 This API will approve a PTO request based on the timeOffEvent value retrieved from API#1 that is passed in as `EVENT_WID` parameter.
+
+**Authentication:** User Consent Auth (OAuth 2.0 Authorization Code Grant). The SOAP call executes under the manager's own Workday identity — no ISU or task reassignment required.
 
 ```bash
 curl -X POST "https://<tenantUrl>/ccx/service/<tenantName>/Integrations/v41.2" \
@@ -174,6 +195,8 @@ curl -X POST "https://<tenantUrl>/ccx/service/<tenantName>/Integrations/v41.2" \
 ### **API #4: Deny Action for an Event**
 
 This API will reject a PTO request based on the timeOffEvent value retrieved from API#1 that is passed in as `EVENT_WID` parameter.
+
+**Authentication:** User Consent Auth (OAuth 2.0 Authorization Code Grant). The SOAP call executes under the manager's own Workday identity — no ISU or task reassignment required.
 
 ```bash
 curl -X POST "<tenantUrl>/ccx/service/<tenantName>/Integrations/v41.2" \

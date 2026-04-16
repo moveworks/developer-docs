@@ -13,7 +13,7 @@ systems:
 
 # Description
 
-The **“Cancel PTO Request”** plugin enables employees and managers to instantly cancel approved or pending PTO requests in **SAP SF** through the **Moveworks AI Assistant**, eliminating HR portal friction and ensuring time-off records stay accurate in real time.
+The **”Cancel PTO Request”** plugin enables employees to instantly cancel their own approved or pending PTO requests in **SAP SF** through the **Moveworks AI Assistant**, eliminating HR portal friction and ensuring time-off records stay accurate in real time.
 
 # User Experience Preview
 
@@ -140,12 +140,14 @@ curl -X GET "https://<tenantURL>/odata/v2/EmployeeTime?$filter=(userId eq '{{use
 
 **Key nuances:**
 
-- **Returns all leave types**
-    - The API returns both **limited** (PTO) and **non-limited** (e.g., leave of absence) time types.
-    - The plugin filters the response to include **only limited time types** eligible for PTO requests.
-- **Effective-dated results**
-    - Available time types depend on the **“as of date”** passed to the API.
-    - Different dates may return different eligible PTO types due to policy changes or employee eligibility.
+- **Returns both pending and approved requests**
+    - The API returns PTO requests with `PENDING` or `APPROVED` status only.
+    - Cancelled and rejected requests are excluded from the response.
+- **Future-date filter for approved PTOs**
+    - Approved PTOs are only returned for future dates (where `startDate > today`). Past approved PTOs cannot be cancelled and are excluded.
+    - Pending PTOs are returned regardless of date.
+- **Limited leave types only**
+    - The `externalCode` filter ensures only limited leave type PTOs are returned. The external codes must be derived from API #2 and injected dynamically into the query.
 
 ### **API #4: Cancel PTO Request**
 

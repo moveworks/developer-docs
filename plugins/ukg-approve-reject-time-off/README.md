@@ -27,7 +27,7 @@ Before installing and using the **Approve or Reject** **PTO** plugin, please ens
 
 This plugin requires an active **UKG connector** with **user consent auth** to communicate with your UKG instance.
 
-- If you have not already configured the connector, please follow the **[UKG Connector Guide](https://marketplace.moveworks.com/connectors/ukg)** available in the Moveworks Marketplace.
+- If you have not already configured the connector, please follow the **[UKG Connector Guide](https://marketplace.moveworks.com/connectors/ukg-pro-wfm)** available in the Moveworks Marketplace.
 - The connector must be fully set up before installing this plugin.
 - Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 

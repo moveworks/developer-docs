@@ -27,7 +27,7 @@ Before installing and using the **Cancel PTO Request** plugin, please ensure the
 
 This plugin requires an active **UKG connector** and **user consent auth** to communicate with your UKG instance.
 
-- If you have not already configured the connector, please follow the [UKG Connector Guide](https://marketplace.moveworks.com/connectors/ukg) available in the Moveworks Marketplace.
+- If you have not already configured the connector, please follow the [UKG Connector Guide](https://marketplace.moveworks.com/connectors/ukg-pro-wfm) available in the Moveworks Marketplace.
 - The connector must be fully set up before installing this plugin.
 - Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
 
@@ -38,7 +38,7 @@ This plugin requires an active **UKG connector** and **user consent auth** to co
 
 ### **End User Permissions (Employee Persona)**
 
-To submit a PTO request through this plugin, employees must already have permission to submit PTO requests in UKG WFM — the same permissions required to submit PTO request through the UKG WFM UI.
+To cancel a PTO request through this plugin, employees must already have permission to cancel PTO requests in UKG WFM — the same permissions required to cancel a PTO request through the UKG WFM UI.
 
 At a minimum, end users must have:
 
@@ -88,7 +88,7 @@ This REST API is used to **retrieve current user details** in UKG WFM. This is u
 ```bash
 curl --request GET \
   --url 'https://<YOUR_UKG_HOST>/api/v1/commons/persons/current_user_info?include_contact_information=true' \
-  --header 'Authorization: <ACCESS_TOKEN>' \
+  --header 'Authorization: Bearer {{access_token}}' \
   --header 'Content-Type: application/json'
 ```
 
@@ -103,7 +103,7 @@ This API is used to **retrieve pending PTO requests** in UKG which will be used 
 ```bash
 curl --request POST \
   --url https://<YOUR_UKG_HOST>/api/v1/scheduling/timeoff/multi_read \
-  --header 'Authorization: <ACCESS_TOKEN>' \
+  --header 'Authorization: Bearer {{access_token}}' \
   --header 'Content-Type: application/json' \
   --data '{
   "where": {
@@ -132,7 +132,7 @@ This API is used to **retrieve approved PTO requests** in UKG WFM which will be 
 ```bash
 curl --request POST \
   --url https://<YOUR_UKG_HOST>/api/v1/scheduling/timeoff/multi_read \
-  --header 'Authorization: <ACCESS_TOKEN>' \
+  --header 'Authorization: Bearer {{access_token}}' \
   --header 'Content-Type: application/json' \
   --data '{
   "where": {
@@ -161,7 +161,7 @@ This API is used to update the status of PTO requests in UKG WFM. Specifically, 
 ```bash
 curl --request POST \
   --url https://<YOUR_UKG_HOST>/api/v1/scheduling/timeoff/apply_update \
-  --header 'Authorization: <ACCESS_TOKEN>' \
+  --header 'Authorization: Bearer {{access_token}}' \
   --header 'Content-Type: application/json' \
   --data '{
 	"changeState": {
@@ -208,7 +208,7 @@ This plugin supports the following capabilities:
 
 - Cancelling PTO requests for **limited leave types** (e.g., Vacation, Sick Leave, Casual Leave, Earned Leave, Comp Time).
 - Cancelling approved or pending requests for an **employee’s own PTO only**.
-- Cancelling PTO requests that respect **existing Workday policies, validations, and approval workflows**.
+- Cancelling PTO requests that respect **existing UKG WFM policies, validations, and approval workflows**.
 
 # **What Is Out of Scope for This Plugin?**
 
