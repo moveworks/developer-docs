@@ -27,37 +27,70 @@ Before installing and using the **Check PTO Balance** plugin, please ensure the 
 
 ## **1. Workday Connector**
 
-This plugin requires an active Workday connector ([**OAuth 2.0 with Authorization Code (User Consent Auth) Setup](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup))**  to communicate with your Workday instance.
+This plugin requires an active Workday connector ([**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)) to communicate with your Workday instance. All API calls in this plugin execute under the authenticated **employee's own Workday identity**. No Integration System User (ISU) is required.
 
 - If you have not already configured the connector, please follow the [Workday Connector Guide](https://marketplace.moveworks.com/connectors/workday#how-to-implement) available in the Moveworks Marketplace.
-- The connector must be fully set up and before installing this plugin.
-- Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+- The connector must be fully set up before installing this plugin.
+- Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
 
 ## **2. Workday System Requirements**
 
-### **a. End User Permissions**
+The following configuration must be completed by a **Workday Administrator** before this plugin can function correctly. These are Workday-side requirements that govern what the authenticated employee is permitted to access via API.
 
-To check PTO balances through this plugin, employees must already have permission to view time off balances in Workday — the same permissions required to view balances through the Workday UI.
+> **Note:** The plugin does not grant new permissions. It respects existing role-based permissions and policies already granted to the user in Workday.
 
-At a minimum, users must have:
+### **a. OAuth 2.0 API Client — Functional Area Scopes**
 
-- The ability to view available Time Off types.
-- Eligibility to access time off plans and balances in accordance with company time‑off policies.
+The OAuth 2.0 (Authorization Code Grant) API Client registered in Workday must include the following **Functional Area Scopes**. These are required for the employee to query their own worker data and time off balances via WQL:
 
-> Note: The plugin does not grant new permissions. It respects existing role-based permissions and policies granted to the user in Workday.
-> 
+- **Staffing**
+- **Time Off and Leave**
+- **System**
+- **Tenant Non-Configurable**
+- **Public Data**
+- **Worktags**
 
-### **b. API Permissions (via Integration User)**
+To verify: Search **"Register API Client for Integrations"** in Workday → locate the API Client used by the Moveworks connector → confirm all of the above are listed under **Scope (Functional Areas)**.
 
-The Workday connector uses an Integration Systems User (ISU) to retrieve PTO balance data through Workday APIs.
+### **b. Domain Security — WQL for Workday Extend**
 
-That user must have permissions to:
+This plugin uses WQL to retrieve worker data and time off balances. For employees authenticating via OAuth (User Consent Auth) to run WQL queries through the API, the following access is required:
 
-- Read worker profiles (via WQL `allWorkers`)
-- Read Time Off plan eligibility and balances (including accrual-related fields)
-- Validate employee eligibility and balances (as required by your configuration)
+- **WQL for Workday Extend** domain → under **Integration Permissions**: **Employee As Self** must have **Get** and **Put** access.
 
-These permissions are typically configured through Create Integration System User (ISU) Workday Task.
+To configure:
+1. Search **"Edit Domain Security Policy"** in Workday
+2. Search **"WQL for Workday Extend"**
+3. Under **Integration Permissions**, add **Employee As Self** with **Get** and **Put** access
+4. Save
+
+> **Note:** By default, only ISU/ISSG groups have integration access to this domain. If Employee As Self is not listed, OAuth-authenticated users will receive 403 errors or empty results on all WQL queries.
+
+### **c. Domain Security — Worker Data: Public Worker Reports**
+
+This domain controls access to base worker data (name, email, Workday ID) used to identify the authenticated employee in WQL queries.
+
+- **Worker Data: Public Worker Reports** domain → **All Employees** must have **Report/Task View** access.
+
+To verify: Search **"Domain Security Policy Summary"** in Workday → search **"Worker Data: Public Worker Reports"** → confirm **All Employees** has **Report/Task View** access listed.
+
+> **Note:** If this permission is missing, WQL queries run without error but return zero rows — no error message, just empty results.
+
+### **d. Domain Security — Worker Data: Time Off**
+
+This domain controls access to time off plan data, balances, and accrual information — the core data returned by this plugin.
+
+- **Worker Data: Time Off** domain → under **Integration Permissions**: **Employee As Self** must have **Get** access.
+
+To verify: Search **"Domain Security Policy Summary"** in Workday → search **"Worker Data: Time Off"** → confirm **Employee As Self** has **Get** access under Integration Permissions.
+
+### **e. Activate Pending Security Policy Changes**
+
+After making any changes to Domain Security Policies in Workday:
+
+- Search **"Activate Pending Security Policy Changes"** in Workday and run it.
+
+> **Important:** Security changes in Workday do **not** take effect until this step is completed. This is the most common reason for "I changed the permission but it still doesn't work."
 
 # **Implementation details**
 
