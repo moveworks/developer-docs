@@ -1,16 +1,4 @@
-curl --request POST \
-  --url https://<YOUR_UKG_HOST>/api/v1/commons/persons/extensions/multi_read \
-  --header 'Authorization: {{access_token}}' \
-  --header 'Content-Type: application/json' \
-  --data '{
-  "where": {
-    "employees": {
-      "key": "useremailaddress",
-      "values": [
-        "{{USER_EMAIL}}"
-      ]
-    },
-    "includeBaseWages": false,
-    "includeAccrualPolicyDetails": false
-  }
-}'
+curl --request GET \
+  --url 'https://api.moveworks.ai/export/v1/records/interactions/$count?$orderby=created_time&$filter=created_time gt '{{start_date}}T00:00:00Z' and created_time lt '{{end_date}}T00:00:00Z'' \
+  --header 'Authorization: Bearer <API_KEY>' \
+  --header 'Accept: application/json'

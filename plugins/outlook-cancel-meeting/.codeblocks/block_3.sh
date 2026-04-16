@@ -1,7 +1,7 @@
 curl --request POST \
-  --url https://<YOUR_UKG_HOST>/api/v1/commons/notifications/multi_review \
+  --url 'https://graph.microsoft.com/v1.0/me/events/{{event_id}}/cancel' \
   --header 'Authorization: Bearer {{access_token}}' \
   --header 'Content-Type: application/json' \
   --data '{
-  "messageIds": ["{{uuid}}"]
-}'
+    "comment": "{{reason_for_cancellation}}"
+  }'

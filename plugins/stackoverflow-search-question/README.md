@@ -1,6 +1,6 @@
 ---
 availability: INSTALLABLE
-description: A plugin that allows the user to look for questions on Stack overflow
+description: A plugin that allows the user to look for questions on Stack Overflow
   directly through chat interface.
 installation_asset_uuid: c58b6d4e-c694-449d-875b-036c8986414a
 name: Search for a question
@@ -13,12 +13,12 @@ systems:
 
 # **Introduction**
 
-The **Search a Question on StackOverflow for Teams** plugin enhances the Moveworks AI Assistant by allowing users to search through their organization’s private Stack Overflow for Teams knowledge base directly from their chat interface. This integration empowers team members to quickly access proprietary programming solutions, best practices, and expert advice tailored specifically to their organization, all without leaving the Moveworks environment.
+The **Search a Question on StackOverflow Internal** plugin enhances the Moveworks AI Assistant by allowing users to search their Stack Internal directly from their chat interface. This integration empowers team members to quickly access proprietary programming solutions, best practices, and expert advice tailored specifically to their organization, all without leaving the Moveworks environment.
 
 # Prerequisites
 
 - Access to Agent Studio
-- [Stackoverflow Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) set up in Creator Studio.
+- [Stack Overflow Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) set up in Creator Studio.
 
 # What are we building?
 
@@ -28,7 +28,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [**Stackoverflow Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [**Stack Overflow Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 # Appendix
 
@@ -38,7 +38,7 @@ curl --request GET "https://{your_organisation}.stackenterprise.co/api/2.3/searc
 ```
 
 - **URL and Query Parameters:**
-    - **`https://{your_organisation}.stackenterprise.co/api/2.3/search`**: The base URL for the search API endpoint, customized with your organization's Stack Overflow for Teams subdomain.
+    - **`https://{your_organisation}.stackenterprise.co/api/2.3/search`**: The base URL for the search API endpoint, customized with your organization's Stack Internal subdomain.
     - **`filter=!6WPIomnMOOD*e`**: Specifies a filter to adjust the fields included in the results.
         - How to create your ow filter :
             - Step 1 : Go on [https://api.stackexchange.com/docs/search](https://api.stackexchange.com/docs/search) and click on the default filter [edit].
