@@ -179,13 +179,11 @@ This guide uses **Okta** as the example since it is the primary SSO provider use
 
 If your organization uses a different IdP, refer to the relevant documentation for creating a custom SAML 2.0 app integration:
 
-| Identity Provider | SAML 2.0 App Configuration Guide |
-| --- | --- |
-| **Okta** | [Create a SAML app integration](https://help.okta.com/en-us/content/topics/apps/apps_app_integration_wizard_saml.htm) |
-| **Microsoft Entra ID (Azure AD)** | [Configure SAML-based single sign-on](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso) |
-| **Ping Identity (PingFederate)** | [Configuring a SAML application](https://docs.pingidentity.com/solution-guides/workforce_use_cases/htg_config_saml_app.html) |
-| **OneLogin** | [Create a SAML custom connector](https://onelogin.service-now.com/support?id=kb_article&sys_id=93f95543db109700d5505eea4b96198f) |
-| **Google Workspace** | [Set up a custom SAML application](https://support.google.com/a/answer/6087519) |
+1. **Okta** - [Create a SAML app integration](https://help.okta.com/en-us/content/topics/apps/apps_app_integration_wizard_saml.htm)
+2. **Microsoft Entra ID (Azure AD)** - [Configure SAML-based single sign-on](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso)
+3. **Ping Identity (PingFederate)** - [Configuring a SAML application](https://docs.pingidentity.com/solution-guides/workforce_use_cases/htg_config_saml_app.html)
+4. **OneLogin** - [Create a SAML custom connector](https://onelogin.service-now.com/support?id=kb_article&sys_id=93f95543db109700d5505eea4b96198f)
+5. **Google Workspace** - [Set up a custom SAML application](https://support.google.com/a/answer/6087519)
 
 Regardless of which IdP you use, the key values you need to configure will consist of: 
 
@@ -211,16 +209,16 @@ Go to your admin console and click on the SAML app. In the **General** section, 
 
 | Field | Value |
 | --- | --- |
-| **Single sign-on URL** | `https://<your-org>.moveworks.com/auth/samlCallback` |
-| **Recipient URL** | `https://<your-sf-api-server>.successfactors.com/oauth/token` |
-| **Destination URL** | `https://<your-sf-api-server>.successfactors.com/oauth/token` |
-| **Audience URI (SP Entity ID)** | `https://<your-sf-api-server>.successfactors.com` |
-| **Name ID format** | `EmailAddress` |
-| **Application username** | `Email` |
-| **Response** | `Signed` |
-| **Assertion Signature** | `Signed` |
-| **Signature Algorithm** | `RSA_SHA256` |
-| **Digest Algorithm** | `SHA256` |
+| Single sign-on URL | `https://<your-org>.moveworks.com/auth/samlCallback` |
+| Recipient URL | `https://<your-sf-api-server>.successfactors.com/oauth/token` |
+| Destination URL | `https://<your-sf-api-server>.successfactors.com/oauth/token` |
+| Audience URI (SP Entity ID) | `https://<your-sf-api-server>.successfactors.com` |
+| Name ID format | `EmailAddress` |
+| Application username | `Email` |
+| Response | `Signed` |
+| Assertion Signature | `Signed` |
+| Signature Algorithm | `RSA_SHA256` |
+| Digest Algorithm | `SHA256` |
 
 > **Note**: Replace `<your-org>` with your Moveworks org name and `<your-sf-api-server>` with your SAP SF API server hostname (e.g., `apisalesdemo8`). For a list of SAP API servers by region, see the [SAP API Server Directory](https://help.sap.com/docs/successfactors-platform/sap-successfactors-api-reference-guide-odata-v2/list-of-sap-successfactors-api-servers).
 > 
@@ -277,17 +275,17 @@ This connector will enable Moveworks to communicate with SAP SF on behalf of ind
 
 | Field | Value | Notes |
 | --- | --- | --- |
-| **Connector Name** | `SAP_SF_Dynamic_SAML_Auth` | Cannot be changed after creation |
-| **Display Name** | `SAP SF Dynamic SAML Auth` | Human-readable name |
-| **Display Description** | `Dynamic SAML Auth Connector for SAP SF` | Optional description |
-| **Base URL** | `https://<your-sf-api-server>.successfactors.com` | Your SAP SF API server URL |
+| Connector Name | `SAP_SF_Dynamic_SAML_Auth` | Cannot be changed after creation |
+| Display Name | `SAP SF Dynamic SAML Auth` | Human-readable name |
+| Display Description | `Dynamic SAML Auth Connector for SAP SF` | Optional description |
+| Base URL | `https://<your-sf-api-server>.successfactors.com` | Your SAP SF API server URL |
 
 ### Certificate uploads
 
 | Field | File to upload | Purpose |
 | --- | --- | --- |
-| **X.509 certificate (Optional)** | — | Leave empty for this flow |
-| **X.509 private key (Optional)** | — | Leave empty for this flow |
+| X.509 certificate (Optional) | — | Leave empty for this flow |
+| X.509 private key (Optional) | — | Leave empty for this flow |
 
 ![Screenshot 2026-04-22 at 12.54.09 PM.png](SAP%20SuccessFactors%20-%20Dynamic%20SAML%20Auth%20Connector%20G/Screenshot_2026-04-22_at_12.54.09_PM.png)
 
@@ -295,18 +293,18 @@ This connector will enable Moveworks to communicate with SAP SF on behalf of ind
 
 | Field | Value | Notes |
 | --- | --- | --- |
-| **Auth Config** | `Oauth2` | Select from dropdown |
-| **Oauth2 Grant Type** | `Saml Bearer Grant` | Enables the SAML bearer flow |
-| **Saml Bearer Grant Flow Type** | `Online Flow` | Interactive user authentication via IdP |
+| Auth Config | `Oauth2` | Select from dropdown |
+| Oauth2 Grant Type | `Saml Bearer Grant` | Enables the SAML bearer flow |
+| Saml Bearer Grant Flow Type | `Online Flow` | Interactive user authentication via IdP |
 
 ### SAML and IdP settings
 
 | Field | Value | Notes |
 | --- | --- | --- |
-| **SAML IdP URL** | `https://<your-okta-domain>/app/<app-path>/sso/saml` | The SSO URL for your Okta SAML app (found on the Sign On tab under Metadata details) |
-| **IdP Signing Certificate** | Upload the Okta signing certificate downloaded in **Step 3.5** | Used by Moveworks to verify the SAML Response from the IdP |
-| **Expected Audience (Moveworks Entity ID)** | `https://<your-sf-api-server>.successfactors.com` | Must match the Audience URI set in the Okta app |
-| **Attribute Mappings** | Leave empty (unless NameID remapping is needed) | Maps IdP attributes to claims in the new assertion |
+| SAML IdP URL | `https://<your-okta-domain>/app/<app-path>/sso/saml` | The SSO URL for your Okta SAML app (found on the Sign On tab under Metadata details) |
+| IdP Signing Certificate | Upload the Okta signing certificate downloaded in Step 3.5 | Used by Moveworks to verify the SAML Response from the IdP |
+| Expected Audience (Moveworks Entity ID) | `https://<your-sf-api-server>.successfactors.com` | Must match the Audience URI set in the Okta app |
+| Attribute Mappings | Leave empty (unless NameID remapping is needed) | Maps IdP attributes to claims in the new assertion |
 
 ![image.png](SAP%20SuccessFactors%20-%20Dynamic%20SAML%20Auth%20Connector%20G/image%2014.png)
 
@@ -314,19 +312,19 @@ This connector will enable Moveworks to communicate with SAP SF on behalf of ind
 
 | Field | Value | Notes |
 | --- | --- | --- |
-| **SAML Issuer** | `http://www.okta.com/<externalKey>` | The SAML Issuer ID from your Okta app ([Step 3.3](https://www.notion.so/SAP-SuccessFactors-Dynamic-SAML-Auth-Connector-Guide-349588d8909f80b49a4dc1d01f9d7cb7?pvs=21)) |
-| **Client ID** | Your SAP SF API Key from **Step 2.4** | Used in the token exchange request to SF |
-| **Client Secret** | Leave empty | Not required for SAML bearer flow |
-| **Saml Bearer Grant Scope** | Leave empty | Not required for SAP SF |
+| SAML Issuer | `http://www.okta.com/<externalKey>` | The SAML Issuer ID from your Okta app ([Step 3.3](https://www.notion.so/SAP-SuccessFactors-Dynamic-SAML-Auth-Connector-Guide-349588d8909f80b49a4dc1d01f9d7cb7?pvs=21)) |
+| Client ID | Your SAP SF API Key from Step 2.4 | Used in the token exchange request to SF |
+| Client Secret | Leave empty | Not required for SAML bearer flow |
+| Saml Bearer Grant Scope | Leave empty | Not required for SAP SF |
 
-### Signing certificate (for Moveworks-generated assertions)
+### Signing certificate details
 
 | Field | File to upload | Purpose |
 | --- | --- | --- |
-| **Signing Certificate** | Leave empty | Not needed |
-| **SAML Audience** | `https://<your-sf-api-server>.successfactors.com` | Audience in the Moveworks-generated assertion |
-| **Target Audience** | `https://<your-sf-api-server>.successfactors.com` | Final system entity ID |
-| **Target Recipient URL** | `https://<your-sf-api-server>.successfactors.com/oauth/token` | SF's OAuth token endpoint — Moveworks sets this as the Recipient in the new assertion |
+| Signing Certificate | Leave empty | Not needed |
+| SAML Audience | `https://<your-sf-api-server>.successfactors.com` | Audience in the Moveworks-generated assertion |
+| Target Audience | `https://<your-sf-api-server>.successfactors.com` | Final system entity ID |
+| Target Recipient URL | `https://<your-sf-api-server>.successfactors.com/oauth/token` | SF's OAuth token endpoint — Moveworks sets this as the Recipient in the new assertion |
 
 ![image.png](SAP%20SuccessFactors%20-%20Dynamic%20SAML%20Auth%20Connector%20G/image%2015.png)
 
@@ -336,14 +334,14 @@ This connector will enable Moveworks to communicate with SAP SF on behalf of ind
 
 | Field | File to upload | Purpose |
 | --- | --- | --- |
-| **Moveworks Signing Private Key** | Upload `mw_private_key.key` from **Step 1** | Moveworks uses this to sign the assertion sent to SF |
-| **Moveworks Signing Certificate** | Upload `mw_certificate.pem` from **Step 1** | Included in the assertion for SF signature verification |
+| Moveworks Signing Private Key | Upload `mw_private_key.key` from Step 1 | Moveworks uses this to sign the assertion sent to SF |
+| Moveworks Signing Certificate | Upload `mw_certificate.pem` from Step 1 | Included in the assertion for SF signature verification |
 
 ### Token endpoint and additional parameters
 
 | Field | Value | Notes |
 | --- | --- | --- |
-| **Oauth2 Token URL** | `https://<your-sf-api-server>.successfactors.com/oauth/token` | Where Moveworks exchanges the assertion for an access token |
+| Oauth2 Token URL | `https://<your-sf-api-server>.successfactors.com/oauth/token` | Where Moveworks exchanges the assertion for an access token |
 
 ![image.png](SAP%20SuccessFactors%20-%20Dynamic%20SAML%20Auth%20Connector%20G/image%2017.png)
 
@@ -352,7 +350,7 @@ Under **Oauth2 Custom Oauth Request Options Additional Request Data**, add:
 | Key | Value | Notes |
 | --- | --- | --- |
 | `client_id` | Your SAP SF API Key | Included in the token exchange POST body |
-| `company_id` | Your SAP SF Company ID (e.g., `SFCPART001234`) | Required by SF's token endpoint (check the OAuth app created on SAP SF, **Step 2.4**) |
+| `company_id` | Your SAP SF Company ID (e.g., `SFCPART001234`) | Required by SF's token endpoint (check the OAuth app created on SAP SF, Step 2.4) |
 
 ![image.png](SAP%20SuccessFactors%20-%20Dynamic%20SAML%20Auth%20Connector%20G/image%2018.png)
 
@@ -434,15 +432,15 @@ A `200 OK` response with `"status": "OK"` confirms the PTO was submitted as the 
 
 | Component | Key Configuration | Value |
 | --- | --- | --- |
-| **SAP SF OAuth Client** | X.509 Certificate | Moveworks signing certificate (`mw_certificate.pem`) |
-| **SAP SF OAuth Client** | API Key (Client ID) | Auto-generated by SF |
-| **IdP SAML App** | Single Sign-On URL | `https://<org>.moveworks.com/auth/samlCallback` |
-| **IdP SAML App** | Recipient/Destination URL | `https://<sf-api>.successfactors.com/oauth/token` |
-| **IdP SAML App** | Audience URI | `https://<sf-api>.successfactors.com` |
-| **MW Connector** | Moveworks Signing Private Key | `mw_private_key.key` |
-| **MW Connector** | Moveworks Signing Certificate | `mw_certificate.pem` |
-| **MW Connector** | IdP Signing Certificate | Downloaded from Okta |
-| **MW Connector** | Target Recipient URL | `https://<sf-api>.successfactors.com/oauth/token` |
+| SAP SF OAuth Client | X.509 Certificate | Moveworks signing certificate (`mw_certificate.pem`) |
+| SAP SF OAuth Client | API Key (Client ID) | Auto-generated by SF |
+| IdP SAML App | Single Sign-On URL | `https://<org>.moveworks.com/auth/samlCallback` |
+| IdP SAML App | Recipient/Destination URL | `https://<sf-api>.successfactors.com/oauth/token` |
+| IdP SAML App | Audience URI | `https://<sf-api>.successfactors.com` |
+| MW Connector | Moveworks Signing Private Key | `mw_private_key.key` |
+| MW Connector | Moveworks Signing Certificate | `mw_certificate.pem` |
+| MW Connector | IdP Signing Certificate | Downloaded from Okta |
+| MW Connector | Target Recipient URL | `https://<sf-api>.successfactors.com/oauth/token` |
 
 ---
 
