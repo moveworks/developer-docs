@@ -9,7 +9,7 @@ name: SAP Success Factors
 SAP SuccessFactors is a cloud-based human resources (HR) management solution, empowering businesses with data-driven insights to optimize talent management, employee engagement, and overall workforce performance.
 
 This guide will demonstrate how to connect SAP Success Factors to Agent Studio. In doing so, there are three ways you can proceed:
-1. [Dynamic SAML Auth](https://marketplace.moveworks.com/connectors/sap-success-factors#Dynamic-SAML-Auth) - This is best when building plugins that execute API calls on behalf of individual users (e.g., PTO submission, approvals), using per-user SSO identity. **Recommended for most use cases.**
+1. [Dynamic SAML Auth](https://marketplace.moveworks.com/connectors/sap-success-factors#Dynamic-SAML-Auth) - This is best when building plugins that execute API calls on behalf of individual users (e.g., PTO submission, approvals), using per-user SSO identity. **Recommended for conversational agent use cases.**
 2. [Static SAML Auth (Admin User)](https://marketplace.moveworks.com/connectors/sap-success-factors#Static-SAML-Auth) - This is a fallback option for admin-level actions where per-user identity is not required. Tokens are generated offline using an admin account. Note: Dynamic SAML is recommended even for admin actions as it is easier to maintain and avoids manual offline token generation.
 3. [Webhook Connection](https://marketplace.moveworks.com/connectors/sap-success-factors#Webhook-Connection) - This is best when building ambient agents that are triggered from a system event inside of SAP SuccessFactors.
 
@@ -144,12 +144,12 @@ Click on **"Register Client Application"** and fill out the details shown below:
 
 | Field | Value |
 | --- | --- |
-| **Company** | Pre-filled based on your instance (e.g., `SFCPART001234`) |
-| **Application Name** | `MW Dynamic SAML Auth` (or your preferred name) |
-| **Description** | `Moveworks Dynamic SAML Auth for per-user API access` |
-| **Application URL** | `https://<your-org>.moveworks.com` (your Moveworks login URL) |
-| **Bind to Users** | Leave **unchecked** |
-| **User IDs** | Leave **blank** |
+| Company | Pre-filled based on your instance (e.g., `SFCPART001234`) |
+| Application Name | `MW Dynamic SAML Auth` (or your preferred name) |
+| Description | `Moveworks Dynamic SAML Auth for per-user API access` |
+| Application URL | `https://<your-org>.moveworks.com` (your Moveworks login URL) |
+| Bind to Users | Leave unchecked |
+| User IDs | Leave blank |
 
 ![image.png](SAP%20SuccessFactors%20-%20Dynamic%20SAML%20Auth%20Connector%20G/image%204.png)
 
