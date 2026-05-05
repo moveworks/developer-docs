@@ -1,8 +1,8 @@
 ---
 availability: IDEA
-description: Connect Moveworks to Lakeside Software.
-logo: https://www.lakesidesoftware.com/wp-content/uploads/2025/09/16x9_Lakeside_Logo_Newsroom-1024x576.png
-name: Lakeside Software Systrack AI
+description: Connect Moveworks to Lakeside SysTrack Software.
+logo: https://www.moveworks.com/content/dam/moveworksprogram/v2/logos/integration-logos/lakeside-systrack-ai-integration-logo.svg
+name: Lakeside Systrack AI
 ---
 
 ## Introduction
