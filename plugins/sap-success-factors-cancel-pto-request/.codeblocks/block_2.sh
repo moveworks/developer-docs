@@ -1,0 +1,2 @@
+curl -X GET "https://<tenantURL>/odata/v2/EmployeeTime?$filter=(userId eq '{{userId}}') and (approvalStatus eq 'PENDING' or (approvalStatus eq 'APPROVED' and startDate gt '{{today_date}}')) and {{{externalCode}}}&$select=userId,startDate,endDate,timeTypeNav/externalCode,timeTypeNav/externalName_defaultValue,approvalStatus,userIdNav/defaultFullName,userIdNav/country,workflowRequestId , externalCode, createdDateTime, quantityInHours&$expand=userIdNav,timeTypeNav&$orderby=startDate asc" \
+  -H "Content-Type: application/json"

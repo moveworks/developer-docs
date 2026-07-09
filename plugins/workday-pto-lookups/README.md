@@ -1,9 +1,9 @@
 ---
 availability: INSTALLABLE
 description: Enables employees to check their PTO balances across limited leave types, so they can plan time off quickly and confidently.
-installation_asset_uuid: 01837c5e-0d18-4697-af5a-89d312dbfaac
+installation_asset_uuid: 11e6a52d-fa60-4b98-9010-175d826a2667
 name: Check PTO Balance
-purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+how+much+balance+do+I+have%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3Cbr%3E1.+Natural+Language%3Cbr%3E%3Cbr%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+%3Cb%3EActions%3C%2Fb%3E%3Cbr%3E1.+Query+time+off+details+for+employee%3Cbr%3E%3Cbr%3E%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ELookup+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Time+Off+Type+and+Quantity%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EYou+currently+have+the+following+time+off+balances%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3A+196+Hours%3Cbr%3E%5Cn2%3A+Sick+Time+Off+%28USA%29%3A+12+Days%3Cbr%3E%5Cn3%3A+Wellness+Day+%28USA%29%3A+0+Hours%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22View+Time+Off+Balance+in+Workday%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EThanks+for+the+information%21%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%5D%7D
+purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+want+to+view+my+PTO+balances%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ERetrieving+current+leave+balances+for+%3Cb%3EAlex+Rivera%3C%2Fb%3E+from+%3Cb%3EWorkday%3C%2Fb%3E...%3C%2Fp%3E%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou+have+an+aggregated+balance+of+%3Cb%3E124+hours%3C%2Fb%3E+available+across+all+leave+types%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EVacation%3A%3C%2Fb%3E+80+hours%3C%2Fli%3E%3Cli%3E%3Cb%3ESick+Leave%3A%3C%2Fb%3E+32+hours%3C%2Fli%3E%3Cli%3E%3Cb%3EPersonal+Time%3A%3C%2Fb%3E+12+hours%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22Alex+Rivera+-+Time+Off+Balances%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWhat+will+be+my+vacation+balance+as+of+Dec+31%3F+I+am+planning+to+take+a+long+vacation+this+new+year%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ECalculating+projected+accruals+through+December+31%2C+2024+in+%3Cb%3EWorkday%3C%2Fb%3E...%3C%2Fp%3E%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EAs+of+December+31%2C+2024%2C+your+%3Cb%3EVacation%3C%2Fb%3E+balance+is+projected+to+be+%3Cb%3E104+hours%3C%2Fb%3E.%3C%2Fp%3E%3Cp%3EThis+includes+your+current+balance+of+80+hours+plus+24+hours+of+projected+accruals%2C+assuming+no+additional+time+is+taken+before+then.%3C%2Fp%3E%22%7D%5D%7D%5D%7D
 solution_tags:
 - HR - Other
 - HR - Time & Absence
@@ -11,57 +11,146 @@ systems:
 - workday
 ---
 
-# Introduction
+# Description
 
-The **View Time Off Balance** plugin empowers employees to instantly check their current leave balances—such as vacation, sick or personal time—through a simple conversation with the Moveworks AI Assistant. This plugin delivers real-time, personalized time-off balance information without requiring users to navigate to Workday manually.
+The **“Check PTO Balance”** plugin enables employees to view their PTO balances across ****leave types directly through the Moveworks AI Assistant. 
 
-This guide will walk you through how to call RaaS from Agent Studio and seamlessly integrate the **View Time Off Balance** plugin into your Moveworks experience.
+Employees can ask for their current balances (e.g., “How many sick days and casual days do I have remaining?”) and can also request balances as of a specific past or future date to review how their balance has changed over time and plan upcoming time off (e.g., “I need to view my projected PTO balance as of March 31 to plan a long vacation in advance”).
 
-# Prerequisites
+# **User Experience Preview**
 
-- Access to Agent Studio
+Please refer to the following [Purple Chat](https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+want+to+view+my+PTO+balances%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ERetrieving+current+leave+balances+for+%3Cb%3EAlex+Rivera%3C%2Fb%3E+from+%3Cb%3EWorkday%3C%2Fb%3E...%3C%2Fp%3E%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EYou+have+an+aggregated+balance+of+%3Cb%3E124+hours%3C%2Fb%3E+available+across+all+leave+types%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EVacation%3A%3C%2Fb%3E+80+hours%3C%2Fli%3E%3Cli%3E%3Cb%3ESick+Leave%3A%3C%2Fb%3E+32+hours%3C%2Fli%3E%3Cli%3E%3Cb%3EPersonal+Time%3A%3C%2Fb%3E+12+hours%3C%2Fli%3E%3C%2Ful%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22workday%22%2C%22citationTitle%22%3A%22Alex+Rivera+-+Time+Off+Balances%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWhat+will+be+my+vacation+balance+as+of+Dec+31%3F+I+am+planning+to+take+a+long+vacation+this+new+year%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ECalculating+projected+accruals+through+December+31%2C+2024+in+%3Cb%3EWorkday%3C%2Fb%3E...%3C%2Fp%3E%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EAs+of+December+31%2C+2024%2C+your+%3Cb%3EVacation%3C%2Fb%3E+balance+is+projected+to+be+%3Cb%3E104+hours%3C%2Fb%3E.%3C%2Fp%3E%3Cp%3EThis+includes+your+current+balance+of+80+hours+plus+24+hours+of+projected+accruals%2C+assuming+no+additional+time+is+taken+before+then.%3C%2Fp%3E%22%7D%5D%7D%5D%7D) for a sample conversational experience between a user and the AI Assistant for this plugin.
 
-# What are we building?
+# **Pre-requisites**
 
-## Agent Design
+Before installing and using the **Check PTO Balance** plugin, please ensure the following requirements are met:
 
-This [purple chat](https://developer.moveworks.com/creator-studio/developer-tools/purple-chat?conversation=%7B%22startTimestamp%22%3A%2211%3A43+AM%22%2C%22messages%22%3A%5B%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EI+need+to+take+time+off%2C+how+much+balance+do+I+have%3F%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%2C%7B%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%E2%9C%A8+%3Cb%3ETriggers%3C%2Fb%3E%3Cbr%3E1.+Natural+Language%3Cbr%3E%3Cbr%3E%F0%9F%8F%83%E2%80%8D%E2%99%82%EF%B8%8F+%3Cb%3EActions%3C%2Fb%3E%3Cbr%3E1.+Query+time+off+details+for+employee%3Cbr%3E%3Cbr%3E%3C%2Fp%3E%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3E%E2%9C%85+Calling+plugin+%3Cb%3ELookup+Time+Off%3C%2Fb%3E%3Cbr%3E%E2%9C%85+Executing+action+%3Cb%3EGet+Time+Off+Type+and+Quantity%3C%2Fb%3E%3Cbr%3E%F0%9F%94%81+Summarizing+response%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EYou+currently+have+the+following+time+off+balances%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E1%3A+Employee+Time+Off+%28USA%29%3A+196+Hours%3Cbr%3E%5Cn2%3A+Sick+Time+Off+%28USA%29%3A+12+Days%3Cbr%3E%5Cn3%3A+Wellness+Day+%28USA%29%3A+0+Hours%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22citationTitle%22%3A%22View+Time+Off+Balance+in+Workday%22%2C%22connectorName%22%3A%22workday%22%7D%5D%7D%5D%2C%22role%22%3A%22assistant%22%7D%2C%7B%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EThanks+for+the+information%21%3C%2Fp%3E%22%7D%5D%2C%22role%22%3A%22user%22%7D%5D%7D) shows the experience we are going to build.
+## **1. Workday Connector**
 
-# Installation Steps
+This plugin requires an active Workday connector ([**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)) to communicate with your Workday instance. All API calls in this plugin execute under the authenticated **employee's own Workday identity**. No Integration System User (ISU) is required.
 
-While you can create a connector during plugin installation, we recommend setting up the connector in Agent Studio beforehand to simplify the process. Please follow our [Workday Connector](https://marketplace.moveworks.com/connectors/workday?hist=home%2Cbrws#how-to-implement) Guide for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+- If you have not already configured the connector, please follow the [Workday Connector Guide](https://marketplace.moveworks.com/connectors/workday#how-to-implement) available in the Moveworks Marketplace.
+- The connector must be fully set up before installing this plugin.
+- Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
 
-For this plugin, ensure the Workday integration system user has the following permissions:
+## **2. Workday System Requirements**
 
-- Assign `Worker Data: Leave of Absence`, `Worker Data: Time Off`, `Worker Data: Time Off(Time Off Balances)` and `Worker Data: Time Off(Time Off Balances Manager View)` domain permissions with both **View** and **Get** permissions access.
+The following configuration must be completed by a **Workday Administrator** before this plugin can function correctly. These are Workday-side requirements that govern what the authenticated employee is permitted to access via API.
 
-**Tenant Configuration:**
+> **Note:** The plugin does not grant new permissions. It respects existing role-based permissions and policies already granted to the user in Workday.
 
-All Workday API endpoints in this plugin use **TENANT** as a placeholder. After installation, replace **TENANT** in the action definitions with your actual Workday tenant name.
+### **a. OAuth 2.0 API Client — Functional Area Scopes**
 
-To find your tenant name:
+The OAuth 2.0 (Authorization Code Grant) API Client registered in Workday must include the following **Functional Area Scopes**. These are required for the employee to query their own worker data and time off balances via WQL:
 
-Log into Workday.
-Check the URL in your browser — the tenant name appears after **workday.com/**, e.g.: https://impl.workday.com/your_tenant/…
-Make sure to update this across all actions that reference the Workday API.
+- **Staffing**
+- **Time Off and Leave**
+- **System**
+- **Tenant Non-Configurable**
+- **Public Data**
+- **Worktags**
 
-After configuring the connector and updating your tenant, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup.
+To verify: Search **"Register API Client for Integrations"** in Workday → locate the API Client used by the Moveworks connector → confirm all of the above are listed under **Scope (Functional Areas)**.
 
-# Appendix
+### **b. Domain Security — WQL for Workday Extend**
 
-### **API #1: Get Worker ID by Email**
+This plugin uses WQL to retrieve worker data and time off balances. For employees authenticating via OAuth (User Consent Auth) to run WQL queries through the API, the following access is required:
+
+- **WQL for Workday Extend** domain → under **Integration Permissions**: **Employee As Self** must have **Get** and **Put** access.
+
+To configure:
+1. Search **"Edit Domain Security Policy"** in Workday
+2. Search **"WQL for Workday Extend"**
+3. Under **Integration Permissions**, add **Employee As Self** with **Get** and **Put** access
+4. Save
+
+> **Note:** By default, only ISU/ISSG groups have integration access to this domain. If Employee As Self is not listed, OAuth-authenticated users will receive 403 errors or empty results on all WQL queries.
+
+### **c. Domain Security — Worker Data: Public Worker Reports**
+
+This domain controls access to base worker data (name, email, Workday ID) used to identify the authenticated employee in WQL queries.
+
+- **Worker Data: Public Worker Reports** domain → **All Employees** must have **Report/Task View** access.
+
+To verify: Search **"Domain Security Policy Summary"** in Workday → search **"Worker Data: Public Worker Reports"** → confirm **All Employees** has **Report/Task View** access listed.
+
+> **Note:** If this permission is missing, WQL queries run without error but return zero rows — no error message, just empty results.
+
+### **d. Domain Security — Worker Data: Time Off**
+
+This domain controls access to time off plan data, balances, and accrual information — the core data returned by this plugin.
+
+- **Worker Data: Time Off** domain → under **Integration Permissions**: **Employee As Self** must have **Get** access.
+
+To verify: Search **"Domain Security Policy Summary"** in Workday → search **"Worker Data: Time Off"** → confirm **Employee As Self** has **Get** access under Integration Permissions.
+
+### **e. Activate Pending Security Policy Changes**
+
+After making any changes to Domain Security Policies in Workday:
+
+- Search **"Activate Pending Security Policy Changes"** in Workday and run it.
+
+> **Important:** Security changes in Workday do **not** take effect until this step is completed. This is the most common reason for "I changed the permission but it still doesn't work."
+
+# **Implementation details**
+
+## **Visual Representation of How the Plugin Works**
+
+![image.png](Workday%20-%20Check%20PTO%20Balance/image.png)
+
+## **API Details**
+
+To use the curl examples below be sure to update details for <tenantUrl> and <tenantName>.
+
+As a Workday administrator, obtain these details as follows:
+
+1. Log in to Workday
+2. In the search bar, search for **Public Web Services**
+3. Open it
+4. Select **Actions → Web Services → View WSDL**
+5. In the WSDL file, locate:
+    
+    ```
+    soap:address location="https://<hostname>/ccx/service/<tenant>/..."
+    ```
+    
+
+The <hostname> (tenantUrl) and <tenant> (tenantName) in this URL are your **true tenant URL components**.
+
+### **API: Fetch PTO balances as of a date**
+
+Fetches the employee’s eligible time off plans and returns the PTO balances for each plan **as of the provided effective date**. If no date is provided, the plugin should use the current date.
 
 ```bash
-curl --location 'https://<API_SERVER_DOMAIN>/ccx/api/wql/v1/<TENANT>/data' \
---header 'Authorization: Bearer <ACCESS_TOKEN>' \
---header 'Content-Type: application/json'\
---data-raw '{
-    "query": "SELECT workdayID, fullName,businessTitle, email_PrimaryWorkOrPrimaryHome as email ,employeeID FROM allWorkers WHERE email_PrimaryWorkOrPrimaryHome = '\''{{email_PrimaryWorkOrPrimaryHome}}'\''"
-}'
+curl -X POST -d '{
+"query": "SELECT workdayID, email_PrimaryWork, allEligibleTimeOffPlansForWorker{accrualFrequencyMethod, accrualRecursEvery, accrualRecursUnitOfTime, timeOffBalanceForWorker, absencePlans, amountOfTimeBeforeExpiration, timeOffPlan, unitOfTimeForExpiration, balancePeriod, nextCarryoverDate, maximumPotentialCarryover, displayName, unitOfTime, absenceAccruedForCurrentPeriod, payslipName} as allEligibleTimeOffPlansForWorker FROM allWorkers (effectiveAsOfDate = {{date}}) WHERE email_PrimaryWork = {{email_addr}}"
+}' 'https://<tenantUrl>/ccx/api/wql/v1/<tenantName>/data'
 ```
-**Query Parameters:**
-- `email_PrimaryWorkOrPrimaryHome` (string) – Email address of the worker used to look up their Workday ID
 
-### API #2: Fetch Time Off Balance
+**Query Parameters**
 
-The [Absence Balances](https://community.workday.com/sites/default/files/file-hosting/restapi/index.html#absenceManagement/v2/get-/balances) API in Workday allows you to fetch real-time leave balance details (e.g., vacation, sick) for a specified worker.
+- `DATE` *(string):* “As of” date used to compute balances via `effectiveAsOfDate`. Can be a past or future date. If not provided, default is the current date.
+- `EMAIL_ADDR` *(string):* Employee’s primary work email used to identify the worker in Workday. Fetched via meta_info.user.email_addr
+
+### **API References**
+
+This plugin uses **Workday WQL** to retrieve eligible time off plans and balances for the logged-in employee.
+
+For detailed information on request parameters, response formats, error handling, and versioning, please refer to the [**official Workday API documentation**](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/workday-query-language-wql-/aht1611188422513.html?lang=en-us) provided by Workday.
+
+# **What Is In Scope for This Plugin?**
+
+This plugin supports the following capabilities:
+
+- View current PTO balances for the employee across leave types configured in your instance (e.g., Vacation, Sick Leave, Casual Leave, Earned Leave, etc).
+- View PTO balances as of a specific date (past or future) to support historical review and future planning.
+- View PTO balances for an employee’s own PTO only.
+- Return balances that respect existing Workday policies, eligibility, and accrual calculations for that employee.
+
+# **What Is Out of Scope for This Plugin?**
+
+This plugin **does not support** the following:
+
+- Viewing PTO balances for leaves of absence (e.g. Medical Leave, Parental Leave, FMLA, Military Leave, etc).
+- Viewing another employee’s balances.
+- Viewing a complete accrual ledger, detailed transaction history, or full policy documentation.

@@ -1,0 +1,3 @@
+curl -X POST -d '{
+"query": "SELECT status, workerRequestingPaidTimeOff, timeOffDate, timeOffTypeForTimeOffEntry, cf_Manager, timeOffEvent, supervisoryOrganization FROM timeOffByDateTaken (organizations= ({{org_ids}}), includeSubordinateOrganizations = true, startDate =('\''{{start_date}}'\''), endDate=('\''{{end_date}}'\'')) WHERE status in (0391102bd1b542538d996936c8fa2fa7) AND latestTimeOffEntry is not null AND totalUnits > 0 AND workerRequestingPaidTimeOff = ({{employee_workday_id}}) GROUP BY status, timeOffDate, workerRequestingPaidTimeOff, timeOffTypeForTimeOffEntry, cf_Manager, supervisoryOrganization, timeOffEvent"
+}' 'https://<tenantUrl>/ccx/api/wql/v1/<tenantName>/data'

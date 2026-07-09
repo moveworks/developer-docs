@@ -1,21 +1,21 @@
-curl --location 'https://<YOUR_INSTANCE>/odata/v2/EmployeeTime' \
---header 'Authorization: Bearer ' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
-
+curl --location \
+'https://<YOUR_SF_HOST>/odata/v2/EmployeeTime' \
+--header'Authorization: Bearer <ACCESS_TOKEN>' \
+--header'Content-Type: application/json' \
+--header'Accept: application/json' \
 --data '{
-    "userId": "{{userId}}",
-    "startDate": "/Date({{startDate}})/",
-    "endDate": "/Date({{endDate}})/",
-    "timeType": "TT_PTO{{timeType}}",
-    "userIdNav": {
-        "__metadata": {
-            "uri": "https://<YOUR_INSTANCE>/odata/v2/User('\''{{userId}}'\'')"
-        }
-    },
-    "timeTypeNav": {
-        "__metadata": {
-            "uri": "<YOUR_INSTANCE>/odata/v2/TimeType(externalCode='\''{{timeType}}'\'')"
-        }
+  "userId": "{{USER_ID}}",
+  "startDate": "/Date({{START_DATE}})/",
+  "endDate": "/Date({{END_DATE}})/",
+  "timeType": "{{TIME_TYPE}}",
+  "userIdNav": {
+    "__metadata": {
+      "uri": "https://<YOUR_SF_HOST>/odata/v2/User(''{{USER_ID}}'')"
     }
+  },
+  "timeTypeNav": {
+    "__metadata": {
+      "uri": "https://<YOUR_SF_HOST>/odata/v2/TimeType(externalCode=''{{TIME_TYPE}}'')"
+    }
+  }
 }'
