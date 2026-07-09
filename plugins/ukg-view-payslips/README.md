@@ -7,5 +7,5 @@ solution_tags:
 - Finance - Payroll
 - HR - Other
 systems:
-- ukg
+- ukg-pro-wfm
 ---

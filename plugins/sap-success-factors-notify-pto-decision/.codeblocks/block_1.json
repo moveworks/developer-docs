@@ -1,0 +1,72 @@
+steps:
+  # 1. Batch fetch both users in one go (Network Optimization) 
+  - action:
+      action_name: mw.get_user_by_email
+      output_key: user_data
+      input_args:
+        user_email: data.payload.RequestorEmail
+          
+  - action:
+      action_name: SAP_SF_Get_Approver_Details
+      output_key: wf_response
+      input_args:
+        requestId: data.payload.WorkflowRequestID
+
+  # 2. Filter Logic
+  - switch:
+      cases:
+        - condition: data.payload.ApprovalStatus IN ["APPROVED", "REJECTED", "CANCELLED"]
+          steps:
+            - notify:
+                # Extract Requestor Record ID from the batch list using DSL Filter
+                recipient_id: data.user_data.user.record_id
+                output_key: notification_result
+                message:
+                  RENDER():
+                    template: |
+                      *Decision Taken: PTO {{status_text}}*
+                      
+                      Your {{leave_type}} for {{start}} – {{end}} has been *{{status_text}}* by {{last_modified_name}}.
+                      
+                      *Request Dates:* {{start}} – {{end}}
+                      *Leave type:* {{leave_type}}
+                      *Decision maker:* {{approver_info}}
+                      *Title and Department:* {{title}}, {{department}}{{comments_section}}
+                    args:
+                      leave_type: data.payload.TimeOffType
+                      id: data.payload.PTO_externalCode
+                      title: data.payload.LastModifiedByUserTitle
+                      department: data.payload.LastModifiedByUserDepartment
+                      last_modified_name: data.payload.LastModifiedName
+                      
+                      
+                      # Extract Approver Name from the batch list
+                      approver_info: >
+                        $CONCAT([data.payload.LastModifiedName, " (", data.payload.LastModifiedByEmail, ")"])
+
+                      # Date Formatting
+                      start: data.payload.StartDate.$PARSE_TIME().$FORMAT_TIME("%b %d, %Y")
+                      end: data.payload.EndDate.$PARSE_TIME().$FORMAT_TIME("%b %d, %Y")
+                      
+                      # DSL Optimization: Convert "APPROVED" -> "Approved" automatically
+                      status_text: data.payload.ApprovalStatus.$TITLECASE()
+
+                      comments_section:
+                        CONDITIONAL():
+                          condition: >
+                            $LENGTH(data.wf_response.d.wfRequestCommentsNav.results) > 0
+                            AND
+                            data.payload.ApprovalStatus IN ["APPROVED", "REJECTED"]
+                            AND
+                            data.wf_response.d.wfRequestCommentsNav.results[-1].actionType != "INITIATE"
+                            AND
+                            data.wf_response.d.wfRequestCommentsNav.results[-1].comments != null
+                            AND
+                            data.wf_response.d.wfRequestCommentsNav.results[-1].comments != ""
+                          on_pass: 
+                             RENDER():
+                              template: "\n*Comments:* {{text}}"
+                              args:
+                                text: data.wf_response.d.wfRequestCommentsNav.results[-1].comments
+                          on_fail: '""'
+                      
