@@ -143,7 +143,7 @@ For detailed information on request parameters, response formats, and error hand
 - Searching or updating cases belonging to other store employees.
 - Creating a new case (handled by **Create Break-Fix Case**).
 - Looking up case details for display only (handled by **Get Break-Fix Case Details**).
-- Lifecycle notifications (handled by **Notify Requesters of Break-Fix Case Updates**).
+- Lifecycle notifications (handled by **Notify on Break-Fix Case Updates**).
 - Attaching files or images to an existing case — attachment upload is not supported during update.
 
 # Related Plugins
