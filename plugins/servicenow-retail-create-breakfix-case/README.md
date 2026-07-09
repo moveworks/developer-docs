@@ -15,7 +15,7 @@ systems:
 - servicenow
 ---
 
-# Description
+# Introduction
 
 Frontline retail store employees can report broken in-store equipment — scanners, printers, registers, and more — right from the Moveworks AI Assistant, without navigating the ServiceNow RSM portal, filling out a form, or calling the help desk. The store is auto-detected from the employee's membership, an optional photo can be attached, and the plugin blocks duplicate cases before a second ticket is ever opened for the same device.
 
