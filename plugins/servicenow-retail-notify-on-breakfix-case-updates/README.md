@@ -29,7 +29,7 @@ Please refer to the following [**Purple Chat**](https://marketplace.moveworks.co
 
 # Pre-requisites
 
-Before installing and using the **Notify Requesters of Break-Fix Case Updates** plugin, please ensure the following requirements are met:
+Before installing and using the **Notify on Break-Fix Case Updates** plugin, please ensure the following requirements are met:
 
 ## **1. ServiceNow Retail Store Services Application**
 
