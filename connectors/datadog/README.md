@@ -18,12 +18,7 @@ Datadog exposes its platform through a REST API that is authenticated with two c
 
 Both keys are required for Datadog API endpoints. In Moveworks, we store both as encrypted secrets on a single HTTP Connector — the API Key as the primary auth header and the Application Key as a common header.
 
-<aside>
-⚠️
-
-**Why not OAuth?** Datadog does support OAuth 2.0, but **OAuth clients can only be created by members of the Datadog Partner Network** — they are not globally accessible to every customer. Building a published OAuth app requires going through Datadog's separate integration/partner certification program. For a first-party, admin-managed connection, the **API + Application Key** approach is the supported path. See [Considerations & Callouts](#considerations) below for the OAuth documentation link.
-
-</aside>
+⚠️**Why not OAuth?** Datadog does support OAuth 2.0, but **OAuth clients can only be created by members of the Datadog Partner Network** — they are not globally accessible to every customer. Building a published OAuth app requires going through Datadog's separate integration/partner certification program. For a first-party, admin-managed connection, the **API + Application Key** approach is the supported path. See [Considerations & Callouts](#considerations) below for the OAuth documentation link.
 
 ---
 
@@ -69,12 +64,7 @@ Both keys are required for Datadog API endpoints. In Moveworks, we store both as
 
 ![image.png](Datadog%20Connector%20Guide/image%206.png)
 
-<aside>
-🔒
-
-**Store both keys securely.** Keep the API Key and Application Key in your secrets manager and never commit them to source control or paste them into shared docs. You'll enter them directly into Moveworks' encrypted secret fields in the next step.
-
-</aside>
+🔒**Store both keys securely.** Keep the API Key and Application Key in your secrets manager and never commit them to source control or paste them into shared docs. You'll enter them directly into Moveworks' encrypted secret fields in the next step.
 
 ---
 
@@ -86,17 +76,12 @@ In Agent Studio, create a new **HTTP Connector** and fill in the fields below.
 
 | Field | Value | Notes |
 | --- | --- | --- |
-| **Connector Name** | e.g. `datadog_test_instance` | Permanent — cannot be changed once set. |
-| **Display Name** *(optional)* | e.g. `Datadog Dev Instance` | User-friendly label. |
-| **Display Description** *(optional)* | e.g. `Dev instance for Datadog` | Free text. |
-| **Base URL** | `https://api.datadoghq.com` | **Must match your Datadog site based on region.** |
+| Connector Name | e.g. `datadog_test_instance` | Permanent — cannot be changed once set. |
+| Display Name (optional) | e.g. `Datadog Dev Instance` | User-friendly label. |
+| Display Description (optional) | e.g. `Dev instance for Datadog` | Free text. |
+| Base URL | `https://api.datadoghq.com` | Must match your Datadog site based on region. |
 
-<aside>
-🌐
-
-**Base URL depends on your Datadog site.** Use the endpoint for your region — e.g. `https://api.datadoghq.com` (US1), `https://api.datadoghq.eu` (EU1), `https://api.us3.datadoghq.com` (US3), `https://api.us5.datadoghq.com` (US5), `https://api.ap1.datadoghq.com` (AP1). Confirm your site in the Datadog URL before saving. For more info, read the [Datadog sites](https://docs.datadoghq.com/getting_started/site/) doc on the Datadog platform.
-
-</aside>
+🌐**Base URL depends on your Datadog site.** Use the endpoint for your region — e.g. `https://api.datadoghq.com` (US1), `https://api.datadoghq.eu` (EU1), `https://api.us3.datadoghq.com` (US3), `https://api.us5.datadoghq.com` (US5), `https://api.ap1.datadoghq.com` (AP1). Confirm your site in the Datadog URL before saving. For more info, read the [Datadog sites](https://docs.datadoghq.com/getting_started/site/) doc on the Datadog platform.
 
 ![image.png](Datadog%20Connector%20Guide/image%207.png)
 
@@ -106,10 +91,10 @@ Set the **Auth Config** to **Api Key Auth**, then configure:
 
 | Field | Value |
 | --- | --- |
-| **Auth Config** | `Api Key Auth` |
-| **Api Key Auth Auth Type** | `Header Auth` |
-| **Header Auth Key** | `DD-API-KEY` |
-| **API Key** | *Paste the Datadog API Key from Step 1a — stored encrypted* |
+| Auth Config | Api Key Auth |
+| Api Key Auth Auth Type | Header Auth |
+| Header Auth Key | DD-API-KEY |
+| API Key | Paste the Datadog API Key from Step 1a — stored encrypted |
 
 ![image.png](Datadog%20Connector%20Guide/image%208.png)
 
@@ -121,10 +106,10 @@ Under **Common headers**, add one entry:
 
 | Field | Value |
 | --- | --- |
-| **Value Type** | `Credential` |
-| **Credential Pattern** | `%s` |
-| **Credential Secret** | *Paste the Datadog Application Key from Step 1b — stored encrypted* |
-| **Key** | `DD-APPLICATION-KEY` |
+| Value Type | Credential |
+| Credential Pattern | %s |
+| Credential Secret | Paste the Datadog Application Key from Step 1b — stored encrypted |
+| Key | DD-APPLICATION-KEY |
 
 ![image.png](Datadog%20Connector%20Guide/image%209.png)
 
@@ -144,12 +129,7 @@ Validate the connection with a real Datadog API request before wiring it into an
 
 **Expected result:** A `200 OK` with `{"valid": true}` confirms both the API Key and Application Key are correct and the connector is authenticating successfully.
 
-<aside>
-✅
-
-If you get a `403` or `{"valid": false}`, re-check that the API Key is in `DD-API-KEY`, the Application Key is in `DD-APPLICATION-KEY`, and that the Base URL matches your Datadog site.
-
-</aside>
+✅ If you get a `403` or `{"valid": false}`, re-check that the API Key is in `DD-API-KEY`, the Application Key is in `DD-APPLICATION-KEY`, and that the Base URL matches your Datadog site.
 
 This curl command **retrieves all your dashboards from your Datadog organization**. Go to your HTTP action editor within Agent Studio and import the below API curl:
 
@@ -165,41 +145,21 @@ curl -X GET "https://api.datadoghq.com/api/v1/dashboard"
 
 ## Troubleshooting
 
-- **`403` or `{"valid": false}` on the test call** — check the API Key is in `DD-API-KEY`, the Application Key is in `DD-APPLICATION-KEY`, and the Base URL matches your Datadog site.
-- **`401` / `403` on real API calls** — the Application Key is missing scopes; add the required read scopes (Step 1b).
-- **`404` / endpoint not found** — the Base URL doesn't match your Datadog region (US1 / EU1 / US3 / US5 / AP1).
-- **`429` rate limited** — Datadog is throttling; retry after a short wait.
+- `403` or `{"valid": false}` on the test call — check the API Key is in `DD-API-KEY`, the Application Key is in `DD-APPLICATION-KEY`, and the Base URL matches your Datadog site.
+- `401` / `403` on real API calls — the Application Key is missing scopes; add the required read scopes (Step 1b).
+- `404` / endpoint not found — the Base URL doesn't match your Datadog region (US1 / EU1 / US3 / US5 / AP1).
+- `429` rate limited — Datadog is throttling; retry after a short wait.
 
 ---
 
 ## Considerations & Callouts
 
-<aside>
-👥
+👥 **1. This is shared, admin-level auth — it does not respect individual user permissions.** Because this is an API + Application Key integration, **every user of a plugin built on this connector acts as the single admin who configured the keys.** Requests do not run as the end user, so Datadog's per-user access controls are *not* enforced at the plugin level. The data returned is whatever the configured Application Key's scopes allow.
 
-**1. This is shared, admin-level auth — it does not respect individual user permissions.**
 
-Because this is an API + Application Key integration, **every user of a plugin built on this connector acts as the single admin who configured the keys.** Requests do not run as the end user, so Datadog's per-user access controls are *not* enforced at the plugin level. The data returned is whatever the configured Application Key's scopes allow.
+🛡️ **2. Gate access to match the key's data access level.** Since all callers share the same credentials, you must ensure that **only users who are entitled to that level of Datadog data can access the plugins/connector.** Restrict the plugin's audience accordingly, and use least-privilege **application key scopes** (Step 1b) so the connector can only reach the data it truly needs.
 
-</aside>
-
-<aside>
-🛡️
-
-**2. Gate access to match the key's data access level.**
-
-Since all callers share the same credentials, you must ensure that **only users who are entitled to that level of Datadog data can access the plugins/connector.** Restrict the plugin's audience accordingly, and use least-privilege **application key scopes** (Step 1b) so the connector can only reach the data it truly needs.
-
-</aside>
-
-<aside>
-🔑
-
-**3. OAuth apps are restricted to the Datadog Partner Network.**
-
-If you need per-user, OAuth-based auth instead of shared API keys, note that **OAuth clients in Datadog can only be created by Datadog partners** and require going through a separate integration/partner certification program — they are not globally available to all customers. Reference: [Datadog OAuth 2.0 documentation](https://docs.datadoghq.com/developers/authorization/) and [Become a Datadog Technology Partner](https://docs.datadoghq.com/developers/integrations/).
-
-</aside>
+🔑 **3. OAuth apps are restricted to the Datadog Partner Network.** If you need per-user, OAuth-based auth instead of shared API keys, note that **OAuth clients in Datadog can only be created by Datadog partners** and require going through a separate integration/partner certification program — they are not globally available to all customers. Reference: [Datadog OAuth 2.0 documentation](https://docs.datadoghq.com/developers/authorization/) and [Become a Datadog Technology Partner](https://docs.datadoghq.com/developers/integrations/).
 
 ---
 
