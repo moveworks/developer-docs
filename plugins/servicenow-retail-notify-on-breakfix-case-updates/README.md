@@ -47,7 +47,7 @@ Once configured, follow our [**plugin installation documentation**](https://help
 
 ## **3. ServiceNow Webhook / Event Configuration**
 
-This is an **ambient plugin** — instead of waiting for a user to start a conversation, it listens for events pushed from ServiceNow. The Business Rule that detects case assignment, awaiting-info, and resolution and sends the webhook is already part of the **Retail Store Services** application — you only need to point ServiceNow at Moveworks:
+This is an **ambient agent** — instead of waiting for a user to start a conversation, it listens for real time events pushed from ServiceNow via a webhook. The Business Rule that detects case assignment, awaiting-info, and resolution and sends the webhook is already part of the **Retail Store Services** application — you only need to point ServiceNow at Moveworks:
 
 First, obtain the Moveworks webhook listener URL and API key from Moveworks.
 
