@@ -58,7 +58,7 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 ## API Details
 
-Before running the cURL examples, replace `<YOUR_INSTANCE>` with your instance hostname and `<ACCESS_TOKEN>` with the OAuth access token issued for the user.
+Before running the cURL examples, replace `YOUR_INSTANCE` with your instance hostname and `ACCESS_TOKEN` with the OAuth access token issued for the user.
 
 ### **API: Resolve Collaborator Name**
 

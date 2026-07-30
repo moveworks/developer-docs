@@ -65,7 +65,7 @@ This plugin requires the availability of the `Reserve Space` plugin on the insta
 
 ## API Details
 
-Before running the cURL examples, replace `<YOUR_INSTANCE>` with your instance hostname and `<ACCESS_TOKEN>` with the OAuth access token issued for the user.
+Before running the cURL examples, replace `YOUR_INSTANCE` with your instance hostname and `ACCESS_TOKEN` with the OAuth access token issued for the user.
 
 ### **API: Fetch user context**
 
