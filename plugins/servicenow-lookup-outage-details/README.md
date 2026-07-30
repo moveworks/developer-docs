@@ -48,7 +48,7 @@ Once the connector is configured, follow our [**plugin installation documentatio
 
 ## API Details
 
-All calls run against the customer's ServiceNow instance. Replace `<YOUR_INSTANCE>` with your ServiceNow instance hostname and `<ACCESS_TOKEN>` with the access token for the configured connector.
+All calls run against the customer's ServiceNow instance. Replace `YOUR_INSTANCE` with your ServiceNow instance hostname and `ACCESS_TOKEN` with the access token for the configured connector.
 
 ### **API #1: List / Look Up Outages**
 
