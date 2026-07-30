@@ -55,7 +55,7 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Manage%20Presence%20Collaborators/flow.svg)
+![Conversation flow](Manage%20Presence%20Collaborators/flow.png)
 
 # **Implementation Details**
 

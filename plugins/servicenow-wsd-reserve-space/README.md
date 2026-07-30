@@ -63,7 +63,7 @@ This plugin requires the availability of the `Suggest Spaces` plugin on the inst
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Reserve%20Space/flow.svg)
+![Conversation flow](Reserve%20Space/flow.png)
 
 ## API Details
 

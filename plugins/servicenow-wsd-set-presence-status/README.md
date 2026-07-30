@@ -55,7 +55,7 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 **Note:** References to the instance must be updated after the plugin is installed.
 
 ## Visual representation of how the plugin works
-![Conversation flow](Set%20Presence%20Status/flow.svg)
+![Conversation flow](Set%20Presence%20Status/flow.png)
 
 ## API Details
 

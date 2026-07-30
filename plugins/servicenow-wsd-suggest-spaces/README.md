@@ -60,7 +60,7 @@ This plugin requires the availability of the `Reserve Space` plugin on the insta
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Suggest%20Spaces/flow.svg)
+![Conversation flow](Suggest%20Spaces/flow.png)
 
 
 ## API Details

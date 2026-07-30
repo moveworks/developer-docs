@@ -55,7 +55,7 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Cancel%20Reservation/flow.svg)
+![Conversation flow](Cancel%20Reservation/flow.png)
 
 # **Implementation Details**
 

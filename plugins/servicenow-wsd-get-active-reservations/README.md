@@ -57,7 +57,7 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Get%20Active%20Reservations/flow.svg)
+![Conversation flow](Get%20Active%20Reservations/flow.png)
 
 ## API Details
 
