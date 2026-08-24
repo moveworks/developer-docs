@@ -14,10 +14,15 @@ jobs:
       codeblock_message: '${{ steps.code_blocks.outputs.codeblock_message }}'
       codeblock_failed: '${{ steps.code_blocks.outputs.codeblock_failed }}'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: '${{ github.event.pull_request.head.sha }}'
           fetch-depth: 0
+          # This workflow intentionally checks out fork PR code under
+          # pull_request_target so the ci/ validation scripts can inspect the
+          # contributed docs. The job runs with permissions: read-all and no
+          # secrets beyond the default token.
+          allow-unsafe-pr-checkout: true
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
