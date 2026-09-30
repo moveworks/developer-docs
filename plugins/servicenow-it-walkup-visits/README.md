@@ -124,10 +124,6 @@ queue-only entry never offers to book again.
 
 **Note:** References to the instance must be updated after the plugin is installed.
 
-## Visual representation of how the plugin works
-
-![IT Walk-up Visits flow](IT%20Walk-up%20Visits/flow.png)
-
 ## API Details
 
 ### Custom REST API — `walk_in` service (ships with this plugin's app, `sn_itsm_empworks`)
