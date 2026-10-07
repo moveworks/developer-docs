@@ -14,11 +14,11 @@ systems:
 
 The **“Look Up On-Call Members”** plugin enables users to instantly retrieve current on-call personnel for a specified PagerDuty team—directly through the Moveworks AI Assistant. By simply providing the team name, users can access key details like member names, contact numbers, and shift start times. This streamlined approach eliminates the need to navigate PagerDuty, accelerating escalations and improving response times.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites:-**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -30,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend creating the connector for PagerDuty first, prior to installing this plugin. Please follow the  [PagerDuty Connector](https://developer.moveworks.com/marketplace/package/?id=pagerduty&hist=home) guide to set up the connector.
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix:-**
 

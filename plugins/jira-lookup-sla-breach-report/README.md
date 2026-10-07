@@ -15,11 +15,11 @@ systems:
 
 The **“Lookup SLA Breach Report”** plugin helps users track and review issues that have breached SLA targets across different projects. It supports multiple SLA metrics—(e.g., Time to First Response, Time to Resolution, etc.)—and allows for custom date range selection. The report provides key issue details, including summary, status, assignee, and breach time, with the option to view complete information using the issue key.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -41,7 +41,7 @@ We recommend setting up **Jira** before installing this plugin. Please follow th
 
 This plugin requires a Jira Service Management Premium or Enterprise plan and appropriate permissions to access advanced SLA metrics.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Customization Process:**
 

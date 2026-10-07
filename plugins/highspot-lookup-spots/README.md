@@ -14,11 +14,11 @@ systems:
 
 The **highspot_get_spots** plugin allows users to retrieve a list of **Spots** they have access to in **Highspot**—including pitch spaces, folders, or collections. This makes it easy to find and interact with relevant content spaces directly through the Moveworks AI Assistant.
 
-This guide will help you install the plugin quickly using Agent Studio. Let’s get started!
+This guide will help you install the plugin quickly using Tool Studio. Let’s get started!
 
 ## Prerequisites
 
-- Access to **Agent Studio**
+- Access to **Tool Studio**
 
 ## What are we building?
 

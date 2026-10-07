@@ -15,11 +15,11 @@ systems:
 
 The **“Get Incident Assigned to Me”** plugin enables users to instantly view incidents assigned to them in ServiceNow directly through the Moveworks AI Assistant, eliminating the need to manually log in and search. With a simple query, users can access key incident details such as the incident number, short description, assignment status, and assigned group—helping them stay organized and accelerate issue resolution
 
-This guide will walk you through the installation and configuration of the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through the installation and configuration of the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -29,7 +29,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please refer to our [**ServiceNow Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once the connector is configured, proceed with the plugin installation to complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please refer to our [**ServiceNow Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once the connector is configured, proceed with the plugin installation to complete the setup efficiently.
 
 For this plugin, ensure the ServiceNow integration user has the following permissions:
 

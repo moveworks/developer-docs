@@ -16,11 +16,11 @@ systems:
 ## Introduction
 The “Summarize Queue Backlog” plugin enables support teams to gain instant visibility into their open case workload within Salesforce queues using the Moveworks AI Assistant. It provides a consolidated snapshot of backlog metrics—such as total open cases, distribution by priority, and average case age—across the queues agents belong to. This empowers teams to triage effectively, balance workloads, and take timely action to improve customer response times, without navigating complex Salesforce reports or dashboards.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -30,7 +30,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**Salesforce Connector Guide**](https://marketplace.moveworks.com/connectors/salesforce?hist=home%2Cplgn.salesforce-create-campaign-inside-account%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**Salesforce Connector Guide**](https://marketplace.moveworks.com/connectors/salesforce?hist=home%2Cplgn.salesforce-create-campaign-inside-account%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the Salesforce integration user has the following permissions:
 

@@ -16,11 +16,11 @@ systems:
 
 The **“Suggest Incident Categories and Subcategories”** capability empowers users to quickly classify incidents in ServiceNow with the help of the Moveworks AI Assistant. By analyzing the user's description, the assistant intelligently recommends the most relevant category and subcategory, reducing manual effort and improving data consistency. This streamlined approach accelerates incident triaging, enhances reporting accuracy, and ensures efficient service delivery across IT operations.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites:**
 
-  • Access to **Agent Studio**
+  • Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -32,7 +32,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 We recommend creating the connector for Servicenow first, prior to installing this plugin. Please follow the  [Servicenow Connector](https://marketplace.moveworks.com/connectors/servicenow#how-to-implement) guide to set up the connector.
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix:**
 

@@ -16,11 +16,11 @@ systems:
 
 The “Get Purchase Information” plugin allows employees to quickly retrieve detailed records of which SKUs(Stock Keeping Unit) a customer has purchased, all through the Moveworks AI Assistant integrated with Salesforce. This streamlines access to key customer data, enabling sales, support, and operations teams to respond faster and more effectively—without needing to manually search Salesforce records.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -30,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our [Salesforce Connector Guide](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) to do so. Once completed, follow our plugin installation documentation to install the **Get_Purchase_Information** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Tool Studio** beforehand to streamline the process. Please follow our [Salesforce Connector Guide](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) to do so. Once completed, follow our plugin installation documentation to install the **Get_Purchase_Information** plugin in minutes.
 
 After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup
 

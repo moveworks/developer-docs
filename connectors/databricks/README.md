@@ -6,9 +6,9 @@ name: Databricks
 
 # Introduction
 
-Integrating Databricks with Agent Studio provides a seamless fusion of data analytics and workflow automation for enhanced productivity. By utilizing Databricks's powerful REST API and employing the appropriate authentication mechanisms, you can automate data processing and optimize your data-driven workflows. 
+Integrating Databricks with Tool Studio provides a seamless fusion of data analytics and workflow automation for enhanced productivity. By utilizing Databricks's powerful REST API and employing the appropriate authentication mechanisms, you can automate data processing and optimize your data-driven workflows. 
 
-This guide offers a step-by-step process to connect your Databricks environment to Agent Studio and test the integration to ensure efficient data collaboration and insight generation.
+This guide offers a step-by-step process to connect your Databricks environment to Tool Studio and test the integration to ensure efficient data collaboration and insight generation.
 
 Let’s get started!
 
@@ -21,7 +21,7 @@ You have to be one of the following:
 
 # **Connect with OAuth Machine-to-Machine (M2M)**
 
-Also known as the 2-legged OAuth and OAuth Client Credentials Flow, this guide will focus on the Machine-to-Machine authentication flow between your Databricks instance and Agent Studio.
+Also known as the 2-legged OAuth and OAuth Client Credentials Flow, this guide will focus on the Machine-to-Machine authentication flow between your Databricks instance and Tool Studio.
 
 Learn more about it [here](https://docs.databricks.com/aws/en/dev-tools/auth/oauth-m2m).
 
@@ -53,7 +53,7 @@ the steps:
     ![CleanShot 2025-04-11 at 10.50.14.png](Databricks%2010e588d8909f8029a3aed9045f2ea423/CleanShot_2025-04-11_at_10.50.14.png)
     
 8. Copy the Client ID and Secret from the pop-up window and store them somewhere safe as you
-won’t be able to see the “Secret” again. We will be using these to create the connector within Agent Studio.
+won’t be able to see the “Secret” again. We will be using these to create the connector within Tool Studio.
     
     ![CleanShot 2025-04-11 at 10.50.44.png](Databricks%2010e588d8909f8029a3aed9045f2ea423/CleanShot_2025-04-11_at_10.50.44.png)
     
@@ -79,9 +79,9 @@ won’t be able to see the “Secret” again. We will be using these to create 
 
  
 
-## STEP 2: Connect to Agent Studio
+## STEP 2: Connect to Tool Studio
 
-- In Agent Studio, create a new action with the following configuration:
+- In Tool Studio, create a new action with the following configuration:
     - Base URL : The hostname for the workspace or the URL of your
     Databricks workspace (e.g., `https://dbc-a1b2c3-d4e5.cloud.databricks.com`).
     - Auth config : **OAuth2**
@@ -107,4 +107,4 @@ won’t be able to see the “Secret” again. We will be using these to create 
 
 # Congratulations!
 
-You've successfully integrated Databricks with Agent Studio. This opens up a variety of automation and integration possibilities within your Databricks environment.
+You've successfully integrated Databricks with Tool Studio. This opens up a variety of automation and integration possibilities within your Databricks environment.

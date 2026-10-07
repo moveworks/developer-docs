@@ -20,13 +20,13 @@ With this plugin, users can:
 - Automatically generate and execute SQL queries using Snowflake Cortex
 - View results from your Snowflake warehouse in real-time
 
-This guide will walk you through the installation process in Agent Studio. Let’s get started!
+This guide will walk you through the installation process in Tool Studio. Let’s get started!
 
 ---
 
 ## Prerequisites
 
-- Access to **Agent Studio**
+- Access to **Tool Studio**
 - A **semantic model** created in Snowflake (required for natural language interpretation)
     
     → [Follow this tutorial to create your model](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst/tutorials/tutorial-1#introduction)
@@ -56,7 +56,7 @@ For the **Query Snowflake with Snowflake Cortex Analyst** plugin, ensure the con
 
 - Access to `/api/v2/cortex/analyst/message` and `/api/v2/statements`
 
-Once the connector is configured, continue with the standard plugin installation process in Agent Studio.
+Once the connector is configured, continue with the standard plugin installation process in Tool Studio.
 
 Visit our plugin installation documentation →
 

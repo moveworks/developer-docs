@@ -14,11 +14,11 @@ systems:
 
 The **Salesforce Create Account** plugin enables users to seamlessly create and manage new account records in Salesforce directly through the Moveworks AI Assistant. This streamlined process eliminates manual data entry, saving time and ensuring accuracy.
 
-This guide will walk you through the installation and configuration of the plugin in Agent Studio, allowing you to automate account creation effortlessly. Let’s begin!
+This guide will walk you through the installation and configuration of the plugin in Tool Studio, allowing you to automate account creation effortlessly. Let’s begin!
 
 # **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 
@@ -28,7 +28,7 @@ This [purple chat](ttps://developer.moveworks.com/creator-studio/developer-tool
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin installation documentation to install the **Create Account** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Tool Studio** beforehand to streamline the process. Please follow our [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin installation documentation to install the **Create Account** plugin in minutes.
 
 ## **Required Permissions:**
 

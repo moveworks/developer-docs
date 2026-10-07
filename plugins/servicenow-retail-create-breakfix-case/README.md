@@ -57,7 +57,7 @@ This plugin uses **two** ServiceNow connectors side by side:
 
 Both connectors must be fully set up before installing this plugin.
 
-Once configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 # **How This Plugin Works**
 

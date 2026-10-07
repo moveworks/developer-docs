@@ -18,11 +18,11 @@ The **"Manage Issue Ticket Archives"** plugin helps you clean up old resolved ti
 
 Instead of doing this manually, the plugin makes the process quick and automatic. It works with **Jira Premium or Enterprise plans** and is great for keeping your project tidy and organized.
 
-This guide will show you how to set it up in **Agent Studio** in just a few steps. Let’s get started!
+This guide will show you how to set it up in **Tool Studio** in just a few steps. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -44,7 +44,7 @@ We recommend setting up **Jira** before installing this plugin. Please follow th
 
 - This plugin requires a **Jira Premium or Enterprise plan**, as the issue archive feature is only available in these plans.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

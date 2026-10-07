@@ -19,13 +19,13 @@ JIRA is a leading platform for project and task management. The **Lookup Issue S
 
 Integrating this feature into your bot allows users to quickly check issue progress and manage tasks more efficiently, reducing navigation time and boosting productivity.
 
-This guide walks you through adding **Lookup Issue Status** to your bot using **Agent Studio**.
+This guide walks you through adding **Lookup Issue Status** to your bot using **Tool Studio**.
 
 Let’s get started! 
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

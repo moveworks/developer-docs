@@ -18,11 +18,11 @@ systems:
 
 The Salesforce **“New vs. Expansion Business Mix”** plugin analyzes all Closed-Won deals in the in a given timeframe/time period and breaks down revenue by **New Business** vs. **Expansion** — giving GTM leaders instant visibility into their true growth mix. By eliminating the need to manually build Salesforce reports or navigate complex dashboards, the plugin allows leaders to quickly understand where revenue is coming from, how their mix is trending, and which areas need attention. This ensures faster strategic decisions, clearer alignment across teams, and a more efficient way to evaluate business performance.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -168,13 +168,13 @@ If your Salesforce instance does **not** track Segment or Region, or if the Oppo
 - Confirm the field is **Visible** to the **Integration User**.
 - Click **Save**.
 
-### Plugin Configuration (Agent Studio)
+### Plugin Configuration (Tool Studio)
 
 After completing **Path 1 or Path 2**, configure the plugin to reference the correct Salesforce fields.
 
 ### Configuration Steps
 
-1. Navigate to **Agent Studio → Plugins**.
+1. Navigate to **Tool Studio → Plugins**.
 2. Open **Salesforce New vs. Expansion Business Mix**.
 3. Click **Edit** and open the **Configuration / Process** tab.
 4. Select the **Action Activity** block (typically the primary Compound Action).
@@ -197,7 +197,7 @@ After completing **Path 1 or Path 2**, configure the plugin to reference the cor
 - Region field exists and is populated
 - Opportunity Type includes New Business and Expansion values
 - Integration User has access to required fields
-- Correct API names are configured in Agent Studio
+- Correct API names are configured in Tool Studio
 
 **Your Instance Configuration:**
 
@@ -212,7 +212,7 @@ All Salesforce API endpoints in this plugin use `{{YOUR_INSTANCE_DOMAIN}}` as 
 5. Ensure all API requests use **HTTPS** and leverage **OAuth 2.0 authentication**.
 6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

@@ -15,11 +15,11 @@ systems:
  
 The **"Approve / Reject Knowledge Articles"** plugin allows approvers to review and take action on knowledge articles directly through the Moveworks AI Assistant, without logging into the ServiceNow system. This streamlines the article approval workflow, speeds up decision-making, and ensures timely publishing while maintaining content quality and governance. Approvers can also preview the article’s content before making their decision.
  
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started
  
 ## **Prerequisites**
  
-- Access to Agent Studio
+- Access to Tool Studio
  
 ## **What are we building?**
  
@@ -38,7 +38,7 @@ Ensure the following permissions are granted:
     - `Update` access to the `kb_knowledge` table (to approve or reject articles)
 - **Field Access**: Sufficient access to retrieve and update information related to knowledge article approvals
  
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
  
 ## **Appendix**
  

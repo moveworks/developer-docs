@@ -14,7 +14,7 @@ Workday supports various kinds of web service technologies including the ReST AP
 - **Reports as a Service (RaaS) API**: The RaaS API enables us to access advanced and search reports as web services. These reports can be built in the Workday Portal and further consumed via the RaaS API for fetching data. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/reports-as-a-service-raas-/dan1370796320263.html).
 - **Workday Query Language (WQL)**: WQL enables you to use SQL-like syntax to access Workday data using data sources and fields instead of reports. It allows you to query Workday for data and explore data sources, filters, and fields. Learn more about it [here](https://doc.workday.com/admin-guide/en-us/reporting-and-analytics/custom-reports-and-analytics/workday-query-language-wql-/aht1611188422513.html?toc=1.20.0).
 
-This guide will walk you through creating a connector within Agent Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. The guide has two main sections:
+This guide will walk you through creating a connector within Tool Studio to make API calls to Workday where you can leverage any of the above types of web service and connect it to Moveworks. The guide has two main sections:
 
 - [**OAuth 2.0 with Client Credentials Grant Setup**](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Client-Credentials-Grant-Setup)
 - [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/workday#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)
@@ -26,11 +26,11 @@ This guide will walk you through creating a connector within Agent Studio to mak
 
 # OAuth 2.0 with Client Credentials Grant Setup
 
-To connect to Workday from within Agent Studio, we are going to be using [OAuth2 with the Refresh Token](https://oauth.net/2/grant-types/refresh-token/). This requires a client_id, a client_secret and a refresh_token. 
+To connect to Workday from within Tool Studio, we are going to be using [OAuth2 with the Refresh Token](https://oauth.net/2/grant-types/refresh-token/). This requires a client_id, a client_secret and a refresh_token. 
 
 ### Walkthrough
 
-The following steps will guide you through setting up a user and generating the necessary credentials to configure the connector in Agent Studio:
+The following steps will guide you through setting up a user and generating the necessary credentials to configure the connector in Tool Studio:
 
 1. Create an Integration Systems User (ISU)
 2. Create Security Group
@@ -209,15 +209,15 @@ curl --location 'https://wd2-impl-services1.workday.com/ccx/api/wql/v1/YOUR_TENA
 
 3. Confirm the values have been filled in properly by the import, if they have, you can run the command by hitting `send`
 
-The above command should return the top five employees in your Workday database. If successful, you are done with the hardest part of connecting Agent Studio to Workday! 
+The above command should return the top five employees in your Workday database. If successful, you are done with the hardest part of connecting Tool Studio to Workday! 
 
 ![Alt text](images/image-3.png)
 
-Next, let's take the above and create a connector within Agent Studio so we can query directly from within Moveworks.
+Next, let's take the above and create a connector within Tool Studio so we can query directly from within Moveworks.
 
-# Create a Connector and Test in Agent Studio
+# Create a Connector and Test in Tool Studio
 
-Now that we have created everything within Workday and Postman, we can configure the connector on Agent Studio.
+Now that we have created everything within Workday and Postman, we can configure the connector on Tool Studio.
 
 ## Create a Connector (Oauth 2.0)
 
@@ -233,7 +233,7 @@ Now that we have created everything within Workday and Postman, we can configure
     - Refresh Token Grant Refresh Token: `YOUR_REFRESH_TOKEN`
     - Oauth2 Token Url: `YOUR_TOKEN_URL` (Example : https://wd2-impl-services1.workday.com/ccx/oauth2/YOUR_TENANT/token)
 
-    ![Agent Studio Image](images/agent_studi.png)
+    ![Tool Studio Image](images/agent_studi.png)
     
     Fill in the above for the connection information while replacing YOUR_BASE_URL, YOUR_CLIENT_ID, YOUR_CLIENT_SECRET, YOUR_REFRESH_TOKEN, YOUR_TOKEN_URL and YOUR_TENANT_NAME with the values from the above steps where you set up the Workday connection.
 
@@ -241,7 +241,7 @@ Now that we have created everything within Workday and Postman, we can configure
 
 ## Test the Connection
 
-1. To test the connector, let's create a HTTP Action in Agent Studio. Navigate to HTTP Actions and click on Create. You can find more details on HTTP Actions [here](https://help.moveworks.com/docs/http-actions).
+1. To test the connector, let's create a HTTP Action in Tool Studio. Navigate to HTTP Actions and click on Create. You can find more details on HTTP Actions [here](https://help.moveworks.com/docs/http-actions).
 
 2. To test the same command from the eariler section, you can import the curl command in the HTTP Action. Replace <YOUR_TENANT_NAME> with your tenant in the action.
 
@@ -264,12 +264,12 @@ Now that we have created everything within Workday and Postman, we can configure
 
 # **Congratulations!**
 
-You've successfully integrated Workday's API with Agent Studio. This opens up a variety of automation and integration possibilities to Workday.
+You've successfully integrated Workday's API with Tool Studio. This opens up a variety of automation and integration possibilities to Workday.
 
 
 # **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
 
-To connect to Workday from within **Agent Studio** using user-consent-based authentication, configure the **OAuth 2.0 with Authorization Code (User Consent)** flow.
+To connect to Workday from within **Tool Studio** using user-consent-based authentication, configure the **OAuth 2.0 with Authorization Code (User Consent)** flow.
 
 This ensures that Workday users explicitly authorize Moveworks before API actions are performed on their behalf.
 
@@ -281,8 +281,8 @@ Follow these steps to set up and validate your connection:
 2. Register a new API Client
 3. Configure API Client Details
 4. Generate Authorization Code
-5. Integrate with Agent Studio
-6. Test the Connector in Agent Studio
+5. Integrate with Tool Studio
+6. Test the Connector in Tool Studio
 
 ## **Step 1: Log in to Workday**
 
@@ -341,18 +341,18 @@ scope=openid%20workday:read
 
 1. Open the above URL in your browser.
 2. Log in using your Workday credentials.
-3. Approve the consent request for Moveworks Agent Studio.
+3. Approve the consent request for Moveworks Tool Studio.
 4. You’ll be redirected to your configured **Redirect URI** with a `code` parameter, for example:
 
 ![image.png](images/4ae66ecd-f6b6-4168-9e15-271d3f942ef8.png)
 
-5. Copy the **authorization code** (for example, `{{authorization_code}}`) — you’ll use this in the connector setup within **Agent Studio**
+5. Copy the **authorization code** (for example, `{{authorization_code}}`) — you’ll use this in the connector setup within **Tool Studio**
 
-After obtaining the **authorization code**, make sure to **save it securely** together with your **Client ID**, **Client Secret**, and **Redirect URI**, as these will be required when setting up the **Workday User Consent Authentication Connector** in **Agent Studio**
+After obtaining the **authorization code**, make sure to **save it securely** together with your **Client ID**, **Client Secret**, and **Redirect URI**, as these will be required when setting up the **Workday User Consent Authentication Connector** in **Tool Studio**
 
-## **Step 5: Integrate with Agent Studio**
+## **Step 5: Integrate with Tool Studio**
 
-In **Agent Studio**, create a new connector with the following configuration:
+In **Tool Studio**, create a new connector with the following configuration:
 
 **Connector Name:** `{{Connector_Name}}`
 
@@ -393,7 +393,7 @@ In **Agent Studio**, create a new connector with the following configuration:
 
 Once all fields are completed, click **Save** to create and store your connector configuration.
 
-## **Step 6: Test the Connector in Agent Studio**
+## **Step 6: Test the Connector in Tool Studio**
 
 Set up your API. You can read more about setting up API actions from our **API Configuration Reference**.
 
@@ -435,7 +435,7 @@ To find your tenant name:
 
 ### **Test Your Setup:**
 
-1. In **Agent Studio**, create and run a new **Action**.
+1. In **Tool Studio**, create and run a new **Action**.
 2. Import the above **cURL command**.
 3. Add the **Workday User Consent Auth Connector**.
 4. Click **Test → Generate New Access Token**.
@@ -445,9 +445,9 @@ To find your tenant name:
     ![image.png](images/image%204.png)
     
 
-### **Establish a Connection Between Your UCA Connector and Agent Studio**
+### **Establish a Connection Between Your UCA Connector and Tool Studio**
 
-- Integrate Your UCA Connector with Agent Studio
+- Integrate Your UCA Connector with Tool Studio
 
 ![image.png](images/image%205.png)
 
@@ -473,4 +473,4 @@ To find your tenant name:
 
 # **Congratulations!**
 
-You’ve successfully integrated **Workday’s API** with **Agent Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Workday data based on user consent within your Workday instance
+You’ve successfully integrated **Workday’s API** with **Tool Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Workday data based on user consent within your Workday instance

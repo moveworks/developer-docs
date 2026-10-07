@@ -18,11 +18,11 @@ systems:
 
 The **“Identify Open Incidents”** Plugin equips support and incident response teams with instant visibility into unresolved incidents in PagerDuty. By surfacing active (non-resolved) incidents directly in Moveworks conversations, this plugin streamlines triage, reduces time spent checking external dashboards, and accelerates issue resolution.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites:-**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -34,7 +34,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend creating the connector for PagerDuty first, prior to installing this plugin. Please follow the  [PagerDuty Connector](https://developer.moveworks.com/marketplace/package/?id=pagerduty&hist=home) guide to set up the connector.
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix:-**
 

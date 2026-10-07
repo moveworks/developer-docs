@@ -35,7 +35,7 @@ This plugin requires an active **Google Calendar connector** configured with the
 
 ### 2. Plugin Installation
 
-Once the connector is ready, follow the [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for steps on how to install and activate the plugin in Agent Studio.
+Once the connector is ready, follow the [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for steps on how to install and activate the plugin in Tool Studio.
 
 ### 3. Google Workspace System Requirements
 

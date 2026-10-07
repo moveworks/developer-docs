@@ -14,11 +14,11 @@ systems:
 
 The **Lookup Pending Job Requisitions for Approval** plugin enables HRs, Directors, and Finance leaders to quickly retrieve pending job requisitions awaiting approval in Greenhouse, all through the Moveworks AI Assistant. This ensures real-time visibility into approval workflows, streamlining decision-making and maintaining compliance with hiring policies.
 
-This guide will walk you through the quick and easy installation process in Agent Studio. Let’s get started!
+This guide will walk you through the quick and easy installation process in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

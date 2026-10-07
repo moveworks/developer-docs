@@ -10,9 +10,9 @@ redirects:
 
 **Google Admin SDK** is Google's suite of APIs for managing Google Workspace resources — including users, groups, devices, and organizational data — at scale.
 
-Connecting the Google Admin SDK to **Moveworks Agent Studio** allows the AI Assistant to access and manage data from your Google Workspace directory. For example, this connector can be used to look up room and building resources across your organization, or to retrieve user and group information for identity-based workflows.
+Connecting the Google Admin SDK to **Moveworks Tool Studio** allows the AI Assistant to access and manage data from your Google Workspace directory. For example, this connector can be used to look up room and building resources across your organization, or to retrieve user and group information for identity-based workflows.
 
-This guide walks through setting up the OAuth 2.0 Authorization Code (User Consent Auth) flow to connect the Google Admin SDK with Agent Studio. For a full list of available API resources, refer to the [Admin SDK Directory API documentation](https://developers.google.com/workspace/admin/directory/v1/guides).
+This guide walks through setting up the OAuth 2.0 Authorization Code (User Consent Auth) flow to connect the Google Admin SDK with Tool Studio. For a full list of available API resources, refer to the [Admin SDK Directory API documentation](https://developers.google.com/workspace/admin/directory/v1/guides).
 
 ---
 
@@ -27,7 +27,7 @@ This guide walks through setting up the OAuth 2.0 Authorization Code (User Conse
 
 ### Moveworks Requirements
 
-- Agent Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
+- Tool Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
 
 ---
 
@@ -145,7 +145,7 @@ Google's OAuth 2.0 endpoints are standardized and do not vary by tenant:
 
 ### Step 6: Configure the Moveworks HTTP Connector
 
-1. In Agent Studio, go to **HTTP Connectors → Create**.
+1. In Tool Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
     - **Connector Name:** `Google_AdminSDK_Authcode_Flow` (or your preferred name)
     - **Base URL:** `https://admin.googleapis.com`
@@ -177,7 +177,7 @@ Google's OAuth 2.0 endpoints are standardized and do not vary by tenant:
 
 ### Step 7: Test the User Consent Connector
 
-1. In Agent Studio, navigate to a new **HTTP Action**.
+1. In Tool Studio, navigate to a new **HTTP Action**.
 2. Fill in the following fields:
     - **Connector:** Select **Inherit from existing connector** and choose the connector created in Step 6.
     - **Action Name:** `Get_Buildings` (or your preferred name)
@@ -208,4 +208,4 @@ Google's OAuth 2.0 endpoints are standardized and do not vary by tenant:
 
 ## Congratulations!
 
-You've successfully connected the Google Admin SDK to Moveworks Agent Studio using the OAuth 2.0 Authorization Code (User Consent) flow. Your connector is now ready to support plugins that require access to your Google Workspace directory on the Moveworks AI Assistant.
+You've successfully connected the Google Admin SDK to Moveworks Tool Studio using the OAuth 2.0 Authorization Code (User Consent) flow. Your connector is now ready to support plugins that require access to your Google Workspace directory on the Moveworks AI Assistant.

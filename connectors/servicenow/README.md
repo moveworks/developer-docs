@@ -6,7 +6,7 @@ name: ServiceNow
 
 # Introduction
 
-ServiceNow provides granular table-level access to its data as part of its service management capabilities. This guide will walk through how you can connect your ServiceNow instance to Moveworks Agent Studio through:
+ServiceNow provides granular table-level access to its data as part of its service management capabilities. This guide will walk through how you can connect your ServiceNow instance to Moveworks Tool Studio through:
 
 1. [OAuth 2.0 Authorization Code Grant Flow (User Consent Auth)](https://marketplace.moveworks.com/connectors/servicenow#oauth-2-0-authorization-code)
 2. [OAuth 2.0 Client Credentials Grant Flow (System Integration User)](https://marketplace.moveworks.com/connectors/servicenow#oauth-2-0-with-client-credentials)
@@ -88,7 +88,7 @@ With the **Authorization Code Grant** flow, each end user consents to Moveworks 
 
 ## Step 3: Test & validate the connection
 
-1. Go to Agent Studio → HTTP Action editor
+1. Go to Tool Studio → HTTP Action editor
 2. Import the following API curl, we will use it to test the newly created connector
 
     ```bash
@@ -115,7 +115,7 @@ With the **Authorization Code Grant** flow, each end user consents to Moveworks 
 
     ![Callback request successful](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-UCA-callback-success.png)
 
-8. Go back to the HTTP action editor on Agent Studio and check the status of the connector. You should now see a token authorized state against the connector with other details.
+8. Go back to the HTTP action editor on Tool Studio and check the status of the connector. You should now see a token authorized state against the connector with other details.
 
     ![Token authorized state](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-UCA-token-authorized.png)
 
@@ -123,7 +123,7 @@ With the **Authorization Code Grant** flow, each end user consents to Moveworks 
 
     ![200 success response](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/SNOW-UCA-test-success.png)
 
-10. Your connector is now configured and validated. You can start using it to build plugins on Agent Studio.
+10. Your connector is now configured and validated. You can start using it to build plugins on Tool Studio.
 
 # OAuth 2.0 with Client Credentials
 
@@ -170,9 +170,9 @@ With the **Authorization Code Grant** flow, each end user consents to Moveworks 
 
 ![Screenshot 2024-03-07 at 8.42.07 AM.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/Screenshot_2024-03-07_at_8.42.07_AM.png)
 
-## Step 3: Integrate with Agent Studio
+## Step 3: Integrate with Tool Studio
 
-1. In Agent Studio, create a new connector with the following configuration:
+1. In Tool Studio, create a new connector with the following configuration:
     - Base URL: `https://{{instance_name}}.service-now.com`
     - Auth Config: `OAuth 2.0`
     - Grant Type: `Password Grant`
@@ -227,9 +227,9 @@ Follow steps in our help site to grant the necessary roles/permissions required 
     ![Screenshot 2024-03-07 at 8.29.20 AM.png](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/Screenshot_2024-03-07_at_8.29.20_AM.png)
     
 
-## Step 4: Integrate with Agent Studio
+## Step 4: Integrate with Tool Studio
 
-1. In Agent Studio, create a new connector with the following configuration:
+1. In Tool Studio, create a new connector with the following configuration:
     - Base URL: `https://{{instance_name}}.service-now.com`
     - Auth Config: `Basic Auth`
     - Username: `username` from previous steps
@@ -255,7 +255,7 @@ Follow steps in our help site to grant the necessary roles/permissions required 
         | Key | Value |
         | --- | --- |
         | sysparm_limit | 1 |
-3. Test your setup in Agent Studio and look for a successful execution.
+3. Test your setup in Tool Studio and look for a successful execution.
     
     ![Untitled](Authentication%20Tutorial%20ServiceNow%20v2%20bf9283817e704a4385a4c5e8ffe8859e/Untitled%201.png)
 
@@ -273,7 +273,7 @@ Follow steps in our help site to grant the necessary roles/permissions required 
 
 ## Create a Moveworks Listener (UI steps)
 
-In **Agent Studio → Listeners**:
+In **Tool Studio → Listeners**:
 
 1. **Create Listener** → copy the **Webhook URL** (you’ll paste this into ServiceNow’s **Endpoint URL**). 
 2. **Verification (secure your listener)**
@@ -339,4 +339,4 @@ In your Workflow Studio Flow:
 
 # Congratulations!
 
-You've successfully integrated ServiceNow’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your ServiceNow environment.
+You've successfully integrated ServiceNow’s API with Tool Studio. This opens up a variety of automation and integration possibilities within your ServiceNow environment.

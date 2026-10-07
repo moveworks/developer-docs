@@ -15,11 +15,11 @@ systems:
 
 The **Look Up Leads for a Marketing Campaign** plugin empowers sales reps to instantly pull a list of all prospects who have responded to a recent marketing campaign. By getting real-time access to the most recent and relevant leads, reps can prioritize outreach and take immediate action, ensuring no hot lead falls through the cracks. This streamlines the sales process, boosts productivity, and helps accelerate pipeline growth directly from the AI Assistant.
 
-This guide will walk you through the simple installation process in Agent Studio. Let’s get started!
+This guide will walk you through the simple installation process in Tool Studio. Let’s get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

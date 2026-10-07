@@ -15,11 +15,11 @@ systems:
 
 The **“Find Suspended Incidents Assigned to My Group”** plugin allows **managers and group members** to quickly **view all suspended ServiceNow Incidents assigned to their team** using the **Moveworks AI Assistant**. By making suspended incidents visible in one place, this plugin helps ensure that pending issues are tracked proactively, enabling the team to take timely action and resolve suspended incidents faster.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -36,7 +36,7 @@ For this plugin, ensure the user has the following permissions:
 - **Table Access**: `Read` access to the `sys_user`, `sys_user_group` and `incident` tables.
 - **Field Access:** Sufficient access to retrieve incident details and user group information from ServiceNow.
 
-> Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+> Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 > 
 
 ## **Appendix:-**

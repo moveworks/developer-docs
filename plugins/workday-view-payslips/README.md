@@ -17,11 +17,11 @@ systems:
 
 The **“View Payslips”** plugin allows employees to securely access their payslips for any pay period directly through the Moveworks AI Assistant. This provides a convenient and efficient way to review salary details and net pay without navigating through Workday manually.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 

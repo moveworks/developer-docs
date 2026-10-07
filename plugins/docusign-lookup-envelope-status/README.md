@@ -15,11 +15,11 @@ systems:
 
 The **Look up status of an envelope** plugin allows users to seamlessly find the status of an envelope they have sent through the Moveworks AI Assistant. 
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

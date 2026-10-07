@@ -18,11 +18,11 @@ systems:
 
 The **Look Up Employee Information** plugin allows HR team members to instantly access employee details from **SAP SuccessFactors** directly through the Moveworks AI Assistant. Users can search by a partially matching name, email, employee ID, or department to quickly retrieve key information such as role, department, division, manager, location, hire date, and employment status. This eliminates the need to log into the SAP portal, giving HR teams fast, accurate, and convenient access to employee records whenever they need them.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 
@@ -32,7 +32,7 @@ This [**purple chat**](https://marketplace.moveworks.com/purple-chat?conversati
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://marketplace.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://marketplace.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 

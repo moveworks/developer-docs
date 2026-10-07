@@ -16,11 +16,11 @@ systems:
 
 The **Lookup Job Applications** plugin enables hiring managers and recruiters to effortlessly retrieve candidate applications for a specific job in Greenhouse through the Moveworks AI Assistant. This allows for quick access to applicant details, streamlining the hiring process and improving recruitment efficiency.
 
-This guide will walk you through the simple installation process in Agent Studio. Let’s get started!
+This guide will walk you through the simple installation process in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

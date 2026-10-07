@@ -17,13 +17,13 @@ systems:
 
 The “**Jamf Look Up My Computer Warranty Info”** plugin allows employees to quickly access detailed warranty and purchase information for their assigned devices. With the help of the Moveworks AI Assistant, users can instantly retrieve key warranty attributes  including device name, model, serial number, purchase date, warranty start and end dates and receive a summarized view of their computer’s warranty status. This enables employees and support teams to address repair or replacement needs efficiently, without manually navigating Jamf Pro.
 
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. 
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. 
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -66,7 +66,7 @@ To find your instance name:
     Make sure to update this across all actions that reference the Jamf Pro API.
     
 
-Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Tool Studio.
 
 # **Appendix**
 

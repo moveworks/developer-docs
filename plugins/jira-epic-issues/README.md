@@ -19,13 +19,13 @@ JIRA is a leading platform for managing projects and tasks across various indu
 
 By integrating this feature into your bot, you empower users to look up and manage linked issues conversationally, reducing time spent navigating JIRA and improving team productivity.
 
-This guide walks you through adding the **Look up JIRA Issues for an Epic** feature to your bot using **Agent Studio**.
+This guide walks you through adding the **Look up JIRA Issues for an Epic** feature to your bot using **Tool Studio**.
 
 Let's get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

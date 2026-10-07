@@ -8,9 +8,9 @@ name: UKG Pro WFM
 
 UKG Pro Workforce Management (WFM) is a leading enterprise platform for managing timekeeping, scheduling, leave and absence tracking, payroll, and employee self-service. Organizations use it to streamline core workforce operations, ensure compliance, and deliver a better employee experience.
 
-By connecting UKG Pro WFM to **Moveworks Agent Studio**, you can enable employees and managers to interact with workforce management functions directly through their AI assistant. This includes capabilities such as retrieving PTO balances, submitting and managing time-off requests, viewing schedules, accessing timecard data, and surfacing manager notifications for approvals and actions — all without leaving the conversational interface.
+By connecting UKG Pro WFM to **Moveworks Tool Studio**, you can enable employees and managers to interact with workforce management functions directly through their AI assistant. This includes capabilities such as retrieving PTO balances, submitting and managing time-off requests, viewing schedules, accessing timecard data, and surfacing manager notifications for approvals and actions — all without leaving the conversational interface.
 
-This guide walks through setting up both User Consent Auth (Interactive) and Client Credentials Auth (Non-Interactive) OAuth 2.0 flows to connect UKG Pro WFM with Agent Studio. For a full list of available API resources and operations, refer to the [**UKG Pro WFM Developer Hub**](https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workforce-management-api).
+This guide walks through setting up both User Consent Auth (Interactive) and Client Credentials Auth (Non-Interactive) OAuth 2.0 flows to connect UKG Pro WFM with Tool Studio. For a full list of available API resources and operations, refer to the [**UKG Pro WFM Developer Hub**](https://developer.ukg.com/wfm/reference/welcome-to-the-ukg-pro-workforce-management-api).
 
 ---
 
@@ -26,7 +26,7 @@ Each user who will interact with UKG through the Moveworks plugins (with User Co
 
 ### Moveworks Requirements
 
-- Agent Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
+- Tool Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
 
 
 **Note:** Only tenants configured for UKG Authentication will see the Client Management page. If you don’t see it, your tenant uses a different authentication type. Refer to the [UKG Authentication docs](https://developer.ukg.com/wfm/docs/ukg-authentication-doc) for details.
@@ -68,7 +68,7 @@ Use this flow for actions that are performed in the context of the authenticated
 
 ### Step 2: Configure the Moveworks HTTP Connector
 
-1. In Agent Studio, go to **HTTP Connectors → Create**.
+1. In Tool Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
     - **Connector Name:** `UKG_Authcode_Flow` (or your preferred name)
     - **Base URL:** `https://{{ukg_tenant}}.cfn.mykronos.com/api` — replace `ukg_tenant` with your organization’s UKG tenant hostname
@@ -90,7 +90,7 @@ Use this flow for actions that are performed in the context of the authenticated
 
 Testing a User Consent connector requires generating a token through the Moveworks UI:
 
-1. In Agent Studio, navigate to the **HTTP Action** that uses this connector.
+1. In Tool Studio, navigate to the **HTTP Action** that uses this connector.
 2. Click the **Test** button in the top-right corner.
 3. You will be redirected to the **Generate Token** screen. Select the User Consent connector you just created.
 4. A UKG login window will appear — enter your UKG user credentials to authenticate.
@@ -154,7 +154,7 @@ Use this flow for **system-to-system integrations** where actions run on a sched
 
 ### Step 2: Configure the Moveworks HTTP Connector
 
-1. In Agent Studio, go to **HTTP Connectors → Create**.
+1. In Tool Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
     - **Connector Name:** `UKG_Client_Credentials` (or your preferred name)
     - **Base URL:** `https://{{ukg_tenant}}.cfn.mykronos.com/api` — replace `ukg_tenant` with your organization’s UKG tenant hostname
@@ -201,4 +201,4 @@ A `200` response confirms the connector is working.
 
 ## Congratulations!
 
-You’ve successfully connected UKG Pro WFM to Moveworks Agent Studio using both OAuth 2.0 Authorization Code (User Consent) and Client Credentials authentication flows. Your connectors are now ready for use within Moveworks agent studio plugins.
+You’ve successfully connected UKG Pro WFM to Moveworks Tool Studio using both OAuth 2.0 Authorization Code (User Consent) and Client Credentials authentication flows. Your connectors are now ready for use within Moveworks agent studio plugins.

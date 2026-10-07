@@ -14,7 +14,7 @@ systems:
 
 SAP Concur is widely used to manage expense reports and receipts. Instead of manually creating a report, adding an expense, and uploading a receipt in Concur, this plugin lets users complete the entire workflow through a simple conversational experience.
 
-In this guide, we'll walk through how to build **Create Expense Report with Expense from Image** in Agent Studio.
+In this guide, we'll walk through how to build **Create Expense Report with Expense from Image** in Tool Studio.
 
 Let's get started!
 
@@ -25,7 +25,7 @@ Please refer to the following [Purple Chat](https://marketplace.moveworks.com/pu
 
 ### Prerequisites
 
-* Access to Agent Studio
+* Access to Tool Studio
 * A configured SAP Concur connector using **Authorization Code** authentication. Please follow the [SAP Concur connector guide](https://marketplace.moveworks.com/connectors/sap-concur#how-to-implement) to create the connector.
 * The following scopes added to the connector:
 
@@ -39,7 +39,7 @@ Please refer to the following [Purple Chat](https://marketplace.moveworks.com/pu
   * `expense.config.policies.restricted.read`
   * `expense.config.expensetypes.restricted.read`
 
-* Once the connector is ready, follow the [plugin installation documentation](https://docs.moveworks.com/agent-studio/agentic-automation/ai-agent-marketplace-installation) for steps on how to install and activate the plugin in Agent Studio.
+* Once the connector is ready, follow the [plugin installation documentation](https://docs.moveworks.com/agent-studio/agentic-automation/ai-agent-marketplace-installation) for steps on how to install and activate the plugin in Tool Studio.
 
 ### Implementation Details
 

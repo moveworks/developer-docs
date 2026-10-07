@@ -15,11 +15,11 @@ systems:
 
 The **"Analyze Knowledge Article Quality"** plugin evaluates the overall quality and effectiveness of knowledge articles. When a user selects an article, the plugin retrieves its details and performs an **AI-based content analysis**, providing an **overall quality score** along with identified **gaps** and **recommendations for improvement**. The analysis covers areas such as **formatting, clarity and accessibility**, helping ensure that each article meets quality standards and enhances the user experience.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -55,7 +55,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the ServiceNow API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

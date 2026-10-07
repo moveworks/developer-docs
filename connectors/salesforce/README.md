@@ -8,7 +8,7 @@ name: Salesforce
 
 **Salesforce** is a leader in cloud-based services, specializing in comprehensive customer relationship management (CRM) solutions, empowering businesses with data-driven decision-making.
 
-This guide will step you through creating a connector within Agent Studio to make API calls to Salesforce's SOQL and sObjects APIs. The guide is now organized into **two main authentication sections**:
+This guide will step you through creating a connector within Tool Studio to make API calls to Salesforce's SOQL and sObjects APIs. The guide is now organized into **two main authentication sections**:
 
 - [**OAuth 2.0 with Password Grant Flow**](https://marketplace.moveworks.com/connectors/salesforce#OAuth-2.0-with-password-grant-flow)
 - [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/salesforce#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)
@@ -20,7 +20,7 @@ This guide will step you through creating a connector within Agent Studio to mak
 
 # **OAuth 2.0 with Password Grant Flow Setup**
 
-To connect **Salesforce** to **Agent Studio** using **service-account-based authentication**, configure the **OAuth 2.0 with Username/Password (Password Grant) flow**.
+To connect **Salesforce** to **Tool Studio** using **service-account-based authentication**, configure the **OAuth 2.0 with Username/Password (Password Grant) flow**.
 
 This flow allows API access using a dedicated service account without requiring user interaction
 
@@ -30,9 +30,9 @@ Follow these steps to set up and validate your connection:
 
 1. Set up the OAuth Password Grant Flow.
 2. Test the connection using Postman.
-3. Create a Connector in Agent Studio.
+3. Create a Connector in Tool Studio.
 
-To connect to Salesforce from within Agent Studio, we are going to be using [OAuth2 with Username/Password](https://oauth.net/2/grant-types/password/). This requires the following:
+To connect to Salesforce from within Tool Studio, we are going to be using [OAuth2 with Username/Password](https://oauth.net/2/grant-types/password/). This requires the following:
 
 - Consumer Key
 - Consumer Secret
@@ -40,7 +40,7 @@ To connect to Salesforce from within Agent Studio, we are going to be using [OA
 - Service Account Password
 - Service Account Security Token
 
-The following will walk you through how to set up a Connected App with a Service Account and necessary Permission Sets so we can set up the connector within Agent Studio.
+The following will walk you through how to set up a Connected App with a Service Account and necessary Permission Sets so we can set up the connector within Tool Studio.
 
 ## **Step 1:** Set up OAuth Password Grant Flow
 
@@ -125,9 +125,9 @@ Once you have all the required credentials from the above process, please move o
 
     ![Untitled](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/Untitled%202.png)
 
-## **Step 3: Integrate with Agent Studio**
+## **Step 3: Integrate with Tool Studio**
 
-1. In Agent Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
+1. In Tool Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
     - Description: `Connect to Salesforce SOQL APIs`
     - Base URL: `https://{your-salesforce-domain}.my.salesforce.com`
     - Auth Config: `Oauth2`
@@ -154,17 +154,17 @@ Once you have all the required credentials from the above process, please move o
         | Key | Value |
         | --- | --- |
         | q | SELECT Name FROM Contact LIMIT 10 |
-3. Test your setup in Agent Studio and look for a successful execution.
+3. Test your setup in Tool Studio and look for a successful execution.
 
     ![Untitled](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/Untitled%203.png)
 
 # **Congratulations!**
 
-You've successfully integrated Salesforce’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Salesforce instance.
+You've successfully integrated Salesforce’s API with Tool Studio. This opens up a variety of automation and integration possibilities within your Salesforce instance.
 
 # **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
 
-To connect **Salesforce** to **Agent Studio** using **user-consent-based authentication**, configure the **OAuth 2.0 with Authorization Code** flow.
+To connect **Salesforce** to **Tool Studio** using **user-consent-based authentication**, configure the **OAuth 2.0 with Authorization Code** flow.
 
 This ensures Salesforce users explicitly authorize Moveworks before any API actions are performed on their behalf.
 
@@ -175,8 +175,8 @@ Follow these steps to set up and validate your connection:
 1. Log in to Salesforce Setup
 2. Create a New Connected App
 3. Retrieve Client ID and Client Secret
-4. Integrate with Agent Studio
-5. Test the Connector in Agent Studio
+4. Integrate with Tool Studio
+5. Test the Connector in Tool Studio
 
 ## Step 1: Log in to Salesforce Setup
 
@@ -258,11 +258,11 @@ Note: Disabling these options is specific to this connector setup. For general S
 
 ![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%209.png)
 
-- Store these credentials securely, as they will be used for **Agent Studio** integration.
+- Store these credentials securely, as they will be used for **Tool Studio** integration.
 
-## Step 4: Integrate with Agent Studio
+## Step 4: Integrate with Tool Studio
 
-- In **Agent Studio**, create a new connector with the following configuration:
+- In **Tool Studio**, create a new connector with the following configuration:
     - **Connector Name:** `{{Connector_Name}}`
     - **Display Name:** `{{Display_Name}}`
     - **Display Description:** This connector enables secure, user-authorized access to Salesforce APIs using OAuth2 Authorization Code Grant.
@@ -286,7 +286,7 @@ Note: Disabling these options is specific to this connector setup. For general S
 
 Once all fields are completed, click **Save** to create and store your connector configuration.
 
-## Step 4: Test the Connector in Agent Studio
+## Step 4: Test the Connector in Tool Studio
 
 Set up your API. You can read more about configuring and testing API actions from our **API Configuration Reference**.
 
@@ -359,7 +359,7 @@ Follow the steps below to update it correctly after installation:
 
 ### **Test Your Setup:**
 
-1. In **Agent Studio**, create and run a new **Action**.
+1. In **Tool Studio**, create and run a new **Action**.
 2. Import the above **cURL command**.
 3. Add the **Salesforce User Consent Auth Connector**.
 4. Click **Test → Generate New Access Token**.
@@ -369,9 +369,9 @@ Follow the steps below to update it correctly after installation:
     ![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/image%2010.png)
     
 
-### **Establish a Connection Between Your UCA Connector and Agent Studio**
+### **Establish a Connection Between Your UCA Connector and Tool Studio**
 
-- Integrate your **UCA Connector** with **Agent Studio**.
+- Integrate your **UCA Connector** with **Tool Studio**.
 
 ![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/a13e2960-82a9-4bf0-bdba-57126ce871c3.png)
 
@@ -400,4 +400,4 @@ Follow the steps below to update it correctly after installation:
 ![image.png](Authentication%20Guide%20Salesforce%20d7869a374e2940dea9ad3ba1af20ab92/new%201.png)
 # **Congratulations!**
 
-You’ve successfully integrated **Salesforce** with **Agent Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Salesforce data based on user consent within your Salesforce instance.
+You’ve successfully integrated **Salesforce** with **Tool Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Salesforce data based on user consent within your Salesforce instance.

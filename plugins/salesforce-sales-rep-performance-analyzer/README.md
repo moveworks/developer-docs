@@ -21,11 +21,11 @@ systems:
 
 The Salesforce “Sales Rep Performance Analyzer” plugin empowers sales leaders to instantly evaluate individual and team-wide performance using real-time Opportunity and Activity data—directly through the Moveworks AI Assistant. By simplifying how managers access insights such as productivity trends, win rates, deal, and pipeline contribution, it eliminates the need to manually create reports or navigate complex Salesforce dashboards. This ensures faster decision-making, higher accuracy, and a more efficient performance-review workflow.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -157,13 +157,13 @@ Ensure the values align with your organization’s reporting standards and that 
 
 Click **Save**.
 
-## Plugin Configuration (Agent Studio)
+## Plugin Configuration (Tool Studio)
 
 After completing **Path 1 or Path 2**, configure the plugin to reference the correct Salesforce fields.
 
 ### Configuration Steps
 
-1. Navigate to **Agent Studio → Plugins**.
+1. Navigate to **Tool Studio → Plugins**.
 2. Open **Salesforce_Sales_Rep_Performance_Analyzer**.
 3. Click **Edit** and open the **Configuration / Process** tab.
 4. Select the **Action Activity** block (typically the primary Compound Action).
@@ -187,7 +187,7 @@ Follow the steps below to update it correctly after installation:
 5. Ensure all API requests use **HTTPS** and leverage **OAuth 2.0 authentication**.
 6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

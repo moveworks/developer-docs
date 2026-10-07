@@ -14,11 +14,11 @@ systems:
 
 The **“Update an Opportunity with Call Notes”** plugin enables sales teams to quickly add call notes or update opportunity details in Salesforce directly through the Moveworks AI Assistant. This eliminates the need to navigate into Salesforce manually, streamlining the process of logging critical sales interactions and keeping opportunity records up to date in real time.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio**, helping your team stay focused on selling while ensuring CRM data remains accurate and actionable. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio**, helping your team stay focused on selling while ensuring CRM data remains accurate and actionable. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -37,7 +37,7 @@ Specifically, confirm the following permissions are granted:
 - **Object Access**: `Read` and `Edit` access to the **Opportunity** object
 - **Field Access**: `Read` and `Edit` access to fields used for call notes (e.g., **Description**, **Next Steps**, **Call Notes**, or any custom fields used in your org)
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

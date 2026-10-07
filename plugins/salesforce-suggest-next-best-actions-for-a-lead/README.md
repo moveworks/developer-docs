@@ -17,11 +17,11 @@ systems:
 
 The **"Suggest Next Best Actions for a Lead"** plugin helps sales teams by automatically recommending the most relevant actions for each lead through the Moveworks AI Assistant. It analyzes lead activity, engagement, and status to suggest timely calls, emails, tasks, or follow ups eliminating manual guesswork and helping users focus on the smartest next steps to close deals faster and improve productivity
 
-This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let's get started!
+This guide will walk you through installing and configuring the plugin in Tool Studio in just a few minutes. Let's get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ For this plugin, ensure the Salesforce integration user has the following permis
 - `Read` and `Create` access to the **Task**, **Event**, and **Campaign** objects
 - `Read` access to the **Lead** object
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix**
 

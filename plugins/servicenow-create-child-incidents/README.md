@@ -16,11 +16,11 @@ solution_tags:
 
 The **Create Ticket Subtasks** plugin allows users to add subtasks to existing ServiceNow tickets directly through the Moveworks AI Assistant. This enables users to break down larger incidents into manageable components while maintaining proper tracking and accountability.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - **ServiceNow Connector** built in Creator Studio (follow the [ServiceNow Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=servicenow) to create your connector)
 
 # What are we building?

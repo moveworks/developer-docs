@@ -12,13 +12,13 @@ systems:
 
 ## Introduction
 
-The “**Manage Emergency Contacts**” plugin allows employees to easily add or update their emergency contact information in SAP SuccessFactors through the Moveworks AI Assistant. This automation ensures HR teams always have the latest contact information for emergencies without delays. This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
+The “**Manage Emergency Contacts**” plugin allows employees to easily add or update their emergency contact information in SAP SuccessFactors through the Moveworks AI Assistant. This automation ensures HR teams always have the latest contact information for emergencies without delays. This guide will walk you through installing and configuring the plugin in Tool Studio in just a few minutes. Let’s get started!
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -28,7 +28,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for detailed instructions. Once completed, proceed to install the **Manage Emergency Contacts** plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b;) for detailed instructions. Once completed, proceed to install the **Manage Emergency Contacts** plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 

@@ -16,7 +16,7 @@ The **Update Tickets Fields** functionality allows users to modify key ticket at
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - **ServiceNow Connector** built in Creator Studio (follow the [ServiceNow Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=servicenow) to create your connector)
 
 # What are we building?

@@ -15,11 +15,11 @@ systems:
 
 The **“Inventory Look Up”** plugin enables users to quickly view detailed information about devices assigned to individuals within the Jamf Pro environment. It allows for efficient inventory searches by username, making it easy to locate the necessary devices.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -43,7 +43,7 @@ Specifically, confirm that the following privilege is granted:
 
 This permission is required to retrieve user-related data and perform advanced searches within the Jamf Pro environment using the API.
 
-Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Tool Studio.
 
 **Note:** This plugin identifies users by their email address to determine the username. Depending on your company's policy, you may need to adjust this configuration.
 

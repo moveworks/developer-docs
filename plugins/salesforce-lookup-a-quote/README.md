@@ -15,11 +15,11 @@ systems:
 
 The **“Look Up a Quote by its Quote Number”** plugin allows sales representatives to quickly find a specific quote in Salesforce using its unique quote number directly through the Moveworks AI Assistant. This eliminates the need to search records manually and ensures quick access to important quote details linked to a customer or account.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio**, so your team can retrieve quote information quickly and accurately during any stage of the sales process. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio**, so your team can retrieve quote information quickly and accurately during any stage of the sales process. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ Specifically, confirm the following permissions are granted:
 - **Object Access**: `Read` access to the **Quote** and **Account** objects.
 - **Field Access**: `Read` access to key fields such as **Quote Number**, **Name**, **AccountId**, **Status**, and any custom fields your organization uses for quotes.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

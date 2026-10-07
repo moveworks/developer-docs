@@ -17,11 +17,11 @@ systems:
 
 The **Update Pronouns** plugin allows users to easily update their pronouns in the system directly through the Moveworks AI Assistant. This ensures that their preferred pronouns are accurately reflected across all platforms.
 
-This guide will help you install and configure the plugin in Agent Studio quickly. Let’s get started!
+This guide will help you install and configure the plugin in Tool Studio quickly. Let’s get started!
 
 # **Prerequisites :**
 
-- Access to Agent Studio.
+- Access to Tool Studio.
 
 # **What are we building?**
 
@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [ SAP SuccessFactors Connector Guide](https://developer.moveworks.com/marketplace/package?id=sap-success-factors&hist=home%2Cbrws) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to simplify the process. Please follow our [ SAP SuccessFactors Connector Guide](https://developer.moveworks.com/marketplace/package?id=sap-success-factors&hist=home%2Cbrws) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the   SAP SuccessFactors  integration system user has the following permissions:
 

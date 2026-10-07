@@ -17,11 +17,11 @@ systems:
 
 The **“Summarize Case History for an Account”** plugin lets your team quickly view all past and current cases linked to a customer — right from the Moveworks AI Assistant. It helps account managers, CSMs, and support teams get a clear view of case trends, spot recurring issues, and prepare for customer conversations without logging into Salesforce.
 
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ Specifically, confirm the following permissions are granted:
 - **Object Access**: `Read` access to the **Case** and **Account** objects.
 - Ensure the user has permission to view all Case and Account records relevant to their team, territory, or assigned accounts.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix**
 

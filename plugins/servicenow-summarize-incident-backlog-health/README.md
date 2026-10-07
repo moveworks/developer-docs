@@ -18,11 +18,11 @@ systems:
 
 The **“Summarize Incident Backlog Health”** plugin enables support managers to instantly assess the overall health of their ServiceNow incident backlog through the **Moveworks AI Assistant**. It provides quick insights into open incident volume, priority distribution, SLA breaches, and aging trends—all in one place—helping teams proactively monitor workloads, identify bottlenecks, and take timely action to improve incident management efficiency.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -53,7 +53,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the ServiceNow API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix:-**
 

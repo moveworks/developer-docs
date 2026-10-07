@@ -18,13 +18,13 @@ systems:
 
 SAP Concur is a widely used platform for managing travel and expense reports in many organizations. While navigating through the Concur platform to access expense reports can be time-consuming, integrating it with your bot streamlines the process, allowing you to access your expense reports conveniently through simple conversational queries.
 
-In this guide, we'll walk you through the process of integrating **Look up Expense Reports** functionality into your bot using Agent Studio.
+In this guide, we'll walk you through the process of integrating **Look up Expense Reports** functionality into your bot using Tool Studio.
 
 Let's get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

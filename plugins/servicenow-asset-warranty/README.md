@@ -18,11 +18,11 @@ solution_tags:
 
 The **“Look Up Asset Warranty Details”** plugin enables users to quickly retrieve warranty-related information for assets assigned to them, such as laptops or desktops, directly through the Moveworks AI Assistant. By eliminating the need to navigate ServiceNow manually, this plugin streamlines access to key asset data—including asset name, asset tag, purchase date, warranty expiration, and coverage helping employees easily verify the warranty status of their assigned devices.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -40,7 +40,7 @@ For this plugin, ensure the user has the following permissions:
 - **Read access to the `sys_user` table** (to resolve assigned user details, such as email or display name)
 - **Read access to custom fields** – if the plugin uses fields like `u_coverage`, ensure the user has read access to those specific fields via ACL
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Steps to Create the Custom Field**
 

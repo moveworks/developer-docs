@@ -18,11 +18,11 @@ systems:
 
 The Salesforce **“Summarize Top Recurring Cases”** plugin enables users to quickly identify and analyze the most frequently occurring cases within a specific group they belong to, their own cases, within a selected time period. By providing details such as case frequency, average resolution time, and usual resolution, it helps teams proactively address recurring issues, reduce repeat inquiries, and improve the overall customer billing experience.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -41,7 +41,7 @@ Specifically, verify that the following permissions are granted:
 
 **Note:** To effectively summarize top recurring cases for a **group**, ensure that the Salesforce integration user has the required object and field-level permissions.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

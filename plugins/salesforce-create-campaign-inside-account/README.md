@@ -15,11 +15,11 @@ systems:
 
 The **Create Campaign Inside Account** plugin allows users to effortlessly create and manage campaigns directly linked to specific Accounts within Salesforce via the Moveworks AI Assistant. With this plugin, users can quickly initiate new campaigns, assign relevant details, and associate them with the correct Account—without navigating through multiple Salesforce screens.
 
-This guide will walk you through the installation and configuration of the plugin in Agent Studio, ensuring seamless integration and enabling your team to launch targeted campaigns efficiently in just a few minutes. Let’s get started!
+This guide will walk you through the installation and configuration of the plugin in Tool Studio, ensuring seamless integration and enabling your team to launch targeted campaigns efficiently in just a few minutes. Let’s get started!
 
 # **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 
@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend creating the connector for Salesforce first, prior to installing this plugin. Please follow the [Salesforce Connector](https://developer.moveworks.com/marketplace/package?id=salesforce&hist=home%2Cplgn.salesforce-create-campaign-inside-account%2Cbrws) guide to set up the connector.
 
-Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+Once the connector is configured, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 

@@ -1,6 +1,6 @@
 ---
 availability: INSTALLABLE
-description: Connect Agent Studio to MCP Servers.
+description: Connect Tool Studio to MCP Servers.
 installation_asset_uuid: 4fb82a15-e488-45a2-9515-d048c1b0b29e
 name: MCP Plugin
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWhat+are+the+5+products+purchased%3F+Give+me+the+price+as+well%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22Connecting+to+MCP+Server%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22Looking+up+product+data%22%2C%22status%22%3A%22success%22%7D%2C%7B%22richText%22%3A%22Summarizing+Results%22%2C%22status%22%3A%22success%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EHere+are+the+top+five+products%3A%3C%2Fp%3E%22%7D%2C%7B%22richText%22%3A%22%3Col%3E%3Cli%3E%3Cp%3E%3Cstrong%3ESophisticated+Serenity+Blazer%3C%2Fstrong%3E+-+%2479.99%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EEcoLuxe+Organic+Cotton+Tee%3C%2Fstrong%3E+-+%2429.50%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EUrban+Aura+Denim+Jacket%3C%2Fstrong%3E+-+%2495.00%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3EVelvet+Dusk+Evening+Dress%3C%2Fstrong%3E+-+%24120.00%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3E%3Cstrong%3ERustic+Wanderer+Wool+Sweater%3C%2Fstrong%3E+-+%2468.75%3C%2Fp%3E%3C%2Fli%3E%3C%2Fol%3E%22%7D%5D%7D%5D%7D
@@ -12,7 +12,7 @@ solution_tags:
 
 # Introduction
 
-This tutorial demonstrates how to connect Agent Studio to the Model Context Protocol (MCP) using a custom proxy server client. We will build a proxy to bridge HTTP requests from Agent Studio to an MCP server. This proof-of-concept (POC) showcases how to integrate Plugins with MCP, enabling AI agents to interact with external tools and services in a standardized way. By the end, you’ll have a working setup where Agent Studio communicates with an MCP server through the proxy.
+This tutorial demonstrates how to connect Tool Studio to the Model Context Protocol (MCP) using a custom proxy server client. We will build a proxy to bridge HTTP requests from Tool Studio to an MCP server. This proof-of-concept (POC) showcases how to integrate Plugins with MCP, enabling AI agents to interact with external tools and services in a standardized way. By the end, you’ll have a working setup where Tool Studio communicates with an MCP server through the proxy.
 
 ![CleanShot 2025-08-05 at 10.05.57@2x.png](MCP%20Plugin%20246588d8909f8088985ef68dbca3ad75/7ddcf60a-8cde-4641-ba38-4d135d7095d4.png)
 
@@ -20,28 +20,28 @@ This tutorial demonstrates how to connect Agent Studio to the Model Context Prot
 
 To follow this tutorial, you’ll need:
 
-- **Agent Studio**
+- **Tool Studio**
 - **Bun / nodejs**: Required to build and run the MCP client proxy.
 - **MCP Server**: Access to an MCP server (e.g., a local or remote server like @modelcontextprotocol/server-filesystem).
 - **Basic Knowledge**: Familiarity with JavaScript, HTTP APIs, and RESTful services.
-- **MCP Client Proxy**: We’ll build this lightweight proxy server in this tutorial to route Agent Studio’s HTTP requests to the MCP server.
+- **MCP Client Proxy**: We’ll build this lightweight proxy server in this tutorial to route Tool Studio’s HTTP requests to the MCP server.
 
 # What Are We Building?
 
-We’re creating a system where Agent Studio sends HTTP requests to a custom MCP client proxy, which translates and forwards them to an MCP server. The flow is:
+We’re creating a system where Tool Studio sends HTTP requests to a custom MCP client proxy, which translates and forwards them to an MCP server. The flow is:
 
-**Agent Studio (HTTP Request) → MCP Client Proxy → MCP Server**
+**Tool Studio (HTTP Request) → MCP Client Proxy → MCP Server**
 
-The proxy handles MCP’s transport protocols (e.g., Streamable HTTP or Server-Sent Events) and exposes a simple REST API for Agent Studio. This POC demonstrates how to:
+The proxy handles MCP’s transport protocols (e.g., Streamable HTTP or Server-Sent Events) and exposes a simple REST API for Tool Studio. This POC demonstrates how to:
 
 - Build a typescript-based MCP client proxy.
-- Configure Agent Studio to send HTTP requests to the proxy.
+- Configure Tool Studio to send HTTP requests to the proxy.
 - Enable the proxy to communicate with multiple MCP servers.
 - Handle MCP tools and tool calls via two APIs: tools (list available tools) and call-tool (execute a tool).
 
 Caveats:
 
-- The proxy is required in order to connect to MCP servers through Agent Studio
+- The proxy is required in order to connect to MCP servers through Tool Studio
 - The proxy is a simplified implementation for this POC and may need additional security and error handling for production use.
 
 # Agent Design

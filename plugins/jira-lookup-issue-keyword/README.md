@@ -19,13 +19,13 @@ JIRA is a leading platform for managing projects and tasks across various indust
 
 By integrating this feature into your bot, you empower users to quickly find relevant issues without manually searching through Jira, improving workflow efficiency and team productivity.
 
-This guide walks you through adding the **Look Up Issue by Keyword** feature to your bot using **Agent Studio**.
+This guide walks you through adding the **Look Up Issue by Keyword** feature to your bot using **Tool Studio**.
 
 Let's get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

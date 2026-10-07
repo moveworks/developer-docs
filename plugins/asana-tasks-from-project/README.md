@@ -15,11 +15,11 @@ systems:
 
 The **Asana Get Tasks from Project** plugin allows users to retrieve task lists from an Asana project directly through the Moveworks AI Assistant. With this plugin, users can quickly access task details such as due dates, assignees, and statuses without leaving their workflow.
 
-This guide will help you install and configure the plugin in **Agent Studio** within minutes. Let’s get started!
+This guide will help you install and configure the plugin in **Tool Studio** within minutes. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - [Asana Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=asana) built in Creator Studio (follow the Asana Authentication guide to create your connector)
 
 # What are we building?
@@ -30,7 +30,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **Asana Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **Asana Get Tasks from Project** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Tool Studio** beforehand to streamline the process. Please follow our **Asana Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **Asana Get Tasks from Project** plugin in minutes.
 
 For **Asana Get Tasks from Project**, you will also need to add the following permissions:
 

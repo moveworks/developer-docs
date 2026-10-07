@@ -14,11 +14,11 @@ systems:
 
 The **“Request New Badge”** plugin allows employees to quickly request a new or replacement badge for office access directly through the Moveworks AI Assistant. Whether they've lost their badge or need one for a new location, this plugin streamlines the process by submitting a request in ServiceNow without manual form-filling.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio**, so your team can easily handle badge requests and ensure seamless access to the workplace. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio**, so your team can easily handle badge requests and ensure seamless access to the workplace. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -36,7 +36,7 @@ Specifically, confirm the following permissions are granted:
 
 - **Table Access**: `Read` and `Create` access to the `sys_user` and `incident` tables.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

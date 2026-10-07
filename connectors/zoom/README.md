@@ -6,7 +6,7 @@ name: Zoom
 
 # **Introduction**
 
-Integrating Zoom with Agent Studio allows seamless incorporation of virtual meeting data and collaboration insights to enhance your workflows. By leveraging Zoom's robust REST API and using appropriate authentication mechanisms, you can automate meeting data management and enhance your collaborative processes. This guide provides a step-by-step process to connect your Zoom instance to Agent Studio and test the integration for efficient meeting management and collaboration.
+Integrating Zoom with Tool Studio allows seamless incorporation of virtual meeting data and collaboration insights to enhance your workflows. By leveraging Zoom's robust REST API and using appropriate authentication mechanisms, you can automate meeting data management and enhance your collaborative processes. This guide provides a step-by-step process to connect your Zoom instance to Tool Studio and test the integration for efficient meeting management and collaboration.
 
 # **Prerequisites**
 
@@ -48,9 +48,9 @@ Integrating Zoom with Agent Studio allows seamless incorporation of virtual meet
     ![Screenshot 2025-03-17 at 1.53.40 PM.png](Zoom%201b5588d8909f80eab403e031bd13a14e/Screenshot_2025-03-17_at_1.53.40_PM.png)
     
 
-# **Step 2: Connect Zoom to Agent Studio**
+# **Step 2: Connect Zoom to Tool Studio**
 
-- In Agent Studio, create a new HTTP Connector with the following configuration:
+- In Tool Studio, create a new HTTP Connector with the following configuration:
     
     ![image.png](Zoom%201b5588d8909f80eab403e031bd13a14e/image%206.png)
     
@@ -80,4 +80,4 @@ Integrating Zoom with Agent Studio allows seamless incorporation of virtual meet
 
 # Congratulations!
 
-You just connected your Zoom App to Agent Studio.
+You just connected your Zoom App to Tool Studio.

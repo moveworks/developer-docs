@@ -18,7 +18,7 @@ The **Summarize All Open Issues/Tickets** plugin enables users to generate detai
 
 # Prerequisites
 
-- Access to Moveworks Agent Studio.
+- Access to Moveworks Tool Studio.
 - **ServiceNow Connector** built in Creator Studio (follow the [ServiceNow Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=servicenow) to create your connector)
 
 # What Are We Building?

@@ -16,11 +16,11 @@ systems:
 
 The Find Incidents based on the User’s Description plugin enables your users to quickly locate relevant incidents within ServiceNow by leveraging the Moveworks AI Assistant.. Users can easily search for incidents using the description they provide and specify the starting date for the search. 
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

@@ -14,11 +14,11 @@ systems:
 
 The **highspot_get_items** plugin enables users to search for sales content and enablement materials in **Highspot** directly through the Moveworks AI Assistant. Users can find playbooks, presentations, case studies, and more using natural language queries.
 
-This guide will help you install the plugin in just a few minutes using Agent Studio. Let’s get started!
+This guide will help you install the plugin in just a few minutes using Tool Studio. Let’s get started!
 
 ## Prerequisites
 
-- Access to **Agent Studio**
+- Access to **Tool Studio**
 
 ## What are we building?
 

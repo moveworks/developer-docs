@@ -6,7 +6,7 @@ name: Coupa
 
 ## **Introduction**
 
-Coupa is a cloud-based platform that streamlines business spend management. It provides comprehensive tools for procurement, invoicing, and expense management. This guide will walk you through how to connect Coupa to Agent Studio. There are two ways you can proceed:
+Coupa is a cloud-based platform that streamlines business spend management. It provides comprehensive tools for procurement, invoicing, and expense management. This guide will walk you through how to connect Coupa to Tool Studio. There are two ways you can proceed:
 
 - [**OAuth 2.0 with Client Credentials Grant Setup**](https://marketplace.moveworks.com/connectors/coupa#OAuth-2.0-with-Client-Credentials-Grant-Setup) – Best suited for organization-wide integrations where authentication and data access are centrally managed by an admin.
 - [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/coupa#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup) – Ideal for user-specific integrations where each user authenticates individually to access their Coupa data securely.
@@ -58,9 +58,9 @@ Coupa is a cloud-based platform that streamlines business spend management. It p
 
    ![https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/coupa/Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%201.png](https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/coupa/Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%201.png)
 
-### **Step 3: Integrate with Agent Studio**
+### **Step 3: Integrate with Tool Studio**
 
-1. In Agent Studio, create a new connector with the following configuration:
+1. In Tool Studio, create a new connector with the following configuration:
    - Connection Name: Coupa Connector
    - Base URL: **`https://{{INSTANCE_DOMAIN}}`** (For example: **`https://moveworks-usa-coupalink-demo.coupacloud.com`**)
    - Auth Config: **`Oauth2`**
@@ -83,13 +83,13 @@ Coupa is a cloud-based platform that streamlines business spend management. It p
      Add parameters as key–value pairs:
      - Content-Type : application/json
 
-3. Test your setup in Agent Studio and look for a successful execution.
+3. Test your setup in Tool Studio and look for a successful execution.
 
    ![https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/coupa/Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%202.png](https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/coupa/Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/Untitled%202.png)
 
 ## **Congratulations!**
 
-You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAuth 2.0 with Client Credentials Grant**. This enables secure system-level authentication, allowing seamless automation and integration within your Coupa instance.
+You’ve successfully integrated **Coupa’s API with Tool Studio** using **OAuth 2.0 with Client Credentials Grant**. This enables secure system-level authentication, allowing seamless automation and integration within your Coupa instance.
 
 ## **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
 
@@ -127,9 +127,9 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
 
    ![image3.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/image3.png)
 
-### **Step 2: Integrate with Agent Studio**
+### **Step 2: Integrate with Tool Studio**
 
-1. In Agent Studio, create a new connector with the following configuration:
+1. In Tool Studio, create a new connector with the following configuration:
    - **Connection Name:** `Coupa Consent Auth Connector`
    - **Display Name:** `Coupa Consent Auth`
    - **Description:** This connector facilitates secure, user-authorized access to the Coupa API using User Consent Authentication.
@@ -161,12 +161,12 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
      Add parameters as key–value pairs:
      - Content-Type : application/json
 
-3. Test your setup by creating and running an Action in Agent Studio.
+3. Test your setup by creating and running an Action in Tool Studio.
    1. Import your cURL, add the **User Consent Auth Connector**, and click **Test → Generate New Access Token**. Make sure you are acting on behalf of the intended user before generating the token; only then will it return the approvals assigned to that user.
 
       ![image4.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/image4.png)
 
-   2. Establish a connection between your UCA connector and Agent Studio
+   2. Establish a connection between your UCA connector and Tool Studio
 
       ![image5.png](Authentication%20Guide%20Coupa%208c3fd8aaf16e483d91739f56b817cad0/image5.png)
 
@@ -184,4 +184,4 @@ You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAu
 
 ## **Congratulations!**
 
-You’ve successfully integrated **Coupa’s API with Agent Studio** using **OAuth 2.0 with Authorization Code (User Consent Auth)**. This enables secure user-level authentication and allows access to Coupa data based on user consent within your Coupa instance.
+You’ve successfully integrated **Coupa’s API with Tool Studio** using **OAuth 2.0 with Authorization Code (User Consent Auth)**. This enables secure user-level authentication and allows access to Coupa data based on user consent within your Coupa instance.

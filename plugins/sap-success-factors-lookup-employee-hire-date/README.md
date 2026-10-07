@@ -15,11 +15,11 @@ systems:
 
 The **“Employee Hire Date”** plugin allows users to retrieve the hire date of an employee from SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly access and review the hire date information for any employee.
 
-This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
+This guide will help you install and configure the plugin in Tool Studio within minutes. Let’s get started!
 
 ## Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## What are we building?
 
@@ -29,7 +29,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in Agent Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) Guide to configure the connection.
+While you can create a connector during plugin installation, we recommend creating a connector in Tool Studio beforehand to streamline the process. Please follow our  [SAP Successfactors Connector](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) Guide to configure the connection.
 
 Note: To enable the Lookup Employee Hire Date functionality, ensure the SAP SuccessFactors integration user has the necessary permission scopes.
 

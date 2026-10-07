@@ -14,11 +14,11 @@ systems:
 
 **View Campaign Inside Account** is a plugin that enables seamless access to the most recent campaign associated with any Account in Salesforce. It simplifies how users retrieve campaign information by presenting relevant details such as campaign name, status, and timeline without needing to navigate through multiple screens.
 
-This guide covers the installation and configuration steps required to set up the plugin in Agent Studio, making it easy for teams to surface campaign data efficiently and in real time. Let’s get started!
+This guide covers the installation and configuration steps required to set up the plugin in Tool Studio, making it easy for teams to surface campaign data efficiently and in real time. Let’s get started!
 
 # **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 
@@ -28,7 +28,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**Salesforce Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**Salesforce Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the Salesforce integration user has the following permissions:
 

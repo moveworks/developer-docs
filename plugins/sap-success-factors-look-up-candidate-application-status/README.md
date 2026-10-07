@@ -16,11 +16,11 @@ systems:
 
 The “**Look Up Candidate Application Status”** plugin enables recruiters and hiring managers to easily retrieve and review the application status of candidates. Users can search for candidates by name, email, or job requisition and view key details such as job title, requisition ID, and current application stage. This allows recruiters to quickly check the progress of candidates in the hiring process.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -59,7 +59,7 @@ Note: SAP does not support IP-based endpoints — always use official SAP domain
 
 Make sure to update this across all actions that reference the SAP SuccessFactors API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

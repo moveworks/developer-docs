@@ -9,10 +9,10 @@ name: Jamf
 
 **Jamf Pro** is a cloud-based Apple device management solution, enabling organizations to streamline deployment, security, and lifecycle management of Apple devices across their workforce.
 
-This guide walks you through the process of creating a connector within Agent Studio to make API calls to **Jamf Pro**, using **OAuth Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
+This guide walks you through the process of creating a connector within Tool Studio to make API calls to **Jamf Pro**, using **OAuth Client Credentials Flow** for secure authentication. The guide is organized into two main sections:
 
 1. **Set up OAuth Client Credentials Flow**
-2. **Create a Connector in Agent Studio**
+2. **Create a Connector in Tool Studio**
 
 ## **Prerequisites:**
 
@@ -21,9 +21,9 @@ This guide walks you through the process of creating a connector within Agent St
 
 ## **Set up OAuth Client Credentials Flow**
 
-To connect **Jamf Pro** with **Agent Studio**, we’ll use **OAuth 2.0 authentication**. This method allows backend systems like Agent Studio to securely authenticate using a **Client ID and Secret.**
+To connect **Jamf Pro** with **Tool Studio**, we’ll use **OAuth 2.0 authentication**. This method allows backend systems like Tool Studio to securely authenticate using a **Client ID and Secret.**
 
-This guide walks you through registering an OAuth 2.0 client in Jamf Pro, generating an access token using the **Client Credentials Flow**, and configuring the connector in Agent Studio for seamless access to Jamf Pro APIs.
+This guide walks you through registering an OAuth 2.0 client in Jamf Pro, generating an access token using the **Client Credentials Flow**, and configuring the connector in Tool Studio for seamless access to Jamf Pro APIs.
 
 ## **Register OAuth 2.0 API Client in Jamf Pro**
 
@@ -89,7 +89,7 @@ After the app is registered:
 - Copy and securely store the:
     - **Client ID**
     - **Client Secret**
-- These will be used in Agent Studio for authentication
+- These will be used in Tool Studio for authentication
 
 ### Step 6: Request an Access Token
 
@@ -111,12 +111,12 @@ Replace the placeholders with your specific values:
 - `YOUR_CLIENT_ID` – The Client ID generated from your API Client
 - `YOUR_CLIENT_SECRET` – The Client Secret associated with the API Client
 
-## **Integrate with Agent Studio**
-Now that OAuth is set up in Jamf Pro, configure the connection in Agent Studio.
+## **Integrate with Tool Studio**
+Now that OAuth is set up in Jamf Pro, configure the connection in Tool Studio.
 
 ### Step 7: Configure the Jamf Connector
 
-To complete the integration between Jamf and Agent Studio using OAuth 2.0, follow the steps below:
+To complete the integration between Jamf and Tool Studio using OAuth 2.0, follow the steps below:
 
  - Go to the **HTTP Connector**.
   - You can see the Create option, and from there you can **Create** a connector
@@ -142,11 +142,11 @@ To complete the integration between Jamf and Agent Studio using OAuth 2.0, follo
 
 ![jamfConnector2.png](jamfConnector2.png)
 
-### Step 8: Configure Jamf API Action in Agent Studio
+### Step 8: Configure Jamf API Action in Tool Studio
 
-Test your Jamf Pro connector by setting up an action in Agent Studio. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy)
+Test your Jamf Pro connector by setting up an action in Tool Studio. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy)
  
-1. Go to **Agent Studio**.
+1. Go to **Tool Studio**.
 2. Navigate to **Actions → Create New Action**.
 3. Select **Inherit from Existing Connector** and choose **Jamf**.
 4. In the API configuration, provide the following details:
@@ -166,4 +166,4 @@ Test your Jamf Pro connector by setting up an action in Agent Studio. You can re
 
 # **Congratulations!**
 
-You've successfully integrated **Jamf Pro** with **Agent Studio** using **OAuth 2.0**. You can now securely access **Jamf Pro APIs** and power automated use cases within your workflows.
+You've successfully integrated **Jamf Pro** with **Tool Studio** using **OAuth 2.0**. You can now securely access **Jamf Pro APIs** and power automated use cases within your workflows.

@@ -29,7 +29,7 @@ This plugin requires an active **SAP SuccessFactors connector** to communicate w
 
 - If you have not already configured the connector, please follow the [**SAP SuccessFactors Connector Guide**](https://marketplace.moveworks.com/connectors/sap-success-factors#client-credentials) available in the Moveworks Marketplace.
 - The connector must be fully set up and before ****installing this plugin.
-- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **2. SAP SuccessFactors System Requirements**
 

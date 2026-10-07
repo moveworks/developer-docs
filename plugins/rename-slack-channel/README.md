@@ -15,12 +15,12 @@ systems:
 
 The **Rename Slack Channel** plugin allows users to easily rename a public Slack channel through the Moveworks AI Assistant. It connects to your Slack workspace and streamlines the process of updating channel names—making workspace organization simpler and more efficient.
 
-This guide will walk you through the quick and easy installation process in Agent Studio. Let’s get started!
+This guide will walk you through the quick and easy installation process in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
-- The **Fetch Public Slack Channels** plugin built in Agent Studio. It retrieves all public slack channels within the workspace. Refer to the [Fetch Public Slack Channels](https://developer.moveworks.com/creator-studio/resources/plugin?id=list-publick-slack-channels) guide for setup instructions.
+- Access to Tool Studio
+- The **Fetch Public Slack Channels** plugin built in Tool Studio. It retrieves all public slack channels within the workspace. Refer to the [Fetch Public Slack Channels](https://developer.moveworks.com/creator-studio/resources/plugin?id=list-publick-slack-channels) guide for setup instructions.
 
 # What are we building?
 

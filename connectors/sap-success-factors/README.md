@@ -8,7 +8,7 @@ name: SAP Success Factors
 
 SAP SuccessFactors is a cloud-based human resources (HR) management solution, empowering businesses with data-driven insights to optimize talent management, employee engagement, and overall workforce performance.
 
-This guide will demonstrate how to connect SAP Success Factors to Agent Studio. In doing so, there are three ways you can proceed:
+This guide will demonstrate how to connect SAP Success Factors to Tool Studio. In doing so, there are three ways you can proceed:
 1. [Dynamic SAML Auth](https://marketplace.moveworks.com/connectors/sap-success-factors#Dynamic-SAML-Auth) - This is best when building plugins that execute API calls on behalf of individual users (e.g., PTO submission, approvals), using per-user SSO identity. **Recommended for conversational agent use cases.**
 2. [Static SAML Auth (Admin User)](https://marketplace.moveworks.com/connectors/sap-success-factors#Static-SAML-Auth) - This is a fallback option for admin-level actions where per-user identity is not required. Tokens are generated offline using an admin account. Note: Dynamic SAML is recommended even for admin actions as it is easier to maintain and avoids manual offline token generation.
 3. [Webhook Connection](https://marketplace.moveworks.com/connectors/sap-success-factors#Webhook-Connection) - This is best when building ambient agents that are triggered from a system event inside of SAP SuccessFactors.
@@ -46,7 +46,7 @@ The authentication flow involves four parties:
 
 - **End user**
 - **Identity Provider (IdP)** (e.g., Okta, Ping Identity, Azure AD)
-- **Moveworks Agent Studio**
+- **Moveworks Tool Studio**
 - **SAP SuccessFactors Instance**
 
 1. A user triggers a plugin in Moveworks that requires SF access (e.g., "Submit PTO for next Friday").
@@ -65,7 +65,7 @@ The authentication flow involves four parties:
 
 - **SAP SuccessFactors** admin access to register OAuth client applications (sandbox/prod)
 - **Identity Provider** admin access (Okta, Ping Identity, Azure AD, or similar) to create SAML 2.0 app integrations
-- **Moveworks Agent Studio** admin access to configure HTTP connectors
+- **Moveworks Tool Studio** admin access to configure HTTP connectors
 - **OpenSSL** installed on your local machine (pre-installed on macOS and most Linux distributions)
 - A test user in SAP SuccessFactors that is also provisioned in your IdP
 
@@ -73,7 +73,7 @@ The authentication flow involves four parties:
 
 With Dynamic SAML, Moveworks does not control the scope of API access through the connector configuration — unlike OAuth client credentials where you can define integration scopes. Instead, Dynamic SAML **mirrors the exact permissions of the authenticated end user** from SAP SuccessFactors. Whatever a user can see and do in SAP SF is what they can do through the Moveworks API call.
 
-This means permissions must be configured on **SAP SuccessFactors** before users can interact with data through Agent Studio plugins:
+This means permissions must be configured on **SAP SuccessFactors** before users can interact with data through Tool Studio plugins:
 
 - **OData API access:** Users need appropriate Role-Based Permissions (RBP) in SAP SF to access OData entities (e.g., `EmployeeTime`, `User`, `EmpJob`) via API. Without these permissions, API calls will return `403 Forbidden` even if SAML authentication succeeds.
 - **Entity-level permissions:** Some use cases require access to specific SF entities or fields. For example, PTO submission requires write access to `EmployeeTime`, while viewing compensation data requires read access to `EmpCompensation`. These vary by use case and are documented in individual plugin guides.
@@ -267,7 +267,7 @@ In a production deployment, assign a group (e.g., "Employees/Managers") so membe
 
 ## Step 4: Configure the Moveworks HTTP Connector
 
-In Agent Studio, navigate to **HTTP Connectors → Create** to set up a new connector. 
+In Tool Studio, navigate to **HTTP Connectors → Create** to set up a new connector. 
 
 This connector will enable Moveworks to communicate with SAP SF on behalf of individual users — it stores the SAML configuration, signing credentials, and token endpoint details needed to authenticate and execute API calls through dynamic SAML.
 
@@ -364,7 +364,7 @@ Click on **Save**.
 
 ### 5.1 Verify with an HTTP Action
 
-1. In Agent Studio, create or open an **HTTP Action** that uses the **SAP SF** **dynamic SAML** connector.
+1. In Tool Studio, create or open an **HTTP Action** that uses the **SAP SF** **dynamic SAML** connector.
 2. Click **Test** in the top-right corner.
 3. You will be prompted to **Generate Token**. Click it.
 4. A browser window opens and redirects to your IdP (Okta in this case). If you're already signed in, authentication is instant. If not, enter your SSO credentials.
@@ -472,7 +472,7 @@ curl -X POST \
 
 ## Congratulations!
 
-You've successfully configured **Dynamic SAML 2.0 Bearer Authentication** for SAP SuccessFactors in Moveworks Agent Studio. Your connector is now ready to power per-user plugins like PTO submission, time-off approvals, and any other SAP SF action that requires user-level identity.
+You've successfully configured **Dynamic SAML 2.0 Bearer Authentication** for SAP SuccessFactors in Moveworks Tool Studio. Your connector is now ready to power per-user plugins like PTO submission, time-off approvals, and any other SAP SF action that requires user-level identity.
 
 ---
 
@@ -486,13 +486,13 @@ You've successfully configured **Dynamic SAML 2.0 Bearer Authentication** for SA
 
 ## **Set up SAP SuccessFactors**
 
-To connect SAP SuccessFactors with Agent Studio, we’ll use OAuth2 with the Client Credentials Flow. You’ll need to register an application in SAP SuccessFactors and obtain the following credentials:
+To connect SAP SuccessFactors with Tool Studio, we’ll use OAuth2 with the Client Credentials Flow. You’ll need to register an application in SAP SuccessFactors and obtain the following credentials:
 
 - **Company ID**
 - **Client ID**
 - **Assertion** (Base64-encoded SAML assertion, generated after registering the application)
 
-The following steps will walk you through how to register an OAuth application in SAP SuccessFactors, generate the required assertion, and authenticate to get an access token. This token is essential to securely interact with the SAP SuccessFactors APIs and set up the connector within Agent Studio
+The following steps will walk you through how to register an OAuth application in SAP SuccessFactors, generate the required assertion, and authenticate to get an access token. This token is essential to securely interact with the SAP SuccessFactors APIs and set up the connector within Tool Studio
 
 ## **Step 1: Register the Application in SAP SuccessFactors**
 
@@ -643,11 +643,11 @@ curl --location 'https://<API_SERVER_DOMAIN>/oauth/token' \
 --data-urlencode 'grant_type=urn:ietf:params:oauth:grant-type:saml2-bearer' \
 --data-urlencode 'assertion=<SAML_ASSERTION>'
 ```
-- By importing the cURL request into Agent Studio during action creation, you can directly retrieve the access token as part of your workflow, making it easier to integrate and automate the process
+- By importing the cURL request into Tool Studio during action creation, you can directly retrieve the access token as part of your workflow, making it easier to integrate and automate the process
 
-## **Step 4: Integrate with Agent Studio**
+## **Step 4: Integrate with Tool Studio**
 
-In Agent Studio, create a new connector with the following configuration (please name it accordingly for easy identification while creating use cases):
+In Tool Studio, create a new connector with the following configuration (please name it accordingly for easy identification while creating use cases):
 
 1. **Auth Config:**
     - OAuth2
@@ -673,7 +673,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/rest/timemanagement/absence/v1/time
 
 ```
 
-## **Step 5: Integrate SAP SuccessFactors API in Agent Studio**
+## **Step 5: Integrate SAP SuccessFactors API in Tool Studio**
 
 - Add your API details below to integrate with the SAP SuccessFactors API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-action-data-bank-legacy).
 
@@ -700,7 +700,7 @@ curl --location 'https://<API_SERVER_DOMAIN>/rest/timemanagement/absence/v1/time
 
 ## **Congratulations!**
 
-You've successfully integrated the **SAP SuccessFactors API** with Agent Studio. You can now start using it for your specific use cases
+You've successfully integrated the **SAP SuccessFactors API** with Tool Studio. You can now start using it for your specific use cases
 
 ---
 
@@ -719,7 +719,7 @@ You've successfully integrated the **SAP SuccessFactors API** with Agent Studio.
 
 ## Step 1: Create a Moveworks Listener (UI steps)
 
-In **Agent Studio → Listeners**:
+In **Tool Studio → Listeners**:
 
 1. **Create Listener** → copy the **Webhook URL** (you’ll paste this into SAP’s **Endpoint URL**). 
 2. **Verification (secure your listener)**
@@ -772,4 +772,4 @@ Admin Center → **Event Subscription Management** → **Add** subscription → 
 >
 ## **Congratulations!**
 
-You've successfully created a webhook connection between **SAP SuccessFactors API** and Agent Studio.
+You've successfully created a webhook connection between **SAP SuccessFactors API** and Tool Studio.

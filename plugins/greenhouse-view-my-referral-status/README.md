@@ -19,13 +19,13 @@ Greenhouse is a leading Applicant Tracking System (ATS) that helps companies str
 
 By integrating this feature into your bot, you enable referrers to stay informed about their referral’s progress, including updates on application review, interview stages and final hiring decisions—eliminating the need for manual follow-ups.
 
-This guide walks you through adding the **View My Referral Status** feature to your bot using **Agent Studio.**
+This guide walks you through adding the **View My Referral Status** feature to your bot using **Tool Studio.**
 
 Let’s get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

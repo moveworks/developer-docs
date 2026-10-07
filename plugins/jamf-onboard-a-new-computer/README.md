@@ -16,11 +16,11 @@ systems:
 
 The **“Onboard a New Computer”** plugin enables IT admins to seamlessly onboard new computers to Jamf using the Moveworks AI Assistant. This automation streamlines the process by creating an enrollment invitation for the new computer.
 
-This guide will show you how to set up and customize the plugin in Agent Studio in just a few minutes.
+This guide will show you how to set up and customize the plugin in Tool Studio in just a few minutes.
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -55,7 +55,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the Jamf API.
 
-Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Tool Studio.
 
 ## **Appendix**
 

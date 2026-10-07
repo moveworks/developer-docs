@@ -15,11 +15,11 @@ systems:
 
 The **“Look Up all Quotes for an Account”** plugin allows sales representatives to quickly find all quotes linked to a specific customer or account in Salesforce directly through the Moveworks AI Assistant. This removes the need to search manually in Salesforce and helps sales teams access quote information instantly.
 
-This guide will walk you through installing and setting up the plugin in **Agent Studio**, so your team can easily retrieve quote details and stay informed during every step of the sales process. Let’s get started!
+This guide will walk you through installing and setting up the plugin in **Tool Studio**, so your team can easily retrieve quote details and stay informed during every step of the sales process. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ Specifically, confirm the following permissions are granted:
 - **Object Access**: `Read` access to the **Quote** and **Account** objects.
 - **Field Access**: `Read` access to key fields such as **Quote name, Quote number**, **AccountId**, **Status**, and any custom fields your organization uses for quotes.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

@@ -17,11 +17,11 @@ systems:
 
 The **“Look Up User Account Details”** plugin enables to instantly retrieve comprehensive user identity information from SailPoint iNow. By accessing real-time data such as roles, entitlements, lifecycle state, and source systems, the plugin allows the Assistant to respond to identity-related queries, support access management actions, and ensure compliance with organizational policies.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -31,7 +31,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**SailPoint iNow Connector Guide**](https://marketplace.moveworks.com/connectors/sailpoint-inow#how-to-implement) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Look Up User Account Details** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to simplify the process. Please follow our [**SailPoint iNow Connector Guide**](https://marketplace.moveworks.com/connectors/sailpoint-inow#how-to-implement) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Look Up User Account Details** plugin in minutes.
 
 As an admin, ensure that the following scopes are enabled for your user to successfully install and use this plugin.
 
@@ -60,7 +60,7 @@ e.g.: `https://your_instance.identitynow.com/...`
 
 Make sure to update this across all actions that reference the Sailpoint iNow API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

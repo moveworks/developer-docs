@@ -16,11 +16,11 @@ systems:
 
 The **Fetch Interview Feedback** plugin enables hiring managers and recruiters to seamlessly retrieve interview feedback submitted by interviewers for a specific candidate in Greenhouse, all through the Moveworks AI Assistant. This ensures quick access to valuable insights, streamlining the hiring process and improving decision-making.
 
-This guide will walk you through the quick and easy installation process in Agent Studio. Let’s get started!
+This guide will walk you through the quick and easy installation process in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - The **View Open Jobs** plugin built in Creator Studio. It retrieves all open roles within the organization. Refer to the [View Open Jobs](https://developer.moveworks.com/creator-studio/resources/plugin?id=greenhouse-view-open-jobs) guide for setup instructions.
 - The **Lookup Job Applications** plugin built in Creator Studio. It retrieves all candidate applications for a specific job. Refer to the [Lookup Job Applications](https://developer.moveworks.com/creator-studio/resources/plugin/?id=greenhouse-lookup-job-applications) guide for setup instructions.
 

@@ -16,11 +16,11 @@ systems:
 
 The **Summarize Offer Pipeline** plugin streamlines the tracking and management of job offers throughout the recruitment process. Users can view all offers associated with their accessible job requisitions, see details such as candidate information, status, and job title, and monitor the progress of each offer. This ensures that the recruiters can quickly access accurate offer data, make informed decisions, and maintain a clear overview of the hiring pipeline.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -36,7 +36,7 @@ You will also need to add the following permission:
 
 - `View` access to the **JobApplication** and **JobRequisition.**
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

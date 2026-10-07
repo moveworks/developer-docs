@@ -6,7 +6,7 @@ name: Stack Overflow
 
 # **Introduction**
 
-Integrating Stack Overflow with Agent Studio enables seamless access to valuable programming knowledge and collaboration insights, enhancing your development workflows. By leveraging Stack Overflow's robust API and utilizing appropriate authentication mechanisms, you can automate the retrieval of questions, answers, and discussions to improve your team's problem-solving capabilities. This guide provides a step-by-step process to connect your Stack Overflow instance to Agent Studio and test the integration, ensuring efficient access to expert solutions and streamlined collaboration within your coding projects.
+Integrating Stack Overflow with Tool Studio enables seamless access to valuable programming knowledge and collaboration insights, enhancing your development workflows. By leveraging Stack Overflow's robust API and utilizing appropriate authentication mechanisms, you can automate the retrieval of questions, answers, and discussions to improve your team's problem-solving capabilities. This guide provides a step-by-step process to connect your Stack Overflow instance to Tool Studio and test the integration, ensuring efficient access to expert solutions and streamlined collaboration within your coding projects.
 
 # **Prerequisites**
 
@@ -69,11 +69,11 @@ Integrating Stack Overflow with Agent Studio enables seamless access to valuable
 
 This request is responded to with either an error (HTTP status code 400) or an access token of the form `access_token=...&expires=1234`. `expires` will only be set if scope does not include `no_expiry`, the use of which is strongly advised against unless your app *truly* needs perpetual access.
 
-# Connect to Agent Studio:
+# Connect to Tool Studio:
 
 ## For Read Cases:
 
-- In Agent Studio, create a new action with the following configuration:
+- In Tool Studio, create a new action with the following configuration:
 - Click on **create new connector.**
     - Base Url : Your organization specific base url.
     - Name the connector appropriately.
@@ -106,7 +106,7 @@ This request is responded to with either an error (HTTP status code 400) or an a
 
 ## For Write Cases:
 
-- In Agent Studio, create a new action with the following configuration:
+- In Tool Studio, create a new action with the following configuration:
 - Click on **create new connector.**
     - Base Url : Your organization specific base url.
     - Name the connector appropriately.
@@ -142,4 +142,4 @@ This request is responded to with either an error (HTTP status code 400) or an a
 
 # Congratulations!
 
-You've successfully integrated Stack Overflow with Agent Studio. This opens up a variety of automation and integration possibilities within your Stack Overflow environment.
+You've successfully integrated Stack Overflow with Tool Studio. This opens up a variety of automation and integration possibilities within your Stack Overflow environment.

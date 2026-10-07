@@ -17,7 +17,7 @@ The **Search a Question on StackOverflow Internal** plugin enhances the Movewo
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - [Stack Overflow Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) set up in Creator Studio.
 
 # What are we building?
@@ -28,7 +28,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our [**Stack Overflow Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Tool Studio before installing this plugin to streamline the process. Please follow our [**Stack Overflow Connector Guide**](https://developer.moveworks.com/creator-studio/resources/connector/?id=stackoverflow) to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 # Appendix
 

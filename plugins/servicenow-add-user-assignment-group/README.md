@@ -16,11 +16,11 @@ systems:
 
 The **Add a User to an Assignment Group** plugin allows managers or designated users to effortlessly assign team members to the right groups using the Moveworks AI Assistant. By removing the need to manually navigate the ServiceNow interface, this plugin streamlines group management—speeding up onboarding and improving team efficiency.
 
-This guide will walk you through the steps to install and configure the plugin in **Agent Studio**—all in just a few minutes. Let’s get started!
+This guide will walk you through the steps to install and configure the plugin in **Tool Studio**—all in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -42,7 +42,7 @@ Ensure the following permissions are granted:
 **User Permissions:**:
 - You must be the `Group Admin` of the respective assignment group in order to add users.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

@@ -14,11 +14,11 @@ systems:
 
 The **View Gong Meetings** plugin allows your users to access and review past Gong meeting recordings and summaries directly through the Moveworks AI Assistant. Users can quickly retrieve key meeting details, including date, participants, topics discussed, and meeting links, all within their chat interface. This plugin ensures efficient access to meeting insights and enhances productivity by keeping all relevant information at the user's fingertips.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 - Gong Connector set up in Creator Studio
 
 # **What are we building?**
@@ -29,7 +29,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we do recommend that you create a gong connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Gong Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a gong connector in Tool Studio before installing this plugin to streamline the process. Please follow our **Gong Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 # Appendix
 

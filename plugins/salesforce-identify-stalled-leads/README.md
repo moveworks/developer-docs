@@ -15,11 +15,11 @@ systems:
 
 The **“Identify Stalled Leads”** plugin helps you find sales leads that haven't had any activity (like calls, emails, or updates) within a specified number of days. This is useful for spotting leads that may have been forgotten or need re-engagement.
 
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -36,7 +36,7 @@ Specifically, confirm the following permissions are granted:
 - **Object Access**: `Read` access to the **Lead** object.
 - Ensure the user has permission to view lead records relevant to their team or territory.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix**
 

@@ -15,11 +15,11 @@ solution_tags:
 
 The **Summarize Ticket History & Activity** plugin enables users to retrieve and summarize key updates from ServiceNow tickets directly through the Moveworks AI Assistant. This helps users quickly review ticket progress, resolution notes, priority changes, and other important updates without navigating through ServiceNow manually.
 
-This guide will help you install and use this plugin in Agent Studio within minutes. Let’s get started!
+This guide will help you install and use this plugin in Tool Studio within minutes. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - **ServiceNow Connector** built in Creator Studio (follow the [ServiceNow Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=servicenow) to create your connector)
 
 # What are we building?

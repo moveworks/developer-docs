@@ -21,11 +21,11 @@ systems:
 
 The **“Suggest Next Best Actions for an Opportunity”** plugin enables sales users to instantly get actionable recommendations for any Salesforce opportunity — without the need to manually review multiple records. Through the Moveworks AI Assistant, users can select an opportunity and immediately receive a clear, consolidated summary of its status along with intelligent next-step suggestions to help drive it forward.
 
-This guide walks you through how to configure and customize the plugin within Agent Studio so you can deliver these insights in just a few minutes. Let’s get started!
+This guide walks you through how to configure and customize the plugin within Tool Studio so you can deliver these insights in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -81,7 +81,7 @@ Follow the steps below to update it correctly after installation:
 5. Ensure all API requests use **HTTPS** and leverage **OAuth 2.0 authentication**.
 6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance
 
-After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for details on installing the plugin in Agent Studio.
+After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for details on installing the plugin in Tool Studio.
 
 ## **Appendix**
 

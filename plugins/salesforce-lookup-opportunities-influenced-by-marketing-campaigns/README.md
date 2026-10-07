@@ -17,11 +17,11 @@ systems:
 
 The Salesforce **“Look Up Opportunities Influenced by a Marketing Campaign”** plugin helps users quickly identify and review the opportunities associated with specific campaigns. By selecting a campaign, the plugin fetches and displays all related opportunities along with key details such as amount, stage, and account, making it easier to track campaign impact on revenue.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -40,7 +40,7 @@ Specifically, verify that the following permissions are granted:
 - **Object Access:** Read access to the **Campaign** and **Opportunity** objects.
 - **Field Access:** Read access to fields such as **Id, Name, CreatedDate, Status, Type** (for Campaigns) and **Id, Name, Amount, StageName, CreatedDate, CloseDate** (for Opportunities).
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

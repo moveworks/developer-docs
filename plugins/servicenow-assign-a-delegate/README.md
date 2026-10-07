@@ -15,13 +15,13 @@ systems:
 
 The **Assign a Delegate** plugin enables seamless assignment of ITSM tasks and approvals to delegates during employee absences through the Moveworks AI Assistant. Users can quickly designate a delegate, set PTO dates, and specify task scope—allowing uninterrupted workflow without manual ServiceNow configuration.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes.
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes.
 
 Let’s get started!
 
 ## **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -42,7 +42,7 @@ For this plugin, ensure the user has the following permissions:
 - **Read access**
     - to table: `sys_user`
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

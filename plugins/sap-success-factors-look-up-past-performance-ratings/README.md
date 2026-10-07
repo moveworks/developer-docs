@@ -17,11 +17,11 @@ systems:
 
 The “**Look Up Past Performance Ratings**” plugin enables employees and managers to instantly access historical performance ratings directly through the **Moveworks AI** Assistant. It eliminates the need to navigate multiple HR portal pages, allowing users to quickly view their own or their team’s past review ratings and trends. This automation improves visibility into performance history and simplifies preparation for reviews and assessments without delays.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -31,7 +31,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [SAP SuccessFactors Connector](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) guide for detailed instructions. Once completed, proceed to install the **Look Up Past Performance Ratings** plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [SAP SuccessFactors Connector](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) guide for detailed instructions. Once completed, proceed to install the **Look Up Past Performance Ratings** plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration user have the following permissions:
 

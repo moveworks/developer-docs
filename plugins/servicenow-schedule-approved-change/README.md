@@ -14,11 +14,11 @@ systems:
 
 The **“Schedule a Change”** plugin enables IT teams to efficiently **schedule an approved Change Request** in **ServiceNow** using the Moveworks AI Assistant. This helps streamline the change implementation process by automating scheduling steps, reducing delays, and improving accuracy in change timelines.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ### Agent Design
 
@@ -33,7 +33,7 @@ Ensure the following permissions are granted:
 - **Table Access**: `Read` and `Update` access to the `change_request` table
 - **Field Access**: `Read` access to retrieve approved change requests, and `Write` access to update scheduling details
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**
 
 ## **Appendix**
 

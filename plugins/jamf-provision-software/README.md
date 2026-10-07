@@ -14,11 +14,11 @@ systems:
 
 The "Provision Software" plugin allows employees to quickly get the software they need on their macOS computers, seamlessly integrating with Jamf through the Moveworks AI Assistant. This eliminates the need for manual installation or IT intervention, making it easier for users to access approved software, ensure compatibility, and stay productive without delays.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let's get started!
+This guide will walk you through installing and configuring the plugin in Tool Studio in just a few minutes. Let's get started!
 
 ## **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -28,7 +28,7 @@ This [purple chat](https://marketplace.moveworks.com/plugins/jamf-provision-sof
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [JAMF Connector](https://marketplace.moveworks.com/connectors/jamf?#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup  efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [JAMF Connector](https://marketplace.moveworks.com/connectors/jamf?#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup  efficiently.
 **Note:** To enable access to Jamf Pro API endpoints, ensure that the following API roles are assigned to the API Client **Settings → API Roles and Clients → API Roles → [Your API Role]**.
 
 For this plugin, ensure the JAMF integration Client has the following permissions:

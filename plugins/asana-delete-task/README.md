@@ -15,11 +15,11 @@ systems:
 
 The **Asana Delete a Task** plugin allows users to delete a specific task in a project directly through the Moveworks AI Assistant. With this plugin, users can quickly navigate through workspaces, teams, and projects to view task details such as due dates, assignees, and statuses — and then remove tasks that are no longer needed, without leaving their workflow.
 
-This guide will help you install and configure the plugin in **Agent Studio** within minutes.
+This guide will help you install and configure the plugin in **Tool Studio** within minutes.
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - [Asana Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=asana) built in Creator Studio (follow the Asana Authentication guide to create your connector)
 
 # What are we building?
@@ -30,7 +30,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our **Asana Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **Asana Delete a Task** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Tool Studio** beforehand to streamline the process. Please follow our **Asana Connector Guide** to do so. Once completed, follow our plugin installation documentation to install the **Asana Delete a Task** plugin in minutes.
 
 For **Asana – Delete a Task**, you will also need to add the following permissions:
 

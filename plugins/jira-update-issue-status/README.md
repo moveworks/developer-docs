@@ -15,13 +15,13 @@ systems:
 
 JIRA is a leading platform for project and task management. The **Update Issue Status** plugin streamlines workflow management by allowing users to update the status of an issue quickly and effortlessly. By integrating this feature into your bot, you enable users to modify issue statuses conversationally, reducing manual effort and improving team efficiency.
 
-This guide walks you through adding the **Update Issue Status** feature to your bot using **Agent Studio**.
+This guide walks you through adding the **Update Issue Status** feature to your bot using **Tool Studio**.
 
 Let’s get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

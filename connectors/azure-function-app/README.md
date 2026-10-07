@@ -9,7 +9,7 @@ name: Azure Function Apps
 
 Azure Functions is a serverless computing service provided by Microsoft Azure, offering an event-driven approach to building and deploying applications. 
 
-In this guide, we will demonstrate how to authenticate with an Azure Function App from Agent Studio. We will walk through creating a function app, implementing code, deploying it to Azure, testing it in Postman, and connecting it to Agent Studio
+In this guide, we will demonstrate how to authenticate with an Azure Function App from Tool Studio. We will walk through creating a function app, implementing code, deploying it to Azure, testing it in Postman, and connecting it to Tool Studio
 
 We are going to use the [Star Wars API](https://swapi.dev/) to build an API that returns a list of starships & vehicles based on the name of a Star Wars character.
 
@@ -300,9 +300,9 @@ def creator_studio_hello_world(req: func.HttpRequest) -> func.HttpResponse:
     ![Untitled](Authentication%20Guide%20Azure%20Function%20Apps%207503f66bf6994df5b7bb481e05e82e9f/Untitled%2019.png)
     
 
-Nice! We have a working API endpoint to connect to Agent Studio.
+Nice! We have a working API endpoint to connect to Tool Studio.
 
-## Step 5: Connect to Agent Studio
+## Step 5: Connect to Tool Studio
 
 1. In your API editor, create a new connector. You can read more about the supported auth types on [our connector reference](https://developer.moveworks.com/creator-studio/connector-configuration/).
     - Base Url: `https://creator-studio-tutorials-ajay.azurewebsites.net`
@@ -352,4 +352,4 @@ Nice! We have a working API endpoint to connect to Agent Studio.
 
 # Congratulations!
 
-You just connected your first Azure Function App to Agent Studio. [Check out this guide]() to configure Azure Multi-Factor Authentication (MFA) Reset in Agent Studio.
+You just connected your first Azure Function App to Tool Studio. [Check out this guide]() to configure Azure Multi-Factor Authentication (MFA) Reset in Tool Studio.

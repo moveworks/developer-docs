@@ -16,11 +16,11 @@ systems:
 
 The **“View Booking or Quote Failure Reason”** Plugin empowers support and operations teams to instantly access detailed failure reasons for booking or quote processes within Salesforce. By providing real-time visibility into error messages or status issues, this plugin enables faster diagnosis, reduces back-and-forth with engineering teams, and improves overall resolution time.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites:-**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend creating the connector for **Salesforce** first, prior to installing this plugin. Please follow the  [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) guide to set up the connector.
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Customization Process**
 

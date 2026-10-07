@@ -14,11 +14,11 @@ systems:
 
 The Look Up Expense Reports Pending My Approval plugin enables your users to effortlessly access and review the details of expense reports awaiting their approval in Coupa, directly through the Moveworks AI Assistant.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

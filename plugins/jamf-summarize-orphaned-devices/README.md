@@ -16,11 +16,11 @@ systems:
 
 The **“Summarize Orphaned Devices”** plugin enables IT administrators to identify and summarize computer devices in Jamf Pro that are not currently assigned to any user. Through the Moveworks AI Assistant, the plugin provides a concise overview of orphaned assets — including the computer device name, model, OS version, and last check-in date — allowing IT teams to efficiently reclaim, reprovision, or clean up unused computer devices without manually searching in Jamf Pro.
 
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -67,7 +67,7 @@ To find your instance name:
     Make sure to update this across all actions that reference the Jamf Pro API.
     
 
-Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Tool Studio.
 
 ## **Appendix**
 

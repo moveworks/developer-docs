@@ -18,11 +18,11 @@ systems:
 
 The “**Summarize Problem Record**” plugin enables IT admins and problem managers to quickly generate clear overviews of ServiceNow Problem Records through the **Moveworks AI Assistant**. It consolidates linked incidents, RCA notes, change requests, and tasks into a single snapshot, making it easy to understand the problem’s status, impact, and next steps.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -53,7 +53,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the ServiceNow API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix:-**
 

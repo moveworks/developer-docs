@@ -16,11 +16,11 @@ systems:
 
 The **View Eligible Time Off Plans** plugin simplifies this process by allowing users to instantly retrieve their available leave options through a conversational interaction with the Moveworks AI Assistant. By leveraging Workday’s Reports-as-a-Service (RaaS), this plugin ensures employees get real-time access to accurate, personalized time off information — without ever leaving the chat.
 
-This guide will walk you through how to call RaaS from Agent Studio and integrate this plugin into your Moveworks experience.
+This guide will walk you through how to call RaaS from Tool Studio and integrate this plugin into your Moveworks experience.
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
