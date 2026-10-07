@@ -17,11 +17,11 @@ systems:
 
 The **“View Personal Goals”** plugin allows users to easily access and review their performance goals in SAP SuccessFactors through the Moveworks AI Assistant. This helps employees stay aligned with their objectives, track progress, and stay focused on key priorities.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow the [SAP SuccessFactors Connector](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) Guide to configure the connection.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow the [SAP SuccessFactors Connector](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) Guide to configure the connection.
 
 Note: To enable the View Personal Goals functionality, ensure the SAP SuccessFactors integration user has the necessary permission scopes.
 

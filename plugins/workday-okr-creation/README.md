@@ -16,13 +16,13 @@ systems:
 
 The **“Set Goals For Direct Reports”** plugin allows managers to seamlessly set performance goals for their direct reports in Workday - all through the Moveworks AI Assistant. This eliminates the need for manual navigation to Workday and streamlines the goal-setting process.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes.
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes.
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -32,7 +32,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**Workday Connector Guide**](https://marketplace.moveworks.com/connectors/workday?hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to simplify the process. Please follow our [**Workday Connector Guide**](https://marketplace.moveworks.com/connectors/workday?hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the Workday integration system user has the following permissions:
 

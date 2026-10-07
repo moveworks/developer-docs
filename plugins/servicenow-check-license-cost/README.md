@@ -16,11 +16,11 @@ systems:
 
 **The Look Up License Cost**  enables users to quickly retrieve cost-related details of software licenses in ServiceNow through the Moveworks AI Assistant.
 
-This guide will walk you through the installation and configuration of the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through the installation and configuration of the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 # **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 
@@ -30,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [ServiceNow Connector](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) [**Guide**](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [ServiceNow Connector](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home%2Cbrws#how-to-implement) [**Guide**](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the ServiceNow integration user has the following permissions:
 

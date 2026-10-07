@@ -8,9 +8,9 @@ name: Microsoft Graph
 
 **Microsoft Graph** is Microsoft's unified API endpoint for accessing data and capabilities across Microsoft 365 — including Outlook, Teams, SharePoint, OneDrive, and more.
 
-Connecting Microsoft Graph to **Moveworks Agent Studio** brings these capabilities directly into the AI assistant — employees can manage calendar events, check availability, book rooms, and more, all through their AI Assistant.
+Connecting Microsoft Graph to **Moveworks Tool Studio** brings these capabilities directly into the AI assistant — employees can manage calendar events, check availability, book rooms, and more, all through their AI Assistant.
 
-This guide walks through setting up the OAuth 2.0 Authorization Code (User Consent Auth) flow and OAuth 2.0 with Client Credentials Grant flow to connect Microsoft Graph with Agent Studio. For most use cases, we recommend the User Consent Auth connector. For a full list of available API resources, refer to the [Microsoft Graph API documentation](https://learn.microsoft.com/en-us/graph/overview).
+This guide walks through setting up the OAuth 2.0 Authorization Code (User Consent Auth) flow and OAuth 2.0 with Client Credentials Grant flow to connect Microsoft Graph with Tool Studio. For most use cases, we recommend the User Consent Auth connector. For a full list of available API resources, refer to the [Microsoft Graph API documentation](https://learn.microsoft.com/en-us/graph/overview).
 
 
 # Prerequisites
@@ -23,7 +23,7 @@ This guide walks through setting up the OAuth 2.0 Authorization Code (User Conse
 
 ### Moveworks Requirements
 
-- Agent Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
+- Tool Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
 
 
 # OAuth 2.0 with Authorization Code (User Consent Auth) Setup
@@ -138,7 +138,7 @@ Replace `{{tenant_id}}` with the **Directory (tenant) ID** copied from Step 1.
 
 ### Step 5: Configure the Moveworks HTTP Connector
 
-1. In Agent Studio, go to **HTTP Connectors → Create**.
+1. In Tool Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
     - **Connector Name:** `Outlook_Authcode_Flow` (or your preferred name)
     - **Base URL:** `https://graph.microsoft.com/v1.0`
@@ -168,7 +168,7 @@ Replace `{{tenant_id}}` with the **Directory (tenant) ID** copied from Step 1.
 
 Let’s test if the connector is set up correctly:
 
-1. In Agent Studio, navigate to a new **HTTP Action**
+1. In Tool Studio, navigate to a new **HTTP Action**
 2. Fill in the following fields:
     - **Connector:** Select **Inherit from existing connector** and choose the connector you created in Step 5.
     - **Action Name:** `Get Current User` (or your preferred name)
@@ -212,7 +212,7 @@ Let’s test if the connector is set up correctly:
 ### Grant Permissions
 
 1. Open [App Registrations in the Azure Portal](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
-2. Register an **Agent Studio** app, or select an existing one.
+2. Register an **Tool Studio** app, or select an existing one.
     
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/image.png)
     
@@ -264,10 +264,10 @@ Let’s test if the connector is set up correctly:
     ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Untitled%209.png)
     
 
-## Step 4: Connect to Agent Studio
+## Step 4: Connect to Tool Studio
 
-1. In Agent Studio, create a new **HTTP Action** and Test it.
-   - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
+1. In Tool Studio, create a new **HTTP Action** and Test it.
+   - Go to Tool Studio -> **Actions** -> **HTTP Actions** -> **Create**
 
       ![Untitled](Authentication%20Guide%20Microsoft%20Graph%20API%20822c8b4935bd47a6b7b5c633bd75a3a6/Pasted%20Graphic.png)
 
@@ -304,4 +304,4 @@ Let’s test if the connector is set up correctly:
 
 # Congratulations!
 
-You just connected your Microsoft Graph API to Agent Studio.
+You just connected your Microsoft Graph API to Tool Studio.

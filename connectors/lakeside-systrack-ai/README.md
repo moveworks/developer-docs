@@ -9,9 +9,9 @@ name: Lakeside Systrack AI
  
 Lakeside SysTrack is a leading digital experience monitoring (DEM) platform that provides deep visibility into endpoint performance, device health, and employee experience data. Organizations use it to proactively identify and resolve IT issues, reduce support costs, and deliver a better employee technology experience.
  
-By connecting Lakeside SysTrack to **Moveworks Agent Studio**, you can enable employees and IT teams to interact with device diagnostics and troubleshooting capabilities directly through their AI assistant. This includes real-time device health analysis, audio and performance issue investigation, multi-turn AI-powered troubleshooting conversations, and automated device identification — all without leaving the conversational interface.
+By connecting Lakeside SysTrack to **Moveworks Tool Studio**, you can enable employees and IT teams to interact with device diagnostics and troubleshooting capabilities directly through their AI assistant. This includes real-time device health analysis, audio and performance issue investigation, multi-turn AI-powered troubleshooting conversations, and automated device identification — all without leaving the conversational interface.
  
-This guide walks through setting up API Key authentication to connect Lakeside SysTrack with Agent Studio. For a full list of available API resources, refer to the [**Lakeside SysTrack API Documentation**](https://docs.lakesidesoftware.com).
+This guide walks through setting up API Key authentication to connect Lakeside SysTrack with Tool Studio. For a full list of available API resources, refer to the [**Lakeside SysTrack API Documentation**](https://docs.lakesidesoftware.com).
  
 ---
  
@@ -25,7 +25,7 @@ This guide walks through setting up API Key authentication to connect Lakeside S
 
 ### Moveworks Requirements
  
-- Agent Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
+- Tool Studio admin access in your Moveworks tenant ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin))
 
 ---
  
@@ -44,7 +44,7 @@ Use this method for all new integrations. API keys provide enhanced security, si
  
 ### Step 2: Configure the Moveworks HTTP Connector
  
-1. In Agent Studio, go to **HTTP Connectors → Create**.
+1. In Tool Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
    - **Connector Name:** `Lakeside_SysTrack_Connector` (or your preferred name)
    - **Base URL:** `https://{{systrack_hostname}}` — replace `systrack_hostname` with your SysTrack Cloud hostname (e.g., `cloud.lakesidesoftware.com`)
@@ -78,4 +78,4 @@ A `200` response with a list of groups confirms the connector is working.
  
 ## Congratulations!
  
-You've successfully connected Lakeside SysTrack to Moveworks Agent Studio. Your connector is now ready for use within Moveworks Agent Studio plugins
+You've successfully connected Lakeside SysTrack to Moveworks Tool Studio. Your connector is now ready for use within Moveworks Tool Studio plugins

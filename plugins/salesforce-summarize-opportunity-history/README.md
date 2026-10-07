@@ -20,11 +20,11 @@ systems:
 
 The **Summarize Opportunity History** plugin gives sales users instant **insights** into an opportunity’s key milestones, stage changes, and recent activity — all within the Moveworks AI Assistant. It helps users quickly understand deal progress, improve visibility, and focus on the next best actions without manually opening Salesforce.
 
-This guide walks you through how to configure and customize the plugin within Agent Studio so you can deliver these insights in just a few minutes. Let’s get started!
+This guide walks you through how to configure and customize the plugin within Tool Studio so you can deliver these insights in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## What are we building?
 
@@ -81,7 +81,7 @@ Follow the steps below to update it correctly after installation:
 5. Ensure all API requests use **HTTPS** and leverage **OAuth 2.0 authentication**.
 6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance.
 
-After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for details on installing the plugin in Agent Studio.
+After configuring the connector, refer to our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for details on installing the plugin in Tool Studio.
 
 ### **API #1: Search Opportunities by Criteria**
 

@@ -1,0 +1,6 @@
+{
+  "initialMessage": "{{user_message}}",
+  "userIdentifier": "{{{meta_info.user.email_addr}}}",
+  "displayName": "{{{meta_info.user.full_name}}}",
+  "selectedSystemName": "{{system_name}}"
+}

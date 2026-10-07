@@ -6,7 +6,7 @@ name: GitHub
 
 # **Introduction**
 
-GitHub provides a powerful API that allows developers to interact with GitHub services programmatically. To safeguard access and ensure that only authorized users can perform actions via the API, GitHub employs authentication mechanisms, including Personal Access Tokens (PATs). This guide will explain how to create and use a Personal Access Token for GitHub's APIs and connect it to Agent Studio.
+GitHub provides a powerful API that allows developers to interact with GitHub services programmatically. To safeguard access and ensure that only authorized users can perform actions via the API, GitHub employs authentication mechanisms, including Personal Access Tokens (PATs). This guide will explain how to create and use a Personal Access Token for GitHub's APIs and connect it to Tool Studio.
 
 # **Prerequisites**
 
@@ -61,9 +61,9 @@ We will be testing out the [List all Public Repositories of a User](https://docs
     ![Postman-response](Authentication%20Tutorial%20GitHub%2089effaebc900474193ba55ebb85340d6/Untitled%205.png)
     
 
-## **Step 3: Integrate with Agent Studio**
+## **Step 3: Integrate with Tool Studio**
 
-1. In Agent Studio, create a new connector with the following configuration:
+1. In Tool Studio, create a new connector with the following configuration:
     - Base URL: `https://api.github.com`
     - Auth Config: `Api Key Auth`
     - Api Key Auth Auth Type: `Header Auth`
@@ -79,11 +79,11 @@ We will be testing out the [List all Public Repositories of a User](https://docs
     
     - Path: `/users/{{github_username}}/repos`
     - Method: `GET`
-3. Test your setup in Agent Studio and look for a successful execution.
+3. Test your setup in Tool Studio and look for a successful execution.
     
     ![CreatorStudio-test](Authentication%20Tutorial%20GitHub%2089effaebc900474193ba55ebb85340d6/Untitled%206.png)
     
 
 # **Congratulations!**
 
-You've successfully integrated GitHub’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your GitHub organization.
+You've successfully integrated GitHub’s API with Tool Studio. This opens up a variety of automation and integration possibilities within your GitHub organization.

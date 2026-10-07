@@ -15,11 +15,11 @@ systems:
 
 The “**Look Up Headcount by Department**” plugin enables HR Managers to instantly retrieve a snapshot view of departmental resourcing through the Moveworks AI Assistant. It eliminates delays and manual processes, empowering HR teams to make faster, data-driven workforce planning and resource allocation decisions.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -29,7 +29,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector**](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) Guide for detailed instructions. Once completed, proceed to install the **Look Up Headcount by Department** plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector**](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) Guide for detailed instructions. Once completed, proceed to install the **Look Up Headcount by Department** plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration HR managers have the following permissions:
 

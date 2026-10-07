@@ -17,11 +17,11 @@ systems:
 
 The **“Assign a Device to a New Owner”** plugin enables IT administrators to efficiently assign or reassign managed devices (computers) to new owners in Jamf through the Moveworks AI Assistant. This automation allows admins to search for users by name or email, view matching user profiles and available devices, and complete the reassignment in a single step. The plugin automatically updates ownership details—including username, full name, email, and department—ensuring accurate asset records and streamlining device handoffs.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -43,7 +43,7 @@ Specifically, confirm that the following privileges are granted:
 
 This permission is required to retrieve user-related data and perform advanced searches within the Jamf Pro environment using the API.
 
-Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Tool Studio.
 
 ## **Appendix**
 

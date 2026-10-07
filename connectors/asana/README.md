@@ -6,7 +6,7 @@ name: Asana
 
 # **Introduction**
 
-Asana's API provides a robust platform to integrate and streamline tasks in your Asana workspace. This guide will demonstrate how to connect Asana to Agent Studio. In doing so, there are two ways you can proceed:
+Asana's API provides a robust platform to integrate and streamline tasks in your Asana workspace. This guide will demonstrate how to connect Asana to Tool Studio. In doing so, there are two ways you can proceed:
 1. [Asana Webhook Connection](https://marketplace.moveworks.com/connectors/asana#Asana-Webhook-Connection) - This is best when building ambient agents that are trigged from a system event inside of Asana. 
 2. [Personal Access Token](https://marketplace.moveworks.com/connectors/asana#Asana-Personal-Access-Token-Connection) - This is best when you want to build user trigged agents that connect to Asana.
 
@@ -22,7 +22,7 @@ Asana's API provides a robust platform to integrate and streamline tasks in your
     
 
 ## Walk Through
-### Step 1: In Agent Studio → **Listeners**:
+### Step 1: In Tool Studio → **Listeners**:
 1. **Create listener** → copy the **Webhook URL** (you’ll paste into Asana’s `target`). 
     ![Create-Listener](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Create-Asana-Listener.png)
 2. **Verification → Add New → One-Time Verification Challenge**
@@ -157,7 +157,7 @@ References for creation + filters + handshake semantics: creating webhooks, hand
     Asana signs each delivery with HMAC-SHA256 of the **raw request body** using the handshake’s secret and sends that as `X-Hook-Signature`. Moveworks will compute and compare.
 
 ### Congratulations!
-You’ve successfully setup an Asana Webhook inside of Agent Studio. This opens up a variety of automation and integration possibilities within your Asana Workspace. 
+You’ve successfully setup an Asana Webhook inside of Tool Studio. This opens up a variety of automation and integration possibilities within your Asana Workspace. 
 
 # Asana Personal Access Token Connection
 
@@ -198,9 +198,9 @@ You’ve successfully setup an Asana Webhook inside of Agent Studio. This opens 
     ![Untitled](Authentication%20Guide%20Asana%20187c2020eb774256ab9e452a4efdb183/Untitled%203.png)
     
 
-### **Step 3: Integrate with Agent Studio**
+### **Step 3: Integrate with Tool Studio**
 
-1. In Agent Studio, create a new connector with the following configuration:
+1. In Tool Studio, create a new connector with the following configuration:
     - Base URL: `https://app.asana.com/api`
     - Auth Config: `Api Key Auth`
     - Api Key Auth Auth Type: `Header Auth`
@@ -216,7 +216,7 @@ You’ve successfully setup an Asana Webhook inside of Agent Studio. This opens 
     
     - Path: `/1.0/users/me`
     - Method: `GET`
-3. Test your setup in Agent Studio and look for a successful execution.
+3. Test your setup in Tool Studio and look for a successful execution.
     
     ```json
     
@@ -233,4 +233,4 @@ You’ve successfully setup an Asana Webhook inside of Agent Studio. This opens 
 
 ### **Congratulations!**
 
-You've successfully integrated Asana’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Asana workspace.
+You've successfully integrated Asana’s API with Tool Studio. This opens up a variety of automation and integration possibilities within your Asana workspace.

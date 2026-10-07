@@ -10,7 +10,7 @@ name: Sailpoint IdentityIQ
 
 **SailPoint IdentityIQ** is a prominent leader in enterprise identity governance solutions, providing businesses with the necessary tools to manage digital identities securely and effectively.
 
-This guide will demonstrate how to connect Sailpoint IdentityIQ to Agent Studio. In doing so, there are two ways you can proceed:
+This guide will demonstrate how to connect Sailpoint IdentityIQ to Tool Studio. In doing so, there are two ways you can proceed:
 1. [Webhook](https://marketplace.moveworks.com/connectors/sailpoint-iiq#Webhook-Connection) - This is best when building ambient agents that are trigged from a system event inside of Sailpoint IIQ. 
 2. [Oauth 2.0 with Client Credentials](https://marketplace.moveworks.com/connectors/sailpoint-iiq#OAuth-2.0-with-Client-Credentials) - This is best when you want to build user trigged agents that connect to SalpointIIQ.
 
@@ -27,7 +27,7 @@ This guide will demonstrate how to connect Sailpoint IdentityIQ to Agent Studio.
 
 ## Step 1: Create the Moveworks Listener
 
-In **Agent Studio → Listeners → Create new listener** :
+In **Tool Studio → Listeners → Create new listener** :
 
 1. **Open your Listener**
     - Copy your Webhook URL
@@ -69,7 +69,7 @@ In **Agent Studio → Listeners → Create new listener** :
 
 ## Congratulations
 
-You have successfully created a webhook connection between SailPoint IIQ and Agent Studio. This opens up a variety of automation and integration possibilities using your SailPoint IIQ instance.
+You have successfully created a webhook connection between SailPoint IIQ and Tool Studio. This opens up a variety of automation and integration possibilities using your SailPoint IIQ instance.
 
 
 ---
@@ -88,7 +88,7 @@ Authentication with SailPoint’s API endpoints is done over an OAuth client who
 
 ## (Optional) Step 1: Install the Moveworks for Sailpoint Plugin
 
-On top of the capabilities that are supported via their native ReST APIs, to support additional abilities like pulling in identity and approvals information, and actioning on those approval requests, we have built a custom Sailpoint Plugin which installs a few extra APIs in your Sailpoint instance. If you are building a plugin that deals with either Identity or Approval Requests within SailPoint IIQ, we strongly suggest you to install the custom Sailpoint plugin and then utilize the APIs exposed for building your Agent Studio plugin.
+On top of the capabilities that are supported via their native ReST APIs, to support additional abilities like pulling in identity and approvals information, and actioning on those approval requests, we have built a custom Sailpoint Plugin which installs a few extra APIs in your Sailpoint instance. If you are building a plugin that deals with either Identity or Approval Requests within SailPoint IIQ, we strongly suggest you to install the custom Sailpoint plugin and then utilize the APIs exposed for building your Tool Studio plugin.
 
 All authentication with these endpoints is done over the same OAuth client as mentioned above.
 
@@ -143,7 +143,7 @@ All authentication with these endpoints is done over the same OAuth client as me
     ![OAuth Client](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/new%20oauth%20client.png)
 
 
-5. Note your `Client ID` and `Client Secret` - this will be required later to configure the Connector within Agent Studio
+5. Note your `Client ID` and `Client Secret` - this will be required later to configure the Connector within Tool Studio
 
 ## Step 3: Test with Postman
 
@@ -164,9 +164,9 @@ Once you have all the required credentials from the above process, please move o
     ![image.png](Sailpoint%20IdentityIQ%20c7d45655365d4d25b30bd22674c5b910/image.png)
     
 
-## Step 4: Integrate with Agent Studio
+## Step 4: Integrate with Tool Studio
 
-1. In Agent Studio, create a new connector with the following configuration:
+1. In Tool Studio, create a new connector with the following configuration:
     - Base URL: `{{sailpoint_url}}`. This will be the base URL of your SailPoint instance. If you visit your SailPoint instance’s home page and the URL looks something like the following: `https://seri.company2482-poc.demohub.sailpointtechnologies.com:8080/identityiq/home.jsf`, the portion before `/identityiq` is your base URL.
     - Auth Config: `Oauth2`
     - Oauth2 Grant Type: `Client Credentials Grant`
@@ -179,7 +179,7 @@ Once you have all the required credentials from the above process, please move o
     
 
 2. Test your Connector by setting up a demo API action
-    1. In Agent Studio, create a new Plugin.
+    1. In Tool Studio, create a new Plugin.
         1. Click on Plugins > Actions tab
         2. Click on CREATE to create a new plugin
     2. Set up your API Connection to configure the API endpoint based on the following:
@@ -196,4 +196,4 @@ Once you have all the required credentials from the above process, please move o
 
 ## Congratulations
 
-You have successfully integrated SailPoint IIQ’s APIs with Agent Studio. This opens up a variety of automation and integration possibilities using your SailPoint IIQ instance.
+You have successfully integrated SailPoint IIQ’s APIs with Tool Studio. This opens up a variety of automation and integration possibilities using your SailPoint IIQ instance.

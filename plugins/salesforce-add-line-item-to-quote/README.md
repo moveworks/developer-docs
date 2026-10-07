@@ -14,11 +14,11 @@ systems:
 
 The **“Add a Line Item to a Quote”** plugin enables sales representatives to easily add products to an existing quote for a qualified opportunity directly through the Moveworks AI Assistant. This simplifies updating quotes in Salesforce without having to navigate the system manually.
 
-This guide will walk you through installing and setting up the plugin in **Agent Studio**, so your team can quickly add line items to quotes and keep deals moving forward efficiently. Let’s get started!
+This guide will walk you through installing and setting up the plugin in **Tool Studio**, so your team can quickly add line items to quotes and keep deals moving forward efficiently. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -37,7 +37,7 @@ Specifically, confirm the following permissions are granted:
 - **Object Access**: `Read` and `Create` access to the **QuoteLineItem**, **Quote**, and **PricebookEntry** objects.
 - **Field Access**: `Read` and `Edit` access to fields such as **QuoteId**, **PricebookEntryId**, **Quantity**, **UnitPrice**, and any custom fields your organization uses for quote line items.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

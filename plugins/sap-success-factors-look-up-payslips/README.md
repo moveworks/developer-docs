@@ -20,11 +20,11 @@ systems:
 
 The **Look Up Payslips** plugin enables employees to instantly access their historical payslips from SAP SuccessFactors directly through the Moveworks AI Assistant. Users can quickly retrieve key details such as pay period, gross pay, deductions, and net pay, with the option to download the full payslip document when needed. This eliminates the hassle of logging into the SAP portal, ensuring employees have fast, secure, and convenient access to their payroll information anytime.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 
@@ -34,7 +34,7 @@ This [**purple chat**](https://marketplace.moveworks.com/purple-chat?conversati
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://marketplace.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://marketplace.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 

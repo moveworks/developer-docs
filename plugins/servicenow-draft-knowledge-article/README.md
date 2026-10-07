@@ -15,11 +15,11 @@ systems:
 
 The “**Create a Draft Knowledge Article”** plugin enables users to quickly generate draft knowledge articles from resolved **Incidents**, **Problems**, and **Change Requests**, or **start a plain draft from scratch** in ServiceNow using the Moveworks AI Assistant. This streamlines the process by leveraging existing resolution data, reducing manual effort, and promoting knowledge reuse across the organization.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ### Agent Design
 
@@ -39,7 +39,7 @@ Ensure the following permissions are granted:
     - `Read` access to resolution notes, short descriptions, and other relevant metadata fields in the `incident`, `problem`, and `change_request` tables.
     - `Write` access to populate and edit fields in knowledge articles.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**!
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**!
 
 ## **Appendix**
 

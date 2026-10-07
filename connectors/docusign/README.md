@@ -7,7 +7,7 @@ name: Docusign
 
 # **Introduction**
 
-Integrating DocuSign with Agent Studio allows for seamless incorporation of electronic signature capabilities and document management into your workflows. By leveraging DocuSign's robust REST API and utilizing appropriate authentication mechanisms, you can automate signature processes and enhance your document management workflows. This guide provides a step-by-step process to connect your DocuSign instance to Agent Studio and test the integration for efficient document execution and collaboration.
+Integrating DocuSign with Tool Studio allows for seamless incorporation of electronic signature capabilities and document management into your workflows. By leveraging DocuSign's robust REST API and utilizing appropriate authentication mechanisms, you can automate signature processes and enhance your document management workflows. This guide provides a step-by-step process to connect your DocuSign instance to Tool Studio and test the integration for efficient document execution and collaboration.
 
 # **Prerequisites**
 
@@ -138,13 +138,13 @@ Additional Resources
     - DocuSign JWT Grant Authentication: [https://developers.docusign.com/platform/auth/jwt/](https://developers.docusign.com/platform/auth/jwt/)
     - DocuSign Developer FAQ on JWT Consent: [https://support.docusign.com/s/articles/DocuSign-Developer-FAQs-General-Administration-and-Authentication?language=en_US](https://support.docusign.com/s/articles/DocuSign-Developer-FAQs-General-Administration-and-Authentication?language=en_US)
 
-# **Step 4: Agent Studio**
+# **Step 4: Tool Studio**
 
 We need to create two connectors because there are two different base URLs used in this integration.
 
 ### Connector 1:
 
-1. Go to **Agent Studio → HTTP Connector**
+1. Go to **Tool Studio → HTTP Connector**
     
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2016.png)
     
@@ -237,7 +237,7 @@ We need to create two connectors because there are two different base URLs used 
     
 ### Connector 2:
 
-1. Go to **Agent Studio → HTTP Connector**
+1. Go to **Tool Studio → HTTP Connector**
 
     ![image.png](Docusign%203b527999d6dd4d2182b6f39cbcdfc115/image%2016.png)
 

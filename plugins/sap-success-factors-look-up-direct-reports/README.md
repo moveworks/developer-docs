@@ -14,11 +14,11 @@ systems:
 
 The **“Look Up Direct Reports”** plugin allows managers to quickly view their direct reports in SAP SuccessFactors via the Moveworks AI Assistant, eliminating the need to manually navigate organizational charts. With this automation, managers can efficiently access team information and direct report details without delays.
 
-This guide will help you install and configure the plugin in **Agent Studio** within minutes. Let’s get started!
+This guide will help you install and configure the plugin in **Tool Studio** within minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -28,7 +28,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [SAP SuccessFactors Connector](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) Guide for detailed instructions. Once completed, proceed to install the **Lookup Direct Reports** plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [SAP SuccessFactors Connector](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) Guide for detailed instructions. Once completed, proceed to install the **Lookup Direct Reports** plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 

@@ -17,13 +17,13 @@ SAP Concur is a leading platform for managing business expenses, travel and invo
 
 By integrating this feature into your bot, you empower users to make necessary changes to their expense reports directly via conversational commands. This can include updating amounts, categories, dates or descriptions, streamlining the process for employees and ensuring compliance with company policies.
 
-This guide will help you add the **Edit Expense Entry Details** functionality to your bot using Agent Studio.
+This guide will help you add the **Edit Expense Entry Details** functionality to your bot using Tool Studio.
 
 Let's get started!
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## What are we building?
 

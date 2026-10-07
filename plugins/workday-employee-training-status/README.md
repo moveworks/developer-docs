@@ -16,11 +16,11 @@ systems:
 
 The **Check Employee Training Status** plugin empowers managers to view which employees have not completed their required trainings using Workday, all through the Moveworks AI Assistant. This ensures that managers can take timely action to maintain compliance and team readiness without manually digging through reports in Workday.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 

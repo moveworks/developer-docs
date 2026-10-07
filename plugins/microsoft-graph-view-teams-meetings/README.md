@@ -14,11 +14,11 @@ systems:
 
 The **View Teams Meetings** plugin enables users to effortlessly access their past Teams meeting records directly through the Moveworks AI Assistant. Users can quickly retrieve essential meeting details such as titles, dates, durations, and more, all within their chat interface. This ensures a streamlined process for reviewing and managing past meetings with enhanced efficiency.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - [Ms Graph Connector](https://developer.moveworks.com/creator-studio/resources/connector?id=microsoft-graph) set up in Creator Studio
 
 # What are we building?
@@ -29,7 +29,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Microsoft Graph Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Tool Studio before installing this plugin to streamline the process. Please follow our **Microsoft Graph Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 **Permissions Needed:**
 

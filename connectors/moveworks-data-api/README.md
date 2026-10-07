@@ -8,7 +8,7 @@ name: Moveworks Data API
 
 The **Moveworks Data API** provides programmatic access to your organization’s analytics data within the Moveworks AI Assistant — including conversations, interactions (user messages and AI Assistant responses), plugin execution logs, plugin resource metadata, and user details.
 
-This connector guide walks through setting up Data API credentials in **Moveworks Setup** and configuring the corresponding **HTTP Connector in Agent Studio**. Once configured, you can build plugins that leverage your organization’s Moveworks analytics data to power dashboards, generate reports, surface conversation insights, and trigger workflows based on plugin execution patterns.
+This connector guide walks through setting up Data API credentials in **Moveworks Setup** and configuring the corresponding **HTTP Connector in Tool Studio**. Once configured, you can build plugins that leverage your organization’s Moveworks analytics data to power dashboards, generate reports, surface conversation insights, and trigger workflows based on plugin execution patterns.
 
 Two authentication methods are supported: **API Key** (recommended) and **OAuth 2.0 with Client Credentials**. API Keys do not expire and are simpler to manage, whereas OAuth 2.0 access tokens expire after 1 hour, requiring token refresh logic. Unless you have a specific requirement for OAuth 2.0, API Key is the preferred approach.
 
@@ -19,7 +19,7 @@ Two authentication methods are supported: **API Key** (recommended) and **OAuth 
 ### Moveworks Requirements
 
 - **Super Admin access** in Moveworks Setup — the Credentials page is only visible to Super Admins, as it allows generation of API credentials for analytics data. If you are not a Super Admin, contact your organization’s Super Admin to create credentials on your behalf.
-- **Agent Studio admin access** in your Moveworks tenant for configuring the HTTP Connector ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin)).
+- **Tool Studio admin access** in your Moveworks tenant for configuring the HTTP Connector ([grant access guide](https://help.moveworks.com/docs/manage-roles-and-permissions-for-moveworks-applications#add-an-application-admin)).
 
 ---
 
@@ -91,9 +91,9 @@ After selecting scopes, click **Submit**. A pop-up will display your credentials
 
 ---
 
-## Step 2: Configure the Agent Studio HTTP Connector
+## Step 2: Configure the Tool Studio HTTP Connector
 
-Once credentials are created in Moveworks Setup, configure an HTTP Connector in Agent Studio to use them.
+Once credentials are created in Moveworks Setup, configure an HTTP Connector in Tool Studio to use them.
 
 **Base URLs**
 
@@ -106,7 +106,7 @@ Use the Base URL that corresponds to your Moveworks tenant's region when configu
 
 ### Option A: HTTP Connector with API Key
 
-1. In Agent Studio, go to **HTTP Connectors → Create**.
+1. In Tool Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
     - **Connector Name:** `Moveworks_Data_API` (or your preferred name)
     - **Display Name (Optional):** `Moveworks Data API` (or your preferred name)
@@ -124,7 +124,7 @@ Use the Base URL that corresponds to your Moveworks tenant's region when configu
 
 ### Option B: HTTP Connector with OAuth 2.0 Client Credentials
 
-1. In Agent Studio, go to **HTTP Connectors → Create**.
+1. In Tool Studio, go to **HTTP Connectors → Create**.
 2. Fill in the connector fields:
     - **Connector Name:** `Moveworks_Data_API_OAuth` (or your preferred name)
     - **Display Name (Optional):** `Moveworks Data API (OAuth)`
@@ -148,7 +148,7 @@ Use the Base URL that corresponds to your Moveworks tenant's region when configu
 
 ## Step 3: Test the Connection
 
-After saving the connector, verify it is working by testing an HTTP Action in Agent Studio.
+After saving the connector, verify it is working by testing an HTTP Action in Tool Studio.
 
 Use the following API call to retrieve recent conversations and confirm connectivity:
 
@@ -204,6 +204,6 @@ You can update the following properties of an existing credential from the Crede
 
 ## Congratulations!
 
-You’ve successfully connected the **Moveworks Data API** to Agent Studio. Your connector is now ready for use within plugins to access analytics data, conversation insights, plugin execution details, and user information.
+You’ve successfully connected the **Moveworks Data API** to Tool Studio. Your connector is now ready for use within plugins to access analytics data, conversation insights, plugin execution details, and user information.
 
 For full API reference documentation including available endpoints, request/response formats, and pagination, refer to the [**Moveworks Data API Documentation**](https://help.moveworks.com/api-reference/overview).

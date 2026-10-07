@@ -17,11 +17,11 @@ solution_tags:
 
 The Customer Support Performance Report plugin enables your users to retrieve aggregated customer support metrics from ServiceNow directly through the Moveworks AI Assistant. Users will be able to access key insights such as the number of tickets raised and resolved, response times, and SLA adherence rates, helping teams track performance and optimize support operations.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - ServiceNow Connector configured (Refer to the [ServiceNow Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=servicenow))
 
 # What are we building?

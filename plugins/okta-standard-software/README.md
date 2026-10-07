@@ -17,11 +17,11 @@ systems:
 
 The “Find Standard Software” plugin enables employees to easily look up which software and apps are approved and available for use in their company, all through the Moveworks AI Assistant. This allows users to quickly discover IT-sanctioned tools without browsing internal portals or contacting the helpdesk—streamlining access to the right software for their role.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ For this plugin, ensure the user has the following permissions:
 - `okta.apps.read`
 - `okta.groups.read`
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

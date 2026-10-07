@@ -37,7 +37,7 @@ This plugin requires an active **Data API connector** (preferably API key) to co
 - If you have not already configured the connector, please follow the [**Data API — Connector Guide**](https://marketplace.moveworks.com/connectors/moveworks-data-api#how-to-implement) to set up an API key or OAuth token for your org.
 - For full details on Data API integration and available objects, refer to the [**Data API — How to Build Integration with the API**](https://help.moveworks.com/ai-assistant/analytics-performance/data-api/how-to-build-integration-with-the-api) documentation.
 - The connector must be fully set up before installing this plugin.
-- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 > **Note**: The plugin does not write or modify any data. It is strictly read-only and uses GET requests across all endpoints.
 > 
@@ -361,7 +361,7 @@ This plugin does **not** support the following:
 - **Replacing a BI dashboard** — the plugin is designed for scoped, analytical questions. It should not be treated as a replacement for an organization's full BI or reporting infrastructure.
 - **Writing or modifying data** — all operations are strictly read-only.
 - **Querying all 5 datasets simultaneously with very large record counts** — there is a hard payload limit of **100MB raw**, and the reasoning engine's working memory caps at **~400KB compressed**. Fetching tens of thousands of records across all 5 objects in a single request can cause failures.
-- **Queries that exceed the 2-minute execution timeout** — Agent Studio enforces a strict **160-second total lifecycle timeout**. Running up to five parallel pagination loops concurrently increases the risk of timing out, especially on queries spanning the full 30-day window across multiple datasets.
+- **Queries that exceed the 2-minute execution timeout** — Tool Studio enforces a strict **160-second total lifecycle timeout**. Running up to five parallel pagination loops concurrently increases the risk of timing out, especially on queries spanning the full 30-day window across multiple datasets.
 - Providing **recommendations, advice, or best practices** on how to improve metrics — the plugin strictly reports data and analytics. For optimization guidance, use Knowledge Search plugins.
 - **Real-time or streaming data** — the plugin queries point-in-time snapshots from the Data API export endpoints.
 - Querying data **on behalf of another organization** or across tenant boundaries.

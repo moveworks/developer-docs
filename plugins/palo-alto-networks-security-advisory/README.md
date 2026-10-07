@@ -14,11 +14,11 @@ systems:
 
 The **Lookup Security Advisory** plugin enables users to retrieve the latest vulnerability and threat advisories from **Palo Alto Networks** directly within the Moveworks AI Assistant. This allows security teams to stay up-to-date and take immediate action—without leaving their workflow.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 ## Prerequisites
 
-- Access to **Agent Studio**
+- Access to **Tool Studio**
 
 ## What are we building?
 
@@ -30,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 We recommend creating the connector for [**Palo Alto Networks**](https://developer.moveworks.com/creator-studio/resources/connector?id=palo-alto-networks) first, prior to installing this plugin. Please follow the Palo Alto Networks Connector Guide to create the connector. No additional permissions are required for this plugin beyond XML API access.
 
-After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for instructions on how to install and activate the plugin in Agent Studio.
+After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for instructions on how to install and activate the plugin in Tool Studio.
 
 ## Appendix
 

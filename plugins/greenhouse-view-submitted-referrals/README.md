@@ -18,13 +18,13 @@ Greenhouse is a leading Applicant Tracking System (ATS) that helps companies str
 
 By integrating this feature into your bot, recruiters and HR professionals can efficiently track employee referrals, view candidate progress and stay updated on application statuses without manual searches—enhancing recruitment efficiency and employee engagement.
 
-This guide walks you through adding the **View Submitted Referrals** feature to your bot using **Agent Studio**.
+This guide walks you through adding the **View Submitted Referrals** feature to your bot using **Tool Studio**.
 
 Let’s get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

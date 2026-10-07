@@ -16,11 +16,11 @@ solution_tags:
 
 The Lookup Tickets Nearing/Breaching SLA plugin enables users to quickly identify incidents in ServiceNow that have either breached or are close to breaching their SLA deadline. This allows IT teams to take proactive measures and ensure timely resolution of critical issues.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - ServiceNow Connector setup (Follow the [ServiceNow Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector?id=servicenow))
 - Permissions to access the `task_sla` table in ServiceNow
 

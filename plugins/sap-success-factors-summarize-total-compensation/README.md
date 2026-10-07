@@ -16,11 +16,11 @@ systems:
 
 The “**Summarize Total Compensation**” plugin enables users to easily view their complete compensation details— including annual salary and bonus information—directly through the Moveworks AI Assistant in SAP SuccessFactors. It focuses exclusively on summarizing individual compensation data, helping employees quickly access and understand their total earnings.
 
-This guide will walk you through how to install and configure the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through how to install and configure the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -30,7 +30,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://marketplace.moveworks.com/connectors/sap-success-factors?hist=home%2Cbrws) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Summarize Total Compensation** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to simplify the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://marketplace.moveworks.com/connectors/sap-success-factors?hist=home%2Cbrws) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Summarize Total Compensation** plugin in minutes.
 
 For **Summarize Total Compensation**, ensure the following permissions are enabled in SAP SuccessFactors:
 

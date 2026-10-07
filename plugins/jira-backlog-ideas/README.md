@@ -18,13 +18,13 @@ Jira is a leading platform for managing projects and ideas across industries. Ji
 
 Integrating this feature with your bot allows you to fetch and manage backlog ideas instantly through conversational queries, boosting productivity.
 
-This guide walks you through adding the "**Lookup Backlog Ideas**" feature to your bot using Agent Studio.
+This guide walks you through adding the "**Lookup Backlog Ideas**" feature to your bot using Tool Studio.
 
 Let's get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

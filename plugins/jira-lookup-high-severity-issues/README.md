@@ -16,13 +16,13 @@ systems:
 
 The **“Look Up High-Severity Issues”** plugin enables employees and support teams to quickly identify critical issues that require immediate attention using the Moveworks AI Assistant. This plugin allowing users to retrieve high-severity issues directly from the Assistant, without needing to navigate through complex ticketing systems.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio, so your team can stay on top of urgent issues, improve visibility into critical incidents, and ensure faster resolution for end users.
+This guide will walk you through installing and configuring the plugin in Tool Studio, so your team can stay on top of urgent issues, improve visibility into critical incidents, and ensure faster resolution for end users.
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -34,7 +34,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend setting up **Jira** before installing this plugin. Please follow the [Jira Connector](https://developer.moveworks.com/marketplace/package/?id=jira&hist=home%2Cbrws#how-to-implement) guide to configure the connection.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 # **Appendix**
 

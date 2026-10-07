@@ -18,11 +18,11 @@ agent_capabilities:
 
 The **“Approve or Reject Expense Report”** plugin enables managers to quickly review and take action on pending employee expense reports—directly through the Moveworks AI Assistant. By surfacing pending reports and allowing one-click approval or rejection, the plugin streamlines the expense management process, reduces delays, and ensures faster resolution for employees awaiting reimbursement. This efficient workflow improves compliance, enhances visibility, and eliminates the need for manual follow-ups.
 
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -47,7 +47,7 @@ We recommend creating the connector for SAP Concur first, prior to installing th
 
 Refer to [**SAP Concur Scope Usage**](https://developer.concur.com/api-reference/expense/expense-report/v4.workflows.html) for full details.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix**
 

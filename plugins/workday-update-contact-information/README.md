@@ -16,11 +16,11 @@ systems:
 
 The **Update Contact Information** plugin allows employees to quickly and easily update their home contact number through the Moveworks AI Assistant. This eliminates the need to manually navigate Workday, ensuring that personal contact information stays current with minimal effort.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 

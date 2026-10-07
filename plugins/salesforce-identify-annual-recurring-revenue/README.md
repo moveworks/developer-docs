@@ -14,11 +14,11 @@ systems:
 
 The **Identify Annual Recurring Revenue**  plugin allows users to retrieve and analyze Annual Recurring Revenue (ARR) data directly from Salesforce through the Moveworks AI Assistant. With this plugin, users can quickly access key revenue metrics and insights.
 
-This guide will help you install and configure the plugin in Agent Studio within minutes. Let’s get started!
+This guide will help you install and configure the plugin in Tool Studio within minutes. Let’s get started!
 
 # **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 - [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) built in Creator Studio (follow the Salesforce Authentication guide to create your connector)
 
 # **What are we building?**
@@ -29,7 +29,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our  [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin [installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to install the **Identify Annual Recurring Revenue** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Tool Studio** beforehand to streamline the process. Please follow our  [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin [installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to install the **Identify Annual Recurring Revenue** plugin in minutes.
 
 After configuring the connector, refer to our installation documentation for more details on completing the setup.
 

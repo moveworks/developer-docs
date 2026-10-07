@@ -16,13 +16,13 @@ systems:
 
 The **“Find Company P1 Outages”** plugin allows employees to quickly view the active Priority 1 (P1) outages impacting the company in ServiceNow directly through the Moveworks AI Assistant. This plugin streamlines the process by retrieving outage information without manual searching in ServiceNow.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio, so your team can easily access real-time P1 outage information and respond proactively.
+This guide will walk you through installing and configuring the plugin in Tool Studio, so your team can easily access real-time P1 outage information and respond proactively.
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -38,7 +38,7 @@ For this plugin, ensure the user has the following permissions:
 
 - **Table Access**: `Read` access to the `cmdb_ci_outage` table.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 # **Appendix**
 

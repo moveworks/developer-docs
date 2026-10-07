@@ -16,11 +16,11 @@ systems:
 
 The **“Update Bulk Issue Priority”** plugin allows users to efficiently update the priority of multiple Jira issues assigned to them — all at once. Instead of manually editing each ticket, this plugin automates the process, saving time and ensuring that high-priority issues receive the attention they need. 
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend setting up **Jira** before installing this plugin. Please follow the [Jira Connector](https://developer.moveworks.com/marketplace/package/?id=jira&hist=home%2Cbrws#how-to-implement) guide to configure the connection.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

@@ -14,11 +14,11 @@ systems:
 
 The '**Look Up Candidates for Job Requisition**' plugin allows recruiters to view candidates linked to a job requisition in SAP SuccessFactors through the Moveworks AI Assistant, eliminating the need to navigate through recruiting portals manually. With this automation, recruiters can access candidate information for efficient hiring without delays.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -28,7 +28,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector**](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) guide for detailed instructions. Once completed, proceed to install the **Look Up Candidates for Job Requisition** plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector**](https://marketplace.moveworks.com/connectors/sap-success-factors#how-to-implement) guide for detailed instructions. Once completed, proceed to install the **Look Up Candidates for Job Requisition** plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration recruiters have the following permissions:
 

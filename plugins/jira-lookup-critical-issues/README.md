@@ -16,11 +16,11 @@ systems:
 
 The **“Assign Issues by Priority”** plugin allows teams to automatically **assign Jira issues based on their priority** to a designated individual user using the **Moveworks AI Assistant**. This ensures that important issues are promptly routed to the right person for quicker triaging and resolution.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -37,7 +37,7 @@ Ensure the following permissions are granted:
 - **Project Access**: Sufficient access to view and manage issues within the desired Jira projects
 - **Field Access**: Access to read and update the **Priority** and **Assignee** fields on Jira issues
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**!
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**!
 
 ## **Appendix**
 

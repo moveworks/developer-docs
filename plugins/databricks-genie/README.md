@@ -14,11 +14,11 @@ systems:
 
 ****The **Databricks AI/BI Genie Plugin** allows your users to interact with Databricks's advanced AI and BI functionalities seamlessly through the Moveworks AI Assistant. This plugin enables users to effortlessly submit queries and gather insightful analytics directly from their Databricks data.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - Databricks Connector set up in Creator Studio
 - Your SQL Warehouse selected for this Genie Space **must** be running in order for the plugin to function
 
@@ -30,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we do recommend that you create a [Databricks connector](https://developer.moveworks.com/marketplace/package?id=databricks&hist=home%2Cbrws) in Agent Studio before installing this plugin to streamline the process. Please follow our [**Databricks Connector Guide**](https://developer.moveworks.com/marketplace/package?id=databricks&hist=home%2Cbrws) to do so. Once you have done this, simply follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a [Databricks connector](https://developer.moveworks.com/marketplace/package?id=databricks&hist=home%2Cbrws) in Tool Studio before installing this plugin to streamline the process. Please follow our [**Databricks Connector Guide**](https://developer.moveworks.com/marketplace/package?id=databricks&hist=home%2Cbrws) to do so. Once you have done this, simply follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) to get your plugin installed in minutes.
 
 # Appendix
 
@@ -90,6 +90,6 @@ In this plugin, the genie workspace ID is currently hard coded in the compound a
     1. `https://${DATABRICKS_HOST}/genie/rooms/<space-id>`
 4. Make note of the <space-id>
 
-1. Once you get your SpaceId, please go to the compound action inside of Agent Studio for the plugin called `databricks_ask_genie_compound`
+1. Once you get your SpaceId, please go to the compound action inside of Tool Studio for the plugin called `databricks_ask_genie_compound`
 2. Please enter your space id, in the input_args where:
     1.  space_id: '"<your_space_id>"’

@@ -14,11 +14,11 @@ systems:
 
 The **See Meeting Participants** plugin enables users to view detailed information about participants from scheduled meetings directly through the Moveworks AI Assistant. Users can effortlessly access details such as participant names, join and leave times, and overall attendance—all within their chat interface.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - [Zoom Connector](https://developer.moveworks.com/creator-studio/resources/connector/?id=zoom&commit_id=280a6873f0354f3c7bd834c823295c3af2fc7086) set up in Creator Studio
 - [View Zoom Meetings] Plugin
 
@@ -30,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 # Installation Steps
 
-While you can create a connector during plugin installation, we do recommend that you create a connector in Agent Studio before installing this plugin to streamline the process. Please follow our **Zoom Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
+While you can create a connector during plugin installation, we do recommend that you create a connector in Tool Studio before installing this plugin to streamline the process. Please follow our **Zoom Connector Guide** to do so. Once you have done this, simply follow our plugin installation documentation to get your plugin installed in minutes.
 
 **Scopes Needed:**
 

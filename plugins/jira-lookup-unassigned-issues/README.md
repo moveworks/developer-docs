@@ -15,11 +15,11 @@ systems:
 
 The **“Look Up Unassigned Issues”** plugin allows users to retrieve and view all currently unassigned issues from a specified Jira project directly through the Moveworks AI Assistant by either giving ‘Project name’ or ‘Project key’.  By eliminating the need to manually filter issues in Jira, this plugin provides quick visibility into unattended tasks helping teams prioritize and assign work efficiently to avoid bottlenecks or delays.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend creating the connector for Jira first, prior to installing this plugin. Please follow the  [Jira Connector](https://marketplace.moveworks.com/connectors/jira?hist=home#how-to-implement) guide to set up the connector.
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix**
 

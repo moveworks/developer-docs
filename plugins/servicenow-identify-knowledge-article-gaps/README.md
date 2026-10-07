@@ -18,11 +18,11 @@ systems:
 
 The **"Identify Knowledge Article Gaps"** plugin helps IT knowledge managers proactively uncover missing or insufficient Knowledge Base (KB) coverage. When provided with recent incident data, the plugin retrieves and analyzes incidents from ServiceNow, uses AI-driven clustering to identify recurring themes, and compares these patterns against existing published knowledge articles. It then highlights specific topics with low or no KB coverage, enabling teams to prioritize new article creation and improve self-service efficiency. This ensures that the knowledge base remains comprehensive, relevant, and aligned with real user needs.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -53,7 +53,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the ServiceNow API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

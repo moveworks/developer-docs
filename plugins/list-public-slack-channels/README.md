@@ -14,11 +14,11 @@ systems:
 
 The **Fetch Public Slack Channels** plugin lets users quickly view all public Slack channels through the Moveworks AI Assistant. It connects to your Slack workspace and makes it easy to find the right channels for communication and collaboration.
 
-This guide will walk you through the quick and easy installation process in Agent Studio. Let’s get started!
+This guide will walk you through the quick and easy installation process in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

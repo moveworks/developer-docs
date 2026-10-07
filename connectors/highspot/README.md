@@ -7,9 +7,9 @@ name: Highspot
 
 # Introduction
 
-Integrating Highspot with Agent Studio enables seamless access to content, user data, and spot management through workflow automation. By connecting with Highspot's REST API using Basic Authentication, you can streamline content retrieval, automate sharing workflows, and personalize sales enablement.
+Integrating Highspot with Tool Studio enables seamless access to content, user data, and spot management through workflow automation. By connecting with Highspot's REST API using Basic Authentication, you can streamline content retrieval, automate sharing workflows, and personalize sales enablement.
 
-This guide walks you through the setup process for connecting your Highspot environment to Agent Studio using an API Key and Secret.
+This guide walks you through the setup process for connecting your Highspot environment to Tool Studio using an API Key and Secret.
 
 Let’s get started!
 
@@ -27,7 +27,7 @@ Highspot’s API uses **Basic Authentication**, where:
 - **Key** = Username
 - **Secret** = Password
 
-You’ll use these credentials when configuring your connection within Agent Studio.
+You’ll use these credentials when configuring your connection within Tool Studio.
 
 ## STEP 1: Generate API Key and Secret
 
@@ -42,9 +42,9 @@ To generate your Highspot API credentials:
 > ⚠️ Tip: API credentials are tied to the user who generates them. It's recommended to create a dedicated service account for API usage. This user can impersonate others by passing their email via the hs-user header.
 > 
 
-## STEP 2: Connect to Agent Studio
+## STEP 2: Connect to Tool Studio
 
-Now let’s set up the connection in Agent Studio:
+Now let’s set up the connection in Tool Studio:
 
 - **Auth Type:** Basic Auth
 - **Username:** Your Highspot **API Key**
@@ -65,11 +65,11 @@ You can also use the header `hs-user` to **impersonate** other users for actions
 - **Method:** `GET`
 - **Description:** Returns a list of documents matching the search query.
 
-Use this endpoint in Agent Studio to validate your credentials and ensure access is configured correctly.
+Use this endpoint in Tool Studio to validate your credentials and ensure access is configured correctly.
 
 > ✅ A successful response will return a list of content the authenticated user (or impersonated user) can view.
 > 
 
 # Congratulations!
 
-You’ve successfully connected Highspot with Agent Studio. You can now automate workflows for sales content, user data, and spot management—all tailored to your team’s enablement needs.
+You’ve successfully connected Highspot with Tool Studio. You can now automate workflows for sales content, user data, and spot management—all tailored to your team’s enablement needs.

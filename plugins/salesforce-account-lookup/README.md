@@ -14,11 +14,11 @@ systems:
 
 The **Look Up Salesforce Accounts** plugin enables teams to effortlessly retrieve detailed customer account information from Salesforce using the Moveworks AI Assistant. Instead of logging into Salesforce and manually navigating through the portal, users can now quickly access account data through a simple conversational query — streamlining workflows and improving productivity across sales, customer success, and support teams.
 
-This guide will walk you through the simple installation process in Agent Studio. Let’s get started!
+This guide will walk you through the simple installation process in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

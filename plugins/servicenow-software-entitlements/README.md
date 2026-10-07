@@ -14,11 +14,11 @@ systems:
  
 The “Look Up My Software Entitlements” plugin allows users to retrieve and view a list of software licenses assigned to them directly through the Moveworks AI Assistant. By removing the need to navigate ServiceNow manually, this plugin simplifies access to software entitlement data, enabling employees to quickly check what software they are licensed to use and make informed decisions about tool usage or requests.
  
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started
  
 ## Prerequisites
  
-- Access to **Agent Studio**
+- Access to **Tool Studio**
  
 ## **What are we building?**
  
@@ -35,7 +35,7 @@ We recommend setting up **ServiceNow** before installing this plugin. Please fol
 - Read access to the `alm_entitlement` table
 - Read access to the `sys_user` table (for resolving user display values)
  
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
  
 ## **Appendix**
  

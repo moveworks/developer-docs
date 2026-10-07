@@ -15,11 +15,11 @@ systems:
 
 The **“Create a Quote”** plugin empowers sales representatives to quickly generate quotes for customers right from the Moveworks AI Assistant. This includes configuring products, setting pricing, and initiating the quote process without logging into Salesforce manually.
 
-This guide will walk you through installing and setting up the plugin in **Agent Studio**, so your sales team can quickly create accurate quotes, respond faster to customer needs, and stay focused on closing deals. Let’s get started!
+This guide will walk you through installing and setting up the plugin in **Tool Studio**, so your sales team can quickly create accurate quotes, respond faster to customer needs, and stay focused on closing deals. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ Specifically, confirm the following permissions are granted:
 - **Object Access**: `Create` and `Edit` access to the **Quote** object
 - **Field Access**: `Read` and `Edit` access to all required fields used during quote creation.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

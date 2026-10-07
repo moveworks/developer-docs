@@ -14,11 +14,11 @@ systems:
 
 The **“Create a Task for a Lead”** plugin makes it easy to schedule tasks for your sales leads directly in the Moveworks AI Assistant. The plugin automatically creates the task for you, ensuring no lead is missed, helping sales teams stay organized, and improving task management without the need for manual work.
 
-This guide will show you how to quickly list leads by assignee, select the right lead, and create a customized task in Agent Studio. Let’s get started!
+This guide will show you how to quickly list leads by assignee, select the right lead, and create a customized task in Tool Studio. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -35,7 +35,7 @@ We recommend creating the connector for **Salesforce** first, prior to installi
 - `Read` and `Create` access to the **Task** object
 - `Read` access to the **Lead** object
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix**
 

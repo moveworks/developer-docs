@@ -15,11 +15,11 @@ systems:
 
 The **Look Up Computer Refresh Date** plugin enables employees to quickly check when their company-assigned computer is scheduled for a refresh, all through the Moveworks AI Assistant. This helps users stay informed about upcoming hardware updates or replacements—without needing to contact IT or search through asset management tools.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -35,7 +35,7 @@ For this plugin, ensure the user has the following permissions:
 
 - **Table Access**: `Read` access to the `sys_user`, `cmdb_ci_computer` and `cmdb_model`  tables.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 # **Customization Process**
 

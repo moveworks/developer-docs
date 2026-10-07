@@ -18,7 +18,7 @@ The “**Look Up Unresponsive Devices**” plugin allows IT administrators and s
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ### Agent Design
 
@@ -26,7 +26,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we **recommend setting up the Jamf connector in Agent Studio beforehand** to simplify the process. Follow the [Jamf Connector Guide](https://marketplace.moveworks.com/connectors/jamf?hist=home#how-to-implement) for detailed instructions.
+While you can create a connector during plugin installation, we **recommend setting up the Jamf connector in Tool Studio beforehand** to simplify the process. Follow the [Jamf Connector Guide](https://marketplace.moveworks.com/connectors/jamf?hist=home#how-to-implement) for detailed instructions.
 
 **Note:** 
 
@@ -60,7 +60,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the Jamf API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on installing and activating the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on installing and activating the plugin in Tool Studio.
 
 ### **API #1: Search Computer Devices by Criteria**
 

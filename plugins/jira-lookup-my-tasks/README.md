@@ -16,13 +16,13 @@ systems:
 
 The **“Lookup My Jira Tasks”** plugin enables employees and support teams to easily track their Jira tasks specifically overdue and upcoming tasks using the Moveworks AI Assistant. This plugin allows users to retrieve their task list directly from the Assistant, without needing to navigate through Jira’s interface.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio, so your team can stay on top of their responsibilities, improve task visibility, and ensure nothing slips through the cracks.
+This guide will walk you through installing and configuring the plugin in Tool Studio, so your team can stay on top of their responsibilities, improve task visibility, and ensure nothing slips through the cracks.
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -34,7 +34,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend setting up **Jira** before installing this plugin. Please follow the [Jira Connector](https://developer.moveworks.com/marketplace/package/?id=jira&hist=home%2Cbrws#how-to-implement) guide to configure the connection.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 # **Appendix**
 

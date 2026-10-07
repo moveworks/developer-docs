@@ -8,10 +8,10 @@ name: Sailpoint iNow
 
 **SailPoint IdentityNow** is a cloud-based identity governance and administration platform that helps organizations manage the full user lifecycle — from onboarding and access changes to offboarding — across applications and systems. It enables automated provisioning, enforces access policies, supports compliance through access reviews, and provides self-service access requests.
 
-This guide walks you through the process of creating a connector within **Agent Studio** to make API calls to **SailPoint IdentityNow**, using the **OAuth 2.0 Client Credentials Flow** for secure authentication. The guide is organized into three main sections:
+This guide walks you through the process of creating a connector within **Tool Studio** to make API calls to **SailPoint IdentityNow**, using the **OAuth 2.0 Client Credentials Flow** for secure authentication. The guide is organized into three main sections:
 
 1. [**Set up OAuth Client Credentials Flow**](https://marketplace.moveworks.com/connectors/sailpoint-identitynow#Set-up-OAuth-Client-Credentials-Flow)
-2. [**Create a Connector in Agent Studio**](https://marketplace.moveworks.com/connectors/sailpoint-identitynow#Create-a-Connector-in-Agent-Studio)
+2. [**Create a Connector in Tool Studio**](https://marketplace.moveworks.com/connectors/sailpoint-identitynow#Create-a-Connector-in-Agent-Studio)
 3. [**OAuth 2.0 with Authorization Code (User Consent Auth) Setup**](https://marketplace.moveworks.com/connectors/sailpoint-identitynow#OAuth-2.0-with-Authorization-Code-(User-Consent-Auth)-Setup)
 
 # **Prerequisites:**
@@ -21,9 +21,9 @@ This guide walks you through the process of creating a connector within **Agent 
 
 # **Set up OAuth Client Credentials Flow**
 
-To connect **SailPoint IdentityNow** with **Agent Studio**, we’ll use **OAuth 2.0 authentication**. This method allows backend systems like Agent Studio to securely authenticate using a **Client ID and Secret**.
+To connect **SailPoint IdentityNow** with **Tool Studio**, we’ll use **OAuth 2.0 authentication**. This method allows backend systems like Tool Studio to securely authenticate using a **Client ID and Secret**.
 
-This guide walks you through registering an OAuth 2.0 application in SailPoint IdentityNow, generating an access token using the **Client Credentials Flow**, and configuring the connector in Agent Studio for seamless access to SailPoint IdentityNow APIs.
+This guide walks you through registering an OAuth 2.0 application in SailPoint IdentityNow, generating an access token using the **Client Credentials Flow**, and configuring the connector in Tool Studio for seamless access to SailPoint IdentityNow APIs.
 
 # **Register OAuth 2.0 Application in SailPoint IdentityNow**
 
@@ -71,7 +71,7 @@ This guide walks you through registering an OAuth 2.0 application in SailPoint I
 
 ![image_5.png](image_5.png)
 
-- These will be used in Agent Studio for authentication
+- These will be used in Tool Studio for authentication
 
 ### **Step 4: Request an Access Token**
 
@@ -94,13 +94,13 @@ Replace the placeholders with your specific values:
 - **`YOUR_CLIENT_ID`** – The Client ID generated from your OAuth Application
 - **`YOUR_CLIENT_SECRET`** – The Client Secret associated with the OAuth Application
 
-# **Integrate with Agent Studio**
+# **Integrate with Tool Studio**
 
-Now that OAuth is set up in SailPoint IdentityNow , configure the connection in Agent Studio.
+Now that OAuth is set up in SailPoint IdentityNow , configure the connection in Tool Studio.
 
 ### **Step 5: Configure the** SailPoint IdentityNow **Connector**
 
-To complete the integration between SailPoint IdentityNow and Agent Studio using OAuth 2.0, follow the steps below:
+To complete the integration between SailPoint IdentityNow and Tool Studio using OAuth 2.0, follow the steps below:
 
 - Go to the **HTTP Connector**.
 - You can see the Create option, and from there you can **Create** a connector
@@ -125,11 +125,11 @@ To complete the integration between SailPoint IdentityNow and Agent Studio using
 
 [](https://marketplace.moveworks.com/api/marketplace/github-proxy?path=/moveworks/developer-docs/main/connectors/jamf/jamfConnector2.png)
 
-### **Step 6: Configure SailPoint IdentityNow API Action in Agent Studio**
+### **Step 6: Configure SailPoint IdentityNow API Action in Tool Studio**
 
-Test your SailPoint IdentityNow  connector by setting up an action in Agent Studio. You can read more about setting up API actions in the [**API configuration reference**](https://help.moveworks.com/docs/http-action-data-bank-legacy)
+Test your SailPoint IdentityNow  connector by setting up an action in Tool Studio. You can read more about setting up API actions in the [**API configuration reference**](https://help.moveworks.com/docs/http-action-data-bank-legacy)
 
-1. Go to **Agent Studio**.
+1. Go to **Tool Studio**.
 2. Navigate to **Actions → HTTP Actions → Create New Action.**
 3. Select **Inherit from Existing Connector** and choose Sailpoint_iNow.
 4. In the API configuration, provide the following details:
@@ -146,11 +146,11 @@ Test your SailPoint IdentityNow  connector by setting up an action in Agent Stud
 
 # **Congratulations!**
 
-You’ve successfully integrated **SailPoint IdentityNow**  with **Agent Studio** using **OAuth 2.0**. You can now securely access **SailPoint IdentityNow**  and power automated use cases within your workflows.
+You’ve successfully integrated **SailPoint IdentityNow**  with **Tool Studio** using **OAuth 2.0**. You can now securely access **SailPoint IdentityNow**  and power automated use cases within your workflows.
 
 # **OAuth 2.0 with Authorization Code (User Consent Auth) Setup**
 
-To connect to **SailPoint IdentityNow** from within **Agent Studio** using user-consent-based authentication, configure the **OAuth 2.0 with Authorization Code (User Consent)** flow.
+To connect to **SailPoint IdentityNow** from within **Tool Studio** using user-consent-based authentication, configure the **OAuth 2.0 with Authorization Code (User Consent)** flow.
 
 This ensures that SailPoint IdentityNow users explicitly authorize Moveworks before API actions are performed on their behalf.
 
@@ -162,8 +162,8 @@ Follow these steps to set up and validate your connection:
 2. Register a new API Client
 3. Configure API Client Details
 4. Generate Authorization Code
-5. Integrate with Agent Studio
-6. Test the Connector in Agent Studio
+5. Integrate with Tool Studio
+6. Test the Connector in Tool Studio
 
 # **Step 1: Log in to SailPoint IdentityNow with Admin Account**
 
@@ -202,9 +202,9 @@ Click **Create** after filling in all required details to save the configurati
 
 ![image_11.png](image_11.png)
 
-# **Step 3: Integrate with Agent Studio**
+# **Step 3: Integrate with Tool Studio**
 
-In **Agent Studio**, create a new connector with the following configuration:
+In **Tool Studio**, create a new connector with the following configuration:
 
 **Connector Name:** **`{{Connector_Name}}`**
 
@@ -236,7 +236,7 @@ In **Agent Studio**, create a new connector with the following configuration:
 
 Once all fields are completed, click **Save** to create and store your connector configuration.
 
-# **Step 4: Test the Connector in Agent Studio**
+# **Step 4: Test the Connector in Tool Studio**
 
 Set up your API. You can read more about setting up API actions from our **API Configuration Reference**.
 
@@ -265,7 +265,7 @@ curl --location 'https://{API_SERVER_DOMAIN}/v2025/accounts' \
 
 ### **Test Your Setup:**
 
-1. In **Agent Studio**, create and run a new **Action**.
+1. In **Tool Studio**, create and run a new **Action**.
 2. Import the above **cURL command**.
 3. Add the **SailPoint IdentityNow User Consent Auth Connector**.
 4. Click **Test → Generate New Access Token**.
@@ -275,9 +275,9 @@ curl --location 'https://{API_SERVER_DOMAIN}/v2025/accounts' \
     ![image_13.png](image_13.png)
     
 
-### **Establish a Connection Between Your UCA Connector and Agent Studio**
+### **Establish a Connection Between Your UCA Connector and Tool Studio**
 
-- Integrate Your UCA Connector with Agent Studio
+- Integrate Your UCA Connector with Tool Studio
 
 ![image_14.png](image_14.png)
 
@@ -300,4 +300,4 @@ curl --location 'https://{API_SERVER_DOMAIN}/v2025/accounts' \
 
 # **Congratulations!**
 
-You’ve successfully integrated **SailPoint IdentityNow’s API** with **Agent Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to SailPoint IdentityNow data based on user consent within your SailPoint IdentityNow instance.
+You’ve successfully integrated **SailPoint IdentityNow’s API** with **Tool Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to SailPoint IdentityNow data based on user consent within your SailPoint IdentityNow instance.

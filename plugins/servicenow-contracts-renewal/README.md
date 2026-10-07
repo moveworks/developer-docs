@@ -15,11 +15,11 @@ systems:
 
 The **“Look Up Contracts up for Renewal”** plugin empowers users to quickly identify contracts nearing their expiration date—directly through the Moveworks AI Assistant. By simply specifying a date range or vendor name, users can access critical contract details such as contract numbers, vendor names, and expiration dates. This proactive capability streamlines contract management, helping teams stay ahead of renewals and avoid service disruptions.
 
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites:-**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 We recommend creating the connector for ServiceNow first, prior to installing this plugin. Please follow the  [ServiceNow Connector](https://developer.moveworks.com/marketplace/package/?id=servicenow&hist=home) guide to set up the connector.
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix:-**
 

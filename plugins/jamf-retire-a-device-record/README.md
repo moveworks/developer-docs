@@ -19,11 +19,11 @@ systems:
 
 The **“Retire a computer device record”** plugin enables IT administrators to efficiently manage aging or decommissioned devices through the Moveworks AI Assistant. Instead of permanently deleting records, this plugin provides a safe and streamlined way to mark devices as **Retired** in Jamf Pro. With flexible search options, admins can retire devices using identifiers such as device name, device ID, device model, assigned user email, username or last check-in date. This ensures a clean, accurate device inventory while protecting important organizational data.
 
-This guide will show you how to set up and customize the plugin in Agent Studio in just a few minutes.
+This guide will show you how to set up and customize the plugin in Tool Studio in just a few minutes.
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -80,7 +80,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the Jamf API.
 
-Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Tool Studio.
 
 ## **Appendix**
 

@@ -14,11 +14,11 @@ systems:
 
 The “Approve / Reject Change Requests” plugin allows approvers to review and take action on change requests directly through the Moveworks AI Assistant, without logging into the ServiceNow system. This simplifies the approval workflow, accelerates decision-making, and ensures timely progress while maintaining process governance.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -49,7 +49,7 @@ For this plugin, ensure the user has the following permissions:
     *(To update the approval state: Approved / Rejected)*
     
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## Notes
 

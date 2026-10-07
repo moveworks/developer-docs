@@ -6,7 +6,7 @@ name: SAP Concur
 
 # **Introduction**
 
-SAP Concur is a leading provider of integrated travel, expense, and invoice management solutions. This guide will demonstrate how to create an **OAuth Client** in SAP Concur, authenticate with SAP Concur’s API, and test it in Agent Studio.
+SAP Concur is a leading provider of integrated travel, expense, and invoice management solutions. This guide will demonstrate how to create an **OAuth Client** in SAP Concur, authenticate with SAP Concur’s API, and test it in Tool Studio.
 
 # **Prerequisites**
 
@@ -15,7 +15,7 @@ SAP Concur is a leading provider of integrated travel, expense, and invoice mana
 
 # Walkthrough
 
-You will be authenticating your Concur system with Agent Studio via the **Company Request Token Method**. This lets us generate a 1-time Company Request Token (valid for 24 hours) followed by refreshable access tokens which we’ll use to authenticate any interactions.
+You will be authenticating your Concur system with Tool Studio via the **Company Request Token Method**. This lets us generate a 1-time Company Request Token (valid for 24 hours) followed by refreshable access tokens which we’ll use to authenticate any interactions.
 
 > **Refresh token expiration**
 > 
@@ -36,7 +36,7 @@ You will be authenticating your Concur system with Agent Studio via the **Compa
 3. Fill in the following details:
     1. App Name: `Moveworks Integration Application`
     2. App Type: `Client`
-    3. App Description: `Moveworks' Agent Studio uses this application to authenticate API calls to your Concur instance`
+    3. App Description: `Moveworks' Tool Studio uses this application to authenticate API calls to your Concur instance`
     4. Allowed Grants: `refresh_token`, `password`, & `client_credentials`
     5. Allowed Scopes: `openid`, `EXPRPT`, `expense.report.read`, etc (Based on your requirement for the use case you are trying to build)
 4. ❗Note down the generated `Client ID` & `Client Secret`
@@ -103,9 +103,9 @@ You will be authenticating your Concur system with Agent Studio via the **Compa
     
 4. Replace the values and execute this API. You would see the same response as previous but now we will use the `access_token` we got from this API to authenticate our API calls
 
-## **Step 4: Integrate with Agent Studio**
+## **Step 4: Integrate with Tool Studio**
 
-1. In Agent Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
+1. In Tool Studio, create a new connector with the following configuration (please name it accordingly to identify while creating use cases):
     - Description: `Connect to Concur APIs`
     - Base URL: `https://us2.api.concursolutions.com`
     - Auth Config: `Oauth2`
@@ -140,11 +140,11 @@ You will be authenticating your Concur system with Agent Studio via the **Compa
         | --- | --- |
         | user | ALL |
         | limit | 1 |
-3. Test your setup in Agent Studio and look for a successful execution (Response code: 200)
+3. Test your setup in Tool Studio and look for a successful execution (Response code: 200)
     
     ![Untitled](Authentication%20Tutorial%20SAP%20Concur%20e3dd2cd5964a448fa351c31b5d30c23d/Untitled%201.png)
     
 
 # **Congratulations!**
 
-You've successfully integrated Concur’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Concur instance.
+You've successfully integrated Concur’s API with Tool Studio. This opens up a variety of automation and integration possibilities within your Concur instance.

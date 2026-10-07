@@ -15,11 +15,11 @@ systems:
 
 The **“Update Personal Email”** plugin enables users to seamlessly update an employee’s personal email address in SAP SuccessFactors using the Moveworks AI Assistant. This ensures that employee contact details are accurate and up-to-date, supporting efficient communication and better HR management.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -29,7 +29,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow the [SAP SuccessFactors Connector](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) Guide to configure the connection.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to simplify the process. Please follow the [SAP SuccessFactors Connector](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) Guide to configure the connection.
 
 Note: To enable the Update Personal Email functionality, ensure the SAP SuccessFactors integration user has the necessary permission scopes.
 

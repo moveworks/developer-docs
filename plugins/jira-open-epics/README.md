@@ -19,13 +19,13 @@ Jira is a leading platform for managing projects and tasks across industries. Th
 
 Integrating this feature with your bot enables seamless lookup and management of open epics through conversational queries, enhancing team productivity and collaboration.
 
-This guide walks you through adding the "**Lookup Open Epics**" feature to your bot using Agent Studio.
+This guide walks you through adding the "**Lookup Open Epics**" feature to your bot using Tool Studio.
 
 Let's get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **Agent Design**
 

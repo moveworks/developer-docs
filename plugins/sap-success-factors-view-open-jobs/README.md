@@ -15,13 +15,13 @@ systems:
 
 The **View_Open_Jobs** plugin allows users to view open job postings in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, users can quickly and easily access available job opportunities, helping them stay informed and take the next step in their career growth.
 
-This guide will help you install and configure the plugin in Agent Studio within minutes. 
+This guide will help you install and configure the plugin in Tool Studio within minutes. 
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -31,7 +31,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**SAP SuccessFactors Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=sap-success-factors&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the SAP SuccessFactors integration user has the following permissions:
 

@@ -7,7 +7,7 @@ name: Gong
 
 # **Introduction**
 
-Integrating Gong with Agent Studio allows seamless integration of conversation intelligence and sales insights to enhance your workflows. By leveraging Gong's robust REST API and using appropriate authentication mechanisms, you can automate call data management and enhance your sales processes. This guide provides a step-by-step process to connect your Gong instance to Agent Studio and test the integration for efficient sales collaboration.
+Integrating Gong with Tool Studio allows seamless integration of conversation intelligence and sales insights to enhance your workflows. By leveraging Gong's robust REST API and using appropriate authentication mechanisms, you can automate call data management and enhance your sales processes. This guide provides a step-by-step process to connect your Gong instance to Tool Studio and test the integration for efficient sales collaboration.
 
 Let’s get started!
 
@@ -35,10 +35,10 @@ To authenticate the Gong Connector, you'll need to obtain API credentials from y
     
 3. Use these credentials to authenticate the connector within Moveworks.
 
-## Step 2: Connect Gong to Agent Studio
+## Step 2: Connect Gong to Tool Studio
 
-1. In Agent Studio, create a new **HTTP Action** and Test it.
-   - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
+1. In Tool Studio, create a new **HTTP Action** and Test it.
+   - Go to Tool Studio -> **Actions** -> **HTTP Actions** -> **Create**
 
       ![Untitled](Gong%20182588d8909f80689fd6cafe7586de60/Pasted%20Graphic.png)
 
@@ -64,4 +64,4 @@ To authenticate the Gong Connector, you'll need to obtain API credentials from y
 
 # Congratulations!
 
-You just connected your Gong App to Agent Studio.
+You just connected your Gong App to Tool Studio.

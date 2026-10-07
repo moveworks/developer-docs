@@ -18,11 +18,11 @@ systems:
 
 The **“View Assigned Tasks”** plugin allows employees to instantly view a snapshot of their outstanding tasks in Workday—right from the Moveworks AI Assistant. This eliminates the need to log in to Workday manually, offering quick, secure, and self-serve access to pending actions and task details anytime.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio**, enabling your workforce to stay on top of their Workday tasks with ease. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio**, enabling your workforce to stay on top of their Workday tasks with ease. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 - **Workday connector with OAuth 2.0 Authorization Code authentication** - This plugin requires user-level authentication to retrieve tasks for individual employees. The standard OAuth 2.0 Client Credentials authentication only returns tasks for the integration service account. Configure your Workday connector using the [OAuth 2.0 with Authorization Code (User Consent Auth) Setup](https://marketplace.moveworks.com/connectors/workday#oauth-2-0-with-authorization-code-user-consent-auth-setup) method.
 
 ## **What are we building?**

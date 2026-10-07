@@ -17,11 +17,11 @@ systems:
 
 The **“Look Up Benefit Elections”** plugin allows employees to instantly view their current benefit elections—like health, retirement, and insurance plans—directly through the Moveworks AI Assistant. It provides real-time access to SAP SuccessFactors data, improving transparency and reducing HR inquiries.
 
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -37,7 +37,7 @@ We recommend setting up SAP SuccessFactors before installing this plugin. Please
 
 - **`Read access`** to **BenefitEnrollment** and **User** objects.
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix**
 

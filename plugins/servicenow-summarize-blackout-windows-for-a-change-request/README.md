@@ -19,11 +19,11 @@ systems:
 
 The **“Summarize Blackout Windows for a Change Request”** plugin helps users quickly obtain clear, concise summaries of blackout windows associated with any **Change Request** in ServiceNow using the Moveworks AI Assistant. This streamlines the review process by automatically extracting blackout periods, highlighting potential scheduling conflicts, and providing easy-to-understand guidance—reducing manual analysis and ensuring smoother change planning.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** so you can start generating blackout window summaries in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** so you can start generating blackout window summaries in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -52,7 +52,7 @@ To find your instance name:
 
 Make sure to update this value across all actions that reference the ServiceNow API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Tool Studio.
 
 ### **API #1: Get User Assignment Groups by Email**
 

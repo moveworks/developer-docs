@@ -16,11 +16,11 @@ systems:
 
 The “**Update Asset Ownership**” plugin empowers IT teams to quickly manage and correct asset ownership records using the **Moveworks AI Assistant**. It automatically detects assets without assigned owners and helps update them based on user or department information, improving accountability and ensuring accurate asset data across the organization.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -32,11 +32,11 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 The “**Update Asset Ownership**” plugin empowers IT teams to quickly manage and correct asset ownership records using the **Moveworks AI Assistant**. It automatically detects assets without assigned owners and helps update them based on user or department information, improving accountability and ensuring accurate asset data across the organization.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -67,7 +67,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the ServiceNow API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix:-**
 

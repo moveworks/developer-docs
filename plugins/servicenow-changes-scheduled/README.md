@@ -15,11 +15,11 @@ systems:
 
 The **“Get Changes Currently Scheduled”** plugin enables IT teams to efficiently **retrieve upcoming scheduled Change Requests** from **ServiceNow** using the Moveworks AI Assistant. This helps improve **planning, coordination, and operational visibility** by automatically listing all change activities that are scheduled but not yet executed.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ### Agent Design
 
@@ -34,7 +34,7 @@ Ensure the following permissions are granted:
 - **Table Access**: `Read` access to the Change Request table
 - **Field Access**: Sufficient access to retrieve information related to scheduled changes
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**
 
 ## **Appendix**
 

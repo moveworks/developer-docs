@@ -15,11 +15,11 @@ systems:
 
 The **Summarize an Incident** plugin empowers users to efficiently gather, condense and understand details of an incident using just an incident number through Moveworks AI Assistant.
 
-This guide will help you install and use this plugin in Agent Studio within minutes. Let’s get started!
+This guide will help you install and use this plugin in Tool Studio within minutes. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

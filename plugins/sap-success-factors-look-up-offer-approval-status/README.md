@@ -15,11 +15,11 @@ systems:
 
 The **Lookup Job Offer Approval Status** plugin enables users to check the approval status of job offers in SAP SuccessFactors directly through the Moveworks AI Assistant. With this plugin, hiring managers and recruiters can quickly track the progress of job offer approvals without leaving chat.
 
-This guide will walk you through the installation and configuration of the plugin in Agent Studio, ensuring a seamless setup process. Let’s get started!
+This guide will walk you through the installation and configuration of the plugin in Tool Studio, ensuring a seamless setup process. Let’s get started!
 
 # **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 
@@ -29,7 +29,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [SAP Successfactors Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to simplify the process. Please follow our [SAP Successfactors Connector Guide](https://developer.moveworks.com/creator-studio/resources/connector/?id=sap-success-factors&commit_id=21f2fb0f5f2b0852c62a72235121cd8d78d6b46b) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 After configuring the connector, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on completing the setup
 

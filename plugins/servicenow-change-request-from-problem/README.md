@@ -14,11 +14,11 @@ systems:
 
 The **“Create Change Request from Problem”** plugin empowers IT teams to quickly generate a **Change Request** in **ServiceNow** directly from an existing **Problem record** using the Moveworks AI Assistant. This streamlines the change management process by eliminating manual steps, ensuring better tracking, and enabling faster resolution of issues that require infrastructure or process changes.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ### Agent Design
 
@@ -33,7 +33,7 @@ Ensure the following permissions are granted:
 - **Table Access**: `Read` access to the `problem` table and `Create` access to the `change_request` table
 - **Field Access**: `Read` access to the necessary problem fields and `Write` access to fields required for creating a change request
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

@@ -5,9 +5,9 @@ name: Datadog
 ---
 ## Introduction
 
-Datadog is a cloud monitoring and observability platform — metrics, traces, logs, dashboards, monitors, SLOs, and incidents in one place. Connecting it to **Moveworks Agent Studio** lets engineers and on-call teams get service-health answers straight from their assistant — check a service's health, see firing monitors and active incidents, pull key signals (error rate, latency, throughput, SLOs), and automate other actions.
+Datadog is a cloud monitoring and observability platform — metrics, traces, logs, dashboards, monitors, SLOs, and incidents in one place. Connecting it to **Moveworks Tool Studio** lets engineers and on-call teams get service-health answers straight from their assistant — check a service's health, see firing monitors and active incidents, pull key signals (error rate, latency, throughput, SLOs), and automate other actions.
 
-This connector guide helps you connect Datadog to Agent Studio using an **API Key + Application Key** (header auth). **`Datadog's OAuth 2.0 is limited to Datadog Partner Network members`**, so key-based auth is the supported path for an admin-managed connection. For available endpoints, see the [**Datadog API docs**](https://docs.datadoghq.com/api/latest/).
+This connector guide helps you connect Datadog to Tool Studio using an **API Key + Application Key** (header auth). **`Datadog's OAuth 2.0 is limited to Datadog Partner Network members`**, so key-based auth is the supported path for an admin-managed connection. For available endpoints, see the [**Datadog API docs**](https://docs.datadoghq.com/api/latest/).
 
 ### How authentication works
 
@@ -31,7 +31,7 @@ Both keys are required for Datadog API endpoints. In Moveworks, we store both as
 
 ### Moveworks Requirements
 
-- Access to **Moveworks Agent Studio** with permission to create HTTP Connectors.
+- Access to **Moveworks Tool Studio** with permission to create HTTP Connectors.
 
 ---
 
@@ -40,7 +40,7 @@ Both keys are required for Datadog API endpoints. In Moveworks, we store both as
 ### 1a. Generate an API Key
 
 1. In Datadog, go to **Organization Settings → API Keys**.
-2. Click **New Key**, give it a descriptive name (e.g., `Moveworks Agent Studio`), and create it.
+2. Click **New Key**, give it a descriptive name (e.g., `Moveworks Tool Studio`), and create it.
 3. Copy the key value immediately and store it securely — you'll paste it into Moveworks in HTTP connector setup steps.
 
 ![image.png](Datadog%20Connector%20Guide/image.png)
@@ -52,7 +52,7 @@ Both keys are required for Datadog API endpoints. In Moveworks, we store both as
 ### 1b. Generate an Application Key (with scopes)
 
 1. In Datadog, go to **Organization Settings → Application Keys**.
-2. Click **New Key** and give it a descriptive name (e.g., `Moveworks Agent Studio App Key`). Do not create a **Personal Access Token**.
+2. Click **New Key** and give it a descriptive name (e.g., `Moveworks Tool Studio App Key`). Do not create a **Personal Access Token**.
 3. **Set scopes (recommended):** By default an application key inherits the full permissions of the user who created it. Add explicit **scopes** to enforce least privilege — grant only the read scopes the plugin actually needs (for example `metrics_read`, `dashboards_read`, `monitors_read`, `incident_read`, `logs_read_data`).
 4. Copy the key value immediately and store it securely.
 
@@ -70,7 +70,7 @@ Both keys are required for Datadog API endpoints. In Moveworks, we store both as
 
 ## Step 2: Configure the Moveworks HTTP Connector
 
-In Agent Studio, create a new **HTTP Connector** and fill in the fields below.
+In Tool Studio, create a new **HTTP Connector** and fill in the fields below.
 
 ### 2a. Basic details
 
@@ -123,7 +123,7 @@ Click **Save** to create the connector. Both keys are now stored as encrypted se
 
 Validate the connection with a real Datadog API request before wiring it into any plugin.
 
-1. Create an **HTTP Action** in Agent Studio that uses the Datadog connector you just created.
+1. Create an **HTTP Action** in Tool Studio that uses the Datadog connector you just created.
 2. Point it at a lightweight, read-only endpoint to validate the connection
 3. Test and validate the action.
 
@@ -131,7 +131,7 @@ Validate the connection with a real Datadog API request before wiring it into an
 
 ✅ If you get a `403` or `{"valid": false}`, re-check that the API Key is in `DD-API-KEY`, the Application Key is in `DD-APPLICATION-KEY`, and that the Base URL matches your Datadog site.
 
-This curl command **retrieves all your dashboards from your Datadog organization**. Go to your HTTP action editor within Agent Studio and import the below API curl:
+This curl command **retrieves all your dashboards from your Datadog organization**. Go to your HTTP action editor within Tool Studio and import the below API curl:
 
 ```bash
 curl -X GET "https://api.datadoghq.com/api/v1/dashboard"
@@ -165,4 +165,4 @@ curl -X GET "https://api.datadoghq.com/api/v1/dashboard"
 
 ## Congratulations!
 
-You've successfully connected Datadog to Moveworks Agent Studio using API Key + Application Key header auth. Your connector is now ready to use within Moveworks Agent Studio plugins.
+You've successfully connected Datadog to Moveworks Tool Studio using API Key + Application Key header auth. Your connector is now ready to use within Moveworks Tool Studio plugins.

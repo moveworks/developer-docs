@@ -15,11 +15,11 @@ systems:
 
 The **“Calculate Average Tenure”** plugin helps users determine the average tenure of employees in a specific department—directly through the Moveworks AI Assistant. By fetching employee data for the selected organization and calculating the average length of service, the plugin provides quick and accurate tenure insights without manual effort. This data-driven approach supports HR teams in workforce analysis, strategic planning, and understanding employee retention trends.
 
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -61,7 +61,7 @@ Steps to Create cf_TenureInYears:
     - **End Date = Current Date**
 - Click **OK** → **Save**.
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix:-**
 

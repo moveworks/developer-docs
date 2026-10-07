@@ -8,11 +8,11 @@ name: Okta
 
 Okta is an identity and access management platform that helps organizations securely manage user authentication, authorization, and lifecycle management across applications and services.
 
-This guide will walk you through the process of creating a connector within Agent Studio to make API calls to Okta, using an API Token for secure authentication. The guide is organized into two main sections:
+This guide will walk you through the process of creating a connector within Tool Studio to make API calls to Okta, using an API Token for secure authentication. The guide is organized into two main sections:
 
 1. **Set up Okta JWT Authentication**
-2. **Create a Connector in Agent Studio**
-3. **Integrate Okta API in Agent Studio**
+2. **Create a Connector in Tool Studio**
+3. **Integrate Okta API in Tool Studio**
 
 # **Prerequisites:**
 
@@ -21,9 +21,9 @@ This guide will walk you through the process of creating a connector within Agen
 
 # **Set up Okta JWT Authentication**
 
-To connect Okta with Agent Studio, we’ll use JWT (JSON Web Token) authentication via an API Service App in Okta.
+To connect Okta with Tool Studio, we’ll use JWT (JSON Web Token) authentication via an API Service App in Okta.
 
-The following steps will guide you through creating an API Service app in Okta, generating a private key, and configuring Agent Studio to authenticate securely with Okta.
+The following steps will guide you through creating an API Service app in Okta, generating a private key, and configuring Tool Studio to authenticate securely with Okta.
 
 ## **Step 1: Generate an JWT in Okta**
 
@@ -44,7 +44,7 @@ The following steps will guide you through creating an API Service app in Okta, 
 
 ### 3.  Configure your API Service app
 
-- Enter a descriptive **App integration name** (e.g., `Agent Studio API Integration`).
+- Enter a descriptive **App integration name** (e.g., `Tool Studio API Integration`).
 - Click **Save.**
 
 ![okta_3.png](okta_3.png)
@@ -63,7 +63,7 @@ The following steps will guide you through creating an API Service app in Okta, 
     
     ![okta_5.png](okta_5.png)
     
-- Once your public-private key pair is generated, click on the PEM button to view the certificate and then copy and **save it in a safe storage as a .PEM file extension**. This will be required later on to create the Connector in **Agent Studio** Setup.
+- Once your public-private key pair is generated, click on the PEM button to view the certificate and then copy and **save it in a safe storage as a .PEM file extension**. This will be required later on to create the Connector in **Tool Studio** Setup.
 
 ![okta_6.png](okta_6.png)
 
@@ -117,11 +117,11 @@ You can get the **Client ID** and **KID** of your App by:
 
 ![okta_10.png](okta_10.png)
 
-## **Step 2: Integrate with Agent Studio**
+## **Step 2: Integrate with Tool Studio**
 
-In Agent Studio, create a new connector with the following configuration (please name it accordingly for easy identification while creating use cases):
+In Tool Studio, create a new connector with the following configuration (please name it accordingly for easy identification while creating use cases):
 
-Please refer to the **table** below and fill out the connector configuration accordingly in Agent Studio:
+Please refer to the **table** below and fill out the connector configuration accordingly in Tool Studio:
 
 | **Field name** | **Field value** |
 | --- | --- |
@@ -155,7 +155,7 @@ Click on **Save** to submit the credentials, and your connector will be ready
 
 Your Okta Connector with OAuth authentication is now ready to be configured for the relevant skills using Moveworks Setup.
 
-## **Step 3: Integrate Okta API in Agent Studio**
+## **Step 3: Integrate Okta API in Tool Studio**
 
 - Add your API details below to integrate with the Okta API. You can read more about setting up API actions in the [API configuration reference](https://help.moveworks.com/docs/http-actions).
 
@@ -178,4 +178,4 @@ curl -i -X GET \
 
 # **Congratulations!**
 
-You've successfully integrated the **Okta API** with Agent Studio. You can now start using it for your specific use cases
+You've successfully integrated the **Okta API** with Tool Studio. You can now start using it for your specific use cases

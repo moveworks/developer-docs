@@ -16,11 +16,11 @@ systems:
 
 The **Approve or Reject an Expense Report** plugin allows users to seamlessly review and make decisions on expense reports pending their approval in Coupa, directly through the Moveworks AI Assistant. With this tool, users can efficiently approve or reject expense reports, streamlining the approval process and ensuring compliance with your company’s financial policies.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 - Access to the ‘Look Up Expense Reports Pending My Approval’ plugin. The Approve or Reject plugin works after the previous plugin has been called, allowing the user to Approve or Reject an expense report pending their approval.
 
 # What are we building?

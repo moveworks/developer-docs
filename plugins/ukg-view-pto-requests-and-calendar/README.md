@@ -29,7 +29,7 @@ This plugin requires an active **UKG connector** and **user consent auth** to co
 
 - If you have not already configured the connector, please follow the [UKG Connector Guide](https://marketplace.moveworks.com/connectors/ukg-pro-wfm) available in the Moveworks Marketplace.
 - The connector must be fully set up before installing this plugin.
-- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+- Once the connector is successfully configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 **Note:** UKG’s user-consent authorization expires every 24 hours, requiring users to reauthorize once per day. This is a known limitation, and support for handling such short-lived refresh tokens is being built on Moveworks.
 

@@ -16,11 +16,11 @@ systems:
 
 The **“Look Up Assigned Trainings”** plugin enables employees to quickly find out which learning and development courses are still pending for them, helping them stay on track with their training requirements. Powered by Workday and accessible through the Moveworks AI Assistant, this plugin eliminates the need to search manually through learning dashboards or emails.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 

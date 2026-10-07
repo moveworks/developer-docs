@@ -16,11 +16,11 @@ solution_tags:
 
 The **“Look Up My Assignment Group's Members”** capability enables users to effortlessly view the members of their assignment group in ServiceNow through the Moveworks AI Assistant. By identifying the user's group association, the assistant retrieves and displays a real-time list of group members. This reduces dependency on manual lookups, promotes team visibility, and streamlines collaboration across IT support teams for faster issue resolution.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites:-**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -36,7 +36,7 @@ For this plugin, ensure the user has the following permissions:
 
 - **Table Access**: `Read` access to the `sys_user`, `sys_user_group` and `incident` tables.
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix:-**
 

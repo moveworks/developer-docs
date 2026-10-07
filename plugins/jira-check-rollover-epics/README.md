@@ -19,13 +19,13 @@ JIRA is a leading platform for managing projects and tasks across various indu
 
 By integrating this feature into your bot, users can quickly identify which epics were not completed in their original sprint and have been rolled over, enabling better sprint planning and backlog management. This eliminates the need for manual tracking, saving time and improving project visibility.
 
-This guide walks you through adding the **Look up Delayed Epics** feature to your bot using **Agent Studio**.
+This guide walks you through adding the **Look up Delayed Epics** feature to your bot using **Tool Studio**.
 
 Let's get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

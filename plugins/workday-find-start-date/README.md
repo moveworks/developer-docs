@@ -17,11 +17,11 @@ systems:
 
 The **Find Start Date** plugin enables employees to instantly access their official start date with the company through the Moveworks AI Assistant. By removing the need to search through Workday or contact HR, this plugin provides a quick and seamless way to retrieve employment details.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 

@@ -16,11 +16,11 @@ systems:
 
 The **“Look Up a Lead”** plugin lets you instantly access all the information you need about your sales leads, right within the Moveworks AI Assistant. With this plugin, you can quickly pull up lead details without switching tabs or searching through Salesforce, saving time and keeping everything at your fingertips.
 
-This guide will show you how to search for leads, filter results, and view complete lead information directly in Agent Studio. Let’s get started!
+This guide will show you how to search for leads, filter results, and view complete lead information directly in Tool Studio. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -36,7 +36,7 @@ We recommend creating the connector for **Salesforce** first, prior to installi
 
 - `Read` access to the **Lead** object
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 ## **Appendix**
 

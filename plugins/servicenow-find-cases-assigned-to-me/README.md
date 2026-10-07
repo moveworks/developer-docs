@@ -15,13 +15,13 @@ systems:
 
 The **“Find Cases Assigned to Me”** plugin allows employees to quickly view all the cases currently assigned to them in ServiceNow directly through the Moveworks AI Assistant. Whether they want to track the progress of their tickets, follow up on pending issues, or manage their workload efficiently, this plugin simplifies the process by retrieving case information without manual searching in ServiceNow.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio, so your team can easily access their assigned cases and stay on top of their tasks. 
+This guide will walk you through installing and configuring the plugin in Tool Studio, so your team can easily access their assigned cases and stay on top of their tasks. 
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -37,7 +37,7 @@ For this plugin, ensure the user has the following permissions:
 
 - **Table Access**: `Read` access to the `sys_user` and `incident` tables.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 # **Appendix**
 

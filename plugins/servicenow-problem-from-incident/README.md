@@ -14,11 +14,11 @@ systems:
 
 The **“Create a Problem from an Incident”** plugin makes it easy to turn an existing incident into a problem using the Moveworks AI Assistant. This helps IT teams effectively track and resolve recurring or complex issues. It also improves visibility and follow-up by organizing such incidents into dedicated problem records.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio**, so your team can quickly convert incidents into problems and streamline issue management. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio**, so your team can quickly convert incidents into problems and streamline issue management. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -37,7 +37,7 @@ Specifically, confirm the following permissions are granted:
 - **Table Access**: `Read` and `Create` access to the `problem` table
 - **Field Access**: `Read` access to the `incident` table and `Write` access to the `problem_id` field (on the incident record)
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

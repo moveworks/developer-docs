@@ -7,9 +7,9 @@ name: Palo Alto Networks
 
 # Introduction
 
-Integrating Palo Alto Networks' PAN-OS with Agent Studio unlocks powerful network automation and monitoring capabilities through XML API access. By authenticating with an API key and setting the appropriate admin roles, you can retrieve system information, execute operational commands, and manage firewall configurations in an automated, repeatable way.
+Integrating Palo Alto Networks' PAN-OS with Tool Studio unlocks powerful network automation and monitoring capabilities through XML API access. By authenticating with an API key and setting the appropriate admin roles, you can retrieve system information, execute operational commands, and manage firewall configurations in an automated, repeatable way.
 
-This guide walks you through the steps to enable XML API access, generate an API key, and set up a connection in Agent Studio.
+This guide walks you through the steps to enable XML API access, generate an API key, and set up a connection in Tool Studio.
 
 Let’s get started!
 
@@ -77,13 +77,13 @@ curl -k "https://<firewall-or-panorama>/api/?type=keygen&user=<admin-username>&p
 </response>
 ```
 
-Store this `YOUR_API_KEY_HERE` securely — it will be used in every request from Agent Studio.
+Store this `YOUR_API_KEY_HERE` securely — it will be used in every request from Tool Studio.
 
 ---
 
-# **Connect to Agent Studio**
+# **Connect to Tool Studio**
 
-Once you have the API key, you can configure the connection in Agent Studio:
+Once you have the API key, you can configure the connection in Tool Studio:
 
 - **Base URL:**
     
@@ -100,4 +100,4 @@ Once you have the API key, you can configure the connection in Agent Studio:
 
 # Congratulations!
 
-You’ve successfully connected Palo Alto Networks PAN-OS with Agent Studio. You can now automate common firewall tasks, run health checks, and streamline your network operations securely.
+You’ve successfully connected Palo Alto Networks PAN-OS with Tool Studio. You can now automate common firewall tasks, run health checks, and streamline your network operations securely.

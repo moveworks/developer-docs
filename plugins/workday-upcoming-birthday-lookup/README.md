@@ -15,11 +15,11 @@ video: https://youtu.be/PRSnrXB4XHk
 
 The **Look Up Birthdays** plugin enables teams to effortlessly retrieve upcoming employee birthdays from Workday using the Moveworks AI Assistant. Powered by Workday’s **Reports-as-a-Service (RaaS)**, this plugin connects to a pre-built custom report and delivers birthday information through a conversational interface — making it easier than ever to celebrate and engage with your colleagues.
 
-This guide will walk you through how to call RaaS from Agent Studio and integrate it into your Moveworks experience. Let’s get started!
+This guide will walk you through how to call RaaS from Tool Studio and integrate it into your Moveworks experience. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -44,7 +44,7 @@ https://your-domain.com/ccx/service/customreport2/<tenant>/<username>/Alert_-_Bi
 
 ### **Get the URL for the Report**
 
-In this step, we will get the URL for the report we want to run within Agent Studio. We are using a inbuilt report as part of this example but you can call any report that already exists or that you create using these steps.
+In this step, we will get the URL for the report we want to run within Tool Studio. We are using a inbuilt report as part of this example but you can call any report that already exists or that you create using these steps.
 
 We are going to use the `*Alert - Birthdays for this week and next*` report to get the upcoming birthdays for this example.
 

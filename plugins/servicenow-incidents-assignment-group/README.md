@@ -15,11 +15,11 @@ systems:
 
 The **Look Up Incidents Assigned to My Assignment Group** plugin lets employees quickly see all incidents handled by their assignment group within a chosen date range, right from the Moveworks AI Assistant. This makes it easy to track team workload and performance without manually running reports in ServiceNow
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ For this plugin, ensure the user has the following permissions:
 - `Read` access to the `sys_user` and `sys_user_group` tables (to identify the assignment group).
 - `Read` access to the `incident` table (to retrieve incident details).
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

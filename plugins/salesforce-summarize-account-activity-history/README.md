@@ -15,11 +15,11 @@ systems:
 
 The “**Summarize Recent Activity History for an Account”** plugin allows users to instantly view a consolidated summary of recent activities related to a specific account, directly from Salesforce using the Moveworks AI Assistant. This enables teams to efficiently understand account activity, monitor progress, and stay coordinated without having to go through multiple Salesforce reports.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -29,7 +29,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**Salesforce Connector Guide**](https://marketplace.moveworks.com/connectors/salesforce?hist=home%2Cplgn.salesforce-create-campaign-inside-account%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**Salesforce Connector Guide**](https://marketplace.moveworks.com/connectors/salesforce?hist=home%2Cplgn.salesforce-create-campaign-inside-account%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the Salesforce integration user has the following permissions:
 

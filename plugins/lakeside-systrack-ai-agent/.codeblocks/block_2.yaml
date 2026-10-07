@@ -1,0 +1,27 @@
+steps:
+  switch:
+    cases:
+      - condition: data.conversation_id != null
+        steps:
+          - action:
+              action_name: systrack_continue_conversation
+              output_key: result
+              input_args:
+                conversation_id: data.conversation_id
+                user_message: data.user_message
+          - return:
+              output_mapper:
+                conversation_id: data.conversation_id
+                systrack_response: data.result.response
+    default:
+      steps:
+        - action:
+            action_name: systrack_start_conversation
+            output_key: result
+            input_args:
+              user_message: data.user_message
+              system_name: data.system_name
+        - return:
+            output_mapper:
+              conversation_id: data.result.id
+              systrack_response: data.result.response

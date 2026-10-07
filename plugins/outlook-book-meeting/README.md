@@ -41,7 +41,7 @@ If your organization uses Zoom and you want the plugin to generate Zoom meeting 
 
 ### 3. Plugin Installation
 
-Once the connector is ready, follow the [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for steps on how to install and activate the plugin in Agent Studio.
+Once the connector is ready, follow the [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for steps on how to install and activate the plugin in Tool Studio.
 
 ### 4. Microsoft 365 System Requirements
 

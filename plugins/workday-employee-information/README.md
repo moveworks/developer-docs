@@ -16,11 +16,11 @@ systems:
 
 The **“Look up Personal Employee Information”** plugin allows employees to access their personal information directly from **Workday**, all through the Moveworks AI Assistant. This provides users with quick and easy visibility into their own data without needing to navigate Workday manually.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -30,7 +30,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-tool
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**Workday Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Lookup Personal Work Information** plugin in minutes.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to simplify the process. Please follow our [**Workday Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=workday&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, refer to our plugin installation documentation to install the **Lookup Personal Work Information** plugin in minutes.
 
 For **Lookup Personal Work Information**, you will also need to ensure the following permissions are in place:
 

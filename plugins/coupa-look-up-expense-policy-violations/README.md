@@ -17,11 +17,11 @@ systems:
 
 The “**Look Up Expense Policy Violations**” plugin enables Coupa administrators and finance approvers to identify and review expense policy breaches directly through the Moveworks AI Assistant. It helps streamline compliance by detecting anomalies such as duplicate receipts, over-limit claims, and missing receipts.
 
-This guide will help you install and configure the plugin in **Agent Studio** within minutes. Let’s get started!
+This guide will help you install and configure the plugin in **Tool Studio** within minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -31,7 +31,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**Coupa Connector Guide**](https://marketplace.moveworks.com/connectors/coupa#how-to-implement) for detailed instructions. Be sure to follow the **User Consent Authentication setup** guide to ensure proper user-level access control for expense policy violations. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**Coupa Connector Guide**](https://marketplace.moveworks.com/connectors/coupa#how-to-implement) for detailed instructions. Be sure to follow the **User Consent Authentication setup** guide to ensure proper user-level access control for expense policy violations. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 ### **User Consent Authentication Benefits:**
 
@@ -72,7 +72,7 @@ To find your instance name:
 
 Make sure to update this across all actions that reference the Coupa API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on installing and activating the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on installing and activating the plugin in Tool Studio.
 
 ## **Appendix**
 

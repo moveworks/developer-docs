@@ -33,7 +33,7 @@ This plugin requires an active **Workplace Concierge** installation and configur
 
 - If you have not installed and configure the application, follow the **[Install Workplace Concierge](https://www.servicenow.com/docs/r/employee-service-management/workplace-concierge/install-workplace-concierge.html)** documentation
 - The minimum version of the Workplace Concierge application is: 1.7.11
-- After the app is configured, follow our **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Agent Studio**.
+- After the app is configured, follow our **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Tool Studio**.
 ## **2. User Identity Ingestion from ServiceNow**
 This plugin operates on presence records under the requesting user's own ServiceNow identity. The `requested_for` fields are populated by dot-walking the user's profile in the Data Bank: `meta_info.user.external_system_identities.snow.external_id`
 

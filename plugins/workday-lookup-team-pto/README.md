@@ -16,11 +16,11 @@ systems:
 
 The **“Look Up Direct Reports PTO Balance”** plugin allows managers to quickly view Paid Time Off balances of their team members directly through the Moveworks AI Assistant, powered by Workday. This gives managers instant visibility into team availability without navigating through Workday reports.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 

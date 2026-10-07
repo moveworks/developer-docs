@@ -18,11 +18,11 @@ systems:
 
 The “**Update Employee Address”** plugin enables employees to update their home contact address via the **Moveworks AI Assistant**, eliminating the need to navigate Workday manually. This helps maintain accurate and current personal contact details with minimal user effort.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## Prerequisites
 
-- Access to **Agent Studio**
+- Access to **Tool Studio**
 
 ## What Are We Building?
 

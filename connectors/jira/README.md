@@ -6,7 +6,7 @@ name: Jira
 
 # **Introduction**
 
-Connecting Jira to Agent Studio allows seamless integration of project management and issue tracking capabilities. This guide provides a step-by-step process to connect your Jira instance to Agent Studio in three ways:
+Connecting Jira to Tool Studio allows seamless integration of project management and issue tracking capabilities. This guide provides a step-by-step process to connect your Jira instance to Tool Studio in three ways:
 
 1. [Webhook Connection](https://marketplace.moveworks.com/connectors/jira#Webhook-Connection)
 2. [Basic Auth](https://marketplace.moveworks.com/connectors/jira#Basic-Auth)
@@ -31,7 +31,7 @@ Connecting Jira to Agent Studio allows seamless integration of project managemen
 
 ## Step 1: Create the Moveworks Listener
 
-In **Agent Studio → Listeners → Create new listener** :
+In **Tool Studio → Listeners → Create new listener** :
 
 ### Steps
 
@@ -85,7 +85,7 @@ You’ll paste this token into Jira as an **Authorization: Bearer** header (belo
 **Operational behavior to expect (Data Center 10+):** executions are queued and processed **asynchronously**; **success = 2xx**; **~5s connect / 20s response** timeouts; **no retries** if the endpoint is unavailable.
 ## Congratulations!
 
-You've successfully created a Webhook Connection between Jira and Agent Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
+You've successfully created a Webhook Connection between Jira and Tool Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
 
 
 # Basic Auth
@@ -93,7 +93,7 @@ You've successfully created a Webhook Connection between Jira and Agent Studio. 
 
 - **Access to a Jira Instance**: Ensure you have access to either a **Sandbox or Production** Jira instance, depending on your testing environment.
 - **Install Postman**: Download and install Postman or another API testing tool to interact with Jira's REST API.
-- **Admin API Token**: While any Atlassian user can generate an API token for basic authentication, we recommend using a Jira admin account to generate the token when setting up plugins in Agent Studio. This ensures the automation has sufficient permissions to:
+- **Admin API Token**: While any Atlassian user can generate an API token for basic authentication, we recommend using a Jira admin account to generate the token when setting up plugins in Tool Studio. This ensures the automation has sufficient permissions to:
     - Access tickets across multiple projects
     - Update issue statuses
     - Assign users
@@ -116,7 +116,7 @@ You've successfully created a Webhook Connection between Jira and Agent Studio. 
         
       ![Screenshot 2024-12-03 at 9.50.29 PM.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Screenshot_2024-12-03_at_9.50.29_PM.png)
         
-    - Name the token (e.g., "Agent Studio").
+    - Name the token (e.g., "Tool Studio").
         
         ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image.png)
         
@@ -164,10 +164,10 @@ Example API: Get All Projects
     - Send the Request and Verify the Response:
         - Send the request and upon success, you will receive list of all projects in your Jira instance, including their key, name, type, links and metadata.
         
-## Step 4: Connect to Agent Studio
+## Step 4: Connect to Tool Studio
 
-1. In Agent Studio, create a new **HTTP Action** and Test it.
-   - Go to Agent Studio -> **Actions** -> **HTTP Actions** -> **Create**
+1. In Tool Studio, create a new **HTTP Action** and Test it.
+   - Go to Tool Studio -> **Actions** -> **HTTP Actions** -> **Create**
 
       ![Untitled](Jira%20cd90585e2a5044cf83fed803cba5bdbf/Pasted_Graphic.png)
 
@@ -191,10 +191,10 @@ Example API: Get All Projects
 
 ## Congratulations!
 
-You've successfully integrated Jira’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
+You've successfully integrated Jira’s API with Tool Studio. This opens up a variety of automation and integration possibilities within your Jira environment.
 # OAuth 2.0 with Authorization Code (User Consent Auth) Setup
 
-To connect **Jira Cloud** to **Agent Studio** using **user-consent-based authentication**, configure the **OAuth 2.0 with Authorization Code** flow.
+To connect **Jira Cloud** to **Tool Studio** using **user-consent-based authentication**, configure the **OAuth 2.0 with Authorization Code** flow.
 
 This ensures Jira users explicitly authorize Moveworks before any API actions are performed on their behalf.
 
@@ -205,8 +205,8 @@ Follow these steps to set up and validate your connection:
 1. Log in to the **Atlassian Developer Console**
 2. Register a new **OAuth 2.0 App**
 3. Configure **Callback URL**,**Scopes** and **Distribution Settings**
-4. Integrate with **Agent Studio**
-5. Test the Connector in **Agent Studio**
+4. Integrate with **Tool Studio**
+5. Test the Connector in **Tool Studio**
 
 ## **Step 1: Log in to Atlassian Developer Console**
 
@@ -286,7 +286,7 @@ In your newly created app, follow these steps to complete the OAuth 2.0 (3LO) se
 
 ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/image%2011.png)
 
-- Copy and store these credentials securely, as they will be required later while configuring the connector in **Agent Studio**.
+- Copy and store these credentials securely, as they will be required later while configuring the connector in **Tool Studio**.
 
  **Make the App Public (Distribution Settings):**
   - By default, your OAuth 2.0 app is set to Private, meaning only you (the creator) can authorize and use it.
@@ -311,9 +311,9 @@ In your newly created app, follow these steps to complete the OAuth 2.0 (3LO) se
 
 - Once saved, your app will become Public, allowing others to install and authorize it.
 
-## **Step 4: Integrate with Agent Studio**
+## **Step 4: Integrate with Tool Studio**
 
-In **Agent Studio**, create a new connector with the following configuration:
+In **Tool Studio**, create a new connector with the following configuration:
 
 **Connector Name:** `{{Connector_Name}}`
 
@@ -357,7 +357,7 @@ This connector facilitates secure, user-authorized access to the Jira API using 
 
 Once all fields are completed, click **Save** to create and store your connector configuration.
 
-## **Step 5: Test the Connector in Agent Studio**
+## **Step 5: Test the Connector in Tool Studio**
 
 Set up your API. You can read more about configuring and testing API actions from our **API Configuration Reference**.
 
@@ -396,7 +396,7 @@ Follow the steps below to update it correctly after installation:
 
 ### **Test Your Setup:**
 
-1. In **Agent Studio**, create and run a new **Action**.
+1. In **Tool Studio**, create and run a new **Action**.
 2. Import the above **cURL command**.
 3. Add the **Jira User Consent Auth Connector**.
 4. Click **Test → Generate New Access Token**.
@@ -406,9 +406,9 @@ Follow the steps below to update it correctly after installation:
     ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/183e028d-82b8-4293-a5e5-cb89b33a8913.png)
     
 
-### **Establish a Connection Between Your UCA Connector and Agent Studio**
+### **Establish a Connection Between Your UCA Connector and Tool Studio**
 
-- Integrate your **UCA Connector** with **Agent Studio**.
+- Integrate your **UCA Connector** with **Tool Studio**.
 
 ![image.png](Jira%20cd90585e2a5044cf83fed803cba5bdbf/94a73570-6fe1-4702-a726-ee4cd63f5348.png)
 
@@ -434,4 +434,4 @@ Follow the steps below to update it correctly after installation:
 
 # **Congratulations!**
 
-You’ve successfully integrated **Jira Cloud** with **Agent Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Jira Cloud data based on user consent within your Atlassian instance.
+You’ve successfully integrated **Jira Cloud** with **Tool Studio** using **OAuth 2.0 (User Consent Auth)**, enabling secure user-level authentication and access to Jira Cloud data based on user consent within your Atlassian instance.

@@ -16,11 +16,11 @@ systems:
 
 The **Candidate Application Status Tracker** plugin enables recruiters and hiring managers to effortlessly track the status of a candidate or a job they’ve posted in Greenhouse, all through the Moveworks AI Assistant. This ensures real-time visibility into application progress, helping streamline the hiring process and enabling timely decision-making.
 
-This guide will walk you through the quick and easy installation process in Agent Studio. Let’s get started!
+This guide will walk you through the quick and easy installation process in Tool Studio. Let’s get started!
 
 # Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 

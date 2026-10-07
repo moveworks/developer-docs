@@ -14,11 +14,11 @@ systems:
 
 The **Lookup System Info** plugin allows users to retrieve system-level details from **Palo Alto Networks firewalls** directly through the Moveworks AI Assistant. This includes information like hostname, model, serial number, PAN-OS version, and more—helping IT teams quickly verify firewall status without logging into the web UI or CLI.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 ## Prerequisites
 
-- Access to **Agent Studio**
+- Access to **Tool Studio**
 
 ## What are we building?
 
@@ -32,7 +32,7 @@ We recommend creating the connector for [**Palo Alto Networks**](https://develop
 
 For the **Lookup System Info** plugin, ensure the user account used in the connector has access to run operational commands (`type=op`) through the XML API.
 
-After the connector is set up, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for instructions on how to complete installation in Agent Studio.
+After the connector is set up, refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for instructions on how to complete installation in Tool Studio.
 
 
 ## Appendix

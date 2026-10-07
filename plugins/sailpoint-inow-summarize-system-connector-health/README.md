@@ -18,11 +18,11 @@ systems:
 
 The **“Summarize System Connector Health”** plugin empowers IT administrators to efficiently monitor the operational status and health of system connectors across SailPoint IdentityNow. By aggregating real-time connector metrics such as status, synchronization activity, and error states, this plugin enables the Moveworks AI Assistant to proactively identify potential sync or connectivity issues before they impact identity processes.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio**, helping you streamline connector monitoring and maintaining a healthy identity infrastructure with minimal manual effort.
+This guide will walk you through installing and configuring the plugin in **Tool Studio**, helping you streamline connector monitoring and maintaining a healthy identity infrastructure with minimal manual effort.
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -32,7 +32,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%7
 
 ## Installation Steps
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to simplify the process. Please follow our [**SailPoint iNow Connector Guide**](https://marketplace.moveworks.com/connectors/sailpoint-inow#how-to-implement) for detailed instructions (setup the connector for **User Consent Authentication** - Oauth 2.0 with Authorization Code Grant). 
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to simplify the process. Please follow our [**SailPoint iNow Connector Guide**](https://marketplace.moveworks.com/connectors/sailpoint-inow#how-to-implement) for detailed instructions (setup the connector for **User Consent Authentication** - Oauth 2.0 with Authorization Code Grant). 
 
 As an admin, ensure that the following scopes are enabled for your user to successfully install and use this plugin.
 
@@ -55,7 +55,7 @@ e.g.: `https://your_instance.identitynow.com/...`
 
 Make sure to update this across all actions that reference the Sailpoint iNow API.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

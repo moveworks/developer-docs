@@ -17,11 +17,11 @@ systems:
 
 The **“Send a Reminder to Pending Signers”** plugin lets users quickly send reminders for DocuSign envelopes awaiting signatures. Through the Moveworks AI Assistant, users can see pending envelopes and remind signers, helping speed up document signing without manual follow-ups.
 
-This guide will walk you through how to configure and customize the plugin within Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through how to configure and customize the plugin within Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ For this plugin, ensure the DocuSign system user has the following scopes:
 - signature.read
 - user_read
 
-After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 # **Customization Process**
 

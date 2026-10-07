@@ -6,7 +6,7 @@ name: Greenhouse
 
 # **Introduction**
 
-Connecting Greenhouse to Agent Studio enables seamless automation of recruiting workflows, from job requisition to candidate management. By leveraging Greenhouse’s API and using API Key Authentication, you can automate hiring processes, retrieve recruiting analytics and improve collaboration between recruiters, hiring managers and interviewers. This guide provides a step-by-step process to connect your Greenhouse instance to Agent Studio and test the integration for streamlined recruiting operations.
+Connecting Greenhouse to Tool Studio enables seamless automation of recruiting workflows, from job requisition to candidate management. By leveraging Greenhouse’s API and using API Key Authentication, you can automate hiring processes, retrieve recruiting analytics and improve collaboration between recruiters, hiring managers and interviewers. This guide provides a step-by-step process to connect your Greenhouse instance to Tool Studio and test the integration for streamlined recruiting operations.
 
 # **Prerequisites**
 
@@ -58,14 +58,14 @@ Example API: Get All Jobs
     - Click **Send** in Postman.
     - Upon success, you will receive a list of all jobs in your Greenhouse instance, including their **ID, title, departments, status** and **offices**.
 
-## **Step 3: Connect Greenhouse to Agent Studio**
+## **Step 3: Connect Greenhouse to Tool Studio**
 
-- In Agent Studio, create a new connector with the following configuration:
+- In Tool Studio, create a new connector with the following configuration:
     - **Base URL**: `https://harvest.greenhouse.io`
     - **Auth Config**: Basic Auth
     - **Username**: Harvest API key as the username
 - Test your Connector by setting up a demo API action
-    - In Agent Studio, create a new Plugin.
+    - In Tool Studio, create a new Plugin.
         - Click on **Actions** > **HTTP Actions** tab
         - Click on **Create** to create a new plugin
     - Set up your API Connection to configure the API endpoint based on the following:
@@ -75,4 +75,4 @@ Example API: Get All Jobs
 
 # Congratulations!
 
-You've successfully integrated Greenhouse’s API with Agent Studio. This opens up a variety of automation and integration possibilities within your Greenhouse environment.
+You've successfully integrated Greenhouse’s API with Tool Studio. This opens up a variety of automation and integration possibilities within your Greenhouse environment.

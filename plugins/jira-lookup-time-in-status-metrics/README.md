@@ -16,11 +16,11 @@ systems:
 
 The “Lookup Time-in-Status Metrics” plugin allows users to retrieve and analyze how long Jira issues have remained in a specific status within a chosen time range, directly through the Moveworks AI Assistant. By eliminating the need to manually extract and calculate these metrics in Jira, this plugin provides quick visibility into workflow performance—helping teams identify bottlenecks, measure efficiency, and make data-driven decisions to optimize processes.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio in just a few minutes. Let’s get started
+This guide will walk you through installing and configuring the plugin in Tool Studio in just a few minutes. Let’s get started
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -38,7 +38,7 @@ Ensure the following permissions are granted:
 - **Project Access:** Ability to view and manage issues in the target Jira projects.
 - **Issue Access**: `View Issues` permission, including access to fields like `summary`, `status`, and `timetracking`
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Agent Studio.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in Tool Studio.
 
 **Enabling the Time Tracking Field in Jira Projects:** 
 You don’t need to be a Jira site administrator to enable the Time Tracking field. If you can create projects or are assigned as a Project Administrator, you already have the required access. Steps to Enable Time Tracking for an Issue Type:

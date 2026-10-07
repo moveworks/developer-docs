@@ -1,6 +1,6 @@
 curl --request POST \
   --url https://<YOUR_UKG_HOST>/api/v1/scheduling/timeoff/multi_read \
-  --header 'Authorization: <ACCESS_TOKEN>' \
+  --header 'Authorization: Bearer {{access_token}}' \
   --header 'Content-Type: application/json' \
   --data '{
   "where": {

@@ -38,7 +38,7 @@ A service-account connector is used here because the target user is the **reques
 
 If you have not already configured the connector, please follow the [**OAuth 2.0 Client Credentials guide**](https://marketplace.moveworks.com/connectors/servicenow#oauth-2-0-client-credentials). The connector must be fully set up before installing this plugin.
 
-Once the connector is configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 # **How This Plugin Works**
 

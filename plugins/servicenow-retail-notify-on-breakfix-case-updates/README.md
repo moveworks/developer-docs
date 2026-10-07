@@ -43,7 +43,7 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 The connector must be fully set up before installing this plugin.
 
-Once configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once configured, follow our [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **3. ServiceNow Webhook / Event Configuration**
 

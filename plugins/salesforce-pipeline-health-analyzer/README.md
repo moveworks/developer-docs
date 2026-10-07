@@ -21,11 +21,11 @@ systems:
 
 The **Pipeline Health Analyzer** plugin enables Sales Leaders, Sales Managers, and RevOps teams to quickly assess the health and distribution of their sales pipeline directly within the Moveworks AI Assistant. It provides actionable insights into opportunity stage progression, aging deals, risk factors, and overall likelihood of hitting targets, helping teams prioritize efforts and make informed decisions.
 
-This guide walks you through how to configure and customize the plugin within Agent Studio so you can deliver these insights in just a few minutes. Let’s get started!
+This guide walks you through how to configure and customize the plugin within Tool Studio so you can deliver these insights in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -115,7 +115,7 @@ Follow the steps below to update it correctly after installation:
 5. Ensure all API requests use **HTTPS** and leverage **OAuth 2.0 authentication**.
 6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ### **API #1: Search Opportunities by Criteria**
 

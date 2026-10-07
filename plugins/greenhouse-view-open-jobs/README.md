@@ -17,13 +17,13 @@ Greenhouse is a leading Applicant Tracking System (ATS) that helps companies str
 
 By integrating this feature into your bot, you empower employees to quickly explore externally posted job opportunities without manually searching through Greenhouse, enhancing candidate referrals and external recruitment efforts.
 
-This guide walks you through adding the View Open Jobs feature to your bot using Agent Studio.
+This guide walks you through adding the View Open Jobs feature to your bot using Tool Studio.
 
 Let's get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

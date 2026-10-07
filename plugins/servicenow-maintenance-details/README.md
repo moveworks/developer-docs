@@ -15,13 +15,13 @@ systems:
 
 The **“Look Up Maintenance Details of My Asset”** plugin enables employees and support teams to quickly access maintenance history and upcoming service schedules for assets using the Moveworks AI Assistant. This plugin streamlines support by allowing users to retrieve detailed maintenance information directly from the Assistant, without needing to navigate through complex asset management systems.
 
-This guide will walk you through installing and configuring the plugin in Agent Studio, so your team can enhance asset visibility, reduce downtime, and ensure timely maintenance updates for end users.
+This guide will walk you through installing and configuring the plugin in Tool Studio, so your team can enhance asset visibility, reduce downtime, and ensure timely maintenance updates for end users.
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # What are we building?
 
@@ -37,7 +37,7 @@ For this plugin, ensure the user has the following permissions:
 
 - **Table Access**: `Read` access to the `alm_asset` table.
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 # **Steps to Create the Custom Fields**
 

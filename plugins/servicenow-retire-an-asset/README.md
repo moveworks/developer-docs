@@ -23,11 +23,11 @@ systems:
 
 The **“ServiceNow Asset Retirement”** plugin enables IT asset managers to efficiently identify and retire assets in ServiceNow directly through the Moveworks AI Assistant. This automation streamlines asset lifecycle management by retrieving asset details through flexible lookup criteria and allowing managers to mark assets as *Retired* without navigating the ServiceNow interface. With this plugin, organizations can maintain accurate asset records, improve lifecycle hygiene, and reduce administrative overhead.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started.
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started.
 
 ## Prerequisites
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -37,7 +37,7 @@ This [purple chat](https://marketplace.moveworks.com/purple-chat?conversation=%
 
 ## **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow the [**ServiceNow Connector Guide**](https://marketplace.moveworks.com/connectors/servicenow#how-to-implement) in Agent Studio’s Resources section for detailed setup instructions. Once your ServiceNow connector is successfully configured, proceed to install the **ServiceNow Asset Retirement** plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow the [**ServiceNow Connector Guide**](https://marketplace.moveworks.com/connectors/servicenow#how-to-implement) in Tool Studio’s Resources section for detailed setup instructions. Once your ServiceNow connector is successfully configured, proceed to install the **ServiceNow Asset Retirement** plugin and complete the setup efficiently.
 
 For this plugin, ensure the ServiceNow integration user has the appropriate access required to update asset records via the ServiceNow Table API.
 

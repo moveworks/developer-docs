@@ -25,14 +25,14 @@ Before installing and using the **Lakeside SysTrack AI Assistant** plugin, pleas
  
 ### 1. SysTrack Connector
  
-This plugin requires an active **Lakeside SysTrack connector** configured in Agent Studio. If you have not already set one up, follow the [**Lakeside SysTrack Connector Guide**](https://marketplace.moveworks.com/connectors/lakeside-systrack-ai) available in the Moveworks Marketplace before proceeding.
+This plugin requires an active **Lakeside SysTrack connector** configured in Tool Studio. If you have not already set one up, follow the [**Lakeside SysTrack Connector Guide**](https://marketplace.moveworks.com/connectors/lakeside-systrack-ai) available in the Moveworks Marketplace before proceeding.
  
 ### 2. SysTrack System Requirements
  
 - An active **SysTrack Cloud** instance
 - Valid **API credentials** — either an API key (recommended) or a bearer token for service account authentication
 - The SysTrack AI API enabled on your instance (contact Lakeside support if unsure)
-- **Agent Studio access** with permissions to create Connectors and Plugins
+- **Tool Studio access** with permissions to create Connectors and Plugins
 
 ---
  
@@ -59,7 +59,7 @@ The Compound Action router checks whether a `conversation_id` already exists in 
  
 If you haven't already, configure the Lakeside SysTrack HTTP connector:
  
-1. Navigate to **Agent Studio → HTTP Connector → Create**.
+1. Navigate to **Tool Studio → HTTP Connector → Create**.
 2. Fill in the connector details:
    - **Name:** `Lakeside SysTrack Connector`
    - **Base URL:** `https://cloud.lakesidesoftware.com`
@@ -206,7 +206,7 @@ Define three slots that drive the plugin's dynamic behavior.
  
 - **Device list not populating** — Confirm the user's email address in Moveworks matches the identifier used in SysTrack. Check that the `systrack_get_user_systems` action is correctly mapped.
 - **`conversation_id` not persisting** — Verify that the `conversation_id` slot has **Inference Policy** set to `Always Infer` and a fallback of `null`. Ensure the router's `return` block maps `conversation_id` in both the start and continue paths.
-- **`401 Unauthorized`** — The API key or bearer token may have expired. Re-authenticate and update the connector in Agent Studio.
+- **`401 Unauthorized`** — The API key or bearer token may have expired. Re-authenticate and update the connector in Tool Studio.
 - **Multi-turn context lost** — Confirm the Compound Action router is correctly evaluating the `data.conversation_id != null` condition and routing to `systrack_continue_conversation` on follow-up turns.
 - **Wrong device selected** — If the user has multiple devices, the `system_name` slot will surface all devices for selection. Ensure the output mapper for `systrack_get_user_systems` correctly extracts `data.systems[*].name`.
 

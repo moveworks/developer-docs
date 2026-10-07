@@ -19,7 +19,7 @@ This guide will walk you through the simple setup process to enable seamless con
 
 # **Prerequisites :**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 
@@ -29,7 +29,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend creating a connector in **Agent Studio** beforehand to streamline the process. Please follow our [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin installation documentation to install the **Lookup Opportunity Information** plugin in minutes.
+While you can create a connector during plugin installation, we recommend creating a connector in **Tool Studio** beforehand to streamline the process. Please follow our [Salesforce Connector](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home) Guide to do so. Once completed, follow our plugin installation documentation to install the **Lookup Opportunity Information** plugin in minutes.
 
 ## **Required Permissions:**
 

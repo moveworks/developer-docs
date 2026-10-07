@@ -15,11 +15,11 @@ systems:
 ## **Introduction**
 
 The **“Look Up Opportunities for a Contact”** plugin helps users easily find all Opportunities associated with a specified contact—directly through the Moveworks AI Assistant. This plugin allows users to instantly retrieve opportunities linked to a contact by searching through the **contact name**, **contacts assigned to them**, or **contacts within an account**. It streamlines sales tracking, supports timely follow-ups, and enhances overall CRM efficiency without the need for manual searches.
-This guide will walk you through setting up and customizing the plugin in Agent Studio in just a few minutes. Let’s get started!
+This guide will walk you through setting up and customizing the plugin in Tool Studio in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-• Access to **Agent Studio**
+• Access to **Tool Studio**
 
 ## **What are we building?**
 
@@ -35,7 +35,7 @@ We recommend creating the connector for **Salesforce** first, prior to installi
 
 - `Read` access to the **Opportunity** object
 
-After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Agent Studio.
+After you have configured the connector, Please refer to our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for more details on how to install a plugin in Tool Studio.
 
 **Note :** 
 The Moveworks bot will only display opportunities where the Contact Role field contains a value. Please ensure that this field is updated whenever an opportunity is created or edited, so the bot can accurately surface the relevant opportunities.

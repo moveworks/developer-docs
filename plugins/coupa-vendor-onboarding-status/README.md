@@ -15,11 +15,11 @@ systems:
 
 The **Identify Vendor Onboarding Status** plugin empowers users to instantly check the approval and activation status of vendors in Coupa directly through the Moveworks AI Assistant. Users can quickly verify if vendors are ready for business, track onboarding progress, and access critical details such as supplier ID, approval status, active/inactive state, and supplier number. This ensures procurement teams can make informed decisions and avoid delays while maintaining compliance with your company's vendor management policies.
 
-This guide will help you install this plugin within minutes in Agent Studio. Let’s get started!
+This guide will help you install this plugin within minutes in Tool Studio. Let’s get started!
 
 # **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 # **What are we building?**
 

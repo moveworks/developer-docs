@@ -20,11 +20,11 @@ systems:
 
 The Salesforce **“Add Products to an Opportunity”** plugin empowers sales teams to seamlessly configure deals by attaching the right product modules to any Opportunity directly through the Moveworks AI Assistant. By simplifying the selection and addition of products—including pricing, product mapping, and quantity inputs—it eliminates manual navigation in Salesforce and reduces errors. This ensures faster deal setup, improved accuracy, and a more efficient sales workflow.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes. Let’s get started!
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes. Let’s get started!
 
 ## **Prerequisites**
 
-- Access to Agent Studio
+- Access to Tool Studio
 
 ## **What are we building?**
 
@@ -77,7 +77,7 @@ Follow the steps below to update it correctly after installation:
 5. Ensure all API requests use **HTTPS** and leverage **OAuth 2.0 authentication**.
 6. Save your configuration to ensure that all API requests are routed correctly and securely to your Salesforce instance
 
-Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Agent Studio**.
+Once the connector is successfully configured, follow our [plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **Appendix**
 

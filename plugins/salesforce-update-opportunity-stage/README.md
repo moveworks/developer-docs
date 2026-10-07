@@ -15,14 +15,14 @@ systems:
 
 The **“Update Opportunity Stage”** plugin enables users to quickly update the stage of an existing opportunity in **Salesforce**, all through the Moveworks AI Assistant. This streamlines the process for sales and support teams by eliminating the need to manually navigate Salesforce to locate and modify opportunity records.
 
-This guide will walk you through installing and configuring the plugin in **Agent Studio** in just a few minutes.
+This guide will walk you through installing and configuring the plugin in **Tool Studio** in just a few minutes.
 
 Let’s get started!
 
 # Prerequisites :
 
-- Access to Agent Studio
-- The  **Salesforce Lookup Opportunity** is a plugin built in **Agent Studio** that allows users to retrieve opportunity details for a specific account name and check their stages based on a query. For setup instructions, refer to the [**Salesforce Lookup Opportunity](https://developer.moveworks.com/creator-studio/resources/plugin?id=salesforce-opportunity-information)** guide.
+- Access to Tool Studio
+- The  **Salesforce Lookup Opportunity** is a plugin built in **Tool Studio** that allows users to retrieve opportunity details for a specific account name and check their stages based on a query. For setup instructions, refer to the [**Salesforce Lookup Opportunity](https://developer.moveworks.com/creator-studio/resources/plugin?id=salesforce-opportunity-information)** guide.
 
 # What are we building?
 
@@ -32,7 +32,7 @@ This [purple chat](https://developer.moveworks.com/creator-studio/developer-too
 
 # **Installation Steps**
 
-While you can create a connector during plugin installation, we recommend setting up the connector in **Agent Studio** beforehand to streamline the process. Please follow our [**Salesforce Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
+While you can create a connector during plugin installation, we recommend setting up the connector in **Tool Studio** beforehand to streamline the process. Please follow our [**Salesforce Connector Guide**](https://developer.moveworks.com/marketplace/package/?id=salesforce&hist=home%2Cbrws#how-to-implement) for detailed instructions. Once completed, proceed to install the plugin and complete the setup efficiently.
 
 For this plugin, ensure the Salesforce integration user has the following permissions:
 
