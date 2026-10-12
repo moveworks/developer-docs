@@ -1,8 +1,8 @@
 ---
 availability: INSTALLABLE
 name: Set Presence Status
-description: Lets employees record a one-off change to where they are working on a given date in the ServiceNow WSD module and keep collaborators informed, without changing their standing routine, via the Moveworks AI Assistant.
-installation_asset_uuid: 9ad7c841-af84-4231-9399-303212fda944
+description: In today on a remote day? Tell the assistant.
+installation_asset_uuid: ba287a3d-8d6c-4c9f-9089-42855e444967
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EWill+be+working+this+Friday+from+Building+A%2C+please+update+my+status.%3C%2Fp%3E%3Cp%3E%3C%2Fp%3E%3Cp%3E%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22richText%22%3A%22%3Cp%3ERunning+Set_Presence_Status%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3ECalling+Set_Presence_Status%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3ERunning+Set_Presence_Status+and+processing+updates%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%22%2C%22status%22%3A%22success%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3EReflecting%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3EChoosing+building+options%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%22%2C%22content%22%3A%5B%5D%2C%22connectorName%22%3A%22%22%2C%22overrideImageUrl%22%3A%22%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3EHandling+Set_Presence_Status%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cp%3ECalling+Set_Presence_Status%3C%2Fp%3E%3C%2Fli%3E%3Cli%3E%3Cp%3ERunning+Set_Presence_Status+and+processing+updates%3C%2Fp%3E%3C%2Fli%3E%3C%2Ful%3E%22%2C%22content%22%3A%5B%5D%2C%22connectorName%22%3A%22%22%2C%22overrideImageUrl%22%3A%22%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3ESetting+your+in-office+status+for+Friday%2C+July+24%2C+at+Building+A+%28Campus%29.%3C%2Fp%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3E%3Cstrong%3EResolved+details%3A%3C%2Fstrong%3E+Date+is+2026-07-24+and+status+is+in+office.%3C%2Fp%3E%22%7D%5D%7D%5D%2C%22assistantConfig%22%3A%7B%22userName%22%3A%22Moveworks%22%2C%22initials%22%3A%22U%22%2C%22providedIcon%22%3A%22silhoutte%22%7D%2C%22userConfig%22%3A%7B%22userName%22%3A%22You%22%2C%22initials%22%3A%22U%22%2C%22providedIcon%22%3A%22silhoutte%22%7D%7D
 solution_tags:
 - Workplace
@@ -28,14 +28,23 @@ Refer to the [**Purple chat**](https://marketplace.moveworks.com/purple-chat?con
 
 Before installing and using the **Set Presence Status** plugin, ensure that the following requirements are met:
 
-## **1. ServiceNow's Workplace Concierge**
+## **1. ServiceNow's Workplace Core**
+This plugin requires an active **Workplace Core** installation and configuration on your ServiceNow instance.
+
+- If you have not installed and configured the application, follow the **[Install Workplace Core](https://www.servicenow.com/docs/r/employee-service-management/workplace-core/install-workplace-service-delivery.html)** documentation
+- The minimum version of the Workplace Reservation Management application is: 2.29.2
+
+## **2. ServiceNow's Workplace Concierge**
 
 This plugin requires an active **Workplace Concierge** installation and configuration on your ServiceNow instance.
 
-- If you have not installed and configured the application, follow the **[Install Workplace Concierge](https://www.servicenow.com/docs/r/employee-service-management/workplace-concierge/install-workplace-concierge.html)** documentation
+- If you have not installed and configure the application, follow the **[Install Workplace Concierge](https://www.servicenow.com/docs/r/employee-service-management/workplace-concierge/install-workplace-concierge.html)** documentation
 - The minimum version of the Workplace Concierge application is: 1.7.11
-- After the app is configured, follow our **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Tool Studio**.
-## **2. User Identity Ingestion from ServiceNow**
+ 
+## **3. Install and activate plugins**
+After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Agent Studio**.
+
+## **4. User Identity Ingestion from ServiceNow**
 This plugin operates on presence records under the requesting user's own ServiceNow identity. The `requested_for` fields are populated by dot-walking the user's profile in the Data Bank: `meta_info.user.external_system_identities.snow.external_id`
 
 The `external_id` serves two purposes:
@@ -44,7 +53,7 @@ The `external_id` serves two purposes:
 
 This reads the user's ServiceNow `sys_id` from the identity source linked to their Moveworks profile, so your users must be ingested from ServiceNow for this value to populate. To set up user identity for your org, read our help docs on Identity Configuration in [**Moveworks Setup**](https://help.moveworks.com/service-management/moveworks-setup/identity-configuration).
 >⚠️ **Important — update this mapping to match your setup**. The `snow` key in that path must exactly match the name of `your` ServiceNow identity source in Moveworks Setup. If yours is named differently (e.g. `servicenow_prod`), update the Compound Action mapping to `meta_info.user.external_system_identities.servicenow_prod.external_id`. If it doesn't match, the path resolves to null and both authentication and presence operations will fail.
-## **3. ServiceNow Connector**
+## **5. ServiceNow Connector**
 
 This plugin requires an active **ServiceNow connector** configured with **OAuth 2.0 using the Authorization Code grant (user-based / User Consent auth)**.
 
@@ -55,11 +64,11 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 **Note:** References to the instance must be updated after the plugin is installed.
 
 ## Visual representation of how the plugin works
-![Conversation flow](Set%20Presence%20Status/flow.png)
+![Conversation flow](Set%20Presence%20Status/flow.svg)
 
 ## API Details
 
-Before running the cURL examples, replace `YOUR_INSTANCE` with your instance hostname and `ACCESS_TOKEN` with the OAuth access token issued for the user.
+Before running the cURL examples, replace `<YOUR_INSTANCE>` with your instance hostname and `<ACCESS_TOKEN>` with the OAuth access token issued for the user.
 
 ### **API: Resolve Collaborator Name**
 

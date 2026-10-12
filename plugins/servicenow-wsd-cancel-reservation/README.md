@@ -1,8 +1,8 @@
 ---
 availability: INSTALLABLE
 name: Cancel Reservation
-description: Lets employees cancel an upcoming or in-progress workspace reservation in the ServiceNow WSD module and free the space for someone else in seconds, via the Moveworks AI Assistant.
-installation_asset_uuid: e90ec81f-cef6-4fbc-8ee0-2a7e646db296
+description: Cancel a workspace reservation — right from the Moveworks Assistant.
+installation_asset_uuid: 9a98ce13-1899-40bc-8b4c-40582e132e2a
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+cancel+my+space+reservation+for+5pm+today.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+for+matching+reservations+in+%3Cb%3EServiceNow%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22I+found+your+reservation+for+%3Cb%3EDesign+Lab+B%3C%2Fb%3E+at+5%3A00+PM+today.+I%27m+proceeding+with+the+cancellation+now+as+requested.%22%7D%2C%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Updating+reservation+status+to+%27Cancelled%27+in+%3Cb%3EServiceNow%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22Your+reservation+for+%3Cb%3EDesign+Lab+B%3C%2Fb%3E+%28RSV-10293%29+has+been+successfully+cancelled.+The+room+is+now+available+for+others+to+book.+%3Cp%3EYou+can+view+the+updated+record+here%3A+%3Ca+href%3D%5C%22https%3A%2F%2Fservicenow.com%2Fnav_to.do%3Furi%3Dx_room_res.do%3Fsys_id%3DRSV-10293%5C%22%3ERSV-10293%3C%2Fa%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22servicenow%22%2C%22citationTitle%22%3A%22RSV-10293%3A+Design+Lab+B%22%7D%5D%7D%5D%7D%5D%2C%22assistantConfig%22%3A%7B%22userName%22%3A%22Moveworks%22%2C%22initials%22%3A%22U%22%2C%22providedIcon%22%3A%22silhoutte%22%7D%7D
 solution_tags:
 - Workplace
@@ -27,14 +27,23 @@ Refer to the [**Purple chat**](https://marketplace.moveworks.com/purple-chat?con
 
 Before installing and using the **Cancel Reservation** plugin, ensure that the following requirements are met:
 
-## **1. ServiceNow's Workplace Reservation Management**
+## **1. ServiceNow's Workplace Core**
+This plugin requires an active **Workplace Core** installation and configuration on your ServiceNow instance.
+
+- If you have not installed and configured the application, follow the **[Install Workplace Core](https://www.servicenow.com/docs/r/employee-service-management/workplace-core/install-workplace-service-delivery.html)** documentation
+- The minimum version of the Workplace Reservation Management application is: 2.29.2
+
+## **2. ServiceNow's Workplace Reservation Management**
 
 This plugin requires an active **Workplace Reservation Management** installation and configuration on your ServiceNow instance.
 
 - If you have not installed and configured the application, follow the **[Install Workplace Reservation Management](https://www.servicenow.com/docs/r/employee-service-management/workplace-reservation-management/install-wsd-reservation-mgmt.html)** documentation
-- The minimum version of the Workplace Reservation Management application is: 3.5.0
-- After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Tool Studio**.
-## **2. User Identity Ingestion from ServiceNow**
+- The minimum version of the Workplace Reservation Management application is: 3.6.6
+
+## **3. Install and activate plugins**
+After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Agent Studio**.
+
+## **4. User Identity Ingestion from ServiceNow**
 This plugin operates on reservations under the requesting user's own ServiceNow identity. The `requested_for` fields are populated by dot-walking the user's profile in the Data Bank: `meta_info.user.external_system_identities.snow.external_id`
 
 The `external_id` serves two purposes:
@@ -55,13 +64,13 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Cancel%20Reservation/flow.png)
+![Conversation flow](Cancel%20Reservation/flow.svg)
 
 # **Implementation Details**
 
 ## API Details
 
-Before running the cURL examples, replace `YOUR_INSTANCE` with your instance hostname and `ACCESS_TOKEN` with the OAuth access token issued for the user.
+Before running the cURL examples, replace `<YOUR_INSTANCE>` with your instance hostname and `<ACCESS_TOKEN>` with the OAuth access token issued for the user.
 
 ### **API: Cancel Reservation**
 This REST API is used to cancel **Workplace reservations**.

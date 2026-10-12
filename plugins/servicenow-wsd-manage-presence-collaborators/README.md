@@ -1,8 +1,8 @@
 ---
 availability: INSTALLABLE
 name: Manage Presence Collaborators
-description: Lets employees add or remove collaborators in the ServiceNow WSD module and see which days those colleagues plan to be in, so office days line up with the right people, via the Moveworks AI Assistant.
-installation_asset_uuid: 2a7e345f-0b5e-48cb-b2ee-3000ce31a6a1
+description: Stop guessing who'll be in. Build a collaborator list and see their plans.
+installation_asset_uuid: a7f9e259-a7df-4240-80c3-c912064e6532
 purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I%27d+like+to+update+my+collaborators+for+the+Alpha+Project.+Can+you+add+Sarah+Miller+and+David+Chen+to+my+list+in+ServiceNow%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+for+Sarah+Miller+and+David+Chen+in+%3Cb%3EServiceNow%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22I+found+two+people+named+%3Cb%3ESarah+Miller%3C%2Fb%3E.+Which+one+would+you+like+to+add%3F%3Cul%3E%3Cli%3E%3Cb%3ESarah+Miller%3C%2Fb%3E%2C+Senior+Designer+%28Creative+Services%29%3C%2Fli%3E%3Cli%3E%3Cb%3ESarah+Miller%3C%2Fb%3E%2C+Product+Manager+%28Growth+Team%29%3C%2Fli%3E%3C%2Ful%3E%22%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22The+Senior+Designer.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22%3Cp%3EOkay%2C+I%27m+ready+to+add+these+colleagues+to+your+%3Cb%3EPresence+Collaborators%3C%2Fb%3E+list+so+you+can+see+when+they+are+in+the+office%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3ESarah+Miller%3C%2Fb%3E+%28Senior+Designer%29%3C%2Fli%3E%3Cli%3E%3Cb%3EDavid+Chen%3C%2Fb%3E+%28Software+Engineer%29%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EShould+I+proceed%3F%3C%2Fp%3E%22%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Add+Collaborators%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%7D%2C%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22Add+them.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Updating+collaborator+list+in+%3Cb%3EServiceNow%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3ESuccess%21+%3Cb%3ESarah+Miller%3C%2Fb%3E+and+%3Cb%3EDavid+Chen%3C%2Fb%3E+have+been+added+to+your+collaborators.+You+will+now+receive+updates+on+their+office+attendance.%3C%2Fp%3E%3Cp%3E%3Ca+href%3D%5C%22https%3A%2F%2Fservicenow.com%2Fpresence%2Fdashboard%5C%22%3EView+Presence+Dashboard%3C%2Fa%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22servicenow%22%2C%22citationTitle%22%3A%22Collaborator+List%3A+Alpha+Project%22%7D%5D%7D%5D%7D%5D%7D
 solution_tags:
 - Workplace
@@ -27,14 +27,23 @@ Refer to the [**Purple chat**](https://marketplace.moveworks.com/purple-chat?con
 
 Before installing and using the **Manage Presence Collaborators** plugin, ensure that the following requirements are met:
 
-## **1. ServiceNow's Workplace Concierge**
+## **1. ServiceNow's Workplace Core**
+This plugin requires an active **Workplace Core** installation and configuration on your ServiceNow instance.
+
+- If you have not installed and configured the application, follow the **[Install Workplace Core](https://www.servicenow.com/docs/r/employee-service-management/workplace-core/install-workplace-service-delivery.html)** documentation
+- The minimum version of the Workplace Reservation Management application is: 2.29.2
+
+## **2. ServiceNow's Workplace Concierge**
 
 This plugin requires an active **Workplace Concierge** installation and configuration on your ServiceNow instance.
 
 - If you have not installed and configure the application, follow the **[Install Workplace Concierge](https://www.servicenow.com/docs/r/employee-service-management/workplace-concierge/install-workplace-concierge.html)** documentation
 - The minimum version of the Workplace Concierge application is: 1.7.11
-- After the app is configured, follow our **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Tool Studio**.
-## **2. User Identity Ingestion from ServiceNow**
+ 
+## **3. Install and activate plugins**
+After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Agent Studio**.
+
+## **4. User Identity Ingestion from ServiceNow**
 This plugin operates on presence records under the requesting user's own ServiceNow identity. The `requested_for` fields are populated by dot-walking the user's profile in the Data Bank: `meta_info.user.external_system_identities.snow.external_id`
 
 The `external_id` serves two purposes:
@@ -43,7 +52,7 @@ The `external_id` serves two purposes:
 
 This reads the user's ServiceNow `sys_id` from the identity source linked to their Moveworks profile, so your users must be ingested from ServiceNow for this value to populate. To set up user identity for your org, read our help docs on Identity Configuration in [**Moveworks Setup**](https://help.moveworks.com/service-management/moveworks-setup/identity-configuration).
 >⚠️ **Important — update this mapping to match your setup**. The `snow` key in that path must exactly match the name of `your` ServiceNow identity source in Moveworks Setup. If yours is named differently (e.g. `servicenow_prod`), update the Compound Action mapping to `meta_info.user.external_system_identities.servicenow_prod.external_id`. If it doesn't match, the path resolves to null and both authentication and presence operations will fail.
-## **3. ServiceNow Connector**
+## **5. ServiceNow Connector**
 
 This plugin requires an active **ServiceNow connector** configured with **OAuth 2.0 using the Authorization Code grant (user-based / User Consent auth)**.
 
@@ -55,13 +64,13 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Manage%20Presence%20Collaborators/flow.png)
+![Conversation flow](Manage%20Presence%20Collaborators/flow.svg)
 
 # **Implementation Details**
 
 ## API Details
 
-Before running the cURL examples, replace `YOUR_INSTANCE` with your instance hostname and `ACCESS_TOKEN` with the OAuth access token issued for the user.
+Before running the cURL examples, replace `<YOUR_INSTANCE>` with your instance hostname and `<ACCESS_TOKEN>` with the OAuth access token issued for the user.
 
 ### **API: Resolve Collaborator Name**
 
