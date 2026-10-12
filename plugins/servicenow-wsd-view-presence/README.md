@@ -1,9 +1,9 @@
 ---
 availability: INSTALLABLE
 name: View Presence
-description: Lets employees ask which days they are due in the office and who else is expected, using presence data in the ServiceNow WSD module, and get an answer that accounts for both routines and one-off exceptions, via the Moveworks AI Assistant.
-installation_asset_uuid: 63f034cd-ad82-4a61-948b-c8603bbf7767
-purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+want+to+see+who+will+be+in+the+office+next+week+so+I+can+plan+my+commute.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Identifying+your+primary+collaborators+and+team+members+in+%3Cb%3EServiceNow%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22servicenow%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Retrieving+office+presence+logs+and+hybrid+schedules...%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EHere+is+the+expected+office+presence+for+your+team+next+week%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EMonday%2C+Oct+21%3C%2Fb%3E%3A+Sarah+Jenkins%2C+Mike+Ross%3C%2Fli%3E%3Cli%3E%3Cb%3ETuesday%2C+Oct+22%3C%2Fb%3E%3A+Sarah+Jenkins%2C+Anita+Desai%2C+Harvey+Specter+%28%3Ci%3ELondon+Office%3C%2Fi%3E%29%3C%2Fli%3E%3Cli%3E%3Cb%3EWednesday%2C+Oct+23%3C%2Fb%3E%3A+Sarah+Jenkins%2C+Mike+Ross%2C+Anita+Desai%2C+Harvey+Specter+%28%3Ci%3ELondon+Office%3C%2Fi%3E%29%3C%2Fli%3E%3Cli%3E%3Cb%3EThursday%2C+Oct+24%3C%2Fb%3E%3A+Anita+Desai%2C+Mike+Ross%3C%2Fli%3E%3Cli%3E%3Cb%3EFriday%2C+Oct+25%3C%2Fb%3E%3A+No+collaborators+scheduled%3C%2Fli%3E%3C%2Ful%3E%3Cp%3E%3Cb%3ESummary%3A%3C%2Fb%3E+Most+of+your+team+will+be+in+mid-week.+%3Cb%3EWednesday%3C%2Fb%3E+is+the+best+day+to+visit+for+maximum+overlap.%3C%2Fp%3E%3Cp%3E%3Ca+href%3D%5C%22https%3A%2F%2Fservicenow.com%2Fpresence%2Fteam-dashboard%5C%22%3EManage+your+office+schedule%3C%2Fa%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22servicenow%22%2C%22citationTitle%22%3A%22Team+Presence+Schedule+-+Oct+21-25%22%7D%5D%7D%5D%7D%5D%7D
+description: One question answers where an employee is meant to be.
+installation_asset_uuid: 346de5c7-c0e1-4c04-a6ad-a3499cde9983
+purple_chat_link:  [**Purple chat**](https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+want+to+see+who+will+be+in+the+office+next+week+so+I+can+plan+my+commute.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Identifying+your+primary+collaborators+and+team+members+in+%3Cb%3EServiceNow%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22servicenow%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Retrieving+office+presence+logs+and+hybrid+schedules...%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EHere+is+the+expected+office+presence+for+your+team+next+week%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3EMonday%2C+Oct+21%3C%2Fb%3E%3A+Sarah+Jenkins%2C+Mike+Ross%3C%2Fli%3E%3Cli%3E%3Cb%3ETuesday%2C+Oct+22%3C%2Fb%3E%3A+Sarah+Jenkins%2C+Anita+Desai%2C+Harvey+Specter+%28%3Ci%3ELondon+Office%3C%2Fi%3E%29%3C%2Fli%3E%3Cli%3E%3Cb%3EWednesday%2C+Oct+23%3C%2Fb%3E%3A+Sarah+Jenkins%2C+Mike+Ross%2C+Anita+Desai%2C+Harvey+Specter+%28%3Ci%3ELondon+Office%3C%2Fi%3E%29%3C%2Fli%3E%3Cli%3E%3Cb%3EThursday%2C+Oct+24%3C%2Fb%3E%3A+Anita+Desai%2C+Mike+Ross%3C%2Fli%3E%3Cli%3E%3Cb%3EFriday%2C+Oct+25%3C%2Fb%3E%3A+No+collaborators+scheduled%3C%2Fli%3E%3C%2Ful%3E%3Cp%3E%3Cb%3ESummary%3A%3C%2Fb%3E+Most+of+your+team+will+be+in+mid-week.+%3Cb%3EWednesday%3C%2Fb%3E+is+the+best+day+to+visit+for+maximum+overlap.%3C%2Fp%3E%3Cp%3E%3Ca+href%3D%5C%22https%3A%2F%2Fservicenow.com%2Fpresence%2Fteam-dashboard%5C%22%3EManage+your+office+schedule%3C%2Fa%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22servicenow%22%2C%22citationTitle%22%3A%22Team+Presence+Schedule+-+Oct+21-25%22%7D%5D%7D%5D%7D%5D%7D)
 solution_tags:
 - Workplace
 - Workplace Service Delivery
@@ -27,14 +27,23 @@ Refer to the [**Purple chat**](https://marketplace.moveworks.com/purple-chat?con
 
 Before installing and using the **View Presence** plugin, ensure that the following requirements are met:
 
-## **1. ServiceNow's Workplace Concierge**
+## **1. ServiceNow's Workplace Core**
+This plugin requires an active **Workplace Core** installation and configuration on your ServiceNow instance.
+
+- If you have not installed and configured the application, follow the **[Install Workplace Core](https://www.servicenow.com/docs/r/employee-service-management/workplace-core/install-workplace-service-delivery.html)** documentation
+- The minimum version of the Workplace Reservation Management application is: 2.29.2
+
+## **2. ServiceNow's Workplace Concierge**
 
 This plugin requires an active **Workplace Concierge** installation and configuration on your ServiceNow instance.
 
 - If you have not installed and configure the application, follow the **[Install Workplace Concierge](https://www.servicenow.com/docs/r/employee-service-management/workplace-concierge/install-workplace-concierge.html)** documentation
 - The minimum version of the Workplace Concierge application is: 1.7.11
-- After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Tool Studio**.
-## **2. User Identity Ingestion from ServiceNow**
+ 
+## **3. Install and activate plugins**
+After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Agent Studio**.
+
+## **4. User Identity Ingestion from ServiceNow**
 This plugin operates on presence records under the requesting user's own ServiceNow identity. The `requested_for` fields are populated by dot-walking the user's profile in the Data Bank: `meta_info.user.external_system_identities.snow.external_id`
 
 The `external_id` serves two purposes:
@@ -55,13 +64,13 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](View%20Presence/flow.png)
+![Conversation flow](View%20Presence/flow.svg)
 
 # **Implementation Details**
 
 ## API Details
 
-Before running the cURL examples, replace `YOUR_INSTANCE` with your instance hostname and `ACCESS_TOKEN` with the OAuth access token issued for the user.
+Before running the cURL examples, replace `<YOUR_INSTANCE>` with your instance hostname and `<ACCESS_TOKEN>` with the OAuth access token issued for the user.
 
 ### **API: Get Presence Data**
 

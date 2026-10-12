@@ -1,9 +1,9 @@
 ---
 availability: INSTALLABLE
 name: Update Reservation
-description: Lets employees change the date, time, duration, or location of an existing reservation in the ServiceNow WSD module instead of cancelling and booking again, via the Moveworks AI Assistant.
-installation_asset_uuid: 0ec44d1c-1991-4968-9058-f1ce7434da96
-purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+change+my+room+reservation+for+the+%27Product+Sync%27+meeting.+Can+we+move+it+to+tomorrow+and+make+it+an+hour+longer%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+for+%27Product+Sync%27+reservation+in+%3Cb%3EServiceNow%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22servicenow%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Modifying+reservation+RES-99281+to+tomorrow+with+a+%2B1+hour+extension...%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI%27ve+updated+your+%3Cb%3EProduct+Sync%3C%2Fb%3E+reservation+in+%3Cb%3EServiceNow%3C%2Fb%3E.+I+moved+the+date+to+tomorrow+and+extended+the+duration+to+2+hours.%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3ENew+Time%3A%3C%2Fb%3E+Tomorrow%2C+2%3A00+PM+%E2%80%93+4%3A00+PM%3C%2Fli%3E%3Cli%3E%3Cb%3ELocation%3A%3C%2Fb%3E+Conference+Room+A%3C%2Fli%3E%3C%2Ful%3E%3Cp%3E%3Ca+href%3D%5C%22https%3A%2F%2Fservicenow.com%2Freservations%2FRES-99281%5C%22%3EView+Updated+Reservation%3C%2Fa%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22servicenow%22%2C%22citationTitle%22%3A%22RES-99281%3A+Product+Sync%22%7D%5D%7D%5D%7D%5D%7D
+description: Plans shifted? Change the booking instead of starting over.
+installation_asset_uuid: a7de5661-9747-43e3-9d77-c4de900465a3
+purple_chat_link: [**Purple chat**](https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+to+change+my+room+reservation+for+the+%27Product+Sync%27+meeting.+Can+we+move+it+to+tomorrow+and+make+it+an+hour+longer%3F%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Searching+for+%27Product+Sync%27+reservation+in+%3Cb%3EServiceNow%3C%2Fb%3E...%22%2C%22connectorName%22%3A%22servicenow%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22Modifying+reservation+RES-99281+to+tomorrow+with+a+%2B1+hour+extension...%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI%27ve+updated+your+%3Cb%3EProduct+Sync%3C%2Fb%3E+reservation+in+%3Cb%3EServiceNow%3C%2Fb%3E.+I+moved+the+date+to+tomorrow+and+extended+the+duration+to+2+hours.%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cb%3ENew+Time%3A%3C%2Fb%3E+Tomorrow%2C+2%3A00+PM+%E2%80%93+4%3A00+PM%3C%2Fli%3E%3Cli%3E%3Cb%3ELocation%3A%3C%2Fb%3E+Conference+Room+A%3C%2Fli%3E%3C%2Ful%3E%3Cp%3E%3Ca+href%3D%5C%22https%3A%2F%2Fservicenow.com%2Freservations%2FRES-99281%5C%22%3EView+Updated+Reservation%3C%2Fa%3E%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22servicenow%22%2C%22citationTitle%22%3A%22RES-99281%3A+Product+Sync%22%7D%5D%7D%5D%7D%5D%7D)
 solution_tags:
 - Workplace
 - Workplace Service Delivery
@@ -27,15 +27,24 @@ Refer to the [**Purple chat**](https://marketplace.moveworks.com/purple-chat?con
 
 Before installing and using the **Update_Reservations** plugin, ensure that the following requirements are met:
 
-## **1. ServiceNow's Workplace Reservation Management**
+
+## **1. ServiceNow's Workplace Core**
+This plugin requires an active **Workplace Core** installation and configuration on your ServiceNow instance.
+
+- If you have not installed and configured the application, follow the **[Install Workplace Core](https://www.servicenow.com/docs/r/employee-service-management/workplace-core/install-workplace-service-delivery.html)** documentation
+- The minimum version of the Workplace Reservation Management application is: 2.29.2
+
+## **2. ServiceNow's Workplace Reservation Management**
 
 This plugin requires an active **Workplace Reservation Management** installation and configuration on your ServiceNow instance.
 
-- If you have not installed and configure the application, follow the **[Install Workplace Reservation Management](https://www.servicenow.com/docs/r/employee-service-management/workplace-reservation-management/install-wsd-reservation-mgmt.html)** documentation
-- The minimum version of the Workplace Reservation Management application is: 3.5.0
-- After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Tool Studio**.
+- If you have not installed and configured the application, follow the **[Install Workplace Reservation Management](https://www.servicenow.com/docs/r/employee-service-management/workplace-reservation-management/install-wsd-reservation-mgmt.html)** documentation
+- The minimum version of the Workplace Reservation Management application is: 3.6.6
 
-## **2. User Identity Ingestion from ServiceNow**
+## **3. Install and activate plugins**
+After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Agent Studio**.
+
+## **4. User Identity Ingestion from ServiceNow**
 This plugin operates on reservations under the requesting user's own ServiceNow identity. The `requested_for` fields are populated by dot-walking the user's profile in the Data Bank: `meta_info.user.external_system_identities.snow.external_id`
 
 The `external_id` serves two purposes:
@@ -45,7 +54,7 @@ The `external_id` serves two purposes:
 This reads the user's ServiceNow `sys_id` from the identity source linked to their Moveworks profile, so your users must be ingested from ServiceNow for this value to populate. To set up user identity for your org, read our help docs on Identity Configuration in [**Moveworks Setup**](https://help.moveworks.com/service-management/moveworks-setup/identity-configuration).
 >⚠️ **Important — update this mapping to match your setup**. The `snow` key in that path must exactly match the name of `your` ServiceNow identity source in Moveworks Setup. If yours is named differently (e.g. `servicenow_prod`), update the Compound Action mapping to `meta_info.user.external_system_identities.servicenow_prod.external_id`. If it doesn't match, the path resolves to null and both authentication and reservation operations will fail.
 
-## **3. ServiceNow Connector**
+## **5. ServiceNow Connector**
 
 This plugin requires an active **ServiceNow connector** configured with **OAuth 2.0 using the Authorization Code grant (user-based / User Consent auth)**.
 
@@ -57,11 +66,11 @@ This plugin requires an active **ServiceNow connector** configured with **OAuth 
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Update%20Reservation/flow.png)
+![Conversation flow](Update%20Reservation/flow.svg)
 
 ## API Details
 
-Before running the cURL examples, replace `YOUR_INSTANCE` with your instance hostname and `ACCESS_TOKEN` with the OAuth access token issued for the user.
+Before running the cURL examples, replace `<YOUR_INSTANCE>` with your instance hostname and `<ACCESS_TOKEN>` with the OAuth access token issued for the user.
 
 
 ### **API: Update the reservation**

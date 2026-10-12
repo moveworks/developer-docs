@@ -1,9 +1,9 @@
 ---
 availability: INSTALLABLE
 name: Suggest Spaces
-description: Lets employees describe the space they need and get an available match from the ServiceNow WSD module, ready to reserve in one more step, via the Moveworks AI Assistant.
-installation_asset_uuid: f18a94d8-aad5-4b7e-a5e2-216b33304303
-purple_chat_link: https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+a+quiet+workspace+in+the+%3Cb%3ESan+Francisco%3C%2Fb%3E+office+for+two+hours+starting+at+2%3A00+PM+today.+I%27d+prefer+a+standing+desk+if+available.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESearching+%3Cb%3EServiceNow%3C%2Fb%3E+for+available+focus+pods+in+San+Francisco+with+standing+desks...%3C%2Fp%3E%22%2C%22connectorName%22%3A%22servicenow%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3EFiltering+results+based+on+your+previous+preference+for+rooms+on+higher+floors.%3C%2Fp%3E%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI%27ve+found+a+space+that+matches+your+needs+and+aligns+with+your+preference+for+rooms+on+the+20th+floor+or+above%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cstrong%3ESpace%3A%3C%2Fstrong%3E+Skyview+Pod+4%3C%2Fli%3E%3Cli%3E%3Cstrong%3ELocation%3A%3C%2Fstrong%3E+SF+Office%2C+Floor+22%3C%2Fli%3E%3Cli%3E%3Cstrong%3EFeatures%3A%3C%2Fstrong%3E+Standing+desk%2C+Dual+monitors%2C+Noise-canceling+glass%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EThere+are+%3Cb%3E8+other+spaces%3C%2Fb%3E+available+that+meet+your+criteria%2C+but+this+is+your+best+match.+%3Ca+href%3D%5C%22https%3A%2F%2Fexample.service-now.com%2Fnav_to.do%3Furi%3Dx_room_record_999%5C%22%3EView+Space+Details%3C%2Fa%3E%3C%2Fp%3E%3Cp%3EWould+you+like+me+to+reserve+this+for+you+from+2%3A00+PM+to+4%3A00+PM%3F%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22servicenow%22%2C%22citationTitle%22%3A%22Skyview+Pod+4%22%7D%5D%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Reserve+Skyview+Pod+4%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22See+Other+Options%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%7D%5D%2C%22assistantConfig%22%3A%7B%22userName%22%3A%22Moveworks%22%2C%22initials%22%3A%22U%22%2C%22providedIcon%22%3A%22silhoutte%22%7D%7D
+description: The right space for the request, without scanning a single list.
+installation_asset_uuid: 1c4fb432-ae52-4dd0-bb7d-90c218938316
+purple_chat_link: [**Purple chat**](https://marketplace.moveworks.com/purple-chat?conversation=%7B%22messages%22%3A%5B%7B%22role%22%3A%22user%22%2C%22parts%22%3A%5B%7B%22richText%22%3A%22I+need+a+quiet+workspace+in+the+%3Cb%3ESan+Francisco%3C%2Fb%3E+office+for+two+hours+starting+at+2%3A00+PM+today.+I%27d+prefer+a+standing+desk+if+available.%22%7D%5D%7D%2C%7B%22role%22%3A%22assistant%22%2C%22parts%22%3A%5B%7B%22reasoningSteps%22%3A%5B%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3ESearching+%3Cb%3EServiceNow%3C%2Fb%3E+for+available+focus+pods+in+San+Francisco+with+standing+desks...%3C%2Fp%3E%22%2C%22connectorName%22%3A%22servicenow%22%7D%2C%7B%22status%22%3A%22success%22%2C%22richText%22%3A%22%3Cp%3EFiltering+results+based+on+your+previous+preference+for+rooms+on+higher+floors.%3C%2Fp%3E%22%2C%22connectorName%22%3A%22servicenow%22%7D%5D%7D%2C%7B%22richText%22%3A%22%3Cp%3EI%27ve+found+a+space+that+matches+your+needs+and+aligns+with+your+preference+for+rooms+on+the+20th+floor+or+above%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cstrong%3ESpace%3A%3C%2Fstrong%3E+Skyview+Pod+4%3C%2Fli%3E%3Cli%3E%3Cstrong%3ELocation%3A%3C%2Fstrong%3E+SF+Office%2C+Floor+22%3C%2Fli%3E%3Cli%3E%3Cstrong%3EFeatures%3A%3C%2Fstrong%3E+Standing+desk%2C+Dual+monitors%2C+Noise-canceling+glass%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EThere+are+%3Cb%3E8+other+spaces%3C%2Fb%3E+available+that+meet+your+criteria%2C+but+this+is+your+best+match.+%3Ca+href%3D%5C%22https%3A%2F%2Fexample.service-now.com%2Fnav_to.do%3Furi%3Dx_room_record_999%5C%22%3EView+Space+Details%3C%2Fa%3E%3C%2Fp%3E%3Cp%3EWould+you+like+me+to+reserve+this+for+you+from+2%3A00+PM+to+4%3A00+PM%3F%3C%2Fp%3E%22%7D%2C%7B%22citations%22%3A%5B%7B%22connectorName%22%3A%22servicenow%22%2C%22citationTitle%22%3A%22Skyview+Pod+4%22%7D%5D%7D%2C%7B%22buttons%22%3A%5B%7B%22buttonText%22%3A%22Reserve+Skyview+Pod+4%22%2C%22style%22%3A%22filled%22%7D%2C%7B%22buttonText%22%3A%22See+Other+Options%22%2C%22style%22%3A%22outlined%22%7D%2C%7B%22buttonText%22%3A%22Cancel%22%2C%22style%22%3A%22outlined%22%7D%5D%7D%5D%7D%5D%2C%22assistantConfig%22%3A%7B%22userName%22%3A%22Moveworks%22%2C%22initials%22%3A%22U%22%2C%22providedIcon%22%3A%22silhoutte%22%7D%7D)
 solution_tags:
 - Workplace
 - Workplace Service Delivery
@@ -28,14 +28,23 @@ Refer to the [**Purple chat**](https://marketplace.moveworks.com/purple-chat?con
 
 Before installing and using the **Suggest Spaces** plugin, ensure that the following requirements are met:
 
-## **1. ServiceNow's Workplace Reservation Management**
+## **1. ServiceNow's Workplace Core**
+This plugin requires an active **Workplace Core** installation and configuration on your ServiceNow instance.
+
+- If you have not installed and configured the application, follow the **[Install Workplace Core](https://www.servicenow.com/docs/r/employee-service-management/workplace-core/install-workplace-service-delivery.html)** documentation
+- The minimum version of the Workplace Reservation Management application is: 2.29.2
+
+## **2. ServiceNow's Workplace Reservation Management**
 
 This plugin requires an active **Workplace Reservation Management** installation and configuration on your ServiceNow instance.
 
-- If you have not installed and configure the application, follow the **[Install Workplace Reservation Management](https://www.servicenow.com/docs/r/employee-service-management/workplace-reservation-management/install-wsd-reservation-mgmt.html)** documentation
-- The minimum version of the Workplace Reservation Management application is: 3.5.0
-- After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Tool Studio**.
-## **2. User Identity Ingestion from ServiceNow**
+- If you have not installed and configured the application, follow the **[Install Workplace Reservation Management](https://www.servicenow.com/docs/r/employee-service-management/workplace-reservation-management/install-wsd-reservation-mgmt.html)** documentation
+- The minimum version of the Workplace Reservation Management application is: 3.6.6
+
+## **3. Install and activate plugins**
+After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Agent Studio**.
+
+## **4. User Identity Ingestion from ServiceNow**
 This plugin operates on reservations under the requesting user's own ServiceNow identity. The `requested_for` fields are populated by dot-walking the user's profile in the Data Bank: `meta_info.user.external_system_identities.snow.external_id`
 
 The `external_id` serves two purposes:
@@ -45,13 +54,13 @@ The `external_id` serves two purposes:
 This reads the user's ServiceNow `sys_id` from the identity source linked to their Moveworks profile, so your users must be ingested from ServiceNow for this value to populate. To set up user identity for your org, read our help docs on Identity Configuration in [**Moveworks Setup**](https://help.moveworks.com/service-management/moveworks-setup/identity-configuration).
 >⚠️ **Important — update this mapping to match your setup**. The `snow` key in that path must exactly match the name of `your` ServiceNow identity source in Moveworks Setup. If yours is named differently (e.g. `servicenow_prod`), update the Compound Action mapping to `meta_info.user.external_system_identities.servicenow_prod.external_id`. If it doesn't match, the path resolves to null and both authentication and reservation operations will fail.
 
-## **3. ServiceNow Connector**
+## **5. ServiceNow Connector**
 
 This plugin requires an active **ServiceNow connector** configured with **OAuth 2.0 using the Authorization Code grant (user-based / User Consent auth)**.
 
 - If you have not already configured the connector, follow the [**OAuth 2.0 Authorization Code guide**](https://docs.moveworks.com/agent-studio/connectors/http-connectors/oauth-20-authorization-code). The connector must be fully set up before installing this plugin.
 
-### **3. Reserve Space Plugin**
+### **6. Reserve Space Plugin**
 This plugin requires the availability of the `Reserve Space` plugin on the instance. The Reserve Space plugin is used to create the suggested available spaces.
 
 # Implementation details
@@ -60,12 +69,12 @@ This plugin requires the availability of the `Reserve Space` plugin on the insta
 
 ## Visual representation of how the plugin works
 
-![Conversation flow](Suggest%20Spaces/flow.png)
+![Conversation flow](Suggest%20Spaces/flow.svg)
 
 
 ## API Details
 
-Before running the cURL examples, replace `YOUR_INSTANCE` with your instance hostname and `ACCESS_TOKEN` with the OAuth access token issued for the user.
+Before running the cURL examples, replace `<YOUR_INSTANCE>` with your instance hostname and `<ACCESS_TOKEN>` with the OAuth access token issued for the user.
 
 ### **API: Fetch user context**
 

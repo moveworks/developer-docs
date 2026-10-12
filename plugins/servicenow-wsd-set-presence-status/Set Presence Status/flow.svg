@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2100 640" font-family="Segoe Print, Bradley Hand, Comic Sans MS, cursive, sans-serif">
+  <defs>
+    <filter id="sketch" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.2"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#sketch)">
+    <!-- 1. Start -->
+    <rect x="10" y="230" width="290" height="180" rx="8" fill="none" stroke="#e03131" stroke-width="2.5"/>
+    <!-- fetch step -->
+    <rect x="385" y="250" width="340" height="140" rx="8" fill="none" stroke="#1e1e1e" stroke-width="2.5"/>
+    <!-- decision -->
+    <rect x="815" y="250" width="310" height="140" rx="8" fill="none" stroke="#e03131" stroke-width="2.5"/>
+
+    <!-- branch boxes -->
+    <rect x="1260" y="10" width="380" height="125" rx="8" fill="none" stroke="#1e1e1e" stroke-width="2.5"/>
+    <rect x="1260" y="165" width="380" height="125" rx="8" fill="none" stroke="#1e1e1e" stroke-width="2.5"/>
+    <rect x="1260" y="320" width="380" height="125" rx="8" fill="none" stroke="#1e1e1e" stroke-width="2.5"/>
+    <rect x="1260" y="475" width="380" height="125" rx="8" fill="none" stroke="#1e1e1e" stroke-width="2.5"/>
+
+    <!-- output -->
+    <rect x="1780" y="230" width="310" height="180" rx="8" fill="none" stroke="#2f9e44" stroke-width="2.5"/>
+
+    <!-- connectors: start -> fetch -> decision -->
+    <path d="M300,320 L382,320" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M725,320 L812,320" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+
+    <!-- decision -> 4 branches -->
+    <path d="M1125,285 C1175,180 1200,100 1257,72" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1125,300 C1170,255 1195,240 1257,227" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1125,340 C1170,375 1195,390 1257,382" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1125,355 C1175,460 1200,510 1257,537" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+
+    <!-- 4 branches -> output -->
+    <path d="M1640,72 C1720,72 1740,150 1755,200 C1765,235 1770,250 1777,262" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1640,227 C1700,227 1730,245 1745,258 C1755,266 1765,270 1777,278" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1640,382 C1700,382 1730,363 1745,350 C1755,342 1765,338 1777,330" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1640,537 C1720,537 1740,455 1755,405 C1765,370 1770,352 1777,340" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+
+    <!-- arrowheads (hand-drawn open V) -->
+    <path d="M368,312 L382,320 L368,328" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M798,312 L812,320 L798,328" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+
+    <path d="M1243,61 L1257,72 L1249,86" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1243,216 L1257,227 L1249,241" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1243,371 L1257,382 L1249,396" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1243,526 L1257,537 L1249,551" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+
+    <path d="M1765,251 L1777,262 L1767,274" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1765,267 L1777,278 L1767,290" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1765,319 L1777,330 L1767,342" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+    <path d="M1765,329 L1777,340 L1767,352" stroke="#1e1e1e" stroke-width="2.5" fill="none"/>
+  </g>
+
+  <!-- text (kept crisp, not filtered) -->
+  <text x="30" y="260" fill="#e03131" font-size="19">User: "I'll work from</text>
+  <text x="30" y="285" fill="#e03131" font-size="19">home Friday" / "Mark</text>
+  <text x="30" y="310" fill="#e03131" font-size="19">me in office at Building</text>
+  <text x="30" y="335" fill="#e03131" font-size="19">B on Wednesday"</text>
+
+  <text x="405" y="280" fill="#1e1e1e" font-size="19">Fetch presence data:</text>
+  <text x="405" y="305" fill="#1e1e1e" font-size="19">routine + exceptions for</text>
+  <text x="405" y="330" fill="#1e1e1e" font-size="19">the next 3 months (GET,</text>
+  <text x="405" y="355" fill="#1e1e1e" font-size="19">single call, always runs)</text>
+
+  <text x="835" y="280" fill="#e03131" font-size="19">Compute weekday for</text>
+  <text x="835" y="305" fill="#e03131" font-size="19">target_date; compare to</text>
+  <text x="835" y="330" fill="#e03131" font-size="19">routine; look for an</text>
+  <text x="835" y="355" fill="#e03131" font-size="19">existing exception that date</text>
+
+  <text x="1145" y="150" fill="#1e1e1e" font-size="16">no exception, matches</text>
+  <text x="1145" y="205" fill="#1e1e1e" font-size="16">exception exists, now matches</text>
+  <text x="1145" y="415" fill="#1e1e1e" font-size="16">exception exists, still differs</text>
+  <text x="1145" y="460" fill="#1e1e1e" font-size="16">no exception, still differs</text>
+
+  <text x="1280" y="40" fill="#1e1e1e" font-size="18">No exception + status</text>
+  <text x="1280" y="63" fill="#1e1e1e" font-size="18">already matches routine</text>
+  <text x="1280" y="86" fill="#1e1e1e" font-size="18">&#8594; NO-OP: skip the write,</text>
+  <text x="1280" y="109" fill="#1e1e1e" font-size="18">"no change needed"</text>
+
+  <text x="1280" y="195" fill="#1e1e1e" font-size="18">Exception exists + new</text>
+  <text x="1280" y="218" fill="#1e1e1e" font-size="18">status now matches routine</text>
+  <text x="1280" y="241" fill="#1e1e1e" font-size="18">&#8594; DELETE the exception</text>
+  <text x="1280" y="264" fill="#1e1e1e" font-size="18">(routine default applies)</text>
+
+  <text x="1280" y="350" fill="#1e1e1e" font-size="18">Exception exists + new</text>
+  <text x="1280" y="373" fill="#1e1e1e" font-size="18">status still differs</text>
+  <text x="1280" y="396" fill="#1e1e1e" font-size="18">&#8594; "update" the exception</text>
+  <text x="1280" y="419" fill="#1e1e1e" font-size="18">(optional building/location)</text>
+
+  <text x="1280" y="505" fill="#1e1e1e" font-size="18">No exception yet + new</text>
+  <text x="1280" y="528" fill="#1e1e1e" font-size="18">status differs from routine</text>
+  <text x="1280" y="551" fill="#1e1e1e" font-size="18">&#8594; CREATE a new exception</text>
+  <text x="1280" y="574" fill="#1e1e1e" font-size="18">(optional building/location)</text>
+
+  <text x="1800" y="265" fill="#2f9e44" font-size="18">Confirmation message</text>
+  <text x="1800" y="288" fill="#2f9e44" font-size="18">(+ created/updated</text>
+  <text x="1800" y="311" fill="#2f9e44" font-size="18">exception if any) - no</text>
+  <text x="1800" y="334" fill="#2f9e44" font-size="18">confirmation prompt shown</text>
+  <text x="1800" y="357" fill="#2f9e44" font-size="18">to the user first</text>
+</svg>
