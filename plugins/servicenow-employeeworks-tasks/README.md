@@ -33,7 +33,7 @@ Refer to the [**Purple chat**](https://marketplace.moveworks.com/purple-chat?con
 
 This plugin requires an active **ServiceNow connector** configured with **OAuth 2.0 using the Authorization Code grant (user-based / User Consent auth)**. The connector must act in the signed-in user's context so ServiceNow can apply assignment conditions, delegation rules, and access controls correctly.
 
-- If you have not already configured the connector, follow the [**OAuth 2.0 Authorization Code guide**](https://docs.moveworks.com/agent-studio/connectors/http-connectors/oauth-20-authorization-code). The connector must be fully set up before installing this plugin.
+- If you have not already configured the connector, follow the [**OAuth 2.0 Authorization Code guide**](https://docs.moveworks.com/tool-studio/connectors/http-connectors/oauth-20-authorization-code). The connector must be fully set up before installing this plugin.
 - After the connector is configured, follow the [**plugin installation documentation**](https://help.moveworks.com/docs/ai-agent-marketplace-installation) for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## 3. Disable native approval plugins
