@@ -42,7 +42,7 @@ This plugin requires an active **Workplace Reservation Management** installation
 - The minimum version of the Workplace Reservation Management application is: 3.6.6
 
 ## **3. Install and activate plugins**
-After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Agent Studio**.
+After the app is configured, follow the **[plugin installation documentation](https://help.moveworks.com/docs/ai-agent-marketplace-installation)** for detailed steps on how to install and activate the plugin in **Tool Studio**.
 
 ## **4. User Identity Ingestion from ServiceNow**
 This plugin operates on reservations under the requesting user's own ServiceNow identity. The `requested_for` fields are populated by dot-walking the user's profile in the Data Bank: `meta_info.user.external_system_identities.snow.external_id`
@@ -58,7 +58,7 @@ This reads the user's ServiceNow `sys_id` from the identity source linked to the
 
 This plugin requires an active **ServiceNow connector** configured with **OAuth 2.0 using the Authorization Code grant (user-based / User Consent auth)**.
 
-- If you have not already configured the connector, follow the [**OAuth 2.0 Authorization Code guide**](https://docs.moveworks.com/agent-studio/connectors/http-connectors/oauth-20-authorization-code). The connector must be fully set up before installing this plugin.
+- If you have not already configured the connector, follow the [**OAuth 2.0 Authorization Code guide**](https://docs.moveworks.com/tool-studio/connectors/http-connectors/oauth-20-authorization-code). The connector must be fully set up before installing this plugin.
 
 
 ### **6. Suggest Spaces Plugin**
