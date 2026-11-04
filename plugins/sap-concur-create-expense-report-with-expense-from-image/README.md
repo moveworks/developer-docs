@@ -39,7 +39,7 @@ Please refer to the following [Purple Chat](https://marketplace.moveworks.com/pu
   * `expense.config.policies.restricted.read`
   * `expense.config.expensetypes.restricted.read`
 
-* Once the connector is ready, follow the [plugin installation documentation](https://docs.moveworks.com/agent-studio/agentic-automation/ai-agent-marketplace-installation) for steps on how to install and activate the plugin in Tool Studio.
+* Once the connector is ready, follow the [plugin installation documentation](https://docs.moveworks.com/api-reference/agentic-automation/ai-agent-marketplace-installation) for steps on how to install and activate the plugin in Tool Studio.
 
 ### Implementation Details
 

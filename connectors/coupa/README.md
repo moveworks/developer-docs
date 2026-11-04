@@ -107,7 +107,7 @@ You’ve successfully integrated **Coupa’s API with Tool Studio** using **OAut
    - Provide the correct re-direct URI
      - e.g., https://{{org-domain}}.moveworks.com/auth/oauthCallback
      - To find your `org-domain`
-       - Log in to agent studio
+       - Log in to Tool Studio
        - Check the URL in your browser — The `org-domain` appears after `https://` For example, In this case, `https://{{org-domain}}/agent-studio` is your Moveworks `org-domain`.
    - **Scopes** → Select the scopes based on your use case. For example, to fetch approvals, choose the `core.approval.read` scope, **scroll down, and save it**. The Coupa user account used for testing must have basic access permissions — such as the ability to log in and view their own profile, requisitions, approvals, invoices, and expenses. The user should belong to roles like Employee or Approver, as the UCA token only allows access to what the user can see in Coupa.
 
