@@ -201,4 +201,4 @@ A `200` response confirms the connector is working.
 
 ## Congratulations!
 
-You’ve successfully connected UKG Pro WFM to Moveworks Tool Studio using both OAuth 2.0 Authorization Code (User Consent) and Client Credentials authentication flows. Your connectors are now ready for use within Moveworks agent studio plugins.
+You’ve successfully connected UKG Pro WFM to Moveworks Tool Studio using both OAuth 2.0 Authorization Code (User Consent) and Client Credentials authentication flows. Your connectors are now ready for use within Moveworks Tool Studio plugins.

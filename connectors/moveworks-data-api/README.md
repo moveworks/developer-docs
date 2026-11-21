@@ -33,7 +33,7 @@ Navigate to **Moveworks Setup → Tenant Settings → Credentials** to create yo
 
 ![image.png](data-api-connector-guide/image.png)
 
-1. Enter a **Credential Name** to identify this credential (e.g., `DataAPI-AgentStudio-Credential`).
+1. Enter a **Credential Name** to identify this credential (e.g., `DataAPI-ToolStudio-Credential`).
 2. Select an **Authentication Type** (see options below).
 3. Define **Access Scopes** — select the scopes required for your use case.
 

@@ -145,7 +145,7 @@ steps:
                       
 ```
 
-1. Navigate to Agent studio and create a new plugin. Choose the trigger condition as system and trigger type as webhook. Please select the webhook created as a part of Pre-Req #1. 
+1. Navigate to Tool Studio and create a new plugin. Choose the trigger condition as system and trigger type as webhook. Please select the webhook created as a part of Pre-Req #1. 
 2. In the body, select the type as system body and Action as compound action created in Step #2 with input mapping as below and save the plugin.
 
 ```bash
